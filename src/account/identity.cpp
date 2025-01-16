@@ -97,6 +97,11 @@ void Identity::setRelationship(Relationship *r)
     Q_EMIT relationshipChanged();
 }
 
+Identity *Identity::moved() const
+{
+    return m_movedIdentity;
+}
+
 void Identity::reparentIdentity(AbstractAccount *parent)
 {
     m_parent = parent;
@@ -157,6 +162,12 @@ void Identity::fromSourceData(const QJsonObject &doc)
                 m_bio.replace(start + hrefLength, length - hrefLength, QStringLiteral("web+ap:/") + captured.mid(hrefLength));
             }
         }
+    }
+
+    if (doc.contains("moved"_L1)) {
+        m_movedIdentity = new Identity();
+        m_movedIdentity->setParent(m_parent);
+        m_movedIdentity->fromSourceData(doc["moved"_L1].toObject());
     }
 
     Q_EMIT identityUpdated();

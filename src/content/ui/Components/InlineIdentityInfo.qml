@@ -29,9 +29,9 @@ RowLayout {
         Layout.alignment: admin ? Qt.AlignCenter : Qt.AlignTop
         Layout.rowSpan: 5
 
-        source: root.identity.avatarUrl
+        source: root.identity?.avatarUrl ?? ""
         cache: true
-        name: root.identity.displayName
+        name: root.identity?.displayName ?? ""
     }
 
     ColumnLayout {
@@ -46,7 +46,7 @@ RowLayout {
             level: 4
             font.pixelSize: Config.defaultFont.pixelSize + 2
             font.pointSize: -1
-            text: root.identity.displayNameHtml
+            text: root.identity?.displayNameHtml ?? ""
             type: Kirigami.Heading.Type.Primary
             color: root.secondary ? Kirigami.Theme.disabledTextColor : Kirigami.Theme.textColor
             verticalAlignment: Text.AlignTop
@@ -60,7 +60,7 @@ RowLayout {
             font.pixelSize: Config.defaultFont.pixelSize + 1
             elide: Text.ElideRight
             color: Kirigami.Theme.disabledTextColor
-            text: `@${root.identity.account}`
+            text: `@${root.identity?.account ?? ""}`
             verticalAlignment: Text.AlignTop
             maximumLineCount: 1
 

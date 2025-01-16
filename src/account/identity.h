@@ -37,6 +37,7 @@ class Identity : public QObject
     Q_PROPERTY(Relationship *relationship READ relationship NOTIFY relationshipChanged)
     Q_PROPERTY(QString createdAt READ createdAt NOTIFY identityUpdated)
     Q_PROPERTY(bool limited READ limited NOTIFY identityUpdated)
+    Q_PROPERTY(Identity *moved READ moved NOTIFY identityUpdated)
 
 public:
     /**
@@ -153,6 +154,11 @@ public:
      */
     void setRelationship(Relationship *r);
 
+    /**
+     * @return The identity this account has moved to. Is null if the account hasn't moved.
+     */
+    Identity *moved() const;
+
 Q_SIGNALS:
     void relationshipChanged();
     void identityUpdated();
@@ -180,4 +186,5 @@ private:
     bool m_bot;
     QDate m_createdAt;
     bool m_limited;
+    Identity *m_movedIdentity = nullptr;
 };

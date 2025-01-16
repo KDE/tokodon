@@ -38,6 +38,57 @@ QQC2.Pane {
 
         spacing: 0
 
+        Kirigami.InlineMessage {
+            id: migrationMessage
+
+            type: Kirigami.MessageType.Information
+            position: Kirigami.InlineMessage.Position.Header
+            visible: root.identity.moved
+            showCloseButton: false
+            text: i18nc("@info %1 is a display name", "%1 has moved to a new account:", root.identity.displayName)
+
+            Layout.preferredHeight: migrationLayout.implicitHeight + topPadding + bottomPadding
+            Layout.fillWidth: true
+
+            contentItem: ColumnLayout {
+                id: migrationLayout
+
+                anchors {
+                    fill: parent
+                    topMargin: migrationMessage.topPadding
+                    bottomMargin: migrationMessage.bottomPadding
+                    leftMargin: migrationMessage.leftPadding
+                    rightMargin: migrationMessage.rightPadding
+                }
+
+                spacing: Kirigami.Units.smallSpacing
+
+                QQC2.Label {
+                    text: migrationMessage.text
+
+                    Layout.fillWidth: true
+                }
+
+                RowLayout {
+                    spacing: 0
+
+                    Layout.fillWidth: true
+
+                    InlineIdentityInfo {
+                        identity: root.identity.moved
+                        secondary: false
+
+                        Layout.fillWidth: true
+                    }
+
+                    QQC2.Button {
+                        text: i18nc("@action:button", "Go to Profile")
+                        onClicked: Navigation.openAccount(root.identity.moved.id)
+                    }
+                }
+            }
+        }
+
         QQC2.Control {
             id: avatarControl
 
