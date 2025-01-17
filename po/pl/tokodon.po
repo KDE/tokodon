@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-16 00:41+0000\n"
+"POT-Creation-Date: 2025-01-17 00:41+0000\n"
 "PO-Revision-Date: 2024-12-21 11:41+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -554,7 +554,22 @@ msgstr "Nie można przypisać zgłoszenia"
 msgid "Could not unassign report"
 msgstr "Nie można usunąć przypisania zgłoszeniu"
 
-#: content/ui/AccountHeader.qml:102
+#: content/ui/AccountHeader.qml:48
+#, fuzzy, kde-format
+#| msgid "Log in or create a new account"
+msgctxt "@info %1 is a display name"
+msgid "%1 has moved to a new account:"
+msgstr "Wejdź na konto lub utwórz nowe"
+
+#: content/ui/AccountHeader.qml:85
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "Pin on Profile"
+msgctxt "@action:button"
+msgid "Go to Profile"
+msgstr "Przypnij na profilu"
+
+#: content/ui/AccountHeader.qml:153
 #, kde-format
 msgctxt ""
 "'Mutual' is the common English word used in social media platforms describe "
@@ -563,194 +578,194 @@ msgctxt ""
 msgid "Mutual"
 msgstr "Wzajemne"
 
-#: content/ui/AccountHeader.qml:102
+#: content/ui/AccountHeader.qml:153
 #, kde-format
 msgid "Follows you"
 msgstr "Obserwuje cię"
 
-#: content/ui/AccountHeader.qml:123
+#: content/ui/AccountHeader.qml:174
 #, kde-format
 msgid "Bot"
 msgstr "Bot"
 
-#: content/ui/AccountHeader.qml:234
+#: content/ui/AccountHeader.qml:285
 #, kde-format
 msgid "Follow Requested"
 msgstr "Żądano obserwacji"
 
-#: content/ui/AccountHeader.qml:237
+#: content/ui/AccountHeader.qml:288
 #, kde-format
 msgid "Unfollow"
 msgstr "Przestań obserwować"
 
-#: content/ui/AccountHeader.qml:239
+#: content/ui/AccountHeader.qml:290
 #, kde-format
 msgid "Follow"
 msgstr "Obserwuj"
 
-#: content/ui/AccountHeader.qml:264
+#: content/ui/AccountHeader.qml:315
 #, kde-format
 msgid "Stop notifying me when %1 posts."
 msgstr "Przestań powiadamiać mnie gdy %1 coś napisze."
 
-#: content/ui/AccountHeader.qml:266
+#: content/ui/AccountHeader.qml:317
 #, kde-format
 msgid "Notify me when %1 posts."
 msgstr "Powiadom mnie, gdy %1 coś napisze."
 
-#: content/ui/AccountHeader.qml:281
+#: content/ui/AccountHeader.qml:332
 #, fuzzy, kde-format
 #| msgid "Enable notifications for this account"
 msgctxt "@info:tooltip"
 msgid "Show a QR code for this account"
 msgstr "Włącz powiadomienia dla tego konta"
 
-#: content/ui/AccountHeader.qml:294
+#: content/ui/AccountHeader.qml:345
 #, kde-format
 msgid "Mention…"
 msgstr "Wzmianka…"
 
-#: content/ui/AccountHeader.qml:300
+#: content/ui/AccountHeader.qml:351
 #, kde-format
 msgid "Start a Conversation…"
 msgstr "Rozpocznij rozmowę…"
 
-#: content/ui/AccountHeader.qml:309
+#: content/ui/AccountHeader.qml:360
 #, kde-format
 msgid "Hide Boosts from %1"
 msgstr "Ukrywaj udostępnienia od %1"
 
-#: content/ui/AccountHeader.qml:311
+#: content/ui/AccountHeader.qml:362
 #, kde-format
 msgid "Show Boosts from %1"
 msgstr "Pokaż udostępnienia od %1"
 
-#: content/ui/AccountHeader.qml:327
+#: content/ui/AccountHeader.qml:378
 #, kde-format
 msgid "Stop Featuring This Profile"
 msgstr "Zaprzestań wyróżniania tego profilu"
 
-#: content/ui/AccountHeader.qml:329
+#: content/ui/AccountHeader.qml:380
 #, kde-format
 msgid "Feature This Profile"
 msgstr "Wyróżnij ten profil"
 
-#: content/ui/AccountHeader.qml:345
+#: content/ui/AccountHeader.qml:396
 #, kde-format
 msgid "Unmute"
 msgstr "Wyłącz wyciszenie"
 
-#: content/ui/AccountHeader.qml:347
+#: content/ui/AccountHeader.qml:398
 #, kde-format
 msgid "Mute"
 msgstr "Wycisz"
 
-#: content/ui/AccountHeader.qml:363
+#: content/ui/AccountHeader.qml:414
 #, kde-format
 msgid "Unblock"
 msgstr "Odblokuj"
 
-#: content/ui/AccountHeader.qml:365
+#: content/ui/AccountHeader.qml:416
 #, kde-format
 msgid "Block"
 msgstr "Zablokuj"
 
-#: content/ui/AccountHeader.qml:379 content/ui/PostDelegate/PostMenu.qml:187
+#: content/ui/AccountHeader.qml:430 content/ui/PostDelegate/PostMenu.qml:187
 #, kde-format
 msgctxt "@action:inmenu Report this post"
 msgid "Report…"
 msgstr "Zgłoś…"
 
-#: content/ui/AccountHeader.qml:385
+#: content/ui/AccountHeader.qml:436
 #, kde-format
 msgid "Edit Profile"
 msgstr "Edytuj profil"
 
-#: content/ui/AccountHeader.qml:389
+#: content/ui/AccountHeader.qml:440
 #, kde-format
 msgid "Account editor"
 msgstr "Edytor konta"
 
-#: content/ui/AccountHeader.qml:399
+#: content/ui/AccountHeader.qml:450
 #, kde-format
 msgid "Featured Users"
 msgstr "Wyróżnieni użytkownicy"
 
-#: content/ui/AccountHeader.qml:405
+#: content/ui/AccountHeader.qml:456
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Scheduled Posts"
 msgstr "Wpis planowy"
 
-#: content/ui/AccountHeader.qml:419
+#: content/ui/AccountHeader.qml:470
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Draft Posts"
 msgstr "Wpis roboczy"
 
-#: content/ui/AccountHeader.qml:432 content/ui/PostDelegate/LinkMenu.qml:25
+#: content/ui/AccountHeader.qml:483 content/ui/PostDelegate/LinkMenu.qml:25
 #: content/ui/PostDelegate/PostMenu.qml:51
 #, kde-format
 msgctxt "@action:inmenu 'Browser' being a web browser"
 msgid "Open in Browser"
 msgstr "Otwórz w przeglądarce"
 
-#: content/ui/AccountHeader.qml:437
+#: content/ui/AccountHeader.qml:488
 #, kde-format
 msgid "Copy Link"
 msgstr "Skopiuj odnośnik"
 
-#: content/ui/AccountHeader.qml:440
+#: content/ui/AccountHeader.qml:491
 #, kde-format
 msgid "Profile link copied."
 msgstr "Skopiowano odnośnik do profilu."
 
-#: content/ui/AccountHeader.qml:510
+#: content/ui/AccountHeader.qml:561
 #, kde-format
 msgctxt "@info:label Joined at"
 msgid "Joined"
 msgstr "Dołączył"
 
-#: content/ui/AccountHeader.qml:550
+#: content/ui/AccountHeader.qml:601
 #, kde-format
 msgid "Ownership of this link was checked on %1"
 msgstr "Posiadanie tego odnośnika zostało sprawdzone dnia %1"
 
-#: content/ui/AccountHeader.qml:627
+#: content/ui/AccountHeader.qml:678
 #, kde-format
 msgctxt "@label:textfield"
 msgid "Private Note:"
 msgstr "Notatka prywatna:"
 
-#: content/ui/AccountHeader.qml:635
+#: content/ui/AccountHeader.qml:686
 #, kde-format
 msgid "Saved"
 msgstr "Zapisany"
 
-#: content/ui/AccountHeader.qml:650
+#: content/ui/AccountHeader.qml:701
 #, kde-format
 msgid ""
 "Write down something about this user, this isn't visible to anyone but you."
 msgstr "Napisz coś o tym użytkowniku. Będzie to widoczne tylko dla ciebie."
 
-#: content/ui/AccountHeader.qml:712
+#: content/ui/AccountHeader.qml:763
 #, kde-format
 msgid "Also followed by:"
 msgstr "Również obserwowany przez:"
 
-#: content/ui/AccountHeader.qml:742
+#: content/ui/AccountHeader.qml:793
 #, kde-format
 msgctxt "@action:button See all familiar followers"
 msgid "View %1 More"
 msgstr "Obejrzyj %1 więcej"
 
-#: content/ui/AccountHeader.qml:742
+#: content/ui/AccountHeader.qml:793
 #, kde-format
 msgctxt "@action:button See all familiar followers"
 msgid "View All"
 msgstr "Zobacz wszystkie"
 
-#: content/ui/AccountHeader.qml:782
+#: content/ui/AccountHeader.qml:833
 #, kde-format
 msgctxt "@label User's number of statuses"
 msgid "<b>%1</b> post"
@@ -759,7 +774,7 @@ msgstr[0] "<b>%1</b> wpis"
 msgstr[1] "<b>%1</b> wpisy"
 msgstr[2] "<b>%1</b> wpisów"
 
-#: content/ui/AccountHeader.qml:795
+#: content/ui/AccountHeader.qml:846
 #, kde-format
 msgctxt "@label User's number of followed accounts"
 msgid "<b>%1</b> follows"
@@ -768,7 +783,7 @@ msgstr[0] "<b>%1</b> obserwowany"
 msgstr[1] "<b>%1</b> obserwowanych"
 msgstr[2] "<b>%1</b> obserwowanych"
 
-#: content/ui/AccountHeader.qml:808
+#: content/ui/AccountHeader.qml:859
 #, kde-format
 msgctxt "@label User's number of followers"
 msgid "<b>%1</b> follower"
@@ -777,31 +792,31 @@ msgstr[0] "<b>%1</b> obserwujący"
 msgstr[1] "<b>%1</b> obserwujących"
 msgstr[2] "<b>%1</b> obserwujących"
 
-#: content/ui/AccountHeader.qml:833
+#: content/ui/AccountHeader.qml:884
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts"
 msgstr "Wpisy"
 
-#: content/ui/AccountHeader.qml:837
+#: content/ui/AccountHeader.qml:888
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts && Replies"
 msgstr "Wpisy i odpowiedzi"
 
-#: content/ui/AccountHeader.qml:841
+#: content/ui/AccountHeader.qml:892
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Media"
 msgstr "Media"
 
-#: content/ui/AccountHeader.qml:872
+#: content/ui/AccountHeader.qml:923
 #, kde-format
 msgctxt "@option:check"
 msgid "Hide boosts"
 msgstr "Ukryj udostępnienia"
 
-#: content/ui/AccountHeader.qml:892
+#: content/ui/AccountHeader.qml:943
 #, kde-format
 msgctxt "@action:button Show all of a profile's posts"
 msgid "All"
@@ -831,13 +846,13 @@ msgstr "Bez wpisów"
 msgid "This user hasn't posted anything yet."
 msgstr "Ten użytkownik nie dodał jeszcze żadnego wpisu."
 
-#: content/ui/AccountInfo.qml:229
+#: content/ui/AccountInfo.qml:237
 #, kde-format
 msgctxt "@label"
 msgid "No Media"
 msgstr "Bez treści"
 
-#: content/ui/AccountInfo.qml:230
+#: content/ui/AccountInfo.qml:238
 #, kde-format
 msgid "This user hasn't posted any media yet."
 msgstr "Ten użytkownik nie wysłał jeszcze żadnych treści."
@@ -1132,14 +1147,14 @@ msgstr[0] "%1 osoba rozmawia"
 msgstr[1] "%1 osoby rozmawiają"
 msgstr[2] "%1 osób rozmawia"
 
-#: content/ui/ExplorePage.qml:248
+#: content/ui/ExplorePage.qml:268
 #, fuzzy, kde-format
 #| msgid "News"
 msgctxt "@info:placeholder"
 msgid "No News"
 msgstr "Wieści"
 
-#: content/ui/ExplorePage.qml:285
+#: content/ui/ExplorePage.qml:305
 #, fuzzy, kde-format
 #| msgid "No Users"
 msgctxt "@info:placeholder"

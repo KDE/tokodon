@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-16 00:41+0000\n"
+"POT-Creation-Date: 2025-01-17 00:41+0000\n"
 "PO-Revision-Date: 2022-04-07 18:19+0200\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -560,7 +560,19 @@ msgstr "Pridať účet"
 msgid "Could not unassign report"
 msgstr "Pridať účet"
 
-#: content/ui/AccountHeader.qml:102
+#: content/ui/AccountHeader.qml:48
+#, kde-format
+msgctxt "@info %1 is a display name"
+msgid "%1 has moved to a new account:"
+msgstr ""
+
+#: content/ui/AccountHeader.qml:85
+#, kde-format
+msgctxt "@action:button"
+msgid "Go to Profile"
+msgstr ""
+
+#: content/ui/AccountHeader.qml:153
 #, kde-format
 msgctxt ""
 "'Mutual' is the common English word used in social media platforms describe "
@@ -569,201 +581,201 @@ msgctxt ""
 msgid "Mutual"
 msgstr ""
 
-#: content/ui/AccountHeader.qml:102
+#: content/ui/AccountHeader.qml:153
 #, fuzzy, kde-format
 #| msgid "Follow"
 msgid "Follows you"
 msgstr "Navštíviť"
 
-#: content/ui/AccountHeader.qml:123
+#: content/ui/AccountHeader.qml:174
 #, kde-format
 msgid "Bot"
 msgstr ""
 
-#: content/ui/AccountHeader.qml:234
+#: content/ui/AccountHeader.qml:285
 #, fuzzy, kde-format
 #| msgid "Follow"
 msgid "Follow Requested"
 msgstr "Navštíviť"
 
-#: content/ui/AccountHeader.qml:237
+#: content/ui/AccountHeader.qml:288
 #, fuzzy, kde-format
 #| msgid "Follow"
 msgid "Unfollow"
 msgstr "Navštíviť"
 
-#: content/ui/AccountHeader.qml:239
+#: content/ui/AccountHeader.qml:290
 #, kde-format
 msgid "Follow"
 msgstr "Navštíviť"
 
-#: content/ui/AccountHeader.qml:264
+#: content/ui/AccountHeader.qml:315
 #, kde-format
 msgid "Stop notifying me when %1 posts."
 msgstr ""
 
-#: content/ui/AccountHeader.qml:266
+#: content/ui/AccountHeader.qml:317
 #, kde-format
 msgid "Notify me when %1 posts."
 msgstr ""
 
-#: content/ui/AccountHeader.qml:281
+#: content/ui/AccountHeader.qml:332
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show a QR code for this account"
 msgstr ""
 
-#: content/ui/AccountHeader.qml:294
+#: content/ui/AccountHeader.qml:345
 #, fuzzy, kde-format
 msgid "Mention…"
 msgstr "Voľby:"
 
-#: content/ui/AccountHeader.qml:300
+#: content/ui/AccountHeader.qml:351
 #, fuzzy, kde-format
 msgid "Start a Conversation…"
 msgstr "Voľby:"
 
-#: content/ui/AccountHeader.qml:309
+#: content/ui/AccountHeader.qml:360
 #, kde-format
 msgid "Hide Boosts from %1"
 msgstr ""
 
-#: content/ui/AccountHeader.qml:311
+#: content/ui/AccountHeader.qml:362
 #, kde-format
 msgid "Show Boosts from %1"
 msgstr ""
 
-#: content/ui/AccountHeader.qml:327
+#: content/ui/AccountHeader.qml:378
 #, kde-format
 msgid "Stop Featuring This Profile"
 msgstr ""
 
-#: content/ui/AccountHeader.qml:329
+#: content/ui/AccountHeader.qml:380
 #, kde-format
 msgid "Feature This Profile"
 msgstr ""
 
-#: content/ui/AccountHeader.qml:345
+#: content/ui/AccountHeader.qml:396
 #, kde-format
 msgid "Unmute"
 msgstr ""
 
-#: content/ui/AccountHeader.qml:347
+#: content/ui/AccountHeader.qml:398
 #, kde-format
 msgid "Mute"
 msgstr "Stlmiť"
 
-#: content/ui/AccountHeader.qml:363
+#: content/ui/AccountHeader.qml:414
 #, fuzzy, kde-format
 #| msgid "Block"
 msgid "Unblock"
 msgstr "Blok"
 
-#: content/ui/AccountHeader.qml:365
+#: content/ui/AccountHeader.qml:416
 #, kde-format
 msgid "Block"
 msgstr "Blok"
 
-#: content/ui/AccountHeader.qml:379 content/ui/PostDelegate/PostMenu.qml:187
+#: content/ui/AccountHeader.qml:430 content/ui/PostDelegate/PostMenu.qml:187
 #, kde-format
 msgctxt "@action:inmenu Report this post"
 msgid "Report…"
 msgstr ""
 
-#: content/ui/AccountHeader.qml:385
+#: content/ui/AccountHeader.qml:436
 #, kde-format
 msgid "Edit Profile"
 msgstr ""
 
-#: content/ui/AccountHeader.qml:389
+#: content/ui/AccountHeader.qml:440
 #, fuzzy, kde-format
 #| msgid "Add Account"
 msgid "Account editor"
 msgstr "Účty"
 
-#: content/ui/AccountHeader.qml:399
+#: content/ui/AccountHeader.qml:450
 #, fuzzy, kde-format
 #| msgid "Add Account"
 msgid "Featured Users"
 msgstr "Účty"
 
-#: content/ui/AccountHeader.qml:405
+#: content/ui/AccountHeader.qml:456
 #, fuzzy, kde-format
 #| msgid "Add Account"
 msgctxt "@action:inmenu"
 msgid "Scheduled Posts"
 msgstr "Účty"
 
-#: content/ui/AccountHeader.qml:419
+#: content/ui/AccountHeader.qml:470
 #, fuzzy, kde-format
 #| msgid "Add Account"
 msgctxt "@action:inmenu"
 msgid "Draft Posts"
 msgstr "Účty"
 
-#: content/ui/AccountHeader.qml:432 content/ui/PostDelegate/LinkMenu.qml:25
+#: content/ui/AccountHeader.qml:483 content/ui/PostDelegate/LinkMenu.qml:25
 #: content/ui/PostDelegate/PostMenu.qml:51
 #, kde-format
 msgctxt "@action:inmenu 'Browser' being a web browser"
 msgid "Open in Browser"
 msgstr ""
 
-#: content/ui/AccountHeader.qml:437
+#: content/ui/AccountHeader.qml:488
 #, fuzzy, kde-format
 msgid "Copy Link"
 msgstr "Kopírovať odkaz"
 
-#: content/ui/AccountHeader.qml:440
+#: content/ui/AccountHeader.qml:491
 #, kde-format
 msgid "Profile link copied."
 msgstr ""
 
-#: content/ui/AccountHeader.qml:510
+#: content/ui/AccountHeader.qml:561
 #, kde-format
 msgctxt "@info:label Joined at"
 msgid "Joined"
 msgstr ""
 
-#: content/ui/AccountHeader.qml:550
+#: content/ui/AccountHeader.qml:601
 #, kde-format
 msgid "Ownership of this link was checked on %1"
 msgstr ""
 
-#: content/ui/AccountHeader.qml:627
+#: content/ui/AccountHeader.qml:678
 #, fuzzy, kde-format
 msgctxt "@label:textfield"
 msgid "Private Note:"
 msgstr "Súkromné"
 
-#: content/ui/AccountHeader.qml:635
+#: content/ui/AccountHeader.qml:686
 #, kde-format
 msgid "Saved"
 msgstr ""
 
-#: content/ui/AccountHeader.qml:650
+#: content/ui/AccountHeader.qml:701
 #, kde-format
 msgid ""
 "Write down something about this user, this isn't visible to anyone but you."
 msgstr ""
 
-#: content/ui/AccountHeader.qml:712
+#: content/ui/AccountHeader.qml:763
 #, fuzzy, kde-format
 msgid "Also followed by:"
 msgstr "Nasledovatelia"
 
-#: content/ui/AccountHeader.qml:742
+#: content/ui/AccountHeader.qml:793
 #, kde-format
 msgctxt "@action:button See all familiar followers"
 msgid "View %1 More"
 msgstr ""
 
-#: content/ui/AccountHeader.qml:742
+#: content/ui/AccountHeader.qml:793
 #, kde-format
 msgctxt "@action:button See all familiar followers"
 msgid "View All"
 msgstr ""
 
-#: content/ui/AccountHeader.qml:782
+#: content/ui/AccountHeader.qml:833
 #, fuzzy, kde-format
 msgctxt "@label User's number of statuses"
 msgid "<b>%1</b> post"
@@ -772,7 +784,7 @@ msgstr[0] "Nasledovatelia"
 msgstr[1] "Nasledovatelia"
 msgstr[2] "Nasledovatelia"
 
-#: content/ui/AccountHeader.qml:795
+#: content/ui/AccountHeader.qml:846
 #, fuzzy, kde-format
 msgctxt "@label User's number of followed accounts"
 msgid "<b>%1</b> follows"
@@ -781,7 +793,7 @@ msgstr[0] "Nasledovatelia"
 msgstr[1] "Nasledovatelia"
 msgstr[2] "Nasledovatelia"
 
-#: content/ui/AccountHeader.qml:808
+#: content/ui/AccountHeader.qml:859
 #, fuzzy, kde-format
 msgctxt "@label User's number of followers"
 msgid "<b>%1</b> follower"
@@ -790,31 +802,31 @@ msgstr[0] "Nasledovatelia"
 msgstr[1] "Nasledovatelia"
 msgstr[2] "Nasledovatelia"
 
-#: content/ui/AccountHeader.qml:833
+#: content/ui/AccountHeader.qml:884
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts"
 msgstr ""
 
-#: content/ui/AccountHeader.qml:837
+#: content/ui/AccountHeader.qml:888
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts && Replies"
 msgstr ""
 
-#: content/ui/AccountHeader.qml:841
+#: content/ui/AccountHeader.qml:892
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Media"
 msgstr ""
 
-#: content/ui/AccountHeader.qml:872
+#: content/ui/AccountHeader.qml:923
 #, kde-format
 msgctxt "@option:check"
 msgid "Hide boosts"
 msgstr ""
 
-#: content/ui/AccountHeader.qml:892
+#: content/ui/AccountHeader.qml:943
 #, fuzzy, kde-format
 #| msgid "Follow"
 msgctxt "@action:button Show all of a profile's posts"
@@ -845,13 +857,13 @@ msgstr "Zobraziť ďalších %1"
 msgid "This user hasn't posted anything yet."
 msgstr ""
 
-#: content/ui/AccountInfo.qml:229
+#: content/ui/AccountInfo.qml:237
 #, kde-format
 msgctxt "@label"
 msgid "No Media"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:230
+#: content/ui/AccountInfo.qml:238
 #, kde-format
 msgid "This user hasn't posted any media yet."
 msgstr ""
@@ -1145,13 +1157,13 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: content/ui/ExplorePage.qml:248
+#: content/ui/ExplorePage.qml:268
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No News"
 msgstr ""
 
-#: content/ui/ExplorePage.qml:285
+#: content/ui/ExplorePage.qml:305
 #, fuzzy, kde-format
 msgctxt "@info:placeholder"
 msgid "No Users"

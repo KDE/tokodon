@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-16 00:41+0000\n"
-"PO-Revision-Date: 2025-01-12 05:17+0100\n"
+"POT-Creation-Date: 2025-01-17 00:41+0000\n"
+"PO-Revision-Date: 2025-01-16 02:40+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -549,7 +549,22 @@ msgstr "ანგარიშის მინიჭება შეუძლე�
 msgid "Could not unassign report"
 msgstr "ანგარიშის მინიჭების გაუქმება შეუძლებელია"
 
-#: content/ui/AccountHeader.qml:102
+#: content/ui/AccountHeader.qml:48
+#, fuzzy, kde-format
+#| msgid "Log in or create a new account"
+msgctxt "@info %1 is a display name"
+msgid "%1 has moved to a new account:"
+msgstr "შედით ან შექმენით ახალი ანგარიში"
+
+#: content/ui/AccountHeader.qml:85
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "Pin on Profile"
+msgctxt "@action:button"
+msgid "Go to Profile"
+msgstr "პროფილზე მიმაგრება"
+
+#: content/ui/AccountHeader.qml:153
 #, kde-format
 msgctxt ""
 "'Mutual' is the common English word used in social media platforms describe "
@@ -558,194 +573,194 @@ msgctxt ""
 msgid "Mutual"
 msgstr "საერთო"
 
-#: content/ui/AccountHeader.qml:102
+#: content/ui/AccountHeader.qml:153
 #, kde-format
 msgid "Follows you"
 msgstr "მოგყვებათ"
 
-#: content/ui/AccountHeader.qml:123
+#: content/ui/AccountHeader.qml:174
 #, kde-format
 msgid "Bot"
 msgstr "ბოტი"
 
-#: content/ui/AccountHeader.qml:234
+#: content/ui/AccountHeader.qml:285
 #, kde-format
 msgid "Follow Requested"
 msgstr "მიყოლა მოთხოვნილია"
 
-#: content/ui/AccountHeader.qml:237
+#: content/ui/AccountHeader.qml:288
 #, kde-format
 msgid "Unfollow"
 msgstr "გამოწერის გაუქმება"
 
-#: content/ui/AccountHeader.qml:239
+#: content/ui/AccountHeader.qml:290
 #, kde-format
 msgid "Follow"
 msgstr "გამოწერა"
 
-#: content/ui/AccountHeader.qml:264
+#: content/ui/AccountHeader.qml:315
 #, kde-format
 msgid "Stop notifying me when %1 posts."
 msgstr "%1-ის პოსტების შესახებ გაფრთხილებების შეწყვეტა."
 
-#: content/ui/AccountHeader.qml:266
+#: content/ui/AccountHeader.qml:317
 #, kde-format
 msgid "Notify me when %1 posts."
 msgstr "შემატყობინე %1-ის პოსტების შესახებ."
 
-#: content/ui/AccountHeader.qml:281
+#: content/ui/AccountHeader.qml:332
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show a QR code for this account"
 msgstr "QR კოდის ჩვენება ამ ანგარიშისთვის"
 
-#: content/ui/AccountHeader.qml:294
+#: content/ui/AccountHeader.qml:345
 #, kde-format
 msgid "Mention…"
 msgstr "ხსენება…"
 
-#: content/ui/AccountHeader.qml:300
+#: content/ui/AccountHeader.qml:351
 #, kde-format
 msgid "Start a Conversation…"
 msgstr "საუბრის დაწყება…"
 
-#: content/ui/AccountHeader.qml:309
+#: content/ui/AccountHeader.qml:360
 #, kde-format
 msgid "Hide Boosts from %1"
 msgstr "%1-დან აწევების დამალვა"
 
-#: content/ui/AccountHeader.qml:311
+#: content/ui/AccountHeader.qml:362
 #, kde-format
 msgid "Show Boosts from %1"
 msgstr "%1-დან აწევების ჩვენება"
 
-#: content/ui/AccountHeader.qml:327
+#: content/ui/AccountHeader.qml:378
 #, kde-format
 msgid "Stop Featuring This Profile"
 msgstr "ამ პროფილის ჩვენების შეწყვეტა"
 
-#: content/ui/AccountHeader.qml:329
+#: content/ui/AccountHeader.qml:380
 #, kde-format
 msgid "Feature This Profile"
 msgstr "ამ პროფილის ჩვენება"
 
-#: content/ui/AccountHeader.qml:345
+#: content/ui/AccountHeader.qml:396
 #, kde-format
 msgid "Unmute"
 msgstr "დადუმების გამორთვა"
 
-#: content/ui/AccountHeader.qml:347
+#: content/ui/AccountHeader.qml:398
 #, kde-format
 msgid "Mute"
 msgstr "დადუმება"
 
-#: content/ui/AccountHeader.qml:363
+#: content/ui/AccountHeader.qml:414
 #, kde-format
 msgid "Unblock"
 msgstr "განბლოკვა"
 
-#: content/ui/AccountHeader.qml:365
+#: content/ui/AccountHeader.qml:416
 #, kde-format
 msgid "Block"
 msgstr "დაბლოკვა"
 
-#: content/ui/AccountHeader.qml:379 content/ui/PostDelegate/PostMenu.qml:187
+#: content/ui/AccountHeader.qml:430 content/ui/PostDelegate/PostMenu.qml:187
 #, kde-format
 msgctxt "@action:inmenu Report this post"
 msgid "Report…"
 msgstr "ანგარიში…"
 
-#: content/ui/AccountHeader.qml:385
+#: content/ui/AccountHeader.qml:436
 #, kde-format
 msgid "Edit Profile"
 msgstr "პროფილის ჩასწორება"
 
-#: content/ui/AccountHeader.qml:389
+#: content/ui/AccountHeader.qml:440
 #, kde-format
 msgid "Account editor"
 msgstr "ანგარიშების რედაქტორი"
 
-#: content/ui/AccountHeader.qml:399
+#: content/ui/AccountHeader.qml:450
 #, kde-format
 msgid "Featured Users"
 msgstr "მიმაგრებული მომხმარებლები"
 
-#: content/ui/AccountHeader.qml:405
+#: content/ui/AccountHeader.qml:456
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Scheduled Posts"
 msgstr "დაგეგმილი პოსტები"
 
-#: content/ui/AccountHeader.qml:419
+#: content/ui/AccountHeader.qml:470
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Draft Posts"
 msgstr "პოსტის მონახაზები"
 
-#: content/ui/AccountHeader.qml:432 content/ui/PostDelegate/LinkMenu.qml:25
+#: content/ui/AccountHeader.qml:483 content/ui/PostDelegate/LinkMenu.qml:25
 #: content/ui/PostDelegate/PostMenu.qml:51
 #, kde-format
 msgctxt "@action:inmenu 'Browser' being a web browser"
 msgid "Open in Browser"
 msgstr "ბრაუზერში გახსნა"
 
-#: content/ui/AccountHeader.qml:437
+#: content/ui/AccountHeader.qml:488
 #, kde-format
 msgid "Copy Link"
 msgstr "ბმულის კოპირება"
 
-#: content/ui/AccountHeader.qml:440
+#: content/ui/AccountHeader.qml:491
 #, kde-format
 msgid "Profile link copied."
 msgstr "პროფილი ბმული დაკოპირდა."
 
-#: content/ui/AccountHeader.qml:510
+#: content/ui/AccountHeader.qml:561
 #, kde-format
 msgctxt "@info:label Joined at"
 msgid "Joined"
 msgstr "შეერთებული"
 
-#: content/ui/AccountHeader.qml:550
+#: content/ui/AccountHeader.qml:601
 #, kde-format
 msgid "Ownership of this link was checked on %1"
 msgstr "ამ ბმულის მფლობელობა შემოწმდა %1-ზე"
 
-#: content/ui/AccountHeader.qml:627
+#: content/ui/AccountHeader.qml:678
 #, kde-format
 msgctxt "@label:textfield"
 msgid "Private Note:"
 msgstr "პირადი კომენტარი:"
 
-#: content/ui/AccountHeader.qml:635
+#: content/ui/AccountHeader.qml:686
 #, kde-format
 msgid "Saved"
 msgstr "შენახულია"
 
-#: content/ui/AccountHeader.qml:650
+#: content/ui/AccountHeader.qml:701
 #, kde-format
 msgid ""
 "Write down something about this user, this isn't visible to anyone but you."
 msgstr ""
 "ჩაწერეთ რამე ამ მომხმარებლის შესახებ. ამას, თქვენს გარდა ვერავინ დაინახავს."
 
-#: content/ui/AccountHeader.qml:712
+#: content/ui/AccountHeader.qml:763
 #, kde-format
 msgid "Also followed by:"
 msgstr "ასევე მიჰყვება:"
 
-#: content/ui/AccountHeader.qml:742
+#: content/ui/AccountHeader.qml:793
 #, kde-format
 msgctxt "@action:button See all familiar followers"
 msgid "View %1 More"
 msgstr "კიდევ %1-ი ნახვა"
 
-#: content/ui/AccountHeader.qml:742
+#: content/ui/AccountHeader.qml:793
 #, kde-format
 msgctxt "@action:button See all familiar followers"
 msgid "View All"
 msgstr "პროფილის ნახვა"
 
-#: content/ui/AccountHeader.qml:782
+#: content/ui/AccountHeader.qml:833
 #, kde-format
 msgctxt "@label User's number of statuses"
 msgid "<b>%1</b> post"
@@ -753,7 +768,7 @@ msgid_plural "<b>%1</b> posts"
 msgstr[0] "<b>%1</b> პოსტი"
 msgstr[1] "<b>%1</b> პოსტი"
 
-#: content/ui/AccountHeader.qml:795
+#: content/ui/AccountHeader.qml:846
 #, kde-format
 msgctxt "@label User's number of followed accounts"
 msgid "<b>%1</b> follows"
@@ -761,7 +776,7 @@ msgid_plural "<b>%1</b> following"
 msgstr[0] "<b>%1</b> მიმდევარი"
 msgstr[1] "<b>%1</b> მიმდევარი"
 
-#: content/ui/AccountHeader.qml:808
+#: content/ui/AccountHeader.qml:859
 #, kde-format
 msgctxt "@label User's number of followers"
 msgid "<b>%1</b> follower"
@@ -769,31 +784,31 @@ msgid_plural "<b>%1</b> followers"
 msgstr[0] "<b>%1</b> მიმდევარი"
 msgstr[1] "<b>%1</b> მიმდევარი"
 
-#: content/ui/AccountHeader.qml:833
+#: content/ui/AccountHeader.qml:884
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts"
 msgstr "პოსტები"
 
-#: content/ui/AccountHeader.qml:837
+#: content/ui/AccountHeader.qml:888
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts && Replies"
 msgstr "პოსტები და პასუხები"
 
-#: content/ui/AccountHeader.qml:841
+#: content/ui/AccountHeader.qml:892
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Media"
 msgstr "მედია"
 
-#: content/ui/AccountHeader.qml:872
+#: content/ui/AccountHeader.qml:923
 #, kde-format
 msgctxt "@option:check"
 msgid "Hide boosts"
 msgstr "აწევების დამალვა"
 
-#: content/ui/AccountHeader.qml:892
+#: content/ui/AccountHeader.qml:943
 #, kde-format
 msgctxt "@action:button Show all of a profile's posts"
 msgid "All"
@@ -823,13 +838,13 @@ msgstr "პოსტების გარეშე"
 msgid "This user hasn't posted anything yet."
 msgstr "ამ მომხმარებელს ჯერ არაფერი დაუპოსტავს."
 
-#: content/ui/AccountInfo.qml:229
+#: content/ui/AccountInfo.qml:237
 #, kde-format
 msgctxt "@label"
 msgid "No Media"
 msgstr "მედიის გარეშე"
 
-#: content/ui/AccountInfo.qml:230
+#: content/ui/AccountInfo.qml:238
 #, kde-format
 msgid "This user hasn't posted any media yet."
 msgstr "ამ მომხმარებელს ჯერ მედია არ დაუპოსტავს."
@@ -868,15 +883,13 @@ msgid "Your server has not made any announcements yet."
 msgstr "თქვენს სერვერს ჯერ არ გაუკეთებია განცხადებები."
 
 #: content/ui/Components/BoostConfirmationDialog.qml:19
-#, fuzzy, kde-format
-#| msgid "Confirmed"
+#, kde-format
 msgctxt "@title"
 msgid "Confirm Boost"
-msgstr "დადასტურდა"
+msgstr "დაადასტურეთ აწევა"
 
 #: content/ui/Components/BoostConfirmationDialog.qml:23
-#, fuzzy, kde-format
-#| msgid "Boost"
+#, kde-format
 msgctxt "@action:button Boost this post"
 msgid "Boost"
 msgstr "აწევა"
@@ -1121,13 +1134,13 @@ msgid_plural "%1 people are talking"
 msgstr[0] "საუბრობს %1 პიროვნება"
 msgstr[1] "საუბრობს %1 პიროვნება"
 
-#: content/ui/ExplorePage.qml:248
+#: content/ui/ExplorePage.qml:268
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No News"
 msgstr "სიახლეების გარეშე"
 
-#: content/ui/ExplorePage.qml:285
+#: content/ui/ExplorePage.qml:305
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Users"
@@ -4092,7 +4105,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check Boosting means to repost, or retweet"
 msgid "Ask before boosting"
-msgstr ""
+msgstr "კითხვა აწევამდე"
 
 #: content/ui/Settings/AppearancePage.qml:97
 #, kde-format
@@ -4101,10 +4114,9 @@ msgid "Posts"
 msgstr "პოსტები"
 
 #: content/ui/Settings/AppearancePage.qml:103
-#, fuzzy, kde-format
-#| msgid "Show number of replies, favorites and boosts"
+#, kde-format
 msgid "Show number of favorites and boosts"
-msgstr "პასუხების, სანიშნებისა და აწევების რაოდენობის ჩვენება"
+msgstr "სანიშნებისა და აწევების რაოდენობის ჩვენება"
 
 #: content/ui/Settings/AppearancePage.qml:118
 #, kde-format

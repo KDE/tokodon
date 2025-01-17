@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-16 00:41+0000\n"
+"POT-Creation-Date: 2025-01-17 00:41+0000\n"
 "PO-Revision-Date: 2024-12-15 19:31+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Hindi <kde-i18n-doc@kde.org>\n"
@@ -548,7 +548,22 @@ msgstr "रिपोर्ट असाइन नहीं की जा सक�
 msgid "Could not unassign report"
 msgstr "रिपोर्ट अनअसाइन नहीं की जा सकी"
 
-#: content/ui/AccountHeader.qml:102
+#: content/ui/AccountHeader.qml:48
+#, fuzzy, kde-format
+#| msgid "Log in or create a new account"
+msgctxt "@info %1 is a display name"
+msgid "%1 has moved to a new account:"
+msgstr "लॉगिन करें या नया अकाउंट बनाएं"
+
+#: content/ui/AccountHeader.qml:85
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "Pin on Profile"
+msgctxt "@action:button"
+msgid "Go to Profile"
+msgstr "प्रोफ़ाइल पर पिन करें"
+
+#: content/ui/AccountHeader.qml:153
 #, kde-format
 msgctxt ""
 "'Mutual' is the common English word used in social media platforms describe "
@@ -557,120 +572,120 @@ msgctxt ""
 msgid "Mutual"
 msgstr "आपसी"
 
-#: content/ui/AccountHeader.qml:102
+#: content/ui/AccountHeader.qml:153
 #, kde-format
 msgid "Follows you"
 msgstr "आप इस प्रकार है"
 
-#: content/ui/AccountHeader.qml:123
+#: content/ui/AccountHeader.qml:174
 #, kde-format
 msgid "Bot"
 msgstr "बीओटी"
 
-#: content/ui/AccountHeader.qml:234
+#: content/ui/AccountHeader.qml:285
 #, kde-format
 msgid "Follow Requested"
 msgstr "अनुसरण करें अनुरोधित"
 
-#: content/ui/AccountHeader.qml:237
+#: content/ui/AccountHeader.qml:288
 #, kde-format
 msgid "Unfollow"
 msgstr "करें"
 
-#: content/ui/AccountHeader.qml:239
+#: content/ui/AccountHeader.qml:290
 #, kde-format
 msgid "Follow"
 msgstr "अनुसरण करना"
 
-#: content/ui/AccountHeader.qml:264
+#: content/ui/AccountHeader.qml:315
 #, kde-format
 msgid "Stop notifying me when %1 posts."
 msgstr "%1 पोस्ट होने पर मुझे सूचित करना बंद करें."
 
-#: content/ui/AccountHeader.qml:266
+#: content/ui/AccountHeader.qml:317
 #, kde-format
 msgid "Notify me when %1 posts."
 msgstr "%1 पोस्ट होने पर मुझे सूचित करें."
 
-#: content/ui/AccountHeader.qml:281
+#: content/ui/AccountHeader.qml:332
 #, fuzzy, kde-format
 #| msgid "Enable notifications for this account"
 msgctxt "@info:tooltip"
 msgid "Show a QR code for this account"
 msgstr "इस खाते के लिए सूचनाएं सक्षम करें"
 
-#: content/ui/AccountHeader.qml:294
+#: content/ui/AccountHeader.qml:345
 #, kde-format
 msgid "Mention…"
 msgstr "उल्लेख…"
 
-#: content/ui/AccountHeader.qml:300
+#: content/ui/AccountHeader.qml:351
 #, kde-format
 msgid "Start a Conversation…"
 msgstr "एक बातचीत शुरू…"
 
-#: content/ui/AccountHeader.qml:309
+#: content/ui/AccountHeader.qml:360
 #, kde-format
 msgid "Hide Boosts from %1"
 msgstr "%1 से बूस्ट छिपाएं"
 
-#: content/ui/AccountHeader.qml:311
+#: content/ui/AccountHeader.qml:362
 #, kde-format
 msgid "Show Boosts from %1"
 msgstr "%1 से बूस्ट दिखाएँ"
 
-#: content/ui/AccountHeader.qml:327
+#: content/ui/AccountHeader.qml:378
 #, kde-format
 msgid "Stop Featuring This Profile"
 msgstr "इस प्रोफ़ाइल को प्रदर्शित करना बंद करें"
 
-#: content/ui/AccountHeader.qml:329
+#: content/ui/AccountHeader.qml:380
 #, kde-format
 msgid "Feature This Profile"
 msgstr "इस प्रोफ़ाइल को फ़ीचर करें"
 
-#: content/ui/AccountHeader.qml:345
+#: content/ui/AccountHeader.qml:396
 #, kde-format
 msgid "Unmute"
 msgstr "अप्रसन्नता"
 
-#: content/ui/AccountHeader.qml:347
+#: content/ui/AccountHeader.qml:398
 #, kde-format
 msgid "Mute"
 msgstr "आवाज़ बंद करना"
 
-#: content/ui/AccountHeader.qml:363
+#: content/ui/AccountHeader.qml:414
 #, kde-format
 msgid "Unblock"
 msgstr "अनब्लॉक"
 
-#: content/ui/AccountHeader.qml:365
+#: content/ui/AccountHeader.qml:416
 #, kde-format
 msgid "Block"
 msgstr "अवरोध पैदा करना"
 
-#: content/ui/AccountHeader.qml:379 content/ui/PostDelegate/PostMenu.qml:187
+#: content/ui/AccountHeader.qml:430 content/ui/PostDelegate/PostMenu.qml:187
 #, kde-format
 msgctxt "@action:inmenu Report this post"
 msgid "Report…"
 msgstr "प्रतिवेदन…"
 
-#: content/ui/AccountHeader.qml:385
+#: content/ui/AccountHeader.qml:436
 #, kde-format
 msgid "Edit Profile"
 msgstr "प्रोफ़ाइल संपादित करें"
 
-#: content/ui/AccountHeader.qml:389
+#: content/ui/AccountHeader.qml:440
 #, kde-format
 msgid "Account editor"
 msgstr "खाता संपादक"
 
-#: content/ui/AccountHeader.qml:399
+#: content/ui/AccountHeader.qml:450
 #, kde-format
 msgid "Featured Users"
 msgstr "विशेष रुप से प्रदर्शित उपयोगकर्ता"
 
-#: content/ui/AccountHeader.qml:405
+#: content/ui/AccountHeader.qml:456
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Delete Post"
@@ -678,7 +693,7 @@ msgctxt "@action:inmenu"
 msgid "Scheduled Posts"
 msgstr "पोस्ट को हटाएं"
 
-#: content/ui/AccountHeader.qml:419
+#: content/ui/AccountHeader.qml:470
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Report Post"
@@ -686,69 +701,69 @@ msgctxt "@action:inmenu"
 msgid "Draft Posts"
 msgstr "रिपोर्ट पोस्ट"
 
-#: content/ui/AccountHeader.qml:432 content/ui/PostDelegate/LinkMenu.qml:25
+#: content/ui/AccountHeader.qml:483 content/ui/PostDelegate/LinkMenu.qml:25
 #: content/ui/PostDelegate/PostMenu.qml:51
 #, kde-format
 msgctxt "@action:inmenu 'Browser' being a web browser"
 msgid "Open in Browser"
 msgstr "ब्राउज़र में खोलें"
 
-#: content/ui/AccountHeader.qml:437
+#: content/ui/AccountHeader.qml:488
 #, kde-format
 msgid "Copy Link"
 msgstr "लिंक की प्रतिलिपि करें"
 
-#: content/ui/AccountHeader.qml:440
+#: content/ui/AccountHeader.qml:491
 #, kde-format
 msgid "Profile link copied."
 msgstr "प्रोफ़ाइल लिंक कॉपी किया गया."
 
-#: content/ui/AccountHeader.qml:510
+#: content/ui/AccountHeader.qml:561
 #, kde-format
 msgctxt "@info:label Joined at"
 msgid "Joined"
 msgstr "शामिल हुए"
 
-#: content/ui/AccountHeader.qml:550
+#: content/ui/AccountHeader.qml:601
 #, kde-format
 msgid "Ownership of this link was checked on %1"
 msgstr ""
 
-#: content/ui/AccountHeader.qml:627
+#: content/ui/AccountHeader.qml:678
 #, kde-format
 msgctxt "@label:textfield"
 msgid "Private Note:"
 msgstr "निजी नोट:"
 
-#: content/ui/AccountHeader.qml:635
+#: content/ui/AccountHeader.qml:686
 #, kde-format
 msgid "Saved"
 msgstr "सहेजा गया"
 
-#: content/ui/AccountHeader.qml:650
+#: content/ui/AccountHeader.qml:701
 #, kde-format
 msgid ""
 "Write down something about this user, this isn't visible to anyone but you."
 msgstr "इस उपयोगकर्ता के बारे में कुछ लिखें, यह आपके अलावा किसी को दिखाई नहीं देगा।"
 
-#: content/ui/AccountHeader.qml:712
+#: content/ui/AccountHeader.qml:763
 #, kde-format
 msgid "Also followed by:"
 msgstr "इसके बाद यह भी आता है:"
 
-#: content/ui/AccountHeader.qml:742
+#: content/ui/AccountHeader.qml:793
 #, kde-format
 msgctxt "@action:button See all familiar followers"
 msgid "View %1 More"
 msgstr "%1 अधिक देखें"
 
-#: content/ui/AccountHeader.qml:742
+#: content/ui/AccountHeader.qml:793
 #, kde-format
 msgctxt "@action:button See all familiar followers"
 msgid "View All"
 msgstr "सभी को देखें"
 
-#: content/ui/AccountHeader.qml:782
+#: content/ui/AccountHeader.qml:833
 #, kde-format
 msgctxt "@label User's number of statuses"
 msgid "<b>%1</b> post"
@@ -756,7 +771,7 @@ msgid_plural "<b>%1</b> posts"
 msgstr[0] "<b>%1</b> पोस्ट"
 msgstr[1] "<b>%1</b> पोस्ट"
 
-#: content/ui/AccountHeader.qml:795
+#: content/ui/AccountHeader.qml:846
 #, kde-format
 msgctxt "@label User's number of followed accounts"
 msgid "<b>%1</b> follows"
@@ -764,7 +779,7 @@ msgid_plural "<b>%1</b> following"
 msgstr[0] "<b>%1</b> अनुसरण कर रहे हैं"
 msgstr[1] "<b>%1</b> अनुसरण कर रहे हैं"
 
-#: content/ui/AccountHeader.qml:808
+#: content/ui/AccountHeader.qml:859
 #, kde-format
 msgctxt "@label User's number of followers"
 msgid "<b>%1</b> follower"
@@ -772,31 +787,31 @@ msgid_plural "<b>%1</b> followers"
 msgstr[0] "<b>%1</b> अनुयायी"
 msgstr[1] "<b>%1</b> अनुयायी"
 
-#: content/ui/AccountHeader.qml:833
+#: content/ui/AccountHeader.qml:884
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts"
 msgstr "पदों"
 
-#: content/ui/AccountHeader.qml:837
+#: content/ui/AccountHeader.qml:888
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts && Replies"
 msgstr "पोस्ट और उत्तर"
 
-#: content/ui/AccountHeader.qml:841
+#: content/ui/AccountHeader.qml:892
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Media"
 msgstr "मिडिया"
 
-#: content/ui/AccountHeader.qml:872
+#: content/ui/AccountHeader.qml:923
 #, kde-format
 msgctxt "@option:check"
 msgid "Hide boosts"
 msgstr "बूस्ट छिपाएँ"
 
-#: content/ui/AccountHeader.qml:892
+#: content/ui/AccountHeader.qml:943
 #, kde-format
 msgctxt "@action:button Show all of a profile's posts"
 msgid "All"
@@ -826,13 +841,13 @@ msgstr "कोई पोस्ट नहीं"
 msgid "This user hasn't posted anything yet."
 msgstr "इस उपयोगकर्ता ने अभी तक कुछ भी पोस्ट नहीं किया है."
 
-#: content/ui/AccountInfo.qml:229
+#: content/ui/AccountInfo.qml:237
 #, kde-format
 msgctxt "@label"
 msgid "No Media"
 msgstr "कोई औसत नहीं"
 
-#: content/ui/AccountInfo.qml:230
+#: content/ui/AccountInfo.qml:238
 #, kde-format
 msgid "This user hasn't posted any media yet."
 msgstr "इस उपयोगकर्ता ने अभी तक कोई मीडिया पोस्ट नहीं किया है."
@@ -1127,14 +1142,14 @@ msgid_plural "%1 people are talking"
 msgstr[0] "%1 लोग बात कर रहे हैं"
 msgstr[1] "%1 लोग बात कर रहे हैं"
 
-#: content/ui/ExplorePage.qml:248
+#: content/ui/ExplorePage.qml:268
 #, fuzzy, kde-format
 #| msgid "News"
 msgctxt "@info:placeholder"
 msgid "No News"
 msgstr "समाचार"
 
-#: content/ui/ExplorePage.qml:285
+#: content/ui/ExplorePage.qml:305
 #, fuzzy, kde-format
 #| msgid "No Users"
 msgctxt "@info:placeholder"

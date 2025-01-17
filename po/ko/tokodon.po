@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-16 00:41+0000\n"
+"POT-Creation-Date: 2025-01-17 00:41+0000\n"
 "PO-Revision-Date: 2024-12-24 19:21+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -548,7 +548,22 @@ msgstr "신고를 배당할 수 없음"
 msgid "Could not unassign report"
 msgstr "신고를 배당 해제할 수 없음"
 
-#: content/ui/AccountHeader.qml:102
+#: content/ui/AccountHeader.qml:48
+#, fuzzy, kde-format
+#| msgid "Log in or create a new account"
+msgctxt "@info %1 is a display name"
+msgid "%1 has moved to a new account:"
+msgstr "기존 계정에 로그인하거나 새 계정 만들기"
+
+#: content/ui/AccountHeader.qml:85
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "Pin on Profile"
+msgctxt "@action:button"
+msgid "Go to Profile"
+msgstr "프로필에 고정"
+
+#: content/ui/AccountHeader.qml:153
 #, kde-format
 msgctxt ""
 "'Mutual' is the common English word used in social media platforms describe "
@@ -557,240 +572,240 @@ msgctxt ""
 msgid "Mutual"
 msgstr "상호"
 
-#: content/ui/AccountHeader.qml:102
+#: content/ui/AccountHeader.qml:153
 #, kde-format
 msgid "Follows you"
 msgstr "나를 팔로우함"
 
-#: content/ui/AccountHeader.qml:123
+#: content/ui/AccountHeader.qml:174
 #, kde-format
 msgid "Bot"
 msgstr "봇"
 
-#: content/ui/AccountHeader.qml:234
+#: content/ui/AccountHeader.qml:285
 #, kde-format
 msgid "Follow Requested"
 msgstr "팔로우 요청됨"
 
-#: content/ui/AccountHeader.qml:237
+#: content/ui/AccountHeader.qml:288
 #, kde-format
 msgid "Unfollow"
 msgstr "팔로우 해제"
 
-#: content/ui/AccountHeader.qml:239
+#: content/ui/AccountHeader.qml:290
 #, kde-format
 msgid "Follow"
 msgstr "팔로우"
 
-#: content/ui/AccountHeader.qml:264
+#: content/ui/AccountHeader.qml:315
 #, kde-format
 msgid "Stop notifying me when %1 posts."
 msgstr "%1 님이 올린 게시물 알림을 더 이상 받지 않습니다."
 
-#: content/ui/AccountHeader.qml:266
+#: content/ui/AccountHeader.qml:317
 #, kde-format
 msgid "Notify me when %1 posts."
 msgstr "%1 님이 올린 게시물 알림을 받습니다."
 
-#: content/ui/AccountHeader.qml:281
+#: content/ui/AccountHeader.qml:332
 #, fuzzy, kde-format
 #| msgid "Enable notifications for this account"
 msgctxt "@info:tooltip"
 msgid "Show a QR code for this account"
 msgstr "이 계정의 알림 활성화"
 
-#: content/ui/AccountHeader.qml:294
+#: content/ui/AccountHeader.qml:345
 #, kde-format
 msgid "Mention…"
 msgstr "멘션…"
 
-#: content/ui/AccountHeader.qml:300
+#: content/ui/AccountHeader.qml:351
 #, kde-format
 msgid "Start a Conversation…"
 msgstr "대화 시작하기…"
 
-#: content/ui/AccountHeader.qml:309
+#: content/ui/AccountHeader.qml:360
 #, kde-format
 msgid "Hide Boosts from %1"
 msgstr "%1 님의 부스트 숨기기"
 
-#: content/ui/AccountHeader.qml:311
+#: content/ui/AccountHeader.qml:362
 #, kde-format
 msgid "Show Boosts from %1"
 msgstr "%1 님의 부스트 표시"
 
-#: content/ui/AccountHeader.qml:327
+#: content/ui/AccountHeader.qml:378
 #, kde-format
 msgid "Stop Featuring This Profile"
 msgstr "이 프로필 추천 숨기기"
 
-#: content/ui/AccountHeader.qml:329
+#: content/ui/AccountHeader.qml:380
 #, kde-format
 msgid "Feature This Profile"
 msgstr "이 프로필 추천"
 
-#: content/ui/AccountHeader.qml:345
+#: content/ui/AccountHeader.qml:396
 #, kde-format
 msgid "Unmute"
 msgstr "음소거 해제"
 
-#: content/ui/AccountHeader.qml:347
+#: content/ui/AccountHeader.qml:398
 #, kde-format
 msgid "Mute"
 msgstr "뮤트"
 
-#: content/ui/AccountHeader.qml:363
+#: content/ui/AccountHeader.qml:414
 #, kde-format
 msgid "Unblock"
 msgstr "차단 해제"
 
-#: content/ui/AccountHeader.qml:365
+#: content/ui/AccountHeader.qml:416
 #, kde-format
 msgid "Block"
 msgstr "차단"
 
-#: content/ui/AccountHeader.qml:379 content/ui/PostDelegate/PostMenu.qml:187
+#: content/ui/AccountHeader.qml:430 content/ui/PostDelegate/PostMenu.qml:187
 #, kde-format
 msgctxt "@action:inmenu Report this post"
 msgid "Report…"
 msgstr "신고…"
 
-#: content/ui/AccountHeader.qml:385
+#: content/ui/AccountHeader.qml:436
 #, kde-format
 msgid "Edit Profile"
 msgstr "프로필 편집"
 
-#: content/ui/AccountHeader.qml:389
+#: content/ui/AccountHeader.qml:440
 #, kde-format
 msgid "Account editor"
 msgstr "계정 편집기"
 
-#: content/ui/AccountHeader.qml:399
+#: content/ui/AccountHeader.qml:450
 #, kde-format
 msgid "Featured Users"
 msgstr "추천 사용자"
 
-#: content/ui/AccountHeader.qml:405
+#: content/ui/AccountHeader.qml:456
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Scheduled Posts"
 msgstr "예약된 게시물"
 
-#: content/ui/AccountHeader.qml:419
+#: content/ui/AccountHeader.qml:470
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Draft Posts"
 msgstr "초안 게시물"
 
-#: content/ui/AccountHeader.qml:432 content/ui/PostDelegate/LinkMenu.qml:25
+#: content/ui/AccountHeader.qml:483 content/ui/PostDelegate/LinkMenu.qml:25
 #: content/ui/PostDelegate/PostMenu.qml:51
 #, kde-format
 msgctxt "@action:inmenu 'Browser' being a web browser"
 msgid "Open in Browser"
 msgstr "브라우저로 열기"
 
-#: content/ui/AccountHeader.qml:437
+#: content/ui/AccountHeader.qml:488
 #, kde-format
 msgid "Copy Link"
 msgstr "링크 복사"
 
-#: content/ui/AccountHeader.qml:440
+#: content/ui/AccountHeader.qml:491
 #, kde-format
 msgid "Profile link copied."
 msgstr "프로필 링크를 복사했습니다."
 
-#: content/ui/AccountHeader.qml:510
+#: content/ui/AccountHeader.qml:561
 #, kde-format
 msgctxt "@info:label Joined at"
 msgid "Joined"
 msgstr "가입 시간"
 
-#: content/ui/AccountHeader.qml:550
+#: content/ui/AccountHeader.qml:601
 #, kde-format
 msgid "Ownership of this link was checked on %1"
 msgstr "이 링크의 소유권이 %1에 확인됨"
 
-#: content/ui/AccountHeader.qml:627
+#: content/ui/AccountHeader.qml:678
 #, kde-format
 msgctxt "@label:textfield"
 msgid "Private Note:"
 msgstr "개인 메모:"
 
-#: content/ui/AccountHeader.qml:635
+#: content/ui/AccountHeader.qml:686
 #, kde-format
 msgid "Saved"
 msgstr "저장됨"
 
-#: content/ui/AccountHeader.qml:650
+#: content/ui/AccountHeader.qml:701
 #, kde-format
 msgid ""
 "Write down something about this user, this isn't visible to anyone but you."
 msgstr ""
 "이 사용자에 대한 메모를 작성할 수 있습니다. 다른 사람에게 표시되지 않습니다."
 
-#: content/ui/AccountHeader.qml:712
+#: content/ui/AccountHeader.qml:763
 #, kde-format
 msgid "Also followed by:"
 msgstr "다음 사람도 팔로우함:"
 
-#: content/ui/AccountHeader.qml:742
+#: content/ui/AccountHeader.qml:793
 #, kde-format
 msgctxt "@action:button See all familiar followers"
 msgid "View %1 More"
 msgstr "%1명 더 보기"
 
-#: content/ui/AccountHeader.qml:742
+#: content/ui/AccountHeader.qml:793
 #, kde-format
 msgctxt "@action:button See all familiar followers"
 msgid "View All"
 msgstr "모두 보기"
 
-#: content/ui/AccountHeader.qml:782
+#: content/ui/AccountHeader.qml:833
 #, kde-format
 msgctxt "@label User's number of statuses"
 msgid "<b>%1</b> post"
 msgid_plural "<b>%1</b> posts"
 msgstr[0] "게시물 <b>%1</b>개"
 
-#: content/ui/AccountHeader.qml:795
+#: content/ui/AccountHeader.qml:846
 #, kde-format
 msgctxt "@label User's number of followed accounts"
 msgid "<b>%1</b> follows"
 msgid_plural "<b>%1</b> following"
 msgstr[0] "<b>%1</b>명이 팔로우 중"
 
-#: content/ui/AccountHeader.qml:808
+#: content/ui/AccountHeader.qml:859
 #, kde-format
 msgctxt "@label User's number of followers"
 msgid "<b>%1</b> follower"
 msgid_plural "<b>%1</b> followers"
 msgstr[0] "팔로워 <b>%1</b>명"
 
-#: content/ui/AccountHeader.qml:833
+#: content/ui/AccountHeader.qml:884
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts"
 msgstr "게시물"
 
-#: content/ui/AccountHeader.qml:837
+#: content/ui/AccountHeader.qml:888
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts && Replies"
 msgstr "게시물과 답장"
 
-#: content/ui/AccountHeader.qml:841
+#: content/ui/AccountHeader.qml:892
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Media"
 msgstr "미디어"
 
-#: content/ui/AccountHeader.qml:872
+#: content/ui/AccountHeader.qml:923
 #, kde-format
 msgctxt "@option:check"
 msgid "Hide boosts"
 msgstr "부스트 숨기기"
 
-#: content/ui/AccountHeader.qml:892
+#: content/ui/AccountHeader.qml:943
 #, kde-format
 msgctxt "@action:button Show all of a profile's posts"
 msgid "All"
@@ -820,13 +835,13 @@ msgstr "게시물 없음"
 msgid "This user hasn't posted anything yet."
 msgstr "이 사용자의 게시물이 없습니다."
 
-#: content/ui/AccountInfo.qml:229
+#: content/ui/AccountInfo.qml:237
 #, kde-format
 msgctxt "@label"
 msgid "No Media"
 msgstr "미디어 없음"
 
-#: content/ui/AccountInfo.qml:230
+#: content/ui/AccountInfo.qml:238
 #, kde-format
 msgid "This user hasn't posted any media yet."
 msgstr "이 사용자가 게시한 미디어가 없습니다."
@@ -1118,14 +1133,14 @@ msgid "%1 person is talking"
 msgid_plural "%1 people are talking"
 msgstr[0] "%1명이 대화 중"
 
-#: content/ui/ExplorePage.qml:248
+#: content/ui/ExplorePage.qml:268
 #, fuzzy, kde-format
 #| msgid "News"
 msgctxt "@info:placeholder"
 msgid "No News"
 msgstr "뉴스"
 
-#: content/ui/ExplorePage.qml:285
+#: content/ui/ExplorePage.qml:305
 #, fuzzy, kde-format
 #| msgid "No Users"
 msgctxt "@info:placeholder"

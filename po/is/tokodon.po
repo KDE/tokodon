@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-16 00:41+0000\n"
+"POT-Creation-Date: 2025-01-17 00:41+0000\n"
 "PO-Revision-Date: 2022-10-14 14:00+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -575,7 +575,21 @@ msgstr "Gat ekki þaggað niður í notandaaðgangi"
 msgid "Could not unassign report"
 msgstr "Gat ekki hætt að þagga niður í notandaaðgangi"
 
-#: content/ui/AccountHeader.qml:102
+#: content/ui/AccountHeader.qml:48
+#, fuzzy, kde-format
+#| msgid "Could not feature account"
+msgctxt "@info %1 is a display name"
+msgid "%1 has moved to a new account:"
+msgstr "Gat ekki sett notandaaðgang í forgrunn"
+
+#: content/ui/AccountHeader.qml:85
+#, fuzzy, kde-format
+#| msgid "Feature on profile"
+msgctxt "@action:button"
+msgid "Go to Profile"
+msgstr "Birta í forgrunni á notandasniði"
+
+#: content/ui/AccountHeader.qml:153
 #, kde-format
 msgctxt ""
 "'Mutual' is the common English word used in social media platforms describe "
@@ -584,219 +598,219 @@ msgctxt ""
 msgid "Mutual"
 msgstr ""
 
-#: content/ui/AccountHeader.qml:102
+#: content/ui/AccountHeader.qml:153
 #, fuzzy, kde-format
 #| msgid "Follow"
 msgid "Follows you"
 msgstr "Fylgjast með"
 
-#: content/ui/AccountHeader.qml:123
+#: content/ui/AccountHeader.qml:174
 #, fuzzy, kde-format
 #| msgctxt "Share a post"
 #| msgid "Boost"
 msgid "Bot"
 msgstr "Endurbirta"
 
-#: content/ui/AccountHeader.qml:234
+#: content/ui/AccountHeader.qml:285
 #, fuzzy, kde-format
 #| msgid "Follow"
 msgid "Follow Requested"
 msgstr "Fylgjast með"
 
-#: content/ui/AccountHeader.qml:237
+#: content/ui/AccountHeader.qml:288
 #, fuzzy, kde-format
 #| msgid "Follow"
 msgid "Unfollow"
 msgstr "Fylgjast með"
 
-#: content/ui/AccountHeader.qml:239
+#: content/ui/AccountHeader.qml:290
 #, kde-format
 msgid "Follow"
 msgstr "Fylgjast með"
 
-#: content/ui/AccountHeader.qml:264
+#: content/ui/AccountHeader.qml:315
 #, fuzzy, kde-format
 #| msgid "Stop notifying me when %1 posts"
 msgid "Stop notifying me when %1 posts."
 msgstr "Hætta að láta mig vita þegar %1 sendir inn"
 
-#: content/ui/AccountHeader.qml:266
+#: content/ui/AccountHeader.qml:317
 #, fuzzy, kde-format
 #| msgid "Notify me when %1 posts"
 msgid "Notify me when %1 posts."
 msgstr "Láta mig vita þegar %1 sendir inn"
 
-#: content/ui/AccountHeader.qml:281
+#: content/ui/AccountHeader.qml:332
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show a QR code for this account"
 msgstr ""
 
-#: content/ui/AccountHeader.qml:294
+#: content/ui/AccountHeader.qml:345
 #, fuzzy, kde-format
 #| msgctxt "Show only mentions"
 #| msgid "Mentions"
 msgid "Mention…"
 msgstr "Minnst á"
 
-#: content/ui/AccountHeader.qml:300
+#: content/ui/AccountHeader.qml:351
 #, fuzzy, kde-format
 #| msgctxt "Show only mentions"
 #| msgid "Mentions"
 msgid "Start a Conversation…"
 msgstr "Minnst á"
 
-#: content/ui/AccountHeader.qml:309
+#: content/ui/AccountHeader.qml:360
 #, fuzzy, kde-format
 #| msgid "Hide boosts from %1"
 msgid "Hide Boosts from %1"
 msgstr "Fela endurbirtingar frá %1"
 
-#: content/ui/AccountHeader.qml:311
+#: content/ui/AccountHeader.qml:362
 #, fuzzy, kde-format
 #| msgid "Stop hiding boosts from %1"
 msgid "Show Boosts from %1"
 msgstr "Hætta að fela endurbirtingar frá %1"
 
-#: content/ui/AccountHeader.qml:327
+#: content/ui/AccountHeader.qml:378
 #, fuzzy, kde-format
 #| msgid "Stop featuring on profile"
 msgid "Stop Featuring This Profile"
 msgstr "Hætta að birta á notandasniði"
 
-#: content/ui/AccountHeader.qml:329
+#: content/ui/AccountHeader.qml:380
 #, fuzzy, kde-format
 #| msgid "Feature on profile"
 msgid "Feature This Profile"
 msgstr "Birta í forgrunni á notandasniði"
 
-#: content/ui/AccountHeader.qml:345
+#: content/ui/AccountHeader.qml:396
 #, kde-format
 msgid "Unmute"
 msgstr ""
 
-#: content/ui/AccountHeader.qml:347
+#: content/ui/AccountHeader.qml:398
 #, kde-format
 msgid "Mute"
 msgstr "Þagga niður"
 
-#: content/ui/AccountHeader.qml:363
+#: content/ui/AccountHeader.qml:414
 #, fuzzy, kde-format
 #| msgid "Block"
 msgid "Unblock"
 msgstr "Útiloka"
 
-#: content/ui/AccountHeader.qml:365
+#: content/ui/AccountHeader.qml:416
 #, kde-format
 msgid "Block"
 msgstr "Útiloka"
 
-#: content/ui/AccountHeader.qml:379 content/ui/PostDelegate/PostMenu.qml:187
+#: content/ui/AccountHeader.qml:430 content/ui/PostDelegate/PostMenu.qml:187
 #, kde-format
 msgctxt "@action:inmenu Report this post"
 msgid "Report…"
 msgstr ""
 
-#: content/ui/AccountHeader.qml:385
+#: content/ui/AccountHeader.qml:436
 #, fuzzy, kde-format
 #| msgid "Feature on profile"
 msgid "Edit Profile"
 msgstr "Birta í forgrunni á notandasniði"
 
-#: content/ui/AccountHeader.qml:389
+#: content/ui/AccountHeader.qml:440
 #, fuzzy, kde-format
 #| msgid "Accounts"
 msgid "Account editor"
 msgstr "Notandaaðgangar"
 
-#: content/ui/AccountHeader.qml:399
+#: content/ui/AccountHeader.qml:450
 #, fuzzy, kde-format
 #| msgid "Accounts"
 msgid "Featured Users"
 msgstr "Notandaaðgangar"
 
-#: content/ui/AccountHeader.qml:405
+#: content/ui/AccountHeader.qml:456
 #, fuzzy, kde-format
 #| msgid "Delete word"
 msgctxt "@action:inmenu"
 msgid "Scheduled Posts"
 msgstr "Eyða orði"
 
-#: content/ui/AccountHeader.qml:419
+#: content/ui/AccountHeader.qml:470
 #, fuzzy, kde-format
 #| msgid "Delete word"
 msgctxt "@action:inmenu"
 msgid "Draft Posts"
 msgstr "Eyða orði"
 
-#: content/ui/AccountHeader.qml:432 content/ui/PostDelegate/LinkMenu.qml:25
+#: content/ui/AccountHeader.qml:483 content/ui/PostDelegate/LinkMenu.qml:25
 #: content/ui/PostDelegate/PostMenu.qml:51
 #, kde-format
 msgctxt "@action:inmenu 'Browser' being a web browser"
 msgid "Open in Browser"
 msgstr ""
 
-#: content/ui/AccountHeader.qml:437
+#: content/ui/AccountHeader.qml:488
 #, fuzzy, kde-format
 #| msgid "Copy link"
 msgid "Copy Link"
 msgstr "Afrita tengil"
 
-#: content/ui/AccountHeader.qml:440
+#: content/ui/AccountHeader.qml:491
 #, kde-format
 msgid "Profile link copied."
 msgstr ""
 
-#: content/ui/AccountHeader.qml:510
+#: content/ui/AccountHeader.qml:561
 #, kde-format
 msgctxt "@info:label Joined at"
 msgid "Joined"
 msgstr ""
 
-#: content/ui/AccountHeader.qml:550
+#: content/ui/AccountHeader.qml:601
 #, kde-format
 msgid "Ownership of this link was checked on %1"
 msgstr ""
 
-#: content/ui/AccountHeader.qml:627
+#: content/ui/AccountHeader.qml:678
 #, fuzzy, kde-format
 #| msgid "Private"
 msgctxt "@label:textfield"
 msgid "Private Note:"
 msgstr "Einka"
 
-#: content/ui/AccountHeader.qml:635
+#: content/ui/AccountHeader.qml:686
 #, kde-format
 msgid "Saved"
 msgstr ""
 
-#: content/ui/AccountHeader.qml:650
+#: content/ui/AccountHeader.qml:701
 #, kde-format
 msgid ""
 "Write down something about this user, this isn't visible to anyone but you."
 msgstr ""
 
-#: content/ui/AccountHeader.qml:712
+#: content/ui/AccountHeader.qml:763
 #, fuzzy, kde-format
 #| msgid "%1 followed you"
 msgid "Also followed by:"
 msgstr "%1 fylgist núna með þér"
 
-#: content/ui/AccountHeader.qml:742
+#: content/ui/AccountHeader.qml:793
 #, fuzzy, kde-format
 #| msgid "Feature on profile"
 msgctxt "@action:button See all familiar followers"
 msgid "View %1 More"
 msgstr "Birta í forgrunni á notandasniði"
 
-#: content/ui/AccountHeader.qml:742
+#: content/ui/AccountHeader.qml:793
 #, fuzzy, kde-format
 #| msgid "Feature on profile"
 msgctxt "@action:button See all familiar followers"
 msgid "View All"
 msgstr "Birta í forgrunni á notandasniði"
 
-#: content/ui/AccountHeader.qml:782
+#: content/ui/AccountHeader.qml:833
 #, fuzzy, kde-format
 #| msgid "%1 followers"
 msgctxt "@label User's number of statuses"
@@ -805,7 +819,7 @@ msgid_plural "<b>%1</b> posts"
 msgstr[0] "%1 fylgjendur"
 msgstr[1] "%1 fylgjendur"
 
-#: content/ui/AccountHeader.qml:795
+#: content/ui/AccountHeader.qml:846
 #, fuzzy, kde-format
 #| msgid "%1 followers"
 msgctxt "@label User's number of followed accounts"
@@ -814,7 +828,7 @@ msgid_plural "<b>%1</b> following"
 msgstr[0] "%1 fylgjendur"
 msgstr[1] "%1 fylgjendur"
 
-#: content/ui/AccountHeader.qml:808
+#: content/ui/AccountHeader.qml:859
 #, fuzzy, kde-format
 #| msgid "%1 followers"
 msgctxt "@label User's number of followers"
@@ -823,7 +837,7 @@ msgid_plural "<b>%1</b> followers"
 msgstr[0] "%1 fylgjendur"
 msgstr[1] "%1 fylgjendur"
 
-#: content/ui/AccountHeader.qml:833
+#: content/ui/AccountHeader.qml:884
 #, fuzzy, kde-format
 #| msgctxt "Share a post"
 #| msgid "Boost"
@@ -831,26 +845,26 @@ msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts"
 msgstr "Endurbirta"
 
-#: content/ui/AccountHeader.qml:837
+#: content/ui/AccountHeader.qml:888
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts && Replies"
 msgstr ""
 
-#: content/ui/AccountHeader.qml:841
+#: content/ui/AccountHeader.qml:892
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Media"
 msgstr ""
 
-#: content/ui/AccountHeader.qml:872
+#: content/ui/AccountHeader.qml:923
 #, fuzzy, kde-format
 #| msgid "Hide boosts from %1"
 msgctxt "@option:check"
 msgid "Hide boosts"
 msgstr "Fela endurbirtingar frá %1"
 
-#: content/ui/AccountHeader.qml:892
+#: content/ui/AccountHeader.qml:943
 #, fuzzy, kde-format
 #| msgctxt "Show all notifications"
 #| msgid "All"
@@ -887,13 +901,13 @@ msgstr "Endurbirta"
 msgid "This user hasn't posted anything yet."
 msgstr ""
 
-#: content/ui/AccountInfo.qml:229
+#: content/ui/AccountInfo.qml:237
 #, kde-format
 msgctxt "@label"
 msgid "No Media"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:230
+#: content/ui/AccountInfo.qml:238
 #, kde-format
 msgid "This user hasn't posted any media yet."
 msgstr ""
@@ -1203,13 +1217,13 @@ msgid_plural "%1 people are talking"
 msgstr[0] ""
 msgstr[1] ""
 
-#: content/ui/ExplorePage.qml:248
+#: content/ui/ExplorePage.qml:268
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No News"
 msgstr ""
 
-#: content/ui/ExplorePage.qml:285
+#: content/ui/ExplorePage.qml:305
 #, fuzzy, kde-format
 #| msgid "Username:"
 msgctxt "@info:placeholder"
