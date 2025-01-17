@@ -30,7 +30,7 @@ Components.AlbumMaximizeComponent {
         },
         Kirigami.Action {
             icon.name: "view-conversation-balloon-symbolic"
-            text: i18c("@action:intoolbar", "Open Post")
+            text: i18nc("@action:intoolbar", "Open Post")
             visible: root.postId !== ""
             onTriggered: {
                 close();
