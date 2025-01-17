@@ -19,7 +19,6 @@ Kirigami.ScrollablePage {
     property bool expandedPost: false
     property alias listViewHeader: listview.header
     property alias showPostAction: postAction.visible
-    property bool completedInitialLoad: false
     property alias listView: listview
     readonly property bool showReplies: showRepliesAction.checked
     readonly property bool showBoosts: showBoostsAction.checked

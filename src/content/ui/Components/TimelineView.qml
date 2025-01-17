@@ -22,8 +22,6 @@ ListView {
     // Set to the original post URL to show the "show more replies" message
     property string originalPostUrl
 
-    property bool completedInitialLoad: false
-
     // This causes jumping on the timeline. needs more investigation before it's re-enabled
     reuseItems: false
 
@@ -49,12 +47,6 @@ ListView {
                 backend: backend
             });
             item.refreshData(); // to refresh spoiler text, etc
-        }
-
-        function onLoadingChanged(): void {
-            if (!root.model.loading) {
-                root.completedInitialLoad = true;
-            }
         }
 
         function onRepositionAt(index): void {
@@ -100,7 +92,7 @@ ListView {
             topMargin: root.headerItem ? root.headerItem.height : 0
         }
 
-        visible: root.model.loading && !root.completedInitialLoad
+        visible: root.model.loading && root.count === 0
 
         color: Kirigami.Theme.backgroundColor
 
