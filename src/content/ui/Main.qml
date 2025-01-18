@@ -3,9 +3,12 @@
 // SPDX-FileCopyrightText: 2020 Devin Lin <espidev@gmail.com>
 // SPDX-License-Identifier: GPL-3.0-only
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import org.kde.kirigami 2 as Kirigami
 import QtQuick.Controls 2 as QQC2
+import QtQuick.Templates as T
 import QtQuick.Layouts
 import QtQml.Models
 import org.kde.tokodon
@@ -619,10 +622,61 @@ StatefulApp.StatefulWindow {
     property Component listTimelinePage: Qt.createComponent("org.kde.tokodon", "ListTimelinePage", Qt.Asynchronous)
 
     property Kirigami.NavigationTabBar tabBar: Kirigami.NavigationTabBar {
+        id: tabbar
+
         // Make sure we take in count drawer width
         visible: pageStack.layers.depth <= 1 && AccountManager.hasAccounts && !root.wideMode && AccountManager.isReady
-        actions: [homeAction, notificationAction, exploreAction, profileAction]
         enabled: !AccountManager.selectedAccountHasIssue
+
+        contentItem: RowLayout {
+            spacing: 0
+
+            Repeater {
+                model: [homeAction, notificationAction, exploreAction, profileAction]
+
+                delegate: Kirigami.NavigationTabButton {
+                    id: delegateButton
+
+                    required property T.Action modelData
+
+                    text: modelData.text
+                    icon.name: modelData.icon.name
+                    checked: modelData.checked
+
+                    onClicked: modelData.trigger()
+
+                    Layout.minimumWidth: tabbar.buttonWidth
+                    Layout.maximumWidth: tabbar.buttonWidth
+                    Layout.fillHeight: true
+
+                    // Notification indicator
+                    Rectangle {
+                        anchors {
+                            top: parent.top
+                            topMargin: Kirigami.Units.mediumSpacing
+                            right: parent.right
+                            rightMargin: Kirigami.Units.mediumSpacing
+                        }
+
+                        color: Kirigami.Theme.highlightColor
+
+                        width: 20
+                        height: width
+                        radius: width
+                        visible: delegateButton.modelData.alertCount > 0
+
+                        QQC2.Label {
+                            anchors {
+                                centerIn: parent
+                            }
+
+                            text: delegateButton.modelData.alertCount ?? ""
+                            horizontalAlignment: Text.AlignHCenter
+                        }
+                    }
+                }
+            }
+        }
     }
 
     footer: !root.wideMode ? tabBar : null
