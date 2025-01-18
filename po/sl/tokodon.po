@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-17 00:41+0000\n"
-"PO-Revision-Date: 2025-01-16 09:03+0100\n"
+"POT-Creation-Date: 2025-01-18 00:41+0000\n"
+"PO-Revision-Date: 2025-01-17 07:46+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -555,19 +555,16 @@ msgid "Could not unassign report"
 msgstr "Prijave ni bilo mogoče oddeliti"
 
 #: content/ui/AccountHeader.qml:48
-#, fuzzy, kde-format
-#| msgid "Log in or create a new account"
+#, kde-format
 msgctxt "@info %1 is a display name"
 msgid "%1 has moved to a new account:"
-msgstr "Prijavi se ali ustvari nov račun"
+msgstr "%1 se je preselil na nov račun:"
 
 #: content/ui/AccountHeader.qml:85
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Pin on Profile"
+#, kde-format
 msgctxt "@action:button"
 msgid "Go to Profile"
-msgstr "Pripni na profil"
+msgstr "Pojdi na profil"
 
 #: content/ui/AccountHeader.qml:153
 #, kde-format
@@ -831,7 +828,7 @@ msgid "Profile"
 msgstr "Profil"
 
 #: content/ui/AccountInfo.qml:57 content/ui/ExplorePage.qml:35
-#: content/ui/TimelinePage.qml:96
+#: content/ui/TimelinePage.qml:95
 #, kde-format
 msgctxt "@action:button"
 msgid "Post"
@@ -917,30 +914,30 @@ msgstr "Poglej profil"
 msgid "No emojis"
 msgstr "Ni čustvenčkov"
 
-#: content/ui/Components/TimelineView.qml:73
+#: content/ui/Components/TimelineView.qml:65
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Return to Top"
 msgstr "Vrni se na vrh"
 
-#: content/ui/Components/TimelineView.qml:137
+#: content/ui/Components/TimelineView.qml:129
 #, kde-format
 msgctxt "@info:status"
 msgid "Some replies are not available"
 msgstr "Nekaj odgovorov ni na voljo"
 
-#: content/ui/Components/TimelineView.qml:138
+#: content/ui/Components/TimelineView.qml:130
 #, kde-format
 msgid "To view all replies, open the post on the original server."
 msgstr "Za ogled vseh odgovorov, odprite objavo na izvirnem strežniku."
 
-#: content/ui/Components/TimelineView.qml:141
+#: content/ui/Components/TimelineView.qml:133
 #, kde-format
 msgctxt "@action:button 'Browser' being a web browser"
 msgid "Open in Browser"
 msgstr "Odpri v brskalniku"
 
-#: content/ui/Components/TimelineView.qml:150
+#: content/ui/Components/TimelineView.qml:142
 #, kde-format
 msgctxt "@info:status"
 msgid "End of Timeline"
@@ -1168,7 +1165,8 @@ msgctxt "@title 'Following' as in the users you're following on Mastodon."
 msgid "Following"
 msgstr "Sledenje"
 
-#: content/ui/FollowingPage.qml:43 content/ui/TimelinePage.qml:102
+#: content/ui/FollowingPage.qml:43 content/ui/Settings/SafetyPage.qml:26
+#: content/ui/TimelinePage.qml:101
 #, kde-format
 msgctxt "@action:button"
 msgid "Filters"
@@ -1199,6 +1197,14 @@ msgid ""
 msgstr ""
 "S pogledom Sledi preprosto preverite vsakega uporabnika, ki ga sledite, in "
 "samo njegove objave – razvrščene po nedavni dejavnosti."
+
+#: content/ui/FullScreenImage.qml:33
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "Expand Post"
+msgctxt "@action:intoolbar"
+msgid "Open Post"
+msgstr "Razširi objavo"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:19
 #, kde-format
@@ -4173,6 +4179,169 @@ msgstr ""
 msgid "Auto-play animated GIFs"
 msgstr "Samodejno predvajaj animirane GIFe"
 
+#: content/ui/Settings/EditFilterPage.qml:30
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Create List"
+msgctxt "@title:window"
+msgid "Create Filter"
+msgstr "Ustvari seznam"
+
+#: content/ui/Settings/EditFilterPage.qml:30
+#, fuzzy, kde-format
+#| msgctxt "@info:Option Filter and send to the filtered inbox"
+#| msgid "Filter"
+msgctxt "@title:window"
+msgid "Edit Filter"
+msgstr "Filter"
+
+#: content/ui/Settings/EditFilterPage.qml:73
+#, fuzzy, kde-format
+#| msgctxt "@label:textbox List title"
+#| msgid "Title"
+msgctxt "@label:textbox Filter title"
+msgid "Title"
+msgstr "Naslov"
+
+#: content/ui/Settings/EditFilterPage.qml:78
+#, fuzzy, kde-format
+#| msgid "Continue"
+msgctxt "@info:header"
+msgid "Contexts"
+msgstr "Nadaljuj"
+
+#: content/ui/Settings/EditFilterPage.qml:85
+#, kde-format
+msgctxt "@info"
+msgid "Select one or more contexts where this filter should apply:"
+msgstr ""
+
+#: content/ui/Settings/EditFilterPage.qml:90
+#, fuzzy, kde-format
+#| msgid "No Lists"
+msgctxt "@label:checkbox"
+msgid "Home and Lists"
+msgstr "Ni seznamov"
+
+#: content/ui/Settings/EditFilterPage.qml:95
+#, fuzzy, kde-format
+#| msgid "Notifications"
+msgctxt "@label:checkbox"
+msgid "Notifications"
+msgstr "Obvestila"
+
+#: content/ui/Settings/EditFilterPage.qml:100
+#, fuzzy, kde-format
+#| msgid "Global Timeline"
+msgctxt "@label:checkbox"
+msgid "Public Timelines"
+msgstr "Globalna časovnica"
+
+#: content/ui/Settings/EditFilterPage.qml:105
+#, fuzzy, kde-format
+#| msgid "Conversations"
+msgctxt "@label:checkbox"
+msgid "Conversations"
+msgstr "Pogovori"
+
+#: content/ui/Settings/EditFilterPage.qml:110
+#, fuzzy, kde-format
+#| msgid "Profile"
+msgctxt "@label:checkbox"
+msgid "Profiles"
+msgstr "Profil"
+
+#: content/ui/Settings/EditFilterPage.qml:115
+#, fuzzy, kde-format
+#| msgctxt "@info:Location combobox to choose location filters"
+#| msgid "Location"
+msgctxt "@info:header"
+msgid "Action"
+msgstr "Lokacija"
+
+#: content/ui/Settings/EditFilterPage.qml:123
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Content Notice"
+msgctxt "@label:radiobutton"
+msgid "Hide with Content Notice"
+msgstr "Obvestilo o vsebini"
+
+#: content/ui/Settings/EditFilterPage.qml:129
+#, fuzzy, kde-format
+#| msgctxt "@option:check Poll toolbar"
+#| msgid "Hide totals"
+msgctxt "@label:radiobutton"
+msgid "Hide Completely"
+msgstr "Skrij štetja"
+
+#: content/ui/Settings/EditFilterPage.qml:135
+#, kde-format
+msgctxt "@info:header"
+msgid "Keywords"
+msgstr ""
+
+#: content/ui/Settings/EditFilterPage.qml:165
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Delete word"
+msgctxt "@label:checkbox"
+msgid "Whole word"
+msgstr "Izbriši besedo"
+
+#: content/ui/Settings/EditFilterPage.qml:171
+#, fuzzy, kde-format
+#| msgid "Remove"
+msgctxt "@action:button Remove keyword"
+msgid "Remove"
+msgstr "Odstrani"
+
+#: content/ui/Settings/EditFilterPage.qml:180
+#, fuzzy, kde-format
+#| msgctxt "@action:button Add user to this list"
+#| msgid "Add"
+msgctxt "@action:button Add keyword"
+msgid "Add"
+msgstr "Dodaj"
+
+#: content/ui/Settings/EditFilterPage.qml:205
+#, fuzzy, kde-format
+#| msgctxt "@action:button Create the list"
+#| msgid "Create"
+msgctxt "@action:button Create the filter"
+msgid "Create"
+msgstr "Ustvari"
+
+#: content/ui/Settings/EditFilterPage.qml:207
+#, fuzzy, kde-format
+#| msgid "Edit"
+msgctxt "@action:button Edit the filter"
+msgid "Edit"
+msgstr "Uredi"
+
+#: content/ui/Settings/EditFilterPage.qml:220
+#, fuzzy, kde-format
+#| msgid "Delete"
+msgctxt "@action:button Delete the filter"
+msgid "Delete"
+msgstr "Izbriši"
+
+#: content/ui/Settings/EditFilterPage.qml:227
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Deleting List"
+msgctxt "@title"
+msgid "Deleting Filter"
+msgstr "Brisanje seznama"
+
+#: content/ui/Settings/EditFilterPage.qml:228
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Are you sure you want to delete this list?"
+msgctxt "@label"
+msgid "Are you sure you want to delete this filter?"
+msgstr "Ali ste prepričani, da želite izbrisati ta seznam?"
+
 #: content/ui/Settings/EditProfilePage.qml:26
 #, kde-format
 msgctxt "@title:window"
@@ -4202,6 +4371,29 @@ msgstr "Kopiraj na odložišče"
 msgctxt "@label"
 msgid "No Errors"
 msgstr "Ni napak"
+
+#: content/ui/Settings/FiltersPage.qml:21
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Filters"
+msgctxt "@title"
+msgid "Filters"
+msgstr "Filtri"
+
+#: content/ui/Settings/FiltersPage.qml:28
+#, fuzzy, kde-format
+#| msgid "Create List"
+msgctxt "@action:intoolbar"
+msgid "Create Filter"
+msgstr "Ustvari seznam"
+
+#: content/ui/Settings/FiltersPage.qml:79
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Filters"
+msgctxt "@info:placeholder"
+msgid "No Filters"
+msgstr "Filtri"
 
 #: content/ui/Settings/NetworkProxyPage.qml:15
 #, kde-format
@@ -4542,12 +4734,12 @@ msgstr "Dodaj"
 msgid "Reset"
 msgstr "Ponastavi"
 
-#: content/ui/Settings/SafetyPage.qml:26
+#: content/ui/Settings/SafetyPage.qml:34
 #, kde-format
 msgid "Muted Users"
 msgstr "Utišani uporabniki"
 
-#: content/ui/Settings/SafetyPage.qml:34
+#: content/ui/Settings/SafetyPage.qml:42
 #, kde-format
 msgid "Blocked Users"
 msgstr "Blokirani uporabniki"
@@ -4941,33 +5133,33 @@ msgctxt "@action:Button Save an edited a post"
 msgid "Save"
 msgstr "Shrani"
 
-#: content/ui/TimelinePage.qml:39 timeline/accountmodel.cpp:41
+#: content/ui/TimelinePage.qml:38 timeline/accountmodel.cpp:41
 #, kde-format
 msgid "Loading"
 msgstr "Nalaganje"
 
-#: content/ui/TimelinePage.qml:41
+#: content/ui/TimelinePage.qml:40
 #, kde-format
 msgid "Home (%1)"
 msgstr "Domov (%1)"
 
-#: content/ui/TimelinePage.qml:107
+#: content/ui/TimelinePage.qml:106
 #, kde-format
 msgid "Show Boosts"
 msgstr "Prikaži izpostavitve"
 
-#: content/ui/TimelinePage.qml:114
+#: content/ui/TimelinePage.qml:113
 #, kde-format
 msgid "Show Replies"
 msgstr "Prikaži odgovore"
 
-#: content/ui/TimelinePage.qml:132
+#: content/ui/TimelinePage.qml:131
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
 msgstr "Ni mogoče priti v stik s strežnikom: %1. Preverite vaše nastavitve."
 
-#: content/ui/TimelinePage.qml:169
+#: content/ui/TimelinePage.qml:168
 #, kde-format
 msgctxt "@action:button Load more posts above this"
 msgid "Load More"
@@ -5510,10 +5702,6 @@ msgstr[3] "pred %1 leti"
 #~ msgid "Suggest account to others"
 #~ msgstr "Predlagaj račun drugim"
 
-#~ msgctxt "@action:inmenu"
-#~ msgid "Expand Post"
-#~ msgstr "Razširi objavo"
-
 #~ msgid "Open Original Page"
 #~ msgstr "Odpri izvirno stran"
 
@@ -5603,10 +5791,6 @@ msgstr[3] "pred %1 leti"
 #~ msgctxt "@action:button"
 #~ msgid "Add Word"
 #~ msgstr "Dodaj besedo"
-
-#~ msgctxt "@action:button"
-#~ msgid "Delete word"
-#~ msgstr "Izbriši besedo"
 
 #~ msgctxt "@action:Button Edit a post"
 #~ msgid "Edit"
@@ -5865,9 +6049,6 @@ msgstr[3] "pred %1 leti"
 
 #~ msgid "Image View"
 #~ msgstr "Pogled slike"
-
-#~ msgid "Global Timeline"
-#~ msgstr "Globalna časovnica"
 
 #~ msgid "Add an account"
 #~ msgstr "Dodaj račun"

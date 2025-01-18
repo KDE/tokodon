@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-17 00:41+0000\n"
+"POT-Creation-Date: 2025-01-18 00:41+0000\n"
 "PO-Revision-Date: 2024-12-21 11:41+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -829,7 +829,7 @@ msgid "Profile"
 msgstr "Profil"
 
 #: content/ui/AccountInfo.qml:57 content/ui/ExplorePage.qml:35
-#: content/ui/TimelinePage.qml:96
+#: content/ui/TimelinePage.qml:95
 #, kde-format
 msgctxt "@action:button"
 msgid "Post"
@@ -917,31 +917,31 @@ msgstr "Zobacz profil"
 msgid "No emojis"
 msgstr "Bez emoji"
 
-#: content/ui/Components/TimelineView.qml:73
+#: content/ui/Components/TimelineView.qml:65
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Return to Top"
 msgstr "Powróć na szczyt"
 
-#: content/ui/Components/TimelineView.qml:137
+#: content/ui/Components/TimelineView.qml:129
 #, kde-format
 msgctxt "@info:status"
 msgid "Some replies are not available"
 msgstr "Pewne odpowiedzi są niedostępne"
 
-#: content/ui/Components/TimelineView.qml:138
+#: content/ui/Components/TimelineView.qml:130
 #, kde-format
 msgid "To view all replies, open the post on the original server."
 msgstr ""
 "Aby obejrzeć wszystkie odpowiedzi , otwórz wpis na pierwotnym serwerze."
 
-#: content/ui/Components/TimelineView.qml:141
+#: content/ui/Components/TimelineView.qml:133
 #, kde-format
 msgctxt "@action:button 'Browser' being a web browser"
 msgid "Open in Browser"
 msgstr "Otwórz w przeglądarce"
 
-#: content/ui/Components/TimelineView.qml:150
+#: content/ui/Components/TimelineView.qml:142
 #, kde-format
 msgctxt "@info:status"
 msgid "End of Timeline"
@@ -1172,7 +1172,8 @@ msgctxt "@title 'Following' as in the users you're following on Mastodon."
 msgid "Following"
 msgstr "Obserwowani"
 
-#: content/ui/FollowingPage.qml:43 content/ui/TimelinePage.qml:102
+#: content/ui/FollowingPage.qml:43 content/ui/Settings/SafetyPage.qml:26
+#: content/ui/TimelinePage.qml:101
 #, kde-format
 msgctxt "@action:button"
 msgid "Filters"
@@ -1203,6 +1204,14 @@ msgid ""
 msgstr ""
 "Dzięki następującemu widokowi możesz łatwo zaglądać do użytkowników, których "
 "obserwujesz, a także na ich wpisy - uszeregowane po ostatniej aktywności."
+
+#: content/ui/FullScreenImage.qml:33
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "Expand Post"
+msgctxt "@action:intoolbar"
+msgid "Open Post"
+msgstr "Rozwiń wpis"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:19
 #, kde-format
@@ -4182,6 +4191,169 @@ msgstr ""
 msgid "Auto-play animated GIFs"
 msgstr "Sam odtwarzaj animowane GIFy"
 
+#: content/ui/Settings/EditFilterPage.qml:30
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Create List"
+msgctxt "@title:window"
+msgid "Create Filter"
+msgstr "Utwórz listę"
+
+#: content/ui/Settings/EditFilterPage.qml:30
+#, fuzzy, kde-format
+#| msgctxt "@info:Option Filter and send to the filtered inbox"
+#| msgid "Filter"
+msgctxt "@title:window"
+msgid "Edit Filter"
+msgstr "Odfiltruj"
+
+#: content/ui/Settings/EditFilterPage.qml:73
+#, fuzzy, kde-format
+#| msgctxt "@label:textbox List title"
+#| msgid "Title"
+msgctxt "@label:textbox Filter title"
+msgid "Title"
+msgstr "Tytuł"
+
+#: content/ui/Settings/EditFilterPage.qml:78
+#, fuzzy, kde-format
+#| msgid "Continue"
+msgctxt "@info:header"
+msgid "Contexts"
+msgstr "Kontynuuj"
+
+#: content/ui/Settings/EditFilterPage.qml:85
+#, kde-format
+msgctxt "@info"
+msgid "Select one or more contexts where this filter should apply:"
+msgstr ""
+
+#: content/ui/Settings/EditFilterPage.qml:90
+#, fuzzy, kde-format
+#| msgid "No Lists"
+msgctxt "@label:checkbox"
+msgid "Home and Lists"
+msgstr "Bez listy"
+
+#: content/ui/Settings/EditFilterPage.qml:95
+#, fuzzy, kde-format
+#| msgid "Notifications"
+msgctxt "@label:checkbox"
+msgid "Notifications"
+msgstr "Powiadomienia"
+
+#: content/ui/Settings/EditFilterPage.qml:100
+#, fuzzy, kde-format
+#| msgid "Global Timeline"
+msgctxt "@label:checkbox"
+msgid "Public Timelines"
+msgstr "Globalna oś czasu"
+
+#: content/ui/Settings/EditFilterPage.qml:105
+#, fuzzy, kde-format
+#| msgid "Conversations"
+msgctxt "@label:checkbox"
+msgid "Conversations"
+msgstr "Rozmowy"
+
+#: content/ui/Settings/EditFilterPage.qml:110
+#, fuzzy, kde-format
+#| msgid "Profile"
+msgctxt "@label:checkbox"
+msgid "Profiles"
+msgstr "Profil"
+
+#: content/ui/Settings/EditFilterPage.qml:115
+#, fuzzy, kde-format
+#| msgctxt "@info:Location combobox to choose location filters"
+#| msgid "Location"
+msgctxt "@info:header"
+msgid "Action"
+msgstr "Położenie"
+
+#: content/ui/Settings/EditFilterPage.qml:123
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Content Notice"
+msgctxt "@label:radiobutton"
+msgid "Hide with Content Notice"
+msgstr "Uwaga do treści"
+
+#: content/ui/Settings/EditFilterPage.qml:129
+#, fuzzy, kde-format
+#| msgctxt "@option:check Poll toolbar"
+#| msgid "Hide totals"
+msgctxt "@label:radiobutton"
+msgid "Hide Completely"
+msgstr "Ukryj sumy"
+
+#: content/ui/Settings/EditFilterPage.qml:135
+#, kde-format
+msgctxt "@info:header"
+msgid "Keywords"
+msgstr ""
+
+#: content/ui/Settings/EditFilterPage.qml:165
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Delete word"
+msgctxt "@label:checkbox"
+msgid "Whole word"
+msgstr "Usuń słowo"
+
+#: content/ui/Settings/EditFilterPage.qml:171
+#, fuzzy, kde-format
+#| msgid "Remove"
+msgctxt "@action:button Remove keyword"
+msgid "Remove"
+msgstr "Usuń"
+
+#: content/ui/Settings/EditFilterPage.qml:180
+#, fuzzy, kde-format
+#| msgctxt "@action:button Add user to this list"
+#| msgid "Add"
+msgctxt "@action:button Add keyword"
+msgid "Add"
+msgstr "Dodaj"
+
+#: content/ui/Settings/EditFilterPage.qml:205
+#, fuzzy, kde-format
+#| msgctxt "@action:button Create the list"
+#| msgid "Create"
+msgctxt "@action:button Create the filter"
+msgid "Create"
+msgstr "Utwórz"
+
+#: content/ui/Settings/EditFilterPage.qml:207
+#, fuzzy, kde-format
+#| msgid "Edit"
+msgctxt "@action:button Edit the filter"
+msgid "Edit"
+msgstr "Edytuj"
+
+#: content/ui/Settings/EditFilterPage.qml:220
+#, fuzzy, kde-format
+#| msgid "Delete"
+msgctxt "@action:button Delete the filter"
+msgid "Delete"
+msgstr "Usuń"
+
+#: content/ui/Settings/EditFilterPage.qml:227
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Deleting List"
+msgctxt "@title"
+msgid "Deleting Filter"
+msgstr "Usuwanie listy"
+
+#: content/ui/Settings/EditFilterPage.qml:228
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Are you sure you want to delete this list?"
+msgctxt "@label"
+msgid "Are you sure you want to delete this filter?"
+msgstr "Czy na pewno usunąć tę listę?"
+
 #: content/ui/Settings/EditProfilePage.qml:26
 #, kde-format
 msgctxt "@title:window"
@@ -4211,6 +4383,29 @@ msgstr "Skopiuj do schowka"
 msgctxt "@label"
 msgid "No Errors"
 msgstr "Brak błędów"
+
+#: content/ui/Settings/FiltersPage.qml:21
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Filters"
+msgctxt "@title"
+msgid "Filters"
+msgstr "Filtry"
+
+#: content/ui/Settings/FiltersPage.qml:28
+#, fuzzy, kde-format
+#| msgid "Create List"
+msgctxt "@action:intoolbar"
+msgid "Create Filter"
+msgstr "Utwórz listę"
+
+#: content/ui/Settings/FiltersPage.qml:79
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Filters"
+msgctxt "@info:placeholder"
+msgid "No Filters"
+msgstr "Filtry"
 
 #: content/ui/Settings/NetworkProxyPage.qml:15
 #, kde-format
@@ -4558,12 +4753,12 @@ msgstr "Dodaj"
 msgid "Reset"
 msgstr "Wyzeruj"
 
-#: content/ui/Settings/SafetyPage.qml:26
+#: content/ui/Settings/SafetyPage.qml:34
 #, kde-format
 msgid "Muted Users"
 msgstr "Wyciszeni użytkownicy"
 
-#: content/ui/Settings/SafetyPage.qml:34
+#: content/ui/Settings/SafetyPage.qml:42
 #, kde-format
 msgid "Blocked Users"
 msgstr "Zablokowani użytkownicy"
@@ -4964,33 +5159,33 @@ msgctxt "@action:Button Save an edited a post"
 msgid "Save"
 msgstr "Zapisz"
 
-#: content/ui/TimelinePage.qml:39 timeline/accountmodel.cpp:41
+#: content/ui/TimelinePage.qml:38 timeline/accountmodel.cpp:41
 #, kde-format
 msgid "Loading"
 msgstr "Wczytywanie"
 
-#: content/ui/TimelinePage.qml:41
+#: content/ui/TimelinePage.qml:40
 #, kde-format
 msgid "Home (%1)"
 msgstr "Dom (%1)"
 
-#: content/ui/TimelinePage.qml:107
+#: content/ui/TimelinePage.qml:106
 #, kde-format
 msgid "Show Boosts"
 msgstr "Pokaż udostępnienia"
 
-#: content/ui/TimelinePage.qml:114
+#: content/ui/TimelinePage.qml:113
 #, kde-format
 msgid "Show Replies"
 msgstr "Pokaż odpowiedzi"
 
-#: content/ui/TimelinePage.qml:132
+#: content/ui/TimelinePage.qml:131
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
 msgstr "Nie udało się porozumieć z serwerem: %1. Sprawdź swoje ustawienia."
 
-#: content/ui/TimelinePage.qml:169
+#: content/ui/TimelinePage.qml:168
 #, kde-format
 msgctxt "@action:button Load more posts above this"
 msgid "Load More"
@@ -5528,10 +5723,6 @@ msgstr[2] "%1 lat temu"
 #~ msgid "Suggest account to others"
 #~ msgstr "Podpowiedz konto innym"
 
-#~ msgctxt "@action:inmenu"
-#~ msgid "Expand Post"
-#~ msgstr "Rozwiń wpis"
-
 #~ msgid "Open Original Page"
 #~ msgstr "Otwórz pierwotną stronę"
 
@@ -5620,10 +5811,6 @@ msgstr[2] "%1 lat temu"
 #~ msgctxt "@action:button"
 #~ msgid "Add Word"
 #~ msgstr "Dodaj słowo"
-
-#~ msgctxt "@action:button"
-#~ msgid "Delete word"
-#~ msgstr "Usuń słowo"
 
 #~ msgctxt "@action:Button Edit a post"
 #~ msgid "Edit"
@@ -5878,9 +6065,6 @@ msgstr[2] "%1 lat temu"
 
 #~ msgid "Image View"
 #~ msgstr "Przeglądarka obrazów"
-
-#~ msgid "Global Timeline"
-#~ msgstr "Globalna oś czasu"
 
 #~ msgid "Add an account"
 #~ msgstr "Dodaj konto"

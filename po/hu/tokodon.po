@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-17 00:41+0000\n"
+"POT-Creation-Date: 2025-01-18 00:41+0000\n"
 "PO-Revision-Date: 2024-11-17 21:29+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -827,7 +827,7 @@ msgid "Profile"
 msgstr "Profil"
 
 #: content/ui/AccountInfo.qml:57 content/ui/ExplorePage.qml:35
-#: content/ui/TimelinePage.qml:96
+#: content/ui/TimelinePage.qml:95
 #, kde-format
 msgctxt "@action:button"
 msgid "Post"
@@ -915,32 +915,32 @@ msgstr "Profil megtekintése"
 msgid "No emojis"
 msgstr "Nincsenek emojik"
 
-#: content/ui/Components/TimelineView.qml:73
+#: content/ui/Components/TimelineView.qml:65
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Return to Top"
 msgstr "Vissza a tetejére"
 
-#: content/ui/Components/TimelineView.qml:137
+#: content/ui/Components/TimelineView.qml:129
 #, kde-format
 msgctxt "@info:status"
 msgid "Some replies are not available"
 msgstr "Néhány válasz nem érhető el"
 
-#: content/ui/Components/TimelineView.qml:138
+#: content/ui/Components/TimelineView.qml:130
 #, kde-format
 msgid "To view all replies, open the post on the original server."
 msgstr ""
 "Az összes válasz megtekintéséhez nyissa meg a bejegyzést az eredeti "
 "kiszolgálón."
 
-#: content/ui/Components/TimelineView.qml:141
+#: content/ui/Components/TimelineView.qml:133
 #, kde-format
 msgctxt "@action:button 'Browser' being a web browser"
 msgid "Open in Browser"
 msgstr "Megnyitás böngészőben"
 
-#: content/ui/Components/TimelineView.qml:150
+#: content/ui/Components/TimelineView.qml:142
 #, kde-format
 msgctxt "@info:status"
 msgid "End of Timeline"
@@ -1176,7 +1176,8 @@ msgctxt "@title 'Following' as in the users you're following on Mastodon."
 msgid "Following"
 msgstr "Követett"
 
-#: content/ui/FollowingPage.qml:43 content/ui/TimelinePage.qml:102
+#: content/ui/FollowingPage.qml:43 content/ui/Settings/SafetyPage.qml:26
+#: content/ui/TimelinePage.qml:101
 #, kde-format
 msgctxt "@action:button"
 msgid "Filters"
@@ -1207,6 +1208,14 @@ msgid ""
 msgstr ""
 "A Követés nézetben könnyedén ellenőrizhet minden egyes követett felhasználót "
 "és csak a bejegyzéseiket - a legutóbbi aktivitás szerint rendezve."
+
+#: content/ui/FullScreenImage.qml:33
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "Expand Post"
+msgctxt "@action:intoolbar"
+msgid "Open Post"
+msgstr "Bejegyzés kibontása"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:19
 #, kde-format
@@ -4195,6 +4204,169 @@ msgstr ""
 msgid "Auto-play animated GIFs"
 msgstr "Animált GIF-ek automatikus lejátszása"
 
+#: content/ui/Settings/EditFilterPage.qml:30
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Create List"
+msgctxt "@title:window"
+msgid "Create Filter"
+msgstr "Lista létrehozása"
+
+#: content/ui/Settings/EditFilterPage.qml:30
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Filters"
+msgctxt "@title:window"
+msgid "Edit Filter"
+msgstr "Szűrők"
+
+#: content/ui/Settings/EditFilterPage.qml:73
+#, fuzzy, kde-format
+#| msgctxt "@label:textbox List title"
+#| msgid "Title"
+msgctxt "@label:textbox Filter title"
+msgid "Title"
+msgstr "Cím"
+
+#: content/ui/Settings/EditFilterPage.qml:78
+#, fuzzy, kde-format
+#| msgid "Continue"
+msgctxt "@info:header"
+msgid "Contexts"
+msgstr "Folytatás"
+
+#: content/ui/Settings/EditFilterPage.qml:85
+#, kde-format
+msgctxt "@info"
+msgid "Select one or more contexts where this filter should apply:"
+msgstr ""
+
+#: content/ui/Settings/EditFilterPage.qml:90
+#, fuzzy, kde-format
+#| msgid "No Lists"
+msgctxt "@label:checkbox"
+msgid "Home and Lists"
+msgstr "Nincsenek listák"
+
+#: content/ui/Settings/EditFilterPage.qml:95
+#, fuzzy, kde-format
+#| msgid "Notifications"
+msgctxt "@label:checkbox"
+msgid "Notifications"
+msgstr "Értesítések"
+
+#: content/ui/Settings/EditFilterPage.qml:100
+#, fuzzy, kde-format
+#| msgid "Global Timeline"
+msgctxt "@label:checkbox"
+msgid "Public Timelines"
+msgstr "Globális idővonal"
+
+#: content/ui/Settings/EditFilterPage.qml:105
+#, fuzzy, kde-format
+#| msgid "Conversations"
+msgctxt "@label:checkbox"
+msgid "Conversations"
+msgstr "Beszélgetések"
+
+#: content/ui/Settings/EditFilterPage.qml:110
+#, fuzzy, kde-format
+#| msgid "Profile"
+msgctxt "@label:checkbox"
+msgid "Profiles"
+msgstr "Profil"
+
+#: content/ui/Settings/EditFilterPage.qml:115
+#, fuzzy, kde-format
+#| msgctxt "@info:Location combobox to choose location filters"
+#| msgid "Location"
+msgctxt "@info:header"
+msgid "Action"
+msgstr "Hely"
+
+#: content/ui/Settings/EditFilterPage.qml:123
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Content notice"
+msgctxt "@label:radiobutton"
+msgid "Hide with Content Notice"
+msgstr "Tartalmi figyelmeztetés"
+
+#: content/ui/Settings/EditFilterPage.qml:129
+#, fuzzy, kde-format
+#| msgctxt "@option:check Poll toolbar"
+#| msgid "Hide totals"
+msgctxt "@label:radiobutton"
+msgid "Hide Completely"
+msgstr "Összesítés elrejtése"
+
+#: content/ui/Settings/EditFilterPage.qml:135
+#, kde-format
+msgctxt "@info:header"
+msgid "Keywords"
+msgstr ""
+
+#: content/ui/Settings/EditFilterPage.qml:165
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Delete word"
+msgctxt "@label:checkbox"
+msgid "Whole word"
+msgstr "Szó törlése"
+
+#: content/ui/Settings/EditFilterPage.qml:171
+#, fuzzy, kde-format
+#| msgid "Remove"
+msgctxt "@action:button Remove keyword"
+msgid "Remove"
+msgstr "Eltávolítás"
+
+#: content/ui/Settings/EditFilterPage.qml:180
+#, fuzzy, kde-format
+#| msgctxt "@action:button Add user to this list"
+#| msgid "Add"
+msgctxt "@action:button Add keyword"
+msgid "Add"
+msgstr "Hozzáadás"
+
+#: content/ui/Settings/EditFilterPage.qml:205
+#, fuzzy, kde-format
+#| msgctxt "@action:button Create the list"
+#| msgid "Create"
+msgctxt "@action:button Create the filter"
+msgid "Create"
+msgstr "Létrehozás"
+
+#: content/ui/Settings/EditFilterPage.qml:207
+#, fuzzy, kde-format
+#| msgid "Edit"
+msgctxt "@action:button Edit the filter"
+msgid "Edit"
+msgstr "Szerkesztés"
+
+#: content/ui/Settings/EditFilterPage.qml:220
+#, fuzzy, kde-format
+#| msgid "Delete"
+msgctxt "@action:button Delete the filter"
+msgid "Delete"
+msgstr "Törlés"
+
+#: content/ui/Settings/EditFilterPage.qml:227
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Deleting List"
+msgctxt "@title"
+msgid "Deleting Filter"
+msgstr "Lista törlése"
+
+#: content/ui/Settings/EditFilterPage.qml:228
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Are you sure you want to delete this list?"
+msgctxt "@label"
+msgid "Are you sure you want to delete this filter?"
+msgstr "Biztosan törölni szeretné ezt a listát?"
+
 #: content/ui/Settings/EditProfilePage.qml:26
 #, kde-format
 msgctxt "@title:window"
@@ -4224,6 +4396,29 @@ msgstr ""
 msgctxt "@label"
 msgid "No Errors"
 msgstr ""
+
+#: content/ui/Settings/FiltersPage.qml:21
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Filters"
+msgctxt "@title"
+msgid "Filters"
+msgstr "Szűrők"
+
+#: content/ui/Settings/FiltersPage.qml:28
+#, fuzzy, kde-format
+#| msgid "Create List"
+msgctxt "@action:intoolbar"
+msgid "Create Filter"
+msgstr "Lista létrehozása"
+
+#: content/ui/Settings/FiltersPage.qml:79
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Filters"
+msgctxt "@info:placeholder"
+msgid "No Filters"
+msgstr "Szűrők"
 
 #: content/ui/Settings/NetworkProxyPage.qml:15
 #, kde-format
@@ -4579,12 +4774,12 @@ msgstr "Hozzáadás"
 msgid "Reset"
 msgstr "Visszaállítás"
 
-#: content/ui/Settings/SafetyPage.qml:26
+#: content/ui/Settings/SafetyPage.qml:34
 #, kde-format
 msgid "Muted Users"
 msgstr "Némított felhasználók"
 
-#: content/ui/Settings/SafetyPage.qml:34
+#: content/ui/Settings/SafetyPage.qml:42
 #, kde-format
 msgid "Blocked Users"
 msgstr "Letiltott felhasználók"
@@ -4997,34 +5192,34 @@ msgctxt "@action:Button Save an edited a post"
 msgid "Save"
 msgstr "Mentés"
 
-#: content/ui/TimelinePage.qml:39 timeline/accountmodel.cpp:41
+#: content/ui/TimelinePage.qml:38 timeline/accountmodel.cpp:41
 #, kde-format
 msgid "Loading"
 msgstr "Betöltés"
 
-#: content/ui/TimelinePage.qml:41
+#: content/ui/TimelinePage.qml:40
 #, kde-format
 msgid "Home (%1)"
 msgstr "Kezdőlap (%1)"
 
-#: content/ui/TimelinePage.qml:107
+#: content/ui/TimelinePage.qml:106
 #, kde-format
 msgid "Show Boosts"
 msgstr "Megtolások megjelenítése"
 
-#: content/ui/TimelinePage.qml:114
+#: content/ui/TimelinePage.qml:113
 #, kde-format
 msgid "Show Replies"
 msgstr "Válaszok megjelenítése"
 
-#: content/ui/TimelinePage.qml:132
+#: content/ui/TimelinePage.qml:131
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
 msgstr ""
 "Nem sikerült kapcsolódni a kiszolgálóhoz: %1. Ellenőrizze a beállításokat."
 
-#: content/ui/TimelinePage.qml:169
+#: content/ui/TimelinePage.qml:168
 #, kde-format
 msgctxt "@action:button Load more posts above this"
 msgid "Load More"
@@ -5560,10 +5755,6 @@ msgstr[1] "%1 évvel ezelőtt"
 #~ msgid "Suggest account to others"
 #~ msgstr "Fiók ajánlása másoknak"
 
-#~ msgctxt "@action:inmenu"
-#~ msgid "Expand Post"
-#~ msgstr "Bejegyzés kibontása"
-
 #~ msgid "Open Original Page"
 #~ msgstr "Eredeti oldal megnyitása"
 
@@ -5653,10 +5844,6 @@ msgstr[1] "%1 évvel ezelőtt"
 #~ msgctxt "@action:button"
 #~ msgid "Add Word"
 #~ msgstr "Szó hozzáadása"
-
-#~ msgctxt "@action:button"
-#~ msgid "Delete word"
-#~ msgstr "Szó törlése"
 
 #~ msgctxt "@action:Button Edit a post"
 #~ msgid "Edit"
@@ -5846,9 +6033,6 @@ msgstr[1] "%1 évvel ezelőtt"
 
 #~ msgid "Image View"
 #~ msgstr "Képmegjelenítés"
-
-#~ msgid "Global Timeline"
-#~ msgstr "Globális idővonal"
 
 #~ msgid "Add an account"
 #~ msgstr "Fiók hozzáadása"

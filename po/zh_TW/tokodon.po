@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-17 00:41+0000\n"
+"POT-Creation-Date: 2025-01-18 00:41+0000\n"
 "PO-Revision-Date: 2024-12-30 17:01+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -805,7 +805,7 @@ msgid "Profile"
 msgstr "個人檔案"
 
 #: content/ui/AccountInfo.qml:57 content/ui/ExplorePage.qml:35
-#: content/ui/TimelinePage.qml:96
+#: content/ui/TimelinePage.qml:95
 #, kde-format
 msgctxt "@action:button"
 msgid "Post"
@@ -893,30 +893,30 @@ msgstr "檢視個人檔案"
 msgid "No emojis"
 msgstr "無表情符號"
 
-#: content/ui/Components/TimelineView.qml:73
+#: content/ui/Components/TimelineView.qml:65
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Return to Top"
 msgstr "回到頂端"
 
-#: content/ui/Components/TimelineView.qml:137
+#: content/ui/Components/TimelineView.qml:129
 #, kde-format
 msgctxt "@info:status"
 msgid "Some replies are not available"
 msgstr "某些回覆無法使用"
 
-#: content/ui/Components/TimelineView.qml:138
+#: content/ui/Components/TimelineView.qml:130
 #, kde-format
 msgid "To view all replies, open the post on the original server."
 msgstr "要檢視所有回覆，請在嘟文原本的伺服器上開啟它。"
 
-#: content/ui/Components/TimelineView.qml:141
+#: content/ui/Components/TimelineView.qml:133
 #, kde-format
 msgctxt "@action:button 'Browser' being a web browser"
 msgid "Open in Browser"
 msgstr "在瀏覽器開啟"
 
-#: content/ui/Components/TimelineView.qml:150
+#: content/ui/Components/TimelineView.qml:142
 #, kde-format
 msgctxt "@info:status"
 msgid "End of Timeline"
@@ -1143,7 +1143,8 @@ msgctxt "@title 'Following' as in the users you're following on Mastodon."
 msgid "Following"
 msgstr "正在跟隨"
 
-#: content/ui/FollowingPage.qml:43 content/ui/TimelinePage.qml:102
+#: content/ui/FollowingPage.qml:43 content/ui/Settings/SafetyPage.qml:26
+#: content/ui/TimelinePage.qml:101
 #, kde-format
 msgctxt "@action:button"
 msgid "Filters"
@@ -1174,6 +1175,14 @@ msgid ""
 msgstr ""
 "在「正在跟隨」檢視當中，您可以隨心地查看來自您所跟隨的各個使用者的嘟文，並且"
 "不會包含其他任何使用者的嘟文。以最近更新排序。"
+
+#: content/ui/FullScreenImage.qml:33
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "Expand Post"
+msgctxt "@action:intoolbar"
+msgid "Open Post"
+msgstr "展開嘟文"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:19
 #, kde-format
@@ -4101,6 +4110,170 @@ msgstr "若不勾選，只有附上一張影像的嘟文不會被裁剪。"
 msgid "Auto-play animated GIFs"
 msgstr "自動播放動態 GIF"
 
+#: content/ui/Settings/EditFilterPage.qml:30
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Create List"
+msgctxt "@title:window"
+msgid "Create Filter"
+msgstr "建立列表"
+
+#: content/ui/Settings/EditFilterPage.qml:30
+#, fuzzy, kde-format
+#| msgctxt "@info:Option Filter and send to the filtered inbox"
+#| msgid "Filter"
+msgctxt "@title:window"
+msgid "Edit Filter"
+msgstr "過濾器"
+
+#: content/ui/Settings/EditFilterPage.qml:73
+#, fuzzy, kde-format
+#| msgctxt "@label:textbox List title"
+#| msgid "Title"
+msgctxt "@label:textbox Filter title"
+msgid "Title"
+msgstr "標題"
+
+#: content/ui/Settings/EditFilterPage.qml:78
+#, fuzzy, kde-format
+#| msgid "Continue"
+msgctxt "@info:header"
+msgid "Contexts"
+msgstr "繼續"
+
+#: content/ui/Settings/EditFilterPage.qml:85
+#, kde-format
+msgctxt "@info"
+msgid "Select one or more contexts where this filter should apply:"
+msgstr ""
+
+#: content/ui/Settings/EditFilterPage.qml:90
+#, fuzzy, kde-format
+#| msgid "No Lists"
+msgctxt "@label:checkbox"
+msgid "Home and Lists"
+msgstr "沒有列表"
+
+#: content/ui/Settings/EditFilterPage.qml:95
+#, fuzzy, kde-format
+#| msgid "Notifications"
+msgctxt "@label:checkbox"
+msgid "Notifications"
+msgstr "通知"
+
+#: content/ui/Settings/EditFilterPage.qml:100
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Global Timeline"
+msgctxt "@label:checkbox"
+msgid "Public Timelines"
+msgstr "全域時間軸"
+
+#: content/ui/Settings/EditFilterPage.qml:105
+#, fuzzy, kde-format
+#| msgid "Conversations"
+msgctxt "@label:checkbox"
+msgid "Conversations"
+msgstr "對話"
+
+#: content/ui/Settings/EditFilterPage.qml:110
+#, fuzzy, kde-format
+#| msgid "Profile"
+msgctxt "@label:checkbox"
+msgid "Profiles"
+msgstr "個人檔案"
+
+#: content/ui/Settings/EditFilterPage.qml:115
+#, fuzzy, kde-format
+#| msgctxt "@info:Location combobox to choose location filters"
+#| msgid "Location"
+msgctxt "@info:header"
+msgid "Action"
+msgstr "位置"
+
+#: content/ui/Settings/EditFilterPage.qml:123
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Content Notice"
+msgctxt "@label:radiobutton"
+msgid "Hide with Content Notice"
+msgstr "內容告警"
+
+#: content/ui/Settings/EditFilterPage.qml:129
+#, fuzzy, kde-format
+#| msgctxt "@option:check Poll toolbar"
+#| msgid "Hide totals"
+msgctxt "@label:radiobutton"
+msgid "Hide Completely"
+msgstr "隱藏總計"
+
+#: content/ui/Settings/EditFilterPage.qml:135
+#, kde-format
+msgctxt "@info:header"
+msgid "Keywords"
+msgstr ""
+
+#: content/ui/Settings/EditFilterPage.qml:165
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Delete word"
+msgctxt "@label:checkbox"
+msgid "Whole word"
+msgstr "刪除單詞"
+
+#: content/ui/Settings/EditFilterPage.qml:171
+#, fuzzy, kde-format
+#| msgid "Remove"
+msgctxt "@action:button Remove keyword"
+msgid "Remove"
+msgstr "移除"
+
+#: content/ui/Settings/EditFilterPage.qml:180
+#, fuzzy, kde-format
+#| msgctxt "@action:button Add user to this list"
+#| msgid "Add"
+msgctxt "@action:button Add keyword"
+msgid "Add"
+msgstr "新增"
+
+#: content/ui/Settings/EditFilterPage.qml:205
+#, fuzzy, kde-format
+#| msgctxt "@action:button Create the list"
+#| msgid "Create"
+msgctxt "@action:button Create the filter"
+msgid "Create"
+msgstr "建立"
+
+#: content/ui/Settings/EditFilterPage.qml:207
+#, fuzzy, kde-format
+#| msgid "Edit"
+msgctxt "@action:button Edit the filter"
+msgid "Edit"
+msgstr "編輯"
+
+#: content/ui/Settings/EditFilterPage.qml:220
+#, fuzzy, kde-format
+#| msgid "Delete"
+msgctxt "@action:button Delete the filter"
+msgid "Delete"
+msgstr "刪除"
+
+#: content/ui/Settings/EditFilterPage.qml:227
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Deleting List"
+msgctxt "@title"
+msgid "Deleting Filter"
+msgstr "刪除列表"
+
+#: content/ui/Settings/EditFilterPage.qml:228
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Are you sure you want to delete this list?"
+msgctxt "@label"
+msgid "Are you sure you want to delete this filter?"
+msgstr "您確定要刪除這個列表嗎？"
+
 #: content/ui/Settings/EditProfilePage.qml:26
 #, kde-format
 msgctxt "@title:window"
@@ -4130,6 +4303,29 @@ msgstr "複製到剪貼簿"
 msgctxt "@label"
 msgid "No Errors"
 msgstr "沒有錯誤"
+
+#: content/ui/Settings/FiltersPage.qml:21
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Filters"
+msgctxt "@title"
+msgid "Filters"
+msgstr "過濾器"
+
+#: content/ui/Settings/FiltersPage.qml:28
+#, fuzzy, kde-format
+#| msgid "Create List"
+msgctxt "@action:intoolbar"
+msgid "Create Filter"
+msgstr "建立列表"
+
+#: content/ui/Settings/FiltersPage.qml:79
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Filters"
+msgctxt "@info:placeholder"
+msgid "No Filters"
+msgstr "過濾器"
 
 #: content/ui/Settings/NetworkProxyPage.qml:15
 #, kde-format
@@ -4469,12 +4665,12 @@ msgstr "新增"
 msgid "Reset"
 msgstr "重設"
 
-#: content/ui/Settings/SafetyPage.qml:26
+#: content/ui/Settings/SafetyPage.qml:34
 #, kde-format
 msgid "Muted Users"
 msgstr "已靜音的使用者"
 
-#: content/ui/Settings/SafetyPage.qml:34
+#: content/ui/Settings/SafetyPage.qml:42
 #, kde-format
 msgid "Blocked Users"
 msgstr "已封鎖的使用者"
@@ -4873,33 +5069,33 @@ msgctxt "@action:Button Save an edited a post"
 msgid "Save"
 msgstr "儲存"
 
-#: content/ui/TimelinePage.qml:39 timeline/accountmodel.cpp:41
+#: content/ui/TimelinePage.qml:38 timeline/accountmodel.cpp:41
 #, kde-format
 msgid "Loading"
 msgstr "載入中"
 
-#: content/ui/TimelinePage.qml:41
+#: content/ui/TimelinePage.qml:40
 #, kde-format
 msgid "Home (%1)"
 msgstr "首頁 (%1)"
 
-#: content/ui/TimelinePage.qml:107
+#: content/ui/TimelinePage.qml:106
 #, kde-format
 msgid "Show Boosts"
 msgstr "顯示轉嘟"
 
-#: content/ui/TimelinePage.qml:114
+#: content/ui/TimelinePage.qml:113
 #, kde-format
 msgid "Show Replies"
 msgstr "顯示回覆"
 
-#: content/ui/TimelinePage.qml:132
+#: content/ui/TimelinePage.qml:131
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
 msgstr "伺服器連線失敗：%1。請檢查您的設定。"
 
-#: content/ui/TimelinePage.qml:169
+#: content/ui/TimelinePage.qml:168
 #, kde-format
 msgctxt "@action:button Load more posts above this"
 msgid "Load More"
@@ -5339,10 +5535,6 @@ msgstr[0] "%1 年前"
 #~ msgid "Local Timeline"
 #~ msgstr "本地時間軸"
 
-#~ msgctxt "@title"
-#~ msgid "Global Timeline"
-#~ msgstr "全域時間軸"
-
 #~ msgid "Media Hidden"
 #~ msgstr "媒體已隱藏"
 
@@ -5417,10 +5609,6 @@ msgstr[0] "%1 年前"
 
 #~ msgid "Suggest account to others"
 #~ msgstr "建議帳號給其他人"
-
-#~ msgctxt "@action:inmenu"
-#~ msgid "Expand Post"
-#~ msgstr "展開嘟文"
 
 #~ msgid "Open Original Page"
 #~ msgstr "開啟原始頁面"
@@ -5507,10 +5695,6 @@ msgstr[0] "%1 年前"
 #~ msgctxt "@action:button"
 #~ msgid "Add Word"
 #~ msgstr "新增單詞"
-
-#~ msgctxt "@action:button"
-#~ msgid "Delete word"
-#~ msgstr "刪除單詞"
 
 #~ msgctxt "@action:Button Edit a post"
 #~ msgid "Edit"
