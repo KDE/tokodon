@@ -42,6 +42,14 @@ FormCard.FormCardPage {
             text: i18n("Blocked Users")
             onClicked: root.Window.window.pageStack.layers.push(socialGraphComponent, { name: "blocks" })
         }
+
+        FormCard.FormDelegateSeparator {}
+
+        FormCard.FormButtonDelegate {
+            icon.name: "internet-services-symbolic"
+            text: i18n("Blocked Domains")
+            onClicked: root.Window.window.pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "BlockedDomainsPage"))
+        }
     }
 
     Component {

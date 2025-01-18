@@ -70,6 +70,8 @@ target_sources(tokodon_static
     account/favoritelistsmodel.h
     account/filtersmodel.cpp
     account/filtersmodel.h
+    account/blockeddomainmodel.cpp
+    account/blockeddomainmodel.h
 
     # Editor
     editor/posteditorbackend.cpp
@@ -265,6 +267,7 @@ qt_target_qml_sources(tokodon_static
         content/ui/Settings/TokodonConfigurationView.qml
         content/ui/Settings/FiltersPage.qml
         content/ui/Settings/EditFilterPage.qml
+        content/ui/Settings/BlockedDomainsPage.qml
 
         # Composer
         content/ui/StatusComposer/EditorAttachmentGrid.qml
