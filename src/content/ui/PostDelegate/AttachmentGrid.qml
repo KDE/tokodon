@@ -234,6 +234,11 @@ Item {
                             }
                         }
 
+                        onErrorOccurred: {
+                            // Fall back to remote URL
+                            gif.videoUrl = gif.modelData.remoteUrl;
+                        }
+
                         Accessible.description: modelData.caption
 
                         Layout.fillWidth: true
@@ -294,6 +299,11 @@ Item {
                             if (!root.isSensitive) {
                                 root.openAttachmentMenu(modelData);
                             }
+                        }
+
+                        onErrorOccurred: {
+                            // Fall back to remote URL
+                            video.videoUrl = video.modelData.remoteUrl;
                         }
 
                         Connections {

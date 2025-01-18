@@ -18,6 +18,8 @@ Item {
     property alias position: player.position
     property bool looping
 
+    signal errorOccurred(error: int, errorString: string)
+
     function play(): void {
         player.play();
     }
@@ -42,6 +44,8 @@ Item {
                 }
             }
         }
+
+        onErrorOccurred: (error, errorString) => root.errorOccurred(error, errorString)
     }
 
     VideoOutput {

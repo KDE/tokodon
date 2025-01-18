@@ -21,6 +21,8 @@ MediaContainer {
     property alias showControls: mediaControls.visible
     property bool looping: false
 
+    signal errorOccurred(error: int, errorString: string)
+
     function pause() {
         // Unlike the other functions, we want to make sure the item doesn't accidentally get created when the video is auto-paused due to scrolling
         if (player.active) {
@@ -52,13 +54,14 @@ MediaContainer {
             autoPlay: root.autoPlay
             source: root.videoUrl
             looping: root.looping
+            onErrorOccurred: (error, errorString) => root.errorOccurred(error, errorString)
         }
     }
 
     Image {
         anchors.fill: parent
         source: visible ? modelData.tempSource : ''
-        visible: previewImage.status !== Image.Ready || root.isSensitive
+        visible: previewImage.visible && (previewImage.status !== Image.Ready || root.isSensitive)
     }
 
     Image {

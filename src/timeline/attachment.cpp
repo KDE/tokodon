@@ -54,10 +54,15 @@ void Attachment::fromJson(const QJsonObject &obj)
         m_type = stringToAttachmentType[type];
     }
 
+    // If we hit media blocked by the server, it gives us a type of "unknown". So we need to figure out what it actually is:
     if (!m_remote_url.isEmpty() && m_type == Unknown) {
         const auto mimeType = QMimeDatabase().mimeTypeForFile(m_remote_url);
         if (mimeType.name().contains("image"_L1)) {
-            m_type = AttachmentType::Image;
+            m_type = Image;
+        } else if (mimeType.name().contains("video"_L1)) {
+            m_type = Video;
+        } else if (mimeType.name().contains("audio"_L1)) {
+            m_type = Audio;
         }
     }
 
