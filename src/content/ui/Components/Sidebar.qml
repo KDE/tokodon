@@ -121,6 +121,7 @@ Kirigami.OverlayDrawer {
 
             contentWidth: availableWidth
             topPadding: Math.round(Kirigami.Units.smallSpacing / 2)
+            bottomPadding: Math.round(Kirigami.Units.smallSpacing / 2)
 
             QQC2.ScrollBar.vertical.interactive: false
 
