@@ -22,8 +22,15 @@ FormCard.FormCardPage {
         Layout.topMargin: Kirigami.Units.largeSpacing * 4
 
         FormCard.FormButtonDelegate {
-            text: i18nc("@action:buttin", "Announcements")
+            text: i18nc("@action:button", "Announcements")
             onClicked: pageStack.push(Qt.createComponent("org.kde.tokodon", "AnnouncementsPage"));
+        }
+
+        FormCard.FormDelegateSeparator {}
+
+        FormCard.FormButtonDelegate {
+            text: i18nc("@action:button", "Privacy Policy")
+            onClicked: pageStack.push(Qt.createComponent("org.kde.tokodon", "PrivacyPolicyPage"));
         }
     }
 

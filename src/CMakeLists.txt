@@ -72,6 +72,8 @@ target_sources(tokodon_static
     account/filtersmodel.h
     account/blockeddomainmodel.cpp
     account/blockeddomainmodel.h
+    account/privacypolicy.cpp
+    account/privacypolicy.h
 
     # Editor
     editor/posteditorbackend.cpp
@@ -327,6 +329,7 @@ qt_target_qml_sources(tokodon_static
         content/ui/TimelinePage.qml
         content/ui/UserInfo.qml
         content/ui/ServerInformationPage.qml
+        content/ui/PrivacyPolicyPage.qml
 )
 
 set_source_files_properties(../org.kde.tokodon.svg PROPERTIES
