@@ -133,53 +133,57 @@ FormCard.FormCardPage {
 
     FormCard.FormHeader {
         title: i18nc("@info:header", "Keywords")
+
+        actions: QQC2.Action {
+            text: i18nc("@action:button Add keyword", "Add")
+            icon.name: "list-add-symbolic"
+            onTriggered: backend.addKeyword()
+        }
     }
 
     FormCard.FormCard {
         enabled: !backend.loading
 
-        FormCard.AbstractFormDelegate {
-            contentItem: ColumnLayout {
-                spacing: Kirigami.Units.smallSpacing
+        FormCard.FormPlaceholderMessageDelegate {
+            text: i18nc("@info:placeholder", "No keywords")
+            visible: keywordsRepeater.count === 0
+        }
 
-                Repeater {
-                    model: backend.keywords
+        Repeater {
+            id: keywordsRepeater
 
-                    delegate: RowLayout {
-                        id: delegate
+            model: backend.keywords
 
-                        required property int index
-                        required property string keyword
-                        required property bool whole_word
+            FormCard.AbstractFormDelegate {
+                id: delegate
 
-                        spacing: Kirigami.Units.smallSpacing
+                required property int index
+                required property string keyword
+                required property bool whole_word
 
-                        QQC2.TextField {
-                            text: delegate.keyword
-                            onEditingFinished: backend.editKeyword(delegate.index, text)
+                background: null
+                contentItem: RowLayout {
+                    spacing: Kirigami.Units.smallSpacing
 
-                            Layout.fillWidth: true
-                        }
+                    QQC2.TextField {
+                        text: delegate.keyword
+                        onEditingFinished: backend.editKeyword(delegate.index, text)
 
-                        QQC2.CheckBox {
-                            text: i18nc("@label:checkbox", "Whole word")
-                            checked: delegate.whole_word
-                            onToggled: backend.editWholeWord(delegate.index, checked)
-                        }
-
-                        QQC2.Button {
-                            text: i18nc("@action:button Remove keyword", "Remove")
-                            icon.name: "list-remove-symbolic"
-                            display: QQC2.AbstractButton.IconOnly
-                            onClicked: backend.removeKeyword(delegate.index)
-                        }
+                        Layout.fillWidth: true
                     }
-                }
 
-                QQC2.Button {
-                    text: i18nc("@action:button Add keyword", "Add")
-                    icon.name: "list-add-symbolic"
-                    onClicked: backend.addKeyword()
+                    QQC2.CheckBox {
+                        text: i18nc("@label:checkbox", "Whole word")
+                        checked: delegate.whole_word
+                        onToggled: backend.editWholeWord(delegate.index, checked)
+                    }
+
+                    QQC2.Button {
+                        text: i18nc("@action:button Remove keyword", "Remove")
+                        icon.name: "list-remove-symbolic"
+                        display: QQC2.AbstractButton.IconOnly
+                        onClicked: backend.removeKeyword(delegate.index)
+                    }
                 }
             }
         }
