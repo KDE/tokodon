@@ -149,6 +149,32 @@ Kirigami.ScrollablePage {
         }
     }
 
+    function purposeIconName(): string {
+        switch (root.purpose) {
+            case StatusComposer.New:
+                return "document-send-symbolic";
+            case StatusComposer.Reply:
+                return "view-conversation-balloon-symbolic";
+            case StatusComposer.Redraft:
+                return "edit-redo-symbolic";
+            case StatusComposer.Edit:
+                return "document-save-symbolic";
+        }
+    }
+
+    function purposeString(): string {
+        switch (root.purpose) {
+            case StatusComposer.New:
+                return i18nc("@action:button Send a post", "Send");
+            case StatusComposer.Reply:
+                return i18nc("@action:button Reply to a post", "Reply");
+            case StatusComposer.Redraft:
+                return i18nc("@action:button Send the same post again", "Repost");
+            case StatusComposer.Edit:
+                return i18nc("@action:Button Save an edited a post", "Save");
+        }
+    }
+
     Kirigami.PromptDialog {
         id: discardDraftPrompt
 
@@ -648,41 +674,31 @@ Kirigami.ScrollablePage {
                 visible: root.purpose === StatusComposer.New
                 Layout.alignment: Qt.AlignRight
                 onClicked: {
-                    schedulePostPrompt.parent = root.Window.window.overlay; // workaround Kirigami.PromptDialog being broken
-                    schedulePostPrompt.open();
+                    if (!backend.attachmentEditorModel.isAltTextComplete()) {
+                        altTextPrompt.scheduled = true;
+                        altTextPrompt.openDialog();
+                    } else {
+                        schedulePostPrompt.parent = root.Window.window.overlay; // workaround Kirigami.PromptDialog being broken
+                        schedulePostPrompt.open();
+                    }
                 }
             }
 
             QQC2.Button {
                 id: postButton
 
-                icon.name: {
-                    switch (root.purpose) {
-                        case StatusComposer.New:
-                            return "document-send-symbolic";
-                        case StatusComposer.Reply:
-                            return "view-conversation-balloon-symbolic";
-                        case StatusComposer.Redraft:
-                            return "edit-redo-symbolic";
-                        case StatusComposer.Edit:
-                            return "document-save-symbolic";
-                    }
-                }
-                text: {
-                    switch (root.purpose) {
-                        case StatusComposer.New:
-                            return i18nc("@action:button Send a post", "Send");
-                        case StatusComposer.Reply:
-                            return i18nc("@action:button Reply to a post", "Reply");
-                        case StatusComposer.Redraft:
-                            return i18nc("@action:button Send the same post again", "Repost");
-                        case StatusComposer.Edit:
-                            return i18nc("@action:Button Save an edited a post", "Save");
-                    }
-                }
+                icon.name: root.purposeIconName()
+                text: root.purposeString()
                 enabled: root.isStatusValid && root.isPollValid && (!progress.uploading || backend.attachmentEditorModel.count > 0)
                 Layout.alignment: Qt.AlignRight
-                onClicked: root.submitPost()
+                onClicked: {
+                    if (!backend.attachmentEditorModel.isAltTextComplete()) {
+                        altTextPrompt.scheduled = false;
+                        altTextPrompt.openDialog();
+                    } else {
+                        root.submitPost();
+                    }
+                }
             }
         }
     }
@@ -695,6 +711,42 @@ Kirigami.ScrollablePage {
             anchors.bottom: parent.bottom
             source: "qrc:/content/elephant.svg"
             asynchronous: true
+        }
+    }
+
+    Components.MessageDialog {
+        id: altTextPrompt
+
+        property bool scheduled
+
+        implicitWidth: Math.min(parent.width - Kirigami.Units.gridUnit * 2, Kirigami.Units.gridUnit * 25)
+        title: i18nc("@title", "Alt Text Reminder")
+        dialogType: Components.MessageDialog.Warning
+
+        QQC2.Label {
+            text: i18nc("@label", "Some of your media is missing alt text. Adding descriptions help everyone, especially the visually impaired.")
+            wrapMode: Text.WordWrap
+            Layout.fillWidth: true
+        }
+
+        onRejected: altTextPrompt.close();
+        onAccepted: {
+            altTextPrompt.close();
+            if (altTextPrompt.scheduled) {
+                schedulePostPrompt.parent = root.Window.window.overlay; // workaround Kirigami.PromptDialog being broken
+                schedulePostPrompt.open();
+            } else {
+                root.submitPost();
+            }
+        }
+
+        standardButtons: QQC2.Dialog.Cancel | QQC2.Dialog.Ok
+        dontShowAgainName: 'missingAltText'
+
+        onOpened: {
+            const button = altTextPrompt.standardButton(QQC2.Dialog.Ok);
+            button.icon.name = altTextPrompt.scheduled ? "resource-calendar-insert" : root.purposeIconName();
+            button.text = altTextPrompt.scheduled ? i18nc("@action:button Schedule something to be posted later", "Schedule") : root.purposeString();
         }
     }
 }

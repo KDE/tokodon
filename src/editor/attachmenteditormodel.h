@@ -42,6 +42,10 @@ public Q_SLOTS:
     void setDescription(int row, const QString &description);
     void setFocusPoint(int row, double x, double y);
     bool isLocalFile(const QString &fileName);
+    /**
+     * @return True if all of the attachments have alt text.
+     */
+    bool isAltTextComplete() const;
 
 Q_SIGNALS:
     void postChanged();

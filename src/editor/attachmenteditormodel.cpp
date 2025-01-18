@@ -171,4 +171,14 @@ bool AttachmentEditorModel::isLocalFile(const QString &fileName)
     return info.exists();
 }
 
+bool AttachmentEditorModel::isAltTextComplete() const
+{
+    for (auto &attachment : m_attachments) {
+        if (attachment->description().isEmpty()) {
+            return false;
+        }
+    }
+    return true;
+}
+
 #include "moc_attachmenteditormodel.cpp"
