@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-18 00:41+0000\n"
-"PO-Revision-Date: 2025-01-17 09:52+0200\n"
+"POT-Creation-Date: 2025-01-19 00:41+0000\n"
+"PO-Revision-Date: 2025-01-18 13:30+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -1188,12 +1188,10 @@ msgstr ""
 "לפי הפוסטים האחרונים שלהם."
 
 #: content/ui/FullScreenImage.qml:33
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Expand Post"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Open Post"
-msgstr "הרחבת רשומה"
+msgstr "פתיחת רשומה"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:19
 #, kde-format
@@ -3365,19 +3363,19 @@ msgstr "מצב עם קטע שמע מצורף"
 msgid "Not available"
 msgstr "לא זמין"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:371
+#: content/ui/PostDelegate/AttachmentGrid.qml:381
 #, kde-format
 msgctxt "@action:button"
 msgid "Hide Media"
 msgstr "הסתרת מדיה"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:375
+#: content/ui/PostDelegate/AttachmentGrid.qml:385
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Hide media"
 msgstr "הסתרת מדיה"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:386
+#: content/ui/PostDelegate/AttachmentGrid.qml:396
 #, kde-format
 msgid "Show Media"
 msgstr "הצגת מדיה"
@@ -3415,7 +3413,7 @@ msgid "Post"
 msgstr "רשומה"
 
 #: content/ui/PostDelegate/AudioAttachment.qml:80
-#: content/ui/PostDelegate/VideoAttachment.qml:106
+#: content/ui/PostDelegate/VideoAttachment.qml:109
 #, kde-format
 msgctxt "@action:button Start media playback"
 msgid "Play"
@@ -4146,166 +4144,144 @@ msgid "Auto-play animated GIFs"
 msgstr "לנגן GIFים מונפשים אוטומטית"
 
 #: content/ui/Settings/EditFilterPage.qml:30
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Create List"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Filter"
-msgstr "יצירת רשימה"
+msgstr "יצירת מסנן"
 
 #: content/ui/Settings/EditFilterPage.qml:30
-#, fuzzy, kde-format
-#| msgctxt "@info:Option Filter and send to the filtered inbox"
-#| msgid "Filter"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Filter"
-msgstr "מסנן"
+msgstr "עריכת מסנן"
 
 #: content/ui/Settings/EditFilterPage.qml:73
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox List title"
-#| msgid "Title"
+#, kde-format
 msgctxt "@label:textbox Filter title"
 msgid "Title"
 msgstr "כותרת"
 
 #: content/ui/Settings/EditFilterPage.qml:78
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@info:header"
 msgid "Contexts"
-msgstr "המשך"
+msgstr "הקשרים"
 
 #: content/ui/Settings/EditFilterPage.qml:85
 #, kde-format
 msgctxt "@info"
 msgid "Select one or more contexts where this filter should apply:"
-msgstr ""
+msgstr "נא לבחור הקשר אחד או יותר שעליהם המסנן הזה אמור לחול:"
 
 #: content/ui/Settings/EditFilterPage.qml:90
-#, fuzzy, kde-format
-#| msgid "No Lists"
+#, kde-format
 msgctxt "@label:checkbox"
 msgid "Home and Lists"
-msgstr "אין רשימות"
+msgstr "בית ורשימות"
 
 #: content/ui/Settings/EditFilterPage.qml:95
-#, fuzzy, kde-format
-#| msgid "Notifications"
+#, kde-format
 msgctxt "@label:checkbox"
 msgid "Notifications"
 msgstr "התראות"
 
 #: content/ui/Settings/EditFilterPage.qml:100
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Global Timeline"
+#, kde-format
 msgctxt "@label:checkbox"
 msgid "Public Timelines"
-msgstr "ציר זמן כללי"
+msgstr "צירי זמן ציבוריים"
 
 #: content/ui/Settings/EditFilterPage.qml:105
-#, fuzzy, kde-format
-#| msgid "Conversations"
+#, kde-format
 msgctxt "@label:checkbox"
 msgid "Conversations"
 msgstr "שיחות"
 
 #: content/ui/Settings/EditFilterPage.qml:110
-#, fuzzy, kde-format
-#| msgid "Profile"
+#, kde-format
 msgctxt "@label:checkbox"
 msgid "Profiles"
-msgstr "פרופיל"
+msgstr "פרופילים"
 
 #: content/ui/Settings/EditFilterPage.qml:115
-#, fuzzy, kde-format
-#| msgctxt "@info:Location combobox to choose location filters"
-#| msgid "Location"
+#, kde-format
 msgctxt "@info:header"
 msgid "Action"
-msgstr "מקום"
+msgstr "פעולה"
 
 #: content/ui/Settings/EditFilterPage.qml:123
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Content Notice"
+#, kde-format
 msgctxt "@label:radiobutton"
 msgid "Hide with Content Notice"
-msgstr "התראת תוכן"
+msgstr "הסתרה עם התראת תוכן"
 
 #: content/ui/Settings/EditFilterPage.qml:129
-#, fuzzy, kde-format
-#| msgctxt "@option:check Poll toolbar"
-#| msgid "Hide totals"
+#, kde-format
 msgctxt "@label:radiobutton"
 msgid "Hide Completely"
-msgstr "הסתרת הסיכומים"
+msgstr "הסתרה לצמיתות"
 
 #: content/ui/Settings/EditFilterPage.qml:135
 #, kde-format
 msgctxt "@info:header"
 msgid "Keywords"
-msgstr ""
+msgstr "מילות מפתח"
 
-#: content/ui/Settings/EditFilterPage.qml:165
+#: content/ui/Settings/EditFilterPage.qml:138
 #, kde-format
-msgctxt "@label:checkbox"
-msgid "Whole word"
-msgstr ""
-
-#: content/ui/Settings/EditFilterPage.qml:171
-#, fuzzy, kde-format
-#| msgid "Remove"
-msgctxt "@action:button Remove keyword"
-msgid "Remove"
-msgstr "הסרה"
-
-#: content/ui/Settings/EditFilterPage.qml:180
-#, fuzzy, kde-format
-#| msgctxt "@action:button Add user to this list"
-#| msgid "Add"
 msgctxt "@action:button Add keyword"
 msgid "Add"
 msgstr "הוספה"
 
-#: content/ui/Settings/EditFilterPage.qml:205
+#: content/ui/Settings/EditFilterPage.qml:148
 #, fuzzy, kde-format
-#| msgctxt "@action:button Create the list"
-#| msgid "Create"
+#| msgctxt "@info:header"
+#| msgid "Keywords"
+msgctxt "@info:placeholder"
+msgid "No keywords"
+msgstr "מילות מפתח"
+
+#: content/ui/Settings/EditFilterPage.qml:176
+#, kde-format
+msgctxt "@label:checkbox"
+msgid "Whole word"
+msgstr "מילה שלמה"
+
+#: content/ui/Settings/EditFilterPage.qml:182
+#, kde-format
+msgctxt "@action:button Remove keyword"
+msgid "Remove"
+msgstr "הסרה"
+
+#: content/ui/Settings/EditFilterPage.qml:209
+#, kde-format
 msgctxt "@action:button Create the filter"
 msgid "Create"
 msgstr "יצירה"
 
-#: content/ui/Settings/EditFilterPage.qml:207
-#, fuzzy, kde-format
-#| msgid "Edit"
+#: content/ui/Settings/EditFilterPage.qml:211
+#, kde-format
 msgctxt "@action:button Edit the filter"
 msgid "Edit"
 msgstr "עריכה"
 
-#: content/ui/Settings/EditFilterPage.qml:220
-#, fuzzy, kde-format
-#| msgid "Delete"
+#: content/ui/Settings/EditFilterPage.qml:224
+#, kde-format
 msgctxt "@action:button Delete the filter"
 msgid "Delete"
 msgstr "מחיקה"
 
-#: content/ui/Settings/EditFilterPage.qml:227
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Deleting List"
+#: content/ui/Settings/EditFilterPage.qml:231
+#, kde-format
 msgctxt "@title"
 msgid "Deleting Filter"
-msgstr "רשימה נמחקת"
+msgstr "מחיקת המסנן"
 
-#: content/ui/Settings/EditFilterPage.qml:228
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Are you sure you want to delete this list?"
+#: content/ui/Settings/EditFilterPage.qml:232
+#, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to delete this filter?"
-msgstr "למחוק את הרשימה הזאת?"
+msgstr "למחוק את המסנן הזה?"
 
 #: content/ui/Settings/EditProfilePage.qml:26
 #, kde-format
@@ -4338,27 +4314,22 @@ msgid "No Errors"
 msgstr "אין שגיאות"
 
 #: content/ui/Settings/FiltersPage.qml:21
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Filters"
+#, kde-format
 msgctxt "@title"
 msgid "Filters"
 msgstr "מסננים"
 
 #: content/ui/Settings/FiltersPage.qml:28
-#, fuzzy, kde-format
-#| msgid "Create List"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Create Filter"
-msgstr "יצירת רשימה"
+msgstr "יצירת מסנן"
 
 #: content/ui/Settings/FiltersPage.qml:79
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Filters"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Filters"
-msgstr "מסננים"
+msgstr "בלי מסננים"
 
 #: content/ui/Settings/NetworkProxyPage.qml:15
 #, kde-format
@@ -4886,14 +4857,14 @@ msgid "No Scheduled Posts"
 msgstr "אין רשומות מתוזמנות"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:114
-#: content/ui/StatusComposer/StatusComposer.qml:155
+#: content/ui/StatusComposer/StatusComposer.qml:181
 #, kde-format
 msgctxt "@title"
 msgid "Discard Draft"
 msgstr "התעלמות מטיוטה"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:115
-#: content/ui/StatusComposer/StatusComposer.qml:156
+#: content/ui/StatusComposer/StatusComposer.qml:182
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to discard your draft?"
@@ -4946,155 +4917,170 @@ msgstr "שליפה החוצה"
 msgid "Saving an edited post that has a poll will clear existing results."
 msgstr "שמירת רשומה לאחר עריכה ויש בה סקר יאפס את התוצאות הקיימות."
 
-#: content/ui/StatusComposer/StatusComposer.qml:162
-#, kde-format
-msgctxt "@action:button Keep this draft"
-msgid "Save"
-msgstr "שמירה"
-
-#: content/ui/StatusComposer/StatusComposer.qml:170
-#, kde-format
-msgctxt "@action:button Go back to editing"
-msgid "Cancel"
-msgstr "ביטול"
-
-#: content/ui/StatusComposer/StatusComposer.qml:189
-#, kde-format
-msgctxt "@title"
-msgid "Schedule Post"
-msgstr "תזמון רשומה"
-
-#: content/ui/StatusComposer/StatusComposer.qml:195
-#, kde-format
-msgctxt "@action:button Set this post's schedule to when it should be posted"
-msgid "Set Schedule"
-msgstr "הגדרת תזמון"
-
-#: content/ui/StatusComposer/StatusComposer.qml:311
-#, kde-format
-msgctxt "@info:placeholder"
-msgid "Content notice"
-msgstr "התראת תוכן"
-
-#: content/ui/StatusComposer/StatusComposer.qml:325
-#, kde-format
-msgctxt "@info:placeholder"
-msgid "What's new?"
-msgstr "מה חדש?"
-
-#: content/ui/StatusComposer/StatusComposer.qml:463
-#, kde-format
-msgctxt "@title:window"
-msgid "Choose a File"
-msgstr "נא לבחור קובץ"
-
-#: content/ui/StatusComposer/StatusComposer.qml:468
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Attach file"
-msgstr "צירוף קובץ"
-
-#: content/ui/StatusComposer/StatusComposer.qml:479
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Add poll"
-msgstr "הוספת סקר"
-
-#: content/ui/StatusComposer/StatusComposer.qml:491
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Content Notice"
-msgstr "התראת תוכן"
-
-#: content/ui/StatusComposer/StatusComposer.qml:530
-#, kde-format
-msgctxt "@title"
-msgid "Visibility"
-msgstr "חשיפה"
-
-#: content/ui/StatusComposer/StatusComposer.qml:534
-#, kde-format
-msgctxt "@item:inmenu Local to this server"
-msgid "Local"
-msgstr "מקומי"
-
-#: content/ui/StatusComposer/StatusComposer.qml:540
-#, kde-format
-msgctxt "@item:inmenu Public to the world"
-msgid "Public"
-msgstr "ציבורי"
-
-#: content/ui/StatusComposer/StatusComposer.qml:545
-#, kde-format
-msgctxt "@item:inmenu Public but less so"
-msgid "Unlisted"
-msgstr "נסתר"
-
-#: content/ui/StatusComposer/StatusComposer.qml:550
-#, kde-format
-msgctxt "@item:inmenu Only to followers"
-msgid "Private"
-msgstr "פרטי"
-
-#: content/ui/StatusComposer/StatusComposer.qml:555
-#, kde-format
-msgctxt "@item:inmenu Only to who is explicitly mentioned"
-msgid "Direct Message"
-msgstr "הודעה ישירה"
-
-#: content/ui/StatusComposer/StatusComposer.qml:560
-#, kde-format
-msgctxt "@info:tooltip Post visibility"
-msgid "Visibility"
-msgstr "חשיפה"
-
-#: content/ui/StatusComposer/StatusComposer.qml:567
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Post language"
-msgstr "שפת הרשומה"
-
-#: content/ui/StatusComposer/StatusComposer.qml:606
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Add emoji"
-msgstr "הוספת אמוג׳י"
-
-#: content/ui/StatusComposer/StatusComposer.qml:636
-#, kde-format
-msgctxt "@label Character count in the status composer"
-msgid "<b>%1/%2</b> characters"
-msgstr "<b>%1/%2</b> תווים"
-
-#: content/ui/StatusComposer/StatusComposer.qml:646
-#, kde-format
-msgctxt "@action:button Schedule something to be posted later"
-msgid "Schedule"
-msgstr "תזמון"
-
-#: content/ui/StatusComposer/StatusComposer.qml:674
+#: content/ui/StatusComposer/StatusComposer.qml:168
 #, kde-format
 msgctxt "@action:button Send a post"
 msgid "Send"
 msgstr "שליחה"
 
-#: content/ui/StatusComposer/StatusComposer.qml:676
+#: content/ui/StatusComposer/StatusComposer.qml:170
 #, kde-format
 msgctxt "@action:button Reply to a post"
 msgid "Reply"
 msgstr "תגובה"
 
-#: content/ui/StatusComposer/StatusComposer.qml:678
+#: content/ui/StatusComposer/StatusComposer.qml:172
 #, kde-format
 msgctxt "@action:button Send the same post again"
 msgid "Repost"
 msgstr "פרסום מחדש"
 
-#: content/ui/StatusComposer/StatusComposer.qml:680
+#: content/ui/StatusComposer/StatusComposer.qml:174
 #, kde-format
 msgctxt "@action:Button Save an edited a post"
 msgid "Save"
 msgstr "שמירה"
+
+#: content/ui/StatusComposer/StatusComposer.qml:188
+#, kde-format
+msgctxt "@action:button Keep this draft"
+msgid "Save"
+msgstr "שמירה"
+
+#: content/ui/StatusComposer/StatusComposer.qml:196
+#, kde-format
+msgctxt "@action:button Go back to editing"
+msgid "Cancel"
+msgstr "ביטול"
+
+#: content/ui/StatusComposer/StatusComposer.qml:215
+#, kde-format
+msgctxt "@title"
+msgid "Schedule Post"
+msgstr "תזמון רשומה"
+
+#: content/ui/StatusComposer/StatusComposer.qml:221
+#, kde-format
+msgctxt "@action:button Set this post's schedule to when it should be posted"
+msgid "Set Schedule"
+msgstr "הגדרת תזמון"
+
+#: content/ui/StatusComposer/StatusComposer.qml:337
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Content notice"
+msgstr "התראת תוכן"
+
+#: content/ui/StatusComposer/StatusComposer.qml:351
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "What's new?"
+msgstr "מה חדש?"
+
+#: content/ui/StatusComposer/StatusComposer.qml:489
+#, kde-format
+msgctxt "@title:window"
+msgid "Choose a File"
+msgstr "נא לבחור קובץ"
+
+#: content/ui/StatusComposer/StatusComposer.qml:494
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Attach file"
+msgstr "צירוף קובץ"
+
+#: content/ui/StatusComposer/StatusComposer.qml:505
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Add poll"
+msgstr "הוספת סקר"
+
+#: content/ui/StatusComposer/StatusComposer.qml:517
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Content Notice"
+msgstr "התראת תוכן"
+
+#: content/ui/StatusComposer/StatusComposer.qml:556
+#, kde-format
+msgctxt "@title"
+msgid "Visibility"
+msgstr "חשיפה"
+
+#: content/ui/StatusComposer/StatusComposer.qml:560
+#, kde-format
+msgctxt "@item:inmenu Local to this server"
+msgid "Local"
+msgstr "מקומי"
+
+#: content/ui/StatusComposer/StatusComposer.qml:566
+#, kde-format
+msgctxt "@item:inmenu Public to the world"
+msgid "Public"
+msgstr "ציבורי"
+
+#: content/ui/StatusComposer/StatusComposer.qml:571
+#, kde-format
+msgctxt "@item:inmenu Public but less so"
+msgid "Unlisted"
+msgstr "נסתר"
+
+#: content/ui/StatusComposer/StatusComposer.qml:576
+#, kde-format
+msgctxt "@item:inmenu Only to followers"
+msgid "Private"
+msgstr "פרטי"
+
+#: content/ui/StatusComposer/StatusComposer.qml:581
+#, kde-format
+msgctxt "@item:inmenu Only to who is explicitly mentioned"
+msgid "Direct Message"
+msgstr "הודעה ישירה"
+
+#: content/ui/StatusComposer/StatusComposer.qml:586
+#, kde-format
+msgctxt "@info:tooltip Post visibility"
+msgid "Visibility"
+msgstr "חשיפה"
+
+#: content/ui/StatusComposer/StatusComposer.qml:593
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Post language"
+msgstr "שפת הרשומה"
+
+#: content/ui/StatusComposer/StatusComposer.qml:632
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Add emoji"
+msgstr "הוספת אמוג׳י"
+
+#: content/ui/StatusComposer/StatusComposer.qml:662
+#, kde-format
+msgctxt "@label Character count in the status composer"
+msgid "<b>%1/%2</b> characters"
+msgstr "<b>%1/%2</b> תווים"
+
+#: content/ui/StatusComposer/StatusComposer.qml:672
+#: content/ui/StatusComposer/StatusComposer.qml:749
+#, kde-format
+msgctxt "@action:button Schedule something to be posted later"
+msgid "Schedule"
+msgstr "תזמון"
+
+#: content/ui/StatusComposer/StatusComposer.qml:723
+#, kde-format
+msgctxt "@title"
+msgid "Alt Text Reminder"
+msgstr ""
+
+#: content/ui/StatusComposer/StatusComposer.qml:727
+#, kde-format
+msgctxt "@label"
+msgid ""
+"Some of your media is missing alt text. Adding descriptions help everyone, "
+"especially the visually impaired."
+msgstr ""
 
 #: content/ui/TimelinePage.qml:38 timeline/accountmodel.cpp:41
 #, kde-format

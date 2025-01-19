@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-18 00:41+0000\n"
+"POT-Creation-Date: 2025-01-19 00:41+0000\n"
 "PO-Revision-Date: 2022-10-14 14:00+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -3553,19 +3553,19 @@ msgstr ""
 msgid "Not available"
 msgstr ""
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:371
+#: content/ui/PostDelegate/AttachmentGrid.qml:381
 #, kde-format
 msgctxt "@action:button"
 msgid "Hide Media"
 msgstr ""
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:375
+#: content/ui/PostDelegate/AttachmentGrid.qml:385
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Hide media"
 msgstr ""
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:386
+#: content/ui/PostDelegate/AttachmentGrid.qml:396
 #, fuzzy, kde-format
 #| msgid "Show more"
 msgid "Show Media"
@@ -3609,7 +3609,7 @@ msgid "Post"
 msgstr "Endurbirta"
 
 #: content/ui/PostDelegate/AudioAttachment.qml:80
-#: content/ui/PostDelegate/VideoAttachment.qml:106
+#: content/ui/PostDelegate/VideoAttachment.qml:109
 #, kde-format
 msgctxt "@action:button Start media playback"
 msgid "Play"
@@ -4478,53 +4478,59 @@ msgctxt "@info:header"
 msgid "Keywords"
 msgstr ""
 
-#: content/ui/Settings/EditFilterPage.qml:165
+#: content/ui/Settings/EditFilterPage.qml:138
+#, kde-format
+msgctxt "@action:button Add keyword"
+msgid "Add"
+msgstr ""
+
+#: content/ui/Settings/EditFilterPage.qml:148
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "No keywords"
+msgstr ""
+
+#: content/ui/Settings/EditFilterPage.qml:176
 #, fuzzy, kde-format
 #| msgid "Delete word"
 msgctxt "@label:checkbox"
 msgid "Whole word"
 msgstr "Eyða orði"
 
-#: content/ui/Settings/EditFilterPage.qml:171
+#: content/ui/Settings/EditFilterPage.qml:182
 #, kde-format
 msgctxt "@action:button Remove keyword"
 msgid "Remove"
 msgstr ""
 
-#: content/ui/Settings/EditFilterPage.qml:180
-#, kde-format
-msgctxt "@action:button Add keyword"
-msgid "Add"
-msgstr ""
-
-#: content/ui/Settings/EditFilterPage.qml:205
+#: content/ui/Settings/EditFilterPage.qml:209
 #, kde-format
 msgctxt "@action:button Create the filter"
 msgid "Create"
 msgstr ""
 
-#: content/ui/Settings/EditFilterPage.qml:207
+#: content/ui/Settings/EditFilterPage.qml:211
 #, fuzzy, kde-format
 #| msgid "Write a new toot"
 msgctxt "@action:button Edit the filter"
 msgid "Edit"
 msgstr "Skrifa nýja færslu"
 
-#: content/ui/Settings/EditFilterPage.qml:220
+#: content/ui/Settings/EditFilterPage.qml:224
 #, fuzzy, kde-format
 #| msgid "Delete word"
 msgctxt "@action:button Delete the filter"
 msgid "Delete"
 msgstr "Eyða orði"
 
-#: content/ui/Settings/EditFilterPage.qml:227
+#: content/ui/Settings/EditFilterPage.qml:231
 #, fuzzy, kde-format
 #| msgid "Delete word"
 msgctxt "@title"
 msgid "Deleting Filter"
 msgstr "Eyða orði"
 
-#: content/ui/Settings/EditFilterPage.qml:228
+#: content/ui/Settings/EditFilterPage.qml:232
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to delete this filter?"
@@ -5126,14 +5132,14 @@ msgid "No Scheduled Posts"
 msgstr "Eyða orði"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:114
-#: content/ui/StatusComposer/StatusComposer.qml:155
+#: content/ui/StatusComposer/StatusComposer.qml:181
 #, kde-format
 msgctxt "@title"
 msgid "Discard Draft"
 msgstr ""
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:115
-#: content/ui/StatusComposer/StatusComposer.qml:156
+#: content/ui/StatusComposer/StatusComposer.qml:182
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to discard your draft?"
@@ -5190,157 +5196,14 @@ msgstr ""
 msgid "Saving an edited post that has a poll will clear existing results."
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:162
-#, kde-format
-msgctxt "@action:button Keep this draft"
-msgid "Save"
-msgstr ""
-
-#: content/ui/StatusComposer/StatusComposer.qml:170
-#, kde-format
-msgctxt "@action:button Go back to editing"
-msgid "Cancel"
-msgstr ""
-
-#: content/ui/StatusComposer/StatusComposer.qml:189
-#, fuzzy, kde-format
-#| msgid "Delete word"
-msgctxt "@title"
-msgid "Schedule Post"
-msgstr "Eyða orði"
-
-#: content/ui/StatusComposer/StatusComposer.qml:195
-#, kde-format
-msgctxt "@action:button Set this post's schedule to when it should be posted"
-msgid "Set Schedule"
-msgstr ""
-
-#: content/ui/StatusComposer/StatusComposer.qml:311
-#, fuzzy, kde-format
-#| msgid "Content Warning"
-msgctxt "@info:placeholder"
-msgid "Content notice"
-msgstr "Aðvörun vegna efnis"
-
-#: content/ui/StatusComposer/StatusComposer.qml:325
-#, fuzzy, kde-format
-#| msgid "What's new?"
-msgctxt "@info:placeholder"
-msgid "What's new?"
-msgstr "Hvað er nýtt?"
-
-#: content/ui/StatusComposer/StatusComposer.qml:463
-#, fuzzy, kde-format
-#| msgid "Please choose a file"
-msgctxt "@title:window"
-msgid "Choose a File"
-msgstr "Veldu skrá"
-
-#: content/ui/StatusComposer/StatusComposer.qml:468
-#, fuzzy, kde-format
-#| msgid "Attach File"
-msgctxt "@info:tooltip"
-msgid "Attach file"
-msgstr "Hengja við skrá"
-
-#: content/ui/StatusComposer/StatusComposer.qml:479
-#, fuzzy, kde-format
-#| msgid "Add Poll"
-msgctxt "@info:tooltip"
-msgid "Add poll"
-msgstr "Bæta við könnun"
-
-#: content/ui/StatusComposer/StatusComposer.qml:491
-#, fuzzy, kde-format
-#| msgid "Content Warning"
-msgctxt "@info:tooltip"
-msgid "Content Notice"
-msgstr "Aðvörun vegna efnis"
-
-#: content/ui/StatusComposer/StatusComposer.qml:530
-#, fuzzy, kde-format
-#| msgid "Visibility"
-msgctxt "@title"
-msgid "Visibility"
-msgstr "Sýnileiki"
-
-#: content/ui/StatusComposer/StatusComposer.qml:534
-#, fuzzy, kde-format
-#| msgid "Local"
-msgctxt "@item:inmenu Local to this server"
-msgid "Local"
-msgstr "Staðvært"
-
-#: content/ui/StatusComposer/StatusComposer.qml:540
-#, fuzzy, kde-format
-#| msgid "Public"
-msgctxt "@item:inmenu Public to the world"
-msgid "Public"
-msgstr "Opinbert"
-
-#: content/ui/StatusComposer/StatusComposer.qml:545
-#, fuzzy, kde-format
-#| msgid "Unlisted"
-msgctxt "@item:inmenu Public but less so"
-msgid "Unlisted"
-msgstr "Óskráð"
-
-#: content/ui/StatusComposer/StatusComposer.qml:550
-#, fuzzy, kde-format
-#| msgid "Private"
-msgctxt "@item:inmenu Only to followers"
-msgid "Private"
-msgstr "Einka"
-
-#: content/ui/StatusComposer/StatusComposer.qml:555
-#, fuzzy, kde-format
-#| msgid "Direct Message"
-msgctxt "@item:inmenu Only to who is explicitly mentioned"
-msgid "Direct Message"
-msgstr "Bein skilaboð"
-
-#: content/ui/StatusComposer/StatusComposer.qml:560
-#, fuzzy, kde-format
-#| msgid "Visibility"
-msgctxt "@info:tooltip Post visibility"
-msgid "Visibility"
-msgstr "Sýnileiki"
-
-#: content/ui/StatusComposer/StatusComposer.qml:567
-#, fuzzy, kde-format
-#| msgid "Selected default language:"
-msgctxt "@info:tooltip"
-msgid "Post language"
-msgstr "Valið sjálfgefið tungumál:"
-
-#: content/ui/StatusComposer/StatusComposer.qml:606
-#, fuzzy, kde-format
-#| msgid "Choice %1"
-msgctxt "@info:tooltip"
-msgid "Add emoji"
-msgstr "Valkostur %1"
-
-#: content/ui/StatusComposer/StatusComposer.qml:636
-#, kde-format
-msgctxt "@label Character count in the status composer"
-msgid "<b>%1/%2</b> characters"
-msgstr ""
-
-#: content/ui/StatusComposer/StatusComposer.qml:646
-#, fuzzy, kde-format
-#| msgid "Delete word"
-msgctxt "@action:button Schedule something to be posted later"
-msgid "Schedule"
-msgstr "Eyða orði"
-
-#: content/ui/StatusComposer/StatusComposer.qml:674
+#: content/ui/StatusComposer/StatusComposer.qml:168
 #, fuzzy, kde-format
 #| msgid "Send"
 msgctxt "@action:button Send a post"
 msgid "Send"
 msgstr "Senda"
 
-#: content/ui/StatusComposer/StatusComposer.qml:676
+#: content/ui/StatusComposer/StatusComposer.qml:170
 #, fuzzy, kde-format
 #| msgctxt "Reply to a post"
 #| msgid "Reply"
@@ -5348,16 +5211,174 @@ msgctxt "@action:button Reply to a post"
 msgid "Reply"
 msgstr "Svara"
 
-#: content/ui/StatusComposer/StatusComposer.qml:678
+#: content/ui/StatusComposer/StatusComposer.qml:172
 #, kde-format
 msgctxt "@action:button Send the same post again"
 msgid "Repost"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:680
+#: content/ui/StatusComposer/StatusComposer.qml:174
 #, kde-format
 msgctxt "@action:Button Save an edited a post"
 msgid "Save"
+msgstr ""
+
+#: content/ui/StatusComposer/StatusComposer.qml:188
+#, kde-format
+msgctxt "@action:button Keep this draft"
+msgid "Save"
+msgstr ""
+
+#: content/ui/StatusComposer/StatusComposer.qml:196
+#, kde-format
+msgctxt "@action:button Go back to editing"
+msgid "Cancel"
+msgstr ""
+
+#: content/ui/StatusComposer/StatusComposer.qml:215
+#, fuzzy, kde-format
+#| msgid "Delete word"
+msgctxt "@title"
+msgid "Schedule Post"
+msgstr "Eyða orði"
+
+#: content/ui/StatusComposer/StatusComposer.qml:221
+#, kde-format
+msgctxt "@action:button Set this post's schedule to when it should be posted"
+msgid "Set Schedule"
+msgstr ""
+
+#: content/ui/StatusComposer/StatusComposer.qml:337
+#, fuzzy, kde-format
+#| msgid "Content Warning"
+msgctxt "@info:placeholder"
+msgid "Content notice"
+msgstr "Aðvörun vegna efnis"
+
+#: content/ui/StatusComposer/StatusComposer.qml:351
+#, fuzzy, kde-format
+#| msgid "What's new?"
+msgctxt "@info:placeholder"
+msgid "What's new?"
+msgstr "Hvað er nýtt?"
+
+#: content/ui/StatusComposer/StatusComposer.qml:489
+#, fuzzy, kde-format
+#| msgid "Please choose a file"
+msgctxt "@title:window"
+msgid "Choose a File"
+msgstr "Veldu skrá"
+
+#: content/ui/StatusComposer/StatusComposer.qml:494
+#, fuzzy, kde-format
+#| msgid "Attach File"
+msgctxt "@info:tooltip"
+msgid "Attach file"
+msgstr "Hengja við skrá"
+
+#: content/ui/StatusComposer/StatusComposer.qml:505
+#, fuzzy, kde-format
+#| msgid "Add Poll"
+msgctxt "@info:tooltip"
+msgid "Add poll"
+msgstr "Bæta við könnun"
+
+#: content/ui/StatusComposer/StatusComposer.qml:517
+#, fuzzy, kde-format
+#| msgid "Content Warning"
+msgctxt "@info:tooltip"
+msgid "Content Notice"
+msgstr "Aðvörun vegna efnis"
+
+#: content/ui/StatusComposer/StatusComposer.qml:556
+#, fuzzy, kde-format
+#| msgid "Visibility"
+msgctxt "@title"
+msgid "Visibility"
+msgstr "Sýnileiki"
+
+#: content/ui/StatusComposer/StatusComposer.qml:560
+#, fuzzy, kde-format
+#| msgid "Local"
+msgctxt "@item:inmenu Local to this server"
+msgid "Local"
+msgstr "Staðvært"
+
+#: content/ui/StatusComposer/StatusComposer.qml:566
+#, fuzzy, kde-format
+#| msgid "Public"
+msgctxt "@item:inmenu Public to the world"
+msgid "Public"
+msgstr "Opinbert"
+
+#: content/ui/StatusComposer/StatusComposer.qml:571
+#, fuzzy, kde-format
+#| msgid "Unlisted"
+msgctxt "@item:inmenu Public but less so"
+msgid "Unlisted"
+msgstr "Óskráð"
+
+#: content/ui/StatusComposer/StatusComposer.qml:576
+#, fuzzy, kde-format
+#| msgid "Private"
+msgctxt "@item:inmenu Only to followers"
+msgid "Private"
+msgstr "Einka"
+
+#: content/ui/StatusComposer/StatusComposer.qml:581
+#, fuzzy, kde-format
+#| msgid "Direct Message"
+msgctxt "@item:inmenu Only to who is explicitly mentioned"
+msgid "Direct Message"
+msgstr "Bein skilaboð"
+
+#: content/ui/StatusComposer/StatusComposer.qml:586
+#, fuzzy, kde-format
+#| msgid "Visibility"
+msgctxt "@info:tooltip Post visibility"
+msgid "Visibility"
+msgstr "Sýnileiki"
+
+#: content/ui/StatusComposer/StatusComposer.qml:593
+#, fuzzy, kde-format
+#| msgid "Selected default language:"
+msgctxt "@info:tooltip"
+msgid "Post language"
+msgstr "Valið sjálfgefið tungumál:"
+
+#: content/ui/StatusComposer/StatusComposer.qml:632
+#, fuzzy, kde-format
+#| msgid "Choice %1"
+msgctxt "@info:tooltip"
+msgid "Add emoji"
+msgstr "Valkostur %1"
+
+#: content/ui/StatusComposer/StatusComposer.qml:662
+#, kde-format
+msgctxt "@label Character count in the status composer"
+msgid "<b>%1/%2</b> characters"
+msgstr ""
+
+#: content/ui/StatusComposer/StatusComposer.qml:672
+#: content/ui/StatusComposer/StatusComposer.qml:749
+#, fuzzy, kde-format
+#| msgid "Delete word"
+msgctxt "@action:button Schedule something to be posted later"
+msgid "Schedule"
+msgstr "Eyða orði"
+
+#: content/ui/StatusComposer/StatusComposer.qml:723
+#, kde-format
+msgctxt "@title"
+msgid "Alt Text Reminder"
+msgstr ""
+
+#: content/ui/StatusComposer/StatusComposer.qml:727
+#, kde-format
+msgctxt "@label"
+msgid ""
+"Some of your media is missing alt text. Adding descriptions help everyone, "
+"especially the visually impaired."
 msgstr ""
 
 #: content/ui/TimelinePage.qml:38 timeline/accountmodel.cpp:41

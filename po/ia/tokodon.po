@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-18 00:41+0000\n"
+"POT-Creation-Date: 2025-01-19 00:41+0000\n"
 "PO-Revision-Date: 2025-01-17 12:24+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -3321,19 +3321,19 @@ msgstr ""
 msgid "Not available"
 msgstr "Non disponibile"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:371
+#: content/ui/PostDelegate/AttachmentGrid.qml:381
 #, kde-format
 msgctxt "@action:button"
 msgid "Hide Media"
 msgstr "Cela Medios"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:375
+#: content/ui/PostDelegate/AttachmentGrid.qml:385
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Hide media"
 msgstr "Cela medios"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:386
+#: content/ui/PostDelegate/AttachmentGrid.qml:396
 #, kde-format
 msgid "Show Media"
 msgstr "Monstra media"
@@ -3371,7 +3371,7 @@ msgid "Post"
 msgstr "Message de publicar (Post)"
 
 #: content/ui/PostDelegate/AudioAttachment.qml:80
-#: content/ui/PostDelegate/VideoAttachment.qml:106
+#: content/ui/PostDelegate/VideoAttachment.qml:109
 #, kde-format
 msgctxt "@action:button Start media playback"
 msgid "Play"
@@ -4188,22 +4188,7 @@ msgctxt "@info:header"
 msgid "Keywords"
 msgstr ""
 
-#: content/ui/Settings/EditFilterPage.qml:165
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Delete word"
-msgctxt "@label:checkbox"
-msgid "Whole word"
-msgstr "Dele parola"
-
-#: content/ui/Settings/EditFilterPage.qml:171
-#, fuzzy, kde-format
-#| msgid "Remove"
-msgctxt "@action:button Remove keyword"
-msgid "Remove"
-msgstr "Remove"
-
-#: content/ui/Settings/EditFilterPage.qml:180
+#: content/ui/Settings/EditFilterPage.qml:138
 #, fuzzy, kde-format
 #| msgctxt "@action:button Add user to this list"
 #| msgid "Add"
@@ -4211,7 +4196,28 @@ msgctxt "@action:button Add keyword"
 msgid "Add"
 msgstr "Adde"
 
-#: content/ui/Settings/EditFilterPage.qml:205
+#: content/ui/Settings/EditFilterPage.qml:148
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "No keywords"
+msgstr ""
+
+#: content/ui/Settings/EditFilterPage.qml:176
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Delete word"
+msgctxt "@label:checkbox"
+msgid "Whole word"
+msgstr "Dele parola"
+
+#: content/ui/Settings/EditFilterPage.qml:182
+#, fuzzy, kde-format
+#| msgid "Remove"
+msgctxt "@action:button Remove keyword"
+msgid "Remove"
+msgstr "Remove"
+
+#: content/ui/Settings/EditFilterPage.qml:209
 #, fuzzy, kde-format
 #| msgctxt "@action:button Create the list"
 #| msgid "Create"
@@ -4219,21 +4225,21 @@ msgctxt "@action:button Create the filter"
 msgid "Create"
 msgstr "Create"
 
-#: content/ui/Settings/EditFilterPage.qml:207
+#: content/ui/Settings/EditFilterPage.qml:211
 #, fuzzy, kde-format
 #| msgid "Edit"
 msgctxt "@action:button Edit the filter"
 msgid "Edit"
 msgstr "Modifica"
 
-#: content/ui/Settings/EditFilterPage.qml:220
+#: content/ui/Settings/EditFilterPage.qml:224
 #, fuzzy, kde-format
 #| msgid "Delete"
 msgctxt "@action:button Delete the filter"
 msgid "Delete"
 msgstr "Dele"
 
-#: content/ui/Settings/EditFilterPage.qml:227
+#: content/ui/Settings/EditFilterPage.qml:231
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Deleting List"
@@ -4241,7 +4247,7 @@ msgctxt "@title"
 msgid "Deleting Filter"
 msgstr "Dele Lista"
 
-#: content/ui/Settings/EditFilterPage.qml:228
+#: content/ui/Settings/EditFilterPage.qml:232
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to delete this filter?"
@@ -4821,14 +4827,14 @@ msgid "No Scheduled Posts"
 msgstr "Nulle Posts Planificate"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:114
-#: content/ui/StatusComposer/StatusComposer.qml:155
+#: content/ui/StatusComposer/StatusComposer.qml:181
 #, kde-format
 msgctxt "@title"
 msgid "Discard Draft"
 msgstr ""
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:115
-#: content/ui/StatusComposer/StatusComposer.qml:156
+#: content/ui/StatusComposer/StatusComposer.qml:182
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to discard your draft?"
@@ -4881,155 +4887,170 @@ msgstr "Facer emerger (Pop out)"
 msgid "Saving an edited post that has a poll will clear existing results."
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:162
-#, kde-format
-msgctxt "@action:button Keep this draft"
-msgid "Save"
-msgstr "Salveguarda"
-
-#: content/ui/StatusComposer/StatusComposer.qml:170
-#, kde-format
-msgctxt "@action:button Go back to editing"
-msgid "Cancel"
-msgstr "Cancella"
-
-#: content/ui/StatusComposer/StatusComposer.qml:189
-#, kde-format
-msgctxt "@title"
-msgid "Schedule Post"
-msgstr "Planifica Post"
-
-#: content/ui/StatusComposer/StatusComposer.qml:195
-#, kde-format
-msgctxt "@action:button Set this post's schedule to when it should be posted"
-msgid "Set Schedule"
-msgstr ""
-
-#: content/ui/StatusComposer/StatusComposer.qml:311
-#, kde-format
-msgctxt "@info:placeholder"
-msgid "Content notice"
-msgstr "Aviso de Contento  "
-
-#: content/ui/StatusComposer/StatusComposer.qml:325
-#, kde-format
-msgctxt "@info:placeholder"
-msgid "What's new?"
-msgstr "Que es de novo?"
-
-#: content/ui/StatusComposer/StatusComposer.qml:463
-#, kde-format
-msgctxt "@title:window"
-msgid "Choose a File"
-msgstr "Selige un file"
-
-#: content/ui/StatusComposer/StatusComposer.qml:468
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Attach file"
-msgstr "Attacha File"
-
-#: content/ui/StatusComposer/StatusComposer.qml:479
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Add poll"
-msgstr "Adde Inquesta"
-
-#: content/ui/StatusComposer/StatusComposer.qml:491
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Content Notice"
-msgstr "Aviso de Contento  "
-
-#: content/ui/StatusComposer/StatusComposer.qml:530
-#, kde-format
-msgctxt "@title"
-msgid "Visibility"
-msgstr "Visibilitate"
-
-#: content/ui/StatusComposer/StatusComposer.qml:534
-#, kde-format
-msgctxt "@item:inmenu Local to this server"
-msgid "Local"
-msgstr "Local"
-
-#: content/ui/StatusComposer/StatusComposer.qml:540
-#, kde-format
-msgctxt "@item:inmenu Public to the world"
-msgid "Public"
-msgstr "Public"
-
-#: content/ui/StatusComposer/StatusComposer.qml:545
-#, kde-format
-msgctxt "@item:inmenu Public but less so"
-msgid "Unlisted"
-msgstr "Non listate"
-
-#: content/ui/StatusComposer/StatusComposer.qml:550
-#, kde-format
-msgctxt "@item:inmenu Only to followers"
-msgid "Private"
-msgstr "Private"
-
-#: content/ui/StatusComposer/StatusComposer.qml:555
-#, kde-format
-msgctxt "@item:inmenu Only to who is explicitly mentioned"
-msgid "Direct Message"
-msgstr "Message Directe"
-
-#: content/ui/StatusComposer/StatusComposer.qml:560
-#, kde-format
-msgctxt "@info:tooltip Post visibility"
-msgid "Visibility"
-msgstr "Visibilitate"
-
-#: content/ui/StatusComposer/StatusComposer.qml:567
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Post language"
-msgstr "Linguage de Message Public (post)"
-
-#: content/ui/StatusComposer/StatusComposer.qml:606
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Add emoji"
-msgstr "Adde emoji"
-
-#: content/ui/StatusComposer/StatusComposer.qml:636
-#, kde-format
-msgctxt "@label Character count in the status composer"
-msgid "<b>%1/%2</b> characters"
-msgstr "<b>%1/%2</b> characteres"
-
-#: content/ui/StatusComposer/StatusComposer.qml:646
-#, kde-format
-msgctxt "@action:button Schedule something to be posted later"
-msgid "Schedule"
-msgstr "Planifica"
-
-#: content/ui/StatusComposer/StatusComposer.qml:674
+#: content/ui/StatusComposer/StatusComposer.qml:168
 #, kde-format
 msgctxt "@action:button Send a post"
 msgid "Send"
 msgstr "Invia"
 
-#: content/ui/StatusComposer/StatusComposer.qml:676
+#: content/ui/StatusComposer/StatusComposer.qml:170
 #, kde-format
 msgctxt "@action:button Reply to a post"
 msgid "Reply"
 msgstr "Responde"
 
-#: content/ui/StatusComposer/StatusComposer.qml:678
+#: content/ui/StatusComposer/StatusComposer.qml:172
 #, kde-format
 msgctxt "@action:button Send the same post again"
 msgid "Repost"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:680
+#: content/ui/StatusComposer/StatusComposer.qml:174
 #, kde-format
 msgctxt "@action:Button Save an edited a post"
 msgid "Save"
 msgstr "Salveguarda"
+
+#: content/ui/StatusComposer/StatusComposer.qml:188
+#, kde-format
+msgctxt "@action:button Keep this draft"
+msgid "Save"
+msgstr "Salveguarda"
+
+#: content/ui/StatusComposer/StatusComposer.qml:196
+#, kde-format
+msgctxt "@action:button Go back to editing"
+msgid "Cancel"
+msgstr "Cancella"
+
+#: content/ui/StatusComposer/StatusComposer.qml:215
+#, kde-format
+msgctxt "@title"
+msgid "Schedule Post"
+msgstr "Planifica Post"
+
+#: content/ui/StatusComposer/StatusComposer.qml:221
+#, kde-format
+msgctxt "@action:button Set this post's schedule to when it should be posted"
+msgid "Set Schedule"
+msgstr ""
+
+#: content/ui/StatusComposer/StatusComposer.qml:337
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Content notice"
+msgstr "Aviso de Contento  "
+
+#: content/ui/StatusComposer/StatusComposer.qml:351
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "What's new?"
+msgstr "Que es de novo?"
+
+#: content/ui/StatusComposer/StatusComposer.qml:489
+#, kde-format
+msgctxt "@title:window"
+msgid "Choose a File"
+msgstr "Selige un file"
+
+#: content/ui/StatusComposer/StatusComposer.qml:494
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Attach file"
+msgstr "Attacha File"
+
+#: content/ui/StatusComposer/StatusComposer.qml:505
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Add poll"
+msgstr "Adde Inquesta"
+
+#: content/ui/StatusComposer/StatusComposer.qml:517
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Content Notice"
+msgstr "Aviso de Contento  "
+
+#: content/ui/StatusComposer/StatusComposer.qml:556
+#, kde-format
+msgctxt "@title"
+msgid "Visibility"
+msgstr "Visibilitate"
+
+#: content/ui/StatusComposer/StatusComposer.qml:560
+#, kde-format
+msgctxt "@item:inmenu Local to this server"
+msgid "Local"
+msgstr "Local"
+
+#: content/ui/StatusComposer/StatusComposer.qml:566
+#, kde-format
+msgctxt "@item:inmenu Public to the world"
+msgid "Public"
+msgstr "Public"
+
+#: content/ui/StatusComposer/StatusComposer.qml:571
+#, kde-format
+msgctxt "@item:inmenu Public but less so"
+msgid "Unlisted"
+msgstr "Non listate"
+
+#: content/ui/StatusComposer/StatusComposer.qml:576
+#, kde-format
+msgctxt "@item:inmenu Only to followers"
+msgid "Private"
+msgstr "Private"
+
+#: content/ui/StatusComposer/StatusComposer.qml:581
+#, kde-format
+msgctxt "@item:inmenu Only to who is explicitly mentioned"
+msgid "Direct Message"
+msgstr "Message Directe"
+
+#: content/ui/StatusComposer/StatusComposer.qml:586
+#, kde-format
+msgctxt "@info:tooltip Post visibility"
+msgid "Visibility"
+msgstr "Visibilitate"
+
+#: content/ui/StatusComposer/StatusComposer.qml:593
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Post language"
+msgstr "Linguage de Message Public (post)"
+
+#: content/ui/StatusComposer/StatusComposer.qml:632
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Add emoji"
+msgstr "Adde emoji"
+
+#: content/ui/StatusComposer/StatusComposer.qml:662
+#, kde-format
+msgctxt "@label Character count in the status composer"
+msgid "<b>%1/%2</b> characters"
+msgstr "<b>%1/%2</b> characteres"
+
+#: content/ui/StatusComposer/StatusComposer.qml:672
+#: content/ui/StatusComposer/StatusComposer.qml:749
+#, kde-format
+msgctxt "@action:button Schedule something to be posted later"
+msgid "Schedule"
+msgstr "Planifica"
+
+#: content/ui/StatusComposer/StatusComposer.qml:723
+#, kde-format
+msgctxt "@title"
+msgid "Alt Text Reminder"
+msgstr ""
+
+#: content/ui/StatusComposer/StatusComposer.qml:727
+#, kde-format
+msgctxt "@label"
+msgid ""
+"Some of your media is missing alt text. Adding descriptions help everyone, "
+"especially the visually impaired."
+msgstr ""
 
 #: content/ui/TimelinePage.qml:38 timeline/accountmodel.cpp:41
 #, kde-format
