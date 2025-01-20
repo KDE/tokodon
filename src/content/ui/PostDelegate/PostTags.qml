@@ -56,6 +56,9 @@ QQC2.Control {
                         text: "#" + modelData
 
                         onClicked: Navigation.openTag(modelData)
+
+                        Accessible.name: i18nc("@info", "Tag")
+                        Accessible.description: modelData
                     }
                 }
             }
