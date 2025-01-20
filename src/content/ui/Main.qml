@@ -408,8 +408,13 @@ StatefulApp.StatefulWindow {
     property Kirigami.Action homeAction: Kirigami.Action {
         icon.name: "go-home-large"
         text: i18n("Home")
-        checkable: true
         onTriggered: {
+            if(checked) {
+                if (pageStack.currentItem.returnToTop) {
+                    pageStack.currentItem.returnToTop();
+                }
+                return;
+            }
             pageStack.clear();
             pageStack.push(mainTimeline.createObject(root), {
                 name: "home",
@@ -425,8 +430,10 @@ StatefulApp.StatefulWindow {
 
         icon.name: "notifications"
         text: i18n("Notifications")
-        checkable: true
         onTriggered: {
+            if(checked) {
+                return;
+            }
             pageStack.clear();
             pageStack.push(notificationTimeline.createObject(root));
             checked = true;
@@ -437,9 +444,11 @@ StatefulApp.StatefulWindow {
 
         icon.name: "list-add-user"
         text: i18n("Follow Requests")
-        checkable: true
         visible: AccountManager.hasAccounts && AccountManager.selectedAccount && alertCount > 0
         onTriggered: {
+            if(checked) {
+                return;
+            }
             pageStack.clear();
             pageStack.push(socialGraphComponent.createObject(root), {
                 name: "request",
@@ -450,8 +459,13 @@ StatefulApp.StatefulWindow {
     property Kirigami.Action localTimelineAction: Kirigami.Action {
         icon.name: "system-users"
         text: i18n("Local")
-        checkable: true
         onTriggered: {
+            if(checked) {
+                if (pageStack.currentItem.returnToTop) {
+                    pageStack.currentItem.returnToTop();
+                }
+                return;
+            }
             pageStack.clear();
             pageStack.push(mainTimeline.createObject(root), {
                 name: "public",
@@ -465,8 +479,13 @@ StatefulApp.StatefulWindow {
     property Kirigami.Action globalTimelineAction: Kirigami.Action {
         icon.name: "kstars_xplanet"
         text: i18n("Global")
-        checkable: true
         onTriggered: {
+            if(checked) {
+                if (pageStack.currentItem.returnToTop) {
+                    pageStack.currentItem.returnToTop();
+                }
+                return;
+            }
             pageStack.clear();
             pageStack.push(mainTimeline.createObject(root), {
                 name: "federated",
@@ -481,8 +500,10 @@ StatefulApp.StatefulWindow {
     property Kirigami.Action conversationAction: Kirigami.Action {
         icon.name: "view-conversation-balloon-symbolic"
         text: i18n("Conversations")
-        checkable: true
         onTriggered: {
+            if(checked) {
+                return;
+            }
             pageStack.clear();
             pageStack.push(conversationPage.createObject(root));
             checked = true;
@@ -492,8 +513,13 @@ StatefulApp.StatefulWindow {
     property Kirigami.Action favouritesAction: Kirigami.Action {
         icon.name: "favorite"
         text: i18n("Favorites")
-        checkable: true
         onTriggered: {
+            if(checked) {
+                if (pageStack.currentItem.returnToTop) {
+                    pageStack.currentItem.returnToTop();
+                }
+                return;
+            }
             pageStack.clear();
             pageStack.push(mainTimeline.createObject(root), {
                 name: "favourites",
@@ -508,8 +534,13 @@ StatefulApp.StatefulWindow {
     property Kirigami.Action bookmarksAction: Kirigami.Action {
         icon.name: "bookmarks"
         text: i18n("Bookmarks")
-        checkable: true
         onTriggered: {
+            if(checked) {
+                if (pageStack.currentItem.returnToTop) {
+                    pageStack.currentItem.returnToTop();
+                }
+                return;
+            }
             pageStack.clear();
             pageStack.push(mainTimeline.createObject(root), {
                 name: "bookmarks",
@@ -524,8 +555,10 @@ StatefulApp.StatefulWindow {
     property Kirigami.Action exploreAction: Kirigami.Action {
         icon.name: "kstars_planets"
         text: i18n("Explore")
-        checkable: true
         onTriggered: {
+            if(checked) {
+                return;
+            }
             pageStack.clear();
             pageStack.push(exploreTimeline.createObject(root));
             checked = true;
@@ -535,8 +568,10 @@ StatefulApp.StatefulWindow {
     property Kirigami.Action followingAction: Kirigami.Action {
         icon.name: "user-group-properties-symbolic"
         text: i18n("Following")
-        checkable: true
         onTriggered: {
+            if(checked) {
+                return;
+            }
             pageStack.clear();
             pageStack.push(followingTimeline.createObject(root));
             checked = true;
@@ -546,8 +581,10 @@ StatefulApp.StatefulWindow {
     property Kirigami.Action searchAction: Kirigami.Action {
         icon.name: "search"
         text: i18n("Search")
-        checkable: true
         onTriggered: {
+            if(checked) {
+                return;
+            }
             pageStack.clear();
             pageStack.push(searchPage.createObject(root));
             checked = true;
@@ -557,9 +594,11 @@ StatefulApp.StatefulWindow {
     property Kirigami.Action serverInformationAction: Kirigami.Action {
         icon.name: "note"
         text: AccountManager.selectedAccount ? AccountManager.selectedAccount.instanceName : ""
-        checkable: true
         visible: AccountManager.hasAccounts && AccountManager.selectedAccount
         onTriggered: {
+            if(checked) {
+                return;
+            }
             pageStack.clear();
             pageStack.push(serverInformationPage.createObject(root));
             checked = true;
@@ -569,8 +608,10 @@ StatefulApp.StatefulWindow {
     property Kirigami.Action listsAction: Kirigami.Action {
         icon.name: "view-list-text"
         text: i18n("Lists")
-        checkable: true
         onTriggered: {
+            if(checked) {
+                return;
+            }
             pageStack.clear();
             pageStack.push(listsPage.createObject(root));
             checked = true;
@@ -580,8 +621,10 @@ StatefulApp.StatefulWindow {
     property Kirigami.Action profileAction: Kirigami.Action {
         icon.name: "user"
         text: i18n("Profile")
-        checkable: true
         onTriggered: {
+            if(checked) {
+                return;
+            }
             pageStack.clear();
             pageStack.push(Qt.createComponent("org.kde.tokodon", "AccountInfo"), {
                 accountId: AccountManager.selectedAccountId,
@@ -639,11 +682,7 @@ StatefulApp.StatefulWindow {
 
                     required property T.Action modelData
 
-                    text: modelData.text
-                    icon.name: modelData.icon.name
-                    checked: modelData.checked
-
-                    onClicked: modelData.trigger()
+                    action: modelData
 
                     Layout.minimumWidth: tabbar.buttonWidth
                     Layout.maximumWidth: tabbar.buttonWidth

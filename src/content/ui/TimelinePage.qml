@@ -88,6 +88,10 @@ Kirigami.ScrollablePage {
         }
     }
 
+    function returnToTop(): void {
+        listview.positionViewAtBeginning();
+    }
+
     actions: [
         Kirigami.Action {
             id: postAction
