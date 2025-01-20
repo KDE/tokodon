@@ -64,6 +64,9 @@ Item {
     function showMedia(): void {
         isSensitive = false;
         userSensitivityChanged(false);
+        // Switch the focus to the first attachment so the screen reader repeats it's actual alt text.
+        root.forceActiveFocus(Qt.OtherFocusReason);
+        attachmentsRepeater.itemAt(0).forceActiveFocus(Qt.OtherFocusReason);
     }
 
     function hideMedia(): void {
@@ -142,7 +145,7 @@ Item {
                             }
                         }
 
-                        Accessible.description: modelData.caption
+                        Accessible.description: root.isSensitive ? i18nc("@info", "Sensitive media") : modelData.caption
 
                         Layout.fillWidth: true
                         Layout.fillHeight: true
@@ -239,7 +242,7 @@ Item {
                             gif.videoUrl = gif.modelData.remoteUrl;
                         }
 
-                        Accessible.description: modelData.caption
+                        Accessible.description: root.isSensitive ? i18nc("@info", "Sensitive media") : modelData.caption
 
                         Layout.fillWidth: true
                         Layout.fillHeight: true
@@ -281,7 +284,7 @@ Item {
                         looping: false
                         showVideoChip: true
 
-                        Accessible.description: modelData.caption
+                        Accessible.description: root.isSensitive ? i18nc("@info", "Sensitive media") : modelData.caption
 
                         Layout.fillWidth: true
                         Layout.fillHeight: true
@@ -335,7 +338,7 @@ Item {
                         Layout.fillHeight: true
                         Layout.rowSpan: root.isSpecialAttachment(attachmentsRepeater.count, index) ? 2 : 1
 
-                        Accessible.description: modelData.caption
+                        Accessible.description: root.isSensitive ? i18nc("@info", "Sensitive media") : modelData.caption
 
                         onClicked: {
                             if (root.isSensitive) {
