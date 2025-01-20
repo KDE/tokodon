@@ -197,10 +197,16 @@ void MainTimelineModel::fillTimeline(const QString &fromId, bool backwards)
 
             const auto linkHeader = QString::fromUtf8(reply->rawHeader(QByteArrayLiteral("Link")));
 
-            m_next = TextHandler::getNextLink(linkHeader);
+            // If we're going backwards we do NOT want to overwrite m_next if it exists.
+            // Otherwise pagination breaks and the user can't load anything further in their timeline.
+            if (!backwards || !m_next) {
+                m_next = TextHandler::getNextLink(linkHeader);
+            }
+            // Load m_prev initially, then make sure never to overwrite it if we're loading new stuff
+            if (backwards || !m_prev) {
+                m_prev = TextHandler::getPrevLink(linkHeader);
+            }
             Q_EMIT atEndChanged();
-
-            m_prev = TextHandler::getPrevLink(linkHeader);
 
             if (publicTimelines.contains(m_timelineName) && backwards) {
                 int const pos = fetchedTimeline(data);
