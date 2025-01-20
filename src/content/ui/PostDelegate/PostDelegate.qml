@@ -318,7 +318,22 @@ QQC2.ItemDelegate {
                 Layout.fillWidth: true
 
                 sourceComponent: QQC2.Control {
+                    id: notice
+
                     padding: Kirigami.Units.largeSpacing
+
+                    activeFocusOnTab: true
+
+                    Accessible.role: Accessible.Button
+                    Accessible.name: i18nc("@info", "Content Notice")
+                    Accessible.description: root.spoilerText
+                    Accessible.onPressAction: toggleNotice()
+
+                    Keys.onSpacePressed: toggleNotice()
+
+                    function toggleNotice(): void {
+                        postContent.visible = !postContent.visible;
+                    }
 
                     contentItem: RowLayout {
                         id: warningLayout
@@ -338,9 +353,10 @@ QQC2.ItemDelegate {
                         }
 
                         QQC2.Button {
+                            activeFocusOnTab: false
                             text: postContent.visible ? i18n("Show Less") : i18n("Show More")
                             icon.name: postContent.visible ? "view-hidden-symbolic" : "view-visible-symbolic"
-                            onClicked: postContent.visible = !postContent.visible
+                            onClicked: notice.toggleNotice()
                         }
                     }
 
