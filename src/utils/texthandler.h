@@ -75,6 +75,14 @@ public:
      * @breif Gets "prev" link for pagination from a Link header, if found.
      */
     static std::optional<QUrl> getPrevLink(const QString &linkText);
+
+    /**
+     * @brief Removes non-human readable HTML, suitable for screen readers.
+     *
+     * @param html The HTML text to process.
+     * @return The processed HTML.
+     */
+    static Q_INVOKABLE QString stripHtml(const QString &html);
 };
 
 namespace TextRegex

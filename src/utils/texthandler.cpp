@@ -215,4 +215,11 @@ std::optional<QUrl> TextHandler::getPrevLink(const QString &linkText)
     return std::nullopt;
 }
 
+QString TextHandler::stripHtml(const QString &html)
+{
+    QTextDocument doc;
+    doc.setHtml(html);
+    return doc.toPlainText();
+}
+
 #include "moc_texthandler.cpp"

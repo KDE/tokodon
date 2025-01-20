@@ -26,10 +26,13 @@ QQC2.Label {
     bottomPadding: 0
     property string clickedUrl: ""
 
+    Accessible.name: i18nc("@info", "Post content")
+    Accessible.description: TextHandler.stripHtml(root.content)
+
+    activeFocusOnTab: true
     text: TextHandler.fixBidirectionality(root.content, Config.defaultFont)
     Layout.fillWidth: true
     textFormat: TextEdit.RichText
-    activeFocusOnTab: false
     wrapMode: TextEdit.Wrap
     color: root.secondary ? Kirigami.Theme.disabledTextColor : Kirigami.Theme.textColor
     onHoveredLinkChanged: if (hoveredLink.length > 0) {
