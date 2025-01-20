@@ -68,6 +68,9 @@ Item {
             closable: false
             visible: root.caption.length !== 0
             hoverEnabled: true
+            // We want this gone from the tab order,
+            // this button is useless since the screen reader will read the alt text from the focused media
+            activeFocusOnTab: false
 
             onClicked: {
                 altPopupLoader.active = true;
