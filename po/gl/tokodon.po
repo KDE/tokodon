@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-27 02:34+0000\n"
-"PO-Revision-Date: 2024-12-19 22:27+0100\n"
+"PO-Revision-Date: 2025-01-19 13:37+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -399,6 +399,7 @@ msgstr "Non foi posíbel reverter a resolución da denuncia"
 msgid "Could not assign report"
 msgstr "Non foi posíbel asignar a denuncia"
 
+# skip-rule: trasno-undo_reverse
 #: admin/reporttoolmodel.cpp:198
 #, kde-format
 msgid "Could not unassign report"
@@ -2258,6 +2259,7 @@ msgstr "Deixouse de silenciar a conta de %1"
 msgid "Successfully unsuspended %1's account"
 msgstr "Levantouse a suspensión da conta de %1"
 
+# skip-rule: trasno-undo
 #: content/ui/ModerationTools/MainAccountToolPage.qml:136
 #, kde-format
 msgid "Successfully undo force-sensitive %1's account"
@@ -2404,6 +2406,7 @@ msgstr "Desfacer o límite"
 msgid "Undo Suspension"
 msgstr "Desfacer a suspensión"
 
+# skip-rule: trasno-undo
 #: content/ui/ModerationTools/MainAccountToolPage.qml:502
 #, kde-format
 msgid "Undo force-sensitive"
@@ -3062,7 +3065,7 @@ msgstr "Estado con vídeo anexo"
 #: content/ui/PostDelegate/AttachmentGrid.qml:192
 #, kde-format
 msgid "Not available"
-msgstr "Non dispoñible"
+msgstr "Non dispoñíbel"
 
 #: content/ui/PostDelegate/AttachmentGrid.qml:320
 #, kde-format
