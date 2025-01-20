@@ -28,6 +28,7 @@ QQC2.ToolButton {
     QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
 
     Accessible.name: tooltip
+    Accessible.description: text
 
     contentItem: RowLayout {
         spacing: Kirigami.Units.smallSpacing
