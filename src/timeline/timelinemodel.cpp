@@ -84,16 +84,31 @@ int TimelineModel::fetchedTimeline(const QByteArray &data, bool alwaysAppendToEn
 
     posts.erase(std::ranges::remove_if(posts,
                                        [this](Post *post) {
+                                           // Don't show boosts if requested
                                            if (!m_showBoosts && post->boostIdentity()) {
                                                return true;
                                            }
+                                           // Don't show replies if requested
                                            if (!m_showReplies && !post->inReplyTo().isEmpty()) {
                                                return true;
                                            }
+                                           // Make sure we aren't adding the same post we already have
+                                           const auto it = std::ranges::find_if(std::as_const(m_timeline), [post](const auto &timelinePost) {
+                                               return post->postId() == timelinePost->postId();
+                                           });
+                                           if (it != std::end(m_timeline)) {
+                                               return true;
+                                           }
+
                                            return post == nullptr;
                                        })
                     .begin(),
                 posts.end());
+
+    // If we ended up removing all of the posts we were going to add, quit
+    if (posts.empty()) {
+        return 0;
+    }
 
     for (auto &post : posts) {
         // If we are still waiting on the reply identity, make sure to update it's row

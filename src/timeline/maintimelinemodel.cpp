@@ -187,6 +187,14 @@ void MainTimelineModel::fillTimeline(const QString &fromId, bool backwards)
                 return;
             }
 
+            // If the reply is empty, do NOT overwrite m_prev/m_next and wipe pagination. That just means the server has nothing more to give us, at the moment.
+            const auto data = reply->readAll();
+            const auto doc = QJsonDocument::fromJson(data);
+            if (doc.array().isEmpty()) {
+                setLoading(false);
+                return;
+            }
+
             const auto linkHeader = QString::fromUtf8(reply->rawHeader(QByteArrayLiteral("Link")));
 
             m_next = TextHandler::getNextLink(linkHeader);
@@ -195,13 +203,11 @@ void MainTimelineModel::fillTimeline(const QString &fromId, bool backwards)
             m_prev = TextHandler::getPrevLink(linkHeader);
 
             if (publicTimelines.contains(m_timelineName) && backwards) {
-                int const pos = fetchedTimeline(reply->readAll());
+                int const pos = fetchedTimeline(data);
                 Q_EMIT repositionAt(pos);
             } else {
-                fetchedTimeline(reply->readAll(), true);
+                fetchedTimeline(data, true);
             }
-
-            fetchedTimeline(reply->readAll(), !publicTimelines.contains(m_timelineName));
 
             // hasPrevious depends not just on m_prev, but also m_timeline!
             Q_EMIT hasPreviousChanged();
@@ -222,10 +228,19 @@ void MainTimelineModel::handleEvent(AbstractAccount::StreamingEventType eventTyp
         if (eventType == AbstractAccount::StreamingEventType::UpdateEvent && m_timelineName == QStringLiteral("home")) {
             const auto doc = QJsonDocument::fromJson(payload);
             const auto post = new Post(m_account, doc.object(), this);
-            beginInsertRows({}, 0, 0);
-            m_timeline.push_front(post);
-            endInsertRows();
-            Q_EMIT streamedPostAdded(post->originalPostId());
+
+            // Make sure we aren't adding the same post we already have
+            const auto it = std::ranges::find_if(std::as_const(m_timeline), [post](const auto &timelinePost) {
+                return post->postId() == timelinePost->postId();
+            });
+            if (it == m_timeline.cend()) {
+                beginInsertRows({}, 0, 0);
+                m_timeline.push_front(post);
+                endInsertRows();
+                Q_EMIT streamedPostAdded(post->originalPostId());
+            } else {
+                delete post;
+            }
         }
     }
 }
@@ -332,9 +347,13 @@ void MainTimelineModel::updateReadMarker(const QString &postId)
 
 void MainTimelineModel::refresh()
 {
-    // Because these timelines move really quickly, we might as well just start over from the beginning.
-    reset();
-    fillTimeline({});
+    // If we have pagination data, use that to refresh. Otherwise fall back to reloading the whole thing.
+    if (m_prev) {
+        fillTimeline({}, true);
+    } else {
+        reset();
+        fillTimeline({});
+    }
 }
 
 bool MainTimelineModel::canFetchMore(const QModelIndex &parent) const
