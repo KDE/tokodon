@@ -292,9 +292,9 @@ QQC2.Pane {
                             onTriggered: {
                                 if (root.identity.relationship.requested
                                     || root.identity.relationship.following) {
-                                    root.account.unfollowAccount(root.identity);
+                                    AccountManager.selectedAccount.unfollowAccount(root.identity);
                                 } else {
-                                    root.account.followAccount(root.identity);
+                                    AccountManager.selectedAccount.followAccount(root.identity);
                                 }
                             }
                             visible: !root.isSelf
@@ -319,9 +319,9 @@ QQC2.Pane {
                             }
                             onTriggered: {
                                 if (root.identity.relationship && root.identity.relationship.notifying) {
-                                    root.account.followAccount(root.identity, root.identity.relationship.showingReblogs, false);
+                                    AccountManager.selectedAccount.followAccount(root.identity, root.identity.relationship.showingReblogs, false);
                                 } else {
-                                    root.account.followAccount(root.identity, root.identity.relationship.showingReblogs, true);
+                                    AccountManager.selectedAccount.followAccount(root.identity, root.identity.relationship.showingReblogs, true);
                                 }
                             }
                         },
@@ -364,9 +364,9 @@ QQC2.Pane {
                             }
                             onTriggered: {
                                 if (root.identity.relationship && root.identity.relationship.showingReblogs) {
-                                    root.account.followAccount(root.identity, false, root.identity.relationship.notifying);
+                                    AccountManager.selectedAccount.followAccount(root.identity, false, root.identity.relationship.notifying);
                                 } else {
-                                    root.account.followAccount(root.identity, true, root.identity.relationship.notifying);
+                                    AccountManager.selectedAccount.followAccount(root.identity, true, root.identity.relationship.notifying);
                                 }
                             }
                         },
@@ -382,9 +382,9 @@ QQC2.Pane {
                             }
                             onTriggered: {
                                 if (root.identity.relationship && root.identity.relationship.endorsed) {
-                                    root.account.unpin(root.identity);
+                                    AccountManager.selectedAccount.unpin(root.identity);
                                 } else {
-                                    root.account.pin(root.identity);
+                                    AccountManager.selectedAccount.pin(root.identity);
                                 }
                             }
                         },
@@ -400,9 +400,9 @@ QQC2.Pane {
                             }
                             onTriggered: {
                                 if (root.identity.relationship && root.identity.relationship.muting) {
-                                    root.account.unmuteAccount(root.identity);
+                                    AccountManager.selectedAccount.unmuteAccount(root.identity);
                                 } else {
-                                    root.account.muteAccount(root.identity);
+                                    AccountManager.selectedAccount.muteAccount(root.identity);
                                 }
                             }
                         },
@@ -418,9 +418,9 @@ QQC2.Pane {
                             }
                             onTriggered: {
                                 if (root.identity.relationship && root.identity.relationship.blocking) {
-                                    root.account.unblock(root.identity);
+                                    AccountManager.selectedAccount.unblock(root.identity);
                                 } else {
-                                    root.account.block(root.identity);
+                                    AccountManager.selectedAccount.block(root.identity);
                                 }
                             }
                         },
@@ -710,7 +710,7 @@ QQC2.Pane {
                             if (activeFocus) {
                                 autoSaveTimer.start()
                             } else {
-                                root.account.addNote(root.identity, text);
+                                AccountManager.selectedAccount.addNote(root.identity, text);
                                 savedNotification.visible = true;
                                 savedNotificationTimer.restart();
                                 lastSavedText = text;
@@ -723,7 +723,7 @@ QQC2.Pane {
                             repeat: true
                             interval: 5000
                             onTriggered: if (noteField.lastSavedText !== noteField.text) {
-                                root.account.addNote(root.identity, noteField.text);
+                                AccountManager.selectedAccount.addNote(root.identity, noteField.text);
                                 savedNotification.visible = true;
                                 noteField.lastSavedText = noteField.text;
                                 savedNotificationTimer.restart();
