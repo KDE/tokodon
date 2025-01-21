@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-20 00:41+0000\n"
+"POT-Creation-Date: 2025-01-21 00:41+0000\n"
 "PO-Revision-Date: 2024-12-30 17:01+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -805,7 +805,7 @@ msgid "Profile"
 msgstr "個人檔案"
 
 #: content/ui/AccountInfo.qml:57 content/ui/ExplorePage.qml:35
-#: content/ui/TimelinePage.qml:95
+#: content/ui/TimelinePage.qml:99
 #, kde-format
 msgctxt "@action:button"
 msgid "Post"
@@ -922,7 +922,7 @@ msgctxt "@info:status"
 msgid "End of Timeline"
 msgstr "時間軸尾端"
 
-#: content/ui/ConversationPage.qml:13 content/ui/Main.qml:483
+#: content/ui/ConversationPage.qml:13 content/ui/Main.qml:502
 #, kde-format
 msgid "Conversations"
 msgstr "對話"
@@ -1073,7 +1073,7 @@ msgctxt "@label"
 msgid "Are you sure you want to delete this list?"
 msgstr "您確定要刪除這個列表嗎？"
 
-#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:526
+#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:557
 #, kde-format
 msgid "Explore"
 msgstr "探索"
@@ -1144,7 +1144,7 @@ msgid "Following"
 msgstr "正在跟隨"
 
 #: content/ui/FollowingPage.qml:43 content/ui/Settings/SafetyPage.qml:26
-#: content/ui/TimelinePage.qml:101
+#: content/ui/TimelinePage.qml:105
 #, kde-format
 msgctxt "@action:button"
 msgid "Filters"
@@ -1298,8 +1298,8 @@ msgstr "沒有列表"
 msgid "Lists allow you to categorize who you're following."
 msgstr ""
 
-#: content/ui/ListTimelinePage.qml:18 content/ui/Main.qml:417
-#: content/ui/Main.qml:459 content/ui/Main.qml:474
+#: content/ui/ListTimelinePage.qml:18 content/ui/Main.qml:422
+#: content/ui/Main.qml:473 content/ui/Main.qml:493
 #, kde-format
 msgid "No Posts"
 msgstr "沒有嘟文"
@@ -1678,117 +1678,117 @@ msgstr "回覆給嘟文"
 msgid "Home"
 msgstr "首頁"
 
-#: content/ui/Main.qml:418 content/ui/Main.qml:460 content/ui/Main.qml:475
+#: content/ui/Main.qml:423 content/ui/Main.qml:474 content/ui/Main.qml:494
 #, kde-format
 msgid "It seems pretty quiet right now, try posting something!"
 msgstr ""
 
-#: content/ui/Main.qml:427 content/ui/NotificationPage.qml:16
+#: content/ui/Main.qml:432 content/ui/NotificationPage.qml:16
 #: content/ui/Settings/TokodonConfigurationView.qml:23
 #, kde-format
 msgid "Notifications"
 msgstr "通知"
 
-#: content/ui/Main.qml:439
+#: content/ui/Main.qml:446
 #, kde-format
 msgid "Follow Requests"
 msgstr "跟隨請求"
 
-#: content/ui/Main.qml:452
+#: content/ui/Main.qml:461
 #, kde-format
 msgid "Local"
 msgstr "本地"
 
-#: content/ui/Main.qml:467
+#: content/ui/Main.qml:481
 #, kde-format
 msgid "Global"
 msgstr "全域"
 
-#: content/ui/Main.qml:494 content/ui/Settings/NotificationsPage.qml:184
+#: content/ui/Main.qml:515 content/ui/Settings/NotificationsPage.qml:184
 #, kde-format
 msgid "Favorites"
 msgstr "最愛"
 
-#: content/ui/Main.qml:501
+#: content/ui/Main.qml:527
 #, kde-format
 msgid "No Favorites"
 msgstr "沒有最愛"
 
-#: content/ui/Main.qml:502
+#: content/ui/Main.qml:528
 #, kde-format
 msgid ""
 "Posts that you favorite will show up here. If you appreciate someone's post, "
 "favorite it!"
 msgstr ""
 
-#: content/ui/Main.qml:510
+#: content/ui/Main.qml:536
 #, kde-format
 msgid "Bookmarks"
 msgstr "書籤"
 
-#: content/ui/Main.qml:517
+#: content/ui/Main.qml:548
 #, kde-format
 msgid "No Bookmarks"
 msgstr "沒有書籤"
 
-#: content/ui/Main.qml:518
+#: content/ui/Main.qml:549
 #, kde-format
 msgid ""
 "Bookmark posts and they will show up here. Bookmarks are always kept "
 "private, even to the post's author."
 msgstr ""
 
-#: content/ui/Main.qml:537
+#: content/ui/Main.qml:570
 #, kde-format
 msgid "Following"
 msgstr "正在跟隨"
 
-#: content/ui/Main.qml:548
+#: content/ui/Main.qml:583
 #, kde-format
 msgid "Search"
 msgstr "搜尋"
 
-#: content/ui/Main.qml:571
+#: content/ui/Main.qml:610
 #, kde-format
 msgid "Lists"
 msgstr "列表"
 
-#: content/ui/Main.qml:582 content/ui/Settings/AccountPage.qml:70
+#: content/ui/Main.qml:623 content/ui/Settings/AccountPage.qml:70
 #, kde-format
 msgid "Profile"
 msgstr "個人檔案"
 
-#: content/ui/Main.qml:597
+#: content/ui/Main.qml:640
 #, kde-format
 msgctxt "@action:button Open debug page"
 msgid "Debug"
 msgstr "除錯"
 
-#: content/ui/Main.qml:607
+#: content/ui/Main.qml:650
 #, kde-format
 msgctxt "@action:button Open moderation tools"
 msgid "Moderation Tools"
 msgstr "站務工具"
 
-#: content/ui/Main.qml:614
+#: content/ui/Main.qml:657
 #, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "設定"
 
-#: content/ui/Main.qml:757
+#: content/ui/Main.qml:796
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Unfollow"
 msgstr "取消跟隨"
 
-#: content/ui/Main.qml:757
+#: content/ui/Main.qml:796
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Follow"
 msgstr "跟隨"
 
-#: content/ui/Main.qml:805
+#: content/ui/Main.qml:844
 #, kde-format
 msgctxt "@title"
 msgid "Embed Information"
@@ -5158,23 +5158,23 @@ msgstr "載入中"
 msgid "Home (%1)"
 msgstr "首頁 (%1)"
 
-#: content/ui/TimelinePage.qml:106
+#: content/ui/TimelinePage.qml:110
 #, kde-format
 msgid "Show Boosts"
 msgstr "顯示轉嘟"
 
-#: content/ui/TimelinePage.qml:113
+#: content/ui/TimelinePage.qml:117
 #, kde-format
 msgid "Show Replies"
 msgstr "顯示回覆"
 
-#: content/ui/TimelinePage.qml:131
+#: content/ui/TimelinePage.qml:135
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
 msgstr "伺服器連線失敗：%1。請檢查您的設定。"
 
-#: content/ui/TimelinePage.qml:168
+#: content/ui/TimelinePage.qml:172
 #, kde-format
 msgctxt "@action:button Load more posts above this"
 msgid "Load More"

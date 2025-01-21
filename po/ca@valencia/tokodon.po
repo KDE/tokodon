@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-20 00:41+0000\n"
-"PO-Revision-Date: 2025-01-17 10:46+0100\n"
+"POT-Creation-Date: 2025-01-21 00:41+0000\n"
+"PO-Revision-Date: 2025-01-20 09:50+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -823,7 +823,7 @@ msgid "Profile"
 msgstr "Perfil"
 
 #: content/ui/AccountInfo.qml:57 content/ui/ExplorePage.qml:35
-#: content/ui/TimelinePage.qml:95
+#: content/ui/TimelinePage.qml:99
 #, kde-format
 msgctxt "@action:button"
 msgid "Post"
@@ -939,7 +939,7 @@ msgctxt "@info:status"
 msgid "End of Timeline"
 msgstr "Final de la línia de temps"
 
-#: content/ui/ConversationPage.qml:13 content/ui/Main.qml:483
+#: content/ui/ConversationPage.qml:13 content/ui/Main.qml:502
 #, kde-format
 msgid "Conversations"
 msgstr "Converses"
@@ -1094,7 +1094,7 @@ msgctxt "@label"
 msgid "Are you sure you want to delete this list?"
 msgstr "Segur que voleu suprimir esta llista?"
 
-#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:526
+#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:557
 #, kde-format
 msgid "Explore"
 msgstr "Explora"
@@ -1162,7 +1162,7 @@ msgid "Following"
 msgstr "Seguint"
 
 #: content/ui/FollowingPage.qml:43 content/ui/Settings/SafetyPage.qml:26
-#: content/ui/TimelinePage.qml:101
+#: content/ui/TimelinePage.qml:105
 #, kde-format
 msgctxt "@action:button"
 msgid "Filters"
@@ -1195,11 +1195,10 @@ msgstr ""
 "només les seues publicacions, ordenades per activitat recent."
 
 #: content/ui/FullScreenImage.qml:33
-#, fuzzy, kde-format
-#| msgid "View Post"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Open Post"
-msgstr "Visualitza la publicació"
+msgstr "Obri la publicació"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:19
 #, kde-format
@@ -1320,8 +1319,8 @@ msgstr "Sense llistes"
 msgid "Lists allow you to categorize who you're following."
 msgstr "Les llistes vos permeten classificar qui esteu seguint."
 
-#: content/ui/ListTimelinePage.qml:18 content/ui/Main.qml:417
-#: content/ui/Main.qml:459 content/ui/Main.qml:474
+#: content/ui/ListTimelinePage.qml:18 content/ui/Main.qml:422
+#: content/ui/Main.qml:473 content/ui/Main.qml:493
 #, kde-format
 msgid "No Posts"
 msgstr "Sense publicacions"
@@ -1714,43 +1713,43 @@ msgstr "Respon a la publicació"
 msgid "Home"
 msgstr "Inici"
 
-#: content/ui/Main.qml:418 content/ui/Main.qml:460 content/ui/Main.qml:475
+#: content/ui/Main.qml:423 content/ui/Main.qml:474 content/ui/Main.qml:494
 #, kde-format
 msgid "It seems pretty quiet right now, try posting something!"
 msgstr "Pareix bastant tranquil ara mateix, intenteu publicar alguna cosa!"
 
-#: content/ui/Main.qml:427 content/ui/NotificationPage.qml:16
+#: content/ui/Main.qml:432 content/ui/NotificationPage.qml:16
 #: content/ui/Settings/TokodonConfigurationView.qml:23
 #, kde-format
 msgid "Notifications"
 msgstr "Notificacions"
 
-#: content/ui/Main.qml:439
+#: content/ui/Main.qml:446
 #, kde-format
 msgid "Follow Requests"
 msgstr "Sol·licituds de seguiment"
 
-#: content/ui/Main.qml:452
+#: content/ui/Main.qml:461
 #, kde-format
 msgid "Local"
 msgstr "Local"
 
-#: content/ui/Main.qml:467
+#: content/ui/Main.qml:481
 #, kde-format
 msgid "Global"
 msgstr "Global"
 
-#: content/ui/Main.qml:494 content/ui/Settings/NotificationsPage.qml:184
+#: content/ui/Main.qml:515 content/ui/Settings/NotificationsPage.qml:184
 #, kde-format
 msgid "Favorites"
 msgstr "Preferits"
 
-#: content/ui/Main.qml:501
+#: content/ui/Main.qml:527
 #, kde-format
 msgid "No Favorites"
 msgstr "Sense preferits"
 
-#: content/ui/Main.qml:502
+#: content/ui/Main.qml:528
 #, kde-format
 msgid ""
 "Posts that you favorite will show up here. If you appreciate someone's post, "
@@ -1759,17 +1758,17 @@ msgstr ""
 "Les publicacions que preferiu es mostraran ací. Si aprecieu la publicació "
 "d'algú, feu-la preferida!"
 
-#: content/ui/Main.qml:510
+#: content/ui/Main.qml:536
 #, kde-format
 msgid "Bookmarks"
 msgstr "Punts"
 
-#: content/ui/Main.qml:517
+#: content/ui/Main.qml:548
 #, kde-format
 msgid "No Bookmarks"
 msgstr "Sense punts"
 
-#: content/ui/Main.qml:518
+#: content/ui/Main.qml:549
 #, kde-format
 msgid ""
 "Bookmark posts and they will show up here. Bookmarks are always kept "
@@ -1778,57 +1777,57 @@ msgstr ""
 "Apunteu publicacions i es mostraran ací. Els punts sempre es mantenen "
 "privats, fins i tot a l'autor de la publicació."
 
-#: content/ui/Main.qml:537
+#: content/ui/Main.qml:570
 #, kde-format
 msgid "Following"
 msgstr "Seguint"
 
-#: content/ui/Main.qml:548
+#: content/ui/Main.qml:583
 #, kde-format
 msgid "Search"
 msgstr "Busca"
 
-#: content/ui/Main.qml:571
+#: content/ui/Main.qml:610
 #, kde-format
 msgid "Lists"
 msgstr "Llistes"
 
-#: content/ui/Main.qml:582 content/ui/Settings/AccountPage.qml:70
+#: content/ui/Main.qml:623 content/ui/Settings/AccountPage.qml:70
 #, kde-format
 msgid "Profile"
 msgstr "Perfil"
 
-#: content/ui/Main.qml:597
+#: content/ui/Main.qml:640
 #, kde-format
 msgctxt "@action:button Open debug page"
 msgid "Debug"
 msgstr "Depuració"
 
-#: content/ui/Main.qml:607
+#: content/ui/Main.qml:650
 #, kde-format
 msgctxt "@action:button Open moderation tools"
 msgid "Moderation Tools"
 msgstr "Eines de moderació"
 
-#: content/ui/Main.qml:614
+#: content/ui/Main.qml:657
 #, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Configuració"
 
-#: content/ui/Main.qml:757
+#: content/ui/Main.qml:796
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Unfollow"
 msgstr "Deixa de seguir"
 
-#: content/ui/Main.qml:757
+#: content/ui/Main.qml:796
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Follow"
 msgstr "Seguix"
 
-#: content/ui/Main.qml:805
+#: content/ui/Main.qml:844
 #, kde-format
 msgctxt "@title"
 msgid "Embed Information"
@@ -3888,21 +3887,19 @@ msgstr "Publicació citada"
 #, kde-format
 msgctxt "@title:window"
 msgid "Privacy Policy"
-msgstr ""
+msgstr "Política de privadesa"
 
 #: content/ui/PrivacyPolicyPage.qml:26
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Privacy Policy"
-msgstr ""
+msgstr "Sense política de privadesa"
 
 #: content/ui/PrivacyPolicyPage.qml:41
-#, fuzzy, kde-format
-#| msgctxt "Last read on this date"
-#| msgid "Last read on %1"
+#, kde-format
 msgctxt "@info Last updated: relative date and time (e.g. 2 years ago)"
 msgid "Last updated: %1"
-msgstr "Última lectura %1"
+msgstr "Última actualització: %1"
 
 #: content/ui/ReadMarker.qml:15
 #, kde-format
@@ -3973,9 +3970,7 @@ msgid "Search for users, tags and posts"
 msgstr "Busca usuaris, etiquetes i publicacions"
 
 #: content/ui/ServerInformationPage.qml:25
-#, fuzzy, kde-format
-#| msgctxt "@title Server-wide announcements set by admins."
-#| msgid "Announcements"
+#, kde-format
 msgctxt "@action:button"
 msgid "Announcements"
 msgstr "Anuncis"
@@ -3984,7 +3979,7 @@ msgstr "Anuncis"
 #, kde-format
 msgctxt "@action:button"
 msgid "Privacy Policy"
-msgstr ""
+msgstr "Política de privadesa"
 
 #: content/ui/Settings/AccountPage.qml:26
 #, kde-format
@@ -4212,134 +4207,109 @@ msgid "Auto-play animated GIFs"
 msgstr "Reproduïx automàticament els GIF animats"
 
 #: content/ui/Settings/BlockedDomainsPage.qml:19
-#, fuzzy, kde-format
-#| msgctxt "@info:Filter out all the blocked domains"
-#| msgid "Blocked domains"
+#, kde-format
 msgctxt "@title"
 msgid "Blocked Domains"
 msgstr "Dominis bloquejats"
 
 #: content/ui/Settings/BlockedDomainsPage.qml:51
-#, fuzzy, kde-format
-#| msgid "Unblock"
+#, kde-format
 msgctxt "@action:button"
 msgid "Unblock"
 msgstr "Desbloqueja"
 
 #: content/ui/Settings/BlockedDomainsPage.qml:64
-#, fuzzy, kde-format
-#| msgctxt "@info:Filter out all the blocked domains"
-#| msgid "Blocked domains"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Blocked Domains"
-msgstr "Dominis bloquejats"
+msgstr "Sense dominis bloquejats"
 
 #: content/ui/Settings/EditFilterPage.qml:30
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Create List"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Filter"
-msgstr "Creació de llista"
+msgstr "Creació de filtre"
 
 #: content/ui/Settings/EditFilterPage.qml:30
-#, fuzzy, kde-format
-#| msgctxt "@info:Option Filter and send to the filtered inbox"
-#| msgid "Filter"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Filter"
-msgstr "Filtra"
+msgstr "Edició de filtre"
 
 #: content/ui/Settings/EditFilterPage.qml:73
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox List title"
-#| msgid "Title"
+#, kde-format
 msgctxt "@label:textbox Filter title"
 msgid "Title"
 msgstr "Títol"
 
 #: content/ui/Settings/EditFilterPage.qml:78
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@info:header"
 msgid "Contexts"
-msgstr "Continua"
+msgstr "Contexts"
 
 #: content/ui/Settings/EditFilterPage.qml:85
 #, kde-format
 msgctxt "@info"
 msgid "Select one or more contexts where this filter should apply:"
-msgstr ""
+msgstr "Seleccioneu un o més contexts a on s'han d'aplicar este filtre:"
 
 #: content/ui/Settings/EditFilterPage.qml:90
-#, fuzzy, kde-format
-#| msgid "No Lists"
+#, kde-format
 msgctxt "@label:checkbox"
 msgid "Home and Lists"
-msgstr "Sense llistes"
+msgstr "Inici i llistes"
 
 #: content/ui/Settings/EditFilterPage.qml:95
-#, fuzzy, kde-format
-#| msgid "Notifications"
+#, kde-format
 msgctxt "@label:checkbox"
 msgid "Notifications"
 msgstr "Notificacions"
 
 #: content/ui/Settings/EditFilterPage.qml:100
-#, fuzzy, kde-format
-#| msgid "Public Servers"
+#, kde-format
 msgctxt "@label:checkbox"
 msgid "Public Timelines"
-msgstr "Servidors públics"
+msgstr "Línies de temps públiques"
 
 #: content/ui/Settings/EditFilterPage.qml:105
-#, fuzzy, kde-format
-#| msgid "Conversations"
+#, kde-format
 msgctxt "@label:checkbox"
 msgid "Conversations"
 msgstr "Converses"
 
 #: content/ui/Settings/EditFilterPage.qml:110
-#, fuzzy, kde-format
-#| msgid "Profile"
+#, kde-format
 msgctxt "@label:checkbox"
 msgid "Profiles"
-msgstr "Perfil"
+msgstr "Perfils"
 
 #: content/ui/Settings/EditFilterPage.qml:115
-#, fuzzy, kde-format
-#| msgctxt "@info:Location combobox to choose location filters"
-#| msgid "Location"
+#, kde-format
 msgctxt "@info:header"
 msgid "Action"
-msgstr "Ubicació"
+msgstr "Acció"
 
 #: content/ui/Settings/EditFilterPage.qml:123
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Content Notice"
+#, kde-format
 msgctxt "@label:radiobutton"
 msgid "Hide with Content Notice"
-msgstr "Notificació de contingut"
+msgstr "Oculta amb avís de contingut"
 
 #: content/ui/Settings/EditFilterPage.qml:129
-#, fuzzy, kde-format
-#| msgctxt "@option:check Poll toolbar"
-#| msgid "Hide totals"
+#, kde-format
 msgctxt "@label:radiobutton"
 msgid "Hide Completely"
-msgstr "Oculta els totals"
+msgstr "Oculta completament"
 
 #: content/ui/Settings/EditFilterPage.qml:135
 #, kde-format
 msgctxt "@info:header"
 msgid "Keywords"
-msgstr ""
+msgstr "Paraules clau"
 
 #: content/ui/Settings/EditFilterPage.qml:138
-#, fuzzy, kde-format
-#| msgctxt "@action:button Add user to this list"
-#| msgid "Add"
+#, kde-format
 msgctxt "@action:button Add keyword"
 msgid "Add"
 msgstr "Afig"
@@ -4348,58 +4318,49 @@ msgstr "Afig"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No keywords"
-msgstr ""
+msgstr "Sense paraules clau"
 
 #: content/ui/Settings/EditFilterPage.qml:176
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Whole word"
-msgstr ""
+msgstr "Paraula sencera"
 
 #: content/ui/Settings/EditFilterPage.qml:182
-#, fuzzy, kde-format
-#| msgid "Remove"
+#, kde-format
 msgctxt "@action:button Remove keyword"
 msgid "Remove"
 msgstr "Elimina"
 
 #: content/ui/Settings/EditFilterPage.qml:209
-#, fuzzy, kde-format
-#| msgctxt "@action:button Create the list"
-#| msgid "Create"
+#, kde-format
 msgctxt "@action:button Create the filter"
 msgid "Create"
 msgstr "Crea"
 
 #: content/ui/Settings/EditFilterPage.qml:211
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@action:button Edit the filter"
 msgid "Edit"
 msgstr "Edita"
 
 #: content/ui/Settings/EditFilterPage.qml:224
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgctxt "@action:button Delete the filter"
 msgid "Delete"
 msgstr "Suprimix"
 
 #: content/ui/Settings/EditFilterPage.qml:231
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Deleting List"
+#, kde-format
 msgctxt "@title"
 msgid "Deleting Filter"
-msgstr "Suprimix la llista"
+msgstr "Suprimix el filtre"
 
 #: content/ui/Settings/EditFilterPage.qml:232
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Are you sure you want to delete this list?"
+#, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to delete this filter?"
-msgstr "Segur que voleu suprimir esta llista?"
+msgstr "Segur que voleu suprimir este filtre?"
 
 #: content/ui/Settings/EditProfilePage.qml:26
 #, kde-format
@@ -4432,27 +4393,22 @@ msgid "No Errors"
 msgstr "Sense errors"
 
 #: content/ui/Settings/FiltersPage.qml:21
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Filters"
+#, kde-format
 msgctxt "@title"
 msgid "Filters"
 msgstr "Filtres"
 
 #: content/ui/Settings/FiltersPage.qml:28
-#, fuzzy, kde-format
-#| msgid "Create List"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Create Filter"
-msgstr "Crea una llista"
+msgstr "Crea un filtre"
 
 #: content/ui/Settings/FiltersPage.qml:79
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Filters"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Filters"
-msgstr "Filtres"
+msgstr "Sense filtres"
 
 #: content/ui/Settings/NetworkProxyPage.qml:15
 #, kde-format
@@ -4809,9 +4765,7 @@ msgid "Blocked Users"
 msgstr "Usuaris bloquejats"
 
 #: content/ui/Settings/SafetyPage.qml:50
-#, fuzzy, kde-format
-#| msgctxt "@info:Filter out all the blocked domains"
-#| msgid "Blocked domains"
+#, kde-format
 msgid "Blocked Domains"
 msgstr "Dominis bloquejats"
 
@@ -5210,7 +5164,7 @@ msgstr "Planifica"
 #, kde-format
 msgctxt "@title"
 msgid "Alt Text Reminder"
-msgstr ""
+msgstr "Recordatori de text alternatiu"
 
 #: content/ui/StatusComposer/StatusComposer.qml:727
 #, kde-format
@@ -5219,6 +5173,8 @@ msgid ""
 "Some of your media is missing alt text. Adding descriptions help everyone, "
 "especially the visually impaired."
 msgstr ""
+"A alguns dels vostres elements multimèdia els falta el text alternatiu. "
+"Afegir descripcions ajuda a tothom, especialment als discapacitats visuals."
 
 #: content/ui/TimelinePage.qml:38 timeline/accountmodel.cpp:41
 #, kde-format
@@ -5230,23 +5186,23 @@ msgstr "S'està carregant"
 msgid "Home (%1)"
 msgstr "Inici (%1)"
 
-#: content/ui/TimelinePage.qml:106
+#: content/ui/TimelinePage.qml:110
 #, kde-format
 msgid "Show Boosts"
 msgstr "Mostra els impulsos"
 
-#: content/ui/TimelinePage.qml:113
+#: content/ui/TimelinePage.qml:117
 #, kde-format
 msgid "Show Replies"
 msgstr "Mostra les respostes"
 
-#: content/ui/TimelinePage.qml:131
+#: content/ui/TimelinePage.qml:135
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
 msgstr "No s'ha pogut contactar amb el servidor: %1. Reviseu la configuració."
 
-#: content/ui/TimelinePage.qml:168
+#: content/ui/TimelinePage.qml:172
 #, kde-format
 msgctxt "@action:button Load more posts above this"
 msgid "Load More"
@@ -5658,7 +5614,3 @@ msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "Fa 1 any"
 msgstr[1] "Fa %1 anys"
-
-#~ msgctxt "@action:buttin"
-#~ msgid "Announcements"
-#~ msgstr "Anuncis"
