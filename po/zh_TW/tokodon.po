@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-21 00:41+0000\n"
+"POT-Creation-Date: 2025-01-22 00:41+0000\n"
 "PO-Revision-Date: 2024-12-30 17:01+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -3062,13 +3062,13 @@ msgid "<b>Content Warning</b><br /> %1"
 msgstr "<b>內容警告</b><br /> %1"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:413
-#: content/ui/PostDelegate/PostDelegate.qml:341
+#: content/ui/PostDelegate/PostDelegate.qml:357
 #, kde-format
 msgid "Show Less"
 msgstr "顯示更少"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:413
-#: content/ui/PostDelegate/PostDelegate.qml:341
+#: content/ui/PostDelegate/PostDelegate.qml:357
 #, kde-format
 msgid "Show More"
 msgstr "顯示更多"
@@ -3316,44 +3316,55 @@ msgstr "一個投票已結束"
 msgid "%1 updated their post"
 msgstr "%1 更新了嘟文"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:94
+#: content/ui/PostDelegate/AttachmentGrid.qml:97
 #, kde-format
 msgid "Status with image attachment"
 msgstr "Status with image attachment"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:96
+#: content/ui/PostDelegate/AttachmentGrid.qml:99
 #, kde-format
 msgid "Status with gif attachment"
 msgstr "有 gif 附件的狀態"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:98
+#: content/ui/PostDelegate/AttachmentGrid.qml:101
 #, kde-format
 msgid "Status with video attachment"
 msgstr "有影片附件的狀態"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:100
+#: content/ui/PostDelegate/AttachmentGrid.qml:103
 #, kde-format
 msgid "Status with audio attachment"
 msgstr "有音效附件的狀態"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:198
+#: content/ui/PostDelegate/AttachmentGrid.qml:148
+#: content/ui/PostDelegate/AttachmentGrid.qml:245
+#: content/ui/PostDelegate/AttachmentGrid.qml:287
+#: content/ui/PostDelegate/AttachmentGrid.qml:341
+#, fuzzy, kde-format
+#| msgctxt "login status"
+#| msgid "Sensitized"
+msgctxt "@info"
+msgid "Sensitive media"
+msgstr "敏感化"
+
+#: content/ui/PostDelegate/AttachmentGrid.qml:201
 #, kde-format
 msgid "Not available"
 msgstr "不可用"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:381
+#: content/ui/PostDelegate/AttachmentGrid.qml:384
 #, kde-format
 msgctxt "@action:button"
 msgid "Hide Media"
 msgstr "隱藏媒體"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:385
+#: content/ui/PostDelegate/AttachmentGrid.qml:388
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Hide media"
 msgstr "隱藏媒體"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:396
+#: content/ui/PostDelegate/AttachmentGrid.qml:399
 #, kde-format
 msgid "Show Media"
 msgstr "顯示媒體"
@@ -3491,26 +3502,33 @@ msgctxt "Attachment has alt-text, Short for alt-text"
 msgid "Alt"
 msgstr "ALT"
 
-#: content/ui/PostDelegate/MediaContainer.qml:78
+#: content/ui/PostDelegate/MediaContainer.qml:81
 #, kde-format
 msgid "Text description available"
 msgstr "有可用的文字描述"
 
-#: content/ui/PostDelegate/MediaContainer.qml:86
+#: content/ui/PostDelegate/MediaContainer.qml:89
 #, kde-format
 msgid "GIF"
 msgstr "GIF"
 
-#: content/ui/PostDelegate/MediaContainer.qml:95
+#: content/ui/PostDelegate/MediaContainer.qml:98
 #, kde-format
 msgid "Video"
 msgstr "影片"
 
-#: content/ui/PostDelegate/MediaContainer.qml:125
+#: content/ui/PostDelegate/MediaContainer.qml:128
 #, kde-format
 msgctxt "@title"
 msgid "Media Description"
 msgstr "媒體描述"
+
+#: content/ui/PostDelegate/PostContent.qml:29
+#, fuzzy, kde-format
+#| msgid "Reported Content"
+msgctxt "@info"
+msgid "Post content"
+msgstr "被檢舉的內容"
 
 #: content/ui/PostDelegate/PostDelegate.qml:102
 #, kde-format
@@ -3564,81 +3582,89 @@ msgid ""
 "post."
 msgstr "您確定要重新打這篇嘟文的草稿嗎？這個動作會刪除原有的嘟文。"
 
-#: content/ui/PostDelegate/PostDelegate.qml:335
+#: content/ui/PostDelegate/PostDelegate.qml:328
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Content Notice"
+msgctxt "@info"
+msgid "Content Notice"
+msgstr "內容告警"
+
+#: content/ui/PostDelegate/PostDelegate.qml:350
 #, kde-format
 msgid "<b>Content Notice</b><br /> %1"
 msgstr "<b>內容告警</b><br /> %1"
 
-#: content/ui/PostDelegate/PostDelegate.qml:445
+#: content/ui/PostDelegate/PostDelegate.qml:461
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "回覆"
 
-#: content/ui/PostDelegate/PostDelegate.qml:472
+#: content/ui/PostDelegate/PostDelegate.qml:488
 #, kde-format
 msgid "Cannot boost direct messages"
 msgstr "私信不能轉嘟"
 
-#: content/ui/PostDelegate/PostDelegate.qml:474
+#: content/ui/PostDelegate/PostDelegate.qml:490
 #, kde-format
 msgid "Cannot boost private posts"
 msgstr "私人嘟文不能轉嘟"
 
-#: content/ui/PostDelegate/PostDelegate.qml:476
+#: content/ui/PostDelegate/PostDelegate.qml:492
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "轉嘟"
 
-#: content/ui/PostDelegate/PostDelegate.qml:494
+#: content/ui/PostDelegate/PostDelegate.qml:510
 #, kde-format
 msgid "Boosted"
 msgstr "已轉嘟"
 
-#: content/ui/PostDelegate/PostDelegate.qml:494
+#: content/ui/PostDelegate/PostDelegate.qml:510
 #, kde-format
 msgid "Boost"
 msgstr "轉嘟"
 
-#: content/ui/PostDelegate/PostDelegate.qml:514
+#: content/ui/PostDelegate/PostDelegate.qml:530
 #, kde-format
 msgctxt "Favorite a post"
 msgid "Favorite"
 msgstr "最愛"
 
-#: content/ui/PostDelegate/PostDelegate.qml:517
+#: content/ui/PostDelegate/PostDelegate.qml:533
 #, kde-format
 msgid "Favorited"
 msgstr "已加入最愛"
 
-#: content/ui/PostDelegate/PostDelegate.qml:517
+#: content/ui/PostDelegate/PostDelegate.qml:533
 #, kde-format
 msgid "Favorite"
 msgstr "最愛"
 
-#: content/ui/PostDelegate/PostDelegate.qml:536
+#: content/ui/PostDelegate/PostDelegate.qml:552
 #, kde-format
 msgid "Remove bookmark"
 msgstr "移除書籤"
 
-#: content/ui/PostDelegate/PostDelegate.qml:536
+#: content/ui/PostDelegate/PostDelegate.qml:552
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "書籤"
 
-#: content/ui/PostDelegate/PostDelegate.qml:539
+#: content/ui/PostDelegate/PostDelegate.qml:555
 #, kde-format
 msgid "Bookmarked"
 msgstr "已加入書籤"
 
-#: content/ui/PostDelegate/PostDelegate.qml:539
+#: content/ui/PostDelegate/PostDelegate.qml:555
 #, kde-format
 msgid "Bookmark"
 msgstr "書籤"
 
-#: content/ui/PostDelegate/PostDelegate.qml:571
+#: content/ui/PostDelegate/PostDelegate.qml:587
 #, kde-format
 msgid ""
 "This post has been marked private. Some posts may be missing because its "
@@ -3813,6 +3839,12 @@ msgstr "顯示結果"
 #, kde-format
 msgid "Poll has closed"
 msgstr "投票已結束"
+
+#: content/ui/PostDelegate/PostTags.qml:60
+#, kde-format
+msgctxt "@info"
+msgid "Tag"
+msgstr ""
 
 #: content/ui/PostDelegate/QuotePost.qml:66
 #, kde-format

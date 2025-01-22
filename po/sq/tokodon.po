@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-21 00:41+0000\n"
+"POT-Creation-Date: 2025-01-22 00:41+0000\n"
 "PO-Revision-Date: 2024-11-17 13:03+0200\n"
 "Last-Translator: Besnik Bleta <besnik@programeshqip.org>\n"
 "Language-Team: Albanian <kde-i18n-sq@kde.org>\n"
@@ -3182,13 +3182,13 @@ msgid "<b>Content Warning</b><br /> %1"
 msgstr "<b>Sinjalizim Lënde</b><br /> %1"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:413
-#: content/ui/PostDelegate/PostDelegate.qml:341
+#: content/ui/PostDelegate/PostDelegate.qml:357
 #, kde-format
 msgid "Show Less"
 msgstr "Shfaq Më Pak"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:413
-#: content/ui/PostDelegate/PostDelegate.qml:341
+#: content/ui/PostDelegate/PostDelegate.qml:357
 #, kde-format
 msgid "Show More"
 msgstr "Shfaq Më Tepër"
@@ -3443,41 +3443,52 @@ msgstr "Përfundoi një pyetësor"
 msgid "%1 updated their post"
 msgstr "%1 përditësoi postimin e vet"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:94
+#: content/ui/PostDelegate/AttachmentGrid.qml:97
 #, kde-format
 msgid "Status with image attachment"
 msgstr "Gjendje me bashkëngjitje figurë"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:96
+#: content/ui/PostDelegate/AttachmentGrid.qml:99
 #, fuzzy, kde-format
 #| msgid "Status with GifV attachment"
 msgid "Status with gif attachment"
 msgstr "Gjendje me bBashkëngjitje GifV"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:98
+#: content/ui/PostDelegate/AttachmentGrid.qml:101
 #, fuzzy, kde-format
 #| msgid "Status with Video attachment"
 msgid "Status with video attachment"
 msgstr "Gjendje me bashkëngjitje Video"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:100
+#: content/ui/PostDelegate/AttachmentGrid.qml:103
 #, fuzzy, kde-format
 #| msgid "Status with Video attachment"
 msgid "Status with audio attachment"
 msgstr "Gjendje me bashkëngjitje Video"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:198
+#: content/ui/PostDelegate/AttachmentGrid.qml:148
+#: content/ui/PostDelegate/AttachmentGrid.qml:245
+#: content/ui/PostDelegate/AttachmentGrid.qml:287
+#: content/ui/PostDelegate/AttachmentGrid.qml:341
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Hide Media"
+msgctxt "@info"
+msgid "Sensitive media"
+msgstr "Fshihe Median"
+
+#: content/ui/PostDelegate/AttachmentGrid.qml:201
 #, kde-format
 msgid "Not available"
 msgstr ""
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:381
+#: content/ui/PostDelegate/AttachmentGrid.qml:384
 #, kde-format
 msgctxt "@action:button"
 msgid "Hide Media"
 msgstr "Fshihe Median"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:385
+#: content/ui/PostDelegate/AttachmentGrid.qml:388
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Hide Media"
@@ -3485,7 +3496,7 @@ msgctxt "@info:tooltip"
 msgid "Hide media"
 msgstr "Fshihe Median"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:396
+#: content/ui/PostDelegate/AttachmentGrid.qml:399
 #, fuzzy, kde-format
 #| msgctxt "@item:inmenu Profile Post Filter"
 #| msgid "Media"
@@ -3640,28 +3651,35 @@ msgctxt "Attachment has alt-text, Short for alt-text"
 msgid "Alt"
 msgstr "Alt"
 
-#: content/ui/PostDelegate/MediaContainer.qml:78
+#: content/ui/PostDelegate/MediaContainer.qml:81
 #, kde-format
 msgid "Text description available"
 msgstr ""
 
-#: content/ui/PostDelegate/MediaContainer.qml:86
+#: content/ui/PostDelegate/MediaContainer.qml:89
 #, kde-format
 msgid "GIF"
 msgstr "GIF"
 
-#: content/ui/PostDelegate/MediaContainer.qml:95
+#: content/ui/PostDelegate/MediaContainer.qml:98
 #, kde-format
 msgid "Video"
 msgstr "Video"
 
-#: content/ui/PostDelegate/MediaContainer.qml:125
+#: content/ui/PostDelegate/MediaContainer.qml:128
 #, fuzzy, kde-format
 #| msgctxt "@title:group Alternate text or description of the image"
 #| msgid "Description"
 msgctxt "@title"
 msgid "Media Description"
 msgstr "Përshkrim"
+
+#: content/ui/PostDelegate/PostContent.qml:29
+#, fuzzy, kde-format
+#| msgid "Reported Content"
+msgctxt "@info"
+msgid "Post content"
+msgstr "Lëndë e Raportuar"
 
 #: content/ui/PostDelegate/PostDelegate.qml:102
 #, kde-format
@@ -3717,85 +3735,92 @@ msgstr ""
 "Jeni i sigurt se doni të riskicohet ky postim? Kjo do të fshijë postimin "
 "origjinal."
 
-#: content/ui/PostDelegate/PostDelegate.qml:335
+#: content/ui/PostDelegate/PostDelegate.qml:328
+#, fuzzy, kde-format
+#| msgid "Content font"
+msgctxt "@info"
+msgid "Content Notice"
+msgstr "Shkronja lënde"
+
+#: content/ui/PostDelegate/PostDelegate.qml:350
 #, fuzzy, kde-format
 #| msgid "<b>Content Warning</b><br /> %1"
 msgid "<b>Content Notice</b><br /> %1"
 msgstr "<b>Sinjalizim Lënde</b><br /> %1"
 
-#: content/ui/PostDelegate/PostDelegate.qml:445
+#: content/ui/PostDelegate/PostDelegate.qml:461
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Përgjigjuni"
 
-#: content/ui/PostDelegate/PostDelegate.qml:472
+#: content/ui/PostDelegate/PostDelegate.qml:488
 #, kde-format
 msgid "Cannot boost direct messages"
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:474
+#: content/ui/PostDelegate/PostDelegate.qml:490
 #, kde-format
 msgid "Cannot boost private posts"
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:476
+#: content/ui/PostDelegate/PostDelegate.qml:492
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Përforcojeni"
 
-#: content/ui/PostDelegate/PostDelegate.qml:494
+#: content/ui/PostDelegate/PostDelegate.qml:510
 #, kde-format
 msgid "Boosted"
 msgstr "U përforcua"
 
-#: content/ui/PostDelegate/PostDelegate.qml:494
+#: content/ui/PostDelegate/PostDelegate.qml:510
 #, kde-format
 msgid "Boost"
 msgstr "Përforcojeni"
 
-#: content/ui/PostDelegate/PostDelegate.qml:514
+#: content/ui/PostDelegate/PostDelegate.qml:530
 #, kde-format
 msgctxt "Favorite a post"
 msgid "Favorite"
 msgstr "I vini shenjë si të parapëlqyer"
 
-#: content/ui/PostDelegate/PostDelegate.qml:517
+#: content/ui/PostDelegate/PostDelegate.qml:533
 #, fuzzy, kde-format
 #| msgid "Favourited"
 msgid "Favorited"
 msgstr "Iu vu shenjë si i parapëlqyer"
 
-#: content/ui/PostDelegate/PostDelegate.qml:517
+#: content/ui/PostDelegate/PostDelegate.qml:533
 #, fuzzy, kde-format
 #| msgctxt "Favorite a post"
 #| msgid "Favorite"
 msgid "Favorite"
 msgstr "I vini shenjë si të parapëlqyer"
 
-#: content/ui/PostDelegate/PostDelegate.qml:536
+#: content/ui/PostDelegate/PostDelegate.qml:552
 #, kde-format
 msgid "Remove bookmark"
 msgstr "Hiqe faqerojtësin"
 
-#: content/ui/PostDelegate/PostDelegate.qml:536
+#: content/ui/PostDelegate/PostDelegate.qml:552
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "Faqeruaje"
 
-#: content/ui/PostDelegate/PostDelegate.qml:539
+#: content/ui/PostDelegate/PostDelegate.qml:555
 #, kde-format
 msgid "Bookmarked"
 msgstr "U faqeruajt"
 
-#: content/ui/PostDelegate/PostDelegate.qml:539
+#: content/ui/PostDelegate/PostDelegate.qml:555
 #, kde-format
 msgid "Bookmark"
 msgstr "Faqeruaje"
 
-#: content/ui/PostDelegate/PostDelegate.qml:571
+#: content/ui/PostDelegate/PostDelegate.qml:587
 #, kde-format
 msgid ""
 "This post has been marked private. Some posts may be missing because its "
@@ -3975,6 +4000,12 @@ msgstr "Shfaq Më Pak"
 #| msgid "A poll has ended"
 msgid "Poll has closed"
 msgstr "Përfundoi një pyetësor"
+
+#: content/ui/PostDelegate/PostTags.qml:60
+#, kde-format
+msgctxt "@info"
+msgid "Tag"
+msgstr ""
 
 #: content/ui/PostDelegate/QuotePost.qml:66
 #, fuzzy, kde-format

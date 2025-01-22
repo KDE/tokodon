@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-21 00:41+0000\n"
+"POT-Creation-Date: 2025-01-22 00:41+0000\n"
 "PO-Revision-Date: 2024-01-01 07:57-0600\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
@@ -3256,13 +3256,13 @@ msgid "<b>Content Warning</b><br /> %1"
 msgstr "ਸਮੱਗਰੀ ਚੇਤਾਵਨੀ"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:413
-#: content/ui/PostDelegate/PostDelegate.qml:341
+#: content/ui/PostDelegate/PostDelegate.qml:357
 #, kde-format
 msgid "Show Less"
 msgstr "ਘੱਟ ਵੇਖਾਓ"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:413
-#: content/ui/PostDelegate/PostDelegate.qml:341
+#: content/ui/PostDelegate/PostDelegate.qml:357
 #, kde-format
 msgid "Show More"
 msgstr "ਹੋਰ ਵੇਖਾਓ"
@@ -3535,32 +3535,43 @@ msgstr ""
 msgid "%1 updated their post"
 msgstr "ਇਹ ਪੋਸਟ ਨੂੰ ਸੋਧੋ"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:94
+#: content/ui/PostDelegate/AttachmentGrid.qml:97
 #, kde-format
 msgid "Status with image attachment"
 msgstr ""
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:96
+#: content/ui/PostDelegate/AttachmentGrid.qml:99
 #, kde-format
 msgid "Status with gif attachment"
 msgstr ""
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:98
+#: content/ui/PostDelegate/AttachmentGrid.qml:101
 #, kde-format
 msgid "Status with video attachment"
 msgstr ""
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:100
+#: content/ui/PostDelegate/AttachmentGrid.qml:103
 #, kde-format
 msgid "Status with audio attachment"
 msgstr ""
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:198
+#: content/ui/PostDelegate/AttachmentGrid.qml:148
+#: content/ui/PostDelegate/AttachmentGrid.qml:245
+#: content/ui/PostDelegate/AttachmentGrid.qml:287
+#: content/ui/PostDelegate/AttachmentGrid.qml:341
+#, fuzzy, kde-format
+#| msgctxt "@item:inmenu Profile Post Filter"
+#| msgid "Media"
+msgctxt "@info"
+msgid "Sensitive media"
+msgstr "ਮੀਡੀਆ"
+
+#: content/ui/PostDelegate/AttachmentGrid.qml:201
 #, kde-format
 msgid "Not available"
 msgstr "ਮੌਜੂਦ ਨਹੀਂ"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:381
+#: content/ui/PostDelegate/AttachmentGrid.qml:384
 #, fuzzy, kde-format
 #| msgctxt "@item:inmenu Profile Post Filter"
 #| msgid "Media"
@@ -3568,7 +3579,7 @@ msgctxt "@action:button"
 msgid "Hide Media"
 msgstr "ਮੀਡੀਆ"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:385
+#: content/ui/PostDelegate/AttachmentGrid.qml:388
 #, fuzzy, kde-format
 #| msgctxt "@item:inmenu Profile Post Filter"
 #| msgid "Media"
@@ -3576,7 +3587,7 @@ msgctxt "@info:tooltip"
 msgid "Hide media"
 msgstr "ਮੀਡੀਆ"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:396
+#: content/ui/PostDelegate/AttachmentGrid.qml:399
 #, fuzzy, kde-format
 #| msgctxt "@item:inmenu Profile Post Filter"
 #| msgid "Media"
@@ -3735,28 +3746,34 @@ msgctxt "Attachment has alt-text, Short for alt-text"
 msgid "Alt"
 msgstr "ਸਭ"
 
-#: content/ui/PostDelegate/MediaContainer.qml:78
+#: content/ui/PostDelegate/MediaContainer.qml:81
 #, kde-format
 msgid "Text description available"
 msgstr ""
 
-#: content/ui/PostDelegate/MediaContainer.qml:86
+#: content/ui/PostDelegate/MediaContainer.qml:89
 #, kde-format
 msgid "GIF"
 msgstr ""
 
-#: content/ui/PostDelegate/MediaContainer.qml:95
+#: content/ui/PostDelegate/MediaContainer.qml:98
 #, kde-format
 msgid "Video"
 msgstr ""
 
-#: content/ui/PostDelegate/MediaContainer.qml:125
+#: content/ui/PostDelegate/MediaContainer.qml:128
 #, fuzzy, kde-format
 #| msgctxt "The location being downloaded to"
 #| msgid "Destination"
 msgctxt "@title"
 msgid "Media Description"
 msgstr "ਟਿਕਾਣਾ"
+
+#: content/ui/PostDelegate/PostContent.qml:29
+#, kde-format
+msgctxt "@info"
+msgid "Post content"
+msgstr ""
 
 #: content/ui/PostDelegate/PostDelegate.qml:102
 #, fuzzy, kde-format
@@ -3814,49 +3831,56 @@ msgid ""
 "post."
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:335
+#: content/ui/PostDelegate/PostDelegate.qml:328
+#, fuzzy, kde-format
+#| msgid "Content Warning"
+msgctxt "@info"
+msgid "Content Notice"
+msgstr "ਸਮੱਗਰੀ ਚੇਤਾਵਨੀ"
+
+#: content/ui/PostDelegate/PostDelegate.qml:350
 #, fuzzy, kde-format
 #| msgid "Content Warning"
 msgid "<b>Content Notice</b><br /> %1"
 msgstr "ਸਮੱਗਰੀ ਚੇਤਾਵਨੀ"
 
-#: content/ui/PostDelegate/PostDelegate.qml:445
+#: content/ui/PostDelegate/PostDelegate.qml:461
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "ਜਵਾਬ ਦਿਓ"
 
-#: content/ui/PostDelegate/PostDelegate.qml:472
+#: content/ui/PostDelegate/PostDelegate.qml:488
 #, kde-format
 msgid "Cannot boost direct messages"
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:474
+#: content/ui/PostDelegate/PostDelegate.qml:490
 #, kde-format
 msgid "Cannot boost private posts"
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:476
+#: content/ui/PostDelegate/PostDelegate.qml:492
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:494
+#: content/ui/PostDelegate/PostDelegate.qml:510
 #, fuzzy, kde-format
 #| msgctxt "@item:inmenu Profile Post Filter"
 #| msgid "Posts"
 msgid "Boosted"
 msgstr "ਪੋਸਟਾਂ"
 
-#: content/ui/PostDelegate/PostDelegate.qml:494
+#: content/ui/PostDelegate/PostDelegate.qml:510
 #, fuzzy, kde-format
 #| msgctxt "@item:inmenu Profile Post Filter"
 #| msgid "Posts"
 msgid "Boost"
 msgstr "ਪੋਸਟਾਂ"
 
-#: content/ui/PostDelegate/PostDelegate.qml:514
+#: content/ui/PostDelegate/PostDelegate.qml:530
 #, fuzzy, kde-format
 #| msgctxt "Show only favorites"
 #| msgid "Favorites"
@@ -3864,42 +3888,42 @@ msgctxt "Favorite a post"
 msgid "Favorite"
 msgstr "ਮਨਪਸੰਦ"
 
-#: content/ui/PostDelegate/PostDelegate.qml:517
+#: content/ui/PostDelegate/PostDelegate.qml:533
 #, fuzzy, kde-format
 #| msgid "Favourites"
 msgid "Favorited"
 msgstr "ਮਨਪਸੰਦ"
 
-#: content/ui/PostDelegate/PostDelegate.qml:517
+#: content/ui/PostDelegate/PostDelegate.qml:533
 #, fuzzy, kde-format
 #| msgctxt "Show only favorites"
 #| msgid "Favorites"
 msgid "Favorite"
 msgstr "ਮਨਪਸੰਦ"
 
-#: content/ui/PostDelegate/PostDelegate.qml:536
+#: content/ui/PostDelegate/PostDelegate.qml:552
 #, kde-format
 msgid "Remove bookmark"
 msgstr "ਬੁੱਕਮਾਰਕ ਹਟਾਓ"
 
-#: content/ui/PostDelegate/PostDelegate.qml:536
+#: content/ui/PostDelegate/PostDelegate.qml:552
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "ਬੁੱਕਮਾਰਕ"
 
-#: content/ui/PostDelegate/PostDelegate.qml:539
+#: content/ui/PostDelegate/PostDelegate.qml:555
 #, fuzzy, kde-format
 #| msgid "Bookmark"
 msgid "Bookmarked"
 msgstr "ਬੁੱਕਮਾਰਕ"
 
-#: content/ui/PostDelegate/PostDelegate.qml:539
+#: content/ui/PostDelegate/PostDelegate.qml:555
 #, kde-format
 msgid "Bookmark"
 msgstr "ਬੁੱਕਮਾਰਕ"
 
-#: content/ui/PostDelegate/PostDelegate.qml:571
+#: content/ui/PostDelegate/PostDelegate.qml:587
 #, kde-format
 msgid ""
 "This post has been marked private. Some posts may be missing because its "
@@ -4092,6 +4116,12 @@ msgstr "ਘੱਟ ਵੇਖਾਓ"
 #: content/ui/PostDelegate/PostPoll.qml:155
 #, kde-format
 msgid "Poll has closed"
+msgstr ""
+
+#: content/ui/PostDelegate/PostTags.qml:60
+#, kde-format
+msgctxt "@info"
+msgid "Tag"
 msgstr ""
 
 #: content/ui/PostDelegate/QuotePost.qml:66
