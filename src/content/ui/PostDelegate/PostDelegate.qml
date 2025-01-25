@@ -385,7 +385,7 @@ QQC2.ItemDelegate {
             }
 
             active: root.poll !== null && root.poll !== undefined
-            visible: active
+            visible: active && postContent.visible
 
             Layout.fillWidth: true
         }
