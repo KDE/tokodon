@@ -143,7 +143,7 @@ int main(int argc, char *argv[])
 
     QCommandLineParser parser;
     parser.setApplicationDescription(i18n("Browse the Fediverse"));
-    parser.addPositionalArgument(QStringLiteral("urls"), i18n("Supports https and web+ap url scheme"));
+    parser.addPositionalArgument(QStringLiteral("urls"), i18n("Supports https, tokodon and web+ap url scheme"));
 
     QCommandLineOption shareOption(QStringLiteral("share"), i18n("Share a line of text in the standalone composer."), i18n("The text to share."));
     shareOption.setFlags(QCommandLineOption::Flag::HiddenFromHelp);
@@ -218,7 +218,9 @@ int main(int argc, char *argv[])
 
                 if (!args.empty()) {
                     if (args.first().startsWith("tokodon"_L1)) {
-                        NetworkController::instance().setAuthCode(QUrl(args.first()));
+                        if (!NetworkController::instance().setAuthCode(QUrl(args.first()))) {
+                            NetworkController::instance().openWebApLink(args.first());
+                        }
                     } else if (args.first() == "--share"_L1) {
                         NetworkController::instance().startComposing(args[1]);
                     } else {

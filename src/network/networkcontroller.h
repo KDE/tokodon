@@ -35,8 +35,9 @@ public:
 
     /**
      * @brief Sets the authentication code for the current account.
+     * @return A boolean if Tokodon accepted this as a valid auth token. This should fallback to alternative behavior if false.
      */
-    void setAuthCode(QUrl authCode);
+    bool setAuthCode(QUrl authCode);
 
     /**
      * @brief Opens the composer with @p text.

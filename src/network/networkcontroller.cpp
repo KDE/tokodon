@@ -127,8 +127,8 @@ void NetworkController::setApplicationProxy(const bool reloadAccounts)
 void NetworkController::openWebApLink(QString input)
 {
     QUrl url(input);
-    // only web+ap (declared in app manifest) and https (explicitly not declared, can be used from command line)
-    if (url.scheme() != QStringLiteral("web+ap") && url.scheme() != QStringLiteral("https")) {
+    // only web+ap/tokodon (declared in app manifest) and https (explicitly not declared, can be used from command line)
+    if (url.scheme() != QStringLiteral("web+ap") && url.scheme() != QStringLiteral("https") && url.scheme() != QStringLiteral("tokodon")) {
         // FIXME maybe warn about unsupported links?
         return;
     }
@@ -182,13 +182,15 @@ void NetworkController::clearErrorMessages()
     Q_EMIT errorMessagesChanged();
 }
 
-void NetworkController::setAuthCode(QUrl authCode)
+bool NetworkController::setAuthCode(QUrl authCode)
 {
     QUrlQuery query(authCode);
 
     if (query.hasQueryItem(QStringLiteral("code"))) {
         Q_EMIT receivedAuthCode(query.queryItemValue(QStringLiteral("code")));
+        return true;
     }
+    return false;
 }
 
 void NetworkController::openLink()
@@ -198,7 +200,7 @@ void NetworkController::openLink()
 
     auto account = AccountManager::instance().selectedAccount();
 
-    if (m_requestedLink.scheme() == QStringLiteral("web+ap")) {
+    if (m_requestedLink.scheme() == QStringLiteral("web+ap") || m_requestedLink.scheme() == QStringLiteral("tokodon")) {
         if (m_requestedLink.userName() == QStringLiteral("tag")) {
             // TODO implement in a future MR
             m_requestedLink.clear();
