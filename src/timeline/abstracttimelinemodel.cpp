@@ -176,6 +176,8 @@ QVariant AbstractTimelineModel::postData(Post *post, int role) const
         return {};
     case PostRole:
         return QVariant::fromValue<Post *>(post);
+    case MutedRole:
+        return post->muted();
     }
 
     return {};
@@ -276,6 +278,19 @@ void AbstractTimelineModel::actionDelete(const QModelIndex &index, Post *post)
 {
     Q_UNUSED(index);
     m_account->deleteResource(m_account->apiUrl(QStringLiteral("/api/v1/statuses/%1").arg(post->postId())), true, this, {});
+}
+
+void AbstractTimelineModel::actionMute(const QModelIndex &index, Post *post)
+{
+    if (!post->muted()) {
+        m_account->mute(post);
+        post->setMuted(true);
+    } else {
+        m_account->unmute(post);
+        post->setMuted(false);
+    }
+
+    Q_EMIT dataChanged(index, index, {MutedRole});
 }
 
 #include "moc_abstracttimelinemodel.cpp"

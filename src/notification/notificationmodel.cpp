@@ -280,4 +280,13 @@ void NotificationModel::actionDelete(const QModelIndex &index)
     }
 }
 
+void NotificationModel::actionMute(const QModelIndex &index)
+{
+    const int row = index.row();
+    const auto post = m_notifications[row]->post();
+    if (post != nullptr) {
+        AbstractTimelineModel::actionMute(index, post);
+    }
+}
+
 #include "moc_notificationmodel.cpp"

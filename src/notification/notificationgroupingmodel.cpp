@@ -513,4 +513,12 @@ void NotificationGroupingModel::actionBookmark(const QModelIndex &index)
     }
 }
 
+void NotificationGroupingModel::actionMute(const QModelIndex &index)
+{
+    if (auto model = qobject_cast<NotificationModel *>(sourceModel())) {
+        const auto sourceIndex = mapToSource(index);
+        model->actionMute(sourceIndex);
+    }
+}
+
 #include "moc_notificationgroupingmodel.cpp"

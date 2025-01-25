@@ -26,6 +26,7 @@ Components.ConvergentContextMenu {
     required property bool pinned
     required property var authorIdentity
     required property bool isPrivate
+    required property bool muted
 
     readonly property bool hasMultipleAccounts: AccountManager.rowCount() > 1
 
@@ -137,7 +138,14 @@ Components.ConvergentContextMenu {
 
     Kirigami.Action {
         separator: true
-        visible: !root.isSelf
+    }
+
+    Kirigami.Action {
+        icon.name: "dialog-cancel"
+        visible: root.isSelf
+        enabled: visible
+        text: root.muted ? i18nc("@action:inmenu", "Unmute Conversation") : i18nc("@action:inmenu", "Mute Conversation")
+        onTriggered: timelineModel.actionMute(timelineModel.index(root.index, 0))
     }
 
     Kirigami.Action {

@@ -435,6 +435,16 @@ void AbstractAccount::unpin(Post *p)
     mutatePost(p->postId(), QStringLiteral("unpin"));
 }
 
+void AbstractAccount::mute(Post *p)
+{
+    mutatePost(p->postId(), QStringLiteral("mute"), false);
+}
+
+void AbstractAccount::unmute(Post *p)
+{
+    mutatePost(p->postId(), QStringLiteral("unmute"), false);
+}
+
 void AbstractAccount::fetchInstanceMetadata()
 {
     get(

@@ -132,6 +132,11 @@ public:
     void actionPin(const QModelIndex &index, Post *post);
 
     /**
+     * @brief Mute this @p post's conversation at @p index.
+     */
+    void actionMute(const QModelIndex &index, Post *post);
+
+    /**
      * @brief Refresh the timeline.
      * For example, refreshing a thread should load any new replies and statistics.
      */

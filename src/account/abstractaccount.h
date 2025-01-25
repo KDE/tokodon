@@ -269,6 +269,20 @@ public:
     void unpin(Post *p);
 
     /**
+     * @brief Mute a post's conversation.
+     * @param p The post object to mutate.
+     * @see unmute()
+     */
+    void mute(Post *p);
+
+    /**
+     * @brief Unmute a post's conversation.
+     * @param p The post object to mutate.
+     * @see mute()
+     */
+    void unmute(Post *p);
+
+    /**
      * @brief Returns a streaming url for @p stream.
      * @param stream The requested stream (e.g. user).
      */

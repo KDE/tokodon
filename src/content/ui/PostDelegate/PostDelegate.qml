@@ -294,6 +294,7 @@ QQC2.ItemDelegate {
             pinned: root.pinned
             authorIdentity: root.authorIdentity
             isPrivate: root.visibility === Post.Direct || root.visibility === Post.Private
+            muted: root.muted
 
             onDeletePost: {
                 deleteDialog.active = true;

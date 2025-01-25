@@ -84,6 +84,11 @@ public Q_SLOTS:
      */
     void actionBookmark(const QModelIndex &index);
 
+    /**
+     * @brief Mute the notification at @p index.
+     */
+    void actionMute(const QModelIndex &index);
+
 Q_SIGNALS:
     /**
      * @brief Emitted when the list of excluded notification types change

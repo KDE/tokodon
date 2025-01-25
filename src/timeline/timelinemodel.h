@@ -92,6 +92,11 @@ public Q_SLOTS:
     void actionPin(const QModelIndex &index);
 
     /**
+     * @brief Mute the post's notifications at @p index.
+     */
+    void actionMute(const QModelIndex &index);
+
+    /**
      * @brief Reset the timeline posts, and any additional state.
      */
     virtual void reset() = 0;
