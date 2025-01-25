@@ -14,6 +14,7 @@ MediaContainer {
     id: root
 
     required property var audioUrl
+    readonly property bool loading: player.mediaStatus === MediaPlayer.LoadingMedia
 
     function pause() {
         // Unlike the other functions, we want to make sure the item doesn't accidentally get created when the video is auto-paused due to scrolling

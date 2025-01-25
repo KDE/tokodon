@@ -140,7 +140,7 @@ Item {
                         }
 
                         onContextMenuRequested: {
-                            if (!root.isSensitive) {
+                            if (!root.isSensitive && img.status === Image.Ready) {
                                 root.openAttachmentMenu(modelData);
                             }
                         }
@@ -232,7 +232,7 @@ Item {
                         }
 
                         onContextMenuRequested: {
-                            if (!root.isSensitive) {
+                            if (!root.isSensitive && !gif.loading) {
                                 root.openAttachmentMenu(modelData);
                             }
                         }
@@ -299,7 +299,7 @@ Item {
                         }
 
                         onContextMenuRequested: {
-                            if (!root.isSensitive) {
+                            if (!root.isSensitive && !video.loading) {
                                 root.openAttachmentMenu(modelData);
                             }
                         }
@@ -349,7 +349,7 @@ Item {
                         }
 
                         onContextMenuRequested: {
-                            if (!root.isSensitive) {
+                            if (!root.isSensitive && !audio.loading) {
                                 root.openAttachmentMenu(modelData);
                             }
                         }

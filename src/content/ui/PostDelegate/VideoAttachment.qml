@@ -20,6 +20,7 @@ MediaContainer {
     required property bool isSensitive
     property alias showControls: mediaControls.visible
     property bool looping: false
+    property alias loading: busyIndicator.visible
 
     signal errorOccurred(error: int, errorString: string)
 
@@ -80,6 +81,7 @@ MediaContainer {
     }
 
     QQC2.BusyIndicator {
+        id: busyIndicator
         visible: player.active && (player.item?.loading ?? false) && !root.isSensitive
         anchors.centerIn: parent
     }
