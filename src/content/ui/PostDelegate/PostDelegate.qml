@@ -563,6 +563,7 @@ QQC2.ItemDelegate {
             Layout.fillWidth: true
 
             sourceComponent: InformationBar {
+                postId: root.id
                 selected: root.selected
                 visibility: root.visibility
                 wasEdited: root.wasEdited

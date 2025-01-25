@@ -21,6 +21,7 @@ ColumnLayout {
     required property int reblogsCount
     required property var application
     required property string absoluteTime
+    required property string postId
 
     spacing: Kirigami.Units.largeSpacing
 
@@ -99,7 +100,7 @@ ColumnLayout {
             onClicked: {
                 pageStack.push(socialGraphComponent, {
                     name: "favourited_by",
-                    statusId: root.id,
+                    statusId: root.postId,
                     count: root.favouritesCount
                 });
             }
@@ -123,7 +124,7 @@ ColumnLayout {
             onClicked: {
                 pageStack.push(socialGraphComponent, {
                     name: "reblogged_by",
-                    statusId: root.id,
+                    statusId: root.postId,
                     count: root.reblogsCount
                 });
             }
