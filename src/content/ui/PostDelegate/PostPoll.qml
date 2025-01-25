@@ -94,20 +94,21 @@ ColumnLayout {
 
             spacing: Kirigami.Units.smallSpacing
 
+            required property int index
             required property var modelData
 
             QQC2.CheckBox {
                 visible: root.poll.multiple
                 Layout.alignment: Qt.AlignVCenter
                 QQC2.ButtonGroup.group: pollGroup
-                property int choiceIndex: root.index
+                property int choiceIndex: resultDelegate.index
             }
 
             QQC2.RadioButton {
                 visible: !root.poll.multiple
                 Layout.alignment: Qt.AlignVCenter
                 QQC2.ButtonGroup.group: pollGroup
-                property int choiceIndex: root.index
+                property int choiceIndex: resultDelegate.index
             }
 
             QQC2.Label {
