@@ -491,6 +491,9 @@ Kirigami.ScrollablePage {
                                 selectedNameFilter.index: 0
                                 nameFilters: AccountManager.selectedAccount.attachmentFilterStrings
                             }
+                            text: i18nc("@action:button", "Attach File")
+                            display: QQC2.AbstractButton.IconOnly
+
                             QQC2.ToolTip.text: i18nc("@info:tooltip", "Attach file")
                             QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                             QQC2.ToolTip.visible: hovered
@@ -502,20 +505,23 @@ Kirigami.ScrollablePage {
                             checkable: true
                             checked: backend.pollEnabled
                             enabled: backend.attachmentEditorModel.count === 0 && root.purpose !== StatusComposer.Edit
+                            text: i18nc("@action:button", "Attach Poll")
+                            display: QQC2.AbstractButton.IconOnly
+
+                            onToggled: backend.pollEnabled = checked
+
                             QQC2.ToolTip.text: i18nc("@info:tooltip", "Add poll")
                             QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                             QQC2.ToolTip.visible: hovered
-
-                            onToggled: backend.pollEnabled = checked
                         }
 
                         QQC2.ToolButton {
                             id: contentWarning
                             icon.name: "view-hidden-symbolic"
                             checkable: true
-                            QQC2.ToolTip {
-                                text: i18nc("@info:tooltip", "Content Notice")
-                            }
+                            text: i18nc("@action:button", "Content Notice")
+                            display: QQC2.AbstractButton.IconOnly
+
                             onCheckedChanged: {
                                 // Clear existing content warning if not checked
                                 if (!checked) {
@@ -524,6 +530,10 @@ Kirigami.ScrollablePage {
                                     root.backend.spoilerText = contentWarningField.text;
                                 }
                             }
+
+                            QQC2.ToolTip.text: i18nc("@info:tooltip", "Content notice")
+                            QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+                            QQC2.ToolTip.visible: hovered
                         }
 
                         QQC2.ToolSeparator {}
@@ -547,6 +557,8 @@ Kirigami.ScrollablePage {
                             }
                             onClicked: visibilityMenu.popup(QQC2.Overlay.overlay)
                             enabled: root.purpose !== StatusComposer.Edit
+                            text: i18nc("@action:button", "Visibility")
+                            display: QQC2.AbstractButton.IconOnly
 
                             Components.ConvergentContextMenu {
                                 id: visibilityMenu
@@ -582,9 +594,10 @@ Kirigami.ScrollablePage {
                                     onTriggered: backend.visibility = Post.Direct
                                 }
                             }
-                            QQC2.ToolTip {
-                                text: i18nc("@info:tooltip Post visibility", "Visibility")
-                            }
+
+                            QQC2.ToolTip.text: i18nc("@info:tooltip Post visibility", "Visibility")
+                            QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+                            QQC2.ToolTip.visible: hovered
                         }
 
                         QQC2.ToolButton {
@@ -620,6 +633,8 @@ Kirigami.ScrollablePage {
                             Layout.alignment: Qt.AlignRight
 
                             icon.name: "smiley"
+                            text: i18nc("@action:button", "Add Emoji")
+                            display: QQC2.AbstractButton.IconOnly
                             onClicked: emojiDialog.open()
                             EmojiDialog {
                                 id: emojiDialog
