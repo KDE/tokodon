@@ -112,6 +112,9 @@ Kirigami.Page {
                 Layout.alignment: Qt.AlignHCenter
                 Layout.topMargin: Kirigami.Units.largeSpacing
 
+                Accessible.role: Accessible.Button
+                Accessible.name: i18nc("@action:button", "Compatible with Mastodon")
+
                 contentItem: ColumnLayout {
                     spacing: Kirigami.Units.smallSpacing
 
@@ -124,10 +127,6 @@ Kirigami.Page {
 
                         source: "qrc:/content/mastodon-logo.svg"
                         fillMode: Image.PreserveAspectFit
-
-                        Accessible.role: Accessible.Button
-                        Accessible.name: i18nc("@action:button", "Compatible with Mastodon")
-                        Accessible.onPressAction: Qt.openUrlExternally("https://joinmastodon.org/")
 
                         Layout.preferredWidth: Kirigami.Units.gridUnit * 6
                         Layout.preferredHeight: paintedHeight
