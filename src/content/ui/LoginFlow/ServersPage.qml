@@ -98,9 +98,14 @@ Kirigami.ScrollablePage {
 
                 Layout.fillWidth: true
                 Layout.margins: Kirigami.Units.largeSpacing
+
+                KeyNavigation.tab: listView
             }
         }
     }
+
+    // For some reason setting the focus property on the ListView doesn't work, and it doesn't announce items to the screen reader
+    Component.onCompleted: listView.forceActiveFocus()
 
     ListView {
         id: listView
@@ -172,5 +177,7 @@ Kirigami.ScrollablePage {
             visible: !publicServersModel.loading && listView.count === 0 && root.filterString === ""
             width: parent.width - Kirigami.Units.gridUnit * 4
         }
+
+        KeyNavigation.backtab: searchField
     }
 }
