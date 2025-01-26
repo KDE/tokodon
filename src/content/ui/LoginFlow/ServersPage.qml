@@ -103,7 +103,8 @@ Kirigami.ScrollablePage {
                 Layout.fillWidth: true
                 Layout.margins: Kirigami.Units.largeSpacing
 
-                KeyNavigation.tab: listView
+                // If the list is empty, the custom server option should be tabbed to instead
+                KeyNavigation.tab: listView.count === 0 ? listView.headerItem : listView
             }
         }
     }
