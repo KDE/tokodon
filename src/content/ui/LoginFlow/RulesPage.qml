@@ -49,8 +49,19 @@ MastoPage {
 
     FormCard.FormCard {
         Repeater {
+            id: rulesRepeater
+
             model: RulesModel {
+                id: rulesModel
+
                 account: root.account
+
+                onLoadingChanged: {
+                    if (!rulesModel.loading) {
+                        // Announce the first rule to the screen reader
+                        rulesRepeater.itemAt(0).forceFocus();
+                    }
+                }
             }
 
             delegate: ColumnLayout {
@@ -61,12 +72,20 @@ MastoPage {
 
                 spacing: 0
 
+                function forceFocus(): void {
+                    ruleTextDelegate.forceActiveFocus();
+                }
+
                 FormCard.FormDelegateSeparator {
                     visible: index !== 0
                 }
 
                 FormCard.FormTextDelegate {
+                    id: ruleTextDelegate
+
                     text: ruleLayout.text
+
+                    activeFocusOnTab: true
                 }
             }
         }
