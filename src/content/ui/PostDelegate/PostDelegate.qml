@@ -152,21 +152,56 @@ QQC2.ItemDelegate {
         threadMargin: root.threadMargin
         isLastThreadReply: root.isLastThreadReply
 
-        RowLayout {
-            spacing: Kirigami.Units.largeSpacing
+        QQC2.Control {
+            id: filterNotice
+
+            readonly property string matchedFilters: root.filters.join(', ')
+
+            padding: Kirigami.Units.largeSpacing
+
+            activeFocusOnTab: true
             visible: root.filtered
+            Accessible.role: Accessible.Button
+            Accessible.name: i18nc("@info", "Filter")
+            Accessible.description: matchedFilters
+            Accessible.onPressAction: toggleFilter()
+
+            Keys.onSpacePressed: toggleFilter()
 
             Layout.fillWidth: true
 
-            QQC2.Label {
-                font: Config.defaultFont
-                Layout.alignment: Qt.AlignHCenter
-                text: i18n("Filtered: %1", root.filters.join(', '))
+            function toggleFilter(): void {
+                root.filtered = false
             }
-            Kirigami.LinkButton {
-                Layout.alignment: Qt.AlignHCenter
-                text: i18n("Show anyway")
-                onClicked: root.filtered = false
+
+            contentItem: RowLayout {
+                id: warningLayout
+                spacing: Kirigami.Units.smallSpacing
+
+                Kirigami.Icon {
+                    Layout.alignment: Qt.AlignVCenter
+                    source: "view-filter"
+                }
+
+                QQC2.Label {
+                    id: spoilerTextLabel
+                    Layout.fillWidth: true
+                    text: i18n("<b>Filtered</b><br /> %1", filterNotice.matchedFilters)
+                    wrapMode: Text.Wrap
+                    font: Config.defaultFont
+                }
+
+                QQC2.Button {
+                    activeFocusOnTab: false
+                    text: i18nc("@action:button", "Show Anyway")
+                    icon.name: "view-visible-symbolic"
+                    onClicked: filterNotice.toggleFilter()
+                }
+            }
+
+            background: Rectangle {
+                radius: Kirigami.Units.cornerRadius
+                color: Kirigami.Theme.activeBackgroundColor
             }
         }
 
@@ -435,6 +470,7 @@ QQC2.ItemDelegate {
 
         PostTags {
             standaloneTags: root.post.standaloneTags
+            visible: !root.filtered
 
             Layout.fillWidth: true
         }
