@@ -24,6 +24,9 @@ ClickableIdentityInfo {
 
     onClicked: Navigation.openAccount(identity.id)
 
+    accessibleName: i18nc("@info", "Post Author")
+    accessibleDescription: root.identity.displayName
+
     Item {
         Layout.fillWidth: true
     }

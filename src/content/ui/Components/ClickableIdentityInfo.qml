@@ -20,6 +20,8 @@ RowLayout {
     property bool admin: false
     property string ip
     readonly property alias avatar: avatar
+    property string accessibleName: identity.displayName
+    property string accessibleDescription
 
     spacing: Kirigami.Units.largeSpacing
 
@@ -41,6 +43,9 @@ RowLayout {
         QQC2.ToolTip.text: i18n("View profile")
         QQC2.ToolTip.visible: hovered
         QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+
+        Accessible.name: root.accessibleName
+        Accessible.description: root.accessibleDescription
     }
 
     ColumnLayout {
