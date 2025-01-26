@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-22 00:41+0000\n"
-"PO-Revision-Date: 2025-01-19 13:37+0100\n"
+"PO-Revision-Date: 2025-01-25 12:12+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -3386,12 +3386,10 @@ msgstr "Estado con son anexo"
 #: content/ui/PostDelegate/AttachmentGrid.qml:245
 #: content/ui/PostDelegate/AttachmentGrid.qml:287
 #: content/ui/PostDelegate/AttachmentGrid.qml:341
-#, fuzzy, kde-format
-#| msgctxt "login status"
-#| msgid "Sensitized"
+#, kde-format
 msgctxt "@info"
 msgid "Sensitive media"
-msgstr "Sensibilizado"
+msgstr "Medio sensíbel"
 
 #: content/ui/PostDelegate/AttachmentGrid.qml:201
 #, kde-format
@@ -3570,11 +3568,10 @@ msgid "Media Description"
 msgstr "Descrición do contido multimedia"
 
 #: content/ui/PostDelegate/PostContent.qml:29
-#, fuzzy, kde-format
-#| msgid "Reported Content"
+#, kde-format
 msgctxt "@info"
 msgid "Post content"
-msgstr "Denunciar o contido"
+msgstr "Publicar o contido"
 
 #: content/ui/PostDelegate/PostDelegate.qml:102
 #, kde-format
@@ -3631,9 +3628,7 @@ msgstr ""
 "orixinal."
 
 #: content/ui/PostDelegate/PostDelegate.qml:328
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Content Notice"
+#, kde-format
 msgctxt "@info"
 msgid "Content Notice"
 msgstr "Nota de contido"
@@ -3893,7 +3888,7 @@ msgstr "Pechouse a enquisa"
 #, kde-format
 msgctxt "@info"
 msgid "Tag"
-msgstr ""
+msgstr "Etiqueta"
 
 #: content/ui/PostDelegate/QuotePost.qml:66
 #, kde-format
@@ -3909,21 +3904,19 @@ msgstr "Publicación citada"
 #, kde-format
 msgctxt "@title:window"
 msgid "Privacy Policy"
-msgstr ""
+msgstr "Directiva de privacidade"
 
 #: content/ui/PrivacyPolicyPage.qml:26
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Privacy Policy"
-msgstr ""
+msgstr "Non hai directiva de privacidade"
 
 #: content/ui/PrivacyPolicyPage.qml:41
-#, fuzzy, kde-format
-#| msgctxt "Last read on this date"
-#| msgid "Last read on %1"
+#, kde-format
 msgctxt "@info Last updated: relative date and time (e.g. 2 years ago)"
 msgid "Last updated: %1"
-msgstr "Última lectura o %1"
+msgstr "Última actualización: %1"
 
 #: content/ui/ReadMarker.qml:15
 #, kde-format
@@ -3994,9 +3987,7 @@ msgid "Search for users, tags and posts"
 msgstr "Buscar xente, cancelos e publicacións"
 
 #: content/ui/ServerInformationPage.qml:25
-#, fuzzy, kde-format
-#| msgctxt "@title Server-wide announcements set by admins."
-#| msgid "Announcements"
+#, kde-format
 msgctxt "@action:button"
 msgid "Announcements"
 msgstr "Anuncios"
@@ -4005,7 +3996,7 @@ msgstr "Anuncios"
 #, kde-format
 msgctxt "@action:button"
 msgid "Privacy Policy"
-msgstr ""
+msgstr "Directiva de privacidade"
 
 #: content/ui/Settings/AccountPage.qml:26
 #, kde-format
@@ -4229,27 +4220,22 @@ msgid "Auto-play animated GIFs"
 msgstr "Reprodución automática de GIF"
 
 #: content/ui/Settings/BlockedDomainsPage.qml:19
-#, fuzzy, kde-format
-#| msgctxt "@info:Filter out all the blocked domains"
-#| msgid "Blocked domains"
+#, kde-format
 msgctxt "@title"
 msgid "Blocked Domains"
 msgstr "Dominios bloqueados"
 
 #: content/ui/Settings/BlockedDomainsPage.qml:51
-#, fuzzy, kde-format
-#| msgid "Unblock"
+#, kde-format
 msgctxt "@action:button"
 msgid "Unblock"
 msgstr "Desbloquear"
 
 #: content/ui/Settings/BlockedDomainsPage.qml:64
-#, fuzzy, kde-format
-#| msgctxt "@info:Filter out all the blocked domains"
-#| msgid "Blocked domains"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Blocked Domains"
-msgstr "Dominios bloqueados"
+msgstr "Non hai dominios bloqueados"
 
 #: content/ui/Settings/EditFilterPage.qml:30
 #, kde-format
@@ -4345,7 +4331,7 @@ msgstr "Engadir"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No keywords"
-msgstr ""
+msgstr "Non hai palabras clave"
 
 #: content/ui/Settings/EditFilterPage.qml:176
 #, kde-format
@@ -4790,9 +4776,7 @@ msgid "Blocked Users"
 msgstr "Xente bloqueada"
 
 #: content/ui/Settings/SafetyPage.qml:50
-#, fuzzy, kde-format
-#| msgctxt "@info:Filter out all the blocked domains"
-#| msgid "Blocked domains"
+#, kde-format
 msgid "Blocked Domains"
 msgstr "Dominios bloqueados"
 
@@ -5191,7 +5175,7 @@ msgstr "Planificar"
 #, kde-format
 msgctxt "@title"
 msgid "Alt Text Reminder"
-msgstr ""
+msgstr "Lembranza de texto alternativo"
 
 #: content/ui/StatusComposer/StatusComposer.qml:727
 #, kde-format
@@ -5200,6 +5184,8 @@ msgid ""
 "Some of your media is missing alt text. Adding descriptions help everyone, "
 "especially the visually impaired."
 msgstr ""
+"Algúns dos seus contidos multimedia non teñen texto alternativo. Engadir "
+"descricións é útil, especialmente para xente con problemas de visión."
 
 #: content/ui/TimelinePage.qml:38 timeline/accountmodel.cpp:41
 #, kde-format
