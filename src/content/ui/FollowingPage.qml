@@ -57,6 +57,14 @@ Kirigami.Page {
                 checked: true
                 enabled: root.currentAccountId !== ""
             }
+            Kirigami.Action {
+                separator: true
+            }
+            Kirigami.Action {
+                icon.name: "configure-symbolic"
+                text: i18nc("@action:intoolbar", "Configure Filters…")
+                onTriggered: pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "FiltersPage"), { title: i18nc("@title:window", "Filters") }, { title: i18nc("@title:window", "Filters") })
+            }
         }
     ]
 
