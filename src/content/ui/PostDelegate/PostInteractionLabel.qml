@@ -64,8 +64,13 @@ RowLayout {
             QQC2.ToolTip.text: i18n("View profile")
             QQC2.ToolTip.visible: hovered
             QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+
+            Accessible.name: i18nc("@info", "Interaction")
+            Accessible.description: interactionLabel.text
         }
         QQC2.Label {
+            id: interactionLabel
+
             text: {
                 if (!root.identity) {
                     return i18nc("@info Loading user that started this interaction", "Loading…");
