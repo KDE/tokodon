@@ -29,8 +29,6 @@ Kirigami.Page {
     property AccountModel accountModel: AccountModel {
         accountId: root.currentAccountId
 
-        excludeBoosts: !showBoostsAction.checked
-        excludeReplies: !showRepliesAction.checked
         excludePinned: true
     }
 
@@ -108,9 +106,13 @@ Kirigami.Page {
                     onClicked: {
                         root.currentAccountId = identity.id;
                         if (columnView.isOneColumn) {
-                            pageStack.push(accountTimeline, {});
+                            const page = pageStack.push(accountTimeline, {});
+                            accountModel.excludeBoosts = Qt.binding(() => !page.showBoosts);
+                            accountModel.excludeReplies = Qt.binding(() => !page.showReplies);
                         } else {
                             loader.item?.forceActiveFocus(Qt.MouseFocusReason);
+                            accountModel.excludeBoosts = Qt.binding(() => !showBoostsAction.checked);
+                            accountModel.excludeReplies = Qt.binding(() => !showRepliesAction.checked);
                         }
                     }
                 }
