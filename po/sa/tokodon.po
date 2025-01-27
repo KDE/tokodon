@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-22 00:41+0000\n"
+"POT-Creation-Date: 2025-01-27 00:41+0000\n"
 "PO-Revision-Date: 2024-12-29 22:50+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -83,62 +83,62 @@ msgstr "M4V विडियो (*.m4v)"
 msgid "QuickTime video (*.mov)"
 msgstr "त्वरितसमयविडियो (*.mov)"
 
-#: account/abstractaccount.cpp:45 account/abstractaccount.cpp:480
+#: account/abstractaccount.cpp:45 account/abstractaccount.cpp:490
 #, kde-format
 msgid "All files (*)"
 msgstr "सर्वाणि सञ्चिकाः (*) ."
 
-#: account/abstractaccount.cpp:479
+#: account/abstractaccount.cpp:489
 #, kde-format
 msgid "All supported formats (%1)"
 msgstr "सर्वे समर्थिताः प्रारूपाः (%1) ."
 
-#: account/abstractaccount.cpp:629
+#: account/abstractaccount.cpp:639
 #, kde-format
 msgid "Could not follow account"
 msgstr "लेखानुसरणं कर्तुं न शक्तवान्"
 
-#: account/abstractaccount.cpp:630
+#: account/abstractaccount.cpp:640
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "खातं अनफॉलो कर्तुं न शक्तवान्"
 
-#: account/abstractaccount.cpp:631
+#: account/abstractaccount.cpp:641
 #, kde-format
 msgid "Could not remove account as your follower"
 msgstr "भवतः अनुयायी इति खातं हर्तुं न शक्तवान्"
 
-#: account/abstractaccount.cpp:632
+#: account/abstractaccount.cpp:642
 #, kde-format
 msgid "Could not block account"
 msgstr "खातं अवरुद्धुं न शक्तवान्"
 
-#: account/abstractaccount.cpp:633
+#: account/abstractaccount.cpp:643
 #, kde-format
 msgid "Could not unblock account"
 msgstr "खातं अनब्लॉक् कर्तुं न शक्तवान्"
 
-#: account/abstractaccount.cpp:634
+#: account/abstractaccount.cpp:644
 #, kde-format
 msgid "Could not mute account"
 msgstr "खातं निःशब्दं कर्तुं न शक्तवान्"
 
-#: account/abstractaccount.cpp:635
+#: account/abstractaccount.cpp:645
 #, kde-format
 msgid "Could not unmute account"
 msgstr "खातं अनम्यूट कर्तुं न शक्तवान्"
 
-#: account/abstractaccount.cpp:636
+#: account/abstractaccount.cpp:646
 #, kde-format
 msgid "Could not feature account"
 msgstr "खातं फीचरं कर्तुं न शक्तवान्"
 
-#: account/abstractaccount.cpp:637
+#: account/abstractaccount.cpp:647
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "खातेः अविशेषतां कर्तुं न शक्तवान्"
 
-#: account/abstractaccount.cpp:638
+#: account/abstractaccount.cpp:648
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "खातेः विषये टिप्पणीं सम्पादयितुं न शक्तवान्"
@@ -659,7 +659,7 @@ msgstr "अनब्लॉक"
 msgid "Block"
 msgstr "मृदुवस्तु"
 
-#: content/ui/AccountHeader.qml:430 content/ui/PostDelegate/PostMenu.qml:187
+#: content/ui/AccountHeader.qml:430 content/ui/PostDelegate/PostMenu.qml:195
 #, kde-format
 msgctxt "@action:inmenu Report this post"
 msgid "Report…"
@@ -693,7 +693,7 @@ msgid "Draft Posts"
 msgstr "प्रारूपलेखाः"
 
 #: content/ui/AccountHeader.qml:483 content/ui/PostDelegate/LinkMenu.qml:25
-#: content/ui/PostDelegate/PostMenu.qml:51
+#: content/ui/PostDelegate/PostMenu.qml:52
 #, kde-format
 msgctxt "@action:inmenu 'Browser' being a web browser"
 msgid "Open in Browser"
@@ -1157,31 +1157,47 @@ msgctxt "@title 'Following' as in the users you're following on Mastodon."
 msgid "Following"
 msgstr "अनुसरण"
 
-#: content/ui/FollowingPage.qml:43 content/ui/Settings/SafetyPage.qml:26
+#: content/ui/FollowingPage.qml:41 content/ui/Settings/SafetyPage.qml:26
 #: content/ui/TimelinePage.qml:105
 #, kde-format
 msgctxt "@action:button"
 msgid "Filters"
 msgstr "फ़िल्टर"
 
-#: content/ui/FollowingPage.qml:48
+#: content/ui/FollowingPage.qml:46
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Show Boosts"
 msgstr "Boosts दर्शयतु"
 
-#: content/ui/FollowingPage.qml:56
+#: content/ui/FollowingPage.qml:54
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Show Replies"
 msgstr "उत्तराणि दर्शयतु"
 
-#: content/ui/FollowingPage.qml:151
+#: content/ui/FollowingPage.qml:65 content/ui/TimelinePage.qml:127
+#, fuzzy, kde-format
+#| msgctxt "@action:intoolbar"
+#| msgid "Configure Notifications…"
+msgctxt "@action:intoolbar"
+msgid "Configure Filters…"
+msgstr "सूचनाः विन्यस्यताम्..."
+
+#: content/ui/FollowingPage.qml:66 content/ui/TimelinePage.qml:128
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Filters"
+msgctxt "@title:window"
+msgid "Filters"
+msgstr "फ़िल्टर"
+
+#: content/ui/FollowingPage.qml:161
 #, kde-format
 msgid "No User Selected"
 msgstr "कोऽपि उपयोक्ता चयनितः नास्ति"
 
-#: content/ui/FollowingPage.qml:152
+#: content/ui/FollowingPage.qml:162
 #, kde-format
 msgid ""
 "With the Following view, easily check on each user you're following and only "
@@ -3093,13 +3109,13 @@ msgid "<b>Content Warning</b><br /> %1"
 msgstr "<b>सामग्री चेतावनी</b><br /> %1"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:413
-#: content/ui/PostDelegate/PostDelegate.qml:357
+#: content/ui/PostDelegate/PostDelegate.qml:393
 #, kde-format
 msgid "Show Less"
 msgstr "न्यूनं दर्शयतु"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:413
-#: content/ui/PostDelegate/PostDelegate.qml:357
+#: content/ui/PostDelegate/PostDelegate.qml:393
 #, kde-format
 msgid "Show More"
 msgstr "अधिकं दर्शयतु"
@@ -3437,63 +3453,63 @@ msgctxt "@title"
 msgid "Post"
 msgstr "पद"
 
-#: content/ui/PostDelegate/AudioAttachment.qml:80
-#: content/ui/PostDelegate/VideoAttachment.qml:109
+#: content/ui/PostDelegate/AudioAttachment.qml:81
+#: content/ui/PostDelegate/VideoAttachment.qml:111
 #, kde-format
 msgctxt "@action:button Start media playback"
 msgid "Play"
 msgstr "क्रीडतु"
 
-#: content/ui/PostDelegate/InformationBar.qml:33
+#: content/ui/PostDelegate/InformationBar.qml:34
 #, kde-format
 msgctxt "Posted on 26 March 2024 Tuesday 20:43:18 +03"
 msgid "Posted on %1"
 msgstr "%1 इत्यत्र प्रकाशितम्"
 
-#: content/ui/PostDelegate/InformationBar.qml:63
-#: content/ui/PostDelegate/InformationBar.qml:71
+#: content/ui/PostDelegate/InformationBar.qml:64
+#: content/ui/PostDelegate/InformationBar.qml:72
 #: content/ui/PostDelegate/PostInfoBar.qml:85
 #: content/ui/PostDelegate/PostInfoBar.qml:93
 #, kde-format
 msgid "Public"
 msgstr "सार्वजनिक"
 
-#: content/ui/PostDelegate/InformationBar.qml:65
+#: content/ui/PostDelegate/InformationBar.qml:66
 #: content/ui/PostDelegate/PostInfoBar.qml:87
 #, kde-format
 msgid "Unlisted"
 msgstr "असूचीकृतम्"
 
-#: content/ui/PostDelegate/InformationBar.qml:67
+#: content/ui/PostDelegate/InformationBar.qml:68
 #: content/ui/PostDelegate/PostInfoBar.qml:89
 #, kde-format
 msgid "Private"
 msgstr "वैयक्तिक"
 
-#: content/ui/PostDelegate/InformationBar.qml:69
+#: content/ui/PostDelegate/InformationBar.qml:70
 #: content/ui/PostDelegate/PostInfoBar.qml:91
 #, kde-format
 msgid "Direct Message"
 msgstr "प्रत्यक्ष सन्देश"
 
-#: content/ui/PostDelegate/InformationBar.qml:91
+#: content/ui/PostDelegate/InformationBar.qml:92
 #, kde-format
 msgid "No favorites"
 msgstr "न प्रियाः"
 
-#: content/ui/PostDelegate/InformationBar.qml:93
+#: content/ui/PostDelegate/InformationBar.qml:94
 #, kde-format
 msgid "%1 favorite"
 msgid_plural "%1 favorites"
 msgstr[0] "%1 प्रियम्"
 msgstr[1] "%1 प्रियाः"
 
-#: content/ui/PostDelegate/InformationBar.qml:114
+#: content/ui/PostDelegate/InformationBar.qml:115
 #, kde-format
 msgid "No boosts"
 msgstr "न बूस्ट्स्"
 
-#: content/ui/PostDelegate/InformationBar.qml:116
+#: content/ui/PostDelegate/InformationBar.qml:117
 #, kde-format
 msgid "%1 boost"
 msgid_plural "%1 boosts"
@@ -3501,14 +3517,14 @@ msgstr[0] "%1 बूस्ट्"
 msgstr[1] "%1 बूस्ट् करोति"
 
 #: content/ui/PostDelegate/LinkMenu.qml:33
-#: content/ui/PostDelegate/PostMenu.qml:59
+#: content/ui/PostDelegate/PostMenu.qml:60
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy Link"
 msgstr "प्रतिलिपि लिङ्क"
 
 #: content/ui/PostDelegate/LinkMenu.qml:36
-#: content/ui/PostDelegate/PostMenu.qml:62
+#: content/ui/PostDelegate/PostMenu.qml:63
 #, kde-format
 msgid "Post link copied."
 msgstr "पोस्ट लिङ्क प्रतिलिपिकृत।"
@@ -3576,41 +3592,31 @@ msgstr "सामान्य स्थिति"
 msgid "Spoiler Status"
 msgstr "Spoiler Status"
 
-#: content/ui/PostDelegate/PostDelegate.qml:164
-#, kde-format
-msgid "Filtered: %1"
-msgstr "छानितम्: %1"
-
-#: content/ui/PostDelegate/PostDelegate.qml:168
-#, kde-format
-msgid "Show anyway"
-msgstr "तथापि दर्शयतु"
-
-#: content/ui/PostDelegate/PostDelegate.qml:189
+#: content/ui/PostDelegate/PostDelegate.qml:171
 #, kde-format
 msgctxt "@label"
 msgid "Pinned Post"
 msgstr "पिन्ड पोस्ट"
 
-#: content/ui/PostDelegate/PostDelegate.qml:261
+#: content/ui/PostDelegate/PostDelegate.qml:242
 #, kde-format
 msgctxt "@title"
 msgid "Delete Post"
 msgstr "पदं विलोपयतु"
 
-#: content/ui/PostDelegate/PostDelegate.qml:262
+#: content/ui/PostDelegate/PostDelegate.qml:243
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to delete this post?"
 msgstr "किं भवन्तः निश्चयेन एतत् पदं विलोपयितुम् इच्छन्ति?"
 
-#: content/ui/PostDelegate/PostDelegate.qml:277
+#: content/ui/PostDelegate/PostDelegate.qml:258
 #, kde-format
 msgctxt "@title"
 msgid "Delete & Re-draft Post"
 msgstr "पदं डिलीट एवं पुनः मसौदा तैयार करें"
 
-#: content/ui/PostDelegate/PostDelegate.qml:278
+#: content/ui/PostDelegate/PostDelegate.qml:259
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -3620,7 +3626,28 @@ msgstr ""
 "किं भवान् निश्चितः अस्ति यत् भवान् अस्य पदस्य पुनः मसौदां कर्तुम् इच्छति? एतेन मूलपोस्ट् "
 "विलोप्यते ।"
 
-#: content/ui/PostDelegate/PostDelegate.qml:328
+#: content/ui/PostDelegate/PostDelegate.qml:301
+#, fuzzy, kde-format
+#| msgctxt "@info:Option Filter and send to the filtered inbox"
+#| msgid "Filter"
+msgctxt "@info"
+msgid "Filter"
+msgstr "फ़िल्टर"
+
+#: content/ui/PostDelegate/PostDelegate.qml:325
+#, fuzzy, kde-format
+#| msgid "<b>Content Notice</b><br /> %1"
+msgid "<b>Filtered</b><br /> %1"
+msgstr "<b>सामग्री सूचना</b><br /> %1"
+
+#: content/ui/PostDelegate/PostDelegate.qml:332
+#, fuzzy, kde-format
+#| msgid "Show anyway"
+msgctxt "@action:button"
+msgid "Show Anyway"
+msgstr "तथापि दर्शयतु"
+
+#: content/ui/PostDelegate/PostDelegate.qml:364
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Content Notice"
@@ -3628,81 +3655,81 @@ msgctxt "@info"
 msgid "Content Notice"
 msgstr "सामग्री सूचना"
 
-#: content/ui/PostDelegate/PostDelegate.qml:350
+#: content/ui/PostDelegate/PostDelegate.qml:386
 #, kde-format
 msgid "<b>Content Notice</b><br /> %1"
 msgstr "<b>सामग्री सूचना</b><br /> %1"
 
-#: content/ui/PostDelegate/PostDelegate.qml:461
+#: content/ui/PostDelegate/PostDelegate.qml:498
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "उत्तरं"
 
-#: content/ui/PostDelegate/PostDelegate.qml:488
+#: content/ui/PostDelegate/PostDelegate.qml:525
 #, kde-format
 msgid "Cannot boost direct messages"
 msgstr "प्रत्यक्षसन्देशान् वर्धयितुं न शक्नोति"
 
-#: content/ui/PostDelegate/PostDelegate.qml:490
+#: content/ui/PostDelegate/PostDelegate.qml:527
 #, kde-format
 msgid "Cannot boost private posts"
 msgstr "निजीपदं वर्धयितुं न शक्यते"
 
-#: content/ui/PostDelegate/PostDelegate.qml:492
+#: content/ui/PostDelegate/PostDelegate.qml:529
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "संवेग"
 
-#: content/ui/PostDelegate/PostDelegate.qml:510
+#: content/ui/PostDelegate/PostDelegate.qml:547
 #, kde-format
 msgid "Boosted"
 msgstr "बूस्टेड्"
 
-#: content/ui/PostDelegate/PostDelegate.qml:510
+#: content/ui/PostDelegate/PostDelegate.qml:547
 #, kde-format
 msgid "Boost"
 msgstr "संवेग"
 
-#: content/ui/PostDelegate/PostDelegate.qml:530
+#: content/ui/PostDelegate/PostDelegate.qml:567
 #, kde-format
 msgctxt "Favorite a post"
 msgid "Favorite"
 msgstr "प्रिय"
 
-#: content/ui/PostDelegate/PostDelegate.qml:533
+#: content/ui/PostDelegate/PostDelegate.qml:570
 #, kde-format
 msgid "Favorited"
 msgstr "प्रियः"
 
-#: content/ui/PostDelegate/PostDelegate.qml:533
+#: content/ui/PostDelegate/PostDelegate.qml:570
 #, kde-format
 msgid "Favorite"
 msgstr "प्रिय"
 
-#: content/ui/PostDelegate/PostDelegate.qml:552
+#: content/ui/PostDelegate/PostDelegate.qml:589
 #, kde-format
 msgid "Remove bookmark"
 msgstr "बुकमार्कं निष्कासयन्तु"
 
-#: content/ui/PostDelegate/PostDelegate.qml:552
+#: content/ui/PostDelegate/PostDelegate.qml:589
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "बुकमार्क"
 
-#: content/ui/PostDelegate/PostDelegate.qml:555
+#: content/ui/PostDelegate/PostDelegate.qml:592
 #, kde-format
 msgid "Bookmarked"
 msgstr "बुकमार्क कृतम्"
 
-#: content/ui/PostDelegate/PostDelegate.qml:555
+#: content/ui/PostDelegate/PostDelegate.qml:592
 #, kde-format
 msgid "Bookmark"
 msgstr "बुकमार्क"
 
-#: content/ui/PostDelegate/PostDelegate.qml:587
+#: content/ui/PostDelegate/PostDelegate.qml:625
 #, kde-format
 msgid ""
 "This post has been marked private. Some posts may be missing because its "
@@ -3739,110 +3766,124 @@ msgstr "%1 बूस्ट् कृतम्"
 msgid "In reply to %1"
 msgstr "%1 इत्यस्य उत्तरे"
 
-#: content/ui/PostDelegate/PostMenu.qml:43
+#: content/ui/PostDelegate/PostMenu.qml:44
 #, kde-format
 msgctxt "@action:inmenu 'Thread' is a series of posts."
 msgid "Open Thread"
 msgstr "Open Thread इति"
 
-#: content/ui/PostDelegate/PostMenu.qml:68
+#: content/ui/PostDelegate/PostMenu.qml:69
 #, kde-format
 msgctxt "@action Open embed into website dialog"
 msgid "Embed"
 msgstr "एम्बेड्"
 
-#: content/ui/PostDelegate/PostMenu.qml:84
+#: content/ui/PostDelegate/PostMenu.qml:85
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open as…"
 msgstr "यथा..."
 
-#: content/ui/PostDelegate/PostMenu.qml:92
+#: content/ui/PostDelegate/PostMenu.qml:93
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Reply as…"
 msgstr "उत्तरं यथा..."
 
-#: content/ui/PostDelegate/PostMenu.qml:100
+#: content/ui/PostDelegate/PostMenu.qml:101
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Favorite as…"
 msgstr "प्रियं यथा..."
 
-#: content/ui/PostDelegate/PostMenu.qml:108
+#: content/ui/PostDelegate/PostMenu.qml:109
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Boost as…"
 msgstr "Boost as..."
 
-#: content/ui/PostDelegate/PostMenu.qml:116
+#: content/ui/PostDelegate/PostMenu.qml:117
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Bookmark as…"
 msgstr "बुकमार्कं यथा..."
 
-#: content/ui/PostDelegate/PostMenu.qml:126
+#: content/ui/PostDelegate/PostMenu.qml:127
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove Bookmark"
 msgstr "बुकमार्कं निष्कासयन्तु"
 
-#: content/ui/PostDelegate/PostMenu.qml:126
+#: content/ui/PostDelegate/PostMenu.qml:127
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Bookmark"
 msgstr "बुकमार्क"
 
-#: content/ui/PostDelegate/PostMenu.qml:134
+#: content/ui/PostDelegate/PostMenu.qml:135
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Unpin on Profile"
 msgstr "प्रोफाइल इत्यत्र अनपिन् कुर्वन्तु"
 
-#: content/ui/PostDelegate/PostMenu.qml:134
+#: content/ui/PostDelegate/PostMenu.qml:135
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Pin on Profile"
 msgstr "प्रोफाइल इत्यत्र पिन कुर्वन्तु"
 
-#: content/ui/PostDelegate/PostMenu.qml:149
+#: content/ui/PostDelegate/PostMenu.qml:147
+#, fuzzy, kde-format
+#| msgid "Empty conversation"
+msgctxt "@action:inmenu"
+msgid "Unmute Conversation"
+msgstr "शून्यं सम्भाषणम्"
+
+#: content/ui/PostDelegate/PostMenu.qml:147
+#, fuzzy, kde-format
+#| msgid "Conversations"
+msgctxt "@action:inmenu"
+msgid "Mute Conversation"
+msgstr "संभाषणानि"
+
+#: content/ui/PostDelegate/PostMenu.qml:157
 #, kde-format
 msgctxt "@action:inmenu Unmute account"
 msgid "Unmute @%1"
 msgstr "अप्रसन्नता @%1"
 
-#: content/ui/PostDelegate/PostMenu.qml:151
+#: content/ui/PostDelegate/PostMenu.qml:159
 #, kde-format
 msgctxt "@action:inmenu Mute account"
 msgid "Mute @%1"
 msgstr "मूक @%1"
 
-#: content/ui/PostDelegate/PostMenu.qml:169
+#: content/ui/PostDelegate/PostMenu.qml:177
 #, kde-format
 msgctxt "@action:inmenu Unblock account"
 msgid "Unblock @%1"
 msgstr "@%1 अनब्लॉक करू"
 
-#: content/ui/PostDelegate/PostMenu.qml:171
+#: content/ui/PostDelegate/PostMenu.qml:179
 #, kde-format
 msgctxt "@action:inmenu Block account"
 msgid "Block @%1"
 msgstr "खण्ड @%1"
 
-#: content/ui/PostDelegate/PostMenu.qml:199
+#: content/ui/PostDelegate/PostMenu.qml:207
 #: content/ui/StatusComposer/EditorAttachmentGrid.qml:59
 #, kde-format
 msgid "Edit"
 msgstr "सम्पादन"
 
-#: content/ui/PostDelegate/PostMenu.qml:207
+#: content/ui/PostDelegate/PostMenu.qml:215
 #: content/ui/Settings/ProfileEditor.qml:151
 #: content/ui/Settings/ProfileEditor.qml:213
 #, kde-format
 msgid "Delete"
 msgstr "लुप्"
 
-#: content/ui/PostDelegate/PostMenu.qml:215
+#: content/ui/PostDelegate/PostMenu.qml:223
 #, kde-format
 msgid "Delete & Re-draft"
 msgstr "विलोपनम् & पुनः मसौदा"
@@ -3863,18 +3904,18 @@ msgstr "भवान् अस्य विकल्पस्य कृते �
 msgid "(No votes)"
 msgstr "(मतदानं न कुर्वन्तु)"
 
-#: content/ui/PostDelegate/PostPoll.qml:127
+#: content/ui/PostDelegate/PostPoll.qml:128
 #, kde-format
 msgid "Vote"
 msgstr "मतदान करें"
 
-#: content/ui/PostDelegate/PostPoll.qml:149
+#: content/ui/PostDelegate/PostPoll.qml:150
 #, kde-format
 msgctxt "@option:check Show poll results"
 msgid "Show Results"
 msgstr "परिणामान् दर्शयतु"
 
-#: content/ui/PostDelegate/PostPoll.qml:155
+#: content/ui/PostDelegate/PostPoll.qml:156
 #, kde-format
 msgid "Poll has closed"
 msgstr "मतदानं समाप्तम् अस्ति"
@@ -5246,13 +5287,13 @@ msgstr "Boosts दर्शयतु"
 msgid "Show Replies"
 msgstr "उत्तराणि दर्शयतु"
 
-#: content/ui/TimelinePage.qml:135
+#: content/ui/TimelinePage.qml:143
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
 msgstr "सर्वरेण सह सम्पर्कं कर्तुं असफलम्: %1. कृपया स्वस्य सेटिङ्ग्स् पश्यन्तु।"
 
-#: content/ui/TimelinePage.qml:172
+#: content/ui/TimelinePage.qml:180
 #, kde-format
 msgctxt "@action:button Load more posts above this"
 msgid "Load More"
@@ -5401,8 +5442,9 @@ msgid "Your emails"
 msgstr "skkalwar999@gmail.com"
 
 #: main.cpp:146
-#, kde-format
-msgid "Supports https and web+ap url scheme"
+#, fuzzy, kde-format
+#| msgid "Supports https and web+ap url scheme"
+msgid "Supports https, tokodon and web+ap url scheme"
 msgstr "https तथा web+ap url योजना समर्थयति"
 
 #: main.cpp:148
@@ -5664,6 +5706,9 @@ msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "%1 वर्षपूर्वम्"
 msgstr[1] "%1 वर्षपूर्वम्"
+
+#~ msgid "Filtered: %1"
+#~ msgstr "छानितम्: %1"
 
 #~ msgctxt "@action:buttin"
 #~ msgid "Announcements"

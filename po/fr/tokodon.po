@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-22 00:41+0000\n"
-"PO-Revision-Date: 2025-01-23 16:30+0100\n"
+"POT-Creation-Date: 2025-01-27 00:41+0000\n"
+"PO-Revision-Date: 2025-01-25 16:30+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -79,62 +79,62 @@ msgstr "Vidéo M4V (*.m4v)"
 msgid "QuickTime video (*.mov)"
 msgstr "Vidéo QuickTime (*.mov)"
 
-#: account/abstractaccount.cpp:45 account/abstractaccount.cpp:480
+#: account/abstractaccount.cpp:45 account/abstractaccount.cpp:490
 #, kde-format
 msgid "All files (*)"
 msgstr "Tous les fichiers (*)"
 
-#: account/abstractaccount.cpp:479
+#: account/abstractaccount.cpp:489
 #, kde-format
 msgid "All supported formats (%1)"
 msgstr "Tous les formats pris en charge (%1)"
 
-#: account/abstractaccount.cpp:629
+#: account/abstractaccount.cpp:639
 #, kde-format
 msgid "Could not follow account"
 msgstr "Impossible de suivre un compte"
 
-#: account/abstractaccount.cpp:630
+#: account/abstractaccount.cpp:640
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "Impossible de se désabonner d'un compte"
 
-#: account/abstractaccount.cpp:631
+#: account/abstractaccount.cpp:641
 #, kde-format
 msgid "Could not remove account as your follower"
 msgstr "Impossible de supprimer un compte en tant qu'abonné"
 
-#: account/abstractaccount.cpp:632
+#: account/abstractaccount.cpp:642
 #, kde-format
 msgid "Could not block account"
 msgstr "Impossible de bloquer un compte"
 
-#: account/abstractaccount.cpp:633
+#: account/abstractaccount.cpp:643
 #, kde-format
 msgid "Could not unblock account"
 msgstr "Impossible de débloquer un compte"
 
-#: account/abstractaccount.cpp:634
+#: account/abstractaccount.cpp:644
 #, kde-format
 msgid "Could not mute account"
 msgstr "Impossible de mettre un compte en pause"
 
-#: account/abstractaccount.cpp:635
+#: account/abstractaccount.cpp:645
 #, kde-format
 msgid "Could not unmute account"
 msgstr "Impossible de sortir un un compte du mode pause"
 
-#: account/abstractaccount.cpp:636
+#: account/abstractaccount.cpp:646
 #, kde-format
 msgid "Could not feature account"
 msgstr "Impossible de présenter un compte"
 
-#: account/abstractaccount.cpp:637
+#: account/abstractaccount.cpp:647
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "Impossible de ne pas présenter un compte"
 
-#: account/abstractaccount.cpp:638
+#: account/abstractaccount.cpp:648
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "Impossible de modifier une note concernant un compte"
@@ -206,7 +206,7 @@ msgstr "Votre %1 # FediWrappedvous vous attend !"
 #, kde-format
 msgid "Unveil your year's highlights and memorable moments on Mastodon!"
 msgstr ""
-"Dévoilez les moments forts et  mémorables de l'année sur le réseau Mastodon !"
+"Dévoilez les moments forts et mémorables de l'année sur le réseau Mastodon !"
 
 #: account/notificationhandler.cpp:149
 #, kde-format
@@ -666,7 +666,7 @@ msgstr "Débloquer"
 msgid "Block"
 msgstr "Bloquer"
 
-#: content/ui/AccountHeader.qml:430 content/ui/PostDelegate/PostMenu.qml:187
+#: content/ui/AccountHeader.qml:430 content/ui/PostDelegate/PostMenu.qml:195
 #, kde-format
 msgctxt "@action:inmenu Report this post"
 msgid "Report…"
@@ -700,7 +700,7 @@ msgid "Draft Posts"
 msgstr "Brouillons de messages"
 
 #: content/ui/AccountHeader.qml:483 content/ui/PostDelegate/LinkMenu.qml:25
-#: content/ui/PostDelegate/PostMenu.qml:51
+#: content/ui/PostDelegate/PostMenu.qml:52
 #, kde-format
 msgctxt "@action:inmenu 'Browser' being a web browser"
 msgid "Open in Browser"
@@ -845,12 +845,12 @@ msgstr "Cet utilisateur n'a encore rien publié."
 #, kde-format
 msgctxt "@label"
 msgid "No Media"
-msgstr "Aucun media"
+msgstr "Aucun média"
 
 #: content/ui/AccountInfo.qml:238
 #, kde-format
 msgid "This user hasn't posted any media yet."
-msgstr "Cet utilisateur n'a encore publié aucun media."
+msgstr "Cet utilisateur n'a encore publié aucun média."
 
 #: content/ui/Android/ShareAction.qml:15 content/ui/ShareAction.qml:19
 #, kde-format
@@ -1163,31 +1163,47 @@ msgctxt "@title 'Following' as in the users you're following on Mastodon."
 msgid "Following"
 msgstr "Suivant"
 
-#: content/ui/FollowingPage.qml:43 content/ui/Settings/SafetyPage.qml:26
+#: content/ui/FollowingPage.qml:41 content/ui/Settings/SafetyPage.qml:26
 #: content/ui/TimelinePage.qml:105
 #, kde-format
 msgctxt "@action:button"
 msgid "Filters"
 msgstr "Filtres"
 
-#: content/ui/FollowingPage.qml:48
+#: content/ui/FollowingPage.qml:46
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Show Boosts"
 msgstr "Afficher les coups de pouce"
 
-#: content/ui/FollowingPage.qml:56
+#: content/ui/FollowingPage.qml:54
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Show Replies"
 msgstr "Afficher les réponses"
 
-#: content/ui/FollowingPage.qml:151
+#: content/ui/FollowingPage.qml:65 content/ui/TimelinePage.qml:127
+#, fuzzy, kde-format
+#| msgctxt "@action:intoolbar"
+#| msgid "Configure Notifications…"
+msgctxt "@action:intoolbar"
+msgid "Configure Filters…"
+msgstr "Configurer les notifications..."
+
+#: content/ui/FollowingPage.qml:66 content/ui/TimelinePage.qml:128
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Filters"
+msgctxt "@title:window"
+msgid "Filters"
+msgstr "Filtres"
+
+#: content/ui/FollowingPage.qml:161
 #, kde-format
 msgid "No User Selected"
 msgstr "Aucun utilisateur n'est sélectionné. "
 
-#: content/ui/FollowingPage.qml:152
+#: content/ui/FollowingPage.qml:162
 #, kde-format
 msgid ""
 "With the Following view, easily check on each user you're following and only "
@@ -1627,7 +1643,7 @@ msgid ""
 "compatible software)."
 msgstr ""
 "Parcourez le Fediverse et connectez-vous avec des personnes sur Mastodon (Et "
-"d’autres logiciels compatibles)."
+"d'autres logiciels compatibles)."
 
 #: content/ui/LoginFlow/WelcomePage.qml:80
 #, kde-format
@@ -3116,13 +3132,13 @@ msgid "<b>Content Warning</b><br /> %1"
 msgstr "<b>Avertissement sur le contenu</b><br /> %1"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:413
-#: content/ui/PostDelegate/PostDelegate.qml:357
+#: content/ui/PostDelegate/PostDelegate.qml:393
 #, kde-format
 msgid "Show Less"
 msgstr "Afficher moins"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:413
-#: content/ui/PostDelegate/PostDelegate.qml:357
+#: content/ui/PostDelegate/PostDelegate.qml:393
 #, kde-format
 msgid "Show More"
 msgstr "Afficher plus"
@@ -3302,7 +3318,7 @@ msgid ""
 "posts they will show up here."
 msgstr ""
 "Vous n'avez pas encore aucune notification. Lorsque des personnes répondent, "
-"mettez leurs messages en  signets ou donnez leurs un coup de pouce afin "
+"mettez leurs messages en signets ou donnez leurs un coup de pouce afin "
 "qu'ils s'affichent ici."
 
 #: content/ui/Notifications/AccountWarningDelegate.qml:66
@@ -3459,63 +3475,63 @@ msgctxt "@title"
 msgid "Post"
 msgstr "Message"
 
-#: content/ui/PostDelegate/AudioAttachment.qml:80
-#: content/ui/PostDelegate/VideoAttachment.qml:109
+#: content/ui/PostDelegate/AudioAttachment.qml:81
+#: content/ui/PostDelegate/VideoAttachment.qml:111
 #, kde-format
 msgctxt "@action:button Start media playback"
 msgid "Play"
 msgstr "Lire"
 
-#: content/ui/PostDelegate/InformationBar.qml:33
+#: content/ui/PostDelegate/InformationBar.qml:34
 #, kde-format
 msgctxt "Posted on 26 March 2024 Tuesday 20:43:18 +03"
 msgid "Posted on %1"
 msgstr "Publié sur %1"
 
-#: content/ui/PostDelegate/InformationBar.qml:63
-#: content/ui/PostDelegate/InformationBar.qml:71
+#: content/ui/PostDelegate/InformationBar.qml:64
+#: content/ui/PostDelegate/InformationBar.qml:72
 #: content/ui/PostDelegate/PostInfoBar.qml:85
 #: content/ui/PostDelegate/PostInfoBar.qml:93
 #, kde-format
 msgid "Public"
 msgstr "Public"
 
-#: content/ui/PostDelegate/InformationBar.qml:65
+#: content/ui/PostDelegate/InformationBar.qml:66
 #: content/ui/PostDelegate/PostInfoBar.qml:87
 #, kde-format
 msgid "Unlisted"
 msgstr "Non répertorié"
 
-#: content/ui/PostDelegate/InformationBar.qml:67
+#: content/ui/PostDelegate/InformationBar.qml:68
 #: content/ui/PostDelegate/PostInfoBar.qml:89
 #, kde-format
 msgid "Private"
 msgstr "Privé"
 
-#: content/ui/PostDelegate/InformationBar.qml:69
+#: content/ui/PostDelegate/InformationBar.qml:70
 #: content/ui/PostDelegate/PostInfoBar.qml:91
 #, kde-format
 msgid "Direct Message"
 msgstr "Message direct"
 
-#: content/ui/PostDelegate/InformationBar.qml:91
+#: content/ui/PostDelegate/InformationBar.qml:92
 #, kde-format
 msgid "No favorites"
 msgstr "Aucun signet"
 
-#: content/ui/PostDelegate/InformationBar.qml:93
+#: content/ui/PostDelegate/InformationBar.qml:94
 #, kde-format
 msgid "%1 favorite"
 msgid_plural "%1 favorites"
 msgstr[0] "signet %1"
 msgstr[1] "%1 signets"
 
-#: content/ui/PostDelegate/InformationBar.qml:114
+#: content/ui/PostDelegate/InformationBar.qml:115
 #, kde-format
 msgid "No boosts"
 msgstr "Aucun encouragement"
 
-#: content/ui/PostDelegate/InformationBar.qml:116
+#: content/ui/PostDelegate/InformationBar.qml:117
 #, kde-format
 msgid "%1 boost"
 msgid_plural "%1 boosts"
@@ -3523,14 +3539,14 @@ msgstr[0] "Coup de pouce %1"
 msgstr[1] "%1 coups de pouce"
 
 #: content/ui/PostDelegate/LinkMenu.qml:33
-#: content/ui/PostDelegate/PostMenu.qml:59
+#: content/ui/PostDelegate/PostMenu.qml:60
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy Link"
 msgstr "Copier un lien"
 
 #: content/ui/PostDelegate/LinkMenu.qml:36
-#: content/ui/PostDelegate/PostMenu.qml:62
+#: content/ui/PostDelegate/PostMenu.qml:63
 #, kde-format
 msgid "Post link copied."
 msgstr "Envoyer le lien copié."
@@ -3579,7 +3595,7 @@ msgstr "Vidéo"
 #, kde-format
 msgctxt "@title"
 msgid "Media Description"
-msgstr "Description du media"
+msgstr "Description du média"
 
 #: content/ui/PostDelegate/PostContent.qml:29
 #, kde-format
@@ -3597,41 +3613,31 @@ msgstr "État normal"
 msgid "Spoiler Status"
 msgstr "État de divulgâcheur"
 
-#: content/ui/PostDelegate/PostDelegate.qml:164
-#, kde-format
-msgid "Filtered: %1"
-msgstr "Filtré : %1"
-
-#: content/ui/PostDelegate/PostDelegate.qml:168
-#, kde-format
-msgid "Show anyway"
-msgstr "Afficher malgré tout"
-
-#: content/ui/PostDelegate/PostDelegate.qml:189
+#: content/ui/PostDelegate/PostDelegate.qml:171
 #, kde-format
 msgctxt "@label"
 msgid "Pinned Post"
 msgstr "Message épinglé"
 
-#: content/ui/PostDelegate/PostDelegate.qml:261
+#: content/ui/PostDelegate/PostDelegate.qml:242
 #, kde-format
 msgctxt "@title"
 msgid "Delete Post"
 msgstr "Supprimer un message"
 
-#: content/ui/PostDelegate/PostDelegate.qml:262
+#: content/ui/PostDelegate/PostDelegate.qml:243
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to delete this post?"
 msgstr "Voulez-vous vraiment supprimer ce message ?"
 
-#: content/ui/PostDelegate/PostDelegate.qml:277
+#: content/ui/PostDelegate/PostDelegate.qml:258
 #, kde-format
 msgctxt "@title"
 msgid "Delete & Re-draft Post"
 msgstr "Supprimer et re-écrire un message"
 
-#: content/ui/PostDelegate/PostDelegate.qml:278
+#: content/ui/PostDelegate/PostDelegate.qml:259
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -3641,87 +3647,108 @@ msgstr ""
 "Voulez-vous vraiment ré-écrire ce message ? Cela supprimera le message "
 "original."
 
-#: content/ui/PostDelegate/PostDelegate.qml:328
+#: content/ui/PostDelegate/PostDelegate.qml:301
+#, fuzzy, kde-format
+#| msgctxt "@info:Option Filter and send to the filtered inbox"
+#| msgid "Filter"
+msgctxt "@info"
+msgid "Filter"
+msgstr "Filtrer"
+
+#: content/ui/PostDelegate/PostDelegate.qml:325
+#, fuzzy, kde-format
+#| msgid "<b>Content Notice</b><br /> %1"
+msgid "<b>Filtered</b><br /> %1"
+msgstr "<b>Avis sur le contenu</b><br /> %1"
+
+#: content/ui/PostDelegate/PostDelegate.qml:332
+#, fuzzy, kde-format
+#| msgid "Show anyway"
+msgctxt "@action:button"
+msgid "Show Anyway"
+msgstr "Afficher malgré tout"
+
+#: content/ui/PostDelegate/PostDelegate.qml:364
 #, kde-format
 msgctxt "@info"
 msgid "Content Notice"
 msgstr "Avis sur le contenu"
 
-#: content/ui/PostDelegate/PostDelegate.qml:350
+#: content/ui/PostDelegate/PostDelegate.qml:386
 #, kde-format
 msgid "<b>Content Notice</b><br /> %1"
 msgstr "<b>Avis sur le contenu</b><br /> %1"
 
-#: content/ui/PostDelegate/PostDelegate.qml:461
+#: content/ui/PostDelegate/PostDelegate.qml:498
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Répondre"
 
-#: content/ui/PostDelegate/PostDelegate.qml:488
+#: content/ui/PostDelegate/PostDelegate.qml:525
 #, kde-format
 msgid "Cannot boost direct messages"
 msgstr "Impossible de mettre en avant des messages directs"
 
-#: content/ui/PostDelegate/PostDelegate.qml:490
+#: content/ui/PostDelegate/PostDelegate.qml:527
 #, kde-format
 msgid "Cannot boost private posts"
 msgstr "Impossible de mettre en avant des messages privés"
 
-#: content/ui/PostDelegate/PostDelegate.qml:492
+#: content/ui/PostDelegate/PostDelegate.qml:529
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Stimuler"
 
-#: content/ui/PostDelegate/PostDelegate.qml:510
+#: content/ui/PostDelegate/PostDelegate.qml:547
 #, kde-format
 msgid "Boosted"
 msgstr "Stimulé"
 
-#: content/ui/PostDelegate/PostDelegate.qml:510
+#: content/ui/PostDelegate/PostDelegate.qml:547
 #, kde-format
 msgid "Boost"
 msgstr "Stimuler"
 
-#: content/ui/PostDelegate/PostDelegate.qml:530
+#: content/ui/PostDelegate/PostDelegate.qml:567
 #, kde-format
 msgctxt "Favorite a post"
 msgid "Favorite"
 msgstr "Favori"
 
-#: content/ui/PostDelegate/PostDelegate.qml:533
+#: content/ui/PostDelegate/PostDelegate.qml:570
 #, kde-format
 msgid "Favorited"
 msgstr "Mis en préféré"
 
-#: content/ui/PostDelegate/PostDelegate.qml:533
+#: content/ui/PostDelegate/PostDelegate.qml:570
 #, kde-format
 msgid "Favorite"
 msgstr "Préféré"
 
-#: content/ui/PostDelegate/PostDelegate.qml:552
+#: content/ui/PostDelegate/PostDelegate.qml:589
 #, kde-format
 msgid "Remove bookmark"
 msgstr "Supprimer un signet"
 
-#: content/ui/PostDelegate/PostDelegate.qml:552
+#: content/ui/PostDelegate/PostDelegate.qml:589
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "Signet"
 
-#: content/ui/PostDelegate/PostDelegate.qml:555
+#: content/ui/PostDelegate/PostDelegate.qml:592
 #, kde-format
 msgid "Bookmarked"
 msgstr "Mis en signet"
 
-#: content/ui/PostDelegate/PostDelegate.qml:555
+#: content/ui/PostDelegate/PostDelegate.qml:592
 #, kde-format
 msgid "Bookmark"
 msgstr "Signet"
 
-#: content/ui/PostDelegate/PostDelegate.qml:587
+#: content/ui/PostDelegate/PostDelegate.qml:625
 #, kde-format
 msgid ""
 "This post has been marked private. Some posts may be missing because its "
@@ -3758,110 +3785,124 @@ msgstr "mis en avant par %1"
 msgid "In reply to %1"
 msgstr "En réponse à %1"
 
-#: content/ui/PostDelegate/PostMenu.qml:43
+#: content/ui/PostDelegate/PostMenu.qml:44
 #, kde-format
 msgctxt "@action:inmenu 'Thread' is a series of posts."
 msgid "Open Thread"
 msgstr "Ouvrir un fil de discussions "
 
-#: content/ui/PostDelegate/PostMenu.qml:68
+#: content/ui/PostDelegate/PostMenu.qml:69
 #, kde-format
 msgctxt "@action Open embed into website dialog"
 msgid "Embed"
 msgstr "Intégrer"
 
-#: content/ui/PostDelegate/PostMenu.qml:84
+#: content/ui/PostDelegate/PostMenu.qml:85
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open as…"
 msgstr "Ouvrir sous…"
 
-#: content/ui/PostDelegate/PostMenu.qml:92
+#: content/ui/PostDelegate/PostMenu.qml:93
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Reply as…"
 msgstr "Répondre comme..."
 
-#: content/ui/PostDelegate/PostMenu.qml:100
+#: content/ui/PostDelegate/PostMenu.qml:101
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Favorite as…"
 msgstr "Mettre en signet comme..."
 
-#: content/ui/PostDelegate/PostMenu.qml:108
+#: content/ui/PostDelegate/PostMenu.qml:109
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Boost as…"
 msgstr "Donner un coup de pouce comme..."
 
-#: content/ui/PostDelegate/PostMenu.qml:116
+#: content/ui/PostDelegate/PostMenu.qml:117
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Bookmark as…"
 msgstr "Mettre en signet comme..."
 
-#: content/ui/PostDelegate/PostMenu.qml:126
+#: content/ui/PostDelegate/PostMenu.qml:127
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove Bookmark"
 msgstr "Supprimer un signet"
 
-#: content/ui/PostDelegate/PostMenu.qml:126
+#: content/ui/PostDelegate/PostMenu.qml:127
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Bookmark"
 msgstr "Signet"
 
-#: content/ui/PostDelegate/PostMenu.qml:134
+#: content/ui/PostDelegate/PostMenu.qml:135
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Unpin on Profile"
 msgstr "Détacher du profil"
 
-#: content/ui/PostDelegate/PostMenu.qml:134
+#: content/ui/PostDelegate/PostMenu.qml:135
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Pin on Profile"
 msgstr "Épingler au profil"
 
-#: content/ui/PostDelegate/PostMenu.qml:149
+#: content/ui/PostDelegate/PostMenu.qml:147
+#, fuzzy, kde-format
+#| msgid "Empty conversation"
+msgctxt "@action:inmenu"
+msgid "Unmute Conversation"
+msgstr "Conversation vide"
+
+#: content/ui/PostDelegate/PostMenu.qml:147
+#, fuzzy, kde-format
+#| msgid "Conversations"
+msgctxt "@action:inmenu"
+msgid "Mute Conversation"
+msgstr "Conversations"
+
+#: content/ui/PostDelegate/PostMenu.qml:157
 #, kde-format
 msgctxt "@action:inmenu Unmute account"
 msgid "Unmute @%1"
 msgstr "Remettre le son pour @%1"
 
-#: content/ui/PostDelegate/PostMenu.qml:151
+#: content/ui/PostDelegate/PostMenu.qml:159
 #, kde-format
 msgctxt "@action:inmenu Mute account"
 msgid "Mute @%1"
 msgstr "Mettre en pause @%1"
 
-#: content/ui/PostDelegate/PostMenu.qml:169
+#: content/ui/PostDelegate/PostMenu.qml:177
 #, kde-format
 msgctxt "@action:inmenu Unblock account"
 msgid "Unblock @%1"
 msgstr "Débloquer @%1"
 
-#: content/ui/PostDelegate/PostMenu.qml:171
+#: content/ui/PostDelegate/PostMenu.qml:179
 #, kde-format
 msgctxt "@action:inmenu Block account"
 msgid "Block @%1"
 msgstr "Bloquer @%1"
 
-#: content/ui/PostDelegate/PostMenu.qml:199
+#: content/ui/PostDelegate/PostMenu.qml:207
 #: content/ui/StatusComposer/EditorAttachmentGrid.qml:59
 #, kde-format
 msgid "Edit"
 msgstr "Modifier"
 
-#: content/ui/PostDelegate/PostMenu.qml:207
+#: content/ui/PostDelegate/PostMenu.qml:215
 #: content/ui/Settings/ProfileEditor.qml:151
 #: content/ui/Settings/ProfileEditor.qml:213
 #, kde-format
 msgid "Delete"
 msgstr "Supprimer"
 
-#: content/ui/PostDelegate/PostMenu.qml:215
+#: content/ui/PostDelegate/PostMenu.qml:223
 #, kde-format
 msgid "Delete & Re-draft"
 msgstr "Supprimer et reformuler"
@@ -3882,18 +3923,18 @@ msgstr "Vous avez voté pour cette option."
 msgid "(No votes)"
 msgstr "(Aucun vote)"
 
-#: content/ui/PostDelegate/PostPoll.qml:127
+#: content/ui/PostDelegate/PostPoll.qml:128
 #, kde-format
 msgid "Vote"
 msgstr "Vote"
 
-#: content/ui/PostDelegate/PostPoll.qml:149
+#: content/ui/PostDelegate/PostPoll.qml:150
 #, kde-format
 msgctxt "@option:check Show poll results"
 msgid "Show Results"
 msgstr "Afficher les résultats"
 
-#: content/ui/PostDelegate/PostPoll.qml:155
+#: content/ui/PostDelegate/PostPoll.qml:156
 #, kde-format
 msgid "Poll has closed"
 msgstr "Le sondage est terminé."
@@ -4405,7 +4446,7 @@ msgstr "Modifier un profil"
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Log"
-msgstr "Journal d’erreurs"
+msgstr "Journal d'erreurs"
 
 #: content/ui/Settings/ErrorLogPage.qml:22
 #, kde-format
@@ -4836,7 +4877,7 @@ msgstr "Serveur mandataire du réseau"
 #: content/ui/Settings/TokodonConfigurationView.qml:59
 #, kde-format
 msgid "Error Log"
-msgstr "Journal d’erreurs"
+msgstr "Journal d'erreurs"
 
 #: content/ui/Settings/TokodonConfigurationView.qml:65
 #, kde-format
@@ -5217,7 +5258,7 @@ msgid ""
 "Some of your media is missing alt text. Adding descriptions help everyone, "
 "especially the visually impaired."
 msgstr ""
-"Il manque du texte alternatif sur certains de vos media. L'ajout de "
+"Il manque du texte alternatif sur certains de vos média. L'ajout de "
 "descriptions aide tout le monde, en particulier les malvoyants."
 
 #: content/ui/TimelinePage.qml:38 timeline/accountmodel.cpp:41
@@ -5240,7 +5281,7 @@ msgstr "Afficher les coups de pouce"
 msgid "Show Replies"
 msgstr "Afficher les réponses"
 
-#: content/ui/TimelinePage.qml:135
+#: content/ui/TimelinePage.qml:143
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
@@ -5248,7 +5289,7 @@ msgstr ""
 "Impossible de contacter le serveur : %1. Veuillez vérifier votre "
 "configuration."
 
-#: content/ui/TimelinePage.qml:172
+#: content/ui/TimelinePage.qml:180
 #, kde-format
 msgctxt "@action:button Load more posts above this"
 msgid "Load More"
@@ -5397,8 +5438,9 @@ msgid "Your emails"
 msgstr "xavier.besnard@kde.org"
 
 #: main.cpp:146
-#, kde-format
-msgid "Supports https and web+ap url scheme"
+#, fuzzy, kde-format
+#| msgid "Supports https and web+ap url scheme"
+msgid "Supports https, tokodon and web+ap url scheme"
 msgstr "Prend en charge les thèmes d'URL « https » et « web+ap »"
 
 #: main.cpp:148
@@ -5634,7 +5676,7 @@ msgstr "%1 h"
 #: utils/texthandler.cpp:183
 #, kde-format
 msgid "Today"
-msgstr "Aujourd’hui"
+msgstr "Aujourd'hui"
 
 #: utils/texthandler.cpp:185
 #, kde-format
@@ -5661,6 +5703,9 @@ msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "Il y a une année"
 msgstr[1] "Il y a %1 années"
+
+#~ msgid "Filtered: %1"
+#~ msgstr "Filtré : %1"
 
 #~ msgctxt "@action:buttin"
 #~ msgid "Announcements"
