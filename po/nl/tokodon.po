@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-27 00:41+0000\n"
+"POT-Creation-Date: 2025-01-29 00:41+0000\n"
 "PO-Revision-Date: 2025-01-27 12:14+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -892,7 +892,7 @@ msgctxt "@action:button Boost this post"
 msgid "Boost"
 msgstr "Oppepper"
 
-#: content/ui/Components/ClickableIdentityInfo.qml:41
+#: content/ui/Components/ClickableIdentityInfo.qml:43
 #: content/ui/Notifications/UserInteractionLabel.qml:68
 #: content/ui/PostDelegate/PostInteractionLabel.qml:64
 #: content/ui/PostDelegate/QuotePost.qml:60
@@ -1554,13 +1554,13 @@ msgctxt "@title:group"
 msgid "Rules"
 msgstr "Regels"
 
-#: content/ui/LoginFlow/RulesPage.qml:81
+#: content/ui/LoginFlow/RulesPage.qml:100
 #, kde-format
 msgctxt "@action:button Agree to server rules"
 msgid "Agree"
 msgstr "Mee eens"
 
-#: content/ui/LoginFlow/RulesPage.qml:99
+#: content/ui/LoginFlow/RulesPage.qml:118
 #, kde-format
 msgctxt "@action:button Disagree to server rules"
 msgid "Disagree"
@@ -1587,22 +1587,22 @@ msgstr "Deze server is gesloten voor registratie en leverde geen reden."
 msgid "Search or enter URL…"
 msgstr "Zoek of voer een URL in…"
 
-#: content/ui/LoginFlow/ServersPage.qml:135
+#: content/ui/LoginFlow/ServersPage.qml:141
 #, kde-format
 msgid "Custom Server"
 msgstr "Aangepaste server"
 
-#: content/ui/LoginFlow/ServersPage.qml:144
+#: content/ui/LoginFlow/ServersPage.qml:150
 #, kde-format
 msgid "Public Servers"
 msgstr "Publieke servers"
 
-#: content/ui/LoginFlow/ServersPage.qml:174
+#: content/ui/LoginFlow/ServersPage.qml:180
 #, kde-format
 msgid "No Public Servers"
 msgstr "Geen publieke servers"
 
-#: content/ui/LoginFlow/ServersPage.qml:175
+#: content/ui/LoginFlow/ServersPage.qml:181
 #, kde-format
 msgid "Enter a server URL manually in the search field."
 msgstr "Handmatig een URL van een server in het zoekveld invoeren."
@@ -1647,17 +1647,17 @@ msgctxt "@action:button Application settings"
 msgid "Settings"
 msgstr "Instellingen"
 
-#: content/ui/LoginFlow/WelcomePage.qml:119
-#, kde-format
-msgctxt "@info Compatible with Mastodon"
-msgid "Compatible with"
-msgstr "Compatibel met"
-
-#: content/ui/LoginFlow/WelcomePage.qml:129
+#: content/ui/LoginFlow/WelcomePage.qml:116
 #, kde-format
 msgctxt "@action:button"
 msgid "Compatible with Mastodon"
 msgstr "Compatibel met Mastodon"
+
+#: content/ui/LoginFlow/WelcomePage.qml:122
+#, kde-format
+msgctxt "@info Compatible with Mastodon"
+msgid "Compatible with"
+msgstr "Compatibel met"
 
 #: content/ui/Main.qml:133
 #, kde-format
@@ -3471,26 +3471,26 @@ msgstr "Gepost op %1"
 
 #: content/ui/PostDelegate/InformationBar.qml:64
 #: content/ui/PostDelegate/InformationBar.qml:72
-#: content/ui/PostDelegate/PostInfoBar.qml:85
-#: content/ui/PostDelegate/PostInfoBar.qml:93
+#: content/ui/PostDelegate/PostInfoBar.qml:88
+#: content/ui/PostDelegate/PostInfoBar.qml:96
 #, kde-format
 msgid "Public"
 msgstr "Publiek"
 
 #: content/ui/PostDelegate/InformationBar.qml:66
-#: content/ui/PostDelegate/PostInfoBar.qml:87
+#: content/ui/PostDelegate/PostInfoBar.qml:90
 #, kde-format
 msgid "Unlisted"
 msgstr "Uit de lijst gehaald"
 
 #: content/ui/PostDelegate/InformationBar.qml:68
-#: content/ui/PostDelegate/PostInfoBar.qml:89
+#: content/ui/PostDelegate/PostInfoBar.qml:92
 #, kde-format
 msgid "Private"
 msgstr "Privé"
 
 #: content/ui/PostDelegate/InformationBar.qml:70
-#: content/ui/PostDelegate/PostInfoBar.qml:91
+#: content/ui/PostDelegate/PostInfoBar.qml:94
 #, kde-format
 msgid "Direct Message"
 msgstr "Direct bericht"
@@ -3734,30 +3734,43 @@ msgstr ""
 "Deze post is gemarkeerd als privé. Sommige posts kunnen ontbreken omdat zijn "
 "antwoorden standaard gemarkeerd zijn als privé."
 
-#: content/ui/PostDelegate/PostInfoBar.qml:53
+#: content/ui/PostDelegate/PostInfoBar.qml:27
+#, kde-format
+msgctxt "@info"
+msgid "Post Author"
+msgstr ""
+
+#: content/ui/PostDelegate/PostInfoBar.qml:56
 #, kde-format
 msgctxt "Edited on <datetime>"
 msgid "Edited on %1"
 msgstr "Bewerkt op %1"
 
-#: content/ui/PostDelegate/PostInfoBar.qml:106
+#: content/ui/PostDelegate/PostInfoBar.qml:109
 #, kde-format
 msgctxt "Show more options"
 msgid "More actions"
 msgstr "Meer acties"
 
-#: content/ui/PostDelegate/PostInteractionLabel.qml:71
+#: content/ui/PostDelegate/PostInteractionLabel.qml:68
+#, fuzzy, kde-format
+#| msgid "Conversations"
+msgctxt "@info"
+msgid "Interaction"
+msgstr "Conversaties"
+
+#: content/ui/PostDelegate/PostInteractionLabel.qml:76
 #, kde-format
 msgctxt "@info Loading user that started this interaction"
 msgid "Loading…"
 msgstr "Laden…"
 
-#: content/ui/PostDelegate/PostInteractionLabel.qml:75
+#: content/ui/PostDelegate/PostInteractionLabel.qml:80
 #, kde-format
 msgid "%1 boosted"
 msgstr "%1 versterkt"
 
-#: content/ui/PostDelegate/PostInteractionLabel.qml:77
+#: content/ui/PostDelegate/PostInteractionLabel.qml:82
 #, kde-format
 msgid "In reply to %1"
 msgstr "In antwoord op %1"
@@ -5124,97 +5137,139 @@ msgid "Choose a File"
 msgstr "Kies een bestand"
 
 #: content/ui/StatusComposer/StatusComposer.qml:494
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Attach file"
+msgctxt "@action:button"
+msgid "Attach File"
+msgstr "Bestand bijvoegen"
+
+#: content/ui/StatusComposer/StatusComposer.qml:497
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Attach file"
 msgstr "Bestand bijvoegen"
 
-#: content/ui/StatusComposer/StatusComposer.qml:505
+#: content/ui/StatusComposer/StatusComposer.qml:508
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Attach file"
+msgctxt "@action:button"
+msgid "Attach Poll"
+msgstr "Bestand bijvoegen"
+
+#: content/ui/StatusComposer/StatusComposer.qml:513
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add poll"
 msgstr "Peiling toevoegen"
 
-#: content/ui/StatusComposer/StatusComposer.qml:517
-#, kde-format
-msgctxt "@info:tooltip"
+#: content/ui/StatusComposer/StatusComposer.qml:522
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Content Notice"
+msgctxt "@action:button"
 msgid "Content Notice"
 msgstr "Notitie over inhoud"
 
-#: content/ui/StatusComposer/StatusComposer.qml:556
+#: content/ui/StatusComposer/StatusComposer.qml:534
+#, fuzzy, kde-format
+#| msgctxt "@info:placeholder"
+#| msgid "Content notice"
+msgctxt "@info:tooltip"
+msgid "Content notice"
+msgstr "Notitie over inhoud"
+
+#: content/ui/StatusComposer/StatusComposer.qml:560
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Visibility"
+msgctxt "@action:button"
+msgid "Visibility"
+msgstr "Zichtbaarheid"
+
+#: content/ui/StatusComposer/StatusComposer.qml:568
 #, kde-format
 msgctxt "@title"
 msgid "Visibility"
 msgstr "Zichtbaarheid"
 
-#: content/ui/StatusComposer/StatusComposer.qml:560
+#: content/ui/StatusComposer/StatusComposer.qml:572
 #, kde-format
 msgctxt "@item:inmenu Local to this server"
 msgid "Local"
 msgstr "Lokaal"
 
-#: content/ui/StatusComposer/StatusComposer.qml:566
+#: content/ui/StatusComposer/StatusComposer.qml:578
 #, kde-format
 msgctxt "@item:inmenu Public to the world"
 msgid "Public"
 msgstr "Publiek"
 
-#: content/ui/StatusComposer/StatusComposer.qml:571
+#: content/ui/StatusComposer/StatusComposer.qml:583
 #, kde-format
 msgctxt "@item:inmenu Public but less so"
 msgid "Unlisted"
 msgstr "Uit de lijst gehaald"
 
-#: content/ui/StatusComposer/StatusComposer.qml:576
+#: content/ui/StatusComposer/StatusComposer.qml:588
 #, kde-format
 msgctxt "@item:inmenu Only to followers"
 msgid "Private"
 msgstr "Privé"
 
-#: content/ui/StatusComposer/StatusComposer.qml:581
+#: content/ui/StatusComposer/StatusComposer.qml:593
 #, kde-format
 msgctxt "@item:inmenu Only to who is explicitly mentioned"
 msgid "Direct Message"
 msgstr "Direct bericht"
 
-#: content/ui/StatusComposer/StatusComposer.qml:586
+#: content/ui/StatusComposer/StatusComposer.qml:598
 #, kde-format
 msgctxt "@info:tooltip Post visibility"
 msgid "Visibility"
 msgstr "Zichtbaarheid"
 
-#: content/ui/StatusComposer/StatusComposer.qml:593
+#: content/ui/StatusComposer/StatusComposer.qml:606
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Post language"
 msgstr "Taal van bericht"
 
-#: content/ui/StatusComposer/StatusComposer.qml:632
+#: content/ui/StatusComposer/StatusComposer.qml:636
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Add emoji"
+msgctxt "@action:button"
+msgid "Add Emoji"
+msgstr "Emoji toevoegen"
+
+#: content/ui/StatusComposer/StatusComposer.qml:647
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add emoji"
 msgstr "Emoji toevoegen"
 
-#: content/ui/StatusComposer/StatusComposer.qml:662
+#: content/ui/StatusComposer/StatusComposer.qml:677
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1/%2</b> tekens"
 
-#: content/ui/StatusComposer/StatusComposer.qml:672
-#: content/ui/StatusComposer/StatusComposer.qml:749
+#: content/ui/StatusComposer/StatusComposer.qml:687
+#: content/ui/StatusComposer/StatusComposer.qml:764
 #, kde-format
 msgctxt "@action:button Schedule something to be posted later"
 msgid "Schedule"
 msgstr "Planning"
 
-#: content/ui/StatusComposer/StatusComposer.qml:723
+#: content/ui/StatusComposer/StatusComposer.qml:738
 #, kde-format
 msgctxt "@title"
 msgid "Alt Text Reminder"
 msgstr "Alt. tekstherinnering"
 
-#: content/ui/StatusComposer/StatusComposer.qml:727
+#: content/ui/StatusComposer/StatusComposer.qml:742
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -5662,6 +5717,10 @@ msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "1 jaar geleden"
 msgstr[1] "%1 jaren geleden"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Content Notice"
+#~ msgstr "Notitie over inhoud"
 
 #~ msgid "Filtered: %1"
 #~ msgstr "Gefilterd: %1"
