@@ -213,12 +213,13 @@ Kirigami.Page {
                     FormCard.FormDelegateSeparator {
                     }
 
-                    FormCard.FormButtonDelegate {
+                    FormCard.FormLinkDelegate {
                         Layout.fillWidth: true
                         id: websiteDelegate
+                        icon.name: "globe-symbolic"
                         text: i18nc("@abel Account preferences", "Open Server in Browser")
                         description: i18n("Some settings can only be configured on your server's website.")
-                        onClicked: Qt.openUrlExternally(AccountManager.selectedAccount.instanceUri)
+                        url: AccountManager.selectedAccount.instanceUri
                     }
                 }
             }
