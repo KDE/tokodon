@@ -42,7 +42,7 @@ set_package_properties(Qt6WebView PROPERTIES
 )
 set(USE_QTWEBVIEW ${Qt6WebView_FOUND})
 
-find_package(KF6 ${KF_MIN_VERSION} COMPONENTS Kirigami KirigamiPlatform I18n Notifications Config CoreAddons ColorScheme)
+find_package(KF6 ${KF_MIN_VERSION} COMPONENTS Kirigami KirigamiPlatform I18n Notifications Config CoreAddons ColorScheme IconThemes)
 set_package_properties(KF6 PROPERTIES
     TYPE REQUIRED
     PURPOSE "Required application components"
