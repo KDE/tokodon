@@ -41,6 +41,9 @@ Kirigami.Action {
             const purposeModel = Qt.createQmlObject('import org.kde.purpose 1.0 as Purpose;
 Purpose.PurposeAlternativesModel {
     pluginType: "ShareUrl"
+    // Copying to clipboard rarely works, due to how Mastodon and most Fediverse software behave and are dependent on JavaScript.
+    // We also already have a way to copy the URL to the clipboard, so having a second way is just confusing.
+    disabledPlugins: ["clipboardplugin"]
 }', shareAction._instantiator);
             purposeModel.inputData = Qt.binding(function() {
                 return shareAction.inputData;
