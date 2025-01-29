@@ -129,7 +129,7 @@ ListView {
             text: i18nc("@info:status", "Some replies are not available")
             explanation: i18n("To view all replies, open the post on the original server.")
             helpfulAction: Kirigami.Action {
-                icon.name: "window"
+                icon.name: "open-link-symbolic"
                 text: i18nc("@action:button 'Browser' being a web browser", "Open in Browser")
                 onTriggered: Qt.openUrlExternally(root.originalPostUrl)
             }

@@ -583,6 +583,8 @@ if(ANDROID)
             "applications-other-symbolic"
             "view-barcode-qr-symbolic"
             "smiley"
+            "open-link-symbolic"
+            "format-text-code-symbolic"
             ${KIRIGAMI_ADDONS_ICONS}
         )
     install(FILES ../org.kde.tokodon.svg  DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/kirigami/breeze-internal/icons/ RENAME org.kde.tokodon.svg)

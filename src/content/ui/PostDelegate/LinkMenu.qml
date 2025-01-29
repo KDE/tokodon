@@ -21,7 +21,7 @@ Components.ConvergentContextMenu {
     property string url
 
     QQC2.Action {
-        icon.name: "window"
+        icon.name: "open-link-symbolic"
         text: i18nc("@action:inmenu 'Browser' being a web browser", "Open in Browser")
         onTriggered: {
             Qt.openUrlExternally(root.url)
