@@ -407,7 +407,7 @@ StatefulApp.StatefulWindow {
 
     property Kirigami.Action homeAction: Kirigami.Action {
         icon.name: "go-home-large"
-        text: i18n("Home")
+        text: i18nc("@action:button Home Timeline", "Home")
         onTriggered: {
             if(checked) {
                 if (pageStack.currentItem.returnToTop) {
@@ -429,7 +429,7 @@ StatefulApp.StatefulWindow {
         readonly property int alertCount: AccountManager.selectedAccount ? AccountManager.selectedAccount.unreadNotificationsCount : 0
 
         icon.name: "notifications"
-        text: i18n("Notifications")
+        text: i18nc("@action:button Account Notifications", "Notifications")
         onTriggered: {
             if(checked) {
                 return;
@@ -443,7 +443,7 @@ StatefulApp.StatefulWindow {
         readonly property int alertCount: AccountManager.selectedAccount ? AccountManager.selectedAccount.followRequestCount : 0
 
         icon.name: "list-add-user"
-        text: i18n("Follow Requests")
+        text: i18nc("@action:button Follows that require explicit allow/deny", "Follow Requests")
         visible: AccountManager.hasAccounts && AccountManager.selectedAccount && alertCount > 0
         onTriggered: {
             if(checked) {
@@ -458,7 +458,7 @@ StatefulApp.StatefulWindow {
     }
     property Kirigami.Action localTimelineAction: Kirigami.Action {
         icon.name: "system-users"
-        text: i18n("Local")
+        text: i18nc("@action:button Local timeline of posts from the account's own server", "Local")
         onTriggered: {
             if(checked) {
                 if (pageStack.currentItem.returnToTop) {
@@ -478,7 +478,7 @@ StatefulApp.StatefulWindow {
     }
     property Kirigami.Action globalTimelineAction: Kirigami.Action {
         icon.name: "kstars_xplanet"
-        text: i18n("Global")
+        text: i18nc("@action:button Global timeline of posts from the entire Fediverse network", "Global")
         onTriggered: {
             if(checked) {
                 if (pageStack.currentItem.returnToTop) {
@@ -499,7 +499,7 @@ StatefulApp.StatefulWindow {
 
     property Kirigami.Action conversationAction: Kirigami.Action {
         icon.name: "view-conversation-balloon-symbolic"
-        text: i18n("Conversations")
+        text: i18nc("@action:button Direct one-on-one messages between users", "Conversations")
         onTriggered: {
             if(checked) {
                 return;
@@ -512,7 +512,7 @@ StatefulApp.StatefulWindow {
 
     property Kirigami.Action favouritesAction: Kirigami.Action {
         icon.name: "favorite"
-        text: i18n("Favorites")
+        text: i18nc("@action:button This account's favorited posts", "Favorites")
         onTriggered: {
             if(checked) {
                 if (pageStack.currentItem.returnToTop) {
@@ -533,7 +533,7 @@ StatefulApp.StatefulWindow {
 
     property Kirigami.Action bookmarksAction: Kirigami.Action {
         icon.name: "bookmarks"
-        text: i18n("Bookmarks")
+        text: i18nc("@action:button This account's bookmarked posts", "Bookmarks")
         onTriggered: {
             if(checked) {
                 if (pageStack.currentItem.returnToTop) {
@@ -554,7 +554,7 @@ StatefulApp.StatefulWindow {
 
     property Kirigami.Action exploreAction: Kirigami.Action {
         icon.name: "kstars_planets"
-        text: i18n("Explore")
+        text: i18nc("@action:button Explore this server's trending posts, news, and more", "Explore")
         onTriggered: {
             if(checked) {
                 return;
@@ -567,7 +567,7 @@ StatefulApp.StatefulWindow {
 
     property Kirigami.Action followingAction: Kirigami.Action {
         icon.name: "user-group-properties-symbolic"
-        text: i18n("Following")
+        text: i18nc("@action:button A list of this account's followed accounts", "Following")
         onTriggered: {
             if(checked) {
                 return;
@@ -580,7 +580,7 @@ StatefulApp.StatefulWindow {
 
     property Kirigami.Action searchAction: Kirigami.Action {
         icon.name: "search"
-        text: i18n("Search")
+        text: i18nc("@action:button Search for users, posts and tags", "Search")
         onTriggered: {
             if(checked) {
                 return;
@@ -607,7 +607,7 @@ StatefulApp.StatefulWindow {
 
     property Kirigami.Action listsAction: Kirigami.Action {
         icon.name: "view-list-text"
-        text: i18n("Lists")
+        text: i18nc("@action:button This account's lists, or timelines consisting of a groups of accounts", "Lists")
         onTriggered: {
             if(checked) {
                 return;
@@ -620,7 +620,7 @@ StatefulApp.StatefulWindow {
 
     property Kirigami.Action profileAction: Kirigami.Action {
         icon.name: "user"
-        text: i18n("Profile")
+        text: i18nc("@action:button This account's profile", "Profile")
         onTriggered: {
             if(checked) {
                 return;
