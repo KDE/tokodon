@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-11 00:41+0000\n"
+"POT-Creation-Date: 2025-02-12 00:41+0000\n"
 "PO-Revision-Date: 2025-01-30 11:01+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -920,7 +920,7 @@ msgctxt "@info:status"
 msgid "End of Timeline"
 msgstr "Fin de Chronologia "
 
-#: content/ui/ConversationPage.qml:13 content/ui/Main.qml:502
+#: content/ui/ConversationPage.qml:13
 #, kde-format
 msgid "Conversations"
 msgstr "Conversationes"
@@ -1071,7 +1071,7 @@ msgctxt "@label"
 msgid "Are you sure you want to delete this list?"
 msgstr ""
 
-#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:557
+#: content/ui/ExplorePage.qml:18
 #, kde-format
 msgid "Explore"
 msgstr ""
@@ -1667,7 +1667,9 @@ msgid "Reply to post"
 msgstr "Responde a iste message public (post)"
 
 #: content/ui/Main.qml:410
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Home"
+msgctxt "@action:button Home Timeline"
 msgid "Home"
 msgstr "Domo o initio"
 
@@ -1676,29 +1678,46 @@ msgstr "Domo o initio"
 msgid "It seems pretty quiet right now, try posting something!"
 msgstr ""
 
-#: content/ui/Main.qml:432 content/ui/NotificationPage.qml:16
-#: content/ui/Settings/TokodonConfigurationView.qml:23
-#, kde-format
+#: content/ui/Main.qml:432
+#, fuzzy, kde-format
+#| msgid "Notifications"
+msgctxt "@action:button Account Notifications"
 msgid "Notifications"
 msgstr "Notificationes"
 
 #: content/ui/Main.qml:446
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Follow Requests"
+msgctxt "@action:button Follows that require explicit allow/deny"
 msgid "Follow Requests"
 msgstr "Requestas de sequer"
 
 #: content/ui/Main.qml:461
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Local"
+msgctxt "@action:button Local timeline of posts from the account's own server"
 msgid "Local"
 msgstr "Local"
 
 #: content/ui/Main.qml:481
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Global"
+msgctxt ""
+"@action:button Global timeline of posts from the entire Fediverse network"
 msgid "Global"
 msgstr "Global"
 
-#: content/ui/Main.qml:515 content/ui/Settings/NotificationsPage.qml:184
-#, kde-format
+#: content/ui/Main.qml:502
+#, fuzzy, kde-format
+#| msgid "Conversations"
+msgctxt "@action:button Direct one-on-one messages between users"
+msgid "Conversations"
+msgstr "Conversationes"
+
+#: content/ui/Main.qml:515
+#, fuzzy, kde-format
+#| msgid "Favorites"
+msgctxt "@action:button This account's favorited posts"
 msgid "Favorites"
 msgstr "Favoritos"
 
@@ -1715,7 +1734,9 @@ msgid ""
 msgstr ""
 
 #: content/ui/Main.qml:536
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Bookmarks"
+msgctxt "@action:button This account's bookmarked posts"
 msgid "Bookmarks"
 msgstr "Marcatores de libro"
 
@@ -1731,23 +1752,39 @@ msgid ""
 "private, even to the post's author."
 msgstr ""
 
-#: content/ui/Main.qml:570
+#: content/ui/Main.qml:557
 #, kde-format
+msgctxt "@action:button Explore this server's trending posts, news, and more"
+msgid "Explore"
+msgstr ""
+
+#: content/ui/Main.qml:570
+#, fuzzy, kde-format
+#| msgid "Following"
+msgctxt "@action:button A list of this account's followed accounts"
 msgid "Following"
 msgstr "Sequente"
 
 #: content/ui/Main.qml:583
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Search"
+msgctxt "@action:button Search for users, posts and tags"
 msgid "Search"
 msgstr "Cerca"
 
 #: content/ui/Main.qml:610
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Lists"
+msgctxt ""
+"@action:button This account's lists, or timelines consisting of a groups of "
+"accounts"
 msgid "Lists"
 msgstr "Listas"
 
-#: content/ui/Main.qml:623 content/ui/Settings/AccountPage.qml:70
-#, kde-format
+#: content/ui/Main.qml:623
+#, fuzzy, kde-format
+#| msgid "Profile"
+msgctxt "@action:button This account's profile"
 msgid "Profile"
 msgstr "Profilo"
 
@@ -3161,6 +3198,12 @@ msgstr "n/d"
 msgid "No reports found"
 msgstr "Necun reporto trovate"
 
+#: content/ui/NotificationPage.qml:16
+#: content/ui/Settings/TokodonConfigurationView.qml:23
+#, kde-format
+msgid "Notifications"
+msgstr "Notificationes"
+
 #: content/ui/NotificationPage.qml:28
 #, kde-format
 msgctxt "@action:intoolbar Mark all notifications as read"
@@ -3986,6 +4029,11 @@ msgctxt "@label"
 msgid "Are you sure you want to log out of %1?"
 msgstr ""
 
+#: content/ui/Settings/AccountPage.qml:70
+#, kde-format
+msgid "Profile"
+msgstr "Profilo"
+
 #: content/ui/Settings/AccountPage.qml:77
 #, kde-format
 msgid "Account"
@@ -4592,6 +4640,11 @@ msgstr "Nove requestas de sequer"
 #, kde-format
 msgid "When an account who requires manual approval wants to follow you."
 msgstr ""
+
+#: content/ui/Settings/NotificationsPage.qml:184
+#, kde-format
+msgid "Favorites"
+msgstr "Favoritos"
 
 #: content/ui/Settings/NotificationsPage.qml:185
 #, kde-format

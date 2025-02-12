@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-11 00:41+0000\n"
+"POT-Creation-Date: 2025-02-12 00:41+0000\n"
 "PO-Revision-Date: 2025-01-19 20:57+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -946,7 +946,7 @@ msgctxt "@info:status"
 msgid "End of Timeline"
 msgstr "Idővonal vége"
 
-#: content/ui/ConversationPage.qml:13 content/ui/Main.qml:502
+#: content/ui/ConversationPage.qml:13
 #, kde-format
 msgid "Conversations"
 msgstr "Beszélgetések"
@@ -1105,7 +1105,7 @@ msgctxt "@label"
 msgid "Are you sure you want to delete this list?"
 msgstr "Biztosan törölni szeretné ezt a listát?"
 
-#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:557
+#: content/ui/ExplorePage.qml:18
 #, kde-format
 msgid "Explore"
 msgstr "Felfedezés"
@@ -1738,7 +1738,9 @@ msgid "Reply to post"
 msgstr "Válasz a bejegyzésre"
 
 #: content/ui/Main.qml:410
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Home"
+msgctxt "@action:button Home Timeline"
 msgid "Home"
 msgstr "Kezdőlap"
 
@@ -1747,29 +1749,46 @@ msgstr "Kezdőlap"
 msgid "It seems pretty quiet right now, try posting something!"
 msgstr "Elég csendesnek tűnik most, próbáljon meg posztolni valamit!"
 
-#: content/ui/Main.qml:432 content/ui/NotificationPage.qml:16
-#: content/ui/Settings/TokodonConfigurationView.qml:23
-#, kde-format
+#: content/ui/Main.qml:432
+#, fuzzy, kde-format
+#| msgid "Notifications"
+msgctxt "@action:button Account Notifications"
 msgid "Notifications"
 msgstr "Értesítések"
 
 #: content/ui/Main.qml:446
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Follow Requests"
+msgctxt "@action:button Follows that require explicit allow/deny"
 msgid "Follow Requests"
 msgstr "Követési kérések"
 
 #: content/ui/Main.qml:461
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Local"
+msgctxt "@action:button Local timeline of posts from the account's own server"
 msgid "Local"
 msgstr "Helyi"
 
 #: content/ui/Main.qml:481
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Global"
+msgctxt ""
+"@action:button Global timeline of posts from the entire Fediverse network"
 msgid "Global"
 msgstr "Globális"
 
-#: content/ui/Main.qml:515 content/ui/Settings/NotificationsPage.qml:184
-#, kde-format
+#: content/ui/Main.qml:502
+#, fuzzy, kde-format
+#| msgid "Conversations"
+msgctxt "@action:button Direct one-on-one messages between users"
+msgid "Conversations"
+msgstr "Beszélgetések"
+
+#: content/ui/Main.qml:515
+#, fuzzy, kde-format
+#| msgid "Favorites"
+msgctxt "@action:button This account's favorited posts"
 msgid "Favorites"
 msgstr "Kedvencek"
 
@@ -1788,7 +1807,9 @@ msgstr ""
 "a bejegyzését, jelölje kedvencnek!"
 
 #: content/ui/Main.qml:536
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Bookmarks"
+msgctxt "@action:button This account's bookmarked posts"
 msgid "Bookmarks"
 msgstr "Könyvjelzők"
 
@@ -1806,23 +1827,40 @@ msgstr ""
 "A könyvjelzőzött bejegyzések itt jelennek meg. A könyvjelzők mindig privátok "
 "maradnak, még a bejegyzés szerzője számára is."
 
+#: content/ui/Main.qml:557
+#, fuzzy, kde-format
+#| msgid "Explore"
+msgctxt "@action:button Explore this server's trending posts, news, and more"
+msgid "Explore"
+msgstr "Felfedezés"
+
 #: content/ui/Main.qml:570
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Following"
+msgctxt "@action:button A list of this account's followed accounts"
 msgid "Following"
 msgstr "Követett"
 
 #: content/ui/Main.qml:583
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Search"
+msgctxt "@action:button Search for users, posts and tags"
 msgid "Search"
 msgstr "Keresés"
 
 #: content/ui/Main.qml:610
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Lists"
+msgctxt ""
+"@action:button This account's lists, or timelines consisting of a groups of "
+"accounts"
 msgid "Lists"
 msgstr "Listák"
 
-#: content/ui/Main.qml:623 content/ui/Settings/AccountPage.qml:70
-#, kde-format
+#: content/ui/Main.qml:623
+#, fuzzy, kde-format
+#| msgid "Profile"
+msgctxt "@action:button This account's profile"
 msgid "Profile"
 msgstr "Profil"
 
@@ -3251,6 +3289,12 @@ msgstr "N/A"
 msgid "No reports found"
 msgstr "Nem találhatók jelentések"
 
+#: content/ui/NotificationPage.qml:16
+#: content/ui/Settings/TokodonConfigurationView.qml:23
+#, kde-format
+msgid "Notifications"
+msgstr "Értesítések"
+
 #: content/ui/NotificationPage.qml:28
 #, kde-format
 msgctxt "@action:intoolbar Mark all notifications as read"
@@ -4108,6 +4152,11 @@ msgctxt "@label"
 msgid "Are you sure you want to log out of %1?"
 msgstr "Biztosan szeretne kijelentkezni innen: %1?"
 
+#: content/ui/Settings/AccountPage.qml:70
+#, kde-format
+msgid "Profile"
+msgstr "Profil"
+
 #: content/ui/Settings/AccountPage.qml:77
 #, kde-format
 msgid "Account"
@@ -4784,6 +4833,11 @@ msgstr "Új követési kérések"
 #, kde-format
 msgid "When an account who requires manual approval wants to follow you."
 msgstr "Amikor egy kézi jóváhagyást igénylő fiók követni szeretné Önt."
+
+#: content/ui/Settings/NotificationsPage.qml:184
+#, kde-format
+msgid "Favorites"
+msgstr "Kedvencek"
 
 #: content/ui/Settings/NotificationsPage.qml:185
 #, kde-format

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-11 00:41+0000\n"
+"POT-Creation-Date: 2025-02-12 00:41+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -913,7 +913,7 @@ msgctxt "@info:status"
 msgid "End of Timeline"
 msgstr "时间线结尾"
 
-#: content/ui/ConversationPage.qml:13 content/ui/Main.qml:502
+#: content/ui/ConversationPage.qml:13
 #, kde-format
 msgid "Conversations"
 msgstr ""
@@ -1064,7 +1064,7 @@ msgctxt "@label"
 msgid "Are you sure you want to delete this list?"
 msgstr "确定要删除此列表吗？"
 
-#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:557
+#: content/ui/ExplorePage.qml:18
 #, kde-format
 msgid "Explore"
 msgstr "探索"
@@ -1665,7 +1665,9 @@ msgid "Reply to post"
 msgstr ""
 
 #: content/ui/Main.qml:410
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Home"
+msgctxt "@action:button Home Timeline"
 msgid "Home"
 msgstr "主页"
 
@@ -1674,29 +1676,46 @@ msgstr "主页"
 msgid "It seems pretty quiet right now, try posting something!"
 msgstr ""
 
-#: content/ui/Main.qml:432 content/ui/NotificationPage.qml:16
-#: content/ui/Settings/TokodonConfigurationView.qml:23
-#, kde-format
+#: content/ui/Main.qml:432
+#, fuzzy, kde-format
+#| msgid "Notifications"
+msgctxt "@action:button Account Notifications"
 msgid "Notifications"
 msgstr "通知"
 
 #: content/ui/Main.qml:446
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Follow Requests"
+msgctxt "@action:button Follows that require explicit allow/deny"
 msgid "Follow Requests"
 msgstr "关注请求"
 
 #: content/ui/Main.qml:461
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Local"
+msgctxt "@action:button Local timeline of posts from the account's own server"
 msgid "Local"
 msgstr "本地"
 
 #: content/ui/Main.qml:481
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Global"
+msgctxt ""
+"@action:button Global timeline of posts from the entire Fediverse network"
 msgid "Global"
 msgstr "全局"
 
-#: content/ui/Main.qml:515 content/ui/Settings/NotificationsPage.qml:184
-#, kde-format
+#: content/ui/Main.qml:502
+#, fuzzy, kde-format
+#| msgid "Moderation"
+msgctxt "@action:button Direct one-on-one messages between users"
+msgid "Conversations"
+msgstr "管理"
+
+#: content/ui/Main.qml:515
+#, fuzzy, kde-format
+#| msgid "Favorites"
+msgctxt "@action:button This account's favorited posts"
 msgid "Favorites"
 msgstr "收藏夹"
 
@@ -1713,7 +1732,9 @@ msgid ""
 msgstr "您赏脸的嘟文将显示在这里。如果您欣赏某人的嘟文，喜欢它！"
 
 #: content/ui/Main.qml:536
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Bookmarks"
+msgctxt "@action:button This account's bookmarked posts"
 msgid "Bookmarks"
 msgstr "书签"
 
@@ -1729,25 +1750,42 @@ msgid ""
 "private, even to the post's author."
 msgstr ""
 
+#: content/ui/Main.qml:557
+#, fuzzy, kde-format
+#| msgid "Explore"
+msgctxt "@action:button Explore this server's trending posts, news, and more"
+msgid "Explore"
+msgstr "探索"
+
 #: content/ui/Main.qml:570
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Following"
+msgctxt "@action:button A list of this account's followed accounts"
 msgid "Following"
 msgstr "正在关注"
 
 #: content/ui/Main.qml:583
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Search"
+msgctxt "@action:button Search for users, posts and tags"
 msgid "Search"
 msgstr "搜索"
 
 #: content/ui/Main.qml:610
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Lists"
+msgctxt ""
+"@action:button This account's lists, or timelines consisting of a groups of "
+"accounts"
 msgid "Lists"
 msgstr "列表"
 
-#: content/ui/Main.qml:623 content/ui/Settings/AccountPage.qml:70
-#, kde-format
+#: content/ui/Main.qml:623
+#, fuzzy, kde-format
+#| msgid "View Profile"
+msgctxt "@action:button This account's profile"
 msgid "Profile"
-msgstr ""
+msgstr "查看个人资料"
 
 #: content/ui/Main.qml:640
 #, kde-format
@@ -3161,6 +3199,12 @@ msgstr ""
 msgid "No reports found"
 msgstr "未找到举报"
 
+#: content/ui/NotificationPage.qml:16
+#: content/ui/Settings/TokodonConfigurationView.qml:23
+#, kde-format
+msgid "Notifications"
+msgstr "通知"
+
 #: content/ui/NotificationPage.qml:28
 #, kde-format
 msgctxt "@action:intoolbar Mark all notifications as read"
@@ -3989,6 +4033,11 @@ msgctxt "@label"
 msgid "Are you sure you want to log out of %1?"
 msgstr "确定要退出登录 %1 吗？"
 
+#: content/ui/Settings/AccountPage.qml:70
+#, kde-format
+msgid "Profile"
+msgstr ""
+
 #: content/ui/Settings/AccountPage.qml:77
 #, kde-format
 msgid "Account"
@@ -4597,6 +4646,11 @@ msgstr "新关注请求"
 #, kde-format
 msgid "When an account who requires manual approval wants to follow you."
 msgstr ""
+
+#: content/ui/Settings/NotificationsPage.qml:184
+#, kde-format
+msgid "Favorites"
+msgstr "收藏夹"
 
 #: content/ui/Settings/NotificationsPage.qml:185
 #, kde-format
