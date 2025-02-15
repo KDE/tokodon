@@ -1,6 +1,6 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the tokodon package.
-# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Tommi Nieminen <translator@legisign.org>
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024, 2025 Tommi Nieminen <translator@legisign.org>
 # SPDX-FileCopyrightText: 2024 Kimmo Kujansuu <mrkujansuu@gmail.com>
 # Tommi Nieminen <translator@legisign.org>, 2024.
 #
@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-12 00:41+0000\n"
-"PO-Revision-Date: 2024-12-22 22:11+0200\n"
+"PO-Revision-Date: 2025-02-04 19:26+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -91,7 +91,7 @@ msgstr "Kaikki tiedostot (*)"
 #: account/abstractaccount.cpp:489
 #, kde-format
 msgid "All supported formats (%1)"
-msgstr ""
+msgstr "Kaikki tuetut tiedostomuodot (%1)"
 
 #: account/abstractaccount.cpp:639
 #, kde-format
@@ -210,19 +210,19 @@ msgstr ""
 #, kde-format
 msgid "Unveil your year's highlights and memorable moments on Mastodon!"
 msgstr ""
+"Paljasta fediversumissa vuotesi kohokohdat ja muistamisen arvoiset "
+"tapahtumat!"
 
 #: account/notificationhandler.cpp:149
-#, fuzzy, kde-format
-#| msgid "No Notifications"
+#, kde-format
 msgctxt "@title"
 msgid "New Notification"
-msgstr "Ei ilmoituksia"
+msgstr "Uusi ilmoitus"
 
 #: account/notificationhandler.cpp:150
-#, fuzzy, kde-format
-#| msgid "Receiving push notifications"
+#, kde-format
 msgid "You received a new notification."
-msgstr "Vastaanotetaan push-ilmoituksia"
+msgstr "Vastaanotit uuden ilmoituksen."
 
 #: account/notificationhandler.cpp:158
 #, kde-kuit-format
@@ -232,7 +232,7 @@ msgstr "<b>Sisältövaroitus</b>: %1"
 #: account/notificationhandler.cpp:162
 #, kde-format
 msgid "This post has no text."
-msgstr ""
+msgstr "Tässä julkaisussa ei ole tekstiä."
 
 #: account/notificationhandler.cpp:169
 #, kde-format
@@ -240,11 +240,13 @@ msgid ""
 "The moderators of your server has limited this user, view this in Tokodon to "
 "see their profile."
 msgstr ""
+"Palvelimen moderaattorit ovat rajoittaneet tätä käyttäjää: katso tätä "
+"Tokodonissa nähdäksesi profiilin."
 
 #: account/notificationhandler.cpp:173
 #, kde-format
 msgid "This user doesn't have a description."
-msgstr ""
+msgstr "Tältä käyttäjältä puuttuu kuvaus."
 
 #: account/profileeditor.cpp:185
 #, kde-format
@@ -268,20 +270,16 @@ msgid ""
 msgstr "Palvelin ei tarjonnut sääntöjä. Katso lisätietoa sen kotisivulta."
 
 #: account/scheduledstatusesmodel.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Report Post"
+#, kde-format
 msgctxt "@title:window"
 msgid "Draft Posts"
-msgstr "Raportoi julkaisu"
+msgstr "Julkaisuluonnokset"
 
 #: account/scheduledstatusesmodel.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Delete Post"
+#, kde-format
 msgctxt "@title:window"
 msgid "Scheduled Posts"
-msgstr "Poista julkaisu"
+msgstr "Ajastetut julkaisut"
 
 #: account/socialgraphmodel.cpp:32
 #, kde-format
@@ -687,20 +685,16 @@ msgid "Featured Users"
 msgstr "Esitellyt käyttäjät"
 
 #: content/ui/AccountHeader.qml:456
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Delete Post"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Scheduled Posts"
-msgstr "Poista julkaisu"
+msgstr "Ajastetut julkaisut"
 
 #: content/ui/AccountHeader.qml:470
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Report Post"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Draft Posts"
-msgstr "Raportoi julkaisu"
+msgstr "Julkaisuluonnokset"
 
 #: content/ui/AccountHeader.qml:483 content/ui/PostDelegate/LinkMenu.qml:25
 #: content/ui/PostDelegate/PostMenu.qml:52
@@ -728,7 +722,7 @@ msgstr "Liitytty"
 #: content/ui/AccountHeader.qml:601
 #, kde-format
 msgid "Ownership of this link was checked on %1"
-msgstr ""
+msgstr "Tämän linkin omistajuus on tarkistettu %1"
 
 #: content/ui/AccountHeader.qml:678
 #, kde-format
@@ -819,11 +813,10 @@ msgid "All"
 msgstr "Kaikki"
 
 #: content/ui/AccountInfo.qml:36 content/ui/AccountInfo.qml:45
-#, fuzzy, kde-format
-#| msgid "View Profile"
+#, kde-format
 msgctxt "@title:window"
 msgid "Profile"
-msgstr "Näytä profiili"
+msgstr "Profiili"
 
 #: content/ui/AccountInfo.qml:57 content/ui/ExplorePage.qml:35
 #: content/ui/TimelinePage.qml:99
@@ -1027,8 +1020,7 @@ msgid "Posts in an exclusive list are excluded from the Home timeline."
 msgstr "Sulkuluettelossa olevat julkaisut poistetaan kotiaikajanalta."
 
 #: content/ui/EditListPage.qml:97
-#, fuzzy, kde-format
-#| msgid "Favorite"
+#, kde-format
 msgctxt "@label If the list is favorited"
 msgid "Favorite"
 msgstr "Suosikki"
@@ -1036,7 +1028,7 @@ msgstr "Suosikki"
 #: content/ui/EditListPage.qml:98
 #, kde-format
 msgid "This list will show up in the sidebar."
-msgstr ""
+msgstr "Luettelo näytetään sivupaneelissa."
 
 #: content/ui/EditListPage.qml:106
 #, kde-format
@@ -1355,6 +1347,8 @@ msgid ""
 "There are no posts from the users in your list. Only new posts will appear "
 "in a list."
 msgstr ""
+"Luettelon käyttäjiltä ei ole julkaisuja. Luetteloon tulevat vain uudet "
+"julkaisut."
 
 #: content/ui/ListTimelinePage.qml:30
 #, kde-format
@@ -1370,19 +1364,17 @@ msgstr "Tunnistautuminen"
 #: content/ui/LoginFlow/BaseAuthorization.qml:79
 #, kde-format
 msgid "To continue, you must authorize Tokodon to access your account."
-msgstr ""
+msgstr "Jatkaminen vaatii Tokodonin valtuuttamista tilisi käyttöön."
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:88
-#, fuzzy, kde-format
-#| msgid "Open Authorization Link"
+#, kde-format
 msgid "Open Authorization Page"
-msgstr "Avaa valtuutuslinkki"
+msgstr "Avaa valtuutussivu"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:100
-#, fuzzy, kde-format
-#| msgid "Copy Authorization Link"
+#, kde-format
 msgid "Copy Link to Authorization Page"
-msgstr "Kopioi valtuutuslinkki"
+msgstr "Kopioi valtuutussivun linkki"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:104
 #, kde-format
@@ -1872,15 +1864,13 @@ msgid "Settings"
 msgstr "Asetukset"
 
 #: content/ui/Main.qml:796
-#, fuzzy, kde-format
-#| msgid "Unfollow"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Unfollow"
 msgstr "Lakkaa seuraamasta"
 
 #: content/ui/Main.qml:796
-#, fuzzy, kde-format
-#| msgid "Follow"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Follow"
 msgstr "Seuraa"
@@ -3440,22 +3430,19 @@ msgid "Status with image attachment"
 msgstr "Tila kuvaliitteellä"
 
 #: content/ui/PostDelegate/AttachmentGrid.qml:99
-#, fuzzy, kde-format
-#| msgid "Status with GifV attachment"
+#, kde-format
 msgid "Status with gif attachment"
-msgstr "Tila GifV-liitteellä"
+msgstr "Tila Gif-liitteellä"
 
 #: content/ui/PostDelegate/AttachmentGrid.qml:101
-#, fuzzy, kde-format
-#| msgid "Status with Video attachment"
+#, kde-format
 msgid "Status with video attachment"
 msgstr "Tila videoliitteellä"
 
 #: content/ui/PostDelegate/AttachmentGrid.qml:103
-#, fuzzy, kde-format
-#| msgid "Status with Video attachment"
+#, kde-format
 msgid "Status with audio attachment"
-msgstr "Tila videoliitteellä"
+msgstr "Tila ääniliitteellä"
 
 #: content/ui/PostDelegate/AttachmentGrid.qml:148
 #: content/ui/PostDelegate/AttachmentGrid.qml:245
@@ -3506,10 +3493,9 @@ msgid "Save Video As…"
 msgstr "Tallenna video nimellä…"
 
 #: content/ui/PostDelegate/AttachmentMenu.qml:50
-#, fuzzy, kde-format
-#| msgid "Save Video As…"
+#, kde-format
 msgid "Save Audio As…"
-msgstr "Tallenna video nimellä…"
+msgstr "Tallenna ääni nimellä…"
 
 #: content/ui/PostDelegate/AttachmentMenu.qml:69
 #, kde-format
@@ -3518,9 +3504,7 @@ msgstr "Kopioi kuva"
 
 #: content/ui/PostDelegate/AttachmentMenu.qml:82
 #: content/ui/PostDelegate/LinkMenu.qml:49
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Post"
+#, kde-format
 msgctxt "@title"
 msgid "Post"
 msgstr "Julkaise"
@@ -4873,12 +4857,10 @@ msgstr ""
 "tai josta sinulla on seuraajia."
 
 #: content/ui/Settings/NotificationsPage.qml:268
-#, fuzzy, kde-format
-#| msgctxt "@action:button 'Report' as in 'Report this to moderators'"
-#| msgid "Report"
+#, kde-format
 msgctxt "@option:check"
 msgid "Annual Report"
-msgstr "Ilmoita"
+msgstr "Vuosiraportti"
 
 #: content/ui/Settings/NotificationsPage.qml:269
 #, kde-format
@@ -4923,15 +4905,13 @@ msgid "Fields"
 msgstr "Kentät"
 
 #: content/ui/Settings/ProfileEditor.qml:269
-#, fuzzy, kde-format
-#| msgid "Remove"
+#, kde-format
 msgctxt "@action:button"
 msgid "Remove"
 msgstr "Poista"
 
 #: content/ui/Settings/ProfileEditor.qml:280
-#, fuzzy, kde-format
-#| msgid "Add"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add"
 msgstr "Lisää"
@@ -5109,35 +5089,31 @@ msgstr "Poista"
 #, kde-format
 msgctxt "Draft, unfinished post"
 msgid "Draft"
-msgstr ""
+msgstr "Luonnos"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:65
 #, kde-format
 msgctxt "Scheduled for this date"
 msgid "Scheduled for %1"
-msgstr ""
+msgstr "Ajastettu – %1"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:84
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Discard Draft"
+#, kde-format
 msgctxt "@action:button Discard this post"
 msgid "Discard"
-msgstr "Hylkää luonnos"
+msgstr "Hylkää"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:105
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Drafts"
-msgstr ""
+msgstr "Ei luonnoksia"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:105
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Delete Post"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Scheduled Posts"
-msgstr "Poista julkaisu"
+msgstr "Ei ajastettuja julkaisuja"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:114
 #: content/ui/StatusComposer/StatusComposer.qml:181
@@ -5154,12 +5130,10 @@ msgid "Are you sure you want to discard your draft?"
 msgstr "Haluatko varmasti hylätä luonnoksen?"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:121
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Discard Draft"
+#, kde-format
 msgctxt "@action:button Discard this draft"
 msgid "Discard"
-msgstr "Hylkää luonnos"
+msgstr "Hylkää"
 
 #: content/ui/StatusComposer/StatusComposer.qml:62
 #, kde-format
@@ -5189,7 +5163,7 @@ msgstr "Kirjoita uusi julkaisu"
 #, kde-format
 msgctxt "@action:intoolbar Draft or unfinished posts"
 msgid "Drafts"
-msgstr ""
+msgstr "Luonnokset"
 
 #: content/ui/StatusComposer/StatusComposer.qml:82
 #, kde-format
@@ -5229,34 +5203,28 @@ msgid "Save"
 msgstr "Tallenna"
 
 #: content/ui/StatusComposer/StatusComposer.qml:188
-#, fuzzy, kde-format
-#| msgctxt "@action:Button Save an edited a post"
-#| msgid "Save"
+#, kde-format
 msgctxt "@action:button Keep this draft"
 msgid "Save"
 msgstr "Tallenna"
 
 #: content/ui/StatusComposer/StatusComposer.qml:196
-#, fuzzy, kde-format
-#| msgctxt "@info:Cancel button to close the dailog"
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action:button Go back to editing"
 msgid "Cancel"
 msgstr "Peru"
 
 #: content/ui/StatusComposer/StatusComposer.qml:215
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Delete Post"
+#, kde-format
 msgctxt "@title"
 msgid "Schedule Post"
-msgstr "Poista julkaisu"
+msgstr "Ajasta julkaisu"
 
 #: content/ui/StatusComposer/StatusComposer.qml:221
 #, kde-format
 msgctxt "@action:button Set this post's schedule to when it should be posted"
 msgid "Set Schedule"
-msgstr ""
+msgstr "Aseta ajastus"
 
 #: content/ui/StatusComposer/StatusComposer.qml:337
 #, kde-format
@@ -5329,9 +5297,7 @@ msgid "Visibility"
 msgstr "Näkyvyys"
 
 #: content/ui/StatusComposer/StatusComposer.qml:568
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip Post visibility"
-#| msgid "Visibility"
+#, kde-format
 msgctxt "@title"
 msgid "Visibility"
 msgstr "Näkyvyys"
@@ -5400,12 +5366,10 @@ msgstr "<b>%1/%2</b> merkkiä"
 
 #: content/ui/StatusComposer/StatusComposer.qml:687
 #: content/ui/StatusComposer/StatusComposer.qml:764
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Delete Post"
+#, kde-format
 msgctxt "@action:button Schedule something to be posted later"
 msgid "Schedule"
-msgstr "Poista julkaisu"
+msgstr "Ajastus"
 
 #: content/ui/StatusComposer/StatusComposer.qml:738
 #, kde-format
