@@ -145,8 +145,16 @@ bool TextHandler::isPostUrl(const QString &url)
     }
 
     // TODO: create regex to better whittle down these cases:
-    // Pleroma/Akkoma/Misskey
+    // Misskey
     if (url.contains(QStringLiteral("/notes/"))) {
+        return true;
+    }
+
+    // Pleroma/Akkoma
+    if (url.contains(QStringLiteral("/objects/"))) {
+        return true;
+    }
+    if (url.contains(QStringLiteral("/notice/"))) {
         return true;
     }
 
