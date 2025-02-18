@@ -35,6 +35,29 @@ private Q_SLOTS:
         QCOMPARE(TextHandler::getNextLink(header), next);
         QCOMPARE(TextHandler::getPrevLink(header), prev);
     }
+
+    void isPostUrl_data()
+    {
+        QTest::addColumn<QString>("url");
+        QTest::addColumn<bool>("valid");
+
+        QTest::addRow("mastodon post") << QStringLiteral("https://floss.social/@kde/114020671121601181") << true;
+        QTest::addRow("mastodon profile") << QStringLiteral("https://floss.social/@kde") << false;
+        QTest::addRow("mastodon instance") << QStringLiteral("https://floss.social") << false;
+
+        QTest::addRow("pleroma/akkoma post") << QStringLiteral("https://hi.nighten.fr/notice/AqkP9JecfrRF1EPjns") << true;
+        QTest::addRow("pleroma/akkoma post") << QStringLiteral("https://hi.nighten.fr/objects/AqkP9JecfrRF1EPjns") << true;
+
+        QTest::addRow("sharkey/misskey post") << QStringLiteral("https://transfem.social/notes/9mp8p53p4g4p00vt") << true;
+    }
+
+    void isPostUrl()
+    {
+        QFETCH(QString, url);
+        QFETCH(bool, valid);
+
+        QCOMPARE(TextHandler::isPostUrl(url), valid);
+    }
 };
 
 QTEST_MAIN(TextHandlerTest)
