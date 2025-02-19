@@ -168,6 +168,9 @@ QNetworkRequest Account::makeRequest(const QUrl &url, bool authenticated) const
         request.setRawHeader("Authorization", bearer);
     }
 
+    request.setHeader(QNetworkRequest::UserAgentHeader,
+                      QStringLiteral("%1/%2").arg(QCoreApplication::applicationName(), QCoreApplication::applicationVersion()));
+
     return request;
 }
 
