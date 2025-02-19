@@ -106,7 +106,7 @@ MediaContainer {
             return player.item?.paused || player.item?.stopped;
         }
         anchors.centerIn: parent
-        onClicked: player?.item?.play()
+        onClicked: root.play()
 
         Accessible.name: i18nc("@action:button Start media playback", "Play")
 
