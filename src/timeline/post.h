@@ -96,7 +96,8 @@ class Post : public QObject
     Q_PROPERTY(QString language READ language CONSTANT)
     Q_PROPERTY(QString inReplyTo READ inReplyTo CONSTANT)
     Q_PROPERTY(QStringList mentions READ mentions CONSTANT)
-    Q_PROPERTY(Poll *poll READ poll NOTIFY pollChanged)
+    Q_PROPERTY(Poll poll READ poll NOTIFY pollChanged)
+    Q_PROPERTY(bool hasPoll READ hasPoll NOTIFY pollChanged)
     Q_PROPERTY(QStringList filters READ filters CONSTANT)
     Q_PROPERTY(Identity *authorIdentity READ getAuthorIdentity CONSTANT)
     Q_PROPERTY(QList<Attachment *> attachments READ attachments CONSTANT)
@@ -380,6 +381,8 @@ private:
     [[nodiscard]] Identity *getAuthorIdentity() const;
 
     [[nodiscard]] Card *getCard() const;
+
+    [[nodiscard]] bool hasPoll() const;
 
     void setCard(std::optional<Card> card);
 

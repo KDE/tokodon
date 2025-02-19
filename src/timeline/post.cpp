@@ -508,6 +508,11 @@ void Post::processContent(const QJsonObject &obj)
     m_content = standaloneContent;
 }
 
+bool Post::hasPoll() const
+{
+    return m_poll.operator bool();
+}
+
 Card::Card(AbstractAccount *account, QJsonObject card)
     : m_card(card)
     , m_account(account)

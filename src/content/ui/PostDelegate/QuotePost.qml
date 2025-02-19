@@ -128,11 +128,20 @@ QQC2.AbstractButton {
             }
         }
 
-        Loader {
-            active: root.post.poll !== null
-            sourceComponent: PostPoll {
-                index: root.index
-                poll: root.post.poll
+        RowLayout {
+            spacing: Kirigami.Units.smallSpacing
+            visible: root.post.hasPoll
+
+            Kirigami.Icon {
+                source: "gnumeric-graphguru"
+
+                Layout.preferredWidth: Kirigami.Units.iconSizes.sizeForLabels
+                Layout.preferredHeight: Kirigami.Units.iconSizes.sizeForLabels
+            }
+
+            QQC2.Label {
+                text: i18nc("@info:label", "Poll")
+                color: Kirigami.Theme.disabledTextColor
             }
         }
     }
