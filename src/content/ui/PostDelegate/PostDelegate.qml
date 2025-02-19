@@ -413,6 +413,7 @@ QQC2.ItemDelegate {
 
         PostTags {
             standaloneTags: root.post.standaloneTags
+            visible: !root.filtered && postContent.visible && root.post.standaloneTags.length !== 0
 
             Layout.fillWidth: true
         }
