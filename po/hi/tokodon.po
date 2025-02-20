@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-19 00:41+0000\n"
+"POT-Creation-Date: 2025-02-20 00:41+0000\n"
 "PO-Revision-Date: 2024-12-15 19:31+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Hindi <kde-i18n-doc@kde.org>\n"
@@ -154,6 +154,7 @@ msgid "View Profile"
 msgstr "प्रोफ़ाइल देखें"
 
 #: account/notificationhandler.cpp:76
+#: content/ui/Notifications/UserInteractionLabel.qml:81
 #, kde-format
 msgid "%1 mentioned you"
 msgstr "%1 ने आपका उल्लेख किया"
@@ -3407,11 +3408,6 @@ msgctxt "@info:label"
 msgid "A report has been filed against a user in your server."
 msgstr "आपके सर्वर पर एक उपयोगकर्ता के विरुद्ध रिपोर्ट दर्ज की गई है।"
 
-#: content/ui/Notifications/UserInteractionLabel.qml:81
-#, kde-format
-msgid "%1 replied to your post"
-msgstr "%1 ने आपकी पोस्ट का जवाब दिया"
-
 #: content/ui/Notifications/UserInteractionLabel.qml:85
 #, kde-format
 msgid "A poll has ended"
@@ -4006,6 +4002,13 @@ msgstr "%1 से पोस्ट करें"
 #, kde-format
 msgid "Quoted post"
 msgstr "उद्धृत पोस्ट"
+
+#: content/ui/PostDelegate/QuotePost.qml:143
+#, fuzzy, kde-format
+#| msgid "Polls"
+msgctxt "@info:label"
+msgid "Poll"
+msgstr "चुनाव"
 
 #: content/ui/PrivacyPolicyPage.qml:19
 #, kde-format
@@ -5798,56 +5801,59 @@ msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "गंतव्य"
 
-#: utils/texthandler.cpp:166
+#: utils/texthandler.cpp:174
 #, kde-format
 msgid "in the future"
 msgstr "भविष्य में"
 
-#: utils/texthandler.cpp:168
+#: utils/texthandler.cpp:176
 #, kde-format
 msgid "%1s"
 msgstr "%1स"
 
-#: utils/texthandler.cpp:170
+#: utils/texthandler.cpp:178
 #, kde-format
 msgid "%1m"
 msgstr "%1मि"
 
-#: utils/texthandler.cpp:172
+#: utils/texthandler.cpp:180
 #, kde-format
 msgid "%1h"
 msgstr "%1घंटा"
 
-#: utils/texthandler.cpp:183
+#: utils/texthandler.cpp:191
 #, kde-format
 msgid "Today"
 msgstr "आज"
 
-#: utils/texthandler.cpp:185
+#: utils/texthandler.cpp:193
 #, kde-format
 msgid "%1d"
 msgstr "%1d"
 
-#: utils/texthandler.cpp:189
+#: utils/texthandler.cpp:197
 #, kde-format
 msgid "1 week ago"
 msgid_plural "%1 weeks ago"
 msgstr[0] "%1 सप्ताह पहले"
 msgstr[1] "%1 सप्ताह पहले"
 
-#: utils/texthandler.cpp:192
+#: utils/texthandler.cpp:200
 #, kde-format
 msgid "1 month ago"
 msgid_plural "%1 months ago"
 msgstr[0] "%1 महीने पहले"
 msgstr[1] "%1 महीने पहले"
 
-#: utils/texthandler.cpp:196
+#: utils/texthandler.cpp:204
 #, kde-format
 msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "%1 साल पहले"
 msgstr[1] "%1 साल पहले"
+
+#~ msgid "%1 replied to your post"
+#~ msgstr "%1 ने आपकी पोस्ट का जवाब दिया"
 
 #~ msgctxt "@info:tooltip"
 #~ msgid "Content Notice"

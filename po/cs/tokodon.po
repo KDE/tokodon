@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-19 00:41+0000\n"
+"POT-Creation-Date: 2025-02-20 00:41+0000\n"
 "PO-Revision-Date: 2024-10-01 16:39+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -150,6 +150,7 @@ msgid "View Profile"
 msgstr ""
 
 #: account/notificationhandler.cpp:76
+#: content/ui/Notifications/UserInteractionLabel.qml:81
 #, kde-format
 msgid "%1 mentioned you"
 msgstr ""
@@ -3340,11 +3341,6 @@ msgctxt "@info:label"
 msgid "A report has been filed against a user in your server."
 msgstr ""
 
-#: content/ui/Notifications/UserInteractionLabel.qml:81
-#, kde-format
-msgid "%1 replied to your post"
-msgstr ""
-
 #: content/ui/Notifications/UserInteractionLabel.qml:85
 #, kde-format
 msgid "A poll has ended"
@@ -3921,6 +3917,13 @@ msgstr "Příspěvky od %1"
 #, kde-format
 msgid "Quoted post"
 msgstr ""
+
+#: content/ui/PostDelegate/QuotePost.qml:143
+#, fuzzy, kde-format
+#| msgid "Polls"
+msgctxt "@info:label"
+msgid "Poll"
+msgstr "Hlasování"
 
 #: content/ui/PrivacyPolicyPage.qml:19
 #, kde-format
@@ -5612,37 +5615,37 @@ msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Cíl"
 
-#: utils/texthandler.cpp:166
+#: utils/texthandler.cpp:174
 #, kde-format
 msgid "in the future"
 msgstr "V budoucnosti"
 
-#: utils/texthandler.cpp:168
+#: utils/texthandler.cpp:176
 #, kde-format
 msgid "%1s"
 msgstr "%1 s"
 
-#: utils/texthandler.cpp:170
+#: utils/texthandler.cpp:178
 #, kde-format
 msgid "%1m"
 msgstr "%1m"
 
-#: utils/texthandler.cpp:172
+#: utils/texthandler.cpp:180
 #, kde-format
 msgid "%1h"
 msgstr "%1h"
 
-#: utils/texthandler.cpp:183
+#: utils/texthandler.cpp:191
 #, kde-format
 msgid "Today"
 msgstr "Dnes"
 
-#: utils/texthandler.cpp:185
+#: utils/texthandler.cpp:193
 #, kde-format
 msgid "%1d"
 msgstr "%1d"
 
-#: utils/texthandler.cpp:189
+#: utils/texthandler.cpp:197
 #, kde-format
 msgid "1 week ago"
 msgid_plural "%1 weeks ago"
@@ -5650,7 +5653,7 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: utils/texthandler.cpp:192
+#: utils/texthandler.cpp:200
 #, kde-format
 msgid "1 month ago"
 msgid_plural "%1 months ago"
@@ -5658,7 +5661,7 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: utils/texthandler.cpp:196
+#: utils/texthandler.cpp:204
 #, kde-format
 msgid "1 year ago"
 msgid_plural "%1 years ago"

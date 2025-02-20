@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-19 00:41+0000\n"
+"POT-Creation-Date: 2025-02-20 00:41+0000\n"
 "PO-Revision-Date: 2025-02-04 19:26+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -154,6 +154,7 @@ msgid "View Profile"
 msgstr "Näytä profiili"
 
 #: account/notificationhandler.cpp:76
+#: content/ui/Notifications/UserInteractionLabel.qml:81
 #, kde-format
 msgid "%1 mentioned you"
 msgstr "%1 mainitsi sinut"
@@ -3409,11 +3410,6 @@ msgctxt "@info:label"
 msgid "A report has been filed against a user in your server."
 msgstr "Palvelimellasi on tehty käyttäjästä ilmoitus."
 
-#: content/ui/Notifications/UserInteractionLabel.qml:81
-#, kde-format
-msgid "%1 replied to your post"
-msgstr "%1 vastasi sinun julkaisuun"
-
 #: content/ui/Notifications/UserInteractionLabel.qml:85
 #, kde-format
 msgid "A poll has ended"
@@ -4002,6 +3998,13 @@ msgstr "Julkaisu vastaanotettu %1"
 #, kde-format
 msgid "Quoted post"
 msgstr "Lainattu julkaisu"
+
+#: content/ui/PostDelegate/QuotePost.qml:143
+#, fuzzy, kde-format
+#| msgid "Add Poll"
+msgctxt "@info:label"
+msgid "Poll"
+msgstr "Lisää kysely"
 
 #: content/ui/PrivacyPolicyPage.qml:19
 #, kde-format
@@ -5775,56 +5778,59 @@ msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Kohde"
 
-#: utils/texthandler.cpp:166
+#: utils/texthandler.cpp:174
 #, kde-format
 msgid "in the future"
 msgstr "tulevaisuudessa"
 
-#: utils/texthandler.cpp:168
+#: utils/texthandler.cpp:176
 #, kde-format
 msgid "%1s"
 msgstr "%1 s"
 
-#: utils/texthandler.cpp:170
+#: utils/texthandler.cpp:178
 #, kde-format
 msgid "%1m"
 msgstr "%1 min"
 
-#: utils/texthandler.cpp:172
+#: utils/texthandler.cpp:180
 #, kde-format
 msgid "%1h"
 msgstr "%1 t"
 
-#: utils/texthandler.cpp:183
+#: utils/texthandler.cpp:191
 #, kde-format
 msgid "Today"
 msgstr "Tänään"
 
-#: utils/texthandler.cpp:185
+#: utils/texthandler.cpp:193
 #, kde-format
 msgid "%1d"
 msgstr "%1 pv"
 
-#: utils/texthandler.cpp:189
+#: utils/texthandler.cpp:197
 #, kde-format
 msgid "1 week ago"
 msgid_plural "%1 weeks ago"
 msgstr[0] "1 viikko sitten"
 msgstr[1] "%1 viikkoa sitten"
 
-#: utils/texthandler.cpp:192
+#: utils/texthandler.cpp:200
 #, kde-format
 msgid "1 month ago"
 msgid_plural "%1 months ago"
 msgstr[0] "1 kuukausi sitten"
 msgstr[1] "%1 kuukautta sitten"
 
-#: utils/texthandler.cpp:196
+#: utils/texthandler.cpp:204
 #, kde-format
 msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "1 vuosi sitten"
 msgstr[1] "%1 vuotta sitten"
+
+#~ msgid "%1 replied to your post"
+#~ msgstr "%1 vastasi sinun julkaisuun"
 
 #~ msgctxt "@info:tooltip"
 #~ msgid "Content Notice"
@@ -6146,11 +6152,6 @@ msgstr[1] "%1 vuotta sitten"
 #~| msgid "Login Status"
 #~ msgid "Status"
 #~ msgstr "Kirjautumisen tila"
-
-#, fuzzy
-#~| msgid "Add Poll"
-#~ msgid "Poll"
-#~ msgstr "Lisää kysely"
 
 #~ msgid "Authorize Tokodon to act on your behalf"
 #~ msgstr "Valtuuta Tokodon toimimaan puolestasi"

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-19 00:41+0000\n"
+"POT-Creation-Date: 2025-02-20 00:41+0000\n"
 "PO-Revision-Date: 2024-12-24 19:21+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -157,6 +157,7 @@ msgid "View Profile"
 msgstr "프로필 보기"
 
 #: account/notificationhandler.cpp:76
+#: content/ui/Notifications/UserInteractionLabel.qml:81
 #, kde-format
 msgid "%1 mentioned you"
 msgstr "%1 님이 멘션함"
@@ -3397,11 +3398,6 @@ msgctxt "@info:label"
 msgid "A report has been filed against a user in your server."
 msgstr "내 서버의 특정 사용자에게 신고가 접수되었습니다."
 
-#: content/ui/Notifications/UserInteractionLabel.qml:81
-#, kde-format
-msgid "%1 replied to your post"
-msgstr "%1 님이 답글을 남김"
-
 #: content/ui/Notifications/UserInteractionLabel.qml:85
 #, kde-format
 msgid "A poll has ended"
@@ -3994,6 +3990,13 @@ msgstr "%1 님의 게시물"
 #, kde-format
 msgid "Quoted post"
 msgstr "인용된 게시물"
+
+#: content/ui/PostDelegate/QuotePost.qml:143
+#, fuzzy, kde-format
+#| msgid "Polls"
+msgctxt "@info:label"
+msgid "Poll"
+msgstr "투표"
 
 #: content/ui/PrivacyPolicyPage.qml:19
 #, kde-format
@@ -5772,53 +5775,56 @@ msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "대상"
 
-#: utils/texthandler.cpp:166
+#: utils/texthandler.cpp:174
 #, kde-format
 msgid "in the future"
 msgstr "미래에"
 
-#: utils/texthandler.cpp:168
+#: utils/texthandler.cpp:176
 #, kde-format
 msgid "%1s"
 msgstr "%1초"
 
-#: utils/texthandler.cpp:170
+#: utils/texthandler.cpp:178
 #, kde-format
 msgid "%1m"
 msgstr "%1분"
 
-#: utils/texthandler.cpp:172
+#: utils/texthandler.cpp:180
 #, kde-format
 msgid "%1h"
 msgstr "%1시간"
 
-#: utils/texthandler.cpp:183
+#: utils/texthandler.cpp:191
 #, kde-format
 msgid "Today"
 msgstr "오늘"
 
-#: utils/texthandler.cpp:185
+#: utils/texthandler.cpp:193
 #, kde-format
 msgid "%1d"
 msgstr "%1일"
 
-#: utils/texthandler.cpp:189
+#: utils/texthandler.cpp:197
 #, kde-format
 msgid "1 week ago"
 msgid_plural "%1 weeks ago"
 msgstr[0] "%1주 전"
 
-#: utils/texthandler.cpp:192
+#: utils/texthandler.cpp:200
 #, kde-format
 msgid "1 month ago"
 msgid_plural "%1 months ago"
 msgstr[0] "%1개월 전"
 
-#: utils/texthandler.cpp:196
+#: utils/texthandler.cpp:204
 #, kde-format
 msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "%1년 전"
+
+#~ msgid "%1 replied to your post"
+#~ msgstr "%1 님이 답글을 남김"
 
 #~ msgctxt "@info:tooltip"
 #~ msgid "Content Notice"
@@ -6137,11 +6143,6 @@ msgstr[0] "%1년 전"
 #~| msgid "Statuses"
 #~ msgid "Status"
 #~ msgstr "글"
-
-#, fuzzy
-#~| msgid "Polls"
-#~ msgid "Poll"
-#~ msgstr "투표"
 
 #~ msgid "Authorize Tokodon to act on your behalf"
 #~ msgstr "Tokodon이 내 이름으로 활동할 수 있도록 인증"

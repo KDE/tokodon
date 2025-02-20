@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-19 00:41+0000\n"
+"POT-Creation-Date: 2025-02-20 00:41+0000\n"
 "PO-Revision-Date: 2024-01-01 07:57-0600\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
@@ -150,6 +150,7 @@ msgid "View Profile"
 msgstr "ਪਰੋਫ਼ਾਈਲ ਵੇਖੋ"
 
 #: account/notificationhandler.cpp:76
+#: content/ui/Notifications/UserInteractionLabel.qml:81
 #, kde-format
 msgid "%1 mentioned you"
 msgstr "%1 ਨੇ ਤੁਹਾਡਾ ਜ਼ਿਕਰ ਕੀਤਾ ਹੈ"
@@ -3574,11 +3575,6 @@ msgctxt "@info:label"
 msgid "A report has been filed against a user in your server."
 msgstr ""
 
-#: content/ui/Notifications/UserInteractionLabel.qml:81
-#, kde-format
-msgid "%1 replied to your post"
-msgstr ""
-
 #: content/ui/Notifications/UserInteractionLabel.qml:85
 #, kde-format
 msgid "A poll has ended"
@@ -4226,6 +4222,12 @@ msgstr ""
 #| msgid "No posts"
 msgid "Quoted post"
 msgstr "ਕੋਈ ਪੋਸਟ ਨਹੀਂ ਹੈ"
+
+#: content/ui/PostDelegate/QuotePost.qml:143
+#, kde-format
+msgctxt "@info:label"
+msgid "Poll"
+msgstr ""
 
 #: content/ui/PrivacyPolicyPage.qml:19
 #, kde-format
@@ -6032,37 +6034,37 @@ msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "ਟਿਕਾਣਾ"
 
-#: utils/texthandler.cpp:166
+#: utils/texthandler.cpp:174
 #, kde-format
 msgid "in the future"
 msgstr "ਭਵਿੱਖ ਵਿੱਚ"
 
-#: utils/texthandler.cpp:168
+#: utils/texthandler.cpp:176
 #, kde-format
 msgid "%1s"
 msgstr "%1ਸ"
 
-#: utils/texthandler.cpp:170
+#: utils/texthandler.cpp:178
 #, kde-format
 msgid "%1m"
 msgstr "%1ਮਿੰ"
 
-#: utils/texthandler.cpp:172
+#: utils/texthandler.cpp:180
 #, kde-format
 msgid "%1h"
 msgstr "%1ਘੰ"
 
-#: utils/texthandler.cpp:183
+#: utils/texthandler.cpp:191
 #, kde-format
 msgid "Today"
 msgstr ""
 
-#: utils/texthandler.cpp:185
+#: utils/texthandler.cpp:193
 #, kde-format
 msgid "%1d"
 msgstr "%1ਦਿ"
 
-#: utils/texthandler.cpp:189
+#: utils/texthandler.cpp:197
 #, fuzzy, kde-format
 #| msgid "1 week ago"
 msgid "1 week ago"
@@ -6070,7 +6072,7 @@ msgid_plural "%1 weeks ago"
 msgstr[0] "1 ਹਫ਼ਤਾ ਪਹਿਲਾਂ"
 msgstr[1] "1 ਹਫ਼ਤਾ ਪਹਿਲਾਂ"
 
-#: utils/texthandler.cpp:192
+#: utils/texthandler.cpp:200
 #, fuzzy, kde-format
 #| msgid "1 month ago"
 msgid "1 month ago"
@@ -6078,7 +6080,7 @@ msgid_plural "%1 months ago"
 msgstr[0] "1 ਮਹੀਨਾ ਪਹਿਲਾਂ"
 msgstr[1] "1 ਮਹੀਨਾ ਪਹਿਲਾਂ"
 
-#: utils/texthandler.cpp:196
+#: utils/texthandler.cpp:204
 #, fuzzy, kde-format
 #| msgid "1 year ago"
 msgid "1 year ago"

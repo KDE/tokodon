@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-19 00:41+0000\n"
-"PO-Revision-Date: 2025-01-28 18:10+0200\n"
+"POT-Creation-Date: 2025-02-20 00:41+0000\n"
+"PO-Revision-Date: 2025-02-18 18:49+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 24.12.1\n"
+"X-Generator: Lokalize 24.12.2\n"
 
 #: account/abstractaccount.cpp:33
 #, kde-format
@@ -154,6 +154,7 @@ msgid "View Profile"
 msgstr "Skatīties profilu"
 
 #: account/notificationhandler.cpp:76
+#: content/ui/Notifications/UserInteractionLabel.qml:81
 #, kde-format
 msgid "%1 mentioned you"
 msgstr "%1 tevi pieminēja"
@@ -1716,8 +1717,7 @@ msgid "Reply to post"
 msgstr "Atbildēt ierakstam"
 
 #: content/ui/Main.qml:410
-#, fuzzy, kde-format
-#| msgid "Home"
+#, kde-format
 msgctxt "@action:button Home Timeline"
 msgid "Home"
 msgstr "Mājas"
@@ -1728,44 +1728,38 @@ msgid "It seems pretty quiet right now, try posting something!"
 msgstr "Te ir diezgan kluss… Mēģiniet kaut ko publicēt!"
 
 #: content/ui/Main.qml:432
-#, fuzzy, kde-format
-#| msgid "Notifications"
+#, kde-format
 msgctxt "@action:button Account Notifications"
 msgid "Notifications"
 msgstr "Paziņojumi"
 
 #: content/ui/Main.qml:446
-#, fuzzy, kde-format
-#| msgid "Follow Requests"
+#, kde-format
 msgctxt "@action:button Follows that require explicit allow/deny"
 msgid "Follow Requests"
 msgstr "Sekošanas lūgums"
 
 #: content/ui/Main.qml:461
-#, fuzzy, kde-format
-#| msgid "Local"
+#, kde-format
 msgctxt "@action:button Local timeline of posts from the account's own server"
 msgid "Local"
-msgstr "Lokālā"
+msgstr "Vietējā"
 
 #: content/ui/Main.qml:481
-#, fuzzy, kde-format
-#| msgid "Global"
+#, kde-format
 msgctxt ""
 "@action:button Global timeline of posts from the entire Fediverse network"
 msgid "Global"
 msgstr "Globālā"
 
 #: content/ui/Main.qml:502
-#, fuzzy, kde-format
-#| msgid "Conversations"
+#, kde-format
 msgctxt "@action:button Direct one-on-one messages between users"
 msgid "Conversations"
 msgstr "Sarunas"
 
 #: content/ui/Main.qml:515
-#, fuzzy, kde-format
-#| msgid "Favorites"
+#, kde-format
 msgctxt "@action:button This account's favorited posts"
 msgid "Favorites"
 msgstr "Zvaigznītes"
@@ -1785,8 +1779,7 @@ msgstr ""
 "ieraksts, pielieciet tam zvaigznīti!"
 
 #: content/ui/Main.qml:536
-#, fuzzy, kde-format
-#| msgid "Bookmarks"
+#, kde-format
 msgctxt "@action:button This account's bookmarked posts"
 msgid "Bookmarks"
 msgstr "Grāmatzīmes"
@@ -1806,29 +1799,25 @@ msgstr ""
 "vienmēr ir privātas — par ieraksta autoram."
 
 #: content/ui/Main.qml:557
-#, fuzzy, kde-format
-#| msgid "Explore"
+#, kde-format
 msgctxt "@action:button Explore this server's trending posts, news, and more"
 msgid "Explore"
 msgstr "Izpētīt"
 
 #: content/ui/Main.qml:570
-#, fuzzy, kde-format
-#| msgid "Following"
+#, kde-format
 msgctxt "@action:button A list of this account's followed accounts"
 msgid "Following"
-msgstr "Seko"
+msgstr "Sekoju"
 
 #: content/ui/Main.qml:583
-#, fuzzy, kde-format
-#| msgid "Search"
+#, kde-format
 msgctxt "@action:button Search for users, posts and tags"
 msgid "Search"
 msgstr "Meklēt"
 
 #: content/ui/Main.qml:610
-#, fuzzy, kde-format
-#| msgid "Lists"
+#, kde-format
 msgctxt ""
 "@action:button This account's lists, or timelines consisting of a groups of "
 "accounts"
@@ -1836,8 +1825,7 @@ msgid "Lists"
 msgstr "Saraksti"
 
 #: content/ui/Main.qml:623
-#, fuzzy, kde-format
-#| msgid "Profile"
+#, kde-format
 msgctxt "@action:button This account's profile"
 msgid "Profile"
 msgstr "Profils"
@@ -1946,7 +1934,7 @@ msgstr "Visi"
 #, kde-format
 msgctxt "@info:Filter out local accounts"
 msgid "Local"
-msgstr "Lokāla"
+msgstr "Vietējie"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:116
 #, kde-format
@@ -3235,7 +3223,7 @@ msgstr "Visi"
 #, kde-format
 msgctxt "@info:Filter out accounts with local origin"
 msgid "Local"
-msgstr "Lokāli"
+msgstr "Vietējie"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:84
 #, kde-format
@@ -3405,11 +3393,6 @@ msgstr ""
 msgctxt "@info:label"
 msgid "A report has been filed against a user in your server."
 msgstr "Par lietotāju jūsu serverī ir iesniegts ziņojums."
-
-#: content/ui/Notifications/UserInteractionLabel.qml:81
-#, kde-format
-msgid "%1 replied to your post"
-msgstr "%1 atbildēja uz jūsu ierakstu"
 
 #: content/ui/Notifications/UserInteractionLabel.qml:85
 #, kde-format
@@ -3788,7 +3771,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "Post Author"
-msgstr ""
+msgstr "Ieraksta autors"
 
 #: content/ui/PostDelegate/PostInfoBar.qml:56
 #, kde-format
@@ -3803,8 +3786,7 @@ msgid "More actions"
 msgstr "Vairāk darbību"
 
 #: content/ui/PostDelegate/PostInteractionLabel.qml:68
-#, fuzzy, kde-format
-#| msgid "Conversations"
+#, kde-format
 msgctxt "@info"
 msgid "Interaction"
 msgstr "Sarunas"
@@ -3992,6 +3974,13 @@ msgstr "Publicēja %1"
 #, kde-format
 msgid "Quoted post"
 msgstr "Citēta ierakstu"
+
+#: content/ui/PostDelegate/QuotePost.qml:143
+#, fuzzy, kde-format
+#| msgid "Polls"
+msgctxt "@info:label"
+msgid "Poll"
+msgstr "Aptaujas"
 
 #: content/ui/PrivacyPolicyPage.qml:19
 #, kde-format
@@ -5192,9 +5181,7 @@ msgid "Choose a File"
 msgstr "Izvēlieties datni"
 
 #: content/ui/StatusComposer/StatusComposer.qml:494
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Attach file"
+#, kde-format
 msgctxt "@action:button"
 msgid "Attach File"
 msgstr "Pievienot datni"
@@ -5206,12 +5193,10 @@ msgid "Attach file"
 msgstr "Pievienot datni"
 
 #: content/ui/StatusComposer/StatusComposer.qml:508
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Attach file"
+#, kde-format
 msgctxt "@action:button"
 msgid "Attach Poll"
-msgstr "Pievienot datni"
+msgstr "Pievienot aptauju"
 
 #: content/ui/StatusComposer/StatusComposer.qml:513
 #, kde-format
@@ -5220,25 +5205,19 @@ msgid "Add poll"
 msgstr "Pievienot aptauju"
 
 #: content/ui/StatusComposer/StatusComposer.qml:522
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Content Notice"
+#, kde-format
 msgctxt "@action:button"
 msgid "Content Notice"
 msgstr "Satura paziņojums"
 
 #: content/ui/StatusComposer/StatusComposer.qml:534
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder"
-#| msgid "Content notice"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Content notice"
-msgstr "Satura brīdinājums"
+msgstr "Satura paziņojums"
 
 #: content/ui/StatusComposer/StatusComposer.qml:560
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Visibility"
+#, kde-format
 msgctxt "@action:button"
 msgid "Visibility"
 msgstr "Redzamība"
@@ -5253,7 +5232,7 @@ msgstr "Redzamība"
 #, kde-format
 msgctxt "@item:inmenu Local to this server"
 msgid "Local"
-msgstr "Lokālā"
+msgstr "Vietējā"
 
 #: content/ui/StatusComposer/StatusComposer.qml:578
 #, kde-format
@@ -5292,9 +5271,7 @@ msgid "Post language"
 msgstr "Ieraksta valoda"
 
 #: content/ui/StatusComposer/StatusComposer.qml:636
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Add emoji"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Emoji"
 msgstr "Pievienot emocijzīmi"
@@ -5546,7 +5523,7 @@ msgstr "Mājas"
 #, kde-format
 msgctxt "@title"
 msgid "Local"
-msgstr "Lokālā"
+msgstr "Vietējā"
 
 #: timeline/maintimelinemodel.cpp:33
 #, kde-format
@@ -5725,37 +5702,37 @@ msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Galamērķis"
 
-#: utils/texthandler.cpp:166
+#: utils/texthandler.cpp:174
 #, kde-format
 msgid "in the future"
 msgstr "nākotnē"
 
-#: utils/texthandler.cpp:168
+#: utils/texthandler.cpp:176
 #, kde-format
 msgid "%1s"
 msgstr "%1 sek."
 
-#: utils/texthandler.cpp:170
+#: utils/texthandler.cpp:178
 #, kde-format
 msgid "%1m"
 msgstr "%1 min."
 
-#: utils/texthandler.cpp:172
+#: utils/texthandler.cpp:180
 #, kde-format
 msgid "%1h"
 msgstr "%1 st."
 
-#: utils/texthandler.cpp:183
+#: utils/texthandler.cpp:191
 #, kde-format
 msgid "Today"
 msgstr "Šodien"
 
-#: utils/texthandler.cpp:185
+#: utils/texthandler.cpp:193
 #, kde-format
 msgid "%1d"
 msgstr "%1 d."
 
-#: utils/texthandler.cpp:189
+#: utils/texthandler.cpp:197
 #, kde-format
 msgid "1 week ago"
 msgid_plural "%1 weeks ago"
@@ -5763,7 +5740,7 @@ msgstr[0] "Pirms %1 nedēļas"
 msgstr[1] "Pirms %1 nedēļām"
 msgstr[2] "Pirms %1 nedēļām"
 
-#: utils/texthandler.cpp:192
+#: utils/texthandler.cpp:200
 #, kde-format
 msgid "1 month ago"
 msgid_plural "%1 months ago"
@@ -5771,13 +5748,16 @@ msgstr[0] "Pirms %1 mēneša"
 msgstr[1] "Pirms %1 mēnešiem"
 msgstr[2] "Pirms %1 mēnešiem"
 
-#: utils/texthandler.cpp:196
+#: utils/texthandler.cpp:204
 #, kde-format
 msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "Pirms %1 gada"
 msgstr[1] "Pirms %1 gadiem"
 msgstr[2] "Pirms %1 gadiem"
+
+#~ msgid "%1 replied to your post"
+#~ msgstr "%1 atbildēja uz jūsu ierakstu"
 
 #~ msgctxt "@info:tooltip"
 #~ msgid "Content Notice"

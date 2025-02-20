@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-19 00:41+0000\n"
+"POT-Creation-Date: 2025-02-20 00:41+0000\n"
 "PO-Revision-Date: 2025-01-29 21:36+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -155,6 +155,7 @@ msgid "View Profile"
 msgstr "Ikusi profila"
 
 #: account/notificationhandler.cpp:76
+#: content/ui/Notifications/UserInteractionLabel.qml:81
 #, kde-format
 msgid "%1 mentioned you"
 msgstr "%1(e)k aipatu zaitu"
@@ -3415,11 +3416,6 @@ msgctxt "@info:label"
 msgid "A report has been filed against a user in your server."
 msgstr "Zure zerbitzariko erabiltzaile baten aurkako txosten bat aurkeztu da."
 
-#: content/ui/Notifications/UserInteractionLabel.qml:81
-#, kde-format
-msgid "%1 replied to your post"
-msgstr "%1(e)k zure postari erantzun dio"
-
 #: content/ui/Notifications/UserInteractionLabel.qml:85
 #, kde-format
 msgid "A poll has ended"
@@ -3998,6 +3994,13 @@ msgstr "%1(e)ren posta"
 #, kde-format
 msgid "Quoted post"
 msgstr "Aipatutako posta"
+
+#: content/ui/PostDelegate/QuotePost.qml:143
+#, fuzzy, kde-format
+#| msgid "Poll"
+msgctxt "@info:label"
+msgid "Poll"
+msgstr "Galdeketa"
 
 #: content/ui/PrivacyPolicyPage.qml:19
 #, kde-format
@@ -5722,56 +5725,59 @@ msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Helburua"
 
-#: utils/texthandler.cpp:166
+#: utils/texthandler.cpp:174
 #, kde-format
 msgid "in the future"
 msgstr "etorkizunean"
 
-#: utils/texthandler.cpp:168
+#: utils/texthandler.cpp:176
 #, kde-format
 msgid "%1s"
 msgstr "%1s"
 
-#: utils/texthandler.cpp:170
+#: utils/texthandler.cpp:178
 #, kde-format
 msgid "%1m"
 msgstr "%1m"
 
-#: utils/texthandler.cpp:172
+#: utils/texthandler.cpp:180
 #, kde-format
 msgid "%1h"
 msgstr "%1h"
 
-#: utils/texthandler.cpp:183
+#: utils/texthandler.cpp:191
 #, kde-format
 msgid "Today"
 msgstr "Gaur"
 
-#: utils/texthandler.cpp:185
+#: utils/texthandler.cpp:193
 #, kde-format
 msgid "%1d"
 msgstr "%1e"
 
-#: utils/texthandler.cpp:189
+#: utils/texthandler.cpp:197
 #, kde-format
 msgid "1 week ago"
 msgid_plural "%1 weeks ago"
 msgstr[0] "Duela astebete"
 msgstr[1] "Duela %1 aste"
 
-#: utils/texthandler.cpp:192
+#: utils/texthandler.cpp:200
 #, kde-format
 msgid "1 month ago"
 msgid_plural "%1 months ago"
 msgstr[0] "Duela hilabete"
 msgstr[1] "Duela %1 hilabete"
 
-#: utils/texthandler.cpp:196
+#: utils/texthandler.cpp:204
 #, kde-format
 msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "Duela urtebete"
 msgstr[1] "Duela %1 urte"
+
+#~ msgid "%1 replied to your post"
+#~ msgstr "%1(e)k zure postari erantzun dio"
 
 #~ msgctxt "@info:tooltip"
 #~ msgid "Content Notice"
@@ -6101,9 +6107,6 @@ msgstr[1] "Duela %1 urte"
 
 #~ msgid "Update/Edit"
 #~ msgstr "Eguneratu/Editatu"
-
-#~ msgid "Poll"
-#~ msgstr "Galdeketa"
 
 #~ msgid "Authorize Tokodon to act on your behalf"
 #~ msgstr "Eman baimena «Tokodon»i zure izenean jarduteko"
