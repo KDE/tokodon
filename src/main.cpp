@@ -160,9 +160,8 @@ int main(int argc, char *argv[])
     about.processCommandLine(&parser);
 
     auto &colorSchemer = ColorSchemer::instance();
-    auto config = Config::self();
-    if (!config->colorScheme().isEmpty()) {
-        colorSchemer.apply(config->colorScheme());
+    if (!Config::colorScheme().isEmpty()) {
+        colorSchemer.apply(Config::colorScheme());
     }
 
     QQmlApplicationEngine engine;
