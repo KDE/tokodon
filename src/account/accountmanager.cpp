@@ -9,6 +9,16 @@
 #include <QSettings>
 #include <QUrlQuery>
 
+#ifdef HAVE_DBUS
+#include <QDBusConnection>
+#include <QDBusConnectionInterface>
+#include <QDBusMessage>
+#include <QDBusReply>
+
+#include <KWaylandExtras>
+#include <KWindowSystem>
+#endif
+
 #include "account/account.h"
 #include "config.h"
 #include "network/networkaccessmanagerfactory.h"
@@ -23,7 +33,75 @@ AccountManager::AccountManager(QObject *parent)
     , m_qnam(NetworkAccessManagerFactory().create(this))
     , m_notificationHandler(new NotificationHandler(m_qnam, this))
 {
+#ifdef HAVE_DBUS
+    if (QDBusConnection::sessionBus().interface()->isServiceRegistered(u"org.kde.KOnlineAccounts"_s)) {
+        initOnlineAccounts();
+    }
+#endif
 }
+
+#ifdef HAVE_DBUS
+void AccountManager::initOnlineAccounts()
+{
+    // Register app
+    QDBusMessage registerMessage =
+        QDBusMessage::createMethodCall(u"org.kde.KOnlineAccounts"_s, u"/org/kde/KOnlineAccounts"_s, u"org.kde.KOnlineAccounts.Manager"_s, u"registerApp"_s);
+
+    registerMessage.setArguments({u"org.kde.tokodon"_s});
+
+    QDBusReply<void> registerReply = QDBusConnection::sessionBus().call(registerMessage);
+
+    if (!registerReply.isValid()) {
+        qCWarning(TOKODON_LOG) << "Failed to register with KOnlineAccounts" << registerReply.error().message();
+    }
+
+    // Watch for granted
+    bool ret = QDBusConnection::sessionBus().connect(u"org.kde.KOnlineAccounts"_s,
+                                                     u"/org/kde/KOnlineAccounts"_s,
+                                                     u"org.kde.KOnlineAccounts.Manager"_s,
+                                                     u"accountAccessGranted"_s,
+                                                     this,
+                                                     SLOT(slotAccountCreationFinished(const QDBusObjectPath &, const QString &)));
+    Q_ASSERT(ret);
+
+    // List already granted accounts
+    QDBusMessage listAccountsMessage =
+        QDBusMessage::createMethodCall(u"org.kde.KOnlineAccounts"_s, u"/org/kde/KOnlineAccounts"_s, u"org.freedesktop.DBus.Properties"_s, u"Get"_s);
+
+    listAccountsMessage.setArguments({u"org.kde.KOnlineAccounts.Manager"_s, u"accounts"_s});
+
+    QDBusPendingReply<QDBusVariant> reply = QDBusConnection::sessionBus().asyncCall(listAccountsMessage);
+
+    auto *watcher = new QDBusPendingCallWatcher(reply);
+    connect(watcher, &QDBusPendingCallWatcher::finished, this, [this, reply] {
+        const auto accounts = qdbus_cast<QList<QDBusObjectPath>>(reply.value().variant());
+
+        for (const auto &account : accounts) {
+            qCDebug(TOKODON_LOG) << "Adding account from KOnlineAccounts" << account;
+            addFromDBus(account);
+        }
+    });
+}
+
+void AccountManager::addFromDBus(const QDBusObjectPath &path)
+{
+    QDBusMessage propertiesRequest =
+        QDBusMessage::createMethodCall(u"org.kde.KOnlineAccounts"_s, path.path(), u"org.freedesktop.DBus.Properties"_s, u"GetAll"_s);
+
+    propertiesRequest.setArguments({u"org.kde.KOnlineAccounts.Mastodon"_s});
+
+    QDBusReply<QVariantMap> reply = QDBusConnection::sessionBus().call(propertiesRequest);
+
+    QString accessToken = reply.value()[u"accessToken"_s].toString();
+    QString clientId = reply.value()[u"clientId"_s].toString();
+    QString clientSecret = reply.value()[u"clientSecret"_s].toString();
+    QString instanceUrl = reply.value()[u"instanceUrl"_s].toString();
+    QString username = reply.value()[u"username"_s].toString();
+
+    auto account = new Account(path.path(), instanceUrl, username, clientId, clientSecret, accessToken, m_qnam, this);
+    addAccount(account);
+}
+#endif
 
 AccountManager::~AccountManager() = default;
 
@@ -157,6 +235,18 @@ void AccountManager::childIdentityChanged(AbstractAccount *account)
     const auto idx = m_accounts.indexOf(account);
     Q_EMIT dataChanged(index(idx, 0), index(idx, 0));
 }
+
+#ifdef HAVE_DBUS
+void AccountManager::slotAccountCreationFinished(const QDBusObjectPath &path, const QString &xdgActivationToken)
+{
+    qCDebug(TOKODON_LOG) << "Account creation finished:" << path.path() << xdgActivationToken;
+
+    KWindowSystem::setCurrentXdgActivationToken(xdgActivationToken);
+    KWindowSystem::activateWindow(qApp->topLevelWindows().first());
+
+    addFromDBus(path);
+}
+#endif
 
 void AccountManager::removeAccount(AbstractAccount *account)
 {
@@ -491,6 +581,42 @@ bool AccountManager::testMode() const
 QList<AbstractAccount *> AccountManager::accounts() const
 {
     return m_accounts;
+}
+
+void AccountManager::requestSystemAccount(QWindow *context)
+{
+#ifdef HAVE_DBUS
+    auto request = [](const QString &windowHandle) {
+        QDBusMessage m = QDBusMessage::createMethodCall(u"org.kde.KOnlineAccounts"_s,
+                                                        u"/org/kde/KOnlineAccounts"_s,
+                                                        u"org.kde.KOnlineAccounts.Manager"_s,
+                                                        u"requestAccount"_s);
+        m.setArguments({QStringList{u"mastodon"_s}, windowHandle});
+
+        QDBusConnection::sessionBus().asyncCall(m);
+    };
+
+    if (KWindowSystem::isPlatformWayland()) {
+        KWaylandExtras::exportWindow(context);
+        connect(
+            KWaylandExtras::self(),
+            &KWaylandExtras::windowExported,
+            this,
+            [&request](QWindow * /*window*/, const QString &handle) {
+                request(handle);
+            },
+            Qt::SingleShotConnection);
+    } else if (KWindowSystem::isPlatformX11()) {
+        request(QString::number(context->winId()));
+    }
+#endif
+}
+
+bool AccountManager::supportsSystemAccounts() const
+{
+#ifdef HAVE_DBUS
+    return QDBusConnection::sessionBus().interface()->isServiceRegistered(u"org.kde.KOnlineAccounts"_s);
+#endif
 }
 
 #include "moc_accountmanager.cpp"
