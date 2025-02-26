@@ -17,6 +17,13 @@ class Account : public AbstractAccount
 
 public:
     explicit Account(const QString &instanceUri, QNetworkAccessManager *nam, QObject *parent = nullptr);
+    explicit Account(const QString &instanceUri,
+                     const QString &name,
+                     const QString &clientId,
+                     const QString &clientSecret,
+                     const QString &accessToken,
+                     QNetworkAccessManager *nam,
+                     QObject *parent = nullptr);
     ~Account() override;
 
     bool successfullyAuthenticated() const override;

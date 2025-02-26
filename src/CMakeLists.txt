@@ -427,6 +427,7 @@ target_link_libraries(tokodon_static
         KF6::ConfigGui
         KF6::CoreAddons
         KF6::ColorScheme
+        KF6::WindowSystem
         KirigamiAddonsStatefulApp
         ${QTKEYCHAIN_LIBRARIES}
         QCoro::Core
