@@ -16,6 +16,8 @@
 class AbstractAccount;
 class QNetworkAccessManager;
 
+class QDBusObjectPath;
+
 /**
  * @brief Handles managing accounts in Tokodon, and tracks state such as which one is currently selected.
  */
@@ -195,6 +197,8 @@ public:
      */
     [[nodiscard]] QList<AbstractAccount *> accounts() const;
 
+    Q_INVOKABLE void requestSystemAccount();
+
 Q_SIGNALS:
     void accountAdded(AbstractAccount *account);
 
@@ -214,7 +218,11 @@ public Q_SLOTS:
 
     void childIdentityChanged(AbstractAccount *account);
 
+    void slotAccountCreationFinished(const QDBusObjectPath &path, const QString &xdgActivationToken);
+
 private:
+    void addFromDBus(const QDBusObjectPath &path);
+
     explicit AccountManager(QObject *parent = nullptr);
 
     ~AccountManager() override;
