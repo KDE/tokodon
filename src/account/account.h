@@ -17,6 +17,16 @@ class Account : public AbstractAccount
 
 public:
     explicit Account(const QString &instanceUri, QNetworkAccessManager *nam, QObject *parent = nullptr);
+
+    // Used when reading accounts from https://invent.kde.org/system/konlineaccounts
+    explicit Account(const QString &onlineAccountId,
+                     const QString &instanceUri,
+                     const QString &name,
+                     const QString &clientId,
+                     const QString &clientSecret,
+                     const QString &accessToken,
+                     QNetworkAccessManager *nam,
+                     QObject *parent = nullptr);
     ~Account() override;
 
     bool successfullyAuthenticated() const override;
@@ -83,6 +93,8 @@ private:
     QMap<QString, QWebSocket *> m_websockets;
     bool m_hasPushSubscription = false;
     bool m_authenticated = false;
+
+    QString m_onlineAccountId;
 
     // common parts for all HTTP request
     [[nodiscard]] QNetworkRequest makeRequest(const QUrl &url, bool authenticated) const;

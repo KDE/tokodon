@@ -36,6 +36,29 @@ Account::Account(const QString &instanceUri, QNetworkAccessManager *nam, QObject
     connect(this, &Account::authenticated, this, &Account::checkForUnreadNotifications);
 }
 
+Account::Account(const QString &onlineAccountId,
+                 const QString &instanceUri,
+                 const QString &name,
+                 const QString &clientId,
+                 const QString &clientSecret,
+                 const QString &accessToken,
+                 QNetworkAccessManager *nam,
+                 QObject *parent)
+    : AbstractAccount(instanceUri, parent)
+    , m_qnam(nam)
+    , m_onlineAccountId(onlineAccountId)
+{
+    m_name = name;
+    m_client_id = clientId;
+    m_client_secret = clientSecret;
+    m_token = accessToken;
+
+    connect(this, &Account::authenticated, this, &Account::checkForFollowRequests);
+    connect(this, &Account::authenticated, this, &Account::checkForUnreadNotifications);
+
+    validateToken();
+}
+
 Account::~Account()
 {
     m_identityCache.clear();
@@ -390,6 +413,10 @@ void Account::setConfig(AccountConfig *config)
 
 void Account::writeToSettings()
 {
+    if (!m_onlineAccountId.isEmpty()) {
+        return;
+    }
+
     config()->setClientId(m_client_id);
     config()->setInstanceUri(m_instance_uri);
     config()->setName(m_name);

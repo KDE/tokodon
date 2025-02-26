@@ -12,9 +12,12 @@
 
 #include <QAbstractListModel>
 #include <QJSEngine>
+#include <QWindow>
 
 class AbstractAccount;
 class QNetworkAccessManager;
+
+class QDBusObjectPath;
 
 /**
  * @brief Handles managing accounts in Tokodon, and tracks state such as which one is currently selected.
@@ -34,6 +37,7 @@ class AccountManager : public QAbstractListModel
     Q_PROPERTY(bool isFlatpak READ isFlatpak CONSTANT)
     Q_PROPERTY(bool selectedAccountHasIssue READ selectedAccountHasIssue NOTIFY accountSelected)
     Q_PROPERTY(bool testMode READ testMode CONSTANT)
+    Q_PROPERTY(bool supportsSystemAccounts READ supportsSystemAccounts CONSTANT)
 
 public:
     static AccountManager *create(QQmlEngine *, QJSEngine *)
@@ -195,6 +199,10 @@ public:
      */
     [[nodiscard]] QList<AbstractAccount *> accounts() const;
 
+    Q_INVOKABLE void requestSystemAccount(QWindow *context);
+
+    bool supportsSystemAccounts() const;
+
 Q_SIGNALS:
     void accountAdded(AbstractAccount *account);
 
@@ -214,7 +222,16 @@ public Q_SLOTS:
 
     void childIdentityChanged(AbstractAccount *account);
 
+#ifdef HAVE_DBUS
+    void slotAccountCreationFinished(const QDBusObjectPath &path, const QString &xdgActivationToken);
+#endif
+
 private:
+#ifdef HAVE_DBUS
+    void addFromDBus(const QDBusObjectPath &path);
+    void initOnlineAccounts();
+#endif
+
     explicit AccountManager(QObject *parent = nullptr);
 
     ~AccountManager() override;
