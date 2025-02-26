@@ -16,6 +16,8 @@
 class AbstractAccount;
 class QNetworkAccessManager;
 
+class QDBusObjectPath;
+
 /**
  * @brief Handles managing accounts in Tokodon, and tracks state such as which one is currently selected.
  */
@@ -218,6 +220,8 @@ public Q_SLOTS:
     void childIdentityChanged(AbstractAccount *account);
 
 private:
+    void addFromDBus(const QDBusObjectPath &path);
+
     explicit AccountManager(QObject *parent = nullptr);
 
     ~AccountManager() override;

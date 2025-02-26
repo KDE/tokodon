@@ -16,6 +16,10 @@
 
 #include <qt6keychain/keychain.h>
 
+#include <QDBusConnection>
+#include <QDBusMessage>
+#include <QDBusReply>
+
 using namespace Qt::Literals::StringLiterals;
 
 AccountManager::AccountManager(QObject *parent)
@@ -23,6 +27,46 @@ AccountManager::AccountManager(QObject *parent)
     , m_qnam(NetworkAccessManagerFactory().create(this))
     , m_notificationHandler(new NotificationHandler(m_qnam, this))
 {
+    QDBusMessage msg =
+        QDBusMessage::createMethodCall(u"org.kde.KOnlineAccounts"_s, u"/org/kde/KOnlineAccounts"_s, u"org.freedesktop.DBus.Properties"_s, u"Get"_s);
+
+    msg.setArguments({u"org.kde.KOnlineAccounts.Manager"_s, u"accounts"_s});
+
+    QDBusPendingReply<QDBusVariant> reply = QDBusConnection::sessionBus().asyncCall(msg);
+
+    auto *watcher = new QDBusPendingCallWatcher(reply);
+    connect(watcher, &QDBusPendingCallWatcher::finished, this, [this, reply] {
+        QList<QDBusObjectPath> accounts = qdbus_cast<QList<QDBusObjectPath>>(reply.value().variant());
+        addFromDBus(accounts.first());
+    });
+}
+
+void AccountManager::addFromDBus(const QDBusObjectPath &path)
+{
+    QDBusMessage msg = QDBusMessage::createMethodCall(u"org.kde.KOnlineAccounts"_s, path.path(), u"org.freedesktop.DBus.Properties"_s, u"Get"_s);
+
+    msg.setArguments({u"org.kde.KOnlineAccounts.Account"_s, u"displayName"_s});
+
+    QDBusReply<QDBusVariant> reply = QDBusConnection::sessionBus().call(msg);
+
+    qWarning() << "Hello" << reply.value().variant().toString();
+
+    QDBusMessage msg2 = QDBusMessage::createMethodCall(u"org.kde.KOnlineAccounts"_s, path.path(), u"org.freedesktop.DBus.Properties"_s, u"GetAll"_s);
+
+    msg2.setArguments({u"org.kde.KOnlineAccounts.Mastodon"_s});
+
+    QDBusReply<QVariantMap> r = QDBusConnection::sessionBus().call(msg2);
+
+    qWarning() << "rr" << r.value();
+
+    QString accessToken = r.value()[u"accessToken"_s].toString();
+    QString clientId = r.value()[u"clientId"_s].toString();
+    QString clientSecret = r.value()[u"clientSecret"_s].toString();
+    QString instanceUrl = r.value()[u"instanceUrl"_s].toString();
+    QString username = r.value()[u"username"_s].toString();
+
+    auto account = new Account(instanceUrl, username, clientId, clientSecret, accessToken, m_qnam, this);
+    addAccount(account);
 }
 
 AccountManager::~AccountManager() = default;
