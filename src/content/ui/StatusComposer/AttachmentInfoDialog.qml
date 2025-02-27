@@ -127,7 +127,7 @@ QQC2.Dialog {
 
                 clip: true
 
-                layer.enabled: true
+                layer.enabled: GraphicsInfo.api !== GraphicsInfo.Software
                 layer.effect: RoundedEffect {}
 
                 Image {
@@ -164,7 +164,7 @@ QQC2.Dialog {
                         width: parent.width / 2
                         height: width * (9.0 / 16.0)
 
-                        layer.enabled: true
+                        layer.enabled: GraphicsInfo.api !== GraphicsInfo.Software
                         layer.effect: RoundedEffect {}
 
                         HoverHandler {

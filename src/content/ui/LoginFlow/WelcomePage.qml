@@ -134,7 +134,7 @@ Kirigami.Page {
 
                         LayoutMirroring.enabled: false
 
-                        layer.enabled: true
+                        layer.enabled: GraphicsInfo.api !== GraphicsInfo.Software
                         layer.effect: MultiEffect {
                             blurMax: 14
                             shadowEnabled: true

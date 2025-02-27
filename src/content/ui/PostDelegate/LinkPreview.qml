@@ -94,7 +94,7 @@ Item {
                     Layout.bottomMargin: 0
                     Layout.leftMargin: Kirigami.Units.smallSpacing
 
-                    layer.enabled: true
+                    layer.enabled: GraphicsInfo.api !== GraphicsInfo.Software
                     layer.effect: RoundedEffect {}
 
                     fillMode: Image.PreserveAspectCrop

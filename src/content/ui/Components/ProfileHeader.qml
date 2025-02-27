@@ -39,7 +39,7 @@ QQC2.Pane {
                 implicitHeight: 512
             }
 
-            layer.enabled: true
+            layer.enabled: GraphicsInfo.api !== GraphicsInfo.Software
             layer.effect: MultiEffect {
                 saturation: 1.9
 

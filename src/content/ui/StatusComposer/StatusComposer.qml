@@ -454,7 +454,7 @@ Kirigami.ScrollablePage {
                     position: QQC2.ToolBar.Footer
 
                     // To make sure the corners are rounded like the text area it's sitting in
-                    layer.enabled: true
+                    layer.enabled: GraphicsInfo.api !== GraphicsInfo.Software
                     layer.effect: MultiEffect {
                         id: rootEffect
 

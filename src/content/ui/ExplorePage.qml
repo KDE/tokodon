@@ -229,7 +229,7 @@ Kirigami.Page {
                         Image {
                             source: delegate.image
 
-                            layer.enabled: true
+                            layer.enabled: GraphicsInfo.api !== GraphicsInfo.Software
                             layer.effect: RoundedEffect {}
 
                             Layout.preferredHeight: 50

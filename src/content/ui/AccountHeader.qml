@@ -111,7 +111,7 @@ QQC2.Pane {
                         source: root.identity.backgroundUrl
                     }
 
-                    layer.enabled: true
+                    layer.enabled: GraphicsInfo.api !== GraphicsInfo.Software
                     layer.effect: MultiEffect {
                         saturation: 1.9
 

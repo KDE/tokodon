@@ -50,7 +50,7 @@ GridLayout {
             Layout.preferredWidth: parent.width / root.columns
             Layout.preferredHeight: (parent.width * mediaRatio / heightDivisor) + extraSpacing
 
-            layer.enabled: true
+            layer.enabled: GraphicsInfo.api !== GraphicsInfo.Software
             layer.effect: RoundedEffect {}
 
             QQC2.RoundButton {

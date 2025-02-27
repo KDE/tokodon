@@ -27,7 +27,7 @@ Item {
 
     activeFocusOnTab: true
 
-    layer.enabled: true
+    layer.enabled: GraphicsInfo.api !== GraphicsInfo.Software
     layer.effect: RoundedEffect {}
 
     TapHandler {
