@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-20 00:41+0000\n"
-"PO-Revision-Date: 2025-03-28 17:18+0300\n"
+"PO-Revision-Date: 2025-03-31 14:29+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
 "Language: ru\n"
@@ -122,12 +122,12 @@ msgstr "Не удалось разблокировать учётную запи
 #: account/abstractaccount.cpp:644
 #, kde-format
 msgid "Could not mute account"
-msgstr "Не удалось добавить пользователя в список игнорируемых"
+msgstr "Не удалось добавить учётную запись в список игнорируемых"
 
 #: account/abstractaccount.cpp:645
 #, kde-format
 msgid "Could not unmute account"
-msgstr "Не удалось удалить пользователя из списка игнорируемых"
+msgstr "Не удалось удалить учётную запись из списка игнорируемых"
 
 #: account/abstractaccount.cpp:646
 #, kde-format
@@ -409,6 +409,8 @@ msgid ""
 "Some users need to be manually approved before they can follow you, and will "
 "show up here."
 msgstr ""
+"Здесь будут показаны пользователи, запросы на подписку от которых требуется "
+"подтвердить вручную."
 
 #: account/socialgraphmodel.cpp:90
 #, kde-format
@@ -420,7 +422,7 @@ msgstr ""
 #: account/socialgraphmodel.cpp:92
 #, kde-format
 msgid "Block users to hide the user from your timeline entirely."
-msgstr ""
+msgstr "Блокировка позволяет полностью скрыть пользователя в ленте новостей."
 
 #: account/socialgraphmodel.cpp:94
 #, kde-format
@@ -440,11 +442,13 @@ msgstr ""
 msgid ""
 "No one has boosted this post yet. You should boost it to expand its reach!"
 msgstr ""
+"Никто из пользователей ещё не поделился этой публикацией. Вы можете сделать "
+"это, чтобы увеличить её охват!"
 
 #: account/socialgraphmodel.cpp:102
 #, kde-format
 msgid "There is no one in this list yet."
-msgstr ""
+msgstr "Пока в этом списке никого нет."
 
 #: account/suggestionsmodel.cpp:51
 #, kde-format
@@ -468,7 +472,7 @@ msgid "Could not take action against the account"
 msgstr "Не удалось принять меры в отношении учётной записи"
 
 #: admin/accounttoolmodel.cpp:301
-#, fuzzy, kde-format
+#, kde-format
 msgid "Could not enable the disabled account"
 msgstr "Не удалось включить отключённую учётную запись"
 
@@ -556,16 +560,16 @@ msgid "Could not unassign report"
 msgstr "Не удалось отменить назначение жалобы"
 
 #: content/ui/AccountHeader.qml:48
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info %1 is a display name"
 msgid "%1 has moved to a new account:"
-msgstr "Войти или создать новую учётную запись"
+msgstr "%1 выполнил(а) переход на новую учётную запись:"
 
 #: content/ui/AccountHeader.qml:85
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:button"
 msgid "Go to Profile"
-msgstr "Закрепить в профиле"
+msgstr "Перейти в профиль"
 
 #: content/ui/AccountHeader.qml:153
 #, kde-format
@@ -594,7 +598,7 @@ msgstr "Отправлен запрос на подписку"
 #: content/ui/AccountHeader.qml:288
 #, kde-format
 msgid "Unfollow"
-msgstr "Отписаться"
+msgstr "Отменить подписку"
 
 #: content/ui/AccountHeader.qml:290
 #, kde-format
@@ -847,10 +851,10 @@ msgid "This user hasn't posted anything yet."
 msgstr "Этот пользователь ещё ничего не опубликовал."
 
 #: content/ui/AccountInfo.qml:237
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label"
 msgid "No Media"
-msgstr "Мультимедиа"
+msgstr "Нет медиафайлов"
 
 #: content/ui/AccountInfo.qml:238
 #, kde-format
@@ -891,13 +895,13 @@ msgid "Your server has not made any announcements yet."
 msgstr "Сервер ещё не отправил ни одного объявления."
 
 #: content/ui/Components/BoostConfirmationDialog.qml:19
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid "Confirm Boost"
-msgstr "Подтверждён"
+msgstr "Подтверждение републикации"
 
 #: content/ui/Components/BoostConfirmationDialog.qml:23
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:button Boost this post"
 msgid "Boost"
 msgstr "Поделиться"
@@ -950,21 +954,21 @@ msgid "Conversations"
 msgstr "Чаты"
 
 #: content/ui/ConversationPage.qml:18
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "New Conversation…"
-msgstr "Нет ни одного чата"
+msgstr "Новый чат…"
 
 #: content/ui/ConversationPage.qml:29
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid "Search Users"
-msgstr "Пользователи в подборке"
+msgstr "Поиск пользователей"
 
 #: content/ui/ConversationPage.qml:102
-#, fuzzy, kde-format
+#, kde-format
 msgid "Search for user…"
-msgstr "Поиск пользователей, меток и публикаций"
+msgstr "Поиск пользователя…"
 
 #: content/ui/ConversationPage.qml:139
 #, kde-format
@@ -977,6 +981,8 @@ msgid ""
 "Direct messages to other users will show up here. Do not share any sensitive "
 "information over a conversation."
 msgstr ""
+"Здесь будут показаны личные сообщения другим пользователям. Не делитесь "
+"конфиденциальной информацией в чате."
 
 #: content/ui/Debug/DebugPage.qml:24
 #, kde-format
@@ -1065,7 +1071,7 @@ msgstr "Добавить"
 #: content/ui/EditListPage.qml:220
 #, kde-format
 msgid "Search among users you follow…"
-msgstr ""
+msgstr "Поиск среди пользователей, на которых вы подписаны…"
 
 #: content/ui/EditListPage.qml:254
 #, kde-format
@@ -1123,10 +1129,10 @@ msgid "Users"
 msgstr "Пользователи"
 
 #: content/ui/ExplorePage.qml:117
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Posts"
-msgstr "Нет ни одной публикации"
+msgstr "Нет публикаций"
 
 #: content/ui/ExplorePage.qml:144
 #, kde-format
@@ -1147,13 +1153,13 @@ msgstr[3] "Говорит %1 человек"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No News"
-msgstr ""
+msgstr "Нет новостей"
 
 #: content/ui/ExplorePage.qml:305
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Users"
-msgstr "Пользователи"
+msgstr "Нет пользователей"
 
 #: content/ui/FollowDelegate.qml:68
 #, kde-format
@@ -1186,13 +1192,13 @@ msgid "Show Replies"
 msgstr "Показать ответы"
 
 #: content/ui/FollowingPage.qml:65 content/ui/TimelinePage.qml:127
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Configure Filters…"
-msgstr "Уведомлений нет"
+msgstr "Настроить фильтры…"
 
 #: content/ui/FollowingPage.qml:66 content/ui/TimelinePage.qml:128
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Filters"
 msgstr "Фильтры"
@@ -1208,12 +1214,14 @@ msgid ""
 "With the Following view, easily check on each user you're following and only "
 "their posts - sorted by recent activity."
 msgstr ""
+"В разделе «Подписки» можно легко увидеть данные каждого пользователя, на "
+"которого вы подписаны, и его публикации — в порядке последней активности."
 
 #: content/ui/FullScreenImage.qml:33
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Open Post"
-msgstr "Развернуть публикацию"
+msgstr "Открыть публикацию"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:19
 #, kde-format
@@ -1614,7 +1622,7 @@ msgstr "Нет ни одного общедоступного сервера"
 #: content/ui/LoginFlow/ServersPage.qml:181
 #, kde-format
 msgid "Enter a server URL manually in the search field."
-msgstr "Введите URL-адрес в поле поиска"
+msgstr "Введите URL-адрес сервера в поле поиска."
 
 #: content/ui/LoginFlow/WebViewAuthorization.qml:22
 #, kde-format
@@ -1705,7 +1713,7 @@ msgid "Unknown Action"
 msgstr "Неизвестное действие"
 
 #: content/ui/Main.qml:255
-#, fuzzy, kde-format
+#, kde-format
 msgid "Write a New Post"
 msgstr "Создание новой публикации"
 
@@ -1720,7 +1728,7 @@ msgid "Reply to post"
 msgstr "Ответ на публикацию"
 
 #: content/ui/Main.qml:410
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:button Home Timeline"
 msgid "Home"
 msgstr "Главная"
@@ -1728,28 +1736,28 @@ msgstr "Главная"
 #: content/ui/Main.qml:423 content/ui/Main.qml:474 content/ui/Main.qml:494
 #, kde-format
 msgid "It seems pretty quiet right now, try posting something!"
-msgstr ""
+msgstr "Сейчас здесь довольно тихо, попробуйте что-нибудь опубликовать!"
 
 #: content/ui/Main.qml:432
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:button Account Notifications"
 msgid "Notifications"
 msgstr "Уведомления"
 
 #: content/ui/Main.qml:446
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:button Follows that require explicit allow/deny"
 msgid "Follow Requests"
 msgstr "Запросы на подписку"
 
 #: content/ui/Main.qml:461
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:button Local timeline of posts from the account's own server"
 msgid "Local"
 msgstr "Локальная лента"
 
 #: content/ui/Main.qml:481
-#, fuzzy, kde-format
+#, kde-format
 msgctxt ""
 "@action:button Global timeline of posts from the entire Fediverse network"
 msgid "Global"
@@ -1762,7 +1770,7 @@ msgid "Conversations"
 msgstr "Чаты"
 
 #: content/ui/Main.qml:515
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:button This account's favorited posts"
 msgid "Favorites"
 msgstr "Избранное"
@@ -1782,7 +1790,7 @@ msgstr ""
 "публикации, добавляйте их в избранное."
 
 #: content/ui/Main.qml:536
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:button This account's bookmarked posts"
 msgid "Bookmarks"
 msgstr "Закладки"
@@ -1798,17 +1806,18 @@ msgid ""
 "Bookmark posts and they will show up here. Bookmarks are always kept "
 "private, even to the post's author."
 msgstr ""
-"Публикации, добавленные в закладки, будут показаны здесь. Автор публикации "
-"не будет знать о добавлении публикации в закладки."
+"Публикации, добавленные в закладки, будут показаны здесь. Другие "
+"пользователи (включая автора публикации) не будут знать о добавлении "
+"публикации в закладки."
 
 #: content/ui/Main.qml:557
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:button Explore this server's trending posts, news, and more"
 msgid "Explore"
 msgstr "Обзор"
 
 #: content/ui/Main.qml:570
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:button A list of this account's followed accounts"
 msgid "Following"
 msgstr "Подписки"
@@ -1820,7 +1829,7 @@ msgid "Search"
 msgstr "Поиск"
 
 #: content/ui/Main.qml:610
-#, fuzzy, kde-format
+#, kde-format
 msgctxt ""
 "@action:button This account's lists, or timelines consisting of a groups of "
 "accounts"
@@ -1828,7 +1837,7 @@ msgid "Lists"
 msgstr "Списки"
 
 #: content/ui/Main.qml:623
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:button This account's profile"
 msgid "Profile"
 msgstr "Профиль"
@@ -1855,7 +1864,7 @@ msgstr "Параметры"
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Unfollow"
-msgstr "Отписаться"
+msgstr "Отменить подписку"
 
 #: content/ui/Main.qml:796
 #, kde-format
@@ -2503,7 +2512,7 @@ msgid "Freeze"
 msgstr "Заморозить"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:44
-#, fuzzy, kde-format
+#, kde-format
 msgctxt ""
 "@info: Force all this user's media attachments to be flagged as sensitive."
 msgid "Force-Sensitive"
@@ -3399,7 +3408,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:label"
 msgid "A report has been filed against a user in your server."
-msgstr ""
+msgstr "На пользователя на вашем сервере была подана жалоба."
 
 #: content/ui/Notifications/UserInteractionLabel.qml:85
 #, kde-format
@@ -3435,10 +3444,10 @@ msgstr "Статус с вложением звука"
 #: content/ui/PostDelegate/AttachmentGrid.qml:245
 #: content/ui/PostDelegate/AttachmentGrid.qml:287
 #: content/ui/PostDelegate/AttachmentGrid.qml:341
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Sensitive media"
-msgstr "Файлы от учётной записи помечены как конфиденциальные"
+msgstr "Конфиденциальные медиафайлы"
 
 #: content/ui/PostDelegate/AttachmentGrid.qml:201
 #, kde-format
@@ -3489,7 +3498,7 @@ msgstr "Скопировать изображение"
 
 #: content/ui/PostDelegate/AttachmentMenu.qml:82
 #: content/ui/PostDelegate/LinkMenu.qml:49
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid "Post"
 msgstr "Публикация"
@@ -3621,10 +3630,10 @@ msgid "Media Description"
 msgstr "Описание медиафайла"
 
 #: content/ui/PostDelegate/PostContent.qml:29
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Post content"
-msgstr "Содержимое, на которое поступила жалоба"
+msgstr "Содержимое публикации"
 
 #: content/ui/PostDelegate/PostDelegate.qml:102
 #, kde-format
@@ -3676,24 +3685,24 @@ msgid "Filter"
 msgstr "Фильтры"
 
 #: content/ui/PostDelegate/PostDelegate.qml:325
-#, fuzzy, kde-format
+#, kde-format
 msgid "<b>Filtered</b><br /> %1"
-msgstr "<b>Предупреждение о содержимом</b><br /> %1"
+msgstr "<b>Выполнена фильтрация</b><br /> %1"
 
 #: content/ui/PostDelegate/PostDelegate.qml:332
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:button"
 msgid "Show Anyway"
 msgstr "Всё равно показать"
 
 #: content/ui/PostDelegate/PostDelegate.qml:364
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Content Notice"
-msgstr "Шрифт"
+msgstr "Предупреждение о содержимом"
 
 #: content/ui/PostDelegate/PostDelegate.qml:386
-#, fuzzy, kde-format
+#, kde-format
 msgid "<b>Content Notice</b><br /> %1"
 msgstr "<b>Предупреждение о содержимом</b><br /> %1"
 
@@ -3800,7 +3809,7 @@ msgid "Interaction"
 msgstr "Чаты"
 
 #: content/ui/PostDelegate/PostInteractionLabel.qml:76
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info Loading user that started this interaction"
 msgid "Loading…"
 msgstr "Загрузка…"
@@ -3882,16 +3891,16 @@ msgid "Pin on Profile"
 msgstr "Закрепить в профиле"
 
 #: content/ui/PostDelegate/PostMenu.qml:147
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Unmute Conversation"
-msgstr "Чат пуст"
+msgstr "Перестать игнорировать чат"
 
 #: content/ui/PostDelegate/PostMenu.qml:147
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Mute Conversation"
-msgstr "Чаты"
+msgstr "Игнорировать чат"
 
 #: content/ui/PostDelegate/PostMenu.qml:157
 #, kde-format
@@ -3993,25 +4002,25 @@ msgstr "Опрос"
 #, kde-format
 msgctxt "@title:window"
 msgid "Privacy Policy"
-msgstr ""
+msgstr "Политика конфиденциальности"
 
 #: content/ui/PrivacyPolicyPage.qml:26
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Privacy Policy"
-msgstr ""
+msgstr "Нет политики конфиденциальности"
 
 #: content/ui/PrivacyPolicyPage.qml:41
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info Last updated: relative date and time (e.g. 2 years ago)"
 msgid "Last updated: %1"
-msgstr "Опубликовано %1"
+msgstr "Последнее обновление: %1"
 
 #: content/ui/ReadMarker.qml:15
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Last read on this date"
 msgid "Last read on %1"
-msgstr "Опубликовано %1"
+msgstr "Последнее прочтение: %1"
 
 #: content/ui/ReportDialog.qml:22
 #, kde-format
@@ -4076,7 +4085,7 @@ msgid "Search for users, tags and posts"
 msgstr "Поиск пользователей, меток и публикаций"
 
 #: content/ui/ServerInformationPage.qml:25
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:button"
 msgid "Announcements"
 msgstr "Объявления"
@@ -4085,7 +4094,7 @@ msgstr "Объявления"
 #, kde-format
 msgctxt "@action:button"
 msgid "Privacy Policy"
-msgstr ""
+msgstr "Политика конфиденциальности"
 
 #: content/ui/Settings/AccountPage.qml:26
 #, kde-format
@@ -4126,22 +4135,28 @@ msgid ""
 "manually approve or deny new ones. You always have the option to force "
 "someone to unfollow you."
 msgstr ""
+"По умолчанию новые подписчики принимаются автоматически. Снимите этот "
+"флажок, если следует одобрять или отклонять запросы на подписку вручную. "
+"Всегда имеется возможность принудительно отменить подписку какого-либо "
+"пользователя на вас."
 
 #: content/ui/Settings/AccountPage.qml:138
 #, kde-format
 msgid "Is automated"
-msgstr ""
+msgstr "Используется автоматизация"
 
 #: content/ui/Settings/AccountPage.qml:139
 #, kde-format
 msgid ""
 "Whether to publicly mark this account as doing any kind of automated actions."
 msgstr ""
+"Следует ли делать для этой учётной записи общедоступную отметку о выполнении "
+"каких-либо автоматизированных действий."
 
 #: content/ui/Settings/AccountPage.qml:148
-#, fuzzy, kde-format
+#, kde-format
 msgid "Feature profile and posts"
-msgstr "Добавить этот профиль в подборку"
+msgstr "Добавить профиль и публикации в подборку"
 
 #: content/ui/Settings/AccountPage.qml:149
 #, kde-format
@@ -4228,7 +4243,7 @@ msgstr "Открывать редактор публикаций по умолч
 #: content/ui/Settings/AppearancePage.qml:58
 #, kde-format
 msgid "Continue reading where you last left off"
-msgstr ""
+msgstr "Продолжить чтение с того же места"
 
 #: content/ui/Settings/AppearancePage.qml:59
 #, kde-format
@@ -4236,11 +4251,14 @@ msgid ""
 "If checked, the Home timeline will begin where you last read. The position "
 "in the timeline is shared with other clients."
 msgstr ""
+"Если флажок установлен, «Главная» лента новостей будет начинаться с того "
+"места, где в прошлый раз было завершено чтение. Соответствующая позиция в "
+"ленте новостей будет использоваться и в других клиентах."
 
 #: content/ui/Settings/AppearancePage.qml:72
 #, kde-format
 msgid "Auto-update timelines"
-msgstr ""
+msgstr "Автоматически обновлять ленты новостей"
 
 #: content/ui/Settings/AppearancePage.qml:73
 #, kde-format
@@ -4248,12 +4266,14 @@ msgid ""
 "If checked, Tokodon will automatically update certain timelines as new posts "
 "come in."
 msgstr ""
+"Если флажок установлен, Tokodon будет автоматически обновлять определённые "
+"ленты новостей по мере появления новых публикаций."
 
 #: content/ui/Settings/AppearancePage.qml:86
 #, kde-format
 msgctxt "@option:check Boosting means to repost, or retweet"
 msgid "Ask before boosting"
-msgstr ""
+msgstr "Спрашивать перед републикацией"
 
 #: content/ui/Settings/AppearancePage.qml:97
 #, kde-format
@@ -4262,9 +4282,9 @@ msgid "Posts"
 msgstr "Публикации"
 
 #: content/ui/Settings/AppearancePage.qml:103
-#, fuzzy, kde-format
+#, kde-format
 msgid "Show number of favorites and boosts"
-msgstr "Показывать количество ответов, добавлений в избранное и републикаций"
+msgstr "Показывать количество добавлений в избранное и републикаций"
 
 #: content/ui/Settings/AppearancePage.qml:118
 #, kde-format
@@ -4298,6 +4318,8 @@ msgid ""
 "If unchecked, posts with only one image attached will be uncropped and shown "
 "in full."
 msgstr ""
+"Если флажок снят, публикации с одним прикреплённым изображением будут "
+"показаны полностью (не будут обрезаться)."
 
 #: content/ui/Settings/AppearancePage.qml:171
 #, kde-format
@@ -4317,10 +4339,10 @@ msgid "Unblock"
 msgstr "Разблокировать"
 
 #: content/ui/Settings/BlockedDomainsPage.qml:64
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Blocked Domains"
-msgstr "Заблокированные домены"
+msgstr "Нет заблокированных доменов"
 
 #: content/ui/Settings/EditFilterPage.qml:30
 #, kde-format
@@ -4341,34 +4363,34 @@ msgid "Title"
 msgstr "Название"
 
 #: content/ui/Settings/EditFilterPage.qml:78
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:header"
 msgid "Contexts"
-msgstr "Продолжить"
+msgstr "Контексты"
 
 #: content/ui/Settings/EditFilterPage.qml:85
 #, kde-format
 msgctxt "@info"
 msgid "Select one or more contexts where this filter should apply:"
-msgstr ""
+msgstr "Один или несколько контекстов для применения этого фильтра:"
 
 #: content/ui/Settings/EditFilterPage.qml:90
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label:checkbox"
 msgid "Home and Lists"
-msgstr "Нет списков"
+msgstr "«Главная» и списки"
 
 #: content/ui/Settings/EditFilterPage.qml:95
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label:checkbox"
 msgid "Notifications"
 msgstr "Уведомления"
 
 #: content/ui/Settings/EditFilterPage.qml:100
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label:checkbox"
 msgid "Public Timelines"
-msgstr "Глобальная лента новостей"
+msgstr "Общедоступные ленты новостей"
 
 #: content/ui/Settings/EditFilterPage.qml:105
 #, kde-format
@@ -4377,37 +4399,37 @@ msgid "Conversations"
 msgstr "Чаты"
 
 #: content/ui/Settings/EditFilterPage.qml:110
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label:checkbox"
 msgid "Profiles"
-msgstr "Показать профиль"
+msgstr "Профили"
 
 #: content/ui/Settings/EditFilterPage.qml:115
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:header"
 msgid "Action"
-msgstr "Расположение"
+msgstr "Действие"
 
 #: content/ui/Settings/EditFilterPage.qml:123
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label:radiobutton"
 msgid "Hide with Content Notice"
-msgstr "Шрифт"
+msgstr "Скрывать с предупреждением о содержимом"
 
 #: content/ui/Settings/EditFilterPage.qml:129
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label:radiobutton"
 msgid "Hide Completely"
-msgstr "Скрывать результаты"
+msgstr "Скрывать полностью"
 
 #: content/ui/Settings/EditFilterPage.qml:135
 #, kde-format
 msgctxt "@info:header"
 msgid "Keywords"
-msgstr ""
+msgstr "Ключевые слова"
 
 #: content/ui/Settings/EditFilterPage.qml:138
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:button Add keyword"
 msgid "Add"
 msgstr "Добавить"
@@ -4416,13 +4438,13 @@ msgstr "Добавить"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No keywords"
-msgstr ""
+msgstr "Нет ключевых слов"
 
 #: content/ui/Settings/EditFilterPage.qml:176
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label:checkbox"
 msgid "Whole word"
-msgstr "Удалить слово"
+msgstr "Слово целиком"
 
 #: content/ui/Settings/EditFilterPage.qml:182
 #, kde-format
@@ -4431,7 +4453,7 @@ msgid "Remove"
 msgstr "Удалить"
 
 #: content/ui/Settings/EditFilterPage.qml:209
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:button Create the filter"
 msgid "Create"
 msgstr "Создать"
@@ -4443,16 +4465,16 @@ msgid "Edit"
 msgstr "Изменить"
 
 #: content/ui/Settings/EditFilterPage.qml:224
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:button Delete the filter"
 msgid "Delete"
 msgstr "Удалить"
 
 #: content/ui/Settings/EditFilterPage.qml:231
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid "Deleting Filter"
-msgstr "Удаление списка"
+msgstr "Удаление фильтра"
 
 #: content/ui/Settings/EditFilterPage.qml:232
 #, kde-format
@@ -4491,22 +4513,22 @@ msgid "No Errors"
 msgstr "Ошибки не найдены"
 
 #: content/ui/Settings/FiltersPage.qml:21
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid "Filters"
 msgstr "Фильтры"
 
 #: content/ui/Settings/FiltersPage.qml:28
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Create Filter"
-msgstr "Создать список"
+msgstr "Создать фильтр"
 
 #: content/ui/Settings/FiltersPage.qml:79
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Filters"
-msgstr "Фильтры"
+msgstr "Нет фильтров"
 
 #: content/ui/Settings/NetworkProxyPage.qml:15
 #, kde-format
@@ -4873,7 +4895,7 @@ msgid "Blocked Users"
 msgstr "Заблокированные пользователи"
 
 #: content/ui/Settings/SafetyPage.qml:50
-#, fuzzy, kde-format
+#, kde-format
 msgid "Blocked Domains"
 msgstr "Заблокированные домены"
 
@@ -4940,7 +4962,7 @@ msgstr "Запретить"
 #, kde-format
 msgctxt "@action:button Deny follow request"
 msgid "Unfollow"
-msgstr "Отписаться"
+msgstr "Отменить подписку"
 
 #: content/ui/SocialGraphPage.qml:85
 #, kde-format
@@ -5046,13 +5068,13 @@ msgstr "Удалить"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Drafts"
-msgstr ""
+msgstr "Нет черновиков"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:105
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Scheduled Posts"
-msgstr "Удаление публикации"
+msgstr "Нет запланированных публикаций"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:114
 #: content/ui/StatusComposer/StatusComposer.qml:181
@@ -5166,10 +5188,10 @@ msgid "Set Schedule"
 msgstr "Настроить расписание"
 
 #: content/ui/StatusComposer/StatusComposer.qml:337
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Content notice"
-msgstr "Шрифт"
+msgstr "Предупреждение о содержимом"
 
 #: content/ui/StatusComposer/StatusComposer.qml:351
 #, kde-format
@@ -5184,7 +5206,7 @@ msgid "Choose a File"
 msgstr "Выбор файла"
 
 #: content/ui/StatusComposer/StatusComposer.qml:494
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:button"
 msgid "Attach File"
 msgstr "Прикрепить файл"
@@ -5208,25 +5230,25 @@ msgid "Add poll"
 msgstr "Добавить опрос"
 
 #: content/ui/StatusComposer/StatusComposer.qml:522
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:button"
 msgid "Content Notice"
-msgstr "Шрифт"
+msgstr "Предупреждение о содержимом"
 
 #: content/ui/StatusComposer/StatusComposer.qml:534
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Content notice"
-msgstr "Шрифт"
+msgstr "Предупреждение о содержимом"
 
 #: content/ui/StatusComposer/StatusComposer.qml:560
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:button"
 msgid "Visibility"
 msgstr "Видимость"
 
 #: content/ui/StatusComposer/StatusComposer.qml:568
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid "Visibility"
 msgstr "Видимость"
@@ -5302,7 +5324,7 @@ msgstr "Запланировать"
 #, kde-format
 msgctxt "@title"
 msgid "Alt Text Reminder"
-msgstr ""
+msgstr "Напоминание об альтернативном тексте"
 
 #: content/ui/StatusComposer/StatusComposer.qml:742
 #, kde-format
@@ -5311,6 +5333,9 @@ msgid ""
 "Some of your media is missing alt text. Adding descriptions help everyone, "
 "especially the visually impaired."
 msgstr ""
+"Для некоторых ваших медиафайлов не указан альтернативный текст. Добавление "
+"описаний облегчает работу с файлами всем пользователям, особенно "
+"слабовидящим."
 
 #: content/ui/TimelinePage.qml:38 timeline/accountmodel.cpp:41
 #, kde-format
@@ -5490,7 +5515,7 @@ msgid "Your emails"
 msgstr "translation-team@basealt.ru"
 
 #: main.cpp:148
-#, fuzzy, kde-format
+#, kde-format
 msgid "Supports https, tokodon and web+ap url scheme"
 msgstr "Предусмотрена поддержка https и схемы URL-адреса web+ap"
 
