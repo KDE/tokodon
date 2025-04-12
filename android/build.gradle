@@ -23,8 +23,7 @@ repositories {
 
 
 apply plugin: 'com.android.application'
-apply from: '../version.gradle'
-def timestamp = (int)(new Date().getTime()/1000)
+apply from: '../ecm-version.gradle'
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
@@ -78,9 +77,9 @@ android {
         targetSdkVersion qtTargetSdkVersion
         applicationId "org.kde.tokodon"
         namespace "org.kde.tokodon"
-        versionCode timestamp
-        versionName projectVersionFull
-        manifestPlaceholders = [versionName: projectVersionFull, versionCode: timestamp]
+        versionCode ecmVersionCode
+        versionName ecmVersionName
+        manifestPlaceholders = [versionName: ecmVersionName, versionCode: ecmVersionCode]
     }
 
     packagingOptions {

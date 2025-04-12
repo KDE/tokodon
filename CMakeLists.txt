@@ -13,7 +13,7 @@ project(tokodon VERSION ${RELEASE_SERVICE_VERSION})
 
 option(SAILFISHOS "Build for sailfishOS" OFF)
 
-set(KF_MIN_VERSION "6.11.0")
+set(KF_MIN_VERSION "6.12.0")
 set(QT_MIN_VERSION "6.8.0")
 
 include(FeatureSummary)
@@ -174,10 +174,6 @@ endif()
 add_subdirectory(src)
 
 ki18n_install(po)
-
-if (ANDROID)
-    configure_file(${CMAKE_CURRENT_SOURCE_DIR}/android/version.gradle.in ${CMAKE_BINARY_DIR}/version.gradle)
-endif()
 
 install(FILES org.kde.tokodon.desktop DESTINATION ${KDE_INSTALL_APPDIR})
 install(FILES org.kde.tokodon.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
