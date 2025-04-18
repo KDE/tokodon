@@ -427,11 +427,8 @@ if (TARGET KF6::KIOWidgets)
 endif()
 
 if (TARGET KUnifiedPush)
-    target_sources(tokodon_static PRIVATE
-            utils/ecdh.cpp
-            utils/ecdh.h)
     target_compile_definitions(tokodon_static PUBLIC -DHAVE_KUNIFIEDPUSH)
-    target_link_libraries(tokodon_static PUBLIC KUnifiedPush OpenSSL::Crypto)
+    target_link_libraries(tokodon_static PUBLIC KUnifiedPush)
 endif()
 
 if (SAILFISHOS)

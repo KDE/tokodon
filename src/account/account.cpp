@@ -9,7 +9,6 @@
 #include "tokodon_http_debug.h"
 
 #ifdef HAVE_KUNIFIEDPUSH
-#include "ecdh.h"
 #include "tokodon_debug.h"
 #endif
 
@@ -499,11 +498,11 @@ void Account::subscribePushNotifications()
     QUrlQuery formdata = buildNotificationFormData();
     formdata.addQueryItem(QStringLiteral("subscription[endpoint]"), QUrl(NetworkController::instance().endpoint).toString());
 
-    // TODO: save this keypair in the keychain
-    const auto keys = generateECDHKeypair();
+    const auto publicKey = connector->contentEncryptionPublicKey();
+    const auto authSecret = connector->contentEncryptionAuthSecret();
 
-    formdata.addQueryItem(QStringLiteral("subscription[keys][p256dh]"), QString::fromUtf8(exportPublicKey(keys).toBase64(QByteArray::Base64UrlEncoding)));
-    formdata.addQueryItem(QStringLiteral("subscription[keys][auth]"), QString::fromUtf8(randArray.toBase64(QByteArray::Base64UrlEncoding)));
+    formdata.addQueryItem(QStringLiteral("subscription[keys][p256dh]"), QString::fromUtf8(publicKey.toBase64(QByteArray::Base64UrlEncoding)));
+    formdata.addQueryItem(QStringLiteral("subscription[keys][auth]"), QString::fromUtf8(authSecret.toBase64(QByteArray::Base64UrlEncoding)));
 
     formdata.addQueryItem(QStringLiteral("data[policy]"), QStringLiteral("all"));
 
