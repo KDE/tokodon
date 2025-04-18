@@ -16,7 +16,8 @@ public:
              bool authenticated,
              QObject *parent,
              std::function<void(QNetworkReply *)> callback,
-             std::function<void(QNetworkReply *)> errorCallback = nullptr) override;
+             std::function<void(QNetworkReply *)> errorCallback = nullptr,
+             bool fallible = false) override;
 
     void post(const QUrl &url,
               const QJsonDocument &doc,

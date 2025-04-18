@@ -34,11 +34,13 @@ void MockAccount::get(const QUrl &url,
                       bool authenticated,
                       QObject *parent,
                       std::function<void(QNetworkReply *)> callback,
-                      std::function<void(QNetworkReply *)> errorCallback)
+                      std::function<void(QNetworkReply *)> errorCallback,
+                      bool fallible)
 {
     Q_UNUSED(authenticated)
     Q_UNUSED(parent)
     Q_UNUSED(errorCallback)
+    Q_UNUSED(fallible)
 
     if (m_getReplies.contains(url)) {
         auto reply = m_getReplies[url];

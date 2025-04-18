@@ -301,12 +301,14 @@ public:
      * @param parent The parent object that calls get() or the callback belongs to.
      * @param callback The callback that should be executed if the request is successful.
      * @param errorCallback The callback that should be executed if the request is not successful.
+     * @param fallible Whether the request is okay with failing. If true, also reported in the error log.
      */
     virtual void get(const QUrl &url,
                      bool authenticated,
                      QObject *parent,
                      std::function<void(QNetworkReply *)> callback,
-                     std::function<void(QNetworkReply *)> errorCallback = nullptr) = 0;
+                     std::function<void(QNetworkReply *)> errorCallback = nullptr,
+                     bool fallible = false) = 0;
 
     /**
      * @brief Make an HTTP POST request to the server.
