@@ -48,9 +48,11 @@ void Account::get(const QUrl &url,
                   bool authenticated,
                   QObject *parent,
                   std::function<void(QNetworkReply *)> reply_cb,
-                  std::function<void(QNetworkReply *)> errorCallback)
+                  std::function<void(QNetworkReply *)> errorCallback,
+                  bool fallible)
 {
     QNetworkRequest request = makeRequest(url, authenticated);
+    request.setAttribute(QNetworkRequest::Attribute::User, fallible);
     qCDebug(TOKODON_HTTP) << "GET" << url;
 
     QNetworkReply *reply = m_qnam->get(request);
@@ -177,7 +179,9 @@ void Account::handleReply(QNetworkReply *reply, std::function<void(QNetworkReply
 {
     connect(reply, &QNetworkReply::finished, [reply, reply_cb, errorCallback]() {
         reply->deleteLater();
-        if (200 != reply->attribute(QNetworkRequest::HttpStatusCodeAttribute) && !reply->url().toString().contains("nodeinfo"_L1)) {
+        // these are usually (sometimes meant to be) fallible and end up spamming user logs with these errors
+        const auto fallible = reply->request().attribute(QNetworkRequest::Attribute::User).toBool();
+        if (200 != reply->attribute(QNetworkRequest::HttpStatusCodeAttribute) && !fallible) {
             NetworkController::instance().logError(reply->url().toString(), reply->errorString());
             if (errorCallback) {
                 errorCallback(reply);
@@ -344,7 +348,9 @@ void Account::validateToken()
                     Q_UNUSED(reply);
                     // Otherwise, no subscription.
                     m_hasPushSubscription = false;
-                });
+                },
+                true // otherwise it tends to spam your error log
+            );
 #endif
         },
         [this](QNetworkReply *reply) {
