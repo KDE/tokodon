@@ -540,7 +540,6 @@ QUrlQuery Account::buildNotificationFormData()
     addQuery(QStringLiteral("update"), cfg->notifyUpdate());
     addQuery(QStringLiteral("admin.sign_up"), cfg->notifySignup());
     addQuery(QStringLiteral("admin.report"), cfg->notifyReport());
-    addQuery(QStringLiteral("annual_report"), cfg->notifyAnnualReport());
 
     return formdata;
 }
