@@ -26,7 +26,8 @@ Tokodon supports services that implement the [Mastodon Client API](https://docs.
 * [GoToSocial](https://gotosocial.org/)
 * [FireFish](https://codeberg.org/firefish/firefish), [Iceshrimp.NET](https://iceshrimp.net) and other Misskey forks
 
-Other services may work in Tokodon, although keep in mind it's not possible to support every extra feature.
+Other services may work in Tokodon, although keep in mind it's not possible to support every extra feature. We also tend
+to test against the latest Mastodon, so your experience may depending on your Fediverse software. 
 
 ## Get It
 
