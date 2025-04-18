@@ -489,12 +489,6 @@ void Account::subscribePushNotifications()
     Q_ASSERT(!m_instanceVapidPublicKey.isEmpty());
     connector->setVapidPublicKey(m_instanceVapidPublicKey);
 
-    // Generate 16 random bytes
-    QByteArray randArray;
-    for (int i = 0; i < 16; i++) {
-        randArray.push_back(QRandomGenerator::global()->generate());
-    }
-
     QUrlQuery formdata = buildNotificationFormData();
     formdata.addQueryItem(QStringLiteral("subscription[endpoint]"), QUrl(NetworkController::instance().endpoint).toString());
 
@@ -505,6 +499,7 @@ void Account::subscribePushNotifications()
     formdata.addQueryItem(QStringLiteral("subscription[keys][auth]"), QString::fromUtf8(authSecret.toBase64(QByteArray::Base64UrlEncoding)));
 
     formdata.addQueryItem(QStringLiteral("data[policy]"), QStringLiteral("all"));
+    formdata.addQueryItem(QStringLiteral("subscription[standard]"), QStringLiteral("true"));
 
     post(
         apiUrl(QStringLiteral("/api/v1/push/subscription")),
