@@ -510,8 +510,10 @@ void Account::subscribePushNotifications()
     const auto publicKey = connector->contentEncryptionPublicKey();
     const auto authSecret = connector->contentEncryptionAuthSecret();
 
-    formdata.addQueryItem(QStringLiteral("subscription[keys][p256dh]"), QString::fromUtf8(publicKey.toBase64(QByteArray::Base64UrlEncoding)));
-    formdata.addQueryItem(QStringLiteral("subscription[keys][auth]"), QString::fromUtf8(authSecret.toBase64(QByteArray::Base64UrlEncoding)));
+    formdata.addQueryItem(QStringLiteral("subscription[keys][p256dh]"),
+                          QString::fromLatin1(publicKey.toBase64(QByteArray::Base64UrlEncoding | QByteArray::OmitTrailingEquals)));
+    formdata.addQueryItem(QStringLiteral("subscription[keys][auth]"),
+                          QString::fromLatin1(authSecret.toBase64(QByteArray::Base64UrlEncoding | QByteArray::OmitTrailingEquals)));
 
     formdata.addQueryItem(QStringLiteral("data[policy]"), QStringLiteral("all"));
     formdata.addQueryItem(QStringLiteral("subscription[standard]"), QStringLiteral("true"));
