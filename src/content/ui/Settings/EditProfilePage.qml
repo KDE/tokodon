@@ -14,12 +14,7 @@ import ".."
 Kirigami.Page {
     id: root
 
-    property alias account: editor.account
-
-    readonly property ProfileEditorBackend backend : ProfileEditorBackend {
-        account: root.account
-        onSendNotification: applicationWindow().showPassiveNotification(message)
-    }
+    required property AbstractAccount account
 
     readonly property bool canEditProfile: !AccountManager.accountHasIssue(account)
 
@@ -28,6 +23,8 @@ Kirigami.Page {
 
     ProfileEditor {
         id: editor
+
+        account: root.account
 
         anchors.fill: parent
     }

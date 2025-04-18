@@ -48,9 +48,12 @@ QString ProfileEditorBackend::displayName() const
 QString ProfileEditorBackend::displayNameHtml() const
 {
     if (m_account != nullptr) {
-        return TextHandler::replaceCustomEmojis(m_account->customEmojis(), m_displayName);
+        if (m_displayName.isEmpty()) {
+            return m_account->username();
+        }
+        return TextHandler::replaceCustomEmojis(m_account->customEmojis(), displayName());
     } else {
-        return m_displayName;
+        return displayName();
     }
 }
 
@@ -230,6 +233,10 @@ void ProfileEditorBackend::fetchAccountInfo()
         Q_ASSERT(json.isObject());
         const auto obj = json.object();
         setDisplayName(obj["display_name"_L1].toString());
+        // to handle cases where display name is empty, and the signal would never be sent otherwise
+        if (m_displayName.isEmpty()) {
+            Q_EMIT displayNameChanged();
+        }
         const auto source = obj["source"_L1].toObject();
         setNote(source["note"_L1].toString());
         setBot(obj["bot"_L1].toBool());

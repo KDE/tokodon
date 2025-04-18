@@ -16,7 +16,7 @@ class ProfileEditorBackend : public QObject
     Q_OBJECT
     QML_ELEMENT
 
-    Q_PROPERTY(AbstractAccount *account READ account WRITE setAccount NOTIFY accountChanged)
+    Q_PROPERTY(AbstractAccount *account READ account WRITE setAccount NOTIFY accountChanged REQUIRED)
     Q_PROPERTY(QString displayName READ displayName WRITE setDisplayName NOTIFY displayNameChanged)
     Q_PROPERTY(QString displayNameHtml READ displayNameHtml NOTIFY displayNameChanged)
     Q_PROPERTY(QString note READ note WRITE setNote NOTIFY noteChanged)

@@ -14,7 +14,7 @@ import ".."
 ColumnLayout {
     id: root
 
-    property var account
+    required property AbstractAccount account
 
     readonly property ProfileEditorBackend backend : ProfileEditorBackend {
         account: root.account
