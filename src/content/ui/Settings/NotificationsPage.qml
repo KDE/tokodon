@@ -41,6 +41,7 @@ FormCard.FormCardPage {
             onToggled: {
                 root.config.enableNotifications = checked;
                 root.saveConfig();
+                root.account.updatePushNotifications();
             }
         }
     }
