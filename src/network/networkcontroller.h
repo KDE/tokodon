@@ -89,10 +89,12 @@ public:
      */
     void setupPushNotifications();
 
+#ifdef HAVE_KUNIFIEDPUSH
     /**
      * @return The KUnifiedPush connector.
      */
     KUnifiedPush::Connector *connector() const;
+#endif
 
     QString endpoint;
 
