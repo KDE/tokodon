@@ -490,6 +490,10 @@ void AbstractAccount::fetchInstanceMetadata()
                         m_attachmentFilterStrings.push_back(i18n("All files (*)"));
                     }
                 }
+
+                if (configObj.contains("vapid"_L1)) {
+                    m_instanceVapidPublicKey = configObj["vapid"_L1]["public_key"_L1].toString();
+                }
             }
 
             // Pleroma/Akkoma may report maximum post characters here, instead

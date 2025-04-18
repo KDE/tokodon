@@ -9,6 +9,8 @@
 #include <QNetworkReply>
 #include <QUrlQuery>
 
+#include <KLocalizedString>
+
 #include "account/abstractaccount.h"
 #include "account/accountmanager.h"
 #include "config.h"
@@ -285,5 +287,27 @@ void NetworkController::openLink(const QString &input)
         QDesktopServices::openUrl(QUrl::fromUserInput(input));
     }
 }
+
+void NetworkController::setupPushNotifications()
+{
+#ifdef HAVE_KUNIFIEDPUSH
+    m_connector = new KUnifiedPush::Connector(QStringLiteral("org.kde.tokodon"));
+    QObject::connect(m_connector, &KUnifiedPush::Connector::endpointChanged, [this](const auto &newEndpoint) {
+        endpoint = newEndpoint;
+    });
+
+    endpoint = m_connector->endpoint();
+
+    m_connector->setVapidPublicKeyRequired(true);
+    m_connector->registerClient(i18n("Receiving push notifications"));
+#endif
+}
+
+#ifdef HAVE_KUNIFIEDPUSH
+KUnifiedPush::Connector *NetworkController::connector() const
+{
+    return m_connector;
+}
+#endif
 
 #include "moc_networkcontroller.cpp"

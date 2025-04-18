@@ -485,6 +485,11 @@ void Account::subscribePushNotifications()
 #ifdef HAVE_KUNIFIEDPUSH
     Q_ASSERT(!m_hasPushSubscription);
 
+    auto connector = NetworkController::instance().connector();
+
+    Q_ASSERT(!m_instanceVapidPublicKey.isEmpty());
+    connector->setVapidPublicKey(m_instanceVapidPublicKey);
+
     // Generate 16 random bytes
     QByteArray randArray;
     for (int i = 0; i < 16; i++) {

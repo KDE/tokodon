@@ -26,10 +26,6 @@
 #include <KLocalizedQmlContext>
 #include <KLocalizedString>
 
-#ifdef HAVE_KUNIFIEDPUSH
-#include <kunifiedpush/connector.h>
-#endif
-
 #include <QNetworkProxyFactory>
 
 #include "tokodon-version.h"
@@ -58,20 +54,6 @@
 #endif
 
 using namespace Qt::Literals::StringLiterals;
-
-void setupUnifiedPush()
-{
-#ifdef HAVE_KUNIFIEDPUSH
-    auto connector = new KUnifiedPush::Connector(QStringLiteral("org.kde.tokodon"));
-    QObject::connect(connector, &KUnifiedPush::Connector::endpointChanged, [=](const auto &endpoint) {
-        NetworkController::instance().endpoint = endpoint;
-    });
-
-    NetworkController::instance().endpoint = connector->endpoint();
-
-    connector->registerClient(i18n("Receiving push notifications"));
-#endif
-}
 
 #ifdef Q_OS_ANDROID
 Q_DECL_EXPORT
@@ -175,7 +157,7 @@ int main(int argc, char *argv[])
         KDBusService service(KDBusService::Replace);
 #endif
 
-        setupUnifiedPush();
+        NetworkController::instance().setupPushNotifications();
 
         // create the lazy instance
         AccountManager::instance().loadFromSettings();
@@ -197,7 +179,7 @@ int main(int argc, char *argv[])
     KDBusService service(KDBusService::Unique);
 #endif
 
-    setupUnifiedPush();
+    NetworkController::instance().setupPushNotifications();
 
 #ifdef HAVE_KDBUSADDONS
     QObject::connect(&service, &KDBusService::activateRequested, &engine, [&engine](const QStringList &arguments, const QString & /*workingDirectory*/) {

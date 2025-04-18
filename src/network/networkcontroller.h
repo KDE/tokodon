@@ -5,6 +5,10 @@
 
 #include <QQmlEngine>
 
+#ifdef HAVE_KUNIFIEDPUSH
+#include <kunifiedpush/connector.h>
+#endif
+
 /**
  * @brief Handles miscenallous operations, mostly a glue between C++ and QML.
  */
@@ -80,6 +84,16 @@ public:
      */
     Q_INVOKABLE void clearErrorMessages();
 
+    /**
+     * @brief Register with the KUnifiedPush distributor, if available.
+     */
+    void setupPushNotifications();
+
+    /**
+     * @return The KUnifiedPush connector.
+     */
+    KUnifiedPush::Connector *connector() const;
+
     QString endpoint;
 
 Q_SIGNALS:
@@ -103,4 +117,8 @@ private:
 
     QByteArray m_systemHttpProxy;
     QByteArray m_systemHttpsProxy;
+
+#ifdef HAVE_KUNIFIEDPUSH
+    KUnifiedPush::Connector *m_connector = nullptr;
+#endif
 };
