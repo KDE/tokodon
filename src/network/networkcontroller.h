@@ -105,6 +105,7 @@ Q_SIGNALS:
     void networkErrorOccurred(const QString &errorString);
     void receivedAuthCode(QString authCode);
     void errorMessagesChanged();
+    void pushMessageReceived(const QByteArray &msg);
 
 private:
     explicit NetworkController(QObject *parent = nullptr);

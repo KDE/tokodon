@@ -295,6 +295,7 @@ void NetworkController::setupPushNotifications()
     QObject::connect(m_connector, &KUnifiedPush::Connector::endpointChanged, [this](const auto &newEndpoint) {
         endpoint = newEndpoint;
     });
+    QObject::connect(m_connector, &KUnifiedPush::Connector::messageReceived, this, &NetworkController::pushMessageReceived);
 
     endpoint = m_connector->endpoint();
 
