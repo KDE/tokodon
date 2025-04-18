@@ -318,11 +318,13 @@ void Account::validateToken()
             Q_EMIT authenticated(true, {});
 
 #ifdef HAVE_KUNIFIEDPUSH
+            // Query whether or not we have a valid push subscription from the server.
             get(
                 apiUrl(QStringLiteral("/api/v1/push/subscription")),
                 true,
                 this,
                 [this](QNetworkReply *reply) {
+                    // If the error code is success, then we *do* have a subscrption.
                     m_hasPushSubscription = true;
 
                     const QJsonDocument doc = QJsonDocument::fromJson(reply->readAll());
@@ -341,8 +343,8 @@ void Account::validateToken()
                 },
                 [this](QNetworkReply *reply) {
                     Q_UNUSED(reply);
+                    // Otherwise, no subscription.
                     m_hasPushSubscription = false;
-                    updatePushNotifications();
                 });
 #endif
         },
