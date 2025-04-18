@@ -327,10 +327,16 @@ void Account::validateToken()
                 true,
                 this,
                 [this](QNetworkReply *reply) {
-                    // If the error code is success, then we *do* have a subscrption.
+                    // If the error code is success, then we *do* have a subscription.
                     m_hasPushSubscription = true;
 
                     const QJsonDocument doc = QJsonDocument::fromJson(reply->readAll());
+
+                    // Sometimes - for some reason - we get a successful HTTP code but it's actually an error. Skip!
+                    if (doc.object().contains("error"_L1)) {
+                        m_hasPushSubscription = false;
+                        return;
+                    }
 
                     if (!NetworkController::instance().endpoint.isEmpty() && doc["endpoint"_L1] != NetworkController::instance().endpoint) {
                         qWarning(TOKODON_LOG) << "KUnifiedPush endpoint is now" << NetworkController::instance().endpoint << "and the old one was"
