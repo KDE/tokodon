@@ -59,7 +59,14 @@ void FavoriteListsModel::setAccount(AbstractAccount *account)
         disconnect(m_account, &AbstractAccount::favoriteListsChanged, this, &FavoriteListsModel::reloadLists);
         disconnect(m_account, &AbstractAccount::authenticated, this, &FavoriteListsModel::reloadLists);
     }
+
+    beginResetModel();
+    m_favoritedLists.clear();
+    endResetModel();
+
     m_account = account;
+    Q_EMIT accountChanged();
+
     if (m_account) {
         connect(m_account, &AbstractAccount::favoriteListsChanged, this, &FavoriteListsModel::reloadLists);
         if (m_account->successfullyAuthenticated()) {
@@ -68,7 +75,6 @@ void FavoriteListsModel::setAccount(AbstractAccount *account)
             connect(m_account, &AbstractAccount::authenticated, this, &FavoriteListsModel::reloadLists, Qt::SingleShotConnection);
         }
     }
-    Q_EMIT accountChanged();
 }
 
 int FavoriteListsModel::rowCount(const QModelIndex &parent) const
@@ -89,10 +95,6 @@ void FavoriteListsModel::reloadLists()
     if (AccountManager::instance().testMode()) {
         return;
     }
-
-    beginResetModel();
-    m_favoritedLists.clear();
-    endResetModel();
 
     auto config = m_account->config();
     for (auto &list : config->favoriteListIds()) {
