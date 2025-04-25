@@ -410,7 +410,7 @@ StatefulApp.StatefulWindow {
         text: i18nc("@action:button Home Timeline", "Home")
         onTriggered: {
             if(checked) {
-                if (pageStack.currentItem.returnToTop) {
+                if (pageStack.currentItem?.returnToTop) {
                     pageStack.currentItem.returnToTop();
                 }
                 return;
@@ -461,8 +461,8 @@ StatefulApp.StatefulWindow {
         text: i18nc("@action:button Local timeline of posts from the account's own server", "Local")
         onTriggered: {
             if(checked) {
-                if (pageStack.currentItem.returnToTop) {
-                    pageStack.currentItem.returnToTop();
+                if (pageStack.currentItem?.returnToTop) {
+                    pageStack.currentItem?.returnToTop();
                 }
                 return;
             }
@@ -481,8 +481,8 @@ StatefulApp.StatefulWindow {
         text: i18nc("@action:button Global timeline of posts from the entire Fediverse network", "Global")
         onTriggered: {
             if(checked) {
-                if (pageStack.currentItem.returnToTop) {
-                    pageStack.currentItem.returnToTop();
+                if (pageStack.currentItem?.returnToTop) {
+                    pageStack.currentItem?.returnToTop();
                 }
                 return;
             }
@@ -515,8 +515,8 @@ StatefulApp.StatefulWindow {
         text: i18nc("@action:button This account's favorited posts", "Favorites")
         onTriggered: {
             if(checked) {
-                if (pageStack.currentItem.returnToTop) {
-                    pageStack.currentItem.returnToTop();
+                if (pageStack.currentItem?.returnToTop) {
+                    pageStack.currentItem?.returnToTop();
                 }
                 return;
             }
@@ -536,8 +536,8 @@ StatefulApp.StatefulWindow {
         text: i18nc("@action:button This account's bookmarked posts", "Bookmarks")
         onTriggered: {
             if(checked) {
-                if (pageStack.currentItem.returnToTop) {
-                    pageStack.currentItem.returnToTop();
+                if (pageStack.currentItem?.returnToTop) {
+                    pageStack.currentItem?.returnToTop();
                 }
                 return;
             }
