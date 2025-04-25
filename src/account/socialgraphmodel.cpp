@@ -83,9 +83,9 @@ QString SocialGraphModel::placeholderExplanation() const
     if (m_followListName == QStringLiteral("request")) {
         return i18n("Some users need to be manually approved before they can follow you, and will show up here.");
     } else if (m_followListName == QStringLiteral("followers")) {
-        return {};
+        return i18nc("@info:placeholder", "No one is following this user, or they have chosen to hide this information.");
     } else if (m_followListName == QStringLiteral("following")) {
-        return {};
+        return i18nc("@info:placeholder", "This user isn't following anyone, or has chosen to hide tihs information.");
     } else if (m_followListName == QStringLiteral("mutes")) {
         return i18n("Mute users to stop them from showing up in your notifications.");
     } else if (m_followListName == QStringLiteral("blocks")) {
