@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-19 00:41+0000\n"
+"POT-Creation-Date: 2025-04-26 00:42+0000\n"
 "PO-Revision-Date: 2025-04-19 20:06+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -404,6 +404,20 @@ msgid ""
 msgstr ""
 "Algunos usuarios necesitan aprobación manual para poder seguirle, y se "
 "mostrarán aquí."
+
+#: account/socialgraphmodel.cpp:86
+#, kde-format
+msgctxt "@info:placeholder"
+msgid ""
+"No one is following this user, or they have chosen to hide this information."
+msgstr ""
+
+#: account/socialgraphmodel.cpp:88
+#, kde-format
+msgctxt "@info:placeholder"
+msgid ""
+"This user isn't following anyone, or has chosen to hide tihs information."
+msgstr ""
 
 #: account/socialgraphmodel.cpp:90
 #, kde-format
@@ -1398,7 +1412,7 @@ msgstr "Problema de inicio de sesión"
 msgid "There was an issue logging into the server:<br><b>%1</b>"
 msgstr "Ha ocurrido un problema al iniciar sesión en el servidor:<br><b>%1</b>"
 
-#: content/ui/LoginFlow/LoginIssuePage.qml:37
+#: content/ui/LoginFlow/LoginIssuePage.qml:38
 #, kde-format
 msgid ""
 "Please check if the password service is running. For other login issues, you "
@@ -1413,30 +1427,30 @@ msgstr ""
 "Puede probar a iniciar sesión de nuevo con el botón inferior, o reiniciar "
 "Tokodon."
 
-#: content/ui/LoginFlow/LoginIssuePage.qml:47
+#: content/ui/LoginFlow/LoginIssuePage.qml:48
 #, kde-format
 msgid "View Website"
 msgstr "Ver sitio web"
 
-#: content/ui/LoginFlow/LoginIssuePage.qml:56
+#: content/ui/LoginFlow/LoginIssuePage.qml:57
 #, kde-format
 msgid "Re-Attempt Log In"
 msgstr "Reintentar inicio de sesión"
 
-#: content/ui/LoginFlow/LoginIssuePage.qml:68
+#: content/ui/LoginFlow/LoginIssuePage.qml:69
 #: content/ui/Settings/AccountPage.qml:34
 #, kde-format
 msgid "Logout"
 msgstr "Cerrar la sesión"
 
-#: content/ui/LoginFlow/LoginIssuePage.qml:75
+#: content/ui/LoginFlow/LoginIssuePage.qml:76
 #: content/ui/Settings/AccountPage.qml:54
 #, kde-format
 msgctxt "@title"
 msgid "Logout"
 msgstr "Cerrar la sesión"
 
-#: content/ui/LoginFlow/LoginIssuePage.qml:76
+#: content/ui/LoginFlow/LoginIssuePage.qml:77
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to log out?"

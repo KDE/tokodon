@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-19 00:41+0000\n"
+"POT-Creation-Date: 2025-04-26 00:42+0000\n"
 "PO-Revision-Date: 2025-04-19 13:09+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -411,6 +411,20 @@ msgid ""
 msgstr ""
 "يحتاج بعض المستخدمين إلى الموافقة يدويًا قبل أن يتمكنوا من متابعتك، وسيظهرون "
 "هنا."
+
+#: account/socialgraphmodel.cpp:86
+#, kde-format
+msgctxt "@info:placeholder"
+msgid ""
+"No one is following this user, or they have chosen to hide this information."
+msgstr ""
+
+#: account/socialgraphmodel.cpp:88
+#, kde-format
+msgctxt "@info:placeholder"
+msgid ""
+"This user isn't following anyone, or has chosen to hide tihs information."
+msgstr ""
 
 #: account/socialgraphmodel.cpp:90
 #, kde-format
@@ -1410,7 +1424,7 @@ msgstr "مشكلة في الولوج"
 msgid "There was an issue logging into the server:<br><b>%1</b>"
 msgstr "حدثت مشكلة في تسجيل الدخول إلى الخادم:<br><b>%1</b>"
 
-#: content/ui/LoginFlow/LoginIssuePage.qml:37
+#: content/ui/LoginFlow/LoginIssuePage.qml:38
 #, kde-format
 msgid ""
 "Please check if the password service is running. For other login issues, you "
@@ -1423,30 +1437,30 @@ msgstr ""
 "\n"
 "يمكنك محاولة الولوج مرة أخرى باستخدام الزر أدناه، أو إعادة تشغيل توكودون."
 
-#: content/ui/LoginFlow/LoginIssuePage.qml:47
+#: content/ui/LoginFlow/LoginIssuePage.qml:48
 #, kde-format
 msgid "View Website"
 msgstr "اعرض موقع الوبّ"
 
-#: content/ui/LoginFlow/LoginIssuePage.qml:56
+#: content/ui/LoginFlow/LoginIssuePage.qml:57
 #, kde-format
 msgid "Re-Attempt Log In"
 msgstr "أعد محاولة الولوج"
 
-#: content/ui/LoginFlow/LoginIssuePage.qml:68
+#: content/ui/LoginFlow/LoginIssuePage.qml:69
 #: content/ui/Settings/AccountPage.qml:34
 #, kde-format
 msgid "Logout"
 msgstr "اخرج"
 
-#: content/ui/LoginFlow/LoginIssuePage.qml:75
+#: content/ui/LoginFlow/LoginIssuePage.qml:76
 #: content/ui/Settings/AccountPage.qml:54
 #, kde-format
 msgctxt "@title"
 msgid "Logout"
 msgstr "اخرج"
 
-#: content/ui/LoginFlow/LoginIssuePage.qml:76
+#: content/ui/LoginFlow/LoginIssuePage.qml:77
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to log out?"

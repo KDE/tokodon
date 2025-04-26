@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-19 00:41+0000\n"
+"POT-Creation-Date: 2025-04-26 00:42+0000\n"
 "PO-Revision-Date: 2022-10-14 14:00+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -423,6 +423,20 @@ msgstr "Notandanafn:"
 msgid ""
 "Some users need to be manually approved before they can follow you, and will "
 "show up here."
+msgstr ""
+
+#: account/socialgraphmodel.cpp:86
+#, kde-format
+msgctxt "@info:placeholder"
+msgid ""
+"No one is following this user, or they have chosen to hide this information."
+msgstr ""
+
+#: account/socialgraphmodel.cpp:88
+#, kde-format
+msgctxt "@info:placeholder"
+msgid ""
+"This user isn't following anyone, or has chosen to hide tihs information."
 msgstr ""
 
 #: account/socialgraphmodel.cpp:90
@@ -1492,7 +1506,7 @@ msgstr "Innskráning"
 msgid "There was an issue logging into the server:<br><b>%1</b>"
 msgstr ""
 
-#: content/ui/LoginFlow/LoginIssuePage.qml:37
+#: content/ui/LoginFlow/LoginIssuePage.qml:38
 #, kde-format
 msgid ""
 "Please check if the password service is running. For other login issues, you "
@@ -1501,23 +1515,23 @@ msgid ""
 "You can attempt to log in again with the button below, or restart Tokodon."
 msgstr ""
 
-#: content/ui/LoginFlow/LoginIssuePage.qml:47
+#: content/ui/LoginFlow/LoginIssuePage.qml:48
 #, kde-format
 msgid "View Website"
 msgstr ""
 
-#: content/ui/LoginFlow/LoginIssuePage.qml:56
+#: content/ui/LoginFlow/LoginIssuePage.qml:57
 #, kde-format
 msgid "Re-Attempt Log In"
 msgstr ""
 
-#: content/ui/LoginFlow/LoginIssuePage.qml:68
+#: content/ui/LoginFlow/LoginIssuePage.qml:69
 #: content/ui/Settings/AccountPage.qml:34
 #, kde-format
 msgid "Logout"
 msgstr "Útskráning"
 
-#: content/ui/LoginFlow/LoginIssuePage.qml:75
+#: content/ui/LoginFlow/LoginIssuePage.qml:76
 #: content/ui/Settings/AccountPage.qml:54
 #, fuzzy, kde-format
 #| msgid "Logout"
@@ -1525,7 +1539,7 @@ msgctxt "@title"
 msgid "Logout"
 msgstr "Útskráning"
 
-#: content/ui/LoginFlow/LoginIssuePage.qml:76
+#: content/ui/LoginFlow/LoginIssuePage.qml:77
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to log out?"

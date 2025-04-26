@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-19 00:41+0000\n"
+"POT-Creation-Date: 2025-04-26 00:42+0000\n"
 "PO-Revision-Date: 2025-04-22 01:30+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -404,6 +404,20 @@ msgid ""
 msgstr ""
 "일부 사용자가 나를 팔로우하려면 수동으로 승인되어야 하며, 해당 사용자는 여기"
 "에 표시됩니다."
+
+#: account/socialgraphmodel.cpp:86
+#, kde-format
+msgctxt "@info:placeholder"
+msgid ""
+"No one is following this user, or they have chosen to hide this information."
+msgstr ""
+
+#: account/socialgraphmodel.cpp:88
+#, kde-format
+msgctxt "@info:placeholder"
+msgid ""
+"This user isn't following anyone, or has chosen to hide tihs information."
+msgstr ""
 
 #: account/socialgraphmodel.cpp:90
 #, kde-format
@@ -1386,7 +1400,7 @@ msgstr "로그인 문제"
 msgid "There was an issue logging into the server:<br><b>%1</b>"
 msgstr "서버에 로그인하는 중 오류 발생:<br><b>%1</b>"
 
-#: content/ui/LoginFlow/LoginIssuePage.qml:37
+#: content/ui/LoginFlow/LoginIssuePage.qml:38
 #, kde-format
 msgid ""
 "Please check if the password service is running. For other login issues, you "
@@ -1400,30 +1414,30 @@ msgstr ""
 "아래 단추를 사용해서 로그인을 다시 시도해 보거나 Tokodon을 다시 시작해 보십시"
 "오."
 
-#: content/ui/LoginFlow/LoginIssuePage.qml:47
+#: content/ui/LoginFlow/LoginIssuePage.qml:48
 #, kde-format
 msgid "View Website"
 msgstr "웹사이트 보기"
 
-#: content/ui/LoginFlow/LoginIssuePage.qml:56
+#: content/ui/LoginFlow/LoginIssuePage.qml:57
 #, kde-format
 msgid "Re-Attempt Log In"
 msgstr "로그인 다시 시도"
 
-#: content/ui/LoginFlow/LoginIssuePage.qml:68
+#: content/ui/LoginFlow/LoginIssuePage.qml:69
 #: content/ui/Settings/AccountPage.qml:34
 #, kde-format
 msgid "Logout"
 msgstr "로그아웃"
 
-#: content/ui/LoginFlow/LoginIssuePage.qml:75
+#: content/ui/LoginFlow/LoginIssuePage.qml:76
 #: content/ui/Settings/AccountPage.qml:54
 #, kde-format
 msgctxt "@title"
 msgid "Logout"
 msgstr "로그아웃"
 
-#: content/ui/LoginFlow/LoginIssuePage.qml:76
+#: content/ui/LoginFlow/LoginIssuePage.qml:77
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to log out?"
