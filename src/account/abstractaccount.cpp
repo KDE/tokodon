@@ -338,7 +338,6 @@ void AbstractAccount::setAccessToken(const QString &token)
 {
     m_token = token;
     QMessageFilterContainer::self()->insert(m_token, QStringLiteral("ACCESS_TOKEN"));
-    validateToken();
 }
 
 void AbstractAccount::setInstanceUri(const QString &instance_uri)

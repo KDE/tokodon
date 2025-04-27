@@ -418,6 +418,8 @@ target_link_libraries(tokodon_static
         KF6::IconThemes
         KirigamiAddonsStatefulApp
         ${QTKEYCHAIN_LIBRARIES}
+        QCoro::Core
+        QCoro::Network
 )
 target_include_directories(tokodon_static PRIVATE ${CMAKE_BINARY_DIR})
 

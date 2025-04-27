@@ -131,6 +131,9 @@ if (NOT ANDROID AND NOT WIN32 AND NOT APPLE AND NOT HAIKU)
     )
 endif ()
 
+find_package(QCoro6 REQUIRED COMPONENTS Core Network)
+qcoro_enable_coroutines()
+
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
 
 include(ECMSetupVersion)

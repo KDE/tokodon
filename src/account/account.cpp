@@ -15,6 +15,7 @@
 #include "messagefiltercontainer.h"
 #include "tokodon-version.h"
 
+#include <QCoroSignal>
 #include <QFileInfo>
 #include <QHttpMultiPart>
 #include <QJsonDocument>
@@ -402,7 +403,7 @@ void Account::writeToSettings()
     clientSecretJob->start();
 }
 
-void Account::buildFromSettings()
+QCoro::Task<> Account::buildFromSettings()
 {
     Q_ASSERT(config());
 
@@ -414,24 +415,27 @@ void Account::buildFromSettings()
     accessTokenJob->setInsecureFallback(true);
 #endif
     accessTokenJob->setKey(accessTokenKey());
-
-    connect(accessTokenJob, &QKeychain::ReadPasswordJob::finished, [this, accessTokenJob]() {
-        setAccessToken(accessTokenJob->textData());
-    });
+    accessTokenJob->setAutoDelete(false);
 
     accessTokenJob->start();
+    co_await qCoro(accessTokenJob, &QKeychain::ReadPasswordJob::finished);
 
     auto clientSecretJob = new QKeychain::ReadPasswordJob{QStringLiteral("Tokodon"), this};
 #ifdef SAILFISHOS
     clientSecretJob->setInsecureFallback(true);
 #endif
     clientSecretJob->setKey(clientSecretKey());
-
-    connect(clientSecretJob, &QKeychain::ReadPasswordJob::finished, [this, clientSecretJob]() {
-        m_client_secret = clientSecretJob->textData();
-    });
-
+    clientSecretJob->setAutoDelete(false);
     clientSecretJob->start();
+    co_await qCoro(clientSecretJob, &QKeychain::ReadPasswordJob::finished);
+
+    setAccessToken(accessTokenJob->textData());
+    m_client_secret = clientSecretJob->textData();
+
+    validateToken();
+
+    accessTokenJob->deleteLater();
+    clientSecretJob->deleteLater();
 }
 
 void Account::checkForFollowRequests()
