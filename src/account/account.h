@@ -56,7 +56,7 @@ public:
 
     void writeToSettings() override;
 
-    void buildFromSettings() override;
+    QCoro::Task<> buildFromSettings() override;
 
     void validateToken() override;
 

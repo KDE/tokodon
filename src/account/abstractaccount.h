@@ -11,6 +11,7 @@
 #include "admin/reportinfo.h"
 #include "utils/customemoji.h"
 
+#include <QCoroTask>
 #include <QJsonObject>
 #include <QtQml/qqmlregistration.h>
 
@@ -418,7 +419,7 @@ public:
     /**
      * @brief Read account from settings to disk.
      */
-    virtual void buildFromSettings() = 0;
+    virtual QCoro::Task<> buildFromSettings() = 0;
 
     /**
      * @return If the account has any follow requests.
