@@ -333,6 +333,7 @@ qt_target_qml_sources(tokodon_static
         content/ui/UserInfo.qml
         content/ui/ServerInformationPage.qml
         content/ui/PrivacyPolicyPage.qml
+        content/ui/AccountSwitchDialog.qml
 )
 
 set_source_files_properties(../org.kde.tokodon.svg PROPERTIES
