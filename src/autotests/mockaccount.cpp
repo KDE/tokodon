@@ -153,8 +153,9 @@ void MockAccount::writeToSettings()
 {
 }
 
-void MockAccount::buildFromSettings()
+QCoro::Task<> MockAccount::buildFromSettings()
 {
+    co_return;
 }
 
 void MockAccount::validateToken()
