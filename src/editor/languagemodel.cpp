@@ -3,6 +3,8 @@
 
 #include "editor/languagemodel.h"
 
+#include <KLocalizedString>
+
 using namespace Qt::Literals::StringLiterals;
 
 RawLanguageModel::RawLanguageModel(QObject *parent)
@@ -29,8 +31,12 @@ QVariant RawLanguageModel::data(const QModelIndex &index, int role) const
     switch (role) {
     case CustomRoles::NameRole: {
         // Use the native language name if it exists
-        if (const QString nativeName = QLocale(m_languages[index.row()]).nativeLanguageName(); !nativeName.isEmpty()) {
-            return nativeName;
+        const QLocale locale = QLocale(m_languages[index.row()]);
+        if (const QString nativeName = locale.nativeLanguageName(); !nativeName.isEmpty()) {
+            return i18nc("@info:label %1 is the native language name, and %2 is the localized name. For example, 'dansk (Danish)'",
+                         "%1 (%2)",
+                         nativeName,
+                         QLocale::languageToString(m_languages[index.row()]));
         } else if (const QString languageString = QLocale::languageToString(m_languages[index.row()]); !languageString.isEmpty()) {
             return languageString;
         } else {
