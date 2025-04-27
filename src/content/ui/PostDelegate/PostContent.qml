@@ -62,6 +62,12 @@ QQC2.Label {
                 return;
             }
 
+            // Don't allow opening the menu for internal links, it doesn't make any sense as the user can't do anthing with it.
+            const internalLink = foundLink.startsWith('hashtag:/') || foundLink.startsWith('account:/');
+            if (button === Qt.RightButton && internalLink) {
+                return;
+            }
+
             const linkMenuComponent = Qt.createComponent("org.kde.tokodon", "LinkMenu");
             const linkMenu = linkMenuComponent.createObject(root.QQC2.Overlay.overlay, {
                 url: foundLink,
