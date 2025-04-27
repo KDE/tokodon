@@ -44,6 +44,9 @@ QQC2.Label {
     TapHandler {
         acceptedButtons: Qt.RightButton | Qt.LeftButton
         exclusiveSignals: TapHandler.SingleTap | TapHandler.DoubleTap
+        // Exclude touchscreen users from this menu until we can figure out a better UX.
+        // Currently it's way too easy to trigger this when tapping URLs.
+        acceptedDevices: PointerDevice.Mouse | PointerDevice.TouchPad | PointerDevice.Stylus
 
         onSingleTapped: (eventPoint, button) => {
             const point = root.mapFromGlobal(eventPoint.globalPosition.x, eventPoint.globalPosition.y);
