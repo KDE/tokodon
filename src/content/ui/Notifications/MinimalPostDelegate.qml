@@ -149,57 +149,13 @@ QQC2.ItemDelegate {
             }
         }
 
-        QQC2.Control {
-            id: filterNotice
+        FilterNotice {
+            filters: root.filters
+            filtered: root.filtered
 
-            readonly property string matchedFilters: root.filters.join(', ')
-
-            padding: Kirigami.Units.largeSpacing
-
-            activeFocusOnTab: true
-            visible: root.filtered
-            Accessible.role: Accessible.Button
-            Accessible.name: i18nc("@info", "Filter")
-            Accessible.description: matchedFilters
-            Accessible.onPressAction: toggleFilter()
-
-            Keys.onSpacePressed: toggleFilter()
+            onToggleFilter: root.filtered = false
 
             Layout.fillWidth: true
-
-            function toggleFilter(): void {
-                root.filtered = false
-            }
-
-            contentItem: RowLayout {
-                id: warningLayout
-                spacing: Kirigami.Units.smallSpacing
-
-                Kirigami.Icon {
-                    Layout.alignment: Qt.AlignVCenter
-                    source: "view-filter"
-                }
-
-                QQC2.Label {
-                    id: spoilerTextLabel
-                    Layout.fillWidth: true
-                    text: i18n("<b>Filtered</b><br /> %1", filterNotice.matchedFilters)
-                    wrapMode: Text.Wrap
-                    font: Config.defaultFont
-                }
-
-                QQC2.Button {
-                    activeFocusOnTab: false
-                    text: i18nc("@action:button", "Show Anyway")
-                    icon.name: "view-visible-symbolic"
-                    onClicked: filterNotice.toggleFilter()
-                }
-            }
-
-            background: Rectangle {
-                radius: Kirigami.Units.cornerRadius
-                color: Kirigami.Theme.activeBackgroundColor
-            }
         }
 
         ColumnLayout {
