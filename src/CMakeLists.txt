@@ -251,6 +251,7 @@ qt_target_qml_sources(tokodon_static
         # Notifications
         content/ui/Notifications/AccountWarningDelegate.qml
         content/ui/Notifications/GroupInteractionLabel.qml
+        content/ui/Notifications/MinimalPostDelegate.qml
         content/ui/Notifications/RelationshipSeveranceDelegate.qml
         content/ui/Notifications/ReportDelegate.qml
         content/ui/Notifications/UserInteractionLabel.qml

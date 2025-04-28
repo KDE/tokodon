@@ -1,0 +1,316 @@
+// SPDX-FileCopyrightText: 2025 Joshua Goins <josh@redstrate.com
+// SPDX-License-Identifier: GPL-3.0-or-later
+
+pragma ComponentBehavior: Bound
+
+import QtQuick
+import org.kde.kirigami 2 as Kirigami
+import QtQuick.Controls 2 as QQC2
+import QtQuick.Layouts
+import org.kde.tokodon
+
+
+import "../Notifications" as Notifications
+
+/**
+ * @brief A smaller post delegate meant for showing displaying secondary content. A good example is a reply preview, or a notification about your own post.
+ */
+QQC2.ItemDelegate {
+    id: root
+
+    // The model roles
+    required property int index
+
+    required property string id
+    required property string originalId
+    required property string url
+    required property var authorIdentity
+
+    required property bool isBoosted
+    required property var boostAuthorIdentity
+
+    required property bool isReply
+    required property var replyAuthorIdentity
+
+    required property var notificationActorIdentity
+
+    required property string content
+    required property string spoilerText
+    required property string relativeTime
+    required property string absoluteTime
+    required property string publishedAt
+    required property var attachments
+    required property var poll
+    required property bool selected
+    required property var filters
+    required property bool sensitive
+    required property int type
+    required property var mentions
+    required property int visibility
+    required property bool wasEdited
+    required property string editedAt
+
+    required property var post
+
+    required property bool isGroup
+    required property bool isInGroup
+    required property int numInGroup
+
+    property bool filtered: root.filters.length > 0
+    property var timelineModel
+    property bool showSeparator: true
+    property bool loading: false
+    property bool inViewPort: true
+
+    padding: 0
+    topPadding: Kirigami.Units.largeSpacing
+    bottomPadding: Kirigami.Units.largeSpacing
+    leftPadding: Kirigami.Units.largeSpacing
+    rightPadding: Kirigami.Units.largeSpacing
+
+    topInset: 0
+    leftInset: 0
+    rightInset: 0
+    bottomInset: 0
+
+    highlighted: false
+    hoverEnabled: false
+
+    Accessible.description: root.spoilerText.length === 0 ? i18n("Normal Status") : i18n("Spoiler Status")
+
+    function openPost(): void {
+        if (postContent.hoveredLink) {
+            return;
+        }
+        Navigation.openPost(root.id);
+    }
+
+    ListView.onReused: {
+        postContent.visible = Qt.binding(() => {
+            return root.spoilerText.length === 0 || AccountManager.selectedAccount.preferences.extendSpoiler;
+        });
+        filtered = Qt.binding(() => {
+            return root.filters.length > 0;
+        });
+    }
+
+    background: Rectangle {
+        color: root.selected ? Kirigami.Theme.alternateBackgroundColor : Kirigami.Theme.backgroundColor
+
+        Kirigami.Separator {
+            width: flexColumn.innerWidth
+            visible: root.showSeparator && !root.selected
+            anchors {
+                horizontalCenter: parent.horizontalCenter
+                bottom: parent.bottom
+            }
+        }
+    }
+
+    TapHandler {
+        onTapped: eventPoint => {
+            // Get the inner ColumnLayout for the FlexColumn
+            const innerChild = flexColumn.children[0];
+            // Check if we're inside the inner column, not on the outside:
+            if (innerChild.contains(innerChild.mapFromGlobal(eventPoint.globalPosition.x, eventPoint.globalPosition.y))) {
+                root.openPost();
+            }
+        }
+    }
+
+    contentItem: PostLayout {
+        id: flexColumn
+
+        isThreadReply: false
+        isReply: false
+        threadMargin: 0
+        isLastThreadReply: false
+
+        // Interaction labels for notifications
+        Loader {
+            active: root.notificationActorIdentity !== undefined && !root.isGroup
+            visible: active
+
+            sourceComponent: Notifications.UserInteractionLabel {
+                type: root.type
+                notificationActorIdentity: root.notificationActorIdentity
+            }
+        }
+
+        // Interaction labels for grouped notifications
+        Loader {
+            active: root.notificationActorIdentity !== undefined && root.isGroup
+            visible: active
+
+            sourceComponent: Notifications.GroupInteractionLabel {
+                type: root.type
+                notificationActorIdentity: root.notificationActorIdentity
+                numInGroup: root.numInGroup
+            }
+        }
+
+        QQC2.Control {
+            id: filterNotice
+
+            readonly property string matchedFilters: root.filters.join(', ')
+
+            padding: Kirigami.Units.largeSpacing
+
+            activeFocusOnTab: true
+            visible: root.filtered
+            Accessible.role: Accessible.Button
+            Accessible.name: i18nc("@info", "Filter")
+            Accessible.description: matchedFilters
+            Accessible.onPressAction: toggleFilter()
+
+            Keys.onSpacePressed: toggleFilter()
+
+            Layout.fillWidth: true
+
+            function toggleFilter(): void {
+                root.filtered = false
+            }
+
+            contentItem: RowLayout {
+                id: warningLayout
+                spacing: Kirigami.Units.smallSpacing
+
+                Kirigami.Icon {
+                    Layout.alignment: Qt.AlignVCenter
+                    source: "view-filter"
+                }
+
+                QQC2.Label {
+                    id: spoilerTextLabel
+                    Layout.fillWidth: true
+                    text: i18n("<b>Filtered</b><br /> %1", filterNotice.matchedFilters)
+                    wrapMode: Text.Wrap
+                    font: Config.defaultFont
+                }
+
+                QQC2.Button {
+                    activeFocusOnTab: false
+                    text: i18nc("@action:button", "Show Anyway")
+                    icon.name: "view-visible-symbolic"
+                    onClicked: filterNotice.toggleFilter()
+                }
+            }
+
+            background: Rectangle {
+                radius: Kirigami.Units.cornerRadius
+                color: Kirigami.Theme.activeBackgroundColor
+            }
+        }
+
+        ColumnLayout {
+            visible: !root.filtered && root.post.hasContent
+            spacing: Kirigami.Units.largeSpacing
+
+            Layout.fillWidth: true
+
+            Loader {
+                visible: root.spoilerText.length !== 0
+                active: visible
+
+                Layout.fillWidth: true
+
+                sourceComponent: QQC2.Control {
+                    id: notice
+
+                    padding: Kirigami.Units.largeSpacing
+
+                    activeFocusOnTab: true
+
+                    Accessible.role: Accessible.Button
+                    Accessible.name: i18nc("@info", "Content Notice")
+                    Accessible.description: root.spoilerText
+                    Accessible.onPressAction: toggleNotice()
+
+                    Keys.onSpacePressed: toggleNotice()
+
+                    function toggleNotice(): void {
+                        postContent.visible = !postContent.visible;
+                    }
+
+                    contentItem: RowLayout {
+                        id: warningLayout
+                        spacing: Kirigami.Units.smallSpacing
+
+                        Kirigami.Icon {
+                            Layout.alignment: Qt.AlignVCenter
+                            source: "data-information"
+                        }
+
+                        QQC2.Label {
+                            id: spoilerTextLabel
+                            Layout.fillWidth: true
+                            text: i18n("<b>Content Notice</b><br /> %1", root.spoilerText)
+                            wrapMode: Text.Wrap
+                            font: Config.defaultFont
+                        }
+
+                        QQC2.Button {
+                            activeFocusOnTab: false
+                            text: postContent.visible ? i18n("Show Less") : i18n("Show More")
+                            icon.name: postContent.visible ? "view-hidden-symbolic" : "view-visible-symbolic"
+                            onClicked: notice.toggleNotice()
+                        }
+                    }
+
+                    background: Rectangle {
+                        radius: Kirigami.Units.cornerRadius
+                        color: Kirigami.Theme.activeBackgroundColor
+                    }
+                }
+            }
+
+            PostContent {
+                id: postContent
+
+                content: root.content
+                expandedPost: false
+                secondary: true
+                visible: root.spoilerText.length === 0 || AccountManager.selectedAccount.preferences.extendSpoiler
+                shouldOpenInternalLinks: true
+            }
+        }
+
+        Loader {
+            sourceComponent: PostPoll {
+                index: root.index
+                poll: root.poll
+            }
+
+            active: root.poll !== null && root.poll !== undefined
+            visible: active && postContent.visible
+
+            Layout.fillWidth: true
+        }
+
+        Loader {
+            sourceComponent: AttachmentGrid {
+                expandedPost: false
+                attachments: root.post.attachments
+                identity: root.authorIdentity
+                sensitive: root.sensitive
+                secondary: false
+                inViewPort: root.inViewPort
+                viewportWidth: flexColumn.innerWidth
+                forceCrop: true
+            }
+
+            active: root.attachments.length > 0 && !filtered
+            visible: active
+
+            Layout.fillWidth: true
+            Layout.topMargin: Kirigami.Units.largeSpacing
+        }
+
+        PostTags {
+            standaloneTags: root.post.standaloneTags
+            visible: !root.filtered && postContent.visible && root.post.standaloneTags.length !== 0
+
+            Layout.fillWidth: true
+        }
+    }
+}

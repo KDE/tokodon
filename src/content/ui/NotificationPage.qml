@@ -185,25 +185,21 @@ Kirigami.ScrollablePage {
             role: "type"
             DelegateChoice {
                 roleValue: Notification.Favorite
-                PostDelegate {
+                MinimalPostDelegate {
                     width: ListView.view.width
-                    secondary: true
                     timelineModel: groupedNotificationModel
                     loading: listview.model.loading
                     showSeparator: index !== ListView.view.count - 1
-                    showInteractionButton: false
                 }
             }
 
             DelegateChoice {
                 roleValue: Notification.Repeat
-                PostDelegate {
+                MinimalPostDelegate {
                     width: ListView.view.width
-                    secondary: true
                     timelineModel: groupedNotificationModel
                     loading: listview.model.loading
                     showSeparator: index !== ListView.view.count - 1
-                    showInteractionButton: false
                 }
             }
 
