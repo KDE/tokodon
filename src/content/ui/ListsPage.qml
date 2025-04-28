@@ -13,6 +13,7 @@ import "./PostDelegate"
 Kirigami.ScrollablePage {
     id: root
 
+    property string padeId
     property Component editListPage: Qt.createComponent("org.kde.tokodon", "EditListPage", Qt.Asynchronous)
 
     function reload(): void {

@@ -6,6 +6,9 @@
 
 #include <KAuthorized>
 #include <KLocalizedString>
+#include <QActionGroup>
+
+#include "account.h"
 
 using namespace Qt::StringLiterals;
 
@@ -81,6 +84,94 @@ void TokodonApplication::setupActions()
     });
     configureAction->setText(i18nc("@action:button", "Write a New Post"));
     configureAction->setIcon(QIcon::fromTheme(QStringLiteral("list-add")));
+
+    auto pagesGroup = new QActionGroup(this);
+    pagesGroup->setExclusive(true);
+
+    auto homeTimelineAction = mainCollection()->addAction(u"home_timeline"_s, this, &TokodonApplication::openHomeTimeline);
+    homeTimelineAction->setCheckable(true);
+    homeTimelineAction->setActionGroup(pagesGroup);
+    homeTimelineAction->setText(i18nc("@action:button Home Timeline", "Open Home Timeline"));
+    homeTimelineAction->setIcon(QIcon::fromTheme(QStringLiteral("go-home-large")));
+
+    auto notificationsAction = mainCollection()->addAction(u"notifications"_s, this, &TokodonApplication::openNotifications);
+    notificationsAction->setCheckable(true);
+    notificationsAction->setActionGroup(pagesGroup);
+    notificationsAction->setText(i18nc("@action:button Account Notifications", "Open Notifications"));
+    notificationsAction->setIcon(QIcon::fromTheme(QStringLiteral("notifications")));
+
+    auto followRequestsAction = mainCollection()->addAction(u"follow_requests"_s, this, &TokodonApplication::openFollowRequests);
+    followRequestsAction->setCheckable(true);
+    followRequestsAction->setActionGroup(pagesGroup);
+    followRequestsAction->setText(i18nc("@action:button Follows that require explicit allow/deny", "Open Follow Requests"));
+    followRequestsAction->setIcon(QIcon::fromTheme(QStringLiteral("list-add-user")));
+
+    auto localTimelineAction = mainCollection()->addAction(u"local_timeline"_s, this, &TokodonApplication::openLocalTimeline);
+    localTimelineAction->setCheckable(true);
+    localTimelineAction->setActionGroup(pagesGroup);
+    localTimelineAction->setText(i18nc("@action:button Local timeline of posts from the account's own server", "Open Local Timeline"));
+    localTimelineAction->setIcon(QIcon::fromTheme(QStringLiteral("system-users")));
+
+    auto globalTimelineAction = mainCollection()->addAction(u"global_timeline"_s, this, &TokodonApplication::openGlobalTimeline);
+    globalTimelineAction->setCheckable(true);
+    globalTimelineAction->setActionGroup(pagesGroup);
+    globalTimelineAction->setText(i18nc("@action:button Global timeline of posts from the entire Fediverse network", "Open Global Timeline"));
+    globalTimelineAction->setIcon(QIcon::fromTheme(QStringLiteral("kstars_xplanet")));
+
+    auto conversationsAction = mainCollection()->addAction(u"conversations"_s, this, &TokodonApplication::openConversations);
+    conversationsAction->setCheckable(true);
+    conversationsAction->setActionGroup(pagesGroup);
+    conversationsAction->setText(i18nc("@action:button Direct one-on-one messages between users", "Open Conversations"));
+    conversationsAction->setIcon(QIcon::fromTheme(QStringLiteral("view-conversation-balloon-symbolic")));
+
+    auto favoritesAction = mainCollection()->addAction(u"favorites"_s, this, &TokodonApplication::openFavorites);
+    favoritesAction->setCheckable(true);
+    favoritesAction->setActionGroup(pagesGroup);
+    favoritesAction->setText(i18nc("@action:button This account's favorited posts", "Open Favorites"));
+    favoritesAction->setIcon(QIcon::fromTheme(QStringLiteral("favorite")));
+
+    auto bookmarksAction = mainCollection()->addAction(u"bookmarks"_s, this, &TokodonApplication::openBookmarks);
+    bookmarksAction->setCheckable(true);
+    bookmarksAction->setActionGroup(pagesGroup);
+    bookmarksAction->setText(i18nc("@action:button This account's bookmarked posts", "Open Bookmarks"));
+    bookmarksAction->setIcon(QIcon::fromTheme(QStringLiteral("bookmarks")));
+
+    auto exploreAction = mainCollection()->addAction(u"explore"_s, this, &TokodonApplication::openExplore);
+    exploreAction->setCheckable(true);
+    exploreAction->setActionGroup(pagesGroup);
+    exploreAction->setText(i18nc("@action:button Explore this server's trending posts, news, and more", "Open Explore"));
+    exploreAction->setIcon(QIcon::fromTheme(QStringLiteral("kstars_planets")));
+
+    auto followingAction = mainCollection()->addAction(u"following"_s, this, &TokodonApplication::openFollowing);
+    followingAction->setCheckable(true);
+    followingAction->setActionGroup(pagesGroup);
+    followingAction->setText(i18nc("@action:button A list of this account's followed accounts", "Open Following"));
+    followingAction->setIcon(QIcon::fromTheme(QStringLiteral("user-group-properties-symbolic")));
+
+    auto searchAction = mainCollection()->addAction(u"search"_s, this, &TokodonApplication::openSearch);
+    searchAction->setCheckable(true);
+    searchAction->setActionGroup(pagesGroup);
+    searchAction->setText(i18nc("@action:button Search for users, posts and tags", "Open Search"));
+    searchAction->setIcon(QIcon::fromTheme(QStringLiteral("search")));
+
+    auto serverInformationAction = mainCollection()->addAction(u"server_information"_s, this, &TokodonApplication::openServerInformation);
+    serverInformationAction->setCheckable(true);
+    serverInformationAction->setActionGroup(pagesGroup);
+    serverInformationAction->setText(i18nc("@action:button", "Open Server Information"));
+    serverInformationAction->setIcon(QIcon::fromTheme(QStringLiteral("note")));
+
+    auto listsAction = mainCollection()->addAction(u"lists"_s, this, &TokodonApplication::openLists);
+    listsAction->setCheckable(true);
+    listsAction->setActionGroup(pagesGroup);
+    listsAction->setText(i18nc("@action:button This account's lists, or timelines consisting of a groups of accounts", "Open Lists"));
+    listsAction->setIcon(QIcon::fromTheme(QStringLiteral("view-list-text")));
+
+    auto profileAction = mainCollection()->addAction(u"profile"_s, this, &TokodonApplication::openProfile);
+    profileAction->setCheckable(true);
+    profileAction->setActionGroup(pagesGroup);
+    profileAction->setText(i18nc("@action:button This account's profile", "Open Profile"));
+    profileAction->setIcon(QIcon::fromTheme(QStringLiteral("user")));
+
     updateAccountActions();
 
     mainCollection()->addAction(configureAction->objectName(), configureAction);
@@ -131,6 +222,10 @@ void TokodonApplication::updateAccountActions()
     mainCollection()
         ->action(u"open_status_composer"_s)
         ->setEnabled(AccountManager::instance().selectedAccount() && !AccountManager::instance().selectedAccountHasIssue());
+
+    if (!AccountManager::instance().selectedAccount()) {
+        mainCollection()->action(u"server_information"_s)->setVisible(false);
+    }
 }
 
 QList<KirigamiActionCollection *> TokodonApplication::actionCollections() const

@@ -16,6 +16,8 @@ import org.kde.tokodon
 FormCard.FormCardPage {
     id: root
 
+    property string pageId
+
     title: AccountManager.selectedAccount.instanceName
 
     FormCard.FormCard {

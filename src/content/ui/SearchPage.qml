@@ -11,6 +11,7 @@ import './PostDelegate'
 Kirigami.ScrollablePage {
     id: root
 
+    property string pageId
     property alias searchModel: searchView.model
 
     title: i18nc("@title", "Search")

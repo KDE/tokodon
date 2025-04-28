@@ -20,6 +20,7 @@ Kirigami.Page {
 
     required property string accountId
 
+    property string pageId
     property var postsBar
     property string selectedTag
 

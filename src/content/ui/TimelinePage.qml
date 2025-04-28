@@ -14,6 +14,7 @@ import './StatusComposer'
 Kirigami.ScrollablePage {
     id: root
 
+    property string pageId
     property var dialog: null
     required property var model
     property bool expandedPost: false

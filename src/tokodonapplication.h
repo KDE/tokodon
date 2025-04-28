@@ -28,6 +28,20 @@ Q_SIGNALS:
     void accountManagerChanged();
     void configureAccount(AbstractAccount *account);
     void addAccount();
+    void openHomeTimeline();
+    void openNotifications();
+    void openFollowRequests();
+    void openLocalTimeline();
+    void openGlobalTimeline();
+    void openConversations();
+    void openFavorites();
+    void openBookmarks();
+    void openExplore();
+    void openFollowing();
+    void openSearch();
+    void openServerInformation();
+    void openLists();
+    void openProfile();
 
 private:
     void setupActions() override;

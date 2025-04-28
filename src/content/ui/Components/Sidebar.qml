@@ -47,8 +47,6 @@ Kirigami.OverlayDrawer {
 
         property int alertCount
 
-        QQC2.ButtonGroup.group: pageButtonGroup
-
         padding: Kirigami.Units.largeSpacing
         Layout.fillWidth: true
         activeFocusOnTab: true
@@ -133,10 +131,6 @@ Kirigami.OverlayDrawer {
 
                 width: scrollView.contentWidth
                 height: Math.max(scrollView.availableHeight, implicitHeight)
-
-                QQC2.ButtonGroup {
-                    id: pageButtonGroup
-                }
 
                 Repeater {
                     id: actionsRepeater
