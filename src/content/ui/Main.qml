@@ -407,6 +407,17 @@ StatefulApp.StatefulWindow {
                 accountId: AccountManager.selectedAccountId,
             });
         }
+
+        function onOpenConversations(): void {
+            if (root.checkIfCurrentPage("conversations")) {
+                return;
+            }
+
+            pageStack.clear();
+            pageStack.push(Qt.createComponent("org.kde.tokodon", "ConversationPage"), {
+                pageId: "conversations",
+            });
+        }
     }
 
     function popoutStatusComposer(originalEditor: StatusComposer): void {
