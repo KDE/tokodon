@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-30 00:42+0000\n"
-"PO-Revision-Date: 2025-04-28 04:16+0200\n"
+"PO-Revision-Date: 2025-04-30 04:31+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -1168,7 +1168,7 @@ msgstr "%1 დარეგისტრირდა"
 #, kde-format
 msgctxt "@title 'Following' as in the users you're following on Mastodon."
 msgid "Following"
-msgstr "გამოწერილია"
+msgstr "მიჰყვებით"
 
 #: content/ui/FollowingPage.qml:41 content/ui/Settings/SafetyPage.qml:26
 #: content/ui/TimelinePage.qml:106
@@ -1686,7 +1686,7 @@ msgstr "პასუხი, როგორც…"
 #, kde-format
 msgctxt "@title"
 msgid "Favorite As…"
-msgstr "სანიშნეებში ჩამატება, როგორც…"
+msgstr "რჩეულებში ჩამატება, როგორც…"
 
 #: content/ui/Main.qml:152
 #, kde-format
@@ -1714,7 +1714,7 @@ msgstr "როგორც ჩანს, გარშემო სიჩუმ�
 #: content/ui/Main.qml:334
 #, kde-format
 msgid "No Favorites"
-msgstr "სანიშნეების გარეშე"
+msgstr "რჩეულების გარეშე"
 
 #: content/ui/Main.qml:335
 #, kde-format
@@ -1795,7 +1795,7 @@ msgstr "საუბრები"
 #, kde-format
 msgctxt "@action:button This account's favorited posts"
 msgid "Favorites"
-msgstr "სანიშნეები"
+msgstr "რჩეულები"
 
 #: content/ui/Main.qml:617
 #, kde-format
@@ -1813,7 +1813,7 @@ msgstr "გამოკვლევა"
 #, kde-format
 msgctxt "@action:button A list of this account's followed accounts"
 msgid "Following"
-msgstr "გამოწერილია"
+msgstr "მიჰყვება"
 
 #: content/ui/Main.qml:629
 #, kde-format
@@ -2629,7 +2629,7 @@ msgstr "მიმდევრები"
 #, kde-format
 msgctxt "@info:row Number of accounts followed by the account"
 msgid "Following"
-msgstr "გამოწერილია"
+msgstr "მიჰყვება"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:327
 #, kde-format
@@ -2986,7 +2986,7 @@ msgstr "მიმდევრები"
 #, kde-format
 msgctxt "@info Row Number of accounts followed by the account"
 msgid "Following"
-msgstr "გამოწერილია"
+msgstr "მიჰყვება"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:160
 #, kde-format
@@ -3309,7 +3309,7 @@ msgstr "გაძლიერება"
 #, kde-format
 msgctxt "Show only favorites"
 msgid "Favorites"
-msgstr "სანიშნები"
+msgstr "რჩეულები"
 
 #: content/ui/NotificationPage.qml:113
 #, kde-format
@@ -3574,7 +3574,7 @@ msgstr "პირადი შეტყობინება"
 #: content/ui/PostDelegate/InformationBar.qml:91
 #, kde-format
 msgid "No favorites"
-msgstr "სანიშნეების გარეშე"
+msgstr "რჩეულების გარეშე"
 
 #: content/ui/PostDelegate/InformationBar.qml:93
 #, kde-format
@@ -3745,7 +3745,7 @@ msgstr "რჩეული"
 #: content/ui/PostDelegate/PostDelegate.qml:502
 #, kde-format
 msgid "Remove bookmark"
-msgstr "სანიშნის წაშლა"
+msgstr "სანიშნეს წაშლა"
 
 #: content/ui/PostDelegate/PostDelegate.qml:502
 #, kde-format
@@ -3840,7 +3840,7 @@ msgstr "პასუხი, როგორც…"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Favorite as…"
-msgstr "სანიშნეებში ჩამატება, როგორც…"
+msgstr "რჩეულებში ჩამატება, როგორც…"
 
 #: content/ui/PostDelegate/PostMenu.qml:109
 #, kde-format
@@ -3858,7 +3858,7 @@ msgstr "ჩანიშვნა, როგორც…"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove Bookmark"
-msgstr "სანიშნის წაშლა"
+msgstr "სანიშნეს წაშლა"
 
 #: content/ui/PostDelegate/PostMenu.qml:127
 #, kde-format
@@ -4736,7 +4736,7 @@ msgstr "როცა ანგარიში, რომელიც ხელ�
 #: content/ui/Settings/NotificationsPage.qml:185
 #, kde-format
 msgid "Favorites"
-msgstr "სანიშნები"
+msgstr "რჩეულები"
 
 #: content/ui/Settings/NotificationsPage.qml:186
 #, kde-format
@@ -5547,7 +5547,7 @@ msgstr "სანიშნები"
 #, kde-format
 msgctxt "@title"
 msgid "Favorites"
-msgstr "სანიშნეები"
+msgstr "რჩეულები"
 
 #: timeline/maintimelinemodel.cpp:39
 #, kde-format
@@ -5609,115 +5609,91 @@ msgid "Write a New Post"
 msgstr "დაწერეთ ახალი პოსტი"
 
 #: tokodonapplication.cpp:94
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "End of Timeline"
+#, kde-format
 msgctxt "@action:button Home Timeline"
 msgid "Open Home Timeline"
-msgstr "დროის ხაზის ბოლო"
+msgstr "თქვენი დროის ხაზის გახსნა"
 
 #: tokodonapplication.cpp:100
-#, fuzzy, kde-format
-#| msgctxt "@action:button Account Notifications"
-#| msgid "Notifications"
+#, kde-format
 msgctxt "@action:button Account Notifications"
 msgid "Open Notifications"
-msgstr "გაფრთხილებები"
+msgstr "გაფრთხილებების გახსნა"
 
 #: tokodonapplication.cpp:106
-#, fuzzy, kde-format
-#| msgctxt "@action:button Follows that require explicit allow/deny"
-#| msgid "Follow Requests"
+#, kde-format
 msgctxt "@action:button Follows that require explicit allow/deny"
 msgid "Open Follow Requests"
-msgstr "მიყოლის მოთხოვნები"
+msgstr "მიყოლის მოთხოვნების გახსნა"
 
 #: tokodonapplication.cpp:112
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Local Timeline"
+#, kde-format
 msgctxt "@action:button Local timeline of posts from the account's own server"
 msgid "Open Local Timeline"
-msgstr "ლოკალური დროის ხაზი"
+msgstr "ლოკალური დროის ხაზის გახსნა"
 
 #: tokodonapplication.cpp:118
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Global Timeline"
+#, kde-format
 msgctxt ""
 "@action:button Global timeline of posts from the entire Fediverse network"
 msgid "Open Global Timeline"
-msgstr "გლობალური დროის ხაზი"
+msgstr "გლობალური დროის ხაზი გახსნა"
 
 #: tokodonapplication.cpp:124
-#, fuzzy, kde-format
-#| msgid "Conversations"
+#, kde-format
 msgctxt "@action:button Direct one-on-one messages between users"
 msgid "Open Conversations"
-msgstr "საუბრები"
+msgstr "საუბრის გახსნა"
 
 #: tokodonapplication.cpp:130
-#, fuzzy, kde-format
-#| msgctxt "@action:button This account's favorited posts"
-#| msgid "Favorites"
+#, kde-format
 msgctxt "@action:button This account's favorited posts"
 msgid "Open Favorites"
-msgstr "სანიშნეები"
+msgstr "რჩეულების გახსნა"
 
 #: tokodonapplication.cpp:136
-#, fuzzy, kde-format
-#| msgctxt "@action:button This account's bookmarked posts"
-#| msgid "Bookmarks"
+#, kde-format
 msgctxt "@action:button This account's bookmarked posts"
 msgid "Open Bookmarks"
-msgstr "სანიშნეები"
+msgstr "სანიშნეების გახსნა"
 
 #: tokodonapplication.cpp:142
-#, fuzzy, kde-format
-#| msgid "Explore"
+#, kde-format
 msgctxt "@action:button Explore this server's trending posts, news, and more"
 msgid "Open Explore"
-msgstr "დათვალიერება"
+msgstr "დათვალიერების გახსნა"
 
 #: tokodonapplication.cpp:148
-#, fuzzy, kde-format
-#| msgctxt "@action:button A list of this account's followed accounts"
-#| msgid "Following"
+#, kde-format
 msgctxt "@action:button A list of this account's followed accounts"
 msgid "Open Following"
-msgstr "გამოწერილია"
+msgstr "მიყოლილების გახსნა"
 
 #: tokodonapplication.cpp:154
-#, fuzzy, kde-format
-#| msgctxt "@action:button Search for users, posts and tags"
-#| msgid "Search"
+#, kde-format
 msgctxt "@action:button Search for users, posts and tags"
 msgid "Open Search"
-msgstr "ძებნა"
+msgstr "ძებნის გახსნა"
 
 #: tokodonapplication.cpp:160
-#, fuzzy, kde-format
-#| msgctxt "@abel Account preferences"
-#| msgid "Open Server in Browser"
+#, kde-format
 msgctxt "@action:button"
 msgid "Open Server Information"
-msgstr "სერვისის ბრაუზერში გახსნა"
+msgstr "სერვერის ინფორმაციის გახსნა"
 
 #: tokodonapplication.cpp:166
-#, fuzzy, kde-format
-#| msgid "Open Link"
+#, kde-format
 msgctxt ""
 "@action:button This account's lists, or timelines consisting of a groups of "
 "accounts"
 msgid "Open Lists"
-msgstr "ბმულის გახსნა"
+msgstr "სიების გახსნა"
 
 #: tokodonapplication.cpp:172
-#, fuzzy, kde-format
-#| msgid "View Profile"
+#, kde-format
 msgctxt "@action:button This account's profile"
 msgid "Open Profile"
-msgstr "პროფილის ნახვა"
+msgstr "პროფილის გახსნა"
 
 #: tokodonapplication.cpp:206
 #, kde-format
