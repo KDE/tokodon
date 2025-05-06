@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-30 00:42+0000\n"
-"PO-Revision-Date: 2025-01-19 20:57+0100\n"
+"PO-Revision-Date: 2025-05-05 22:52+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.12.1\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: account/abstractaccount.cpp:33
 #, kde-format
@@ -90,7 +90,7 @@ msgstr "Minden fájl (*)"
 #: account/abstractaccount.cpp:489
 #, kde-format
 msgid "All supported formats (%1)"
-msgstr ""
+msgstr "Minden támogatott formátum (%1)"
 
 #: account/abstractaccount.cpp:643
 #, kde-format
@@ -204,36 +204,34 @@ msgctxt ""
 "the year. The variable is the current year e.g. 2024. Please don't translate "
 "the hashtag."
 msgid "Your %1 #FediWrapped awaits!"
-msgstr ""
+msgstr "A %1. évi FediWrapped elkészült."
 
 #: account/notificationhandler.cpp:145
 #, kde-format
 msgid "Unveil your year's highlights and memorable moments on Mastodon!"
 msgstr ""
+"Mutassa be az év fénypontjait és emlékezetes pillanatait a Fediverse-en!"
 
 #: account/notificationhandler.cpp:149
-#, fuzzy, kde-format
-#| msgid "No Notifications"
+#, kde-format
 msgctxt "@title"
 msgid "New Notification"
-msgstr "Nincsenek értesítések"
+msgstr "Új értesítés"
 
 #: account/notificationhandler.cpp:150
-#, fuzzy, kde-format
-#| msgid "Receiving push notifications"
+#, kde-format
 msgid "You received a new notification."
-msgstr "Leküldéses értesítések fogadása"
+msgstr "Új értesítést kapott."
 
 #: account/notificationhandler.cpp:158
-#, fuzzy, kde-kuit-format
-#| msgid "<b>Content Notice</b><br /> %1"
+#, kde-kuit-format
 msgid "<b>Content Notice</b>: %1"
-msgstr "<b>Tartalmi figyelmeztetés</b><br /> %1"
+msgstr "<b>Tartalmi figyelmeztetés</b>: %1"
 
 #: account/notificationhandler.cpp:162
 #, kde-format
 msgid "This post has no text."
-msgstr ""
+msgstr "A bejegyzésnek nincs szövege."
 
 #: account/notificationhandler.cpp:169
 #, kde-format
@@ -241,12 +239,13 @@ msgid ""
 "The moderators of your server has limited this user, view this in Tokodon to "
 "see their profile."
 msgstr ""
+"A kiszolgáló moderátorai korlátozták ezt a felhasználót, tekintse meg ezt "
+"Tokodonban a profiljaik megnézéséhez."
 
 #: account/notificationhandler.cpp:173
-#, fuzzy, kde-format
-#| msgid "This user hasn't posted any media yet."
+#, kde-format
 msgid "This user doesn't have a description."
-msgstr "Ez a felhasználó még nem tett közzé médiát."
+msgstr "Ennek a felhasználónak nincs leírása."
 
 #: account/profileeditor.cpp:188
 #, kde-format
@@ -268,22 +267,20 @@ msgstr "Fiókadatok mentve"
 msgid ""
 "This server provided no rules. Please see their website for more information."
 msgstr ""
+"Ez a kiszolgáló nem adott szabályokat. Kérjük, további információkért "
+"tekintse meg a weboldalukat."
 
 #: account/scheduledstatusesmodel.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Report Post"
+#, kde-format
 msgctxt "@title:window"
 msgid "Draft Posts"
-msgstr "Bejegyzés jelentése"
+msgstr "Bejegyzésvázlatok"
 
 #: account/scheduledstatusesmodel.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Delete Post"
+#, kde-format
 msgctxt "@title:window"
 msgid "Scheduled Posts"
-msgstr "Bejegyzés törlése"
+msgstr "Ütemezett bejegyzések"
 
 #: account/socialgraphmodel.cpp:32
 #, kde-format
@@ -414,6 +411,8 @@ msgctxt "@info:placeholder"
 msgid ""
 "No one is following this user, or they have chosen to hide this information."
 msgstr ""
+"Senki sem követi ezt a felhasználót, vagy úgy döntött, hogy elrejti ezt az "
+"információt."
 
 #: account/socialgraphmodel.cpp:88
 #, kde-format
@@ -421,6 +420,8 @@ msgctxt "@info:placeholder"
 msgid ""
 "This user isn't following anyone, or has chosen to hide this information."
 msgstr ""
+"Ez a felhasználó nem követ senkit, vagy úgy döntött, hogy elrejti ezt az "
+"információt."
 
 #: account/socialgraphmodel.cpp:90
 #, kde-format
@@ -565,19 +566,16 @@ msgid "Could not unassign report"
 msgstr "Nem sikerült feloldani a jelentés hozzárendelését"
 
 #: content/ui/AccountHeader.qml:48
-#, fuzzy, kde-format
-#| msgid "Log in or create a new account"
+#, kde-format
 msgctxt "@info %1 is a display name"
 msgid "%1 has moved to a new account:"
-msgstr "Bejelentkezés vagy új fiók létrehozása"
+msgstr "%1 új fiókba költözött:"
 
 #: content/ui/AccountHeader.qml:85
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Pin on Profile"
+#, kde-format
 msgctxt "@action:button"
 msgid "Go to Profile"
-msgstr "Kitűzés a profilra"
+msgstr "Ugrás a profilra"
 
 #: content/ui/AccountHeader.qml:153
 #, kde-format
@@ -586,7 +584,7 @@ msgctxt ""
 "people who follow you back. This the same meaning as 'mutual friends', for "
 "example."
 msgid "Mutual"
-msgstr ""
+msgstr "Közös"
 
 #: content/ui/AccountHeader.qml:153
 #, kde-format
@@ -624,11 +622,10 @@ msgid "Notify me when %1 posts."
 msgstr "Értesítsen, ha %1 bejegyzést ír."
 
 #: content/ui/AccountHeader.qml:332
-#, fuzzy, kde-format
-#| msgid "Enable notifications for this account"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show a QR code for this account"
-msgstr "Értesítések engedélyezése a fiókhoz"
+msgstr "QR-kód megjelenítése ehhez a fiókhoz"
 
 #: content/ui/AccountHeader.qml:345
 #, kde-format
@@ -702,20 +699,16 @@ msgid "Featured Users"
 msgstr "Kiemelt felhasználók"
 
 #: content/ui/AccountHeader.qml:456
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Delete Post"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Scheduled Posts"
-msgstr "Bejegyzés törlése"
+msgstr "Ütemezett bejegyzések"
 
 #: content/ui/AccountHeader.qml:470
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Report Post"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Draft Posts"
-msgstr "Bejegyzés jelentése"
+msgstr "Bejegyzésvázlatok"
 
 #: content/ui/AccountHeader.qml:483 content/ui/PostDelegate/LinkMenu.qml:25
 #: content/ui/PostDelegate/PostMenu.qml:52
@@ -743,7 +736,7 @@ msgstr "Csatlakozott"
 #: content/ui/AccountHeader.qml:601
 #, kde-format
 msgid "Ownership of this link was checked on %1"
-msgstr ""
+msgstr "A hivatkozás tulajdonjogát ekkor ellenőrizték: %1"
 
 #: content/ui/AccountHeader.qml:678
 #, kde-format
@@ -835,8 +828,7 @@ msgid "All"
 msgstr "Összes"
 
 #: content/ui/AccountInfo.qml:37 content/ui/AccountInfo.qml:46
-#, fuzzy, kde-format
-#| msgid "Profile"
+#, kde-format
 msgctxt "@title:window"
 msgid "Profile"
 msgstr "Profil"
@@ -1786,8 +1778,7 @@ msgid "Reply to post"
 msgstr "Válasz a bejegyzésre"
 
 #: content/ui/Main.qml:586
-#, fuzzy, kde-format
-#| msgid "Home"
+#, kde-format
 msgctxt "@action:button Home Timeline"
 msgid "Home"
 msgstr "Kezdőlap"
@@ -5540,7 +5531,7 @@ msgctxt ""
 "@info:label %1 is the native language name, and %2 is the localized name. "
 "For example, 'dansk (Danish)'"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: editor/listeditorbackend.cpp:121
 #, kde-format
@@ -5616,10 +5607,9 @@ msgid "Browse the Fediverse"
 msgstr "A Fediverse böngészése"
 
 #: main.cpp:106
-#, fuzzy, kde-format
-#| msgid "© 2021-2024 Carl Schwan, 2021-2024 KDE Community"
+#, kde-format
 msgid "© 2021-2025 KDE Community"
-msgstr "© Carl Schwan, 2021-2024., A KDE közösség, 2021-2024."
+msgstr "© A KDE közösség, 2021-2025."
 
 #: main.cpp:107
 #, kde-format
@@ -5649,10 +5639,9 @@ msgid "Your emails"
 msgstr "ulysses@fsf.hu"
 
 #: main.cpp:130
-#, fuzzy, kde-format
-#| msgid "Supports https and web+ap url scheme"
+#, kde-format
 msgid "Supports https, tokodon and web+ap url scheme"
-msgstr "A https és web+ap URL-sémák támogatása"
+msgstr "A https, tokodon és web+ap URL-sémák támogatása"
 
 #: main.cpp:132
 #, kde-format
@@ -5686,15 +5675,13 @@ msgid "Home"
 msgstr "Kezdőlap"
 
 #: timeline/maintimelinemodel.cpp:31
-#, fuzzy, kde-format
-#| msgid "Local"
+#, kde-format
 msgctxt "@title"
 msgid "Local"
 msgstr "Helyi"
 
 #: timeline/maintimelinemodel.cpp:33
-#, fuzzy, kde-format
-#| msgid "Global"
+#, kde-format
 msgctxt "@title"
 msgid "Global"
 msgstr "Globális"
@@ -5771,109 +5758,91 @@ msgid "Write a New Post"
 msgstr "Új bejegyzés írása"
 
 #: tokodonapplication.cpp:94
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "End of Timeline"
+#, kde-format
 msgctxt "@action:button Home Timeline"
 msgid "Open Home Timeline"
-msgstr "Idővonal vége"
+msgstr "Kezdőlap megnyitása"
 
 #: tokodonapplication.cpp:100
-#, fuzzy, kde-format
-#| msgid "Notifications"
+#, kde-format
 msgctxt "@action:button Account Notifications"
 msgid "Open Notifications"
-msgstr "Értesítések"
+msgstr "Értesítések megnyitása"
 
 #: tokodonapplication.cpp:106
-#, fuzzy, kde-format
-#| msgid "Follow Requests"
+#, kde-format
 msgctxt "@action:button Follows that require explicit allow/deny"
 msgid "Open Follow Requests"
-msgstr "Követési kérések"
+msgstr "Követési kérések megnyitása"
 
 #: tokodonapplication.cpp:112
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Local Timeline"
+#, kde-format
 msgctxt "@action:button Local timeline of posts from the account's own server"
 msgid "Open Local Timeline"
-msgstr "Helyi idővonal"
+msgstr "Helyi idővonal megnyitása"
 
 #: tokodonapplication.cpp:118
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Global Timeline"
+#, kde-format
 msgctxt ""
 "@action:button Global timeline of posts from the entire Fediverse network"
 msgid "Open Global Timeline"
-msgstr "Globális idővonal"
+msgstr "Globális idővonal megnyitása"
 
 #: tokodonapplication.cpp:124
-#, fuzzy, kde-format
-#| msgid "Conversations"
+#, kde-format
 msgctxt "@action:button Direct one-on-one messages between users"
 msgid "Open Conversations"
-msgstr "Beszélgetések"
+msgstr "Beszélgetések megnyitása"
 
 #: tokodonapplication.cpp:130
-#, fuzzy, kde-format
-#| msgid "Favorites"
+#, kde-format
 msgctxt "@action:button This account's favorited posts"
 msgid "Open Favorites"
-msgstr "Kedvencek"
+msgstr "Kedvencek megnyitása"
 
 #: tokodonapplication.cpp:136
-#, fuzzy, kde-format
-#| msgid "Bookmarks"
+#, kde-format
 msgctxt "@action:button This account's bookmarked posts"
 msgid "Open Bookmarks"
-msgstr "Könyvjelzők"
+msgstr "Könyvjelzők megnyitása"
 
 #: tokodonapplication.cpp:142
-#, fuzzy, kde-format
-#| msgid "Explore"
+#, kde-format
 msgctxt "@action:button Explore this server's trending posts, news, and more"
 msgid "Open Explore"
-msgstr "Felfedezés"
+msgstr "Felfedezés megnyitása"
 
 #: tokodonapplication.cpp:148
-#, fuzzy, kde-format
-#| msgid "Following"
+#, kde-format
 msgctxt "@action:button A list of this account's followed accounts"
 msgid "Open Following"
-msgstr "Követett"
+msgstr "Követettek megnyitása"
 
 #: tokodonapplication.cpp:154
-#, fuzzy, kde-format
-#| msgid "Search"
+#, kde-format
 msgctxt "@action:button Search for users, posts and tags"
 msgid "Open Search"
-msgstr "Keresés"
+msgstr "Keresés megnyitása"
 
 #: tokodonapplication.cpp:160
-#, fuzzy, kde-format
-#| msgctxt "@abel Account preferences"
-#| msgid "Open Server in Browser"
+#, kde-format
 msgctxt "@action:button"
 msgid "Open Server Information"
-msgstr "Kiszolgáló megnyitása böngészőben"
+msgstr "Kiszolgálóinformációk megnyitása"
 
 #: tokodonapplication.cpp:166
-#, fuzzy, kde-format
-#| msgid "Open link"
+#, kde-format
 msgctxt ""
 "@action:button This account's lists, or timelines consisting of a groups of "
 "accounts"
 msgid "Open Lists"
-msgstr "Hivatkozás megnyitása"
+msgstr "Listák megnyitása"
 
 #: tokodonapplication.cpp:172
-#, fuzzy, kde-format
-#| msgid "View Profile"
+#, kde-format
 msgctxt "@action:button This account's profile"
 msgid "Open Profile"
-msgstr "Profil megtekintése"
+msgstr "Profil megnyitása"
 
 #: tokodonapplication.cpp:206
 #, kde-format
