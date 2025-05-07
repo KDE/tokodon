@@ -27,7 +27,8 @@ RowLayout {
         id: avatar
 
         Layout.alignment: admin ? Qt.AlignCenter : Qt.AlignTop
-        Layout.rowSpan: 5
+        Layout.preferredHeight: Kirigami.Units.iconSizes.medium
+        Layout.preferredWidth: Kirigami.Units.iconSizes.medium
 
         source: root.identity?.avatarUrl ?? ""
         cache: true
@@ -40,7 +41,6 @@ RowLayout {
         Layout.fillWidth: true
 
         spacing: 0
-        clip: true
 
         Kirigami.Heading {
             level: 4
@@ -56,27 +56,30 @@ RowLayout {
 
             Layout.fillWidth: true
         }
-        QQC2.Label {
-            font.pixelSize: Config.defaultFont.pixelSize + 1
-            elide: Text.ElideRight
-            color: Kirigami.Theme.disabledTextColor
-            text: `@${root.identity?.account ?? ""}`
-            verticalAlignment: Text.AlignTop
-            maximumLineCount: 1
 
-            Layout.fillWidth: true
-        }
-        Kirigami.Heading {
-            id: emailHeading
-            level: 4
-            text: root.ip ? root.ip : ""
-            visible: admin && root.ip
-            type: Kirigami.Heading.Type.Secondary
-            verticalAlignment: Text.AlignTop
-            elide: Text.ElideRight
-            maximumLineCount: 1
+        RowLayout {
+            spacing: 0
 
-            Layout.fillWidth: true
+            QQC2.Label {
+                font.pixelSize: Config.defaultFont.pixelSize
+                elide: Text.ElideRight
+                text: `@${root.identity?.account ?? ""}`
+                verticalAlignment: Text.AlignTop
+                maximumLineCount: 1
+            }
+
+            QQC2.Label {
+                id: emailHeading
+                font.pixelSize: Config.defaultFont.pixelSize
+                text: root.ip ? " • " + root.ip : ""
+                color: Kirigami.Theme.disabledTextColor
+                visible: admin && root.ip
+                verticalAlignment: Text.AlignTop
+                elide: Text.ElideRight
+                maximumLineCount: 1
+
+                Layout.fillWidth: true
+            }
         }
     }
 }

@@ -99,6 +99,8 @@ Kirigami.ScrollablePage {
 
     ListView {
         id: reportView
+
+        currentIndex: -1
         model: ReportToolModel{}
 
         delegate: Delegates.RoundedItemDelegate {
@@ -106,31 +108,27 @@ Kirigami.ScrollablePage {
 
             required property int index
             required property var reportInfo
-            visible: (delegate.reportInfo) !== null
+            visible: delegate.reportInfo !== null
 
             //hide the report if we get a {} response
-            Component.onCompleted: {
-                if ((delegate.reportInfo) === null)
-                {
-                    delegate.implicitHeight = 0
-                }
+            Component.onCompleted: if (!delegate.reportInfo) {
+                delegate.implicitHeight = 0;
             }
 
-            implicitWidth: ListView.view.width
-            Layout.fillWidth: true
-
-            onClicked: applicationWindow().pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "MainReportToolPage"), {
+            onClicked: root.QQC2.ApplicationWindow.window.pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "MainReportToolPage"), {
                 reportInfo: delegate.reportInfo,
                 index: delegate.index,
                 model: reportView.model
-                })
+            })
 
             contentItem: Kirigami.FlexColumn {
-                spacing: 0
+                spacing: Kirigami.Units.smallSpacing
 
                 RowLayout {
                     spacing: 0
+
                     Layout.fillWidth: true
+
                     InlineIdentityInfo {
                         identity: delegate.reportInfo.targetAccount.userLevelIdentity
                         secondary: false
@@ -144,44 +142,47 @@ Kirigami.ScrollablePage {
                         elide: Text.ElideRight
                     }
                 }
+
                 RowLayout {
-                    spacing: 0
+                    spacing: Kirigami.Units.largeSpacing
+
                     Layout.fillWidth: true
+
                     ColumnLayout {
                         spacing: 0
+
+                        Layout.fillWidth: true
 
                         Kirigami.Heading {
                             level: 5
                             text: i18n("Reported By:")
                             type: Kirigami.Heading.Type.Primary
                             elide: Text.ElideRight
-                            Layout.alignment: Qt.AlignLeft
-                            Layout.leftMargin: Kirigami.Units.smallSpacing
+
+                            Layout.fillWidth: true
                         }
 
                         RowLayout {
-                            spacing: 0
-                            Layout.alignment: Qt.AlignLeft
-                            Layout.rightMargin: Kirigami.Units.largeSpacing * 3
-                            Item {
-                                Layout.preferredWidth: height
-                                Layout.preferredHeight: Kirigami.Units.gridUnit * 2
+                            spacing: Kirigami.Units.smallSpacing
 
-                                KirigamiComponents.Avatar {
-                                    id: avatar
-                                    anchors.fill: parent
-                                    anchors.margins: Kirigami.Units.smallSpacing
-                                    source: delegate.reportInfo.filedAccount.userLevelIdentity.avatarUrl
-                                    cache: true
-                                    name: delegate.reportInfo.filedAccount.userLevelIdentity.displayName
-                                    implicitWidth: avatar.width
-                                    implicitHeight: avatar.height
-                                    Layout.rightMargin: Kirigami.Units.smallSpacing * 3
-                                }
+                            Layout.fillWidth: true
+                            Layout.fillHeight: true
+
+                            KirigamiComponents.Avatar {
+                                id: avatar
+
+                                name: delegate.reportInfo.filedAccount.userLevelIdentity.displayName
+                                source: delegate.reportInfo.filedAccount.userLevelIdentity.avatarUrl
+
+                                cache: true
+
+                                Layout.preferredHeight: Kirigami.Units.iconSizes.small
+                                Layout.preferredWidth: Kirigami.Units.iconSizes.small
                             }
+
                             Kirigami.Heading {
                                 level: 4
-                                text: delegate.reportInfo.filedAccount.userLevelIdentity.account
+                                text: `@${delegate.reportInfo.filedAccount.userLevelIdentity.account}`
                                 type: Kirigami.Heading.Type.Secondary
                                 elide: Text.ElideRight
                                 Layout.alignment: Qt.AlignRight
@@ -189,49 +190,32 @@ Kirigami.ScrollablePage {
                             }
                         }
                     }
+
                     ColumnLayout {
                         spacing: 0
-                        Layout.alignment: Qt.AlignLeft
-                        Layout.topMargin: Kirigami.Units.largeSpacing * 2
+
+                        Layout.fillWidth: true
+
                         Kirigami.Heading {
                             level: 5
+                            text: i18n("Comment:")
+                            type: Kirigami.Heading.Type.Primary
+                            elide: Text.ElideRight
+
+                            Layout.fillWidth: true
+                        }
+
+                        QQC2.Label {
                             text: delegate.reportInfo.comment
-                            type: Kirigami.Heading.Type.Secondary
                             elide: Text.ElideRight
                             maximumLineCount: 1
                             wrapMode: Text.Wrap
+
                             Layout.fillWidth: true
-                            clip: true
-                            Layout.rightMargin: Kirigami.Units.largeSpacing * 10
-                        }
-                        RowLayout {
-                            Layout.fillWidth: true
-                            Kirigami.Icon {
-                                source: `comment-symbolic`
-                                color: Kirigami.Theme.disabledTextColor
-                                Layout.preferredHeight: Kirigami.Units.largeSpacing * 2
-                                Layout.preferredWidth: Kirigami.Units.largeSpacing * 2
-                            }
-                            Kirigami.Heading {
-                                level: 5
-                                text: delegate.reportInfo.statusCount
-                                type: Kirigami.Heading.Type.Secondary
-                                elide: Text.ElideRight
-                            }
-                            Kirigami.Icon {
-                                source: `camera-web-symbolic`
-                                color: Kirigami.Theme.disabledTextColor
-                                Layout.preferredHeight: Kirigami.Units.largeSpacing * 2
-                                Layout.preferredWidth: Kirigami.Units.largeSpacing * 2
-                            }
-                            Kirigami.Heading {
-                                level: 5
-                                text: delegate.reportInfo.mediaAttachmentCount
-                                type: Kirigami.Heading.Type.Secondary
-                                elide: Text.ElideRight
-                            }
+                            Layout.fillHeight: true
                         }
                     }
+
                     ColumnLayout {
                         spacing: 0
 
@@ -240,57 +224,64 @@ Kirigami.ScrollablePage {
                             text: i18n("Assigned Account:")
                             type: Kirigami.Heading.Type.Primary
                             elide: Text.ElideRight
-                            Layout.alignment: Qt.AlignLeft
-                        }
-                        RowLayout {
-                            spacing: 0
-                            Layout.alignment: Qt.AlignRight
-                            Layout.fillWidth: true
-                            Item {
-                                Layout.preferredWidth: height
-                                Layout.preferredHeight: Kirigami.Units.gridUnit * 2
 
-                                KirigamiComponents.Avatar {
-                                    anchors.fill: parent
-                                    visible: delegate.reportInfo.assignedModerator
-                                    anchors.margins: Kirigami.Units.smallSpacing
-                                    source: delegate.reportInfo.assignedModerator ?  delegate.reportInfo.assignedAccount.userLevelIdentity.avatarUrl : ''
-                                    name: delegate.reportInfo.assignedModerator ? delegate.reportInfo.assignedAccount.userLevelIdentity.displayName : ''
-                                    implicitWidth: avatar.width
-                                    implicitHeight: avatar.height
-                                }
+                            Layout.fillWidth: true
+                        }
+
+                        RowLayout {
+                            spacing: Kirigami.Units.smallSpacing
+
+                            Layout.fillWidth: true
+                            Layout.fillHeight: true
+
+                            KirigamiComponents.Avatar {
+                                visible: delegate.reportInfo.assignedModerator
+
+                                source: delegate.reportInfo.assignedModerator ?  delegate.reportInfo.assignedAccount.userLevelIdentity.avatarUrl : ''
+                                name: delegate.reportInfo.assignedModerator ? delegate.reportInfo.assignedAccount.userLevelIdentity.displayName : ''
+
+                                Layout.preferredHeight: Kirigami.Units.iconSizes.small
+                                Layout.preferredWidth: Kirigami.Units.iconSizes.small
                             }
+
                             Kirigami.Heading {
                                 level: 4
-                                text: delegate.reportInfo.assignedModerator ? delegate.reportInfo.assignedAccount.userLevelIdentity.account : i18nc("@info: No account assigned to the report","N/A")
-                                type: Kirigami.Heading.Type.Secondary
+                                text: delegate.reportInfo.assignedModerator ? `@${delegate.reportInfo.assignedAccount.userLevelIdentity.account}` : i18nc("@info: No account assigned to the report","N/A")
                                 elide: Text.ElideRight
-                                Layout.alignment: Qt.AlignRight
+                                type: Kirigami.Heading.Type.Secondary
+
+                                Layout.fillWidth: true
                             }
                         }
                     }
                 }
-                Kirigami.Separator {
-                    Layout.fillWidth: true
-                }
-
-                QQC2.ProgressBar {
-                    visible: reportView.model.loading && (index == reportView.count - 1)
-                    indeterminate: true
-                    padding: Kirigami.Units.largeSpacing * 2
-                    Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
-                    Layout.topMargin: Kirigami.Units.largeSpacing
-                    Layout.bottomMargin: Kirigami.Units.largeSpacing
-                    Layout.leftMargin: Kirigami.Units.largeSpacing
-                    Layout.rightMargin: Kirigami.Units.largeSpacing
-                }
             }
         }
-        QQC2.ProgressBar {
-            visible: reportView.model.loading && reportView.count === 0
-            anchors.centerIn: parent
-            indeterminate: true
+
+        footer: Kirigami.FlexColumn {
+            width: parent.width
+            maximumWidth: Kirigami.Units.gridUnit * 40
+            implicitHeight: Kirigami.Units.gridUnit * 4
+
+            spacing: Kirigami.Units.largeSpacing
+            padding: 0
+
+            visible: ListView.view.count > 0
+
+            Kirigami.Separator {
+                Layout.fillWidth: true
+                visible: loadingBar.visible
+            }
+
+            QQC2.ProgressBar {
+                id: loadingBar
+
+                visible: reportView.model.loading
+                indeterminate: true
+                Layout.alignment: Qt.AlignHCenter
+            }
         }
+
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
             text: i18n("No reports found")
