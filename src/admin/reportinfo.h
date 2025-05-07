@@ -11,29 +11,29 @@ class AbstractAccount;
 class AdminAccountInfo;
 class Post;
 
-class ReportInfo : public QObject
+class ReportInfo
 {
-    Q_OBJECT
-    Q_PROPERTY(QString reportId READ reportId NOTIFY reportInfoUpdated)
-    Q_PROPERTY(bool actionTaken READ actionTaken WRITE setActionTaken NOTIFY actionTakenUpdated)
-    Q_PROPERTY(QDateTime actionTakenAt READ actionTakenAt NOTIFY reportInfoUpdated)
-    Q_PROPERTY(QString category READ category NOTIFY reportInfoUpdated)
-    Q_PROPERTY(QString comment READ comment NOTIFY reportInfoUpdated)
-    Q_PROPERTY(bool forwarded READ forwarded NOTIFY reportInfoUpdated)
-    Q_PROPERTY(QDateTime createdAt READ createdAt NOTIFY reportInfoUpdated)
-    Q_PROPERTY(QDateTime updatedAt READ updatedAt NOTIFY reportInfoUpdated)
-    Q_PROPERTY(int statusCount READ statusCount NOTIFY reportInfoUpdated)
-    Q_PROPERTY(int mediaAttachmentCount READ mediaAttachmentCount NOTIFY reportInfoUpdated)
-    Q_PROPERTY(AdminAccountInfo *filedAccount READ filedAccount NOTIFY reportInfoUpdated)
-    Q_PROPERTY(AdminAccountInfo *targetAccount READ targetAccount NOTIFY reportInfoUpdated)
-    Q_PROPERTY(bool assignedModerator READ assignedModerator WRITE setAssignedModerator NOTIFY assignedModeratorUpdated)
-    Q_PROPERTY(AdminAccountInfo *assignedAccount READ assignedAccount WRITE setAssignedAccount NOTIFY assignedAccountUpdated)
-    Q_PROPERTY(AdminAccountInfo *actionTakenByAccount READ actionTakenByAccount NOTIFY reportInfoUpdated)
-    Q_PROPERTY(QQmlListProperty<Post> reportStatus READ reportStatusList NOTIFY reportInfoUpdated)
-    Q_PROPERTY(QJsonArray rules READ rules NOTIFY reportInfoUpdated)
+    Q_GADGET
+    Q_PROPERTY(QString reportId READ reportId CONSTANT)
+    Q_PROPERTY(bool actionTaken READ actionTaken WRITE setActionTaken)
+    Q_PROPERTY(QDateTime actionTakenAt READ actionTakenAt CONSTANT)
+    Q_PROPERTY(QString category READ category CONSTANT)
+    Q_PROPERTY(QString comment READ comment CONSTANT)
+    Q_PROPERTY(bool forwarded READ forwarded CONSTANT)
+    Q_PROPERTY(QDateTime createdAt READ createdAt CONSTANT)
+    Q_PROPERTY(QDateTime updatedAt READ updatedAt CONSTANT)
+    Q_PROPERTY(int statusCount READ statusCount CONSTANT)
+    Q_PROPERTY(int mediaAttachmentCount READ mediaAttachmentCount CONSTANT)
+    Q_PROPERTY(AdminAccountInfo *filedAccount READ filedAccount CONSTANT)
+    Q_PROPERTY(AdminAccountInfo *targetAccount READ targetAccount CONSTANT)
+    Q_PROPERTY(bool assignedModerator READ assignedModerator WRITE setAssignedModerator)
+    Q_PROPERTY(AdminAccountInfo *assignedAccount READ assignedAccount WRITE setAssignedAccount CONSTANT)
+    Q_PROPERTY(AdminAccountInfo *actionTakenByAccount READ actionTakenByAccount CONSTANT)
+    Q_PROPERTY(QQmlListProperty<Post> reportStatus READ reportStatus CONSTANT)
+    Q_PROPERTY(QJsonArray rules READ rules CONSTANT)
 
 public:
-    explicit ReportInfo(QObject *parent = nullptr);
+    explicit ReportInfo();
     [[nodiscard]] QString reportId() const;
     [[nodiscard]] bool actionTaken() const;
     void setActionTaken(bool actionTaken);
@@ -53,16 +53,8 @@ public:
     void setAssignedAccount(AdminAccountInfo *newAssignedAccount);
     [[nodiscard]] AdminAccountInfo *actionTakenByAccount() const;
     [[nodiscard]] QList<Post *> reportStatus() const;
-    [[nodiscard]] QQmlListProperty<Post> reportStatusList() const;
     [[nodiscard]] QJsonArray rules() const;
     void fromSourceData(const QJsonObject &doc);
-    void reparentReportInfo(AbstractAccount *parent);
-
-Q_SIGNALS:
-    void actionTakenUpdated();
-    void assignedModeratorUpdated();
-    void assignedAccountUpdated();
-    void reportInfoUpdated();
 
 private:
     QString m_reportId;
@@ -79,7 +71,5 @@ private:
     AdminAccountInfo *m_assignedAccount = nullptr;
     AdminAccountInfo *m_actionTakenByAccount = nullptr;
     QList<Post *> m_reportStatus;
-    QQmlListProperty<Post> m_reportStatusList;
     QJsonArray m_rules;
-    AbstractAccount *m_parent = nullptr;
 };

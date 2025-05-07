@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "timeline/post.h"
+#include "datatypes/post.h"
 
 /**
  * @brief Account-specific preferences which are stored server-side.

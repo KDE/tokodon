@@ -127,7 +127,7 @@ protected:
 
     AccountManager *m_manager = nullptr;
 
-    QList<Post *> m_timeline;
+    QList<Post> m_timeline;
 
     bool m_shouldLoadMore = true;
     bool m_showReplies = true;

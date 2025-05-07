@@ -6,7 +6,7 @@
 
 #include "account/notificationhandler.h"
 #include "timeline/notification.h"
-#include "timeline/post.h"
+#include "datatypes/post.h"
 
 #include <KAboutData>
 

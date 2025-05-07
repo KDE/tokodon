@@ -59,7 +59,7 @@ void TimelineModel::init()
 
 int TimelineModel::fetchedTimeline(const QByteArray &data, bool alwaysAppendToEnd)
 {
-    QList<Post *> posts;
+    QList<Post> posts;
 
     const auto doc = QJsonDocument::fromJson(data);
 
@@ -73,34 +73,29 @@ int TimelineModel::fetchedTimeline(const QByteArray &data, bool alwaysAppendToEn
         return 0;
     }
 
-    std::ranges::transform(std::as_const(array), std::back_inserter(posts), [this](const QJsonValue &value) -> Post * {
-        auto post = new Post(m_account, value.toObject(), this);
-        if (!post->hidden()) {
-            return post;
-        } else {
-            return nullptr;
-        }
+    std::ranges::transform(std::as_const(array), std::back_inserter(posts), [this](const QJsonValue &value) -> Post {
+        return Post(m_account, value.toObject());
     });
 
     posts.erase(std::ranges::remove_if(posts,
-                                       [this](Post *post) {
+                                       [this](Post post) {
+                                           if (post.hidden()) {
+                                               return true;
+                                           }
+
                                            // Don't show boosts if requested
-                                           if (!m_showBoosts && post->boostIdentity()) {
+                                           if (!m_showBoosts && post.boostIdentity()) {
                                                return true;
                                            }
                                            // Don't show replies if requested
-                                           if (!m_showReplies && !post->inReplyTo().isEmpty()) {
+                                           if (!m_showReplies && !post.inReplyTo().isEmpty()) {
                                                return true;
                                            }
                                            // Make sure we aren't adding the same post we already have
                                            const auto it = std::ranges::find_if(std::as_const(m_timeline), [post](const auto &timelinePost) {
-                                               return post->postId() == timelinePost->postId();
+                                               return post.postId() == timelinePost.postId();
                                            });
-                                           if (it != std::end(m_timeline)) {
-                                               return true;
-                                           }
-
-                                           return post == nullptr;
+                                           return it != std::end(m_timeline);
                                        })
                     .begin(),
                 posts.end());
@@ -112,18 +107,18 @@ int TimelineModel::fetchedTimeline(const QByteArray &data, bool alwaysAppendToEn
 
     for (auto &post : posts) {
         // If we are still waiting on the reply identity, make sure to update it's row
-        if (!post->inReplyTo().isEmpty() && post->replyIdentity() == nullptr) {
-            connect(
-                post,
-                &Post::replyIdentityChanged,
-                this,
-                [this, post] {
-                    const int row = m_timeline.indexOf(post);
-                    if (row != -1) {
-                        Q_EMIT dataChanged(index(row, 0), index(row, 0), {ReplyAuthorIdentityRole});
-                    }
-                },
-                Qt::SingleShotConnection);
+        if (!post.inReplyTo().isEmpty() && post.replyIdentity() == nullptr) {
+            //connect(
+            //    post,
+            //    &Post::replyIdentityChanged,
+            //    this,
+            //    [this, post] {
+            //        const int row = m_timeline.indexOf(post);
+            //        if (row != -1) {
+            //            Q_EMIT dataChanged(index(row, 0), index(row, 0), {ReplyAuthorIdentityRole});
+            //        }
+            //    },
+            //    Qt::SingleShotConnection);
         }
     }
 
@@ -133,11 +128,11 @@ int TimelineModel::fetchedTimeline(const QByteArray &data, bool alwaysAppendToEn
             m_timeline += posts;
             endInsertRows();
         } else {
-            const auto postOld = m_timeline.first();
-            const auto postNew = posts.first();
-            if (postOld->originalPostId() > postNew->originalPostId()) {
-                const int row = m_timeline.size();
-                const int last = row + posts.size() - 1;
+            const auto postOld = m_timeline.constFirst();
+            const auto postNew = posts.constFirst();
+            if (postOld.originalPostId() > postNew.originalPostId()) {
+                const qsizetype row = m_timeline.size();
+                const qsizetype last = row + posts.size() - 1;
                 beginInsertRows({}, row, last);
                 m_timeline += posts;
                 endInsertRows();
@@ -167,7 +162,7 @@ void TimelineModel::fetchMore(const QModelIndex &parent)
     const auto p = m_timeline.last();
 
     if (m_shouldLoadMore) {
-        fillTimeline(p->originalPostId());
+        fillTimeline(p.originalPostId());
     } else {
         m_shouldLoadMore = true;
     }
@@ -228,7 +223,11 @@ void TimelineModel::actionVote(const QModelIndex &index, const QList<int> &choic
     const int row = index.row();
     const auto post = m_timeline[row];
     const auto poll = post->poll();
-    Q_ASSERT(poll);
+    Q_ASSERT(!poll.isNull());
+
+    if (poll.isNull()) {
+        return;
+    }
 
     QJsonObject obj;
     QJsonArray array;
@@ -237,12 +236,12 @@ void TimelineModel::actionVote(const QModelIndex &index, const QList<int> &choic
     });
     obj["choices"_L1] = array;
     QJsonDocument doc(obj);
-    const auto id = poll->id();
+    const auto id = poll.id();
 
     m_account->post(m_account->apiUrl(QStringLiteral("/api/v1/polls/%1/votes").arg(id)), doc, true, this, [this, id](QNetworkReply *reply) {
         int i = 0;
-        for (auto &post : m_timeline) {
-            if (post->poll() && post->poll()->id() == id) {
+        for (auto &post : std::as_const(m_timeline)) {
+            if (!post->poll().isNull() && post->poll().id() == id) {
                 const auto newPoll = QJsonDocument::fromJson(reply->readAll()).object();
                 post->setPollJson(newPoll);
                 Q_EMIT dataChanged(this->index(i, 0), this->index(i, 0), {PollRole});

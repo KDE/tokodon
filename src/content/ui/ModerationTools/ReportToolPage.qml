@@ -2,13 +2,15 @@
 // SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 
 import QtQuick
-import org.kde.kirigami 2 as Kirigami
-import QtQuick.Controls 2 as QQC2
 import QtQuick.Layouts
-import org.kde.tokodon
+import QtQuick.Controls 2 as QQC2
+
+import org.kde.kirigami 2 as Kirigami
 import org.kde.kirigamiaddons.delegates 1 as Delegates
 import org.kde.kirigamiaddons.components 1 as KirigamiComponents
+import org.kde.kitemmodels as KItemModels
 
+import org.kde.tokodon as Tokodon
 import "../PostDelegate"
 
 Kirigami.ScrollablePage {
@@ -87,8 +89,8 @@ Kirigami.ScrollablePage {
                     ]
                     textRole: "display"
                     valueRole: "value"
-                    Component.onCompleted: originCombobox.currentIndex = originCombobox.indexOfValue(reportView.model.origin);
-                    onCurrentIndexChanged: reportView.model.origin = model[currentIndex].value
+                    Component.onCompleted: originCombobox.currentIndex = 0;
+                    onCurrentIndexChanged: sortProxyModel.filterString = model[currentIndex].value
                 }
             }
         }
@@ -101,24 +103,26 @@ Kirigami.ScrollablePage {
         id: reportView
 
         currentIndex: -1
-        model: ReportToolModel{}
+        model: KItemModels.KSortFilterProxyModel {
+            id: sortProxyModel
+
+            filterRoleName: 'origin'
+
+            Tokodon.ReportToolModel {
+                id: reportToolModel
+            }
+        }
 
         delegate: Delegates.RoundedItemDelegate {
             id: delegate
 
             required property int index
-            required property var reportInfo
-            visible: delegate.reportInfo !== null
-
-            //hide the report if we get a {} response
-            Component.onCompleted: if (!delegate.reportInfo) {
-                delegate.implicitHeight = 0;
-            }
+            required property Tokodon.reportInfo reportInfo
 
             onClicked: root.QQC2.ApplicationWindow.window.pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "MainReportToolPage"), {
                 reportInfo: delegate.reportInfo,
                 index: delegate.index,
-                model: reportView.model
+                model: reportToolModel,
             })
 
             contentItem: Kirigami.FlexColumn {

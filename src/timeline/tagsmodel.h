@@ -4,7 +4,7 @@
 #pragma once
 
 #include "timeline/abstractlistmodel.h"
-#include "timeline/tag.h"
+#include "datatypes/tag.h"
 
 /**
  * @class TagsModel

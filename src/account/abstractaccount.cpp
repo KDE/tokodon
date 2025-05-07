@@ -292,24 +292,6 @@ AdminAccountInfo *AbstractAccount::adminIdentityLookupWithVanillaPointer(const Q
     return m_adminIdentityCacheWithVanillaPointer[accountId];
 }
 
-std::shared_ptr<ReportInfo> AbstractAccount::reportInfoLookup(const QString &reportId, const QJsonObject &doc)
-{
-    if (m_reportInfo && m_reportInfo->reportId() == reportId) {
-        return m_reportInfo;
-    }
-    auto id = m_reportInfoCache[reportId];
-    if (id && id->reportId() == reportId) {
-        return id;
-    }
-
-    id = std::make_shared<ReportInfo>();
-    id->reparentReportInfo(this);
-    id->fromSourceData(doc);
-    m_reportInfoCache[reportId] = id;
-
-    return m_reportInfoCache[reportId];
-}
-
 bool AbstractAccount::identityCached(const QString &accountId) const
 {
     if (m_identity && m_identity->id() == accountId) {

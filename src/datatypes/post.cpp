@@ -2,13 +2,14 @@
 // SPDX-FileCopyrightText: 2024 Joshua Goins <josh@redstrate.com>
 // SPDX-License-Identifier: GPL-3.0-only
 
-#include "timeline/post.h"
+#include "datatypes/post.h"
 
 #include "account/abstractaccount.h"
 #include "accountmanager.h"
 #include "networkcontroller.h"
 #include "tokodon_debug.h"
 #include "utils/texthandler.h"
+#include "datatype_p.h"
 
 #include <KLocalizedString>
 #include <QJsonDocument>
@@ -16,14 +17,14 @@
 
 using namespace Qt::Literals::StringLiterals;
 
-static const QMap<Post::Visibility, QString> p_visibilityToString = {
+static const QHash<Post::Visibility, QString> p_visibilityToString = {
     {Post::Visibility::Public, QStringLiteral("public")},
     {Post::Visibility::Unlisted, QStringLiteral("unlisted")},
     {Post::Visibility::Private, QStringLiteral("private")},
     {Post::Visibility::Direct, QStringLiteral("direct")},
 };
 
-static const QMap<QString, Post::Visibility> p_stringToVisibility = {
+static const QHash<QString, Post::Visibility> p_stringToVisibility = {
     {QStringLiteral("public"), Post::Visibility::Public},
     {QStringLiteral("unlisted"), Post::Visibility::Unlisted},
     {QStringLiteral("private"), Post::Visibility::Private},
@@ -31,25 +32,42 @@ static const QMap<QString, Post::Visibility> p_stringToVisibility = {
     {QStringLiteral("local"), Post::Visibility::Local},
 };
 
-Post::Post(AbstractAccount *account, QObject *parent)
-    : QObject(parent)
-    , m_parent(account)
+class ApplicationPrivate : public QSharedData
+{
+public:
+    QString name;
+    QString website;
+}
+
+TOKDON_MAKE_GADGET(Application)
+TOKDON_MAKE_PROPERTY_READONLY(Application, QString, name)
+TOKDON_MAKE_PROPERTY_READONLY(Application, QString, website)
+
+Application Application::fromJson(const QJsonObject &object)
+{
+    Application application;
+    application.d->name = object["name"_L1].toString();
+    application.d->website = object["name"_L1].toString();
+    return application;
+}
+
+Post::Post(AbstractAccount *account)
+    : m_account(account)
 {
     Q_ASSERT(account);
     QString visibilityString = account->identity()->visibility();
     m_visibility = stringToVisibility(visibilityString);
 }
 
-Post::Post(AbstractAccount *account, QJsonObject obj, QObject *parent)
-    : QObject(parent)
-    , m_parent(account)
+Post::Post(AbstractAccount *account, const QJsonObject & obj)
+    : m_account(account)
     , m_visibility(Post::Visibility::Public)
 {
     Q_ASSERT(account);
     fromJson(obj);
 }
 
-void Post::fromJson(QJsonObject obj)
+void Post::fromJson(AbstractAccount *account, const QJsonObject &obj)
 {
     const auto accountDoc = obj["account"_L1].toObject();
     const auto accountId = accountDoc["id"_L1].toString();
@@ -59,15 +77,15 @@ void Post::fromJson(QJsonObject obj)
 
     if (!obj.contains("reblog"_L1) || reblogObj.isEmpty()) {
         m_boosted = false;
-        m_authorIdentity = m_parent->identityLookup(accountId, accountDoc);
+        m_authorIdentity = m_account->identityLookup(accountId, accountDoc);
     } else {
         m_boosted = true;
 
         const auto reblogAccountDoc = reblogObj["account"_L1].toObject();
         const auto reblogAccountId = reblogAccountDoc["id"_L1].toString();
 
-        m_authorIdentity = m_parent->identityLookup(reblogAccountId, reblogAccountDoc);
-        m_boostIdentity = m_parent->identityLookup(accountId, accountDoc);
+        m_authorIdentity = m_account->identityLookup(reblogAccountId, reblogAccountDoc);
+        m_boostIdentity = m_account->identityLookup(accountId, accountDoc);
 
         obj = reblogObj;
     }
@@ -85,7 +103,7 @@ void Post::fromJson(QJsonObject obj)
         // To whittle down the number of requests (which in most cases should be zero) check if the URL could point to a valid post.
         if (TextHandler::isPostUrl(match.captured(0))) {
             // Then request said URL from our server
-            m_parent->requestRemoteObject(QUrl(match.captured(0)), this, [this](QNetworkReply *reply) {
+            m_account->requestRemoteObject(QUrl(match.captured(0)), this, [this](QNetworkReply *reply) {
                 const auto searchResult = QJsonDocument::fromJson(reply->readAll()).object();
 
                 const auto statuses = searchResult[QStringLiteral("statuses")].toArray();
@@ -95,7 +113,7 @@ void Post::fromJson(QJsonObject obj)
                 } else {
                     const auto status = statuses.first().toObject();
 
-                    m_quotedPost = new Post(m_parent, status, this);
+                    m_quotedPost = Post(m_account, status, this);
                     Q_EMIT quotedPostChanged();
                 }
             });
@@ -107,25 +125,25 @@ void Post::fromJson(QJsonObject obj)
     m_replyTargetId = obj["in_reply_to_id"_L1].toString();
 
     if (obj.contains("in_reply_to_account_id"_L1) && obj["in_reply_to_account_id"_L1].isString()) {
-        if (m_parent->identityCached(obj["in_reply_to_account_id"_L1].toString())) {
-            m_replyIdentity = m_parent->identityLookup(obj["in_reply_to_account_id"_L1].toString(), {});
+        if (m_account->identityCached(obj["in_reply_to_account_id"_L1].toString())) {
+            m_replyIdentity = m_account->identityLookup(obj["in_reply_to_account_id"_L1].toString(), {});
         } else {
             const auto accountId = obj["in_reply_to_account_id"_L1].toString();
-            m_parent->get(m_parent->apiUrl(QStringLiteral("/api/v1/accounts/%1").arg(accountId)), true, this, [this, accountId](QNetworkReply *reply) {
+            m_account->get(m_account->apiUrl(QStringLiteral("/api/v1/accounts/%1").arg(accountId)), true, this, [this, accountId](QNetworkReply *reply) {
                 const auto data = reply->readAll();
                 const auto doc = QJsonDocument::fromJson(data);
 
-                m_replyIdentity = m_parent->identityLookup(accountId, doc.object());
+                m_replyIdentity = m_account->identityLookup(accountId, doc.object());
                 Q_EMIT replyIdentityChanged();
             });
         }
     } else if (!m_replyTargetId.isEmpty()) {
         // Fallback to getting the account id from the status, which is weird but this sometimes has to happen.
-        m_parent->get(m_parent->apiUrl(QStringLiteral("/api/v1/statuses/%1").arg(m_replyTargetId)), true, this, [this](QNetworkReply *reply) {
+        m_account->get(m_account->apiUrl(QStringLiteral("/api/v1/statuses/%1").arg(m_replyTargetId)), true, this, [this](QNetworkReply *reply) {
             const auto data = reply->readAll();
             const auto doc = QJsonDocument::fromJson(data);
 
-            m_replyIdentity = m_parent->identityLookup(doc["account"_L1].toObject()["id"_L1].toString(), doc["account"_L1].toObject());
+            m_replyIdentity = m_account->identityLookup(doc["account"_L1].toObject()["id"_L1].toString(), doc["account"_L1].toObject());
             Q_EMIT replyIdentityChanged();
         });
     }
@@ -172,7 +190,7 @@ void Post::fromJson(QJsonObject obj)
     addAttachments(obj["media_attachments"_L1].toArray());
     const QJsonArray mentions = obj["mentions"_L1].toArray();
     if (obj.contains("card"_L1) && !obj["card"_L1].toObject().empty()) {
-        setCard(std::make_optional<Card>(m_parent, obj["card"_L1].toObject()));
+        setCard(std::make_optional<Card>(m_account, obj["card"_L1].toObject()));
     }
 
     if (obj.contains("application"_L1) && !obj["application"_L1].toObject().empty()) {
@@ -186,7 +204,7 @@ void Post::fromJson(QJsonObject obj)
     }
 
     if (obj.contains(QStringLiteral("poll")) && !obj[QStringLiteral("poll")].isNull()) {
-        m_poll = std::make_unique<Poll>(obj[QStringLiteral("poll")].toObject());
+        m_poll = Poll(obj[QStringLiteral("poll")].toObject());
     }
 }
 
@@ -295,15 +313,17 @@ std::shared_ptr<Identity> Post::replyIdentity() const
     return m_replyIdentity;
 }
 
-Poll *Post::poll() const
+Poll Post::poll() const
 {
-    return m_poll.get();
+    if (poll) {
+        return m_poll.get();
+    }
+    return Poll(); // null poll
 }
 
 void Post::setPollJson(const QJsonObject &object)
 {
-    m_poll = std::make_unique<Poll>(object);
-    Q_EMIT pollChanged();
+    m_poll = Poll(object);
 }
 
 std::optional<Card> Post::card() const
@@ -442,7 +462,7 @@ void Post::setCard(std::optional<Card> card)
     m_card = card;
 }
 
-Post *Post::quotedPost() const
+Post Post::quotedPost() const
 {
     return m_quotedPost;
 }
@@ -616,21 +636,6 @@ std::optional<QJsonObject> Card::authorObject() const
         }
     }
     return std::nullopt;
-}
-
-Application::Application(QJsonObject application)
-    : m_application(application)
-{
-}
-
-QString Application::name() const
-{
-    return m_application[QLatin1String("name")].toString();
-}
-
-QUrl Application::website() const
-{
-    return QUrl::fromUserInput(m_application[QLatin1String("website")].toString());
 }
 
 #include "moc_post.cpp"

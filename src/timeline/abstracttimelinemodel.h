@@ -167,7 +167,7 @@ Q_SIGNALS:
     void atEndChanged();
 
 protected:
-    QVariant postData(Post *post, int role) const;
+    [[nodiscard]] QVariant postData(const Post &post, int role) const;
 
     AbstractAccount *m_account = nullptr;
     bool m_loading = false;

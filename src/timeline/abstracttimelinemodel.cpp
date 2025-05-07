@@ -90,85 +90,85 @@ QHash<int, QByteArray> AbstractTimelineModel::roleNames() const
     };
 }
 
-QVariant AbstractTimelineModel::postData(Post *post, int role) const
+QVariant AbstractTimelineModel::postData(const Post &post, int role) const
 {
     switch (role) {
     case IdRole:
-        return post->postId();
+        return post.postId();
     case OriginalIdRole:
-        return post->originalPostId();
+        return post.originalPostId();
     case MentionsRole:
-        return post->mentions();
+        return post.mentions();
     case ContentRole:
-        return post->content();
+        return post.content();
     case AuthorIdentityRole:
-        return QVariant::fromValue<Identity *>(post->authorIdentity().get());
+        return QVariant::fromValue<Identity *>(post.authorIdentity().get());
     case IsBoostedRole:
-        return post->boosted();
+        return post.boosted();
     case BoostAuthorIdentityRole:
-        if (post->boostIdentity()) {
-            return QVariant::fromValue<Identity *>(post->boostIdentity().get());
+        if (post.boostIdentity()) {
+            return QVariant::fromValue<Identity *>(post.boostIdentity().get());
         }
         return false;
     case IsReplyRole:
-        return !post->inReplyTo().isEmpty();
+        return !post.inReplyTo().isEmpty();
     case ReplyAuthorIdentityRole:
-        if (!post->inReplyTo().isEmpty()) {
-            return QVariant::fromValue<Identity *>(post->replyIdentity().get());
+        if (!post.inReplyTo().isEmpty()) {
+            return QVariant::fromValue<Identity *>(post.replyIdentity().get());
         }
         return false;
     case PublishedAtRole:
-        return post->publishedAt();
+        return post.publishedAt();
     case RebloggedRole:
-        return post->reblogged();
+        return post.reblogged();
     case FavouritedRole:
-        return post->favourited();
+        return post.favourited();
     case BookmarkedRole:
-        return post->bookmarked();
+        return post.bookmarked();
     case PinnedRole:
-        return post->pinned();
+        return post.pinned();
 
     case FavouritesCountRole:
-        return post->favouritesCount();
+        return post.favouritesCount();
     case RepliesCountRole:
-        return post->repliesCount();
+        return post.repliesCount();
     case ReblogsCountRole:
-        return post->reblogsCount();
+        return post.reblogsCount();
     case SensitiveRole:
-        return post->sensitive();
+        return post.sensitive();
     case SpoilerTextRole:
-        return post->spoilerText();
+        return post.spoilerText();
     case VisibilityRole:
-        return post->visibility();
+        return post.visibility();
     case WasEditedRole:
-        return post->wasEdited();
+        return post.wasEdited();
     case EditedAtRole:
-        return post->editedAt();
+        return post.editedAt();
     case FiltersRole:
-        return post->filters();
+        return post.filters();
     case AttachmentsRole:
-        return QVariant::fromValue<QList<Attachment *>>(post->attachments());
+        return QVariant::fromValue<QList<Attachment *>>(post.attachments());
     case CardRole:
-        if (post->card().has_value()) {
-            return QVariant::fromValue<Card>(*post->card());
+        if (post.card().has_value()) {
+            return QVariant::fromValue<Card>(*post.card());
         }
         return false;
     case ApplicationRole:
-        if (post->application().has_value()) {
-            return QVariant::fromValue<Application>(*post->application());
+        if (post.application().has_value()) {
+            return QVariant::fromValue<Application>(*post.application());
         }
         return false;
     case UrlRole:
-        return QVariant::fromValue<QUrl>(post->url());
+        return QVariant::fromValue<QUrl>(post.url());
     case RelativeTimeRole: {
-        return post->relativeTime();
+        return post.relativeTime();
     }
     case AbsoluteTimeRole: {
-        return post->absoluteTime();
+        return post.absoluteTime();
     }
     case PollRole:
-        if (post->poll()) {
-            return QVariant::fromValue<Poll>(*post->poll());
+        if (post.poll()) {
+            return QVariant::fromValue<Poll>(*post.poll());
         }
         return {};
     case TypeRole:
@@ -177,13 +177,13 @@ QVariant AbstractTimelineModel::postData(Post *post, int role) const
     case PostRole:
         return QVariant::fromValue<Post *>(post);
     case MutedRole:
-        return post->muted();
+        return post.muted();
     }
 
     return {};
 }
 
-void AbstractTimelineModel::actionFavorite(const QModelIndex &index, Post *post)
+void AbstractTimelineModel::actionFavorite(const QModelIndex &index, Post &post)
 {
     if (!post->favourited()) {
         m_account->favorite(post);

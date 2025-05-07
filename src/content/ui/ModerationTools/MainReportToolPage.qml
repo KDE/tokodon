@@ -5,10 +5,11 @@ import QtQuick
 import QtQuick.Controls 2 as QQC2
 import QtQuick.Layouts
 import org.kde.kirigami 2 as Kirigami
-import org.kde.tokodon
 
 import org.kde.kirigamiaddons.formcard 1 as FormCard
 import org.kde.kirigamiaddons.components 1 as KirigamiComponents
+
+import org.kde.tokodon
 import "../PostDelegate"
 
 Kirigami.ScrollablePage {
@@ -16,7 +17,7 @@ Kirigami.ScrollablePage {
 
     property var reportInfo
     property int index
-    property var model
+    property ReportToolModel model
     property var arr: []
     property bool isInitial: true
     property bool trigger: false
@@ -24,7 +25,7 @@ Kirigami.ScrollablePage {
     readonly property bool assignedModerator: root.reportInfo.assignedAccount
     property bool displayAttachmentPanel: root.reportInfo.statusCount || root.reportInfo.mediaAttachmentCount
 
-    function isChecked(ruleId) {
+    function isChecked(ruleId: string): bool {
         for (var i = 0; i < root.reportInfo.rules.length; i++) {
             if (ruleId === root.reportInfo.rules[i].id) {
                 arr.push(ruleId)
@@ -34,8 +35,8 @@ Kirigami.ScrollablePage {
         return false;
     }
 
-    function ammendOrDelete(inp) {
-        var index = arr.indexOf(inp);
+    function ammendOrDelete(inp: string): void {
+        let index = arr.indexOf(inp);
         if (index !== -1) {
             arr.splice(index, 1);
         } else {

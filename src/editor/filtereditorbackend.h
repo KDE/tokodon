@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "timeline/post.h"
+#include "datatypes/post.h"
 
 class FilterEditorBackend : public QObject
 {

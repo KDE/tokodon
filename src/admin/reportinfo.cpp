@@ -9,9 +9,7 @@
 
 using namespace Qt::StringLiterals;
 
-ReportInfo::ReportInfo(QObject *parent)
-    : QObject(parent)
-    , m_reportStatusList(this, &m_reportStatus)
+ReportInfo::ReportInfo()
 {
 }
 
@@ -27,11 +25,7 @@ bool ReportInfo::actionTaken() const
 
 void ReportInfo::setActionTaken(bool actionTaken)
 {
-    if (m_actionTaken == actionTaken) {
-        return;
-    }
     m_actionTaken = actionTaken;
-    Q_EMIT actionTakenUpdated();
 }
 
 bool ReportInfo::assignedModerator() const
@@ -41,11 +35,7 @@ bool ReportInfo::assignedModerator() const
 
 void ReportInfo::setAssignedModerator(bool assignedModerator)
 {
-    if (m_assignedModerator == assignedModerator) {
-        return;
-    }
     m_assignedModerator = assignedModerator;
-    Q_EMIT assignedModeratorUpdated();
 }
 
 QDateTime ReportInfo::actionTakenAt() const
@@ -128,19 +118,9 @@ QList<Post *> ReportInfo::reportStatus() const
     return m_reportStatus;
 }
 
-QQmlListProperty<Post> ReportInfo::reportStatusList() const
-{
-    return m_reportStatusList;
-}
-
 QJsonArray ReportInfo::rules() const
 {
     return m_rules;
-}
-
-void ReportInfo::reparentReportInfo(AbstractAccount *parent)
-{
-    m_parent = parent;
 }
 
 void ReportInfo::fromSourceData(const QJsonObject &doc)
@@ -170,12 +150,10 @@ void ReportInfo::fromSourceData(const QJsonObject &doc)
     // creating status array with the Post class
     const auto reportStatuses = doc[QStringLiteral("statuses")].toArray();
     std::ranges::transform(std::as_const(reportStatuses), std::back_inserter(m_reportStatus), [this, account](const QJsonValue &value) -> auto {
-        return new Post(account, value.toObject(), this);
+        return Post::fromJson(value.toObject());
     });
 
     m_rules = doc["rules"_L1].toArray();
-
-    Q_EMIT reportInfoUpdated();
 }
 
 #include "moc_reportinfo.cpp"

@@ -27,6 +27,18 @@ ecm_qt_declare_logging_category(tokodon_static
 target_sources(tokodon_static
     PRIVATE
 
+    # Datatypes
+    datatypes/application.cpp
+    datatypes/application.h
+    datatypes/datatype.h
+    datatypes/datatype_p.h
+    datatypes/card.cpp
+    datatypes/card.h
+    datatypes/poll.cpp
+    datatypes/poll.h
+    datatypes/post.cpp
+    datatypes/post.h
+
     # Shell
     tokodonapplication.cpp
     tokodonapplication.h
@@ -98,16 +110,10 @@ target_sources(tokodon_static
     conversation/conversationmodel.h
 
     # Timeline
-    timeline/post.cpp
-    timeline/post.h
     timeline/attachment.cpp
     timeline/attachment.h
     timeline/notification.cpp
     timeline/notification.h
-    timeline/poll.cpp
-    timeline/poll.h
-    timeline/tag.h
-    timeline/tag.cpp
     timeline/accountmodel.cpp
     timeline/accountmodel.h
     timeline/threadmodel.cpp

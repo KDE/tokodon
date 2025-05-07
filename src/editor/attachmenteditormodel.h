@@ -9,7 +9,7 @@
 #include <QNetworkReply>
 #include <QTemporaryDir>
 
-#include "timeline/post.h"
+#include "datatypes/post.h"
 
 class QTimer;
 class AbstractAccount;

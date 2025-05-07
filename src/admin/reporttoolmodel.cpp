@@ -54,10 +54,12 @@ QVariant ReportToolModel::data(const QModelIndex &index, int role) const
 {
     Q_ASSERT(checkIndex(index, QAbstractItemModel::CheckIndexOption::IndexIsValid));
 
-    const auto identity = m_reports[index.row()].get();
+    const auto &report = m_reports[index.row()];
     switch (role) {
     case CustomRoles::ReportRole:
-        return QVariant::fromValue<ReportInfo *>(identity);
+        return QVariant::fromValue(report);
+    case CustomRoles::OriginRole:
+        return report.isLocal() ? u"local"_s : u"remote"_s;
     default:
         return {};
     }
@@ -72,6 +74,7 @@ QHash<int, QByteArray> ReportToolModel::roleNames() const
 {
     return {
         {CustomRoles::ReportRole, "reportInfo"},
+        {CustomRoles::OriginRole, "origin"},
     };
 }
 
@@ -86,23 +89,6 @@ void ReportToolModel::setModerationStatus(const QString &moderationStatus)
         return;
     }
     m_moderationStatus = moderationStatus;
-    Q_EMIT moderationStatusChanged();
-    m_pagination = false;
-    clear();
-    fillTimeline();
-}
-
-QString ReportToolModel::origin() const
-{
-    return m_origin;
-}
-
-void ReportToolModel::setOrigin(const QString &origin)
-{
-    if (origin == m_origin) {
-        return;
-    }
-    m_origin = origin;
     Q_EMIT moderationStatusChanged();
     m_pagination = false;
     clear();
@@ -264,21 +250,13 @@ void ReportToolModel::fillTimeline()
             const auto linkHeader = QString::fromUtf8(reply->rawHeader(QByteArrayLiteral("Link")));
             m_next = TextHandler::getNextLink(linkHeader);
 
-            QList<std::shared_ptr<ReportInfo>> fetchedReports;
+            std::vector<ReportInfo> fetchedReports;
 
             std::ranges::transform(std::as_const(reportsArray), std::back_inserter(fetchedReports), [account, this](const QJsonValue &value) -> auto {
-                const auto reportInfoJson = value.toObject();
-                const auto accountPopulate = account->reportInfoLookup(reportInfoJson["id"_L1].toString(), reportInfoJson);
-                // hack to determine the report's origin to be removed when we have the specific query for it
-                if (m_origin == QStringLiteral("local") && accountPopulate->targetAccount()->isLocal()) {
-                    return accountPopulate;
-                } else if (m_origin == QStringLiteral("remote") && !accountPopulate->targetAccount()->isLocal()) {
-                    return accountPopulate;
-                } else if (m_origin.isEmpty()) {
-                    return accountPopulate;
-                }
-                return std::shared_ptr<ReportInfo>();
+
+                return ReportInfo::fromSourceData(value.toObject());
             });
+
             beginInsertRows({}, m_reports.size(), m_reports.size() + fetchedReports.size() - 1);
             m_reports += fetchedReports;
             endInsertRows();

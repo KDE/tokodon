@@ -5,131 +5,63 @@
 
 #pragma once
 
+#include "datatype.h"
+#include "poll.h"
+#include "card.h"
+#include "application.h"
 #include "timeline/attachment.h"
-#include "timeline/poll.h"
 
 #include <QImage>
+#include <qqmlintegration.h>
 
 class Post;
 class Identity;
 class AbstractAccount;
 
-class Application
-{
-    Q_GADGET
-
-    Q_PROPERTY(QString name READ name)
-    Q_PROPERTY(QUrl website READ website)
-
-public:
-    Application() = default;
-    explicit Application(QJsonObject application);
-
-    [[nodiscard]] QString name() const;
-    [[nodiscard]] QUrl website() const;
-
-private:
-    QJsonObject m_application;
-};
-
-class Card
-{
-    Q_GADGET
-
-    Q_PROPERTY(QString authorName READ authorName)
-    Q_PROPERTY(QString authorUrl READ authorUrl)
-    Q_PROPERTY(Identity *authorIdentity READ authorIdentity)
-    Q_PROPERTY(QString blurhash READ blurhash)
-    Q_PROPERTY(QString description READ description)
-    Q_PROPERTY(QString embedUrl READ embedUrl)
-    Q_PROPERTY(int width READ width)
-    Q_PROPERTY(int height READ height)
-    Q_PROPERTY(QString html READ html)
-    Q_PROPERTY(QString image READ image)
-    Q_PROPERTY(QString providerName READ providerName)
-    Q_PROPERTY(QString providerUrl READ providerUrl)
-    Q_PROPERTY(QString title READ title)
-    Q_PROPERTY(QUrl url READ url)
-
-public:
-    Card() = default;
-    explicit Card(AbstractAccount *account, QJsonObject card);
-
-    [[nodiscard]] QString authorName() const;
-    [[nodiscard]] QString authorUrl() const;
-    [[nodiscard]] Identity *authorIdentity() const;
-    [[nodiscard]] QString blurhash() const;
-    [[nodiscard]] QString description() const;
-    [[nodiscard]] QString embedUrl() const;
-    [[nodiscard]] int width() const;
-    [[nodiscard]] int height() const;
-    [[nodiscard]] QString html() const;
-    [[nodiscard]] QString image() const;
-    [[nodiscard]] QString providerName() const;
-    [[nodiscard]] QString providerUrl() const;
-    [[nodiscard]] QString title() const;
-    [[nodiscard]] QUrl url() const;
-
-private:
-    /// Returns the new PreviewCardAuthor object if found.
-    std::optional<QJsonObject> authorObject() const;
-
-    QJsonObject m_card;
-    AbstractAccount *m_account = nullptr;
-};
-
+class PostPrivate;
 /**
  * @brief Represents a post, which may have text or images attached.
  */
-class Post : public QObject
+class Post
 {
-    Q_OBJECT
-    QML_ELEMENT
-    QML_UNCREATABLE("Posts should be accessed via models")
+    TOKODON_GADGET(Post, post)
 
-    Q_PROPERTY(QString postId READ postId CONSTANT)
-    Q_PROPERTY(QString spoilerText READ spoilerText CONSTANT)
-    Q_PROPERTY(QString content READ content CONSTANT)
+    TOKODON_PROPERTY(QString, postId, setPostId)
+    TOKODON_PROPERTY(QString, spoilerText, setSpoilerText)
+    TOKODON_PROPERTY(QString, content, setContent)
     Q_PROPERTY(bool hasContent READ hasContent CONSTANT)
-    Q_PROPERTY(bool sensitive READ sensitive CONSTANT)
-    Q_PROPERTY(Visibility visibility READ visibility CONSTANT)
-    Q_PROPERTY(QString language READ language CONSTANT)
-    Q_PROPERTY(QString inReplyTo READ inReplyTo CONSTANT)
-    Q_PROPERTY(QStringList mentions READ mentions CONSTANT)
-    Q_PROPERTY(Poll poll READ poll NOTIFY pollChanged)
-    Q_PROPERTY(bool hasPoll READ hasPoll NOTIFY pollChanged)
-    Q_PROPERTY(QStringList filters READ filters CONSTANT)
-    Q_PROPERTY(Identity *authorIdentity READ getAuthorIdentity CONSTANT)
-    Q_PROPERTY(QList<Attachment *> attachments READ attachments CONSTANT)
-    Q_PROPERTY(QString relativeTime READ relativeTime CONSTANT)
-    Q_PROPERTY(QString absoluteTime READ absoluteTime CONSTANT)
-    Q_PROPERTY(Card *card READ getCard CONSTANT)
-    Q_PROPERTY(QString type READ type CONSTANT)
-    Q_PROPERTY(QString editedAt READ editedAt CONSTANT)
-    Q_PROPERTY(bool wasEdited READ wasEdited CONSTANT)
-    Q_PROPERTY(QList<QString> standaloneTags READ standaloneTags CONSTANT)
-    Q_PROPERTY(Post *quotedPost READ quotedPost NOTIFY quotedPostChanged)
+    TOKODON_PROPERTY(bool, sensitive, setSensitive)
+    TOKODON_PROPERTY(Visibility, visibility, setVisibility)
+    TOKODON_PROPERTY(QString, language, setLanguage)
+    TOKODON_PROPERTY(QString, inReplyTo, setInReplyTo)
+    TOKODON_PROPERTY(QStringList mentions READ mentions CONSTANT)
+    TOKODON_PROPERTY(Poll poll READ poll CONSTANT)
+    TOKODON_PROPERTY(bool hasPoll READ hasPoll NOTIFY pollChanged)
+    TOKODON_PROPERTY(QStringList filters READ filters CONSTANT)
+    TOKODON_PROPERTY(Identity *authorIdentity READ getAuthorIdentity CONSTANT)
+    TOKODON_PROPERTY(QList<Attachment *> attachments READ attachments CONSTANT)
+    TOKODON_PROPERTY(QString relativeTime READ relativeTime CONSTANT)
+    TOKODON_PROPERTY(QString absoluteTime READ absoluteTime CONSTANT)
+    TOKODON_PROPERTY(Card *card READ getCard CONSTANT)
+    TOKODON_PROPERTY(QString type READ type CONSTANT)
+    TOKODON_PROPERTY(QString editedAt READ editedAt CONSTANT)
+    TOKODON_PROPERTY(bool wasEdited READ wasEdited CONSTANT)
+    TOKODON_PROPERTY(QList<QString> standaloneTags READ standaloneTags CONSTANT)
+    TOKODON_PROPERTY(Post *quotedPost READ quotedPost NOTIFY quotedPostChanged)
+    TOKODON_PROPERTY(bool isNull READ isNull)
 
 public:
-    Post() = delete;
-    Post(const Post &) = delete;
-
     /**
      * @brief Create an empty post for @p account.
-     * @note The @c Post is not parented to the account automatically.
      */
-    explicit Post(AbstractAccount *account, QObject *parent = nullptr);
-
-    /**
-     * @brief Create a post for @p account from JSON @p obj.
-     * @note The @c Post is not parented to the account automatically.
-     */
-    Post(AbstractAccount *account, QJsonObject obj, QObject *parent = nullptr);
+    explicit Post(AbstractAccount *account);
 
     /**
      * @brief Loads post content from JSON @p obj.
      */
-    void fromJson(QJsonObject obj);
+    Post(AbstractAccount *account, const QJsonObject &obj);
+
+    [[bool isNull() const;
 
     /**
      * @return This post's id.
@@ -163,11 +95,6 @@ public:
      * @return The identity of this post's author.
      */
     [[nodiscard]] std::shared_ptr<Identity> authorIdentity() const;
-
-    /**
-     * @return The HTML text of this post.
-     */
-    [[nodiscard]] QString content() const;
 
     /**
      * @return If the post has any text content.
@@ -249,7 +176,7 @@ public:
     /**
      * @return The poll on this post, if there is one.
      */
-    [[nodiscard]] Poll *poll() const;
+    [[nodiscard]] Poll poll() const;
 
     /**
      * @brief Sets the poll on this post from JSON @p object.
@@ -390,8 +317,7 @@ private:
 
     void processContent(const QJsonObject &obj);
 
-    AbstractAccount *const m_parent;
-
+    AbstractAccount * const m_account;
     QDateTime m_publishedAt;
     QString m_postId;
     QString m_originalPostId;
@@ -406,7 +332,7 @@ private:
     QString m_language;
     QDateTime m_editedAt;
     QVector<QString> m_standaloneTags;
-    Post *m_quotedPost = nullptr;
+    std::optional<Post> m_quotedPost = nullptr;
 
     QString m_replyTargetId;
     QStringList m_filters;
@@ -414,7 +340,7 @@ private:
     std::optional<Application> m_application;
     std::shared_ptr<Identity> m_authorIdentity;
     QList<Attachment *> m_attachments;
-    std::unique_ptr<Poll> m_poll;
+    std::optional<Poll> m_poll;
 
     bool m_sensitive = false;
     Visibility m_visibility;

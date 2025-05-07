@@ -6,7 +6,7 @@
 #include <QJsonDocument>
 
 #include "editor/polleditorbackend.h"
-#include "timeline/post.h"
+#include "datatypes/post.h"
 
 class AttachmentEditorModel;
 

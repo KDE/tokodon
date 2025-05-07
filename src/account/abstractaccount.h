@@ -8,7 +8,6 @@
 #include "account/preferences.h"
 #include "accountconfig.h"
 #include "admin/adminaccountinfo.h"
-#include "admin/reportinfo.h"
 #include "utils/customemoji.h"
 
 #include <QJsonObject>
@@ -199,11 +198,6 @@ public:
      * @brief Vanilla pointer identity.
      */
     AdminAccountInfo *adminIdentityLookupWithVanillaPointer(const QString &accountId, const QJsonObject &doc);
-
-    /**
-     * @brief Populating with Admin::Report.
-     */
-    std::shared_ptr<ReportInfo> reportInfoLookup(const QString &reportId, const QJsonObject &doc);
 
     /**
      * @brief Saves the timeline position.
@@ -730,7 +724,6 @@ protected:
     std::shared_ptr<AdminAccountInfo> m_adminIdentity;
     AdminAccountInfo *m_adminIdentityWithVanillaPointer{};
     AdminAccountInfo *m_federationIdentity{};
-    std::shared_ptr<ReportInfo> m_reportInfo;
     Preferences *m_preferences = nullptr;
     NotificationFilteringPolicy *m_notificationFilteringPolicy = nullptr;
     QList<CustomEmoji> m_customEmojis;
@@ -752,7 +745,6 @@ protected:
     QMap<QString, std::shared_ptr<Identity>> m_identityCache;
     QMap<QString, std::shared_ptr<AdminAccountInfo>> m_adminIdentityCache;
     QMap<QString, AdminAccountInfo *> m_adminIdentityCacheWithVanillaPointer;
-    QMap<QString, std::shared_ptr<ReportInfo>> m_reportInfoCache;
 
     void executeAction(Identity *i, AccountAction accountAction, const QJsonObject &extraArguments = {});
 

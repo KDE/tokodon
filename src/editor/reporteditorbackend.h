@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "timeline/post.h"
+#include "datatypes/post.h"
 
 class ReportEditorBackend : public QObject
 {

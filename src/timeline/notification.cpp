@@ -156,7 +156,7 @@ Notification::Notification(AbstractAccount *account, const QJsonObject &obj, QOb
     } else if (m_type == SeveredRelationships) {
         m_relationshipSeveranceEvent = RelationshipSeveranceEvent(obj["event"_L1].toObject());
     } else if (m_type == AdminReport) {
-        m_report = new ReportInfo();
+        m_report = ReportInfo{};
         m_report->fromSourceData(obj["event"_L1].toObject());
     } else if (m_type == AnnualReport) {
         m_annualReportEvent = AnnualReportEvent(obj["annual_report"_L1].toObject());
@@ -183,7 +183,7 @@ Post *Notification::post() const
     return m_post;
 }
 
-ReportInfo *Notification::report() const
+std::optional<ReportInfo> Notification::report() const
 {
     return m_report;
 }

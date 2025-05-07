@@ -4,6 +4,7 @@
 #pragma once
 
 #include "account/abstractaccount.h"
+#include "admin/reportinfo.h"
 
 class AccountWarning
 {
@@ -114,7 +115,7 @@ public:
     [[nodiscard]] AbstractAccount *account() const;
     [[nodiscard]] Type type() const;
     [[nodiscard]] Post *post() const;
-    [[nodiscard]] ReportInfo *report() const;
+    [[nodiscard]] std::optional<ReportInfo> report() const;
     [[nodiscard]] std::optional<RelationshipSeveranceEvent> relationshipSeveranceEvent() const;
     [[nodiscard]] std::optional<AccountWarning> accountWarning() const;
     [[nodiscard]] std::optional<AnnualReportEvent> annualReportEvent() const;
@@ -125,7 +126,7 @@ private:
 
     AbstractAccount *m_account = nullptr;
     Post *m_post = nullptr;
-    ReportInfo *m_report = nullptr;
+    std::optional<ReportInfo> m_report;
     std::optional<RelationshipSeveranceEvent> m_relationshipSeveranceEvent;
     std::optional<AccountWarning> m_accountWarning;
     std::optional<AnnualReportEvent> m_annualReportEvent;
