@@ -163,7 +163,7 @@ Kirigami.ScrollablePage {
 
             width: ListView.view.width
 
-            onClicked: applicationWindow().pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "MainIpRulePage"),
+            onClicked: root.QQC2.ApplicationWindow.window.pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "MainIpRulePage"),
                     {
                         index: delegate.index,
                         model: ipRuleView.model,
