@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-30 00:42+0000\n"
+"POT-Creation-Date: 2025-05-08 00:42+0000\n"
 "PO-Revision-Date: 2025-05-03 11:37+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -3227,23 +3227,30 @@ msgctxt "@info:Filter out accounts with remote origin"
 msgid "Remote"
 msgstr "Eksterne"
 
-#: content/ui/ModerationTools/ReportToolPage.qml:155
+#: content/ui/ModerationTools/ReportToolPage.qml:158
 #, kde-format
 msgid "Reported By:"
 msgstr "Rapportert av:"
 
-#: content/ui/ModerationTools/ReportToolPage.qml:240
+#: content/ui/ModerationTools/ReportToolPage.qml:201
+#, fuzzy, kde-format
+#| msgctxt "@info: The comment attached with the ip rule"
+#| msgid "Comment"
+msgid "Comment:"
+msgstr "Merknad"
+
+#: content/ui/ModerationTools/ReportToolPage.qml:224
 #, kde-format
 msgid "Assigned Account:"
 msgstr "Tildelt konto:"
 
-#: content/ui/ModerationTools/ReportToolPage.qml:265
+#: content/ui/ModerationTools/ReportToolPage.qml:249
 #, kde-format
 msgctxt "@info: No account assigned to the report"
 msgid "N/A"
 msgstr "–"
 
-#: content/ui/ModerationTools/ReportToolPage.qml:296
+#: content/ui/ModerationTools/ReportToolPage.qml:287
 #, kde-format
 msgid "No reports found"
 msgstr "Fann ikkje nokon rapportar"
