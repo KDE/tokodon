@@ -2,13 +2,13 @@
 # This file is distributed under the same license as the tokodon package.
 #
 # SPDX-FileCopyrightText: 2023, 2024, 2025 giovanni <g.sora@tiscali.it>
-# giovanni <g.sora@tiscali.it>, 2023, 2024.
+# giovanni <g.sora@tiscali.it>, 2023, 2024, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-08 00:42+0000\n"
-"PO-Revision-Date: 2025-04-22 12:28+0200\n"
+"PO-Revision-Date: 2025-05-12 16:48+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 21.12.1\n"
 
 #: account/abstractaccount.cpp:33
 #, kde-format
@@ -3186,11 +3186,9 @@ msgid "Reported By:"
 msgstr ""
 
 #: content/ui/ModerationTools/ReportToolPage.qml:201
-#, fuzzy, kde-format
-#| msgctxt "@info: The comment attached with the ip rule"
-#| msgid "Comment"
+#, kde-format
 msgid "Comment:"
-msgstr "Commento"
+msgstr "Commento:"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:224
 #, kde-format
@@ -5525,92 +5523,71 @@ msgid "Write a New Post"
 msgstr "Scribe un nove message public (post)"
 
 #: tokodonapplication.cpp:94
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "End of Timeline"
+#, kde-format
 msgctxt "@action:button Home Timeline"
 msgid "Open Home Timeline"
-msgstr "Fin de Chronologia "
+msgstr "Aperi Chronologia Initial (Home)"
 
 #: tokodonapplication.cpp:100
-#, fuzzy, kde-format
-#| msgctxt "@action:button Account Notifications"
-#| msgid "Notifications"
+#, kde-format
 msgctxt "@action:button Account Notifications"
 msgid "Open Notifications"
-msgstr "Notificationes"
+msgstr "Aperi Notificationes"
 
 #: tokodonapplication.cpp:106
-#, fuzzy, kde-format
-#| msgctxt "@action:button Follows that require explicit allow/deny"
-#| msgid "Follow Requests"
+#, kde-format
 msgctxt "@action:button Follows that require explicit allow/deny"
 msgid "Open Follow Requests"
-msgstr "Requestas de sequer"
+msgstr "Aperi Requestas de sequer"
 
 #: tokodonapplication.cpp:112
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Local Timeline"
+#, kde-format
 msgctxt "@action:button Local timeline of posts from the account's own server"
 msgid "Open Local Timeline"
-msgstr "Chronologia local"
+msgstr "Aperi Chronologia local"
 
 #: tokodonapplication.cpp:118
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Local Timeline"
+#, kde-format
 msgctxt ""
 "@action:button Global timeline of posts from the entire Fediverse network"
 msgid "Open Global Timeline"
-msgstr "Chronologia local"
+msgstr "Aperi Chronologia local"
 
 #: tokodonapplication.cpp:124
-#, fuzzy, kde-format
-#| msgid "Conversations"
+#, kde-format
 msgctxt "@action:button Direct one-on-one messages between users"
 msgid "Open Conversations"
-msgstr "Conversationes"
+msgstr "Aperi Conversationes"
 
 #: tokodonapplication.cpp:130
-#, fuzzy, kde-format
-#| msgctxt "@action:button This account's favorited posts"
-#| msgid "Favorites"
+#, kde-format
 msgctxt "@action:button This account's favorited posts"
 msgid "Open Favorites"
-msgstr "Favoritos"
+msgstr "Aperi Favoritos"
 
 #: tokodonapplication.cpp:136
-#, fuzzy, kde-format
-#| msgctxt "@action:button This account's bookmarked posts"
-#| msgid "Bookmarks"
+#, kde-format
 msgctxt "@action:button This account's bookmarked posts"
 msgid "Open Bookmarks"
-msgstr "Marcatores de libro"
+msgstr "Aperi Marcatores de libro"
 
 #: tokodonapplication.cpp:142
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu 'Thread' is a series of posts."
-#| msgid "Open Thread"
+#, kde-format
 msgctxt "@action:button Explore this server's trending posts, news, and more"
 msgid "Open Explore"
-msgstr "Aperi Topico"
+msgstr "Aperi Explora"
 
 #: tokodonapplication.cpp:148
-#, fuzzy, kde-format
-#| msgctxt "@action:button A list of this account's followed accounts"
-#| msgid "Following"
+#, kde-format
 msgctxt "@action:button A list of this account's followed accounts"
 msgid "Open Following"
-msgstr "Sequente"
+msgstr "Aperi Sequente"
 
 #: tokodonapplication.cpp:154
-#, fuzzy, kde-format
-#| msgctxt "@action:button Search for users, posts and tags"
-#| msgid "Search"
+#, kde-format
 msgctxt "@action:button Search for users, posts and tags"
 msgid "Open Search"
-msgstr "Cerca"
+msgstr "Aperi Cerca"
 
 #: tokodonapplication.cpp:160
 #, kde-format
@@ -5619,20 +5596,18 @@ msgid "Open Server Information"
 msgstr ""
 
 #: tokodonapplication.cpp:166
-#, fuzzy, kde-format
-#| msgid "Open Link"
+#, kde-format
 msgctxt ""
 "@action:button This account's lists, or timelines consisting of a groups of "
 "accounts"
 msgid "Open Lists"
-msgstr "Aperi Ligamine"
+msgstr "Aperi Listas"
 
 #: tokodonapplication.cpp:172
-#, fuzzy, kde-format
-#| msgid "View Profile"
+#, kde-format
 msgctxt "@action:button This account's profile"
 msgid "Open Profile"
-msgstr "Profilo de vista "
+msgstr "Aperi Profilo"
 
 #: tokodonapplication.cpp:206
 #, kde-format
