@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-08 00:42+0000\n"
-"PO-Revision-Date: 2025-05-16 16:09+0900\n"
+"PO-Revision-Date: 2025-05-17 09:50+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -239,7 +239,8 @@ msgstr "這個嘟文沒有文字。"
 msgid ""
 "The moderators of your server has limited this user, view this in Tokodon to "
 "see their profile."
-msgstr "您的伺服器的 Mod 已限制這個使用者，在 Tokodon 檢視這個來查看其個人檔案。"
+msgstr ""
+"您的伺服器的 Mod 已限制這個使用者，在 Tokodon 檢視這個來查看其個人檔案。"
 
 #: account/notificationhandler.cpp:173
 #, kde-format
@@ -1700,7 +1701,9 @@ msgstr "沒有書籤"
 msgid ""
 "Bookmark posts and they will show up here. Bookmarks are always kept "
 "private, even to the post's author."
-msgstr "將嘟文加入書籤，它們便會出現在此。書籤總是保持私人，連嘟文的作者都不會看得到。"
+msgstr ""
+"將嘟文加入書籤，它們便會出現在此。書籤總是保持私人，連嘟文的作者都不會看得"
+"到。"
 
 #: content/ui/Main.qml:432
 #, kde-format
@@ -3196,8 +3199,6 @@ msgstr "檢舉人："
 
 #: content/ui/ModerationTools/ReportToolPage.qml:201
 #, kde-format
-#| msgctxt "@info: The comment attached with the ip rule"
-#| msgid "Comment"
 msgid "Comment:"
 msgstr "註解："
 
@@ -3302,10 +3303,9 @@ msgid ""
 msgstr "您還沒有通知。當別人回覆、最愛或轉嘟您的嘟文的時候會作為通知顯示在此。"
 
 #: content/ui/Notifications/AccountWarningDelegate.qml:66
-#, fuzzy, kde-format
-#| msgid "Take action against this account"
+#, kde-format
 msgid "%1 has issued a warning against your account"
-msgstr "對帳號進行動作"
+msgstr "%1 已對您的帳號提出警告"
 
 #: content/ui/Notifications/AnnualReportDelegate.qml:63
 #, kde-kuit-format
@@ -3317,13 +3317,14 @@ msgctxt ""
 msgid ""
 "Your %1 #FediWrapped awaits! Unveil your year's highlights and memorable "
 "moments on Mastodon!"
-msgstr "您的 %1 #FediWrapped 正在等您！發現您今年在 Mastodon 上的精選與回憶時光吧！"
+msgstr ""
+"您的 %1 #FediWrapped 正在等您！發現您今年在 Mastodon 上的精選與回憶時光吧！"
 
 #: content/ui/Notifications/AnnualReportDelegate.qml:70
 #, kde-format
 msgctxt "@action:button"
 msgid "View #FediWrapped"
-msgstr "檢視 #FediWrapped"
+msgstr "查看 #FediWrapped"
 
 #: content/ui/Notifications/GroupInteractionLabel.qml:64
 #, kde-format
@@ -3358,13 +3359,13 @@ msgctxt "@info:label"
 msgid ""
 "Moderation has blocked <b>%1</b>, including %2 of your followers and %3 "
 "account you follow."
-msgstr ""
+msgstr "Mod 已封鎖 <b>%1</b>，包含您 %2 個跟隨者與 %3 個您跟隨的帳號。"
 
 #: content/ui/Notifications/ReportDelegate.qml:61
 #, kde-format
 msgctxt "@info:label"
 msgid "A report has been filed against a user in your server."
-msgstr ""
+msgstr "您的伺服器上的一名使用者已被檢舉。"
 
 #: content/ui/Notifications/UserInteractionLabel.qml:85
 #, kde-format
@@ -3719,7 +3720,8 @@ msgstr "書籤"
 msgid ""
 "This post has been marked private. Some posts may be missing because its "
 "replies are marked as private by default."
-msgstr "此嘟文已被標記為私人。可能會缺少某些嘟文，因為它的回覆預設也會被標記為私人。"
+msgstr ""
+"此嘟文已被標記為私人。可能會缺少某些嘟文，因為它的回覆預設也會被標記為私人。"
 
 #: content/ui/PostDelegate/PostInfoBar.qml:27
 #, kde-format
@@ -4179,7 +4181,8 @@ msgstr "從您上次閱讀的地方繼續閱讀"
 msgid ""
 "If checked, the Home timeline will begin where you last read. The position "
 "in the timeline is shared with other clients."
-msgstr "勾選時，首頁時間軸開啟時會回到您上次閱讀的位置。這個位置會與其他用戶端分享。"
+msgstr ""
+"勾選時，首頁時間軸開啟時會回到您上次閱讀的位置。這個位置會與其他用戶端分享。"
 
 #: content/ui/Settings/AppearancePage.qml:72
 #, kde-format
@@ -4567,7 +4570,7 @@ msgstr "沒有跟隨您的人們"
 #, kde-format
 msgctxt "@label Notification preferences"
 msgid "Including people who have been following you fewer than 3 days."
-msgstr ""
+msgstr "這包含跟隨您不到 3 天的人。"
 
 #: content/ui/Settings/NotificationsPage.qml:90
 #, kde-format
@@ -4582,11 +4585,10 @@ msgid "Created within the past 30 days."
 msgstr "在過去 30 天內建立。"
 
 #: content/ui/Settings/NotificationsPage.qml:97
-#, fuzzy, kde-format
-#| msgid "No Conversations"
+#, kde-format
 msgctxt "@label Notification preferences"
 msgid "Unsolicited conversations"
-msgstr "無對話"
+msgstr "不請自來的對話"
 
 #: content/ui/Settings/NotificationsPage.qml:98
 #, kde-format
@@ -4594,7 +4596,7 @@ msgctxt "@label Notification preferences"
 msgid ""
 "Filtered unless it's in reply to your own mention or if you follow the "
 "sender."
-msgstr ""
+msgstr "除非是您自己的提及的回覆或是您跟隨送出者，否則過濾掉。"
 
 #: content/ui/Settings/NotificationsPage.qml:104
 #, kde-format
@@ -4758,7 +4760,8 @@ msgstr "標頭"
 #: content/ui/Settings/ProfileEditor.qml:138
 #, kde-format
 msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 1500x500px"
-msgstr "支援 PNG、GIF 或 JPG 格式，檔案最大為 2 MB。會等比例縮減至 1500x500 像素"
+msgstr ""
+"支援 PNG、GIF 或 JPG 格式，檔案最大為 2 MB。會等比例縮減至 1500x500 像素"
 
 #: content/ui/Settings/ProfileEditor.qml:166
 #, kde-format
@@ -4768,7 +4771,8 @@ msgstr "大頭貼"
 #: content/ui/Settings/ProfileEditor.qml:199
 #, kde-format
 msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 400x400px"
-msgstr "支援 PNG、GIF 或 JPG 格式，檔案最大為 2 MB。會等比例縮減至 400x400 像素"
+msgstr ""
+"支援 PNG、GIF 或 JPG 格式，檔案最大為 2 MB。會等比例縮減至 400x400 像素"
 
 #: content/ui/Settings/ProfileEditor.qml:230
 #, kde-format
@@ -5240,6 +5244,8 @@ msgid ""
 "Some of your media is missing alt text. Adding descriptions help everyone, "
 "especially the visually impaired."
 msgstr ""
+"有些媒體缺乏替代文字。加入替代文字說明能夠幫助所有人更加理解，尤其是視力受損"
+"的人。"
 
 #: content/ui/TimelinePage.qml:39 timeline/accountmodel.cpp:41
 #, kde-format
