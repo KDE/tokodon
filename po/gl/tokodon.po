@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-08 00:42+0000\n"
-"PO-Revision-Date: 2025-03-02 09:40+0100\n"
+"PO-Revision-Date: 2025-05-23 10:11+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.12.2\n"
+"X-Generator: Lokalize 25.04.1\n"
 
 #: account/abstractaccount.cpp:33
 #, kde-format
@@ -411,13 +411,15 @@ msgctxt "@info:placeholder"
 msgid ""
 "No one is following this user, or they have chosen to hide this information."
 msgstr ""
+"Ninguén segue a esta persoa, ou quen a segue escolleu agochar esa "
+"información."
 
 #: account/socialgraphmodel.cpp:88
 #, kde-format
 msgctxt "@info:placeholder"
 msgid ""
 "This user isn't following anyone, or has chosen to hide this information."
-msgstr ""
+msgstr "Non segue a ninguén, ou escolleu agochar esa información."
 
 #: account/socialgraphmodel.cpp:90
 #, kde-format
@@ -3247,11 +3249,9 @@ msgid "Reported By:"
 msgstr "Denunciante:"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:201
-#, fuzzy, kde-format
-#| msgctxt "@info: The comment attached with the ip rule"
-#| msgid "Comment"
+#, kde-format
 msgid "Comment:"
-msgstr "Comentario"
+msgstr "Comentario:"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:224
 #, kde-format
@@ -5396,7 +5396,7 @@ msgctxt ""
 "@info:label %1 is the native language name, and %2 is the localized name. "
 "For example, 'dansk (Danish)'"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: editor/listeditorbackend.cpp:121
 #, kde-format
@@ -5472,10 +5472,9 @@ msgid "Browse the Fediverse"
 msgstr "Explorar o Fediverso"
 
 #: main.cpp:106
-#, fuzzy, kde-format
-#| msgid "© 2021-2024 KDE Community"
+#, kde-format
 msgid "© 2021-2025 KDE Community"
-msgstr "© 2021-2024 Comunidade KDE"
+msgstr "© 2021-2025 Comunidade KDE"
 
 #: main.cpp:107
 #, kde-format
@@ -5624,115 +5623,91 @@ msgid "Write a New Post"
 msgstr "Escribir unha nova publicación"
 
 #: tokodonapplication.cpp:94
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "End of Timeline"
+#, kde-format
 msgctxt "@action:button Home Timeline"
 msgid "Open Home Timeline"
-msgstr "Fin da cronoloxía"
+msgstr "Abrir a cronoloxía do inicio"
 
 #: tokodonapplication.cpp:100
-#, fuzzy, kde-format
-#| msgctxt "@action:button Account Notifications"
-#| msgid "Notifications"
+#, kde-format
 msgctxt "@action:button Account Notifications"
 msgid "Open Notifications"
-msgstr "Notificacións"
+msgstr "Abrir as notificacións"
 
 #: tokodonapplication.cpp:106
-#, fuzzy, kde-format
-#| msgctxt "@action:button Follows that require explicit allow/deny"
-#| msgid "Follow Requests"
+#, kde-format
 msgctxt "@action:button Follows that require explicit allow/deny"
 msgid "Open Follow Requests"
-msgstr "Solicitudes de seguimento"
+msgstr "Abrir as solicitudes de seguimento"
 
 #: tokodonapplication.cpp:112
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Local Timeline"
+#, kde-format
 msgctxt "@action:button Local timeline of posts from the account's own server"
 msgid "Open Local Timeline"
-msgstr "Cronoloxía Local"
+msgstr "Abrir a cronoloxía local"
 
 #: tokodonapplication.cpp:118
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Local Timeline"
+#, kde-format
 msgctxt ""
 "@action:button Global timeline of posts from the entire Fediverse network"
 msgid "Open Global Timeline"
-msgstr "Cronoloxía Local"
+msgstr "Abrir a cronoloxía global"
 
 #: tokodonapplication.cpp:124
-#, fuzzy, kde-format
-#| msgid "Conversations"
+#, kde-format
 msgctxt "@action:button Direct one-on-one messages between users"
 msgid "Open Conversations"
-msgstr "Conversas"
+msgstr "Abrir as conversas"
 
 #: tokodonapplication.cpp:130
-#, fuzzy, kde-format
-#| msgctxt "@action:button This account's favorited posts"
-#| msgid "Favorites"
+#, kde-format
 msgctxt "@action:button This account's favorited posts"
 msgid "Open Favorites"
-msgstr "Favoritas"
+msgstr "Abrir as favoritas"
 
 #: tokodonapplication.cpp:136
-#, fuzzy, kde-format
-#| msgctxt "@action:button This account's bookmarked posts"
-#| msgid "Bookmarks"
+#, kde-format
 msgctxt "@action:button This account's bookmarked posts"
 msgid "Open Bookmarks"
-msgstr "Marcadores"
+msgstr "Abrir os marcadores"
 
 #: tokodonapplication.cpp:142
-#, fuzzy, kde-format
-#| msgid "Explore"
+#, kde-format
 msgctxt "@action:button Explore this server's trending posts, news, and more"
 msgid "Open Explore"
-msgstr "Explorar"
+msgstr "Abrir a exploración"
 
 #: tokodonapplication.cpp:148
-#, fuzzy, kde-format
-#| msgctxt "@action:button A list of this account's followed accounts"
-#| msgid "Following"
+#, kde-format
 msgctxt "@action:button A list of this account's followed accounts"
 msgid "Open Following"
-msgstr "Seguindo"
+msgstr "Abrir os seguimentos"
 
 #: tokodonapplication.cpp:154
-#, fuzzy, kde-format
-#| msgctxt "@action:button Search for users, posts and tags"
-#| msgid "Search"
+#, kde-format
 msgctxt "@action:button Search for users, posts and tags"
 msgid "Open Search"
-msgstr "Buscar"
+msgstr "Abrir a busca"
 
 #: tokodonapplication.cpp:160
-#, fuzzy, kde-format
-#| msgctxt "@abel Account preferences"
-#| msgid "Open Server in Browser"
+#, kde-format
 msgctxt "@action:button"
 msgid "Open Server Information"
-msgstr "Abrir o servidor no navegador"
+msgstr "Abrir a información do servidor"
 
 #: tokodonapplication.cpp:166
-#, fuzzy, kde-format
-#| msgid "Open Link"
+#, kde-format
 msgctxt ""
 "@action:button This account's lists, or timelines consisting of a groups of "
 "accounts"
 msgid "Open Lists"
-msgstr "Abrir a ligazón"
+msgstr "Abrir as listas"
 
 #: tokodonapplication.cpp:172
-#, fuzzy, kde-format
-#| msgid "View Profile"
+#, kde-format
 msgctxt "@action:button This account's profile"
 msgid "Open Profile"
-msgstr "Ver o perfil"
+msgstr "Abrir o perfil"
 
 #: tokodonapplication.cpp:206
 #, kde-format
