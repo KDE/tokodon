@@ -126,26 +126,38 @@ QQC2.ItemDelegate {
         threadMargin: 0
         isLastThreadReply: false
 
-        // Interaction labels for notifications
-        Loader {
-            active: root.notificationActorIdentity !== undefined && !root.isGroup
-            visible: active
+        RowLayout {
+            spacing: 0
 
-            sourceComponent: Notifications.UserInteractionLabel {
-                type: root.type
-                notificationActorIdentity: root.notificationActorIdentity
+            // Interaction labels for notifications
+            Loader {
+                active: root.notificationActorIdentity !== undefined && !root.isGroup
+                visible: active
+
+                sourceComponent: Notifications.UserInteractionLabel {
+                    type: root.type
+                    notificationActorIdentity: root.notificationActorIdentity
+                }
             }
-        }
 
-        // Interaction labels for grouped notifications
-        Loader {
-            active: root.notificationActorIdentity !== undefined && root.isGroup
-            visible: active
+            // Interaction labels for grouped notifications
+            Loader {
+                active: root.notificationActorIdentity !== undefined && root.isGroup
+                visible: active
 
-            sourceComponent: Notifications.GroupInteractionLabel {
-                type: root.type
-                notificationActorIdentity: root.notificationActorIdentity
-                numInGroup: root.numInGroup
+                sourceComponent: Notifications.GroupInteractionLabel {
+                    type: root.type
+                    notificationActorIdentity: root.notificationActorIdentity
+                    numInGroup: root.numInGroup
+                }
+            }
+
+            Item {
+                Layout.fillWidth: true
+            }
+
+            QQC2.Label {
+                text: root.relativeTime
             }
         }
 

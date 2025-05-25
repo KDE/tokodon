@@ -205,6 +205,8 @@ QVariant NotificationModel::data(const QModelIndex &index, int role) const
         return QVariant::fromValue<AccountWarning>(*notification->accountWarning());
     case UnreadRole:
         return notification->id() > m_lastReadId.toLongLong();
+    case RelativeTimeRole:
+        return TextHandler::getRelativeDateTime(notification->createdAt());
     default:
         if (post != nullptr) {
             return postData(post, role);
