@@ -251,7 +251,13 @@ StatefulApp.StatefulWindow {
         }
 
         function onAddAccount(): void {
-            let page = root.pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "WelcomePage"), { application: root.application, showSettingsButton: false });
+            let page;
+            // pushDialogLayer is inherently broken in Kirigami, so let's push it as a page on mobile instead
+            if (Kirigami.Settings.isMobile) {
+                page = root.pageStack.push(Qt.createComponent("org.kde.tokodon", "WelcomePage"), { application: root.application, showSettingsButton: false });
+            } else {
+                page = root.pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "WelcomePage"), { application: root.application, showSettingsButton: false });
+            }
             page.QQC2.ApplicationWindow.window.pageStack.columnView.columnResizeMode = Kirigami.ColumnView.SingleColumn;
         }
 
