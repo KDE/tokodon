@@ -78,6 +78,13 @@ Kirigami.ScrollablePage {
         event.accepted = true;
     }
 
+    supportsRefreshing: true
+    onRefreshingChanged: {
+        if (refreshing) {
+            root.model.refresh();
+        }
+    }
+
     Connections {
         target: Qt.application
         function onStateChanged(): void {
@@ -140,9 +147,12 @@ Kirigami.ScrollablePage {
 
     Connections {
         target: root.model
-        function onNetworkErrorOccurred(error) {
+        function onNetworkErrorOccurred(error: string): void {
             message.text = i18nc("@info:status Network status", "Failed to contact server: %1. Please check your settings.", error)
             message.visible = true
+        }
+        function onLoadingChanged(): void {
+            root.refreshing = false;
         }
     }
 
