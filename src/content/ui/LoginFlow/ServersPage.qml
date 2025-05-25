@@ -186,8 +186,7 @@ Kirigami.ScrollablePage {
         }
     }
 
-    // For some reason setting the focus property on the ListView doesn't work, and it doesn't announce items to the screen reader
-    Component.onCompleted: listView.forceActiveFocus()
+    Component.onCompleted: searchField.forceActiveFocus()
 
     ListView {
         id: listView
