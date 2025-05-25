@@ -73,6 +73,12 @@ void NotificationModel::fillTimeline(const QUrl &next)
     if (m_loading) {
         return;
     }
+
+    if (!m_fetchedLastReadId) {
+        fetchLastReadId();
+        return;
+    }
+
     setLoading(true);
     QUrl uri;
     if (next.isEmpty()) {
@@ -197,6 +203,8 @@ QVariant NotificationModel::data(const QModelIndex &index, int role) const
         return QVariant::fromValue<AnnualReportEvent>(*notification->annualReportEvent());
     case ModerationWarningRole:
         return QVariant::fromValue<AccountWarning>(*notification->accountWarning());
+    case UnreadRole:
+        return notification->id() > m_lastReadId.toLongLong();
     default:
         if (post != nullptr) {
             return postData(post, role);
@@ -212,6 +220,7 @@ QHash<int, QByteArray> NotificationModel::roleNames() const
     roles.insert(RelationshipSeveranceEventRole, QByteArrayLiteral("relationshipSeveranceEvent"));
     roles.insert(ModerationWarningRole, QByteArrayLiteral("moderationWarning"));
     roles.insert(AnnualReportEventRole, QByteArrayLiteral("annualReportEvent"));
+    roles.insert(UnreadRole, QByteArrayLiteral("unread"));
     return roles;
 }
 
@@ -287,6 +296,42 @@ void NotificationModel::actionMute(const QModelIndex &index)
     if (post != nullptr) {
         AbstractTimelineModel::actionMute(index, post);
     }
+}
+
+void NotificationModel::fetchLastReadId()
+{
+    if (m_fetchingLastReadId) {
+        return;
+    }
+
+    m_fetchingLastReadId = true;
+
+    QUrl uri = m_account->apiUrl(QStringLiteral("/api/v1/markers"));
+
+    QUrlQuery urlQuery(uri);
+    urlQuery.addQueryItem(QStringLiteral("timeline[]"), QStringLiteral("notifications"));
+    uri.setQuery(urlQuery);
+
+    m_account->get(
+        uri,
+        true,
+        this,
+        [this](QNetworkReply *reply) {
+            const auto doc = QJsonDocument::fromJson(reply->readAll());
+
+            m_lastReadId = doc.object()[QLatin1String("notifications")].toObject()[QLatin1String("last_read_id")].toString();
+            m_fetchedLastReadId = true;
+
+            fillTimeline({});
+        },
+        [this](QNetworkReply *reply) {
+            Q_UNUSED(reply);
+
+            // If you failed, give up
+            m_fetchedLastReadId = true;
+
+            fillTimeline({});
+        });
 }
 
 #include "moc_notificationmodel.cpp"

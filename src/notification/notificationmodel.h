@@ -23,6 +23,7 @@ public:
         RelationshipSeveranceEventRole,
         ModerationWarningRole,
         AnnualReportEventRole,
+        UnreadRole,
     };
 
     explicit NotificationModel(QObject *parent = nullptr);
@@ -104,6 +105,7 @@ Q_SIGNALS:
 protected:
     void fetchMore(const QModelIndex &parent) override;
     [[nodiscard]] bool canFetchMore(const QModelIndex &parent) const override;
+    void fetchLastReadId();
 
     QString m_timelineName;
     AccountManager *m_manager = nullptr;
@@ -111,4 +113,7 @@ protected:
     QList<std::shared_ptr<Notification>> m_notifications;
     QStringList m_excludeTypes;
     std::optional<QUrl> m_next;
+    bool m_fetchingLastReadId = false;
+    bool m_fetchedLastReadId = false;
+    QString m_lastReadId;
 };
