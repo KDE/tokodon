@@ -18,10 +18,11 @@ import org.kde.tokodon
 Kirigami.ScrollablePage {
     id: root
 
-    title: i18nc("@title:window", "Pick a Server")
+    title: forRegistration ? i18nc("@title:window", "Pick a Server") : i18nc("@title:window", "Choose your Existing Server")
 
     property alias filterString: searchField.text
     property var account
+    property bool forRegistration
 
     data: Connections {
         target: Controller
@@ -54,6 +55,82 @@ Kirigami.ScrollablePage {
         account = AccountManager.createNewAccount(domain);
         account.fetchedInstanceMetadata.connect(handleRegistration);
         account.registerTokodon(false, false);
+    }
+
+    function openPage(componentName: string): void {
+        if (Kirigami.Settings.isMobile) {
+            if (Window.window.pageStack.layers.currentItem !== root) {
+                Window.window.pageStack.layers.pop();
+            }
+
+            Window.window.pageStack.layers.push(Qt.createComponent("org.kde.tokodon", componentName), {
+                account: account,
+                loginPage: root
+            });
+        } else {
+            if (Window.window.pageStack.currentItem !== root) {
+                Window.window.pageStack.pop();
+            }
+
+            Window.window.pageStack.push(Qt.createComponent("org.kde.tokodon", componentName), {
+                account: account,
+                loginPage: root
+            });
+        }
+    }
+
+    function _openWebViewAuthPage(): void {
+        account.registered.disconnect(_openWebViewAuthPage);
+        openPage("WebViewAuthorization");
+    }
+
+    function openWebViewAuthPage(): void {
+        account.registerTokodon(false, true);
+        account.registered.connect(_openWebViewAuthPage);
+    }
+
+    function _openBrowserAuthPage(): void {
+        account.registered.disconnect(_openBrowserAuthPage);
+        openPage("BrowserAuthorization");
+    }
+
+    function openBrowserAuthPage(): void {
+        account.registerTokodon(false, true);
+        account.registered.connect(_openBrowserAuthPage);
+    }
+
+    function _openCodeAuthPage(): void {
+        account.registered.disconnect(_openCodeAuthPage);
+
+        openPage("CodeAuthorization");
+    }
+
+    function openCodeAuthPage(): void {
+        account.registerTokodon(true, true);
+        account.registered.connect(_openCodeAuthPage);
+    }
+
+    function login(domain: string): void {
+        root.account = AccountManager.createNewAccount(domain);
+
+        // Determine the best authorization type
+        if (Kirigami.Settings.isMobile && Navigation.hasWebView()) {
+            // Prefer the in-app authorization if possible on mobile, it's the best.
+            openWebViewAuthPage();
+        } else if (Navigation.isDebug()) {
+            // Prefer the auth code when debugging because it doesn't try to open the system Tokodon
+            openCodeAuthPage();
+        } else {
+            openBrowserAuthPage();
+        }
+    }
+
+    function tappedDomain(domain: string): void {
+        if (forRegistration) {
+            register(domain);
+        } else {
+            login(domain);
+        }
     }
 
     header: QQC2.Control {
@@ -127,7 +204,7 @@ Kirigami.ScrollablePage {
         }
 
         header: Delegates.RoundedItemDelegate {
-            onClicked: root.register(root.filterString)
+            onClicked: root.tappedDomain(root.filterString)
 
             property int index: 0
 
@@ -167,7 +244,7 @@ Kirigami.ScrollablePage {
                 subtitle: delegate.description
             }
 
-            onClicked: root.register(delegate.domain)
+            onClicked: root.tappedDomain(delegate.domain)
         }
 
         Kirigami.LoadingPlaceholder {

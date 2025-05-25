@@ -77,9 +77,9 @@ Kirigami.Page {
 
                 FormCard.FormButtonDelegate {
                     id: registerButton
-                    text: i18nc("@action:button Pick a Mastodon server", "Pick a Server")
+                    text: i18nc("@action:button Pick a Mastodon server", "Register")
                     icon.name: "network-server-symbolic"
-                    onClicked: Window.window.pageStack.push(Qt.createComponent("org.kde.tokodon", "ServersPage"))
+                    onClicked: Window.window.pageStack.push(Qt.createComponent("org.kde.tokodon", "ServersPage"), { forRegistration: true })
                     focus: true
                 }
 
@@ -87,9 +87,9 @@ Kirigami.Page {
 
                 FormCard.FormButtonDelegate {
                     id: loginButton
-                    text: i18nc("@action:button Use an existing Mastodon account", "Use an Existing Account")
+                    text: i18nc("@action:button Use an existing Mastodon account", "Login")
                     icon.name: "user-symbolic"
-                    onClicked: Window.window.pageStack.push(Qt.createComponent("org.kde.tokodon", "LoginPage"))
+                    onClicked: Window.window.pageStack.push(Qt.createComponent("org.kde.tokodon", "ServersPage"), { forRegistration: false })
                 }
             }
 
