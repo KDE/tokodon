@@ -446,6 +446,7 @@ Kirigami.ScrollablePage {
 
                     poll: backend.poll
                     maxPollOptions: AccountManager.selectedAccount.maxPollOptions
+                    maxCharactersPerOption: AccountManager.selectedAccount.maxCharactersPerOption
                 }
 
                 QQC2.ToolBar {

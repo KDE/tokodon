@@ -15,6 +15,7 @@ ColumnLayout {
 
     required property var poll
     required property int maxPollOptions
+    required property int maxCharactersPerOption
 
     Repeater {
         model: root.poll.options
@@ -41,6 +42,7 @@ ColumnLayout {
                 QQC2.TextField {
                     Layout.fillWidth: true
                     placeholderText: i18nc("@label:textbox Poll choice", "Choice %1", index + 1)
+                    maximumLength: root.maxCharactersPerOption
 
                     onEditingFinished: root.poll.setOption(index, text)
 

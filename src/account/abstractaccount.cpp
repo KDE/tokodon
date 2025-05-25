@@ -43,6 +43,7 @@ AbstractAccount::AbstractAccount(const QString &instanceUri, QObject *parent)
                                  i18n("M4V video (*.m4v)"),
                                  i18n("QuickTime video (*.mov)"),
                                  i18n("All files (*)")})
+    , m_maxCharactersPerOption(50)
 {
     // Test code uses a blank instance URI
     if (!AccountManager::instance().testMode()) {
@@ -94,6 +95,11 @@ size_t AbstractAccount::maxPostLength() const
 size_t AbstractAccount::maxPollOptions() const
 {
     return m_maxPollOptions;
+}
+
+size_t AbstractAccount::maxCharactersPerOption() const
+{
+    return m_maxCharactersPerOption;
 }
 
 bool AbstractAccount::supportsLocalVisibility() const
@@ -508,6 +514,7 @@ void AbstractAccount::fetchInstanceMetadata()
             // Other instance of poll options
             if (obj.contains("polls"_L1)) {
                 m_maxPollOptions = obj["polls"_L1].toObject()["max_options"_L1].toInt();
+                m_maxCharactersPerOption = obj["polls"_L1].toObject()["max_characters_per_option"_L1].toInt();
             }
 
             if (obj.contains("registrations"_L1)) {

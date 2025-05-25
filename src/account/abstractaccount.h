@@ -35,6 +35,7 @@ class AbstractAccount : public QObject
     Q_PROPERTY(QString instanceUri READ instanceUri CONSTANT)
     Q_PROPERTY(int maxPostLength READ maxPostLength NOTIFY fetchedInstanceMetadata)
     Q_PROPERTY(int maxPollOptions READ maxPollOptions NOTIFY fetchedInstanceMetadata)
+    Q_PROPERTY(int maxCharactersPerOption READ maxCharactersPerOption NOTIFY fetchedInstanceMetadata)
     Q_PROPERTY(bool supportsLocalVisibility READ supportsLocalVisibility NOTIFY fetchedInstanceMetadata)
     Q_PROPERTY(QString instanceName READ instanceName NOTIFY fetchedInstanceMetadata)
     Q_PROPERTY(QUrl authorizeUrl READ getAuthorizeUrl NOTIFY registered)
@@ -150,6 +151,11 @@ public:
      * @return The maximum number of poll options.
      */
     [[nodiscard]] size_t maxPollOptions() const;
+
+    /**
+     * @return The maximum length of each poll option.
+     */
+    [[nodiscard]] size_t maxCharactersPerOption() const;
 
     /**
      * @return Certain servers (like Pleroma/Akkoma) support an additional visibility type, called Local.
@@ -745,6 +751,7 @@ protected:
     int m_maxMediaAttachments;
     QStringList m_attachmentFilterStrings;
     QString m_instanceVapidPublicKey;
+    int m_maxCharactersPerOption;
 
     // updates and notifications
     void handleNotification(const QJsonDocument &doc);
