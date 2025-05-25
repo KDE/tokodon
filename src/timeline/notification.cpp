@@ -150,6 +150,7 @@ Notification::Notification(AbstractAccount *account, const QJsonObject &obj, QOb
         qCWarning(TOKODON_LOG) << "Unknown notification type:" << type;
     }
     m_id = obj["id"_L1].toString().toInt();
+    m_createdAt = QDateTime::fromString(obj["created_at"_L1].toString(), Qt::ISODate).toLocalTime();
 
     if (m_type == ModerationWarning) {
         m_accountWarning = AccountWarning(obj["event"_L1].toObject());
@@ -206,6 +207,11 @@ std::optional<AccountWarning> Notification::accountWarning() const
 std::shared_ptr<Identity> Notification::identity() const
 {
     return m_identity;
+}
+
+QDateTime Notification::createdAt() const
+{
+    return m_createdAt;
 }
 
 #include "moc_notification.cpp"
