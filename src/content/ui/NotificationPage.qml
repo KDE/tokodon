@@ -1,6 +1,8 @@
 // SPDX-FileCopyrightText: 2021 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: GPL-3.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Controls 2 as QQC2
 import QtQuick.Layouts
@@ -169,6 +171,28 @@ Kirigami.ScrollablePage {
     ListView {
         id: listview
         model: timelinePage.currentModel
+        section.property: "unread"
+        section.criteria: ViewSection.FullString
+        section.delegate: Kirigami.FlexColumn {
+            id: sectionRoot
+
+            required property string section
+            readonly property bool shouldBeVisible: !timelinePage.currentModel.fullyRead
+
+            maximumWidth: Kirigami.Units.gridUnit * 40
+            spacing: 0
+            width: ListView.view.width
+            height: shouldBeVisible ? implicitHeight : 0
+
+            Kirigami.Heading {
+                text: sectionRoot.section === "true" ? i18nc("@info:label New notifications", "New") : i18nc("@info:label Previous notifications", "Previous")
+                visible: sectionRoot.shouldBeVisible
+                type: Kirigami.Heading.Primary
+                level: 2
+
+                Layout.topMargin: Kirigami.Units.largeSpacing
+            }
+        }
 
         Connections {
             target: notificationModel

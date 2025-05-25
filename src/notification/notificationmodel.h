@@ -16,6 +16,7 @@ class NotificationModel : public AbstractTimelineModel
     QML_ELEMENT
 
     Q_PROPERTY(QStringList excludeTypes READ excludeTypes WRITE setExcludesTypes NOTIFY excludeTypesChanged)
+    Q_PROPERTY(bool fullyRead READ fullyRead NOTIFY readMarkerChanged)
 
 public:
     enum NotificationRoles {
@@ -51,6 +52,8 @@ public:
     void setExcludesTypes(const QStringList &excludeTypes);
 
     Q_INVOKABLE void markAllNotificationsAsRead();
+
+    bool fullyRead() const;
 
 public Q_SLOTS:
     /**
@@ -101,6 +104,8 @@ Q_SIGNALS:
      * @brief Emitted when actionReply is called.
      */
     void wantReply(AbstractAccount *account, Post *post, const QModelIndex &index);
+
+    void readMarkerChanged();
 
 protected:
     void fetchMore(const QModelIndex &parent) override;

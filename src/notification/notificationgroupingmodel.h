@@ -16,6 +16,7 @@ class NotificationGroupingModel : public QAbstractProxyModel
 
     Q_PROPERTY(bool loading READ loading NOTIFY loadingChanged)
     Q_PROPERTY(NotificationModel *sourceModel WRITE setSourceModel READ getSourceModel NOTIFY sourceModelChanged)
+    Q_PROPERTY(bool fullyRead READ fullyRead NOTIFY readMarkerChanged)
 
 public:
     explicit NotificationGroupingModel(QObject *parent = nullptr);
@@ -40,6 +41,8 @@ public:
     NotificationModel *getSourceModel();
 
     Q_INVOKABLE void markAllNotificationsAsRead();
+
+    bool fullyRead() const;
 
 public Q_SLOTS:
     /**
@@ -82,6 +85,7 @@ public Q_SLOTS:
 Q_SIGNALS:
     void loadingChanged();
     void sourceModelChanged();
+    void readMarkerChanged();
 
 private:
     bool notificationsMatch(const QModelIndex &a, const QModelIndex &b);

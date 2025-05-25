@@ -60,8 +60,30 @@ void NotificationModel::setExcludesTypes(const QStringList &excludeTypes)
 
 void NotificationModel::markAllNotificationsAsRead()
 {
-    m_account->saveTimelinePosition(QStringLiteral("notifications"), QString::number(m_notifications.first()->id()));
+    const QModelIndex topLeft = index(0, 0);
+    QModelIndex bottomRight = topLeft;
+    for (int i = 0; i < rowCount({}); i++) {
+        const auto index = AbstractTimelineModel::index(i, 0);
+        if (data(index, UnreadRole).toBool()) {
+            bottomRight = index;
+        } else {
+            break;
+        }
+    }
+
+    m_lastReadId = QString::number(m_notifications.first()->id());
+    Q_EMIT readMarkerChanged();
+
+    // update all unread notifications so the section is reset in the UI
+    Q_EMIT dataChanged(topLeft, bottomRight, {UnreadRole});
+
+    m_account->saveTimelinePosition(QStringLiteral("notifications"), m_lastReadId);
     m_account->resetUnreadNotificationsCount();
+}
+
+bool NotificationModel::fullyRead() const
+{
+    return !data(index(0, 0), UnreadRole).toBool();
 }
 
 void NotificationModel::fillTimeline(const QUrl &next)
@@ -125,6 +147,10 @@ void NotificationModel::fillTimeline(const QUrl &next)
             beginInsertRows({}, m_notifications.count(), m_notifications.count() + notifications.count() - 1);
             m_notifications.append(notifications);
             endInsertRows();
+
+            // This doesn't seem obvious, but we have to emit this so fullyRead() is marked as changed.
+            // Otherwise you'll get a "Previous" heading on some pages.
+            Q_EMIT readMarkerChanged();
 
             setLoading(false);
         },
@@ -323,6 +349,7 @@ void NotificationModel::fetchLastReadId()
 
             m_lastReadId = doc.object()[QLatin1String("notifications")].toObject()[QLatin1String("last_read_id")].toString();
             m_fetchedLastReadId = true;
+            Q_EMIT readMarkerChanged();
 
             fillTimeline({});
         },

@@ -244,6 +244,10 @@ void NotificationGroupingModel::setSourceModel(QAbstractItemModel *sourceModel)
                         Q_EMIT dataChanged(proxyIndex, proxyIndex, roles);
                     }
                 });
+
+        if (auto model = qobject_cast<NotificationModel *>(sourceModel)) {
+            connect(model, &NotificationModel::readMarkerChanged, this, &NotificationGroupingModel::readMarkerChanged);
+        }
     }
 
     endResetModel();
@@ -463,6 +467,12 @@ void NotificationGroupingModel::markAllNotificationsAsRead()
 {
     if (auto model = qobject_cast<NotificationModel *>(sourceModel()))
         model->markAllNotificationsAsRead();
+}
+
+bool NotificationGroupingModel::fullyRead() const
+{
+    const auto model = qobject_cast<NotificationModel *>(sourceModel());
+    return !model || model->fullyRead();
 }
 
 void NotificationGroupingModel::actionReply(const QModelIndex &index)
