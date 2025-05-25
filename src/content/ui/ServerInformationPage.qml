@@ -13,55 +13,86 @@ import org.kde.kirigamiaddons.components 1 as KirigamiComponents
 
 import org.kde.tokodon
 
-FormCard.FormCardPage {
+Kirigami.Page {
     id: root
 
     property string pageId
 
     title: AccountManager.selectedAccount.instanceName
+    leftPadding: 0
+    rightPadding: 0
+    bottomPadding: 0
+    topPadding: 0
 
-    FormCard.FormCard {
-        Layout.topMargin: Kirigami.Units.largeSpacing * 4
+    contentItem: ColumnLayout {
+        spacing: 0
 
-        FormCard.FormButtonDelegate {
-            text: i18nc("@action:button", "Announcements")
-            onClicked: pageStack.push(Qt.createComponent("org.kde.tokodon", "AnnouncementsPage"));
-        }
+        QQC2.TabBar {
+            id: tabBar
 
-        FormCard.FormDelegateSeparator {}
+            Layout.fillWidth: true
 
-        FormCard.FormButtonDelegate {
-            text: i18nc("@action:button", "Privacy Policy")
-            onClicked: pageStack.push(Qt.createComponent("org.kde.tokodon", "PrivacyPolicyPage"));
-        }
-    }
-
-    FormCard.FormHeader {
-        title: i18nc("@title:group", "Rules")
-    }
-
-    FormCard.FormCard {
-        Repeater {
-            model: RulesModel {
-                account: AccountManager.selectedAccount
+            QQC2.TabButton {
+                text: i18nc("@item:inmenu Profile Post Filter", "About")
             }
+            QQC2.TabButton {
+                text: i18nc("@item:inmenu Profile Post Filter", "Rules")
+            }
+            QQC2.TabButton {
+                text: i18nc("@item:inmenu Profile Post Filter", "Announcements")
+            }
+            QQC2.TabButton {
+                text: i18nc("@item:inmenu Profile Post Filter", "Privacy Policy")
+            }
+            QQC2.TabButton {
+                text: i18nc("@item:inmenu Profile Post Filter", "Terms of Service")
+            }
+        }
 
-            delegate: ColumnLayout {
-                id: ruleLayout
+        StackLayout {
+            id: layout
 
-                required property int index
-                required property string text
+            currentIndex: tabBar.currentIndex
 
-                spacing: 0
+            Layout.fillWidth: true
+            Layout.fillHeight: true
 
-                FormCard.FormDelegateSeparator {
-                    visible: index !== 0
-                    opacity: 0.5
+            GenericServerInformationPage {
+                kind: "extended_description"
+            }
+            FormCard.FormCardPage {
+                FormCard.FormCard {
+                    Repeater {
+                        model: RulesModel {
+                            account: AccountManager.selectedAccount
+                        }
+
+                        delegate: ColumnLayout {
+                            id: ruleLayout
+
+                            required property int index
+                            required property string text
+
+                            spacing: 0
+
+                            FormCard.FormDelegateSeparator {
+                                visible: index !== 0
+                                opacity: 0.5
+                            }
+
+                            FormCard.FormTextDelegate {
+                                text: ruleLayout.text
+                            }
+                        }
+                    }
                 }
-
-                FormCard.FormTextDelegate {
-                    text: ruleLayout.text
-                }
+            }
+            AnnouncementsPage {}
+            GenericServerInformationPage {
+                kind: "privacy_policy"
+            }
+            GenericServerInformationPage {
+                kind: "terms_of_service"
             }
         }
     }

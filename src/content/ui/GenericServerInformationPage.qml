@@ -16,14 +16,18 @@ import org.kde.tokodon
 FormCard.FormCardPage {
     id: root
 
-    title: i18nc("@title:window", "Privacy Policy")
+    title: i18nc("@title:window", "About Server")
 
-    readonly property PrivacyPolicy backend: PrivacyPolicy {
+    required property string kind
+
+    readonly property ServerInformation backend: ServerInformation {
         account: AccountManager.selectedAccount
+        kind: root.kind
     }
 
     Kirigami.PlaceholderMessage {
-        text: i18nc("@info:placeholder", "No Privacy Policy")
+        icon.name: "question-symbolic"
+        text: i18nc("@info:placeholder", "No Information")
         visible: backend.content.length === 0
 
         Layout.fillWidth: true
