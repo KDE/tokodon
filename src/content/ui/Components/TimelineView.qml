@@ -30,13 +30,11 @@ ListView {
         if (event.key === Qt.Key_PageUp && !root.atYBeginning) {
             event.accepted = true;
             root.contentY -= height;
-            if (root.contentY < 0) {
-                root.contentY = 0;
-            }
         } else if (event.key === Qt.Key_PageDown && !root.atYEnd) {
             event.accepted = true;
             root.contentY += height;
         }
+        root.contentY = Math.min(Math.max(root.contentY, 0), root.contentHeight);
     }
 
     // Used for pages like TimelinePage to control video playback
