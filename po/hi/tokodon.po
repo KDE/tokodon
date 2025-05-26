@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-08 00:42+0000\n"
+"POT-Creation-Date: 2025-05-26 00:41+0000\n"
 "PO-Revision-Date: 2024-12-15 19:31+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Hindi <kde-i18n-doc@kde.org>\n"
@@ -83,62 +83,62 @@ msgstr "M4V वीडियो (*.m4v)"
 msgid "QuickTime video (*.mov)"
 msgstr "क्विकटाइम वीडियो (*.mov)"
 
-#: account/abstractaccount.cpp:45 account/abstractaccount.cpp:490
+#: account/abstractaccount.cpp:45 account/abstractaccount.cpp:495
 #, kde-format
 msgid "All files (*)"
 msgstr "सभी फाइलें (*)"
 
-#: account/abstractaccount.cpp:489
+#: account/abstractaccount.cpp:494
 #, kde-format
 msgid "All supported formats (%1)"
 msgstr ""
 
-#: account/abstractaccount.cpp:643
+#: account/abstractaccount.cpp:649
 #, kde-format
 msgid "Could not follow account"
 msgstr "खाते का अनुसरण नहीं किया जा सका"
 
-#: account/abstractaccount.cpp:644
+#: account/abstractaccount.cpp:650
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "अकाउंट को अनफ़ॉलो नहीं किया जा सका"
 
-#: account/abstractaccount.cpp:645
+#: account/abstractaccount.cpp:651
 #, kde-format
 msgid "Could not remove account as your follower"
 msgstr "आपके फ़ॉलोअर के रूप में खाता हटाया नहीं जा सका"
 
-#: account/abstractaccount.cpp:646
+#: account/abstractaccount.cpp:652
 #, kde-format
 msgid "Could not block account"
 msgstr "खाता ब्लॉक नहीं किया जा सका"
 
-#: account/abstractaccount.cpp:647
+#: account/abstractaccount.cpp:653
 #, kde-format
 msgid "Could not unblock account"
 msgstr "खाता अनब्लॉक नहीं किया जा सका"
 
-#: account/abstractaccount.cpp:648
+#: account/abstractaccount.cpp:654
 #, kde-format
 msgid "Could not mute account"
 msgstr "खाता म्यूट नहीं किया जा सका"
 
-#: account/abstractaccount.cpp:649
+#: account/abstractaccount.cpp:655
 #, kde-format
 msgid "Could not unmute account"
 msgstr "खाता अनम्यूट नहीं किया जा सका"
 
-#: account/abstractaccount.cpp:650
+#: account/abstractaccount.cpp:656
 #, kde-format
 msgid "Could not feature account"
 msgstr "खाता प्रदर्शित नहीं किया जा सका"
 
-#: account/abstractaccount.cpp:651
+#: account/abstractaccount.cpp:657
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "खाते को अनफीचर नहीं किया जा सका"
 
-#: account/abstractaccount.cpp:652
+#: account/abstractaccount.cpp:658
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "किसी खाते के बारे में नोट संपादित नहीं किया जा सका"
@@ -839,7 +839,7 @@ msgid "Profile"
 msgstr "प्रोफ़ाइल"
 
 #: content/ui/AccountInfo.qml:58 content/ui/ExplorePage.qml:35
-#: content/ui/TimelinePage.qml:100
+#: content/ui/TimelinePage.qml:107
 #, kde-format
 msgctxt "@action:button"
 msgid "Post"
@@ -866,6 +866,26 @@ msgstr "कोई औसत नहीं"
 #, kde-format
 msgid "This user hasn't posted any media yet."
 msgstr "इस उपयोगकर्ता ने अभी तक कोई मीडिया पोस्ट नहीं किया है."
+
+#: content/ui/AccountSwitchDialog.qml:25
+#, fuzzy, kde-format
+#| msgid "Switch Account"
+msgctxt "@title: dialog to switch between logged in accounts"
+msgid "Switch Account"
+msgstr "खाता स्थानांतरित करें"
+
+#: content/ui/AccountSwitchDialog.qml:50
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Add Account"
+msgctxt "@button: login to or register a new account."
+msgid "Add Account"
+msgstr "खाता जोड़ें"
+
+#: content/ui/AccountSwitchDialog.qml:53
+#, kde-format
+msgid "Log in or create a new account"
+msgstr "लॉगिन करें या नया अकाउंट बनाएं"
 
 #: content/ui/Android/ShareAction.qml:15 content/ui/ShareAction.qml:19
 #, kde-format
@@ -927,30 +947,30 @@ msgstr "प्रोफ़ाइल देखें"
 msgid "No emojis"
 msgstr "कोई इमोजी नहीं"
 
-#: content/ui/Components/TimelineView.qml:68
+#: content/ui/Components/TimelineView.qml:66
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Return to Top"
 msgstr "शीर्ष पर लौटें"
 
-#: content/ui/Components/TimelineView.qml:132
+#: content/ui/Components/TimelineView.qml:130
 #, kde-format
 msgctxt "@info:status"
 msgid "Some replies are not available"
 msgstr "कुछ उत्तर उपलब्ध नहीं हैं"
 
-#: content/ui/Components/TimelineView.qml:133
+#: content/ui/Components/TimelineView.qml:131
 #, kde-format
 msgid "To view all replies, open the post on the original server."
 msgstr "सभी उत्तरों को देखने के लिए मूल सर्वर पर पोस्ट खोलें।"
 
-#: content/ui/Components/TimelineView.qml:136
+#: content/ui/Components/TimelineView.qml:134
 #, kde-format
 msgctxt "@action:button 'Browser' being a web browser"
 msgid "Open in Browser"
 msgstr "ब्राउज़र में खोलें"
 
-#: content/ui/Components/TimelineView.qml:145
+#: content/ui/Components/TimelineView.qml:143
 #, kde-format
 msgctxt "@info:status"
 msgid "End of Timeline"
@@ -1183,7 +1203,7 @@ msgid "Following"
 msgstr "अगले"
 
 #: content/ui/FollowingPage.qml:41 content/ui/Settings/SafetyPage.qml:26
-#: content/ui/TimelinePage.qml:106
+#: content/ui/TimelinePage.qml:113
 #, kde-format
 msgctxt "@action:button"
 msgid "Filters"
@@ -1201,7 +1221,7 @@ msgctxt "@action:inmenu"
 msgid "Show Replies"
 msgstr "जवाब दिखाएं"
 
-#: content/ui/FollowingPage.qml:65 content/ui/TimelinePage.qml:128
+#: content/ui/FollowingPage.qml:65 content/ui/TimelinePage.qml:135
 #, fuzzy, kde-format
 #| msgctxt "@action:intoolbar"
 #| msgid "Configure Notifications…"
@@ -1209,7 +1229,7 @@ msgctxt "@action:intoolbar"
 msgid "Configure Filters…"
 msgstr "सूचनाएँ कॉन्फ़िगर करें…"
 
-#: content/ui/FollowingPage.qml:66 content/ui/TimelinePage.qml:129
+#: content/ui/FollowingPage.qml:66 content/ui/TimelinePage.qml:136
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Filters"
@@ -1271,7 +1291,6 @@ msgstr "अधिसूचनाओं की अनुमति दें"
 #: content/ui/InitialSetup/SetupNotifications.qml:49
 #: content/ui/InitialSetup/SetupWelcome.qml:42
 #: content/ui/LoginFlow/CodeAuthorization.qml:32
-#: content/ui/LoginFlow/LoginPage.qml:125
 #, kde-format
 msgid "Continue"
 msgstr "जारी रखना"
@@ -1355,8 +1374,8 @@ msgstr "कोई सूची नहीं"
 msgid "Lists allow you to categorize who you're following."
 msgstr "सूचियाँ आपको यह वर्गीकृत करने की सुविधा देती हैं कि आप किसे फ़ॉलो कर रहे हैं."
 
-#: content/ui/ListTimelinePage.qml:18 content/ui/Main.qml:268
-#: content/ui/Main.qml:304 content/ui/Main.qml:319
+#: content/ui/ListTimelinePage.qml:18 content/ui/Main.qml:274
+#: content/ui/Main.qml:310 content/ui/Main.qml:325
 #, kde-format
 msgid "No Posts"
 msgstr "कोई पोस्ट नहीं"
@@ -1470,71 +1489,28 @@ msgctxt "@label"
 msgid "Are you sure you want to log out?"
 msgstr "क्या आप लॉग आउट करना चाहते हैं?"
 
-#: content/ui/LoginFlow/LoginPage.qml:17
-#, kde-format
-msgctxt "@title:window"
-msgid "Login"
-msgstr "लॉग इन करें"
-
-#: content/ui/LoginFlow/LoginPage.qml:24
-#: content/ui/LoginFlow/RegistrationPage.qml:25
-#: content/ui/LoginFlow/RegistrationPage.qml:36
-#: content/ui/LoginFlow/RulesPage.qml:25
-#: content/ui/LoginFlow/ServersPage.qml:29
-#, kde-format
-msgctxt "@info:status Network status"
-msgid "Failed to contact server: %1. Please check your proxy settings."
-msgstr "सर्वर से संपर्क करने में विफल: %1. कृपया अपनी प्रॉक्सी सेटिंग जांचें."
-
-#: content/ui/LoginFlow/LoginPage.qml:38
-#: content/ui/LoginFlow/RegistrationPage.qml:85
-#: content/ui/LoginFlow/RulesPage.qml:40
-#: content/ui/LoginFlow/ServersPage.qml:93
-#: content/ui/Settings/NetworkProxyPage.qml:70
-#, kde-format
-msgid "Proxy Settings"
-msgstr "प्रॉक्सी सेटिंग्स"
-
-#: content/ui/LoginFlow/LoginPage.qml:100
-#, kde-format
-msgctxt "@title:group"
-msgid "Login"
-msgstr "लॉग इन करें"
-
-#: content/ui/LoginFlow/LoginPage.qml:106
-#, kde-format
-msgid "Server URL:"
-msgstr "सर्वर यूआरएल:"
-
-#: content/ui/LoginFlow/LoginPage.qml:107
-#, kde-format
-msgid "mastodon.social"
-msgstr "मैस्टोडॉन.सोशल"
-
-#: content/ui/LoginFlow/LoginPage.qml:116
-#, kde-format
-msgid "Enable moderation tools"
-msgstr "मॉडरेशन टूल सक्षम करें"
-
-#: content/ui/LoginFlow/LoginPage.qml:117
-#, kde-format
-msgid ""
-"Allow Tokodon to access moderation tools. Try disabling this if you have "
-"trouble logging in."
-msgstr ""
-"टोकोडॉन को मॉडरेशन टूल तक पहुंचने की अनुमति दें। अगर आपको लॉग इन करने में परेशानी हो रही "
-"है, तो इसे अक्षम करने का प्रयास करें।"
-
-#: content/ui/LoginFlow/LoginPage.qml:131
-#, kde-format
-msgid "Server URL must not be empty!"
-msgstr "सर्वर URL खाली नहीं होना चाहिए!"
-
 #: content/ui/LoginFlow/RegistrationPage.qml:17
 #, kde-format
 msgctxt "@title:window"
 msgid "Registration"
 msgstr "पंजीकरण"
+
+#: content/ui/LoginFlow/RegistrationPage.qml:25
+#: content/ui/LoginFlow/RegistrationPage.qml:36
+#: content/ui/LoginFlow/RulesPage.qml:25
+#: content/ui/LoginFlow/ServersPage.qml:30
+#, kde-format
+msgctxt "@info:status Network status"
+msgid "Failed to contact server: %1. Please check your proxy settings."
+msgstr "सर्वर से संपर्क करने में विफल: %1. कृपया अपनी प्रॉक्सी सेटिंग जांचें."
+
+#: content/ui/LoginFlow/RegistrationPage.qml:85
+#: content/ui/LoginFlow/RulesPage.qml:40
+#: content/ui/LoginFlow/ServersPage.qml:170
+#: content/ui/Settings/NetworkProxyPage.qml:70
+#, kde-format
+msgid "Proxy Settings"
+msgstr "प्रॉक्सी सेटिंग्स"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:94
 #, kde-format
@@ -1599,37 +1575,43 @@ msgctxt "@title:window"
 msgid "Pick a Server"
 msgstr "एक सर्वर चुनें"
 
-#: content/ui/LoginFlow/ServersPage.qml:37
+#: content/ui/LoginFlow/ServersPage.qml:21
+#, kde-format
+msgctxt "@title:window"
+msgid "Choose your Existing Server"
+msgstr ""
+
+#: content/ui/LoginFlow/ServersPage.qml:38
 #, kde-format
 msgid "This server is closed for registration: %1"
 msgstr "यह सर्वर पंजीकरण के लिए बंद है: %1"
 
-#: content/ui/LoginFlow/ServersPage.qml:39
+#: content/ui/LoginFlow/ServersPage.qml:40
 #, kde-format
 msgid "This server is closed for registration, and did not provide a reason."
 msgstr "यह सर्वर पंजीकरण के लिए बंद है, तथा इसका कोई कारण भी नहीं बताया गया है।"
 
-#: content/ui/LoginFlow/ServersPage.qml:101
+#: content/ui/LoginFlow/ServersPage.qml:178
 #, kde-format
 msgid "Search or enter URL…"
 msgstr "खोजें या URL दर्ज करें…"
 
-#: content/ui/LoginFlow/ServersPage.qml:141
+#: content/ui/LoginFlow/ServersPage.qml:217
 #, kde-format
 msgid "Custom Server"
 msgstr "कस्टम सर्वर"
 
-#: content/ui/LoginFlow/ServersPage.qml:150
+#: content/ui/LoginFlow/ServersPage.qml:226
 #, kde-format
 msgid "Public Servers"
 msgstr "सार्वजनिक सर्वर"
 
-#: content/ui/LoginFlow/ServersPage.qml:180
+#: content/ui/LoginFlow/ServersPage.qml:256
 #, kde-format
 msgid "No Public Servers"
 msgstr "कोई सार्वजनिक सर्वर नहीं"
 
-#: content/ui/LoginFlow/ServersPage.qml:181
+#: content/ui/LoginFlow/ServersPage.qml:257
 #, kde-format
 msgid "Enter a server URL manually in the search field."
 msgstr "खोज फ़ील्ड में मैन्युअल रूप से सर्वर URL दर्ज करें."
@@ -1655,16 +1637,19 @@ msgid ""
 msgstr "फेडिवर्स को ब्राउज़ करें और मैस्टोडॉन (और अन्य संगत सॉफ्टवेयर) पर लोगों से जुड़ें।"
 
 #: content/ui/LoginFlow/WelcomePage.qml:80
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Register"
 msgctxt "@action:button Pick a Mastodon server"
-msgid "Pick a Server"
-msgstr "एक सर्वर चुनें"
+msgid "Register"
+msgstr "पंजीकरण करवाना"
 
 #: content/ui/LoginFlow/WelcomePage.qml:90
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Login"
 msgctxt "@action:button Use an existing Mastodon account"
-msgid "Use an Existing Account"
-msgstr "मौजूदा खाते का उपयोग करें"
+msgid "Login"
+msgstr "लॉग इन करें"
 
 #: content/ui/LoginFlow/WelcomePage.qml:105
 #, kde-format
@@ -1720,17 +1705,17 @@ msgctxt "@title"
 msgid "Unknown Action"
 msgstr "अज्ञात क्रिया"
 
-#: content/ui/Main.qml:269 content/ui/Main.qml:305 content/ui/Main.qml:320
+#: content/ui/Main.qml:275 content/ui/Main.qml:311 content/ui/Main.qml:326
 #, kde-format
 msgid "It seems pretty quiet right now, try posting something!"
 msgstr "अभी तो बहुत शांति है, कुछ पोस्ट करने का प्रयास करें!"
 
-#: content/ui/Main.qml:334
+#: content/ui/Main.qml:340
 #, kde-format
 msgid "No Favorites"
 msgstr "कोई पसंदीदा नहीं"
 
-#: content/ui/Main.qml:335
+#: content/ui/Main.qml:341
 #, kde-format
 msgid ""
 "Posts that you favorite will show up here. If you appreciate someone's post, "
@@ -1739,12 +1724,12 @@ msgstr ""
 "आपके द्वारा पसंद की गई पोस्ट यहाँ दिखाई देंगी। अगर आपको किसी की पोस्ट पसंद आती है, तो "
 "उसे पसंदीदा बनाएँ!"
 
-#: content/ui/Main.qml:349
+#: content/ui/Main.qml:355
 #, kde-format
 msgid "No Bookmarks"
 msgstr "कोई बुकमार्क नहीं"
 
-#: content/ui/Main.qml:350
+#: content/ui/Main.qml:356
 #, kde-format
 msgid ""
 "Bookmark posts and they will show up here. Bookmarks are always kept "
@@ -1753,50 +1738,50 @@ msgstr ""
 "पोस्ट को बुकमार्क करें और वे यहां दिखाई देंगे। बुकमार्क हमेशा निजी रखे जाते हैं, यहां तक कि "
 "पोस्ट के लेखक के लिए भी।"
 
-#: content/ui/Main.qml:432
+#: content/ui/Main.qml:438
 #, kde-format
 msgid "Write a New Post"
 msgstr "एक नई पोस्ट लिखें"
 
-#: content/ui/Main.qml:459
+#: content/ui/Main.qml:465
 #, kde-format
 msgid "Write a new post"
 msgstr "एक नई पोस्ट लिखें"
 
-#: content/ui/Main.qml:504
+#: content/ui/Main.qml:510
 #, kde-format
 msgid "Reply to post"
 msgstr "पोस्ट का उत्तर दें"
 
-#: content/ui/Main.qml:586
+#: content/ui/Main.qml:592
 #, fuzzy, kde-format
 #| msgid "Home"
 msgctxt "@action:button Home Timeline"
 msgid "Home"
 msgstr "घर"
 
-#: content/ui/Main.qml:591
+#: content/ui/Main.qml:597
 #, fuzzy, kde-format
 #| msgid "Notifications"
 msgctxt "@action:button Account Notifications"
 msgid "Notifications"
 msgstr "सूचनाएं"
 
-#: content/ui/Main.qml:596
+#: content/ui/Main.qml:602
 #, fuzzy, kde-format
 #| msgid "Follow Requests"
 msgctxt "@action:button Follows that require explicit allow/deny"
 msgid "Follow Requests"
 msgstr "अनुरोधों का पालन करें"
 
-#: content/ui/Main.qml:601
+#: content/ui/Main.qml:607
 #, fuzzy, kde-format
 #| msgid "Local"
 msgctxt "@action:button Local timeline of posts from the account's own server"
 msgid "Local"
 msgstr "स्थानीय"
 
-#: content/ui/Main.qml:605
+#: content/ui/Main.qml:611
 #, fuzzy, kde-format
 #| msgid "Global"
 msgctxt ""
@@ -1804,49 +1789,49 @@ msgctxt ""
 msgid "Global"
 msgstr "वैश्विक"
 
-#: content/ui/Main.qml:609
+#: content/ui/Main.qml:615
 #, fuzzy, kde-format
 #| msgid "Conversations"
 msgctxt "@action:button Direct one-on-one messages between users"
 msgid "Conversations"
 msgstr "बात चिट"
 
-#: content/ui/Main.qml:613
+#: content/ui/Main.qml:619
 #, fuzzy, kde-format
 #| msgid "Favorites"
 msgctxt "@action:button This account's favorited posts"
 msgid "Favorites"
 msgstr "पसंदीदा"
 
-#: content/ui/Main.qml:617
+#: content/ui/Main.qml:623
 #, fuzzy, kde-format
 #| msgid "Bookmarks"
 msgctxt "@action:button This account's bookmarked posts"
 msgid "Bookmarks"
 msgstr "बुकमार्क"
 
-#: content/ui/Main.qml:621
+#: content/ui/Main.qml:627
 #, fuzzy, kde-format
 #| msgid "Explore"
 msgctxt "@action:button Explore this server's trending posts, news, and more"
 msgid "Explore"
 msgstr "अन्वेषण करना"
 
-#: content/ui/Main.qml:625
+#: content/ui/Main.qml:631
 #, fuzzy, kde-format
 #| msgid "Following"
 msgctxt "@action:button A list of this account's followed accounts"
 msgid "Following"
 msgstr "अगले"
 
-#: content/ui/Main.qml:629
+#: content/ui/Main.qml:635
 #, fuzzy, kde-format
 #| msgid "Search"
 msgctxt "@action:button Search for users, posts and tags"
 msgid "Search"
 msgstr "खोज"
 
-#: content/ui/Main.qml:637
+#: content/ui/Main.qml:643
 #, fuzzy, kde-format
 #| msgid "Lists"
 msgctxt ""
@@ -1855,46 +1840,46 @@ msgctxt ""
 msgid "Lists"
 msgstr "सूचियों"
 
-#: content/ui/Main.qml:641
+#: content/ui/Main.qml:647
 #, fuzzy, kde-format
 #| msgid "Profile"
 msgctxt "@action:button This account's profile"
 msgid "Profile"
 msgstr "प्रोफ़ाइल"
 
-#: content/ui/Main.qml:648
+#: content/ui/Main.qml:654
 #, kde-format
 msgctxt "@action:button Open debug page"
 msgid "Debug"
 msgstr "डिबग"
 
-#: content/ui/Main.qml:658
+#: content/ui/Main.qml:664
 #, kde-format
 msgctxt "@action:button Open moderation tools"
 msgid "Moderation Tools"
 msgstr "मॉडरेशन टूल्स"
 
-#: content/ui/Main.qml:665
+#: content/ui/Main.qml:671
 #, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "सेटिंग्स"
 
-#: content/ui/Main.qml:804
+#: content/ui/Main.qml:810
 #, fuzzy, kde-format
 #| msgid "Unfollow"
 msgctxt "@action:intoolbar"
 msgid "Unfollow"
 msgstr "करें"
 
-#: content/ui/Main.qml:804
+#: content/ui/Main.qml:810
 #, fuzzy, kde-format
 #| msgid "Follow"
 msgctxt "@action:intoolbar"
 msgid "Follow"
 msgstr "अनुसरण करना"
 
-#: content/ui/Main.qml:852
+#: content/ui/Main.qml:858
 #, kde-format
 msgctxt "@title"
 msgid "Embed Information"
@@ -3289,84 +3274,97 @@ msgstr "एन/ए"
 msgid "No reports found"
 msgstr "कोई रिपोर्ट नहीं मिली"
 
-#: content/ui/NotificationPage.qml:16
+#: content/ui/NotificationPage.qml:18
 #: content/ui/Settings/TokodonConfigurationView.qml:23
 #, kde-format
 msgid "Notifications"
 msgstr "सूचनाएं"
 
-#: content/ui/NotificationPage.qml:28
+#: content/ui/NotificationPage.qml:30
 #, kde-format
 msgctxt "@action:intoolbar Mark all notifications as read"
 msgid "Mark All As Read"
 msgstr "सभी को पढ़ा हुआ मार्क करें"
 
-#: content/ui/NotificationPage.qml:34
+#: content/ui/NotificationPage.qml:36
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Configure Notifications…"
 msgstr "सूचनाएँ कॉन्फ़िगर करें…"
 
-#: content/ui/NotificationPage.qml:35
+#: content/ui/NotificationPage.qml:37
 #, kde-format
 msgctxt "@title:window"
 msgid "Notification Settings"
 msgstr "अधिसूचना सेटिंग्स"
 
-#: content/ui/NotificationPage.qml:47
+#: content/ui/NotificationPage.qml:49
 #, kde-format
 msgctxt "@action:intoolbar Show all notifications"
 msgid "All"
 msgstr "सभी"
 
-#: content/ui/NotificationPage.qml:60
+#: content/ui/NotificationPage.qml:62
 #, kde-format
 msgctxt "@action:intoolbar Show only mentions"
 msgid "Mentions"
 msgstr "का उल्लेख है"
 
-#: content/ui/NotificationPage.qml:73
+#: content/ui/NotificationPage.qml:75
 #, kde-format
 msgctxt "@action:intoolbar More filter categories"
 msgid "More"
 msgstr "अधिक"
 
-#: content/ui/NotificationPage.qml:95
+#: content/ui/NotificationPage.qml:97
 #, kde-format
 msgctxt "Show only boosts"
 msgid "Boosts"
 msgstr "बूस्ट"
 
-#: content/ui/NotificationPage.qml:104
+#: content/ui/NotificationPage.qml:106
 #, kde-format
 msgctxt "Show only favorites"
 msgid "Favorites"
 msgstr "पसंदीदा"
 
-#: content/ui/NotificationPage.qml:113
+#: content/ui/NotificationPage.qml:115
 #, kde-format
 msgctxt "Show only poll results"
 msgid "Poll Results"
 msgstr "सर्वेक्षण परिणाम"
 
-#: content/ui/NotificationPage.qml:122
+#: content/ui/NotificationPage.qml:124
 #, kde-format
 msgctxt "Show only followed statuses"
 msgid "Posts"
 msgstr "पदों"
 
-#: content/ui/NotificationPage.qml:131
+#: content/ui/NotificationPage.qml:133
 #, kde-format
 msgctxt "Show only follows"
 msgid "Follows"
 msgstr "इस प्रकार है"
 
-#: content/ui/NotificationPage.qml:291
+#: content/ui/NotificationPage.qml:188
+#, fuzzy, kde-format
+#| msgid "News"
+msgctxt "@info:label New notifications"
+msgid "New"
+msgstr "समाचार"
+
+#: content/ui/NotificationPage.qml:188
+#, kde-format
+msgctxt "@info:label Previous notifications"
+msgid "Previous"
+msgstr ""
+
+#: content/ui/NotificationPage.qml:315
 #, kde-format
 msgid "No Notifications"
 msgstr "कोई सूचना नहीं"
 
-#: content/ui/NotificationPage.qml:292
+#: content/ui/NotificationPage.qml:316
 #, kde-format
 msgid ""
 "You have no notifications yet. When people reply, favorite or boost your "
@@ -5068,49 +5066,49 @@ msgctxt "@title:group"
 msgid "Focal point"
 msgstr "केंद्र बिंदु"
 
-#: content/ui/StatusComposer/ComposerPoll.qml:43
+#: content/ui/StatusComposer/ComposerPoll.qml:44
 #, kde-format
 msgctxt "@label:textbox Poll choice"
 msgid "Choice %1"
 msgstr "विकल्प %1"
 
-#: content/ui/StatusComposer/ComposerPoll.qml:67
+#: content/ui/StatusComposer/ComposerPoll.qml:69
 #, kde-format
 msgctxt "@action:intoolbar Poll toolbar"
 msgid "Add Choice"
 msgstr "विकल्प जोड़ें"
 
-#: content/ui/StatusComposer/ComposerPoll.qml:68
+#: content/ui/StatusComposer/ComposerPoll.qml:70
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "Add a new poll choice"
 msgstr "नया मतदान विकल्प जोड़ें"
 
-#: content/ui/StatusComposer/ComposerPoll.qml:87
+#: content/ui/StatusComposer/ComposerPoll.qml:89
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "When the poll will expire"
 msgstr "मतदान कब समाप्त होगा"
 
-#: content/ui/StatusComposer/ComposerPoll.qml:96
+#: content/ui/StatusComposer/ComposerPoll.qml:98
 #, kde-format
 msgctxt "@option:check Poll toolbar"
 msgid "Multiple choice"
 msgstr "बहुविकल्पी"
 
-#: content/ui/StatusComposer/ComposerPoll.qml:102
+#: content/ui/StatusComposer/ComposerPoll.qml:104
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "Allow multiple choices"
 msgstr "एकाधिक विकल्पों की अनुमति दें"
 
-#: content/ui/StatusComposer/ComposerPoll.qml:111
+#: content/ui/StatusComposer/ComposerPoll.qml:113
 #, kde-format
 msgctxt "@option:check Poll toolbar"
 msgid "Hide totals"
 msgstr "कुल संख्या छिपाएं"
 
-#: content/ui/StatusComposer/ComposerPoll.qml:117
+#: content/ui/StatusComposer/ComposerPoll.qml:119
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "Hide vote count until the poll ends"
@@ -5284,13 +5282,13 @@ msgctxt "@info:placeholder"
 msgid "What's new?"
 msgstr "नया क्या है?"
 
-#: content/ui/StatusComposer/StatusComposer.qml:489
+#: content/ui/StatusComposer/StatusComposer.qml:490
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a File"
 msgstr "एक फ़ाइल चुनें"
 
-#: content/ui/StatusComposer/StatusComposer.qml:494
+#: content/ui/StatusComposer/StatusComposer.qml:495
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Attach file"
@@ -5298,13 +5296,13 @@ msgctxt "@action:button"
 msgid "Attach File"
 msgstr "फ़ाइल जोड़ें"
 
-#: content/ui/StatusComposer/StatusComposer.qml:497
+#: content/ui/StatusComposer/StatusComposer.qml:498
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Attach file"
 msgstr "फ़ाइल जोड़ें"
 
-#: content/ui/StatusComposer/StatusComposer.qml:508
+#: content/ui/StatusComposer/StatusComposer.qml:509
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Attach file"
@@ -5312,13 +5310,13 @@ msgctxt "@action:button"
 msgid "Attach Poll"
 msgstr "फ़ाइल जोड़ें"
 
-#: content/ui/StatusComposer/StatusComposer.qml:513
+#: content/ui/StatusComposer/StatusComposer.qml:514
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add poll"
 msgstr "पोल जोड़ें"
 
-#: content/ui/StatusComposer/StatusComposer.qml:522
+#: content/ui/StatusComposer/StatusComposer.qml:523
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Content Notice"
@@ -5326,7 +5324,7 @@ msgctxt "@action:button"
 msgid "Content Notice"
 msgstr "सामग्री सूचना"
 
-#: content/ui/StatusComposer/StatusComposer.qml:534
+#: content/ui/StatusComposer/StatusComposer.qml:535
 #, fuzzy, kde-format
 #| msgctxt "@info:placeholder"
 #| msgid "Content notice"
@@ -5334,7 +5332,7 @@ msgctxt "@info:tooltip"
 msgid "Content notice"
 msgstr "सामग्री सूचना"
 
-#: content/ui/StatusComposer/StatusComposer.qml:560
+#: content/ui/StatusComposer/StatusComposer.qml:561
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip Post visibility"
 #| msgid "Visibility"
@@ -5342,7 +5340,7 @@ msgctxt "@action:button"
 msgid "Visibility"
 msgstr "दृश्यता"
 
-#: content/ui/StatusComposer/StatusComposer.qml:568
+#: content/ui/StatusComposer/StatusComposer.qml:569
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip Post visibility"
 #| msgid "Visibility"
@@ -5350,49 +5348,49 @@ msgctxt "@title"
 msgid "Visibility"
 msgstr "दृश्यता"
 
-#: content/ui/StatusComposer/StatusComposer.qml:572
+#: content/ui/StatusComposer/StatusComposer.qml:573
 #, kde-format
 msgctxt "@item:inmenu Local to this server"
 msgid "Local"
 msgstr "स्थानीय"
 
-#: content/ui/StatusComposer/StatusComposer.qml:578
+#: content/ui/StatusComposer/StatusComposer.qml:579
 #, kde-format
 msgctxt "@item:inmenu Public to the world"
 msgid "Public"
 msgstr "जनता"
 
-#: content/ui/StatusComposer/StatusComposer.qml:583
+#: content/ui/StatusComposer/StatusComposer.qml:584
 #, kde-format
 msgctxt "@item:inmenu Public but less so"
 msgid "Unlisted"
 msgstr "गैर-सूचीबद्ध"
 
-#: content/ui/StatusComposer/StatusComposer.qml:588
+#: content/ui/StatusComposer/StatusComposer.qml:589
 #, kde-format
 msgctxt "@item:inmenu Only to followers"
 msgid "Private"
 msgstr "निजी"
 
-#: content/ui/StatusComposer/StatusComposer.qml:593
+#: content/ui/StatusComposer/StatusComposer.qml:594
 #, kde-format
 msgctxt "@item:inmenu Only to who is explicitly mentioned"
 msgid "Direct Message"
 msgstr "सीधा संदेश"
 
-#: content/ui/StatusComposer/StatusComposer.qml:598
+#: content/ui/StatusComposer/StatusComposer.qml:599
 #, kde-format
 msgctxt "@info:tooltip Post visibility"
 msgid "Visibility"
 msgstr "दृश्यता"
 
-#: content/ui/StatusComposer/StatusComposer.qml:606
+#: content/ui/StatusComposer/StatusComposer.qml:607
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Post language"
 msgstr "पोस्ट भाषा"
 
-#: content/ui/StatusComposer/StatusComposer.qml:636
+#: content/ui/StatusComposer/StatusComposer.qml:637
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Add emoji"
@@ -5400,20 +5398,20 @@ msgctxt "@action:button"
 msgid "Add Emoji"
 msgstr "इमोजी जोड़ें"
 
-#: content/ui/StatusComposer/StatusComposer.qml:647
+#: content/ui/StatusComposer/StatusComposer.qml:648
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add emoji"
 msgstr "इमोजी जोड़ें"
 
-#: content/ui/StatusComposer/StatusComposer.qml:677
+#: content/ui/StatusComposer/StatusComposer.qml:678
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1/%2</b> वर्ण"
 
-#: content/ui/StatusComposer/StatusComposer.qml:687
-#: content/ui/StatusComposer/StatusComposer.qml:764
+#: content/ui/StatusComposer/StatusComposer.qml:688
+#: content/ui/StatusComposer/StatusComposer.qml:765
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Delete Post"
@@ -5421,13 +5419,13 @@ msgctxt "@action:button Schedule something to be posted later"
 msgid "Schedule"
 msgstr "पोस्ट को हटाएं"
 
-#: content/ui/StatusComposer/StatusComposer.qml:738
+#: content/ui/StatusComposer/StatusComposer.qml:739
 #, kde-format
 msgctxt "@title"
 msgid "Alt Text Reminder"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:742
+#: content/ui/StatusComposer/StatusComposer.qml:743
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -5445,42 +5443,37 @@ msgstr "लोड हो रहा है"
 msgid "Home (%1)"
 msgstr "होम (%1)"
 
-#: content/ui/TimelinePage.qml:111
+#: content/ui/TimelinePage.qml:118
 #, kde-format
 msgid "Show Boosts"
 msgstr "बूस्ट दिखाएँ"
 
-#: content/ui/TimelinePage.qml:118
+#: content/ui/TimelinePage.qml:125
 #, kde-format
 msgid "Show Replies"
 msgstr "जवाब दिखाएं"
 
-#: content/ui/TimelinePage.qml:144
+#: content/ui/TimelinePage.qml:151
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
 msgstr "सर्वर से संपर्क करने में विफल: %1. कृपया अपनी सेटिंग जांचें."
 
-#: content/ui/TimelinePage.qml:181
+#: content/ui/TimelinePage.qml:191
 #, kde-format
 msgctxt "@action:button Load more posts above this"
 msgid "Load More"
 msgstr "और लोड करें"
 
-#: content/ui/UserInfo.qml:96
+#: content/ui/UserInfo.qml:99
 #, kde-format
 msgid "Switch Account"
 msgstr "खाता स्थानांतरित करें"
 
-#: content/ui/UserInfo.qml:98
+#: content/ui/UserInfo.qml:101
 #, kde-format
 msgid "Switch account"
 msgstr "खाता स्थानांतरित करें"
-
-#: content/ui/UserInfo.qml:146
-#, kde-format
-msgid "Log in or create a new account"
-msgstr "लॉगिन करें या नया अकाउंट बनाएं"
 
 #: conversation/conversationmodel.cpp:61
 #, kde-format
@@ -5639,7 +5632,7 @@ msgstr "केवल आंतरिक उपयोग."
 msgid "Receiving push notifications"
 msgstr "पुश नोटिफिकेशन प्राप्त करना"
 
-#: notification/notificationmodel.cpp:98
+#: notification/notificationmodel.cpp:126
 #, kde-format
 msgid "Error occurred when fetching the latest notification."
 msgstr "नवीनतम अधिसूचना प्राप्त करते समय त्रुटि उत्पन्न हुई."
@@ -5988,6 +5981,37 @@ msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "%1 साल पहले"
 msgstr[1] "%1 साल पहले"
+
+#~ msgctxt "@title:group"
+#~ msgid "Login"
+#~ msgstr "लॉग इन करें"
+
+#~ msgid "Server URL:"
+#~ msgstr "सर्वर यूआरएल:"
+
+#~ msgid "mastodon.social"
+#~ msgstr "मैस्टोडॉन.सोशल"
+
+#~ msgid "Enable moderation tools"
+#~ msgstr "मॉडरेशन टूल सक्षम करें"
+
+#~ msgid ""
+#~ "Allow Tokodon to access moderation tools. Try disabling this if you have "
+#~ "trouble logging in."
+#~ msgstr ""
+#~ "टोकोडॉन को मॉडरेशन टूल तक पहुंचने की अनुमति दें। अगर आपको लॉग इन करने में परेशानी हो "
+#~ "रही है, तो इसे अक्षम करने का प्रयास करें।"
+
+#~ msgid "Server URL must not be empty!"
+#~ msgstr "सर्वर URL खाली नहीं होना चाहिए!"
+
+#~ msgctxt "@action:button Pick a Mastodon server"
+#~ msgid "Pick a Server"
+#~ msgstr "एक सर्वर चुनें"
+
+#~ msgctxt "@action:button Use an existing Mastodon account"
+#~ msgid "Use an Existing Account"
+#~ msgstr "मौजूदा खाते का उपयोग करें"
 
 #~ msgid "%1 replied to your post"
 #~ msgstr "%1 ने आपकी पोस्ट का जवाब दिया"
