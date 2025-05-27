@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-26 00:41+0000\n"
-"PO-Revision-Date: 2025-05-08 21:35+0100\n"
+"PO-Revision-Date: 2025-05-26 12:31+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.04.0\n"
+"X-Generator: Lokalize 25.04.1\n"
 
 #: account/abstractaccount.cpp:33
 #, kde-format
@@ -863,16 +863,13 @@ msgid "This user hasn't posted any media yet."
 msgstr "Este usuario no ha publicado multimedia todavía."
 
 #: content/ui/AccountSwitchDialog.qml:25
-#, fuzzy, kde-format
-#| msgid "Switch Account"
+#, kde-format
 msgctxt "@title: dialog to switch between logged in accounts"
 msgid "Switch Account"
 msgstr "Cambiar cuenta"
 
 #: content/ui/AccountSwitchDialog.qml:50
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add Account"
+#, kde-format
 msgctxt "@button: login to or register a new account."
 msgid "Add Account"
 msgstr "Añadir cuenta"
@@ -1570,7 +1567,7 @@ msgstr "Escoja un servidor"
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose your Existing Server"
-msgstr ""
+msgstr "Elija un servidor existente"
 
 #: content/ui/LoginFlow/ServersPage.qml:38
 #, kde-format
@@ -1631,19 +1628,16 @@ msgstr ""
 "compatible)."
 
 #: content/ui/LoginFlow/WelcomePage.qml:80
-#, fuzzy, kde-format
-#| msgid "Register"
+#, kde-format
 msgctxt "@action:button Pick a Mastodon server"
 msgid "Register"
 msgstr "Registro"
 
 #: content/ui/LoginFlow/WelcomePage.qml:90
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Login"
+#, kde-format
 msgctxt "@action:button Use an existing Mastodon account"
 msgid "Login"
-msgstr "Inicio de sesión"
+msgstr "Iniciar sesión"
 
 #: content/ui/LoginFlow/WelcomePage.qml:105
 #, kde-format
@@ -3330,17 +3324,16 @@ msgid "Follows"
 msgstr "Seguimiento"
 
 #: content/ui/NotificationPage.qml:188
-#, fuzzy, kde-format
-#| msgid "News"
+#, kde-format
 msgctxt "@info:label New notifications"
 msgid "New"
-msgstr "Noticias"
+msgstr "Nuevas"
 
 #: content/ui/NotificationPage.qml:188
 #, kde-format
 msgctxt "@info:label Previous notifications"
 msgid "Previous"
-msgstr ""
+msgstr "Anteriores"
 
 #: content/ui/NotificationPage.qml:315
 #, kde-format
@@ -5866,34 +5859,3 @@ msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "hace 1 año"
 msgstr[1] "hace %1 años"
-
-#~ msgctxt "@title:group"
-#~ msgid "Login"
-#~ msgstr "Inicio de sesión"
-
-#~ msgid "Server URL:"
-#~ msgstr "URL del servidor:"
-
-#~ msgid "mastodon.social"
-#~ msgstr "mastodon.social"
-
-#~ msgid "Enable moderation tools"
-#~ msgstr "Activar las herramientas de moderación"
-
-#~ msgid ""
-#~ "Allow Tokodon to access moderation tools. Try disabling this if you have "
-#~ "trouble logging in."
-#~ msgstr ""
-#~ "Permitir que Tokodon acceda a las herramientas de moderación. Pruebe a "
-#~ "desactivar esto si tiene problemas para iniciar sesión."
-
-#~ msgid "Server URL must not be empty!"
-#~ msgstr "La URL del servidor no puede estar vacía."
-
-#~ msgctxt "@action:button Pick a Mastodon server"
-#~ msgid "Pick a Server"
-#~ msgstr "Escoger un servidor"
-
-#~ msgctxt "@action:button Use an existing Mastodon account"
-#~ msgid "Use an Existing Account"
-#~ msgstr "Usar una cuenta existente"
