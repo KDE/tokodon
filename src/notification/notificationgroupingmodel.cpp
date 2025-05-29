@@ -15,19 +15,17 @@ bool NotificationGroupingModel::notificationsMatch(const QModelIndex &a, const Q
     const QString aId = a.data(AbstractTimelineModel::CustoRoles::IdRole).toString();
     const QString bId = b.data(AbstractTimelineModel::CustoRoles::IdRole).toString();
 
-    const QVariant aType = a.data(AbstractTimelineModel::CustoRoles::TypeRole);
-    const QVariant bType = b.data(AbstractTimelineModel::CustoRoles::TypeRole);
+    const auto aType = a.data(AbstractTimelineModel::CustoRoles::TypeRole).value<Notification::Type>();
+    const auto bType = b.data(AbstractTimelineModel::CustoRoles::TypeRole).value<Notification::Type>();
 
-    // it makes no sense to group poll or edit updates
     // TODO: support grouping follow notifications
-    if (aType == bType
-        && (aType == Notification::Type::Follow || aType == Notification::Type::Poll || aType == Notification::Type::Update
-            || aType == Notification::Type::Status || aType == Notification::Type::AdminSignUp || aType == Notification::Type::AdminReport
-            || aType == Notification::Type::SeveredRelationships || aType == Notification::Type::ModerationWarning)) {
+    switch (aType) {
+    case Notification::Type::Favorite:
+    case Notification::Type::Repeat:
+        return aId == bId && aType == bType;
+    default:
         return false;
     }
-
-    return aId == bId && aType == bType;
 }
 
 bool NotificationGroupingModel::isGroup(int row) const
