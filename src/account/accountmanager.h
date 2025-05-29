@@ -51,6 +51,7 @@ public:
         DisplayNameRole, /**< Display name of the account. Uses the display name if set, otherwise falls back to the username. */
         DescriptionRole, /**< Username of the account. */
         InstanceRole, /**< Instance name of the account. */
+        HasIssueRole,
     };
 
     static AccountManager &instance();

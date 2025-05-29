@@ -32,6 +32,7 @@ FormCard.FormCardPage {
                 required property var account
                 required property string description
                 required property string displayName
+                required property bool hasIssue
 
                 Layout.fillWidth: true
                 onClicked: Window.window.pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "AccountPage"), {
@@ -68,6 +69,18 @@ FormCard.FormCardPage {
                             font: Kirigami.Theme.smallFont
                             elide: Text.ElideRight
                         }
+                    }
+
+                    Kirigami.Icon {
+                        source: "data-warning"
+                        visible: delegate.hasIssue
+
+                        Layout.preferredHeight: Kirigami.Units.iconSizes.smallMedium
+                        Layout.preferredWidth: Kirigami.Units.iconSizes.smallMedium
+
+                        QQC2.ToolTip.text: i18nc("@info:tooltip", "This account has an issue and can't login, switch to it for more details.")
+                        QQC2.ToolTip.visible: hovered
+                        QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                     }
 
                     FormCard.FormArrow {
