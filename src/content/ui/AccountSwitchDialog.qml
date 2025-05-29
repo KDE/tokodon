@@ -37,6 +37,8 @@ Kirigami.Dialog {
         Kirigami.Theme.colorSet: Kirigami.Theme.View
         Kirigami.Theme.inherit: false
 
+        currentIndex: AccountManager.selectedIndex
+
         footer: Delegates.RoundedItemDelegate {
             id: addDelegate
             width: parent.width
@@ -136,7 +138,7 @@ Kirigami.Dialog {
             onClicked: {
                 if (AccountManager.selectedAccount !== userDelegate.account) {
                     AccountManager.selectedAccount = userDelegate.account;
-                    accounts.currentIndex = userDelegate.index;
+                    accountView.currentIndex = userDelegate.index;
                 }
                 if (userInfo.sidebar.modal) {
                     userInfo.sidebar.close();
