@@ -60,6 +60,11 @@ void NotificationModel::setExcludesTypes(const QStringList &excludeTypes)
 
 void NotificationModel::markAllNotificationsAsRead()
 {
+    // Doesn't make sense to mark anything as read if we aren't ready or yet
+    if (m_notifications.isEmpty() || loading()) {
+        return;
+    }
+
     const QModelIndex topLeft = index(0, 0);
     QModelIndex bottomRight = topLeft;
     for (int i = 0; i < rowCount({}); i++) {
