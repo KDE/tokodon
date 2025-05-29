@@ -223,9 +223,10 @@ void TokodonApplication::updateAccountActions()
         ->action(u"open_status_composer"_s)
         ->setEnabled(AccountManager::instance().selectedAccount() && !AccountManager::instance().selectedAccountHasIssue());
 
-    if (!AccountManager::instance().selectedAccount()) {
-        mainCollection()->action(u"server_information"_s)->setVisible(false);
-    }
+    // this action is a special case, where hiding it when disabled makes sense as it may have an empty name
+    mainCollection()
+        ->action(u"server_information"_s)
+        ->setEnabled(AccountManager::instance().selectedAccount() && !AccountManager::instance().selectedAccountHasIssue());
 }
 
 QList<KirigamiActionCollection *> TokodonApplication::actionCollections() const
