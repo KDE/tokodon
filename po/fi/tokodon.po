@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-26 00:41+0000\n"
-"PO-Revision-Date: 2025-05-12 23:12+0300\n"
+"PO-Revision-Date: 2025-05-27 23:23+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -411,13 +411,14 @@ msgctxt "@info:placeholder"
 msgid ""
 "No one is following this user, or they have chosen to hide this information."
 msgstr ""
+"Kukaan ei seuraa tätä käyttäjää tai he ovat päättäneet piilottaa tiedon."
 
 #: account/socialgraphmodel.cpp:88
 #, kde-format
 msgctxt "@info:placeholder"
 msgid ""
 "This user isn't following anyone, or has chosen to hide this information."
-msgstr ""
+msgstr "Tämä käyttäjä ei seuraa ketään tai on päättänyt piilottaa tiedon."
 
 #: account/socialgraphmodel.cpp:90
 #, kde-format
@@ -859,16 +860,13 @@ msgid "This user hasn't posted any media yet."
 msgstr "Tämä käyttäjä ei ole julkaissut vielä mediaa."
 
 #: content/ui/AccountSwitchDialog.qml:25
-#, fuzzy, kde-format
-#| msgid "Switch Account"
+#, kde-format
 msgctxt "@title: dialog to switch between logged in accounts"
 msgid "Switch Account"
 msgstr "Vaihda tiliä"
 
 #: content/ui/AccountSwitchDialog.qml:50
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add Account"
+#, kde-format
 msgctxt "@button: login to or register a new account."
 msgid "Add Account"
 msgstr "Lisää tili"
@@ -1558,7 +1556,7 @@ msgstr "Valitse palvelin"
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose your Existing Server"
-msgstr ""
+msgstr "Valitse olemassa oleva palvelin"
 
 #: content/ui/LoginFlow/ServersPage.qml:38
 #, kde-format
@@ -1619,15 +1617,13 @@ msgstr ""
 "yhteensopivissa ohjelmissa)."
 
 #: content/ui/LoginFlow/WelcomePage.qml:80
-#, fuzzy, kde-format
-#| msgid "Register"
+#, kde-format
 msgctxt "@action:button Pick a Mastodon server"
 msgid "Register"
 msgstr "Rekisteröidy"
 
 #: content/ui/LoginFlow/WelcomePage.qml:90
-#, fuzzy, kde-format
-#| msgid "Login"
+#, kde-format
 msgctxt "@action:button Use an existing Mastodon account"
 msgid "Login"
 msgstr "Kirjaudu"
@@ -3222,11 +3218,9 @@ msgid "Reported By:"
 msgstr "Ilmoittaja:"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:201
-#, fuzzy, kde-format
-#| msgctxt "@info: The comment attached with the ip rule"
-#| msgid "Comment"
+#, kde-format
 msgid "Comment:"
-msgstr "Huomautus"
+msgstr "Huomautus:"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:224
 #, kde-format
@@ -3318,18 +3312,16 @@ msgid "Follows"
 msgstr "Seuraamiset"
 
 #: content/ui/NotificationPage.qml:188
-#, fuzzy, kde-format
-#| msgid "News"
+#, kde-format
 msgctxt "@info:label New notifications"
 msgid "New"
-msgstr "Uutiset"
+msgstr "Uusi"
 
 #: content/ui/NotificationPage.qml:188
-#, fuzzy, kde-format
-#| msgid "Previous image"
+#, kde-format
 msgctxt "@info:label Previous notifications"
 msgid "Previous"
-msgstr "Edellinen kuva"
+msgstr "Edellinen"
 
 #: content/ui/NotificationPage.qml:315
 #, kde-format
@@ -5375,7 +5367,7 @@ msgctxt ""
 "@info:label %1 is the native language name, and %2 is the localized name. "
 "For example, 'dansk (Danish)'"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: editor/listeditorbackend.cpp:121
 #, kde-format
@@ -5451,10 +5443,9 @@ msgid "Browse the Fediverse"
 msgstr "Selaa fediversumia"
 
 #: main.cpp:106
-#, fuzzy, kde-format
-#| msgid "© 2021-2024 KDE Community"
+#, kde-format
 msgid "© 2021-2025 KDE Community"
-msgstr "© 2021–2024 KDE-yhteisö"
+msgstr "© 2021–2025 KDE-yhteisö"
 
 #: main.cpp:107
 #, kde-format
@@ -5604,115 +5595,91 @@ msgid "Write a New Post"
 msgstr "Kirjoita uusi julkaisu"
 
 #: tokodonapplication.cpp:94
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "End of Timeline"
+#, kde-format
 msgctxt "@action:button Home Timeline"
 msgid "Open Home Timeline"
-msgstr "Aikajanan loppu"
+msgstr "Avaa kotiaikajana"
 
 #: tokodonapplication.cpp:100
-#, fuzzy, kde-format
-#| msgctxt "@action:button Account Notifications"
-#| msgid "Notifications"
+#, kde-format
 msgctxt "@action:button Account Notifications"
 msgid "Open Notifications"
-msgstr "Ilmoitukset"
+msgstr "Avaa ilmoitukset"
 
 #: tokodonapplication.cpp:106
-#, fuzzy, kde-format
-#| msgctxt "@action:button Follows that require explicit allow/deny"
-#| msgid "Follow Requests"
+#, kde-format
 msgctxt "@action:button Follows that require explicit allow/deny"
 msgid "Open Follow Requests"
-msgstr "Seurauspyynnöt"
+msgstr "Avaa seurauspyynnöt"
 
 #: tokodonapplication.cpp:112
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Local Timeline"
+#, kde-format
 msgctxt "@action:button Local timeline of posts from the account's own server"
 msgid "Open Local Timeline"
-msgstr "Paikallinen aikajana"
+msgstr "Avaa paikallinen aikajana"
 
 #: tokodonapplication.cpp:118
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Global Timeline"
+#, kde-format
 msgctxt ""
 "@action:button Global timeline of posts from the entire Fediverse network"
 msgid "Open Global Timeline"
-msgstr "Yleinen aikajana"
+msgstr "Avaa yleinen aikajana"
 
 #: tokodonapplication.cpp:124
-#, fuzzy, kde-format
-#| msgid "Conversations"
+#, kde-format
 msgctxt "@action:button Direct one-on-one messages between users"
 msgid "Open Conversations"
-msgstr "Keskustelut"
+msgstr "Avaa keskustelut"
 
 #: tokodonapplication.cpp:130
-#, fuzzy, kde-format
-#| msgctxt "@action:button This account's favorited posts"
-#| msgid "Favorites"
+#, kde-format
 msgctxt "@action:button This account's favorited posts"
 msgid "Open Favorites"
-msgstr "Suosikit"
+msgstr "Avaa suosikit"
 
 #: tokodonapplication.cpp:136
-#, fuzzy, kde-format
-#| msgctxt "@action:button This account's bookmarked posts"
-#| msgid "Bookmarks"
+#, kde-format
 msgctxt "@action:button This account's bookmarked posts"
 msgid "Open Bookmarks"
-msgstr "Kirjanmerkit"
+msgstr "Avaa kirjanmerkit"
 
 #: tokodonapplication.cpp:142
-#, fuzzy, kde-format
-#| msgid "Explore"
+#, kde-format
 msgctxt "@action:button Explore this server's trending posts, news, and more"
 msgid "Open Explore"
-msgstr "Selaa"
+msgstr "Avaa selaus"
 
 #: tokodonapplication.cpp:148
-#, fuzzy, kde-format
-#| msgctxt "@action:button A list of this account's followed accounts"
-#| msgid "Following"
+#, kde-format
 msgctxt "@action:button A list of this account's followed accounts"
 msgid "Open Following"
-msgstr "Seuratut"
+msgstr "Avaa seuratut"
 
 #: tokodonapplication.cpp:154
-#, fuzzy, kde-format
-#| msgctxt "@action:button Search for users, posts and tags"
-#| msgid "Search"
+#, kde-format
 msgctxt "@action:button Search for users, posts and tags"
 msgid "Open Search"
-msgstr "Etsi"
+msgstr "Avaa haku"
 
 #: tokodonapplication.cpp:160
-#, fuzzy, kde-format
-#| msgctxt "@abel Account preferences"
-#| msgid "Open Server in Browser"
+#, kde-format
 msgctxt "@action:button"
 msgid "Open Server Information"
-msgstr "Avaa palvelin selaimeen"
+msgstr "Avaa palvelintiedot"
 
 #: tokodonapplication.cpp:166
-#, fuzzy, kde-format
-#| msgid "Open Link"
+#, kde-format
 msgctxt ""
 "@action:button This account's lists, or timelines consisting of a groups of "
 "accounts"
 msgid "Open Lists"
-msgstr "Avaa linkki"
+msgstr "Avaa listat"
 
 #: tokodonapplication.cpp:172
-#, fuzzy, kde-format
-#| msgid "View Profile"
+#, kde-format
 msgctxt "@action:button This account's profile"
 msgid "Open Profile"
-msgstr "Näytä profiili"
+msgstr "Avaa profiili"
 
 #: tokodonapplication.cpp:206
 #, kde-format
