@@ -3,6 +3,7 @@
 
 import QtQuick
 import QtQuick.Layouts
+import QtQuick.Controls as QQC2
 
 import org.kde.kirigami as Kirigami
 
@@ -111,6 +112,7 @@ Kirigami.Dialog {
             required property string displayName
             required property string instance
             required property var account
+            required property bool hasIssue
 
             width: parent.width
             text: displayName
@@ -132,6 +134,18 @@ Kirigami.Dialog {
                     subtitle: userDelegate.instance
                     labelItem.textFormat: Text.PlainText
                     subtitleItem.textFormat: Text.PlainText
+                }
+
+                Kirigami.Icon {
+                    source: "data-warning"
+                    visible: userDelegate.hasIssue
+
+                    Layout.preferredHeight: Kirigami.Units.iconSizes.smallMedium
+                    Layout.preferredWidth: Kirigami.Units.iconSizes.smallMedium
+
+                    QQC2.ToolTip.text: i18nc("@info:tooltip", "This account has an issue and can't login, switch to it for more details.")
+                    QQC2.ToolTip.visible: hovered
+                    QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                 }
             }
 

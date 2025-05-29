@@ -53,6 +53,8 @@ QVariant AccountManager::data(const QModelIndex &index, int role) const
         return account->instanceName();
     case AccountRole:
         return QVariant::fromValue(m_accounts[index.row()]);
+    case HasIssueRole:
+        return m_accountStatus[index.row()] == AccountStatus::InvalidCredentials;
     default:
         return {};
     }
@@ -72,6 +74,7 @@ QHash<int, QByteArray> AccountManager::roleNames() const
         {AccountRole, QByteArrayLiteral("account")},
         {DescriptionRole, QByteArrayLiteral("description")},
         {InstanceRole, QByteArrayLiteral("instance")},
+        {HasIssueRole, QByteArrayLiteral("hasIssue")},
     };
 }
 
