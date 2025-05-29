@@ -495,7 +495,17 @@ Kirigami.ScrollablePage {
                             text: i18nc("@action:button", "Attach File")
                             display: QQC2.AbstractButton.IconOnly
 
-                            QQC2.ToolTip.text: i18nc("@info:tooltip", "Attach file")
+                            QQC2.ToolTip.text: {
+                                if (addPool.checked) {
+                                    return i18nc("@info:tooltip", "You can't have attachments and a poll in the same post.")
+                                }
+
+                                if (backend.attachmentEditorModel.count >= AccountManager.selectedAccount.maxMediaAttachments) {
+                                    return i18nc("@info:tooltip", "You have the maximum allowed number of attachments.")
+                                }
+
+                                return i18nc("@info:tooltip", "Attach file");
+                            }
                             QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                             QQC2.ToolTip.visible: hovered
                         }
@@ -511,7 +521,17 @@ Kirigami.ScrollablePage {
 
                             onToggled: backend.pollEnabled = checked
 
-                            QQC2.ToolTip.text: i18nc("@info:tooltip", "Add poll")
+                            QQC2.ToolTip.text: {
+                                if (root.purpose === StatusComposer.Edit) {
+                                    return i18nc("@info:tooltip", "You can't modify or add a poll to an existing post.")
+                                }
+
+                                if (backend.attachmentEditorModel.count !== 0) {
+                                    return i18nc("@info:tooltip", "You can't have attachments and a poll in the same post.")
+                                }
+
+                                return i18nc("@info:tooltip", "Add poll");
+                            }
                             QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                             QQC2.ToolTip.visible: hovered
                         }
