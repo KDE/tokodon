@@ -225,7 +225,10 @@ void TokodonApplication::updateAccountActions()
 
     mainCollection()->action(u"open_status_composer"_s)->setEnabled(accountAvailable);
 
-    mainCollection()->action(u"server_information"_s)->setVisible(accountAvailable);
+    // this action is a special case, where hiding it when disabled makes sense as it may have an empty name
+    mainCollection()
+        ->action(u"server_information"_s)
+        ->setEnabled(AccountManager::instance().selectedAccount() && !AccountManager::instance().selectedAccountHasIssue());
     mainCollection()->action(u"home_timeline"_s)->setEnabled(accountAvailable);
     mainCollection()->action(u"notifications"_s)->setEnabled(accountAvailable);
     mainCollection()->action(u"follow_requests"_s)->setEnabled(accountAvailable);
