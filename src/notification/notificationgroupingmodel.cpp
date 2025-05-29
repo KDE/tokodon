@@ -18,11 +18,14 @@ bool NotificationGroupingModel::notificationsMatch(const QModelIndex &a, const Q
     const auto aType = a.data(AbstractTimelineModel::CustoRoles::TypeRole).value<Notification::Type>();
     const auto bType = b.data(AbstractTimelineModel::CustoRoles::TypeRole).value<Notification::Type>();
 
+    const auto aUnread = a.data(NotificationModel::UnreadRole).toBool();
+    const auto bUnread = b.data(NotificationModel::UnreadRole).toBool();
+
     // TODO: support grouping follow notifications
     switch (aType) {
     case Notification::Type::Favorite:
     case Notification::Type::Repeat:
-        return aId == bId && aType == bType;
+        return aId == bId && aType == bType && aUnread == bUnread;
     default:
         return false;
     }
