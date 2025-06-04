@@ -238,6 +238,7 @@ void AbstractAccount::registerAccount(const QString &username,
                 if (doc.object().contains("access_token"_L1)) {
                     setUsername(username);
                     setAccessToken(doc["access_token"_L1].toString());
+                    validateToken();
                 }
             },
             [this](QNetworkReply *reply) {
@@ -376,6 +377,7 @@ void AbstractAccount::setToken(const QString &authcode)
         auto doc = QJsonDocument::fromJson(data);
 
         setAccessToken(doc.object()["access_token"_L1].toString());
+        validateToken();
     });
 }
 
