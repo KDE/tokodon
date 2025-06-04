@@ -752,6 +752,7 @@ protected:
     QStringList m_attachmentFilterStrings;
     QString m_instanceVapidPublicKey;
     int m_maxCharactersPerOption;
+    QString m_streamingUri;
 
     // updates and notifications
     void handleNotification(const QJsonDocument &doc);

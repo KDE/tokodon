@@ -370,8 +370,15 @@ void Account::validateToken()
 
     fetchInstanceMetadata();
 
-    // set up streaming for notifications
-    streamingSocket(QStringLiteral("user"));
+    connect(
+        this,
+        &Account::fetchedInstanceMetadata,
+        this,
+        [this] {
+            // set up streaming for notifications once we have the streaming URI
+            streamingSocket(QStringLiteral("user"));
+        },
+        Qt::SingleShotConnection);
 }
 
 void Account::setConfig(AccountConfig *config)
