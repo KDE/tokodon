@@ -15,6 +15,7 @@
 #include "messagefiltercontainer.h"
 #include "tokodon-version.h"
 
+#include <KLocalizedString>
 #include <QCoroSignal>
 #include <QFileInfo>
 #include <QHttpMultiPart>
@@ -294,8 +295,8 @@ void Account::validateToken()
         this,
         [this, verify_credentials](QNetworkReply *reply) {
             if (!reply->isFinished()) {
-                qCWarning(TOKODON_HTTP) << "Authentification reply not finished" << username() << verify_credentials;
-                Q_EMIT authenticated(false, {});
+                qCWarning(TOKODON_HTTP) << "Authentication reply not finished" << username() << verify_credentials;
+                Q_EMIT authenticated(false, i18nc("@info:label Error message", "Network request was interrupted"));
                 return;
             }
 
@@ -304,14 +305,14 @@ void Account::validateToken()
 
             if (!doc.isObject()) {
                 qCWarning(TOKODON_HTTP) << "Authentication reply is not json" << username() << verify_credentials << data;
-                Q_EMIT authenticated(false, {});
+                Q_EMIT authenticated(false, i18nc("@info:label Error message", "Failed to parse credentials"));
                 return;
             }
 
             const auto object = doc.object();
             if (!object.contains("source"_L1)) {
                 qCWarning(TOKODON_HTTP) << "Authentication reply does not contains source" << username() << verify_credentials;
-                Q_EMIT authenticated(false, {});
+                Q_EMIT authenticated(false, i18nc("@info:label Error message", "Failed to parse credentials"));
                 return;
             }
 
