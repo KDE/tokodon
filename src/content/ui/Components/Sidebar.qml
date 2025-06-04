@@ -140,7 +140,6 @@ Kirigami.OverlayDrawer {
 
                         action: modelData
                         visible: modelData.visible
-                        enabled: !AccountManager.selectedAccountHasIssue
                         alertCount: modelData.alertCount ?? 0
                     }
                 }

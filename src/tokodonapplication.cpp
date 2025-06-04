@@ -32,6 +32,7 @@ void TokodonApplication::setAccountManager(AccountManager *accountManager)
 
     if (m_accountManager) {
         disconnect(m_accountManager, &AccountManager::accountsChanged, this, nullptr);
+        disconnect(m_accountManager, &AccountManager::accountsReady, this, nullptr);
         disconnect(m_accountManager, &AccountManager::accountAdded, this, nullptr);
         disconnect(m_accountManager, &AccountManager::accountRemoved, this, nullptr);
         disconnect(m_accountManager, &AccountManager::identityChanged, this, nullptr);
@@ -46,6 +47,7 @@ void TokodonApplication::setAccountManager(AccountManager *accountManager)
         updateAccountActions();
 
         connect(m_accountManager, &AccountManager::accountSelected, this, &TokodonApplication::updateAccountActions);
+        connect(m_accountManager, &AccountManager::accountsReady, this, &TokodonApplication::updateAccountActions);
 
         connect(m_accountManager, &AccountManager::accountAdded, this, [this](AbstractAccount *account) {
             createAccountActions(account);
@@ -219,13 +221,24 @@ void TokodonApplication::createAccountActions(AbstractAccount *account)
 
 void TokodonApplication::updateAccountActions()
 {
-    mainCollection()
-        ->action(u"open_status_composer"_s)
-        ->setEnabled(AccountManager::instance().selectedAccount() && !AccountManager::instance().selectedAccountHasIssue());
+    const bool accountAvailable = AccountManager::instance().selectedAccount() && !AccountManager::instance().selectedAccountHasIssue();
 
-    if (!AccountManager::instance().selectedAccount()) {
-        mainCollection()->action(u"server_information"_s)->setVisible(false);
-    }
+    mainCollection()->action(u"open_status_composer"_s)->setEnabled(accountAvailable);
+
+    mainCollection()->action(u"server_information"_s)->setVisible(accountAvailable);
+    mainCollection()->action(u"home_timeline"_s)->setEnabled(accountAvailable);
+    mainCollection()->action(u"notifications"_s)->setEnabled(accountAvailable);
+    mainCollection()->action(u"follow_requests"_s)->setEnabled(accountAvailable);
+    mainCollection()->action(u"local_timeline"_s)->setEnabled(accountAvailable);
+    mainCollection()->action(u"global_timeline"_s)->setEnabled(accountAvailable);
+    mainCollection()->action(u"following"_s)->setEnabled(accountAvailable);
+    mainCollection()->action(u"profile"_s)->setEnabled(accountAvailable);
+    mainCollection()->action(u"lists"_s)->setEnabled(accountAvailable);
+    mainCollection()->action(u"search"_s)->setEnabled(accountAvailable);
+    mainCollection()->action(u"explore"_s)->setEnabled(accountAvailable);
+    mainCollection()->action(u"bookmarks"_s)->setEnabled(accountAvailable);
+    mainCollection()->action(u"favorites"_s)->setEnabled(accountAvailable);
+    mainCollection()->action(u"conversations"_s)->setEnabled(accountAvailable);
 }
 
 QList<KirigamiActionCollection *> TokodonApplication::actionCollections() const
