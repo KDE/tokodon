@@ -464,6 +464,11 @@ void AbstractAccount::fetchInstanceMetadata()
             if (obj.contains("configuration"_L1)) {
                 const auto configObj = obj["configuration"_L1].toObject();
 
+                if (configObj.contains("urls"_L1)) {
+                    const auto urlsConfigObj = configObj["urls"_L1].toObject();
+                    m_streamingUri = urlsConfigObj["streaming"_L1].toString();
+                }
+
                 if (configObj.contains("statuses"_L1)) {
                     const auto statusConfigObj = configObj["statuses"_L1].toObject();
                     m_maxPostLength = statusConfigObj["max_characters"_L1].toInt();
@@ -582,12 +587,12 @@ void AbstractAccount::saveTimelinePosition(const QString &timeline, const QStrin
 
 QUrl AbstractAccount::streamingUrl(const QString &stream)
 {
-    QUrl url = apiUrl(QStringLiteral("/api/v1/streaming"));
+    QUrl url = QUrl(m_streamingUri);
+    url.setPath(QStringLiteral("/api/v1/streaming"));
     url.setQuery(QUrlQuery{
         {QStringLiteral("access_token"), m_token},
         {QStringLiteral("stream"), stream},
     });
-    url.setScheme(QStringLiteral("wss"));
 
     return url;
 }

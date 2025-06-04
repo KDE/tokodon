@@ -743,6 +743,7 @@ protected:
     QString m_redirectUri;
     int m_maxMediaAttachments;
     QStringList m_attachmentFilterStrings;
+    QString m_streamingUri;
 
     // updates and notifications
     void handleNotification(const QJsonDocument &doc);
