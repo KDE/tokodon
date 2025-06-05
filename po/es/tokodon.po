@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-30 00:42+0000\n"
+"POT-Creation-Date: 2025-06-05 00:42+0000\n"
 "PO-Revision-Date: 2025-05-26 12:31+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -83,65 +83,77 @@ msgstr "Vídeo M4V (*.m4v)"
 msgid "QuickTime video (*.mov)"
 msgstr "Vídeo QuickTime (*.mov)"
 
-#: account/abstractaccount.cpp:45 account/abstractaccount.cpp:495
+#: account/abstractaccount.cpp:45 account/abstractaccount.cpp:502
 #, kde-format
 msgid "All files (*)"
 msgstr "Todos los archivos (*)"
 
-#: account/abstractaccount.cpp:494
+#: account/abstractaccount.cpp:501
 #, kde-format
 msgid "All supported formats (%1)"
 msgstr "Todos los formatos permitidos (%1)"
 
-#: account/abstractaccount.cpp:649
+#: account/abstractaccount.cpp:656
 #, kde-format
 msgid "Could not follow account"
 msgstr "No se ha podido seguir la cuenta"
 
-#: account/abstractaccount.cpp:650
+#: account/abstractaccount.cpp:657
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "No se ha podido dejar de seguir la cuenta"
 
-#: account/abstractaccount.cpp:651
+#: account/abstractaccount.cpp:658
 #, kde-format
 msgid "Could not remove account as your follower"
 msgstr "No se ha podido eliminar la cuenta como su seguidor"
 
-#: account/abstractaccount.cpp:652
+#: account/abstractaccount.cpp:659
 #, kde-format
 msgid "Could not block account"
 msgstr "No se ha podido bloquear la cuenta"
 
-#: account/abstractaccount.cpp:653
+#: account/abstractaccount.cpp:660
 #, kde-format
 msgid "Could not unblock account"
 msgstr "No se ha podido desbloquear la cuenta"
 
-#: account/abstractaccount.cpp:654
+#: account/abstractaccount.cpp:661
 #, kde-format
 msgid "Could not mute account"
 msgstr "No se ha podido silenciar la cuenta"
 
-#: account/abstractaccount.cpp:655
+#: account/abstractaccount.cpp:662
 #, kde-format
 msgid "Could not unmute account"
 msgstr "No se ha podido dejar de silenciar la cuenta"
 
-#: account/abstractaccount.cpp:656
+#: account/abstractaccount.cpp:663
 #, kde-format
 msgid "Could not feature account"
 msgstr "No se ha podido destacar la cuenta"
 
-#: account/abstractaccount.cpp:657
+#: account/abstractaccount.cpp:664
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "No se ha podido dejar de destacar la cuenta"
 
-#: account/abstractaccount.cpp:658
+#: account/abstractaccount.cpp:665
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "No se ha podido editar la nota sobre una cuenta"
+
+#: account/account.cpp:299
+#, kde-format
+msgctxt "@info:label Error message"
+msgid "Network request was interrupted"
+msgstr ""
+
+#: account/account.cpp:308 account/account.cpp:315
+#, kde-format
+msgctxt "@info:label Error message"
+msgid "Failed to parse credentials"
+msgstr ""
 
 #: account/notificationhandler.cpp:32 account/notificationhandler.cpp:33
 #, kde-format
@@ -862,22 +874,30 @@ msgstr "No hay multimedia"
 msgid "This user hasn't posted any media yet."
 msgstr "Este usuario no ha publicado multimedia todavía."
 
-#: content/ui/AccountSwitchDialog.qml:25
+#: content/ui/AccountSwitchDialog.qml:26
 #, kde-format
 msgctxt "@title: dialog to switch between logged in accounts"
 msgid "Switch Account"
 msgstr "Cambiar cuenta"
 
-#: content/ui/AccountSwitchDialog.qml:50
+#: content/ui/AccountSwitchDialog.qml:53
 #, kde-format
 msgctxt "@button: login to or register a new account."
 msgid "Add Account"
 msgstr "Añadir cuenta"
 
-#: content/ui/AccountSwitchDialog.qml:53
+#: content/ui/AccountSwitchDialog.qml:56
 #, kde-format
 msgid "Log in or create a new account"
 msgstr "Iniciar sesión o crear una cuenta nueva"
+
+#: content/ui/AccountSwitchDialog.qml:146
+#: content/ui/Settings/AccountsPage.qml:81
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"This account has an issue and can't login, switch to it for more details."
+msgstr ""
 
 #: content/ui/Android/ShareAction.qml:15 content/ui/ShareAction.qml:19
 #, kde-format
@@ -1427,8 +1447,9 @@ msgid "Login Issue"
 msgstr "Problema de inicio de sesión"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:27
-#, kde-format
-msgid "There was an issue logging into the server:<br><b>%1</b>"
+#, fuzzy, kde-format
+#| msgid "There was an issue logging into the server:<br><b>%1</b>"
+msgid "There was an issue logging into %1:<br><b>%2</b>"
 msgstr "Ha ocurrido un problema al iniciar sesión en el servidor:<br><b>%1</b>"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:38
@@ -5204,122 +5225,141 @@ msgctxt "@action:button"
 msgid "Attach File"
 msgstr "Adjuntar archivo"
 
-#: content/ui/StatusComposer/StatusComposer.qml:498
+#: content/ui/StatusComposer/StatusComposer.qml:500
+#: content/ui/StatusComposer/StatusComposer.qml:530
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "You can't have attachments and a poll in the same post."
+msgstr ""
+
+#: content/ui/StatusComposer/StatusComposer.qml:504
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "You have the maximum allowed number of attachments."
+msgstr ""
+
+#: content/ui/StatusComposer/StatusComposer.qml:507
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Attach file"
 msgstr "Adjuntar archivo"
 
-#: content/ui/StatusComposer/StatusComposer.qml:509
+#: content/ui/StatusComposer/StatusComposer.qml:519
 #, kde-format
 msgctxt "@action:button"
 msgid "Attach Poll"
 msgstr "Adjuntar encuesta"
 
-#: content/ui/StatusComposer/StatusComposer.qml:514
+#: content/ui/StatusComposer/StatusComposer.qml:526
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "You can't modify or add a poll to an existing post."
+msgstr ""
+
+#: content/ui/StatusComposer/StatusComposer.qml:533
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add poll"
 msgstr "Añadir encuesta"
 
-#: content/ui/StatusComposer/StatusComposer.qml:523
+#: content/ui/StatusComposer/StatusComposer.qml:543
 #, kde-format
 msgctxt "@action:button"
 msgid "Content Notice"
 msgstr "Aviso de contenido"
 
-#: content/ui/StatusComposer/StatusComposer.qml:535
+#: content/ui/StatusComposer/StatusComposer.qml:555
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Content notice"
 msgstr "Aviso de contenido"
 
-#: content/ui/StatusComposer/StatusComposer.qml:561
+#: content/ui/StatusComposer/StatusComposer.qml:581
 #, kde-format
 msgctxt "@action:button"
 msgid "Visibility"
 msgstr "Visibilidad"
 
-#: content/ui/StatusComposer/StatusComposer.qml:569
+#: content/ui/StatusComposer/StatusComposer.qml:589
 #, kde-format
 msgctxt "@title"
 msgid "Visibility"
 msgstr "Visibilidad"
 
-#: content/ui/StatusComposer/StatusComposer.qml:573
+#: content/ui/StatusComposer/StatusComposer.qml:593
 #, kde-format
 msgctxt "@item:inmenu Local to this server"
 msgid "Local"
 msgstr "Local"
 
-#: content/ui/StatusComposer/StatusComposer.qml:579
+#: content/ui/StatusComposer/StatusComposer.qml:599
 #, kde-format
 msgctxt "@item:inmenu Public to the world"
 msgid "Public"
 msgstr "Público"
 
-#: content/ui/StatusComposer/StatusComposer.qml:584
+#: content/ui/StatusComposer/StatusComposer.qml:604
 #, kde-format
 msgctxt "@item:inmenu Public but less so"
 msgid "Unlisted"
 msgstr "Sin listar"
 
-#: content/ui/StatusComposer/StatusComposer.qml:589
+#: content/ui/StatusComposer/StatusComposer.qml:609
 #, kde-format
 msgctxt "@item:inmenu Only to followers"
 msgid "Private"
 msgstr "Privado"
 
-#: content/ui/StatusComposer/StatusComposer.qml:594
+#: content/ui/StatusComposer/StatusComposer.qml:614
 #, kde-format
 msgctxt "@item:inmenu Only to who is explicitly mentioned"
 msgid "Direct Message"
 msgstr "Mensaje directo"
 
-#: content/ui/StatusComposer/StatusComposer.qml:599
+#: content/ui/StatusComposer/StatusComposer.qml:619
 #, kde-format
 msgctxt "@info:tooltip Post visibility"
 msgid "Visibility"
 msgstr "Visibilidad"
 
-#: content/ui/StatusComposer/StatusComposer.qml:607
+#: content/ui/StatusComposer/StatusComposer.qml:627
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Post language"
 msgstr "Idioma de la publicación"
 
-#: content/ui/StatusComposer/StatusComposer.qml:637
+#: content/ui/StatusComposer/StatusComposer.qml:657
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Emoji"
 msgstr "Añadir emoji"
 
-#: content/ui/StatusComposer/StatusComposer.qml:648
+#: content/ui/StatusComposer/StatusComposer.qml:668
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add emoji"
 msgstr "Añadir emoji"
 
-#: content/ui/StatusComposer/StatusComposer.qml:678
+#: content/ui/StatusComposer/StatusComposer.qml:698
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1/%2</b> caracteres"
 
-#: content/ui/StatusComposer/StatusComposer.qml:688
-#: content/ui/StatusComposer/StatusComposer.qml:765
+#: content/ui/StatusComposer/StatusComposer.qml:708
+#: content/ui/StatusComposer/StatusComposer.qml:785
 #, kde-format
 msgctxt "@action:button Schedule something to be posted later"
 msgid "Schedule"
 msgstr "Programar"
 
-#: content/ui/StatusComposer/StatusComposer.qml:739
+#: content/ui/StatusComposer/StatusComposer.qml:759
 #, kde-format
 msgctxt "@title"
 msgid "Alt Text Reminder"
 msgstr "Recordatorio de texto alternativo"
 
-#: content/ui/StatusComposer/StatusComposer.qml:743
+#: content/ui/StatusComposer/StatusComposer.qml:763
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -5598,104 +5638,104 @@ msgctxt "@title:group Title for the group of account related actions"
 msgid "Account"
 msgstr "Cuenta"
 
-#: tokodonapplication.cpp:62
+#: tokodonapplication.cpp:64
 #, kde-format
 msgctxt "@action:button"
 msgid "Switch to '%1'"
 msgstr "Cambiar a «%1»"
 
-#: tokodonapplication.cpp:63 tokodonapplication.cpp:214
+#: tokodonapplication.cpp:65 tokodonapplication.cpp:216
 #, kde-format
 msgctxt "@action:button"
 msgid "Configure '%1'"
 msgstr "Configurar «%1»"
 
-#: tokodonapplication.cpp:70
+#: tokodonapplication.cpp:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Account"
 msgstr "Añadir cuenta"
 
-#: tokodonapplication.cpp:85
+#: tokodonapplication.cpp:87
 #, kde-format
 msgctxt "@action:button"
 msgid "Write a New Post"
 msgstr "Escribir una nueva publicación"
 
-#: tokodonapplication.cpp:94
+#: tokodonapplication.cpp:96
 #, kde-format
 msgctxt "@action:button Home Timeline"
 msgid "Open Home Timeline"
 msgstr "Abrir «Cronología de la página de inicio»"
 
-#: tokodonapplication.cpp:100
+#: tokodonapplication.cpp:102
 #, kde-format
 msgctxt "@action:button Account Notifications"
 msgid "Open Notifications"
 msgstr "Abrir «Notificaciones»"
 
-#: tokodonapplication.cpp:106
+#: tokodonapplication.cpp:108
 #, kde-format
 msgctxt "@action:button Follows that require explicit allow/deny"
 msgid "Open Follow Requests"
 msgstr "Abrir «Peticiones de seguimiento»"
 
-#: tokodonapplication.cpp:112
+#: tokodonapplication.cpp:114
 #, kde-format
 msgctxt "@action:button Local timeline of posts from the account's own server"
 msgid "Open Local Timeline"
 msgstr "Abrir «Cronología local»"
 
-#: tokodonapplication.cpp:118
+#: tokodonapplication.cpp:120
 #, kde-format
 msgctxt ""
 "@action:button Global timeline of posts from the entire Fediverse network"
 msgid "Open Global Timeline"
 msgstr "Abrir «Cronología global»"
 
-#: tokodonapplication.cpp:124
+#: tokodonapplication.cpp:126
 #, kde-format
 msgctxt "@action:button Direct one-on-one messages between users"
 msgid "Open Conversations"
 msgstr "Abrir «Conversaciones»"
 
-#: tokodonapplication.cpp:130
+#: tokodonapplication.cpp:132
 #, kde-format
 msgctxt "@action:button This account's favorited posts"
 msgid "Open Favorites"
 msgstr "Abrir «Favoritas»"
 
-#: tokodonapplication.cpp:136
+#: tokodonapplication.cpp:138
 #, kde-format
 msgctxt "@action:button This account's bookmarked posts"
 msgid "Open Bookmarks"
 msgstr "Abrir «Marcadores»"
 
-#: tokodonapplication.cpp:142
+#: tokodonapplication.cpp:144
 #, kde-format
 msgctxt "@action:button Explore this server's trending posts, news, and more"
 msgid "Open Explore"
 msgstr "Abrir «Explorar»"
 
-#: tokodonapplication.cpp:148
+#: tokodonapplication.cpp:150
 #, kde-format
 msgctxt "@action:button A list of this account's followed accounts"
 msgid "Open Following"
 msgstr "Abrir «Siguiendo»"
 
-#: tokodonapplication.cpp:154
+#: tokodonapplication.cpp:156
 #, kde-format
 msgctxt "@action:button Search for users, posts and tags"
 msgid "Open Search"
 msgstr "Abrir «Buscar»"
 
-#: tokodonapplication.cpp:160
+#: tokodonapplication.cpp:162
 #, kde-format
 msgctxt "@action:button"
 msgid "Open Server Information"
 msgstr "Abrir «Información del servidor»"
 
-#: tokodonapplication.cpp:166
+#: tokodonapplication.cpp:168
 #, kde-format
 msgctxt ""
 "@action:button This account's lists, or timelines consisting of a groups of "
@@ -5703,13 +5743,13 @@ msgctxt ""
 msgid "Open Lists"
 msgstr "Abrir «Listas»"
 
-#: tokodonapplication.cpp:172
+#: tokodonapplication.cpp:174
 #, kde-format
 msgctxt "@action:button This account's profile"
 msgid "Open Profile"
 msgstr "Abrir «Perfil»"
 
-#: tokodonapplication.cpp:206
+#: tokodonapplication.cpp:208
 #, kde-format
 msgctxt "@action:button"
 msgid "Switch '%1'"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-30 00:42+0000\n"
+"POT-Creation-Date: 2025-06-05 00:42+0000\n"
 "PO-Revision-Date: 2023-03-03 10:32+0700\n"
 "Last-Translator: Linerly <linerly@protonmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -79,66 +79,78 @@ msgstr ""
 msgid "QuickTime video (*.mov)"
 msgstr ""
 
-#: account/abstractaccount.cpp:45 account/abstractaccount.cpp:495
+#: account/abstractaccount.cpp:45 account/abstractaccount.cpp:502
 #, kde-format
 msgid "All files (*)"
 msgstr ""
 
-#: account/abstractaccount.cpp:494
+#: account/abstractaccount.cpp:501
 #, kde-format
 msgid "All supported formats (%1)"
 msgstr ""
 
-#: account/abstractaccount.cpp:649
+#: account/abstractaccount.cpp:656
 #, kde-format
 msgid "Could not follow account"
 msgstr "Tidak dapat mengikuti akun"
 
-#: account/abstractaccount.cpp:650
+#: account/abstractaccount.cpp:657
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "Tidak dapat batal mengikuti akun"
 
-#: account/abstractaccount.cpp:651
+#: account/abstractaccount.cpp:658
 #, fuzzy, kde-format
 #| msgid "Could not mute account"
 msgid "Could not remove account as your follower"
 msgstr "Tidak dapat membisukan akun"
 
-#: account/abstractaccount.cpp:652
+#: account/abstractaccount.cpp:659
 #, kde-format
 msgid "Could not block account"
 msgstr "Tidak dapat memblokir akun"
 
-#: account/abstractaccount.cpp:653
+#: account/abstractaccount.cpp:660
 #, kde-format
 msgid "Could not unblock account"
 msgstr "Tidak dapat batal memblokir akun"
 
-#: account/abstractaccount.cpp:654
+#: account/abstractaccount.cpp:661
 #, kde-format
 msgid "Could not mute account"
 msgstr "Tidak dapat membisukan akun"
 
-#: account/abstractaccount.cpp:655
+#: account/abstractaccount.cpp:662
 #, kde-format
 msgid "Could not unmute account"
 msgstr "Tidak dapat batal membisukan akun"
 
-#: account/abstractaccount.cpp:656
+#: account/abstractaccount.cpp:663
 #, kde-format
 msgid "Could not feature account"
 msgstr "Tidak dapat memfiturkan akun"
 
-#: account/abstractaccount.cpp:657
+#: account/abstractaccount.cpp:664
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "Tidak dapat batal memfiturkan akun"
 
-#: account/abstractaccount.cpp:658
+#: account/abstractaccount.cpp:665
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "Tidak dapat menyunting catatan tentang sebuah akun"
+
+#: account/account.cpp:299
+#, kde-format
+msgctxt "@info:label Error message"
+msgid "Network request was interrupted"
+msgstr ""
+
+#: account/account.cpp:308 account/account.cpp:315
+#, kde-format
+msgctxt "@info:label Error message"
+msgid "Failed to parse credentials"
+msgstr ""
 
 #: account/notificationhandler.cpp:32 account/notificationhandler.cpp:33
 #, fuzzy, kde-format
@@ -914,25 +926,33 @@ msgstr ""
 msgid "This user hasn't posted any media yet."
 msgstr ""
 
-#: content/ui/AccountSwitchDialog.qml:25
+#: content/ui/AccountSwitchDialog.qml:26
 #, fuzzy, kde-format
 #| msgid "Add Account"
 msgctxt "@title: dialog to switch between logged in accounts"
 msgid "Switch Account"
 msgstr "Tambahkan Akun"
 
-#: content/ui/AccountSwitchDialog.qml:50
+#: content/ui/AccountSwitchDialog.qml:53
 #, fuzzy, kde-format
 #| msgid "Add Account"
 msgctxt "@button: login to or register a new account."
 msgid "Add Account"
 msgstr "Tambahkan Akun"
 
-#: content/ui/AccountSwitchDialog.qml:53
+#: content/ui/AccountSwitchDialog.qml:56
 #, fuzzy, kde-format
 #| msgid "Could not feature account"
 msgid "Log in or create a new account"
 msgstr "Tidak dapat memfiturkan akun"
+
+#: content/ui/AccountSwitchDialog.qml:146
+#: content/ui/Settings/AccountsPage.qml:81
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"This account has an issue and can't login, switch to it for more details."
+msgstr ""
 
 #: content/ui/Android/ShareAction.qml:15 content/ui/ShareAction.qml:19
 #, kde-format
@@ -1494,7 +1514,7 @@ msgstr "Masuk"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:27
 #, kde-format
-msgid "There was an issue logging into the server:<br><b>%1</b>"
+msgid "There was an issue logging into %1:<br><b>%2</b>"
 msgstr ""
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:38
@@ -5364,86 +5384,105 @@ msgctxt "@action:button"
 msgid "Attach File"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:498
+#: content/ui/StatusComposer/StatusComposer.qml:500
+#: content/ui/StatusComposer/StatusComposer.qml:530
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "You can't have attachments and a poll in the same post."
+msgstr ""
+
+#: content/ui/StatusComposer/StatusComposer.qml:504
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "You have the maximum allowed number of attachments."
+msgstr ""
+
+#: content/ui/StatusComposer/StatusComposer.qml:507
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Attach file"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:509
+#: content/ui/StatusComposer/StatusComposer.qml:519
 #, kde-format
 msgctxt "@action:button"
 msgid "Attach Poll"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:514
+#: content/ui/StatusComposer/StatusComposer.qml:526
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "You can't modify or add a poll to an existing post."
+msgstr ""
+
+#: content/ui/StatusComposer/StatusComposer.qml:533
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add poll"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:523
+#: content/ui/StatusComposer/StatusComposer.qml:543
 #, kde-format
 msgctxt "@action:button"
 msgid "Content Notice"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:535
+#: content/ui/StatusComposer/StatusComposer.qml:555
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Content notice"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:561
+#: content/ui/StatusComposer/StatusComposer.qml:581
 #, kde-format
 msgctxt "@action:button"
 msgid "Visibility"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:569
+#: content/ui/StatusComposer/StatusComposer.qml:589
 #, kde-format
 msgctxt "@title"
 msgid "Visibility"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:573
+#: content/ui/StatusComposer/StatusComposer.qml:593
 #, fuzzy, kde-format
 #| msgid "Local"
 msgctxt "@item:inmenu Local to this server"
 msgid "Local"
 msgstr "Lokal"
 
-#: content/ui/StatusComposer/StatusComposer.qml:579
+#: content/ui/StatusComposer/StatusComposer.qml:599
 #, kde-format
 msgctxt "@item:inmenu Public to the world"
 msgid "Public"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:584
+#: content/ui/StatusComposer/StatusComposer.qml:604
 #, kde-format
 msgctxt "@item:inmenu Public but less so"
 msgid "Unlisted"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:589
+#: content/ui/StatusComposer/StatusComposer.qml:609
 #, kde-format
 msgctxt "@item:inmenu Only to followers"
 msgid "Private"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:594
+#: content/ui/StatusComposer/StatusComposer.qml:614
 #, kde-format
 msgctxt "@item:inmenu Only to who is explicitly mentioned"
 msgid "Direct Message"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:599
+#: content/ui/StatusComposer/StatusComposer.qml:619
 #, kde-format
 msgctxt "@info:tooltip Post visibility"
 msgid "Visibility"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:607
+#: content/ui/StatusComposer/StatusComposer.qml:627
 #, fuzzy, kde-format
 #| msgctxt "@item:inlistbox Group of all languages"
 #| msgid "All Languages"
@@ -5451,39 +5490,39 @@ msgctxt "@info:tooltip"
 msgid "Post language"
 msgstr "Semua Bahasa"
 
-#: content/ui/StatusComposer/StatusComposer.qml:637
+#: content/ui/StatusComposer/StatusComposer.qml:657
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Emoji"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:648
+#: content/ui/StatusComposer/StatusComposer.qml:668
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add emoji"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:678
+#: content/ui/StatusComposer/StatusComposer.qml:698
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:688
-#: content/ui/StatusComposer/StatusComposer.qml:765
+#: content/ui/StatusComposer/StatusComposer.qml:708
+#: content/ui/StatusComposer/StatusComposer.qml:785
 #, fuzzy, kde-format
 #| msgid "Accounts"
 msgctxt "@action:button Schedule something to be posted later"
 msgid "Schedule"
 msgstr "Akun"
 
-#: content/ui/StatusComposer/StatusComposer.qml:739
+#: content/ui/StatusComposer/StatusComposer.qml:759
 #, kde-format
 msgctxt "@title"
 msgid "Alt Text Reminder"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:743
+#: content/ui/StatusComposer/StatusComposer.qml:763
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -5769,114 +5808,114 @@ msgctxt "@title:group Title for the group of account related actions"
 msgid "Account"
 msgstr "Akun"
 
-#: tokodonapplication.cpp:62
+#: tokodonapplication.cpp:64
 #, kde-format
 msgctxt "@action:button"
 msgid "Switch to '%1'"
 msgstr ""
 
-#: tokodonapplication.cpp:63 tokodonapplication.cpp:214
+#: tokodonapplication.cpp:65 tokodonapplication.cpp:216
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgctxt "@action:button"
 msgid "Configure '%1'"
 msgstr "Atur"
 
-#: tokodonapplication.cpp:70
+#: tokodonapplication.cpp:72
 #, fuzzy, kde-format
 #| msgid "Add Account"
 msgctxt "@action:button"
 msgid "Add Account"
 msgstr "Tambahkan Akun"
 
-#: tokodonapplication.cpp:85
+#: tokodonapplication.cpp:87
 #, fuzzy, kde-format
 #| msgid "Edit profile"
 msgctxt "@action:button"
 msgid "Write a New Post"
 msgstr "Sunting profil"
 
-#: tokodonapplication.cpp:94
+#: tokodonapplication.cpp:96
 #, kde-format
 msgctxt "@action:button Home Timeline"
 msgid "Open Home Timeline"
 msgstr ""
 
-#: tokodonapplication.cpp:100
+#: tokodonapplication.cpp:102
 #, fuzzy, kde-format
 #| msgid "Notifications"
 msgctxt "@action:button Account Notifications"
 msgid "Open Notifications"
 msgstr "Notifikasi"
 
-#: tokodonapplication.cpp:106
+#: tokodonapplication.cpp:108
 #, fuzzy, kde-format
 #| msgid "Follows you"
 msgctxt "@action:button Follows that require explicit allow/deny"
 msgid "Open Follow Requests"
 msgstr "Mengikuti Anda"
 
-#: tokodonapplication.cpp:112
+#: tokodonapplication.cpp:114
 #, kde-format
 msgctxt "@action:button Local timeline of posts from the account's own server"
 msgid "Open Local Timeline"
 msgstr ""
 
-#: tokodonapplication.cpp:118
+#: tokodonapplication.cpp:120
 #, kde-format
 msgctxt ""
 "@action:button Global timeline of posts from the entire Fediverse network"
 msgid "Open Global Timeline"
 msgstr ""
 
-#: tokodonapplication.cpp:124
+#: tokodonapplication.cpp:126
 #, fuzzy, kde-format
 #| msgid "Conversations"
 msgctxt "@action:button Direct one-on-one messages between users"
 msgid "Open Conversations"
 msgstr "Percakapan"
 
-#: tokodonapplication.cpp:130
+#: tokodonapplication.cpp:132
 #, fuzzy, kde-format
 #| msgid "Favourites"
 msgctxt "@action:button This account's favorited posts"
 msgid "Open Favorites"
 msgstr "Favorit"
 
-#: tokodonapplication.cpp:136
+#: tokodonapplication.cpp:138
 #, fuzzy, kde-format
 #| msgid "Bookmarks"
 msgctxt "@action:button This account's bookmarked posts"
 msgid "Open Bookmarks"
 msgstr "Markah"
 
-#: tokodonapplication.cpp:142
+#: tokodonapplication.cpp:144
 #, kde-format
 msgctxt "@action:button Explore this server's trending posts, news, and more"
 msgid "Open Explore"
 msgstr ""
 
-#: tokodonapplication.cpp:148
+#: tokodonapplication.cpp:150
 #, fuzzy, kde-format
 #| msgid "Following"
 msgctxt "@action:button A list of this account's followed accounts"
 msgid "Open Following"
 msgstr "Mengikuti"
 
-#: tokodonapplication.cpp:154
+#: tokodonapplication.cpp:156
 #, fuzzy, kde-format
 #| msgid "Accounts"
 msgctxt "@action:button Search for users, posts and tags"
 msgid "Open Search"
 msgstr "Akun"
 
-#: tokodonapplication.cpp:160
+#: tokodonapplication.cpp:162
 #, kde-format
 msgctxt "@action:button"
 msgid "Open Server Information"
 msgstr ""
 
-#: tokodonapplication.cpp:166
+#: tokodonapplication.cpp:168
 #, fuzzy, kde-format
 #| msgid "Open link"
 msgctxt ""
@@ -5885,14 +5924,14 @@ msgctxt ""
 msgid "Open Lists"
 msgstr "Buka tautan"
 
-#: tokodonapplication.cpp:172
+#: tokodonapplication.cpp:174
 #, fuzzy, kde-format
 #| msgid "Edit profile"
 msgctxt "@action:button This account's profile"
 msgid "Open Profile"
 msgstr "Sunting profil"
 
-#: tokodonapplication.cpp:206
+#: tokodonapplication.cpp:208
 #, fuzzy, kde-format
 #| msgid "Add Account"
 msgctxt "@action:button"

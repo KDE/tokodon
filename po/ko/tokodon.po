@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-30 00:42+0000\n"
+"POT-Creation-Date: 2025-06-05 00:42+0000\n"
 "PO-Revision-Date: 2025-04-22 01:30+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -85,65 +85,77 @@ msgstr "M4V 동영상 (*.m4v)"
 msgid "QuickTime video (*.mov)"
 msgstr "QuickTime 동영상 (*.mov)"
 
-#: account/abstractaccount.cpp:45 account/abstractaccount.cpp:495
+#: account/abstractaccount.cpp:45 account/abstractaccount.cpp:502
 #, kde-format
 msgid "All files (*)"
 msgstr "모든 파일 (*)"
 
-#: account/abstractaccount.cpp:494
+#: account/abstractaccount.cpp:501
 #, kde-format
 msgid "All supported formats (%1)"
 msgstr "모든 지원하는 형식(%1)"
 
-#: account/abstractaccount.cpp:649
+#: account/abstractaccount.cpp:656
 #, kde-format
 msgid "Could not follow account"
 msgstr "계정을 팔로우할 수 없음"
 
-#: account/abstractaccount.cpp:650
+#: account/abstractaccount.cpp:657
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "계정을 팔로우 해제할 수 없음"
 
-#: account/abstractaccount.cpp:651
+#: account/abstractaccount.cpp:658
 #, kde-format
 msgid "Could not remove account as your follower"
 msgstr "계정을 팔로워 목록에서 삭제할 수 없음"
 
-#: account/abstractaccount.cpp:652
+#: account/abstractaccount.cpp:659
 #, kde-format
 msgid "Could not block account"
 msgstr "계정을 차단할 수 없음"
 
-#: account/abstractaccount.cpp:653
+#: account/abstractaccount.cpp:660
 #, kde-format
 msgid "Could not unblock account"
 msgstr "계정의 차단을 해제할 수 없음"
 
-#: account/abstractaccount.cpp:654
+#: account/abstractaccount.cpp:661
 #, kde-format
 msgid "Could not mute account"
 msgstr "계정을 뮤트할 수 없음"
 
-#: account/abstractaccount.cpp:655
+#: account/abstractaccount.cpp:662
 #, kde-format
 msgid "Could not unmute account"
 msgstr "계정의 뮤트를 해제할 수 없음"
 
-#: account/abstractaccount.cpp:656
+#: account/abstractaccount.cpp:663
 #, kde-format
 msgid "Could not feature account"
 msgstr "계정을 추천할 수 없음"
 
-#: account/abstractaccount.cpp:657
+#: account/abstractaccount.cpp:664
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "계정을 추천 해제할 수 없음"
 
-#: account/abstractaccount.cpp:658
+#: account/abstractaccount.cpp:665
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "계정 자기소개 정보를 편집할 수 없음"
+
+#: account/account.cpp:299
+#, kde-format
+msgctxt "@info:label Error message"
+msgid "Network request was interrupted"
+msgstr ""
+
+#: account/account.cpp:308 account/account.cpp:315
+#, kde-format
+msgctxt "@info:label Error message"
+msgid "Failed to parse credentials"
+msgstr ""
 
 #: account/notificationhandler.cpp:32 account/notificationhandler.cpp:33
 #, kde-format
@@ -855,14 +867,14 @@ msgstr "미디어 없음"
 msgid "This user hasn't posted any media yet."
 msgstr "이 사용자가 게시한 미디어가 없습니다."
 
-#: content/ui/AccountSwitchDialog.qml:25
+#: content/ui/AccountSwitchDialog.qml:26
 #, fuzzy, kde-format
 #| msgid "Switch Account"
 msgctxt "@title: dialog to switch between logged in accounts"
 msgid "Switch Account"
 msgstr "계정 전환"
 
-#: content/ui/AccountSwitchDialog.qml:50
+#: content/ui/AccountSwitchDialog.qml:53
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Add Account"
@@ -870,10 +882,18 @@ msgctxt "@button: login to or register a new account."
 msgid "Add Account"
 msgstr "계정 추가"
 
-#: content/ui/AccountSwitchDialog.qml:53
+#: content/ui/AccountSwitchDialog.qml:56
 #, kde-format
 msgid "Log in or create a new account"
 msgstr "기존 계정에 로그인하거나 새 계정 만들기"
+
+#: content/ui/AccountSwitchDialog.qml:146
+#: content/ui/Settings/AccountsPage.qml:81
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"This account has an issue and can't login, switch to it for more details."
+msgstr ""
 
 #: content/ui/Android/ShareAction.qml:15 content/ui/ShareAction.qml:19
 #, kde-format
@@ -1415,8 +1435,9 @@ msgid "Login Issue"
 msgstr "로그인 문제"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:27
-#, kde-format
-msgid "There was an issue logging into the server:<br><b>%1</b>"
+#, fuzzy, kde-format
+#| msgid "There was an issue logging into the server:<br><b>%1</b>"
+msgid "There was an issue logging into %1:<br><b>%2</b>"
 msgstr "서버에 로그인하는 중 오류 발생:<br><b>%1</b>"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:38
@@ -5169,122 +5190,141 @@ msgctxt "@action:button"
 msgid "Attach File"
 msgstr "파일 첨부"
 
-#: content/ui/StatusComposer/StatusComposer.qml:498
+#: content/ui/StatusComposer/StatusComposer.qml:500
+#: content/ui/StatusComposer/StatusComposer.qml:530
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "You can't have attachments and a poll in the same post."
+msgstr ""
+
+#: content/ui/StatusComposer/StatusComposer.qml:504
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "You have the maximum allowed number of attachments."
+msgstr ""
+
+#: content/ui/StatusComposer/StatusComposer.qml:507
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Attach file"
 msgstr "파일 첨부"
 
-#: content/ui/StatusComposer/StatusComposer.qml:509
+#: content/ui/StatusComposer/StatusComposer.qml:519
 #, kde-format
 msgctxt "@action:button"
 msgid "Attach Poll"
 msgstr "투표 첨부"
 
-#: content/ui/StatusComposer/StatusComposer.qml:514
+#: content/ui/StatusComposer/StatusComposer.qml:526
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "You can't modify or add a poll to an existing post."
+msgstr ""
+
+#: content/ui/StatusComposer/StatusComposer.qml:533
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add poll"
 msgstr "투표 추가"
 
-#: content/ui/StatusComposer/StatusComposer.qml:523
+#: content/ui/StatusComposer/StatusComposer.qml:543
 #, kde-format
 msgctxt "@action:button"
 msgid "Content Notice"
 msgstr "내용 경고"
 
-#: content/ui/StatusComposer/StatusComposer.qml:535
+#: content/ui/StatusComposer/StatusComposer.qml:555
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Content notice"
 msgstr "내용 경고"
 
-#: content/ui/StatusComposer/StatusComposer.qml:561
+#: content/ui/StatusComposer/StatusComposer.qml:581
 #, kde-format
 msgctxt "@action:button"
 msgid "Visibility"
 msgstr "표시 여부"
 
-#: content/ui/StatusComposer/StatusComposer.qml:569
+#: content/ui/StatusComposer/StatusComposer.qml:589
 #, kde-format
 msgctxt "@title"
 msgid "Visibility"
 msgstr "표시 여부"
 
-#: content/ui/StatusComposer/StatusComposer.qml:573
+#: content/ui/StatusComposer/StatusComposer.qml:593
 #, kde-format
 msgctxt "@item:inmenu Local to this server"
 msgid "Local"
 msgstr "로컬"
 
-#: content/ui/StatusComposer/StatusComposer.qml:579
+#: content/ui/StatusComposer/StatusComposer.qml:599
 #, kde-format
 msgctxt "@item:inmenu Public to the world"
 msgid "Public"
 msgstr "공개"
 
-#: content/ui/StatusComposer/StatusComposer.qml:584
+#: content/ui/StatusComposer/StatusComposer.qml:604
 #, kde-format
 msgctxt "@item:inmenu Public but less so"
 msgid "Unlisted"
 msgstr "미등재"
 
-#: content/ui/StatusComposer/StatusComposer.qml:589
+#: content/ui/StatusComposer/StatusComposer.qml:609
 #, kde-format
 msgctxt "@item:inmenu Only to followers"
 msgid "Private"
 msgstr "비공개"
 
-#: content/ui/StatusComposer/StatusComposer.qml:594
+#: content/ui/StatusComposer/StatusComposer.qml:614
 #, kde-format
 msgctxt "@item:inmenu Only to who is explicitly mentioned"
 msgid "Direct Message"
 msgstr "다이렉트 메시지"
 
-#: content/ui/StatusComposer/StatusComposer.qml:599
+#: content/ui/StatusComposer/StatusComposer.qml:619
 #, kde-format
 msgctxt "@info:tooltip Post visibility"
 msgid "Visibility"
 msgstr "표시 여부"
 
-#: content/ui/StatusComposer/StatusComposer.qml:607
+#: content/ui/StatusComposer/StatusComposer.qml:627
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Post language"
 msgstr "게시물 언어"
 
-#: content/ui/StatusComposer/StatusComposer.qml:637
+#: content/ui/StatusComposer/StatusComposer.qml:657
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Emoji"
 msgstr "이모지 추가"
 
-#: content/ui/StatusComposer/StatusComposer.qml:648
+#: content/ui/StatusComposer/StatusComposer.qml:668
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add emoji"
 msgstr "이모지 추가"
 
-#: content/ui/StatusComposer/StatusComposer.qml:678
+#: content/ui/StatusComposer/StatusComposer.qml:698
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1/%2</b>글자"
 
-#: content/ui/StatusComposer/StatusComposer.qml:688
-#: content/ui/StatusComposer/StatusComposer.qml:765
+#: content/ui/StatusComposer/StatusComposer.qml:708
+#: content/ui/StatusComposer/StatusComposer.qml:785
 #, kde-format
 msgctxt "@action:button Schedule something to be posted later"
 msgid "Schedule"
 msgstr "예약"
 
-#: content/ui/StatusComposer/StatusComposer.qml:739
+#: content/ui/StatusComposer/StatusComposer.qml:759
 #, kde-format
 msgctxt "@title"
 msgid "Alt Text Reminder"
 msgstr "대체 텍스트 알림"
 
-#: content/ui/StatusComposer/StatusComposer.qml:743
+#: content/ui/StatusComposer/StatusComposer.qml:763
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -5560,31 +5600,31 @@ msgctxt "@title:group Title for the group of account related actions"
 msgid "Account"
 msgstr "계정"
 
-#: tokodonapplication.cpp:62
+#: tokodonapplication.cpp:64
 #, kde-format
 msgctxt "@action:button"
 msgid "Switch to '%1'"
 msgstr "'%1'(으)로 전환"
 
-#: tokodonapplication.cpp:63 tokodonapplication.cpp:214
+#: tokodonapplication.cpp:65 tokodonapplication.cpp:216
 #, kde-format
 msgctxt "@action:button"
 msgid "Configure '%1'"
 msgstr "'%1' 설정"
 
-#: tokodonapplication.cpp:70
+#: tokodonapplication.cpp:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Account"
 msgstr "계정 추가"
 
-#: tokodonapplication.cpp:85
+#: tokodonapplication.cpp:87
 #, kde-format
 msgctxt "@action:button"
 msgid "Write a New Post"
 msgstr "새 게시물 쓰기"
 
-#: tokodonapplication.cpp:94
+#: tokodonapplication.cpp:96
 #, fuzzy, kde-format
 #| msgctxt "@info:status"
 #| msgid "End of Timeline"
@@ -5592,7 +5632,7 @@ msgctxt "@action:button Home Timeline"
 msgid "Open Home Timeline"
 msgstr "타임라인의 끝"
 
-#: tokodonapplication.cpp:100
+#: tokodonapplication.cpp:102
 #, fuzzy, kde-format
 #| msgctxt "@action:button Account Notifications"
 #| msgid "Notifications"
@@ -5600,7 +5640,7 @@ msgctxt "@action:button Account Notifications"
 msgid "Open Notifications"
 msgstr "알림"
 
-#: tokodonapplication.cpp:106
+#: tokodonapplication.cpp:108
 #, fuzzy, kde-format
 #| msgctxt "@action:button Follows that require explicit allow/deny"
 #| msgid "Follow Requests"
@@ -5608,7 +5648,7 @@ msgctxt "@action:button Follows that require explicit allow/deny"
 msgid "Open Follow Requests"
 msgstr "팔로우 요청"
 
-#: tokodonapplication.cpp:112
+#: tokodonapplication.cpp:114
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Local Timeline"
@@ -5616,7 +5656,7 @@ msgctxt "@action:button Local timeline of posts from the account's own server"
 msgid "Open Local Timeline"
 msgstr "로컬 타임라인"
 
-#: tokodonapplication.cpp:118
+#: tokodonapplication.cpp:120
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Global Timeline"
@@ -5625,14 +5665,14 @@ msgctxt ""
 msgid "Open Global Timeline"
 msgstr "연합 타임라인"
 
-#: tokodonapplication.cpp:124
+#: tokodonapplication.cpp:126
 #, fuzzy, kde-format
 #| msgid "Conversations"
 msgctxt "@action:button Direct one-on-one messages between users"
 msgid "Open Conversations"
 msgstr "대화"
 
-#: tokodonapplication.cpp:130
+#: tokodonapplication.cpp:132
 #, fuzzy, kde-format
 #| msgctxt "@action:button This account's favorited posts"
 #| msgid "Favorites"
@@ -5640,7 +5680,7 @@ msgctxt "@action:button This account's favorited posts"
 msgid "Open Favorites"
 msgstr "좋아요"
 
-#: tokodonapplication.cpp:136
+#: tokodonapplication.cpp:138
 #, fuzzy, kde-format
 #| msgctxt "@action:button This account's bookmarked posts"
 #| msgid "Bookmarks"
@@ -5648,14 +5688,14 @@ msgctxt "@action:button This account's bookmarked posts"
 msgid "Open Bookmarks"
 msgstr "북마크"
 
-#: tokodonapplication.cpp:142
+#: tokodonapplication.cpp:144
 #, fuzzy, kde-format
 #| msgid "Explore"
 msgctxt "@action:button Explore this server's trending posts, news, and more"
 msgid "Open Explore"
 msgstr "탐색"
 
-#: tokodonapplication.cpp:148
+#: tokodonapplication.cpp:150
 #, fuzzy, kde-format
 #| msgctxt "@action:button A list of this account's followed accounts"
 #| msgid "Following"
@@ -5663,7 +5703,7 @@ msgctxt "@action:button A list of this account's followed accounts"
 msgid "Open Following"
 msgstr "팔로잉"
 
-#: tokodonapplication.cpp:154
+#: tokodonapplication.cpp:156
 #, fuzzy, kde-format
 #| msgctxt "@action:button Search for users, posts and tags"
 #| msgid "Search"
@@ -5671,7 +5711,7 @@ msgctxt "@action:button Search for users, posts and tags"
 msgid "Open Search"
 msgstr "검색"
 
-#: tokodonapplication.cpp:160
+#: tokodonapplication.cpp:162
 #, fuzzy, kde-format
 #| msgctxt "@abel Account preferences"
 #| msgid "Open Server in Browser"
@@ -5679,7 +5719,7 @@ msgctxt "@action:button"
 msgid "Open Server Information"
 msgstr "브라우저에서 서버 열기"
 
-#: tokodonapplication.cpp:166
+#: tokodonapplication.cpp:168
 #, fuzzy, kde-format
 #| msgid "Open Link"
 msgctxt ""
@@ -5688,14 +5728,14 @@ msgctxt ""
 msgid "Open Lists"
 msgstr "링크 열기"
 
-#: tokodonapplication.cpp:172
+#: tokodonapplication.cpp:174
 #, fuzzy, kde-format
 #| msgid "View Profile"
 msgctxt "@action:button This account's profile"
 msgid "Open Profile"
 msgstr "프로필 보기"
 
-#: tokodonapplication.cpp:206
+#: tokodonapplication.cpp:208
 #, kde-format
 msgctxt "@action:button"
 msgid "Switch '%1'"
