@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-05 00:42+0000\n"
-"PO-Revision-Date: 2025-05-26 12:31+0100\n"
+"PO-Revision-Date: 2025-06-05 14:44+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -147,13 +147,13 @@ msgstr "No se ha podido editar la nota sobre una cuenta"
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Network request was interrupted"
-msgstr ""
+msgstr "Se ha interrumpido la petición de la red"
 
 #: account/account.cpp:308 account/account.cpp:315
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Failed to parse credentials"
-msgstr ""
+msgstr "No se han podido analizar las credenciales"
 
 #: account/notificationhandler.cpp:32 account/notificationhandler.cpp:33
 #, kde-format
@@ -898,6 +898,8 @@ msgctxt "@info:tooltip"
 msgid ""
 "This account has an issue and can't login, switch to it for more details."
 msgstr ""
+"Esta cuenta tiene un problema y no se puede iniciar sesión. Cambie a ella "
+"para más detalles."
 
 #: content/ui/Android/ShareAction.qml:15 content/ui/ShareAction.qml:19
 #, kde-format
@@ -1447,10 +1449,9 @@ msgid "Login Issue"
 msgstr "Problema de inicio de sesión"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:27
-#, fuzzy, kde-format
-#| msgid "There was an issue logging into the server:<br><b>%1</b>"
+#, kde-format
 msgid "There was an issue logging into %1:<br><b>%2</b>"
-msgstr "Ha ocurrido un problema al iniciar sesión en el servidor:<br><b>%1</b>"
+msgstr "Ha ocurrido un problema al iniciar sesión en %1:<br><b>%2</b>"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:38
 #, kde-format
@@ -5230,13 +5231,13 @@ msgstr "Adjuntar archivo"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You can't have attachments and a poll in the same post."
-msgstr ""
+msgstr "No se pueden incluir adjuntos y una encuesta en la misma publicación."
 
 #: content/ui/StatusComposer/StatusComposer.qml:504
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You have the maximum allowed number of attachments."
-msgstr ""
+msgstr "Ha alcanzado el número máximo de adjuntos permitidos."
 
 #: content/ui/StatusComposer/StatusComposer.qml:507
 #, kde-format
@@ -5254,7 +5255,7 @@ msgstr "Adjuntar encuesta"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You can't modify or add a poll to an existing post."
-msgstr ""
+msgstr "No puede modificar ni añadir una encuesta a una publicación existente."
 
 #: content/ui/StatusComposer/StatusComposer.qml:533
 #, kde-format

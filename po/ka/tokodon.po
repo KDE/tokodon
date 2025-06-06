@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-05 00:42+0000\n"
-"PO-Revision-Date: 2025-05-26 04:01+0200\n"
+"PO-Revision-Date: 2025-06-05 05:42+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -146,13 +146,13 @@ msgstr "ანგარიშის შესახებ შენიშვნ�
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Network request was interrupted"
-msgstr ""
+msgstr "ქსელური მოთხოვნა შეწყვეტილ იქნა"
 
 #: account/account.cpp:308 account/account.cpp:315
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Failed to parse credentials"
-msgstr ""
+msgstr "ავტორიზაციის დეტალების დამუშავება ჩავარდა"
 
 #: account/notificationhandler.cpp:32 account/notificationhandler.cpp:33
 #, kde-format
@@ -898,6 +898,8 @@ msgctxt "@info:tooltip"
 msgid ""
 "This account has an issue and can't login, switch to it for more details."
 msgstr ""
+"ამ ანგარიშს აქვს პრობლემები და მისით შესვლა შეუძლებელია. მეტი დეტალებისთვის "
+"გადაერთეთ მასზე."
 
 #: content/ui/Android/ShareAction.qml:15 content/ui/ShareAction.qml:19
 #, kde-format
@@ -1443,10 +1445,9 @@ msgid "Login Issue"
 msgstr "შესვლის პრობლემა"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:27
-#, fuzzy, kde-format
-#| msgid "There was an issue logging into the server:<br><b>%1</b>"
+#, kde-format
 msgid "There was an issue logging into %1:<br><b>%2</b>"
-msgstr "პრობლემა სერვერზე შესვლისას:<br><b>%1</b>"
+msgstr "პროვლემა %1-ზე შესვლისას:<br><b>%2</b>"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:38
 #, kde-format
@@ -5210,12 +5211,13 @@ msgstr "ფაილის მიმაგრება"
 msgctxt "@info:tooltip"
 msgid "You can't have attachments and a poll in the same post."
 msgstr ""
+"ერთ პოსტზე ერთდროულად ფაილების მიმაგრების და ხმის მიცემის უფლება არ გაქვთ."
 
 #: content/ui/StatusComposer/StatusComposer.qml:504
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You have the maximum allowed number of attachments."
-msgstr ""
+msgstr "გაქვთ მიმაგრებული ფაილების მაქსიმალური დასაშვები რაოდენობა."
 
 #: content/ui/StatusComposer/StatusComposer.qml:507
 #, kde-format
@@ -5234,6 +5236,7 @@ msgstr "გამოკითხვის მიმაგრება"
 msgctxt "@info:tooltip"
 msgid "You can't modify or add a poll to an existing post."
 msgstr ""
+"არსებულ პოსტის შეცვლის, ან მასზე ხმის მიცემის დამატების უფლება არ გაქვთ."
 
 #: content/ui/StatusComposer/StatusComposer.qml:533
 #, kde-format

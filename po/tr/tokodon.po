@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-05 00:42+0000\n"
-"PO-Revision-Date: 2025-05-27 00:46+0300\n"
+"PO-Revision-Date: 2025-06-05 11:58+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -146,13 +146,13 @@ msgstr "Bir hesap üzerine olan not düzenlenemedi"
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Network request was interrupted"
-msgstr ""
+msgstr "Ağ isteği yarıda kesildi"
 
 #: account/account.cpp:308 account/account.cpp:315
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Failed to parse credentials"
-msgstr ""
+msgstr "Kimlik bilgileri ayrıştırılamadı"
 
 #: account/notificationhandler.cpp:32 account/notificationhandler.cpp:33
 #, kde-format
@@ -902,6 +902,8 @@ msgctxt "@info:tooltip"
 msgid ""
 "This account has an issue and can't login, switch to it for more details."
 msgstr ""
+"Bu hesapta bir sorun var ve oturum açılamıyor. Ayrıntılar için bu hesaba "
+"geçiş yapın."
 
 #: content/ui/Android/ShareAction.qml:15 content/ui/ShareAction.qml:19
 #, kde-format
@@ -1448,10 +1450,9 @@ msgid "Login Issue"
 msgstr "Oturum Açma Sorunu"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:27
-#, fuzzy, kde-format
-#| msgid "There was an issue logging into the server:<br><b>%1</b>"
+#, kde-format
 msgid "There was an issue logging into %1:<br><b>%2</b>"
-msgstr "Sunucuya oturum açarken bir hata oluştu:<br><b>%1</b>"
+msgstr "%1 konumuna oturum açarken bir hata oluştu:<br><b>%2</b>"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:38
 #, kde-format
@@ -5215,13 +5216,13 @@ msgstr "Dosya İliştir"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You can't have attachments and a poll in the same post."
-msgstr ""
+msgstr "Aynı gönderide hem ekler hem de anket olamaz."
 
 #: content/ui/StatusComposer/StatusComposer.qml:504
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You have the maximum allowed number of attachments."
-msgstr ""
+msgstr "İzin verilen en çok sayıda ek sayısına ulaştınız."
 
 #: content/ui/StatusComposer/StatusComposer.qml:507
 #, kde-format
@@ -5240,6 +5241,8 @@ msgstr "Anket İliştir"
 msgctxt "@info:tooltip"
 msgid "You can't modify or add a poll to an existing post."
 msgstr ""
+"Var olan bir gönderideki ankette değişiklik yapamaz veya yeni bir anket "
+"ekleyemezsiniz."
 
 #: content/ui/StatusComposer/StatusComposer.qml:533
 #, kde-format

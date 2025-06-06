@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-05 00:42+0000\n"
-"PO-Revision-Date: 2025-05-26 11:11+0200\n"
+"PO-Revision-Date: 2025-06-05 12:33+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -146,13 +146,13 @@ msgstr "Kon notitie over een account niet bewerken"
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Network request was interrupted"
-msgstr ""
+msgstr "Netwerkverzoek was onderbroken"
 
 #: account/account.cpp:308 account/account.cpp:315
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Failed to parse credentials"
-msgstr ""
+msgstr "Ontleden van credentials is mislukt"
 
 #: account/notificationhandler.cpp:32 account/notificationhandler.cpp:33
 #, kde-format
@@ -902,6 +902,8 @@ msgctxt "@info:tooltip"
 msgid ""
 "This account has an issue and can't login, switch to it for more details."
 msgstr ""
+"Dit account heeft een probleem en kan zich niet aanmelden, schakel er naar "
+"om voor meer details."
 
 #: content/ui/Android/ShareAction.qml:15 content/ui/ShareAction.qml:19
 #, kde-format
@@ -1450,10 +1452,9 @@ msgid "Login Issue"
 msgstr "Probleem met aanmelden"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:27
-#, fuzzy, kde-format
-#| msgid "There was an issue logging into the server:<br><b>%1</b>"
+#, kde-format
 msgid "There was an issue logging into %1:<br><b>%2</b>"
-msgstr "Er was een probleem met aanmelden bij de server:<br><b>%1</b>"
+msgstr "Er was een probleem met aanmelden bij %1:<br><b>%2</b>"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:38
 #, kde-format
@@ -5226,13 +5227,13 @@ msgstr "Bestand bijvoegen"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You can't have attachments and a poll in the same post."
-msgstr ""
+msgstr "U kunt geen bijlagen en een peiling in dezelfde post hebben."
 
 #: content/ui/StatusComposer/StatusComposer.qml:504
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You have the maximum allowed number of attachments."
-msgstr ""
+msgstr "U hebt het maximale toegestane aantal bijlagen."
 
 #: content/ui/StatusComposer/StatusComposer.qml:507
 #, kde-format
@@ -5251,6 +5252,8 @@ msgstr "Opiniepeiling bijvoegen"
 msgctxt "@info:tooltip"
 msgid "You can't modify or add a poll to an existing post."
 msgstr ""
+"U kunt een peiling aan een bestaande post niet wijzigen of er iets aan "
+"toevoegen."
 
 #: content/ui/StatusComposer/StatusComposer.qml:533
 #, kde-format

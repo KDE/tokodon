@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-05 00:42+0000\n"
-"PO-Revision-Date: 2025-05-26 13:48+0200\n"
+"PO-Revision-Date: 2025-06-05 10:42+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -149,13 +149,13 @@ msgstr "No s'ha pogut editar una nota quant al compte"
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Network request was interrupted"
-msgstr ""
+msgstr "S'ha interromput la sol·licitud de la xarxa"
 
 #: account/account.cpp:308 account/account.cpp:315
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Failed to parse credentials"
-msgstr ""
+msgstr "Ha fallat en analitzar les credencials"
 
 #: account/notificationhandler.cpp:32 account/notificationhandler.cpp:33
 #, kde-format
@@ -905,6 +905,8 @@ msgctxt "@info:tooltip"
 msgid ""
 "This account has an issue and can't login, switch to it for more details."
 msgstr ""
+"Aquest compte té un problema i no pot iniciar la sessió, canvieu-hi per a "
+"més detalls."
 
 #: content/ui/Android/ShareAction.qml:15 content/ui/ShareAction.qml:19
 #, kde-format
@@ -1456,11 +1458,9 @@ msgid "Login Issue"
 msgstr "Problema d'inici de sessió"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:27
-#, fuzzy, kde-format
-#| msgid "There was an issue logging into the server:<br><b>%1</b>"
+#, kde-format
 msgid "There was an issue logging into %1:<br><b>%2</b>"
-msgstr ""
-"Hi ha hagut un problema en iniciar la sessió amb el servidor:<br><b>%1</b>"
+msgstr "Hi ha hagut un problema en iniciar la sessió a %1:<br><b>%2</b>"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:38
 #, kde-format
@@ -5239,13 +5239,13 @@ msgstr "Adjunta un fitxer"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You can't have attachments and a poll in the same post."
-msgstr ""
+msgstr "No podeu tenir adjunts i una votació a la mateixa publicació."
 
 #: content/ui/StatusComposer/StatusComposer.qml:504
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You have the maximum allowed number of attachments."
-msgstr ""
+msgstr "Heu arribat al nombre màxim permès d'adjunts."
 
 #: content/ui/StatusComposer/StatusComposer.qml:507
 #, kde-format
@@ -5263,7 +5263,7 @@ msgstr "Adjunta una votació"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You can't modify or add a poll to an existing post."
-msgstr ""
+msgstr "No podeu modificar o afegir una votació a una publicació existent."
 
 #: content/ui/StatusComposer/StatusComposer.qml:533
 #, kde-format

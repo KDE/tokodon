@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-05 00:42+0000\n"
-"PO-Revision-Date: 2025-05-26 06:09+0200\n"
+"PO-Revision-Date: 2025-06-05 20:43+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -147,13 +147,13 @@ msgstr "Ni bilo mogoče urediti opombe o računu"
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Network request was interrupted"
-msgstr ""
+msgstr "Omrežna zahteva je bila prekinjena"
 
 #: account/account.cpp:308 account/account.cpp:315
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Failed to parse credentials"
-msgstr ""
+msgstr "Razčlenjevanje poverilnic ni uspelo"
 
 #: account/notificationhandler.cpp:32 account/notificationhandler.cpp:33
 #, kde-format
@@ -909,6 +909,8 @@ msgctxt "@info:tooltip"
 msgid ""
 "This account has an issue and can't login, switch to it for more details."
 msgstr ""
+"Ta račun ima težavo in se ne more prijaviti. Za več podrobnosti preklopite "
+"nanj."
 
 #: content/ui/Android/ShareAction.qml:15 content/ui/ShareAction.qml:19
 #, kde-format
@@ -1456,10 +1458,9 @@ msgid "Login Issue"
 msgstr "Težava pri prijavi"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:27
-#, fuzzy, kde-format
-#| msgid "There was an issue logging into the server:<br><b>%1</b>"
+#, kde-format
 msgid "There was an issue logging into %1:<br><b>%2</b>"
-msgstr "Pri prijavi v strežnik je prišlo do težave:<br><b>%1</b>"
+msgstr "Pri prijavi na %1 je prišlo do težave:<br><b>%2</b>"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:38
 #, kde-format
@@ -5254,13 +5255,13 @@ msgstr "Priloži datoteko"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You can't have attachments and a poll in the same post."
-msgstr ""
+msgstr "V isti objavi ne morete imeti prilog in ankete."
 
 #: content/ui/StatusComposer/StatusComposer.qml:504
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You have the maximum allowed number of attachments."
-msgstr ""
+msgstr "Imate največje dovoljeno število prilog."
 
 #: content/ui/StatusComposer/StatusComposer.qml:507
 #, kde-format
@@ -5278,7 +5279,7 @@ msgstr "Priloži anketo"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You can't modify or add a poll to an existing post."
-msgstr ""
+msgstr "Obstoječe objave ne morete spremeniti ali ji dodati ankete."
 
 #: content/ui/StatusComposer/StatusComposer.qml:533
 #, kde-format

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-05 00:42+0000\n"
-"PO-Revision-Date: 2025-05-26 08:57+0300\n"
+"PO-Revision-Date: 2025-06-05 17:49+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -146,13 +146,13 @@ msgstr "Не вдалося змінити нотатку щодо обліко�
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Network request was interrupted"
-msgstr ""
+msgstr "Запит до мережі було перервано"
 
 #: account/account.cpp:308 account/account.cpp:315
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Failed to parse credentials"
-msgstr ""
+msgstr "Не вдалося обробити реєстраційні дані"
 
 #: account/notificationhandler.cpp:32 account/notificationhandler.cpp:33
 #, kde-format
@@ -910,6 +910,8 @@ msgctxt "@info:tooltip"
 msgid ""
 "This account has an issue and can't login, switch to it for more details."
 msgstr ""
+"Цей обліковий запис є проблемним і до нього не можна увійти, перемкніться на "
+"нього, щоб дізнатися більше."
 
 #: content/ui/Android/ShareAction.qml:15 content/ui/ShareAction.qml:19
 #, kde-format
@@ -1462,10 +1464,9 @@ msgid "Login Issue"
 msgstr "Проблеми із входом"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:27
-#, fuzzy, kde-format
-#| msgid "There was an issue logging into the server:<br><b>%1</b>"
+#, kde-format
 msgid "There was an issue logging into %1:<br><b>%2</b>"
-msgstr "Під час спроби увійти до сервера виникли проблеми:<br><b>%1</b>"
+msgstr "Під час спроби увійти до %1 виникли проблеми:<br><b>%2</b>"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:38
 #, kde-format
@@ -5248,13 +5249,13 @@ msgstr "Долучити файл"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You can't have attachments and a poll in the same post."
-msgstr ""
+msgstr "Ви не можете поєднувати долучення і опитування в одному дописі."
 
 #: content/ui/StatusComposer/StatusComposer.qml:504
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You have the maximum allowed number of attachments."
-msgstr ""
+msgstr "Вами досягнуто максимальної дозволеної кількості долучень."
 
 #: content/ui/StatusComposer/StatusComposer.qml:507
 #, kde-format
@@ -5273,6 +5274,8 @@ msgstr "Долучити опитування"
 msgctxt "@info:tooltip"
 msgid "You can't modify or add a poll to an existing post."
 msgstr ""
+"Ви не можете змінювати опитування у наявному дописі або додавати його до "
+"допису."
 
 #: content/ui/StatusComposer/StatusComposer.qml:533
 #, kde-format
