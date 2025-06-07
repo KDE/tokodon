@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-05 00:42+0000\n"
-"PO-Revision-Date: 2025-05-31 16:04+0200\n"
+"PO-Revision-Date: 2025-06-06 11:52+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -145,13 +145,13 @@ msgstr "Kunde inte redigera anmärkning om ett konto"
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Network request was interrupted"
-msgstr ""
+msgstr "Nätverksbegäran avbröts"
 
 #: account/account.cpp:308 account/account.cpp:315
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Failed to parse credentials"
-msgstr ""
+msgstr "Misslyckades tolka inloggningsinformation"
 
 #: account/notificationhandler.cpp:32 account/notificationhandler.cpp:33
 #, kde-format
@@ -897,6 +897,8 @@ msgctxt "@info:tooltip"
 msgid ""
 "This account has an issue and can't login, switch to it for more details."
 msgstr ""
+"Kontot har ett problem och det går inte att logga in. Gå till det för mer "
+"information."
 
 #: content/ui/Android/ShareAction.qml:15 content/ui/ShareAction.qml:19
 #, kde-format
@@ -1441,10 +1443,9 @@ msgid "Login Issue"
 msgstr "Inloggningsproblem"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:27
-#, fuzzy, kde-format
-#| msgid "There was an issue logging into the server:<br><b>%1</b>"
+#, kde-format
 msgid "There was an issue logging into %1:<br><b>%2</b>"
-msgstr "Ett problem uppstod vid försök att logga in på servern:<br><b>%1</b>"
+msgstr "Ett problem uppstod vid försök att logga in på %1:<br><b>%2</b>"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:38
 #, kde-format
@@ -5208,13 +5209,13 @@ msgstr "Bifoga fil"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You can't have attachments and a poll in the same post."
-msgstr ""
+msgstr "Du kan inte ha bilagor och en omröstning i samma inlägg."
 
 #: content/ui/StatusComposer/StatusComposer.qml:504
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You have the maximum allowed number of attachments."
-msgstr ""
+msgstr "Du har det maximala antalet tillåtna bilagor."
 
 #: content/ui/StatusComposer/StatusComposer.qml:507
 #, kde-format
@@ -5233,6 +5234,7 @@ msgstr "Bifoga omröstning"
 msgctxt "@info:tooltip"
 msgid "You can't modify or add a poll to an existing post."
 msgstr ""
+"Du kan inte ändra eller lägga till en omröstning i ett befintligt inlägg."
 
 #: content/ui/StatusComposer/StatusComposer.qml:533
 #, kde-format

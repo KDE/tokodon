@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-05 00:42+0000\n"
-"PO-Revision-Date: 2025-04-16 13:10+0300\n"
+"PO-Revision-Date: 2025-06-04 16:03+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 24.12.3\n"
+"X-Generator: Lokalize 25.04.1\n"
 
 #: account/abstractaccount.cpp:33
 #, kde-format
@@ -428,13 +428,14 @@ msgctxt "@info:placeholder"
 msgid ""
 "No one is following this user, or they have chosen to hide this information."
 msgstr ""
+"Šim lietotājam neviens neseko vai ir izvēlējies šo informāciju nerādīt."
 
 #: account/socialgraphmodel.cpp:88
 #, kde-format
 msgctxt "@info:placeholder"
 msgid ""
 "This user isn't following anyone, or has chosen to hide this information."
-msgstr ""
+msgstr "Šis lietotājs nevienam neseko vai ir izvēlējies šo informāciju nerādīt"
 
 #: account/socialgraphmodel.cpp:90
 #, kde-format
@@ -882,16 +883,13 @@ msgid "This user hasn't posted any media yet."
 msgstr "Šis lietotājs vēl nav publicējis multividi."
 
 #: content/ui/AccountSwitchDialog.qml:26
-#, fuzzy, kde-format
-#| msgid "Switch Account"
+#, kde-format
 msgctxt "@title: dialog to switch between logged in accounts"
 msgid "Switch Account"
 msgstr "Pārslēgties starp kontiem"
 
 #: content/ui/AccountSwitchDialog.qml:53
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add Account"
+#, kde-format
 msgctxt "@button: login to or register a new account."
 msgid "Add Account"
 msgstr "Pievienot kontu"
@@ -1593,7 +1591,7 @@ msgstr "Izvēlieties serveri"
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose your Existing Server"
-msgstr ""
+msgstr "Izvēlieties savu esošo serveri"
 
 #: content/ui/LoginFlow/ServersPage.qml:38
 #, kde-format
@@ -1653,15 +1651,13 @@ msgstr ""
 "pakalpojumos)."
 
 #: content/ui/LoginFlow/WelcomePage.qml:80
-#, fuzzy, kde-format
-#| msgid "Register"
+#, kde-format
 msgctxt "@action:button Pick a Mastodon server"
 msgid "Register"
 msgstr "Reģistrēties"
 
 #: content/ui/LoginFlow/WelcomePage.qml:90
-#, fuzzy, kde-format
-#| msgid "Login"
+#, kde-format
 msgctxt "@action:button Use an existing Mastodon account"
 msgid "Login"
 msgstr "Ierakstīties"
@@ -3256,11 +3252,9 @@ msgid "Reported By:"
 msgstr "Ziņoja:"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:201
-#, fuzzy, kde-format
-#| msgctxt "@info: The comment attached with the ip rule"
-#| msgid "Comment"
+#, kde-format
 msgid "Comment:"
-msgstr "Komentārs"
+msgstr "Komentārs:"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:224
 #, kde-format
@@ -3351,17 +3345,16 @@ msgid "Follows"
 msgstr "Seko"
 
 #: content/ui/NotificationPage.qml:188
-#, fuzzy, kde-format
-#| msgid "News"
+#, kde-format
 msgctxt "@info:label New notifications"
 msgid "New"
-msgstr "Ziņas"
+msgstr "Jauns"
 
 #: content/ui/NotificationPage.qml:188
 #, kde-format
 msgctxt "@info:label Previous notifications"
 msgid "Previous"
-msgstr ""
+msgstr "Iepriekšējais"
 
 #: content/ui/NotificationPage.qml:315
 #, kde-format
@@ -5438,7 +5431,7 @@ msgctxt ""
 "@info:label %1 is the native language name, and %2 is the localized name. "
 "For example, 'dansk (Danish)'"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: editor/listeditorbackend.cpp:121
 #, kde-format
@@ -5514,10 +5507,9 @@ msgid "Browse the Fediverse"
 msgstr "Pārlūkojiet Fediversu"
 
 #: main.cpp:106
-#, fuzzy, kde-format
-#| msgid "© 2021-2024 KDE Community"
+#, kde-format
 msgid "© 2021-2025 KDE Community"
-msgstr "© 2021—2024 KDE kopiena"
+msgstr "© 2021—2025 KDE kopiena"
 
 #: main.cpp:107
 #, kde-format
@@ -5666,116 +5658,91 @@ msgid "Write a New Post"
 msgstr "Rakstīt jaunu ierakstu"
 
 #: tokodonapplication.cpp:96
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "End of Timeline"
+#, kde-format
 msgctxt "@action:button Home Timeline"
 msgid "Open Home Timeline"
-msgstr "Ziņu lentes beigas"
+msgstr "Atvērt mājas ziņu lenti"
 
 #: tokodonapplication.cpp:102
-#, fuzzy, kde-format
-#| msgctxt "@action:button Account Notifications"
-#| msgid "Notifications"
+#, kde-format
 msgctxt "@action:button Account Notifications"
 msgid "Open Notifications"
-msgstr "Paziņojumi"
+msgstr "Atvērt paziņojumus"
 
 #: tokodonapplication.cpp:108
-#, fuzzy, kde-format
-#| msgctxt "@action:button Follows that require explicit allow/deny"
-#| msgid "Follow Requests"
+#, kde-format
 msgctxt "@action:button Follows that require explicit allow/deny"
 msgid "Open Follow Requests"
-msgstr "Sekošanas lūgums"
+msgstr "Atcērt sekošanas lūgumus"
 
 #: tokodonapplication.cpp:114
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Local Timeline"
+#, kde-format
 msgctxt "@action:button Local timeline of posts from the account's own server"
 msgid "Open Local Timeline"
-msgstr "Vietējā ziņu lente"
+msgstr "Atvērt vietējo zinu lenti"
 
 #: tokodonapplication.cpp:120
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Local Timeline"
+#, kde-format
 msgctxt ""
 "@action:button Global timeline of posts from the entire Fediverse network"
 msgid "Open Global Timeline"
-msgstr "Vietējā ziņu lente"
+msgstr "Atvērt globālo ziņu lenti"
 
 #: tokodonapplication.cpp:126
-#, fuzzy, kde-format
-#| msgid "Conversations"
+#, kde-format
 msgctxt "@action:button Direct one-on-one messages between users"
 msgid "Open Conversations"
-msgstr "Sarunas"
+msgstr "Atvērt sarunas"
 
 #: tokodonapplication.cpp:132
-#, fuzzy, kde-format
-#| msgctxt "@action:button This account's favorited posts"
-#| msgid "Favorites"
+#, kde-format
 msgctxt "@action:button This account's favorited posts"
 msgid "Open Favorites"
-msgstr "Zvaigznītes"
+msgstr "Atvērt ar zvaigznīti atzīmēto"
 
 #: tokodonapplication.cpp:138
-#, fuzzy, kde-format
-#| msgctxt "@action:button This account's bookmarked posts"
-#| msgid "Bookmarks"
+#, kde-format
 msgctxt "@action:button This account's bookmarked posts"
 msgid "Open Bookmarks"
-msgstr "Grāmatzīmes"
+msgstr "Atvērt grāmatzīmes"
 
 #: tokodonapplication.cpp:144
-#, fuzzy, kde-format
-#| msgid "Explore"
+#, kde-format
 msgctxt "@action:button Explore this server's trending posts, news, and more"
 msgid "Open Explore"
-msgstr "Izpētīt"
+msgstr "Atvērt izpētīšanu"
 
 #: tokodonapplication.cpp:150
-#, fuzzy, kde-format
-#| msgctxt "@action:button A list of this account's followed accounts"
-#| msgid "Following"
+#, kde-format
 msgctxt "@action:button A list of this account's followed accounts"
 msgid "Open Following"
-msgstr "Sekoju"
+msgstr "Atvērt sekojamos"
 
 #: tokodonapplication.cpp:156
-#, fuzzy, kde-format
-#| msgctxt "@action:button Search for users, posts and tags"
-#| msgid "Search"
+#, kde-format
 msgctxt "@action:button Search for users, posts and tags"
 msgid "Open Search"
-msgstr "Meklēt"
+msgstr "Atvērt meklēšanu"
 
 #: tokodonapplication.cpp:162
-#, fuzzy, kde-format
-#| msgctxt "@abel Account preferences"
-#| msgid "Open Server in Browser"
+#, kde-format
 msgctxt "@action:button"
 msgid "Open Server Information"
-msgstr "Atvērt serveri pārlūkā"
+msgstr "Atvērt servera informāciju"
 
 #: tokodonapplication.cpp:168
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar"
-#| msgid "Open Post"
+#, kde-format
 msgctxt ""
 "@action:button This account's lists, or timelines consisting of a groups of "
 "accounts"
 msgid "Open Lists"
-msgstr "Atvērt ierakstu"
+msgstr "Atvērt sarakstus"
 
 #: tokodonapplication.cpp:174
-#, fuzzy, kde-format
-#| msgid "View Profile"
+#, kde-format
 msgctxt "@action:button This account's profile"
 msgid "Open Profile"
-msgstr "Skatīties profilu"
+msgstr "Atvērt profilu"
 
 #: tokodonapplication.cpp:208
 #, kde-format
