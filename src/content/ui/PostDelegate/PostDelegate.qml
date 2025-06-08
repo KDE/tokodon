@@ -514,7 +514,7 @@ QQC2.ItemDelegate {
                 interacted: root.reblogged
                 interactionColor: "#63c605"
 
-                enabled: root.visibility !== Post.Direct && root.visibility !== Post.Private
+                enabled: root.visibility !== Post.Direct && (root.visibility !== Post.Private || root.isSelf)
 
                 iconName: 'boost'
                 interactedIconName: 'boost-boosted'
@@ -523,7 +523,7 @@ QQC2.ItemDelegate {
                 tooltip: {
                     if (root.visibility === Post.Direct) {
                         return i18n("Cannot boost direct messages");
-                    } else if (root.visibility === Post.Private) {
+                    } else if (root.visibility === Post.Private && !root.isSelf) {
                         return i18n("Cannot boost private posts");
                     } else {
                         return i18nc("Share a post", "Boost");
