@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-05 00:42+0000\n"
-"PO-Revision-Date: 2025-05-28 23:26+0900\n"
+"PO-Revision-Date: 2025-06-09 00:05+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -148,13 +148,13 @@ msgstr "無法編輯關於帳號的簡介"
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Network request was interrupted"
-msgstr ""
+msgstr "網路請求已中斷"
 
 #: account/account.cpp:308 account/account.cpp:315
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Failed to parse credentials"
-msgstr ""
+msgstr "剖析認證資訊失敗"
 
 #: account/notificationhandler.cpp:32 account/notificationhandler.cpp:33
 #, kde-format
@@ -880,7 +880,7 @@ msgstr "登入或建立新帳號"
 msgctxt "@info:tooltip"
 msgid ""
 "This account has an issue and can't login, switch to it for more details."
-msgstr ""
+msgstr "這個帳號有問題而無法登入，請切換到它以見更多資訊。"
 
 #: content/ui/Android/ShareAction.qml:15 content/ui/ShareAction.qml:19
 #, kde-format
@@ -1416,10 +1416,9 @@ msgid "Login Issue"
 msgstr "登入問題"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:27
-#, fuzzy, kde-format
-#| msgid "There was an issue logging into the server:<br><b>%1</b>"
+#, kde-format
 msgid "There was an issue logging into %1:<br><b>%2</b>"
-msgstr "登入伺服器時發生問題：<br><b>%1</b>"
+msgstr "登入 %1 時發生問題：<br><b>%2</b>"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:38
 #, kde-format
@@ -5141,13 +5140,13 @@ msgstr "附加檔案"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You can't have attachments and a poll in the same post."
-msgstr ""
+msgstr "同一篇嘟文不能同時有附件和投票。"
 
 #: content/ui/StatusComposer/StatusComposer.qml:504
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You have the maximum allowed number of attachments."
-msgstr ""
+msgstr "已抵達附件數量上限。"
 
 #: content/ui/StatusComposer/StatusComposer.qml:507
 #, kde-format
@@ -5165,7 +5164,7 @@ msgstr "附加投票"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You can't modify or add a poll to an existing post."
-msgstr ""
+msgstr "不能修改或加入投票到現存的嘟文。"
 
 #: content/ui/StatusComposer/StatusComposer.qml:533
 #, kde-format

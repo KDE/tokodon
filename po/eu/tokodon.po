@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-05 00:42+0000\n"
-"PO-Revision-Date: 2025-04-22 10:53+0200\n"
+"PO-Revision-Date: 2025-06-08 11:16+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.04.0\n"
+"X-Generator: Lokalize 25.04.2\n"
 
 #: account/abstractaccount.cpp:33
 #, kde-format
@@ -148,13 +148,13 @@ msgstr "Ezin izan du kontu bati buruzko oharra editatu"
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Network request was interrupted"
-msgstr ""
+msgstr "Sareko eskaera eten egin da"
 
 #: account/account.cpp:308 account/account.cpp:315
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Failed to parse credentials"
-msgstr ""
+msgstr "Egiaztagiriak analizatzea huts egin du"
 
 #: account/notificationhandler.cpp:32 account/notificationhandler.cpp:33
 #, kde-format
@@ -429,6 +429,8 @@ msgctxt "@info:placeholder"
 msgid ""
 "No one is following this user, or they have chosen to hide this information."
 msgstr ""
+"Inork ez dio erabiltzaile honi jarraitzen, edo informazio hori ezkutatzeko "
+"hautua egin dute."
 
 #: account/socialgraphmodel.cpp:88
 #, kde-format
@@ -436,6 +438,8 @@ msgctxt "@info:placeholder"
 msgid ""
 "This user isn't following anyone, or has chosen to hide this information."
 msgstr ""
+"Erabiltzaile honek ez du inor jarraitzen, edo informazio hori ezkutatzeko "
+"hautua egin du."
 
 #: account/socialgraphmodel.cpp:90
 #, kde-format
@@ -883,16 +887,13 @@ msgid "This user hasn't posted any media yet."
 msgstr "Erabiltzaile horrek ez du oraindik hedabiderik bidali."
 
 #: content/ui/AccountSwitchDialog.qml:26
-#, fuzzy, kde-format
-#| msgid "Switch Account"
+#, kde-format
 msgctxt "@title: dialog to switch between logged in accounts"
 msgid "Switch Account"
 msgstr "Aldatu kontua"
 
 #: content/ui/AccountSwitchDialog.qml:53
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add Account"
+#, kde-format
 msgctxt "@button: login to or register a new account."
 msgid "Add Account"
 msgstr "Gehitu kontua"
@@ -909,6 +910,8 @@ msgctxt "@info:tooltip"
 msgid ""
 "This account has an issue and can't login, switch to it for more details."
 msgstr ""
+"Kontu honek arazo bat du eta ezin da saioa hasi, xehetasun gehiago lortzeko, "
+"hartara aldatu."
 
 #: content/ui/Android/ShareAction.qml:15 content/ui/ShareAction.qml:19
 #, kde-format
@@ -1457,10 +1460,9 @@ msgid "Login Issue"
 msgstr "Saio-hasteko arazoa"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:27
-#, fuzzy, kde-format
-#| msgid "There was an issue logging into the server:<br><b>%1</b>"
+#, kde-format
 msgid "There was an issue logging into %1:<br><b>%2</b>"
-msgstr "Zerbitzarian saio-hasteko arazo bat egon da:<br><b>%1</b>"
+msgstr "%1(e)an saioa hasteko arazo bat egon da:<br><b>%2</b>"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:38
 #, kde-format
@@ -1597,7 +1599,7 @@ msgstr "Aukeratu zerbitzari bat"
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose your Existing Server"
-msgstr ""
+msgstr "Aukeratu zure zerbitzaria"
 
 #: content/ui/LoginFlow/ServersPage.qml:38
 #, kde-format
@@ -1659,18 +1661,16 @@ msgstr ""
 "bateragarrietan) dagoen jendearekin."
 
 #: content/ui/LoginFlow/WelcomePage.qml:80
-#, fuzzy, kde-format
-#| msgid "Register"
+#, kde-format
 msgctxt "@action:button Pick a Mastodon server"
 msgid "Register"
 msgstr "Erregistratu"
 
 #: content/ui/LoginFlow/WelcomePage.qml:90
-#, fuzzy, kde-format
-#| msgid "Login"
+#, kde-format
 msgctxt "@action:button Use an existing Mastodon account"
 msgid "Login"
-msgstr "Saio-hastea"
+msgstr "Saioa hasi"
 
 #: content/ui/LoginFlow/WelcomePage.qml:105
 #, kde-format
@@ -3265,11 +3265,9 @@ msgid "Reported By:"
 msgstr "Salatu du:"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:201
-#, fuzzy, kde-format
-#| msgctxt "@info: The comment attached with the ip rule"
-#| msgid "Comment"
+#, kde-format
 msgid "Comment:"
-msgstr "Iruzkina"
+msgstr "Iruzkina:"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:224
 #, kde-format
@@ -3360,18 +3358,16 @@ msgid "Follows"
 msgstr "Jarraitzen ditu"
 
 #: content/ui/NotificationPage.qml:188
-#, fuzzy, kde-format
-#| msgid "News"
+#, kde-format
 msgctxt "@info:label New notifications"
 msgid "New"
-msgstr "Albisteak"
+msgstr "Berria"
 
 #: content/ui/NotificationPage.qml:188
-#, fuzzy, kde-format
-#| msgid "Previous image"
+#, kde-format
 msgctxt "@info:label Previous notifications"
 msgid "Previous"
-msgstr "Aurreko irudia"
+msgstr "Aurrekoa"
 
 #: content/ui/NotificationPage.qml:315
 #, kde-format
@@ -5243,13 +5239,13 @@ msgstr "Erantsi fitxategia"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You can't have attachments and a poll in the same post."
-msgstr ""
+msgstr "Posta berean ezin dituzu eranskinak eta galdeketa bat izan."
 
 #: content/ui/StatusComposer/StatusComposer.qml:504
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You have the maximum allowed number of attachments."
-msgstr ""
+msgstr "Baimendutako eranskin kopurua handiena duzu."
 
 #: content/ui/StatusComposer/StatusComposer.qml:507
 #, kde-format
@@ -5267,7 +5263,7 @@ msgstr "Erantsi galdeketa"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You can't modify or add a poll to an existing post."
-msgstr ""
+msgstr "Dagoen posta bat ezin duzu aldatu ez eta galdeketa bat gehitu ere."
 
 #: content/ui/StatusComposer/StatusComposer.qml:533
 #, kde-format
@@ -5449,7 +5445,7 @@ msgctxt ""
 "@info:label %1 is the native language name, and %2 is the localized name. "
 "For example, 'dansk (Danish)'"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: editor/listeditorbackend.cpp:121
 #, kde-format
@@ -5676,121 +5672,97 @@ msgid "Write a New Post"
 msgstr "Idatzi posta berri bat"
 
 #: tokodonapplication.cpp:96
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "End of Timeline"
+#, kde-format
 msgctxt "@action:button Home Timeline"
 msgid "Open Home Timeline"
-msgstr "denbora-lerroaren bukaera"
+msgstr "Ireki Etxeko denbora-lerroa"
 
 #: tokodonapplication.cpp:102
-#, fuzzy, kde-format
-#| msgctxt "@action:button Account Notifications"
-#| msgid "Notifications"
+#, kde-format
 msgctxt "@action:button Account Notifications"
 msgid "Open Notifications"
-msgstr "Jakinarazpenak"
+msgstr "Ireki Jakinarazpenak"
 
 #: tokodonapplication.cpp:108
-#, fuzzy, kde-format
-#| msgctxt "@action:button Follows that require explicit allow/deny"
-#| msgid "Follow Requests"
+#, kde-format
 msgctxt "@action:button Follows that require explicit allow/deny"
 msgid "Open Follow Requests"
-msgstr "Jarraipen eskaerak"
+msgstr "Ireki Jarraipen eskaerak"
 
 #: tokodonapplication.cpp:114
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Local Timeline"
+#, kde-format
 msgctxt "@action:button Local timeline of posts from the account's own server"
 msgid "Open Local Timeline"
-msgstr "Tokiko denbora-lerroa"
+msgstr "Ireki Tokiko denbora-lerroa"
 
 #: tokodonapplication.cpp:120
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Local Timeline"
+#, kde-format
 msgctxt ""
 "@action:button Global timeline of posts from the entire Fediverse network"
 msgid "Open Global Timeline"
-msgstr "Tokiko denbora-lerroa"
+msgstr "Ireki Denbora-lerro globala"
 
 #: tokodonapplication.cpp:126
-#, fuzzy, kde-format
-#| msgid "Conversations"
+#, kde-format
 msgctxt "@action:button Direct one-on-one messages between users"
 msgid "Open Conversations"
-msgstr "Elkarrizketak"
+msgstr "Ireki Elkarrizketak"
 
 #: tokodonapplication.cpp:132
-#, fuzzy, kde-format
-#| msgctxt "@action:button This account's favorited posts"
-#| msgid "Favorites"
+#, kde-format
 msgctxt "@action:button This account's favorited posts"
 msgid "Open Favorites"
-msgstr "Gogokoak"
+msgstr "Ireki Gogokoak"
 
 #: tokodonapplication.cpp:138
-#, fuzzy, kde-format
-#| msgctxt "@action:button This account's bookmarked posts"
-#| msgid "Bookmarks"
+#, kde-format
 msgctxt "@action:button This account's bookmarked posts"
 msgid "Open Bookmarks"
-msgstr "Laster-markak"
+msgstr "Ireki Laster-markak"
 
 #: tokodonapplication.cpp:144
-#, fuzzy, kde-format
-#| msgid "Explore"
+#, kde-format
 msgctxt "@action:button Explore this server's trending posts, news, and more"
 msgid "Open Explore"
-msgstr "Esploratu"
+msgstr "Ireki Esploratu"
 
 #: tokodonapplication.cpp:150
-#, fuzzy, kde-format
-#| msgctxt "@action:button A list of this account's followed accounts"
-#| msgid "Following"
+#, kde-format
 msgctxt "@action:button A list of this account's followed accounts"
 msgid "Open Following"
-msgstr "Jarraitzen"
+msgstr "Ireki Jarraitzen"
 
 #: tokodonapplication.cpp:156
-#, fuzzy, kde-format
-#| msgctxt "@action:button Search for users, posts and tags"
-#| msgid "Search"
+#, kde-format
 msgctxt "@action:button Search for users, posts and tags"
 msgid "Open Search"
-msgstr "Bilatu"
+msgstr "Ireki Bilatu"
 
 #: tokodonapplication.cpp:162
-#, fuzzy, kde-format
-#| msgctxt "@abel Account preferences"
-#| msgid "Open Server in Browser"
+#, kde-format
 msgctxt "@action:button"
 msgid "Open Server Information"
-msgstr "Ireki Zerbitzaria arakatzailean"
+msgstr "Ireki Zerbitzariaren informazioa"
 
 #: tokodonapplication.cpp:168
-#, fuzzy, kde-format
-#| msgid "Open Link"
+#, kde-format
 msgctxt ""
 "@action:button This account's lists, or timelines consisting of a groups of "
 "accounts"
 msgid "Open Lists"
-msgstr "Ireki esteka"
+msgstr "Ireki Zerrendak"
 
 #: tokodonapplication.cpp:174
-#, fuzzy, kde-format
-#| msgid "View Profile"
+#, kde-format
 msgctxt "@action:button This account's profile"
 msgid "Open Profile"
-msgstr "Ikusi profila"
+msgstr "Ikusi Profila"
 
 #: tokodonapplication.cpp:208
 #, kde-format
 msgctxt "@action:button"
 msgid "Switch '%1'"
-msgstr "Aldatu '%1'(e)ra"
+msgstr "Aldatu '%1'"
 
 #: utils/emojimodel.cpp:127
 #, kde-format
