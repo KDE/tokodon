@@ -77,13 +77,16 @@ int TimelineModel::fetchedTimeline(const QByteArray &data, bool alwaysAppendToEn
         auto post = new Post(m_account, value.toObject(), this);
         if (!post->hidden()) {
             return post;
-        } else {
-            return nullptr;
         }
+        return nullptr;
     });
 
     posts.erase(std::ranges::remove_if(posts,
                                        [this](Post *post) {
+                                           if (post == nullptr) {
+                                               return true;
+                                           }
+
                                            // Don't show boosts if requested
                                            if (!m_showBoosts && post->boostIdentity()) {
                                                return true;
@@ -100,7 +103,7 @@ int TimelineModel::fetchedTimeline(const QByteArray &data, bool alwaysAppendToEn
                                                return true;
                                            }
 
-                                           return post == nullptr;
+                                           return false;
                                        })
                     .begin(),
                 posts.end());
