@@ -21,6 +21,7 @@ MediaContainer {
     property alias showControls: mediaControls.visible
     property bool looping: false
     property alias loading: busyIndicator.visible
+    property real volume: 1.0
 
     signal errorOccurred(error: int, errorString: string)
 
@@ -56,6 +57,7 @@ MediaContainer {
             source: root.videoUrl
             looping: root.looping
             onErrorOccurred: (error, errorString) => root.errorOccurred(error, errorString)
+            volume: root.volume
         }
     }
 
@@ -132,7 +134,7 @@ MediaContainer {
 
         radius: Kirigami.Units.cornerRadius
         color: Kirigami.Theme.backgroundColor
-        opacity: hoverHandler.hovered && !root.isSensitive && !(player.item?.paused ?? true) && !(player.item?.stopped ?? true) ? 0.7 : 0.0
+        opacity: (hoverHandler.hovered || volumePopupHoverHandler.hovered) && !root.isSensitive && !(player.item?.paused ?? true) && !(player.item?.stopped ?? true) ? 0.7 : 0.0
         Behavior on opacity {
             OpacityAnimator {
                 duration: Kirigami.Units.longDuration
@@ -172,6 +174,74 @@ MediaContainer {
                 }
 
                 onMoved: player.item?.setPosition(value)
+            }
+
+            QQC2.ToolButton {
+                id: volumeButton
+
+                property var unmuteVolume: root.volume
+
+                icon.name: root.volume <= 0 ? "player-volume-muted" : "player-volume"
+
+                QQC2.ToolTip.visible: hovered
+                QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+                QQC2.ToolTip.timeout: Kirigami.Units.toolTipDelay
+                QQC2.ToolTip.text: i18nc("@action:button", "Volume")
+
+                onClicked: {
+                    if (root.volume > 0) {
+                        root.volume = 0;
+                    } else {
+                        if (unmuteVolume === 0) {
+                            root.volume = 1;
+                        } else {
+                            root.volume = unmuteVolume;
+                        }
+                    }
+                }
+
+                QQC2.Popup {
+                    id: volumePopup
+                    y: -height
+                    width: volumeButton.width
+                    visible: (volumeButton.hovered || volumePopupHoverHandler.hovered || volumeSlider.hovered || volumePopupTimer.running)
+
+                    focus: true
+                    padding: Kirigami.Units.smallSpacing
+                    closePolicy: QQC2.Popup.NoAutoClose
+
+                    QQC2.Slider {
+                        id: volumeSlider
+                        anchors.centerIn: parent
+                        implicitHeight: Kirigami.Units.gridUnit * 7
+                        orientation: Qt.Vertical
+                        padding: 0
+                        from: 0
+                        to: 1
+                        value: root.volume
+                        onMoved: {
+                            root.volume = value;
+                            volumeButton.unmuteVolume = value;
+                        }
+                    }
+                    Timer {
+                        id: volumePopupTimer
+                        interval: 500
+                    }
+                    HoverHandler {
+                        id: volumePopupHoverHandler
+                    }
+                    background: Kirigami.ShadowedRectangle {
+                        radius: Kirigami.Units.cornerRadius
+                        color: Kirigami.Theme.backgroundColor
+                        opacity: 0.8
+
+                        shadow.xOffset: 0
+                        shadow.yOffset: 4
+                        shadow.color: Qt.rgba(0, 0, 0, 0.3)
+                        shadow.size: 8
+                    }
+                }
             }
         }
     }
