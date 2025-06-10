@@ -35,6 +35,7 @@ Item {
     MediaPlayer {
         id: player
         videoOutput: videoOutput
+        audioOutput: AudioOutput {}
         loops: root.looping ? MediaPlayer.Infinite : 0
 
         onMediaStatusChanged: {
