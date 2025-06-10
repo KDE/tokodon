@@ -52,6 +52,7 @@ Kirigami.OverlayDrawer {
         activeFocusOnTab: true
 
         onClicked: {
+            checked = true;
             if (drawer.modal) {
                 drawer.close();
             }
