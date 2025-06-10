@@ -418,9 +418,9 @@ QQC2.Pane {
                             }
                             onTriggered: {
                                 if (root.identity.relationship && root.identity.relationship.blocking) {
-                                    AccountManager.selectedAccount.unblock(root.identity);
+                                    AccountManager.selectedAccount.unblockAccount(root.identity);
                                 } else {
-                                    AccountManager.selectedAccount.block(root.identity);
+                                    AccountManager.selectedAccount.blockAccount(root.identity);
                                 }
                             }
                         },
