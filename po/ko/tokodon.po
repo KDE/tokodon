@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-05 00:42+0000\n"
-"PO-Revision-Date: 2025-04-22 01:30+0200\n"
+"PO-Revision-Date: 2025-06-10 21:52+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -149,13 +149,13 @@ msgstr "계정 자기소개 정보를 편집할 수 없음"
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Network request was interrupted"
-msgstr ""
+msgstr "네트워크 요청이 중단됨"
 
 #: account/account.cpp:308 account/account.cpp:315
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Failed to parse credentials"
-msgstr ""
+msgstr "자격 증명을 해석할 수 없음"
 
 #: account/notificationhandler.cpp:32 account/notificationhandler.cpp:33
 #, kde-format
@@ -423,6 +423,7 @@ msgctxt "@info:placeholder"
 msgid ""
 "No one is following this user, or they have chosen to hide this information."
 msgstr ""
+"이 사용자를 팔로우하는 사용자가 없거나, 팔로우 정보를 숨기기로 선택했습니다."
 
 #: account/socialgraphmodel.cpp:88
 #, kde-format
@@ -430,6 +431,7 @@ msgctxt "@info:placeholder"
 msgid ""
 "This user isn't following anyone, or has chosen to hide this information."
 msgstr ""
+"이 사용자가 아무도 팔로우하지 않거나, 팔로우 정보를 숨기기로 선택했습니다."
 
 #: account/socialgraphmodel.cpp:90
 #, kde-format
@@ -868,16 +870,13 @@ msgid "This user hasn't posted any media yet."
 msgstr "이 사용자가 게시한 미디어가 없습니다."
 
 #: content/ui/AccountSwitchDialog.qml:26
-#, fuzzy, kde-format
-#| msgid "Switch Account"
+#, kde-format
 msgctxt "@title: dialog to switch between logged in accounts"
 msgid "Switch Account"
 msgstr "계정 전환"
 
 #: content/ui/AccountSwitchDialog.qml:53
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add Account"
+#, kde-format
 msgctxt "@button: login to or register a new account."
 msgid "Add Account"
 msgstr "계정 추가"
@@ -894,6 +893,8 @@ msgctxt "@info:tooltip"
 msgid ""
 "This account has an issue and can't login, switch to it for more details."
 msgstr ""
+"이 계정에 문제가 발생하여 로그인할 수 없습니다. 자세한 정보를 보려면 이 계정"
+"으로 전환하십시오."
 
 #: content/ui/Android/ShareAction.qml:15 content/ui/ShareAction.qml:19
 #, kde-format
@@ -1435,10 +1436,9 @@ msgid "Login Issue"
 msgstr "로그인 문제"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:27
-#, fuzzy, kde-format
-#| msgid "There was an issue logging into the server:<br><b>%1</b>"
+#, kde-format
 msgid "There was an issue logging into %1:<br><b>%2</b>"
-msgstr "서버에 로그인하는 중 오류 발생:<br><b>%1</b>"
+msgstr "%1에 로그인하는 중 오류 발생:<br><b>%2</b>"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:38
 #, kde-format
@@ -1573,7 +1573,7 @@ msgstr "서버 선택"
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose your Existing Server"
-msgstr ""
+msgstr "기존 서버 선택"
 
 #: content/ui/LoginFlow/ServersPage.qml:38
 #, kde-format
@@ -1633,15 +1633,13 @@ msgstr ""
 "다."
 
 #: content/ui/LoginFlow/WelcomePage.qml:80
-#, fuzzy, kde-format
-#| msgid "Register"
+#, kde-format
 msgctxt "@action:button Pick a Mastodon server"
 msgid "Register"
 msgstr "등록"
 
 #: content/ui/LoginFlow/WelcomePage.qml:90
-#, fuzzy, kde-format
-#| msgid "Login"
+#, kde-format
 msgctxt "@action:button Use an existing Mastodon account"
 msgid "Login"
 msgstr "로그인"
@@ -3229,11 +3227,9 @@ msgid "Reported By:"
 msgstr "신고자:"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:201
-#, fuzzy, kde-format
-#| msgctxt "@info: The comment attached with the ip rule"
-#| msgid "Comment"
+#, kde-format
 msgid "Comment:"
-msgstr "설명"
+msgstr "설명:"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:224
 #, kde-format
@@ -3324,18 +3320,16 @@ msgid "Follows"
 msgstr "팔로우"
 
 #: content/ui/NotificationPage.qml:188
-#, fuzzy, kde-format
-#| msgid "News"
+#, kde-format
 msgctxt "@info:label New notifications"
 msgid "New"
-msgstr "뉴스"
+msgstr "새 항목"
 
 #: content/ui/NotificationPage.qml:188
-#, fuzzy, kde-format
-#| msgid "Previous image"
+#, kde-format
 msgctxt "@info:label Previous notifications"
 msgid "Previous"
-msgstr "이전 그림"
+msgstr "이전 항목"
 
 #: content/ui/NotificationPage.qml:315
 #, kde-format
@@ -5195,13 +5189,13 @@ msgstr "파일 첨부"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You can't have attachments and a poll in the same post."
-msgstr ""
+msgstr "한 게시물에 첨부와 투표를 동시에 포함할 수 없습니다."
 
 #: content/ui/StatusComposer/StatusComposer.qml:504
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You have the maximum allowed number of attachments."
-msgstr ""
+msgstr "최대 첨부 개수에 도달했습니다."
 
 #: content/ui/StatusComposer/StatusComposer.qml:507
 #, kde-format
@@ -5219,7 +5213,7 @@ msgstr "투표 첨부"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You can't modify or add a poll to an existing post."
-msgstr ""
+msgstr "기존 게시물에 투표를 추가하거나 수정할 수 없습니다."
 
 #: content/ui/StatusComposer/StatusComposer.qml:533
 #, kde-format
@@ -5398,7 +5392,7 @@ msgctxt ""
 "@info:label %1 is the native language name, and %2 is the localized name. "
 "For example, 'dansk (Danish)'"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1(%2)"
 
 #: editor/listeditorbackend.cpp:121
 #, kde-format
@@ -5625,115 +5619,91 @@ msgid "Write a New Post"
 msgstr "새 게시물 쓰기"
 
 #: tokodonapplication.cpp:96
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "End of Timeline"
+#, kde-format
 msgctxt "@action:button Home Timeline"
 msgid "Open Home Timeline"
-msgstr "타임라인의 끝"
+msgstr "홈 타임라인 열기"
 
 #: tokodonapplication.cpp:102
-#, fuzzy, kde-format
-#| msgctxt "@action:button Account Notifications"
-#| msgid "Notifications"
+#, kde-format
 msgctxt "@action:button Account Notifications"
 msgid "Open Notifications"
-msgstr "알림"
+msgstr "알림 열기"
 
 #: tokodonapplication.cpp:108
-#, fuzzy, kde-format
-#| msgctxt "@action:button Follows that require explicit allow/deny"
-#| msgid "Follow Requests"
+#, kde-format
 msgctxt "@action:button Follows that require explicit allow/deny"
 msgid "Open Follow Requests"
-msgstr "팔로우 요청"
+msgstr "팔로우 요청 열기"
 
 #: tokodonapplication.cpp:114
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Local Timeline"
+#, kde-format
 msgctxt "@action:button Local timeline of posts from the account's own server"
 msgid "Open Local Timeline"
-msgstr "로컬 타임라인"
+msgstr "로컬 타임라인 열기"
 
 #: tokodonapplication.cpp:120
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Global Timeline"
+#, kde-format
 msgctxt ""
 "@action:button Global timeline of posts from the entire Fediverse network"
 msgid "Open Global Timeline"
-msgstr "연합 타임라인"
+msgstr "연합 타임라인 열기"
 
 #: tokodonapplication.cpp:126
-#, fuzzy, kde-format
-#| msgid "Conversations"
+#, kde-format
 msgctxt "@action:button Direct one-on-one messages between users"
 msgid "Open Conversations"
-msgstr "대화"
+msgstr "대화 열기"
 
 #: tokodonapplication.cpp:132
-#, fuzzy, kde-format
-#| msgctxt "@action:button This account's favorited posts"
-#| msgid "Favorites"
+#, kde-format
 msgctxt "@action:button This account's favorited posts"
 msgid "Open Favorites"
-msgstr "좋아요"
+msgstr "좋아요 열기"
 
 #: tokodonapplication.cpp:138
-#, fuzzy, kde-format
-#| msgctxt "@action:button This account's bookmarked posts"
-#| msgid "Bookmarks"
+#, kde-format
 msgctxt "@action:button This account's bookmarked posts"
 msgid "Open Bookmarks"
-msgstr "북마크"
+msgstr "북마크 열기"
 
 #: tokodonapplication.cpp:144
-#, fuzzy, kde-format
-#| msgid "Explore"
+#, kde-format
 msgctxt "@action:button Explore this server's trending posts, news, and more"
 msgid "Open Explore"
-msgstr "탐색"
+msgstr "탐색 열기"
 
 #: tokodonapplication.cpp:150
-#, fuzzy, kde-format
-#| msgctxt "@action:button A list of this account's followed accounts"
-#| msgid "Following"
+#, kde-format
 msgctxt "@action:button A list of this account's followed accounts"
 msgid "Open Following"
-msgstr "팔로잉"
+msgstr "팔로잉 열기"
 
 #: tokodonapplication.cpp:156
-#, fuzzy, kde-format
-#| msgctxt "@action:button Search for users, posts and tags"
-#| msgid "Search"
+#, kde-format
 msgctxt "@action:button Search for users, posts and tags"
 msgid "Open Search"
-msgstr "검색"
+msgstr "검색 열기"
 
 #: tokodonapplication.cpp:162
-#, fuzzy, kde-format
-#| msgctxt "@abel Account preferences"
-#| msgid "Open Server in Browser"
+#, kde-format
 msgctxt "@action:button"
 msgid "Open Server Information"
-msgstr "브라우저에서 서버 열기"
+msgstr "서버 정보 열기"
 
 #: tokodonapplication.cpp:168
-#, fuzzy, kde-format
-#| msgid "Open Link"
+#, kde-format
 msgctxt ""
 "@action:button This account's lists, or timelines consisting of a groups of "
 "accounts"
 msgid "Open Lists"
-msgstr "링크 열기"
+msgstr "리스트 열기"
 
 #: tokodonapplication.cpp:174
-#, fuzzy, kde-format
-#| msgid "View Profile"
+#, kde-format
 msgctxt "@action:button This account's profile"
 msgid "Open Profile"
-msgstr "프로필 보기"
+msgstr "프로필 열기"
 
 #: tokodonapplication.cpp:208
 #, kde-format
