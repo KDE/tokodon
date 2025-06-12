@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-05 00:42+0000\n"
-"PO-Revision-Date: 2025-05-27 14:14+0200\n"
+"PO-Revision-Date: 2025-06-10 08:56+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.04.1\n"
+"X-Generator: Lokalize 25.04.2\n"
 
 #: account/abstractaccount.cpp:33
 #, kde-format
@@ -145,13 +145,13 @@ msgstr "Impossibile modificare la nota su un account"
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Network request was interrupted"
-msgstr ""
+msgstr "La richiesta di rete è stata interrotta"
 
 #: account/account.cpp:308 account/account.cpp:315
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Failed to parse credentials"
-msgstr ""
+msgstr "Impossibile elaborare le credenziali"
 
 #: account/notificationhandler.cpp:32 account/notificationhandler.cpp:33
 #, kde-format
@@ -904,6 +904,8 @@ msgctxt "@info:tooltip"
 msgid ""
 "This account has an issue and can't login, switch to it for more details."
 msgstr ""
+"Questo account ha un problema e non può eseguire l'accesso. Passa ad esso "
+"per maggiori dettagli."
 
 #: content/ui/Android/ShareAction.qml:15 content/ui/ShareAction.qml:19
 #, kde-format
@@ -1452,10 +1454,9 @@ msgid "Login Issue"
 msgstr "Problema di accesso"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:27
-#, fuzzy, kde-format
-#| msgid "There was an issue logging into the server:<br><b>%1</b>"
+#, kde-format
 msgid "There was an issue logging into %1:<br><b>%2</b>"
-msgstr "Si è verificato un problema durante l'accesso al server:<br><b>%1</b>"
+msgstr "Si è verificato un problema durante l'accesso a %1:<br><b>%2</b>"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:38
 #, kde-format
@@ -5239,12 +5240,13 @@ msgstr "Allega file"
 msgctxt "@info:tooltip"
 msgid "You can't have attachments and a poll in the same post."
 msgstr ""
+"Non è possibile inserire allegati e un sondaggio nello stesso commento."
 
 #: content/ui/StatusComposer/StatusComposer.qml:504
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You have the maximum allowed number of attachments."
-msgstr ""
+msgstr "Hai raggiunto il numero massimo consentito di allegati."
 
 #: content/ui/StatusComposer/StatusComposer.qml:507
 #, kde-format
@@ -5262,7 +5264,7 @@ msgstr "Allega sondaggio"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You can't modify or add a poll to an existing post."
-msgstr ""
+msgstr "Non puoi modificare o aggiungere un sondaggio a un commento esistente."
 
 #: content/ui/StatusComposer/StatusComposer.qml:533
 #, kde-format
