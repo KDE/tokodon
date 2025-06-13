@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-05 00:42+0000\n"
-"PO-Revision-Date: 2025-05-27 18:14+0400\n"
+"PO-Revision-Date: 2025-06-12 13:19+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -146,13 +146,13 @@ msgstr "لا يمكن تعديل ملاحظة حول الحساب"
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Network request was interrupted"
-msgstr ""
+msgstr "انقطع طلب الشبكة"
 
 #: account/account.cpp:308 account/account.cpp:315
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Failed to parse credentials"
-msgstr ""
+msgstr "فشل تحليل بيانات الاعتماد"
 
 #: account/notificationhandler.cpp:32 account/notificationhandler.cpp:33
 #, kde-format
@@ -911,6 +911,7 @@ msgctxt "@info:tooltip"
 msgid ""
 "This account has an issue and can't login, switch to it for more details."
 msgstr ""
+"هذا الحساب به مشكلة ولا يمكن الولوج إليه، انتقل إليه لمزيد من التفاصيل."
 
 #: content/ui/Android/ShareAction.qml:15 content/ui/ShareAction.qml:19
 #, kde-format
@@ -1456,10 +1457,9 @@ msgid "Login Issue"
 msgstr "مشكلة في الولوج"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:27
-#, fuzzy, kde-format
-#| msgid "There was an issue logging into the server:<br><b>%1</b>"
+#, kde-format
 msgid "There was an issue logging into %1:<br><b>%2</b>"
-msgstr "حدثت مشكلة في تسجيل الدخول إلى الخادم:<br><b>%1</b>"
+msgstr "حدثت مشكلة في الولوج إلى %1:<br><b>%2</b>"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:38
 #, kde-format
@@ -5217,13 +5217,13 @@ msgstr "أرفق ملفًّا"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You can't have attachments and a poll in the same post."
-msgstr ""
+msgstr "لا يمكنك الحصول على مرفقات وتصويت في نفس المنشور."
 
 #: content/ui/StatusComposer/StatusComposer.qml:504
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You have the maximum allowed number of attachments."
-msgstr ""
+msgstr "لديك الحد الأقصى المسموح به من المرفقات."
 
 #: content/ui/StatusComposer/StatusComposer.qml:507
 #, kde-format
@@ -5241,7 +5241,7 @@ msgstr "أرفق تصويتًا"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You can't modify or add a poll to an existing post."
-msgstr ""
+msgstr "لا يمكنك تعديل أو إضافة تصويت إلى مشاركة موجودة."
 
 #: content/ui/StatusComposer/StatusComposer.qml:533
 #, kde-format
