@@ -27,6 +27,12 @@ AccountManager::AccountManager(QObject *parent)
     , m_qnam(NetworkAccessManagerFactory().create(this))
     , m_notificationHandler(new NotificationHandler(m_qnam, this))
 {
+    QDBusMessage rm =
+        QDBusMessage::createMethodCall(u"org.kde.KOnlineAccounts"_s, u"/org/kde/KOnlineAccounts"_s, u"org.kde.KOnlineAccounts.Manager"_s, u"registerApp"_s);
+
+    rm.setArguments({u"org.kde.tokodon"_s});
+    QDBusConnection::sessionBus().call(rm);
+
     QDBusMessage msg =
         QDBusMessage::createMethodCall(u"org.kde.KOnlineAccounts"_s, u"/org/kde/KOnlineAccounts"_s, u"org.freedesktop.DBus.Properties"_s, u"Get"_s);
 
