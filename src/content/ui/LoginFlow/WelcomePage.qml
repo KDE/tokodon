@@ -91,6 +91,15 @@ Kirigami.Page {
                     icon.name: "user-symbolic"
                     onClicked: Window.window.pageStack.push(Qt.createComponent("org.kde.tokodon", "ServersPage"), { forRegistration: false })
                 }
+
+                FormCard.FormButtonDelegate {
+                    id: systemAccountButton
+                    text: i18nc("@action:button Use an existing Mastodon account", "Use System Account")
+                    icon.name: "user-symbolic"
+                    onClicked: {
+                        AccountManager.requestSystemAccount()
+                    }
+                }
             }
 
             FormCard.FormCard {

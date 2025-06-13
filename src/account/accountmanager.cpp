@@ -14,11 +14,16 @@
 #include "network/networkaccessmanagerfactory.h"
 #include "tokodon_debug.h"
 
+#include <kwindowsystem.h>
+#include <qdbusconnection.h>
+#include <qdbusmessage.h>
 #include <qt6keychain/keychain.h>
 
 #include <QDBusConnection>
 #include <QDBusMessage>
 #include <QDBusReply>
+
+#include <KWindowSystem>
 
 using namespace Qt::Literals::StringLiterals;
 
@@ -38,12 +43,24 @@ AccountManager::AccountManager(QObject *parent)
 
     msg.setArguments({u"org.kde.KOnlineAccounts.Manager"_s, u"accounts"_s});
 
+    bool ret = QDBusConnection::sessionBus().connect(u"org.kde.KOnlineAccounts"_s,
+                                                     u"/org/kde/KOnlineAccounts"_s,
+                                                     u"org.kde.KOnlineAccounts.Manager"_s,
+                                                     u"accountCreationFinished"_s,
+                                                     this,
+                                                     SLOT(slotAccountCreationFinished(const QDBusObjectPath &, const QString &)));
+
+    qWarning() << "connected" << ret;
+
     QDBusPendingReply<QDBusVariant> reply = QDBusConnection::sessionBus().asyncCall(msg);
 
     auto *watcher = new QDBusPendingCallWatcher(reply);
     connect(watcher, &QDBusPendingCallWatcher::finished, this, [this, reply] {
         QList<QDBusObjectPath> accounts = qdbus_cast<QList<QDBusObjectPath>>(reply.value().variant());
-        addFromDBus(accounts.first());
+
+        qWarning() << "got accounts" << accounts;
+
+        // addFromDBus(accounts.first());
     });
 }
 
@@ -203,6 +220,16 @@ void AccountManager::childIdentityChanged(AbstractAccount *account)
 
     const auto idx = m_accounts.indexOf(account);
     Q_EMIT dataChanged(index(idx, 0), index(idx, 0));
+}
+
+void AccountManager::slotAccountCreationFinished(const QDBusObjectPath &path, const QString &xdgActivationToken)
+{
+    qWarning() << "hello account" << path.path() << xdgActivationToken;
+
+    KWindowSystem::setCurrentXdgActivationToken(xdgActivationToken);
+    KWindowSystem::activateWindow(qApp->topLevelWindows().first());
+
+    addFromDBus(path);
 }
 
 void AccountManager::removeAccount(AbstractAccount *account)
@@ -601,6 +628,16 @@ void AccountManager::queueNotifications()
 QList<AbstractAccount *> AccountManager::accounts() const
 {
     return m_accounts;
+}
+
+void AccountManager::requestSystemAccount()
+{
+    QDBusMessage m =
+        QDBusMessage::createMethodCall(u"org.kde.KOnlineAccounts"_s, u"/org/kde/KOnlineAccounts"_s, u"org.kde.KOnlineAccounts.Manager"_s, u"requestAccount"_s);
+
+    m.setArguments({u"mastodon"_s});
+
+    QDBusConnection::sessionBus().asyncCall(m);
 }
 
 #include "moc_accountmanager.cpp"
