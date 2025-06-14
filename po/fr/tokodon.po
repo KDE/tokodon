@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-05 00:42+0000\n"
-"PO-Revision-Date: 2025-06-10 14:47+0200\n"
+"PO-Revision-Date: 2025-06-13 13:08+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -143,13 +143,13 @@ msgstr "Impossible de modifier une note concernant un compte"
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Network request was interrupted"
-msgstr ""
+msgstr "La demande réseau a été interrompue."
 
 #: account/account.cpp:308 account/account.cpp:315
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Failed to parse credentials"
-msgstr ""
+msgstr "Impossible d'analyser les informations d'identification"
 
 #: account/notificationhandler.cpp:32 account/notificationhandler.cpp:33
 #, kde-format
@@ -906,6 +906,8 @@ msgctxt "@info:tooltip"
 msgid ""
 "This account has an issue and can't login, switch to it for more details."
 msgstr ""
+"Ce compte présente un problème et ne peut pas se connecter. Veuillez "
+"basculer sur ce compte pour plus de détails."
 
 #: content/ui/Android/ShareAction.qml:15 content/ui/ShareAction.qml:19
 #, kde-format
@@ -5252,12 +5254,14 @@ msgstr "Joindre un fichier"
 msgctxt "@info:tooltip"
 msgid "You can't have attachments and a poll in the same post."
 msgstr ""
+"Il vous est impossible d'avoir des pièces jointes et un sondage dans le même "
+"message."
 
 #: content/ui/StatusComposer/StatusComposer.qml:504
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You have the maximum allowed number of attachments."
-msgstr ""
+msgstr "Vous avez atteint le nombre maximum autorisé de pièces jointes."
 
 #: content/ui/StatusComposer/StatusComposer.qml:507
 #, kde-format
@@ -5276,6 +5280,8 @@ msgstr "Joindre un sondage"
 msgctxt "@info:tooltip"
 msgid "You can't modify or add a poll to an existing post."
 msgstr ""
+"Il vous est impossible de modifier ou d'ajouter un sondage à un message "
+"existant."
 
 #: content/ui/StatusComposer/StatusComposer.qml:533
 #, kde-format
