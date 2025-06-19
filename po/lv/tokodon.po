@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-05 00:42+0000\n"
+"POT-Creation-Date: 2025-06-19 00:42+0000\n"
 "PO-Revision-Date: 2025-06-04 16:03+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -965,6 +965,20 @@ msgstr "Skatīt profilu"
 msgid "No emojis"
 msgstr "Nav emocijzīmju"
 
+#: content/ui/Components/ServerInformationCard.qml:28
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Embed Information"
+msgctxt "@info:placeholder"
+msgid "No Information"
+msgstr "Iegultā informācija"
+
+#: content/ui/Components/ServerInformationCard.qml:33
+#, kde-format
+msgctxt "@info Last updated: relative date and time (e.g. 2 years ago)"
+msgid "Last updated: %1"
+msgstr "Pēdējais atjauninājums: %1"
+
 #: content/ui/Components/TimelineView.qml:66
 #, kde-format
 msgctxt "@info:tooltip"
@@ -1266,6 +1280,13 @@ msgctxt "@action:intoolbar"
 msgid "Open Post"
 msgstr "Atvērt ierakstu"
 
+#: content/ui/GenericServerInformationPage.qml:19
+#, fuzzy, kde-format
+#| msgid "Custom Server"
+msgctxt "@title:window"
+msgid "About Server"
+msgstr "Pielāgots serveris"
+
 #: content/ui/InitialSetup/SetupNotifications.qml:19
 #, kde-format
 msgctxt "@title:window"
@@ -1563,7 +1584,6 @@ msgid "Rules"
 msgstr "Noteikumi"
 
 #: content/ui/LoginFlow/RulesPage.qml:47
-#: content/ui/ServerInformationPage.qml:40
 #, kde-format
 msgctxt "@title:group"
 msgid "Rules"
@@ -4015,24 +4035,6 @@ msgctxt "@info:label"
 msgid "Poll"
 msgstr "Aptauja"
 
-#: content/ui/PrivacyPolicyPage.qml:19
-#, kde-format
-msgctxt "@title:window"
-msgid "Privacy Policy"
-msgstr "Privātuma politika"
-
-#: content/ui/PrivacyPolicyPage.qml:26
-#, kde-format
-msgctxt "@info:placeholder"
-msgid "No Privacy Policy"
-msgstr "Privātuma politikas nav"
-
-#: content/ui/PrivacyPolicyPage.qml:41
-#, kde-format
-msgctxt "@info Last updated: relative date and time (e.g. 2 years ago)"
-msgid "Last updated: %1"
-msgstr "Pēdējais atjauninājums: %1"
-
 #: content/ui/ReadMarker.qml:15
 #, kde-format
 msgctxt "Last read on this date"
@@ -4102,16 +4104,54 @@ msgid "Search for users, tags and posts"
 msgstr "Meklē lietotājus, birkas un tēmturus"
 
 #: content/ui/ServerInformationPage.qml:27
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Rules"
+msgctxt "@title:window Server rules"
+msgid "Rules"
+msgstr "Noteikumi"
+
+#: content/ui/ServerInformationPage.qml:68
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Rules"
+msgctxt "@action:button"
+msgid "Rules"
+msgstr "Noteikumi"
+
+#: content/ui/ServerInformationPage.qml:80
 #, kde-format
 msgctxt "@action:button"
 msgid "Announcements"
 msgstr "Servera paziņojumi"
 
-#: content/ui/ServerInformationPage.qml:34
+#: content/ui/ServerInformationPage.qml:92
 #, kde-format
 msgctxt "@action:button"
 msgid "Privacy Policy"
 msgstr "Privātuma politika"
+
+#: content/ui/ServerInformationPage.qml:93
+#, kde-format
+msgctxt "@title:window"
+msgid "Privacy Policy"
+msgstr "Privātuma politika"
+
+#: content/ui/ServerInformationPage.qml:104
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Password Service"
+msgctxt "@action:button"
+msgid "Terms of Service"
+msgstr "Paroles serviss"
+
+#: content/ui/ServerInformationPage.qml:105
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Password Service"
+msgctxt "@title:window"
+msgid "Terms of Service"
+msgstr "Paroles serviss"
 
 #: content/ui/Settings/AccountPage.qml:26
 #, kde-format
@@ -5897,6 +5937,10 @@ msgid_plural "%1 years ago"
 msgstr[0] "Pirms %1 gada"
 msgstr[1] "Pirms %1 gadiem"
 msgstr[2] "Pirms %1 gadiem"
+
+#~ msgctxt "@info:placeholder"
+#~ msgid "No Privacy Policy"
+#~ msgstr "Privātuma politikas nav"
 
 #~ msgctxt "@title:window"
 #~ msgid "Login"

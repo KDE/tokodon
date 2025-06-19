@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-05 00:42+0000\n"
+"POT-Creation-Date: 2025-06-19 00:42+0000\n"
 "PO-Revision-Date: 2021-11-24 09:33-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -994,6 +994,19 @@ msgstr ""
 msgid "No emojis"
 msgstr ""
 
+#: content/ui/Components/ServerInformationCard.qml:28
+#, fuzzy, kde-format
+#| msgid "Notifications"
+msgctxt "@info:placeholder"
+msgid "No Information"
+msgstr "Notificações"
+
+#: content/ui/Components/ServerInformationCard.qml:33
+#, kde-format
+msgctxt "@info Last updated: relative date and time (e.g. 2 years ago)"
+msgid "Last updated: %1"
+msgstr ""
+
 #: content/ui/Components/TimelineView.qml:66
 #, kde-format
 msgctxt "@info:tooltip"
@@ -1309,6 +1322,13 @@ msgctxt "@action:intoolbar"
 msgid "Open Post"
 msgstr "Abrir link"
 
+#: content/ui/GenericServerInformationPage.qml:19
+#, fuzzy, kde-format
+#| msgid "Public"
+msgctxt "@title:window"
+msgid "About Server"
+msgstr "Público"
+
 #: content/ui/InitialSetup/SetupNotifications.qml:19
 #, fuzzy, kde-format
 #| msgid "Notifications"
@@ -1598,7 +1618,6 @@ msgid "Rules"
 msgstr ""
 
 #: content/ui/LoginFlow/RulesPage.qml:47
-#: content/ui/ServerInformationPage.qml:40
 #, kde-format
 msgctxt "@title:group"
 msgid "Rules"
@@ -4119,24 +4138,6 @@ msgctxt "@info:label"
 msgid "Poll"
 msgstr ""
 
-#: content/ui/PrivacyPolicyPage.qml:19
-#, kde-format
-msgctxt "@title:window"
-msgid "Privacy Policy"
-msgstr ""
-
-#: content/ui/PrivacyPolicyPage.qml:26
-#, kde-format
-msgctxt "@info:placeholder"
-msgid "No Privacy Policy"
-msgstr ""
-
-#: content/ui/PrivacyPolicyPage.qml:41
-#, kde-format
-msgctxt "@info Last updated: relative date and time (e.g. 2 years ago)"
-msgid "Last updated: %1"
-msgstr ""
-
 #: content/ui/ReadMarker.qml:15
 #, kde-format
 msgctxt "Last read on this date"
@@ -4209,14 +4210,44 @@ msgstr ""
 
 #: content/ui/ServerInformationPage.qml:27
 #, kde-format
+msgctxt "@title:window Server rules"
+msgid "Rules"
+msgstr ""
+
+#: content/ui/ServerInformationPage.qml:68
+#, kde-format
+msgctxt "@action:button"
+msgid "Rules"
+msgstr ""
+
+#: content/ui/ServerInformationPage.qml:80
+#, kde-format
 msgctxt "@action:button"
 msgid "Announcements"
 msgstr ""
 
-#: content/ui/ServerInformationPage.qml:34
+#: content/ui/ServerInformationPage.qml:92
 #, kde-format
 msgctxt "@action:button"
 msgid "Privacy Policy"
+msgstr ""
+
+#: content/ui/ServerInformationPage.qml:93
+#, kde-format
+msgctxt "@title:window"
+msgid "Privacy Policy"
+msgstr ""
+
+#: content/ui/ServerInformationPage.qml:104
+#, kde-format
+msgctxt "@action:button"
+msgid "Terms of Service"
+msgstr ""
+
+#: content/ui/ServerInformationPage.qml:105
+#, kde-format
+msgctxt "@title:window"
+msgid "Terms of Service"
 msgstr ""
 
 #: content/ui/Settings/AccountPage.qml:26

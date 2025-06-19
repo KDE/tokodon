@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-05 00:42+0000\n"
+"POT-Creation-Date: 2025-06-19 00:42+0000\n"
 "PO-Revision-Date: 2025-05-18 19:45+0200\n"
 "Last-Translator: Frank Steinmetzger <dev-kde@felsenfleischer.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -965,6 +965,20 @@ msgstr "Profil anzeigen"
 msgid "No emojis"
 msgstr "Keine Emoji"
 
+#: content/ui/Components/ServerInformationCard.qml:28
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Embed Information"
+msgctxt "@info:placeholder"
+msgid "No Information"
+msgstr "Informationen einbetten"
+
+#: content/ui/Components/ServerInformationCard.qml:33
+#, kde-format
+msgctxt "@info Last updated: relative date and time (e.g. 2 years ago)"
+msgid "Last updated: %1"
+msgstr "Zuletzt aktualisiert: %1"
+
 #: content/ui/Components/TimelineView.qml:66
 #, kde-format
 msgctxt "@info:tooltip"
@@ -1269,6 +1283,13 @@ msgctxt "@action:intoolbar"
 msgid "Open Post"
 msgstr "Beitrag öffnen"
 
+#: content/ui/GenericServerInformationPage.qml:19
+#, fuzzy, kde-format
+#| msgid "Custom Server"
+msgctxt "@title:window"
+msgid "About Server"
+msgstr "Benutzerdefinierter Server"
+
 #: content/ui/InitialSetup/SetupNotifications.qml:19
 #, kde-format
 msgctxt "@title:window"
@@ -1571,7 +1592,6 @@ msgid "Rules"
 msgstr "Regeln"
 
 #: content/ui/LoginFlow/RulesPage.qml:47
-#: content/ui/ServerInformationPage.qml:40
 #, kde-format
 msgctxt "@title:group"
 msgid "Rules"
@@ -4032,24 +4052,6 @@ msgctxt "@info:label"
 msgid "Poll"
 msgstr "Umfrage hinzufügen"
 
-#: content/ui/PrivacyPolicyPage.qml:19
-#, kde-format
-msgctxt "@title:window"
-msgid "Privacy Policy"
-msgstr "Datenschutzrichtlinie"
-
-#: content/ui/PrivacyPolicyPage.qml:26
-#, kde-format
-msgctxt "@info:placeholder"
-msgid "No Privacy Policy"
-msgstr "Keine Datenschutzrichtlinie"
-
-#: content/ui/PrivacyPolicyPage.qml:41
-#, kde-format
-msgctxt "@info Last updated: relative date and time (e.g. 2 years ago)"
-msgid "Last updated: %1"
-msgstr "Zuletzt aktualisiert: %1"
-
 #: content/ui/ReadMarker.qml:15
 #, kde-format
 msgctxt "Last read on this date"
@@ -4119,16 +4121,54 @@ msgid "Search for users, tags and posts"
 msgstr "Nach Benutzern, Tags und Beiträgen suchen"
 
 #: content/ui/ServerInformationPage.qml:27
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Rules"
+msgctxt "@title:window Server rules"
+msgid "Rules"
+msgstr "Regeln"
+
+#: content/ui/ServerInformationPage.qml:68
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Rules"
+msgctxt "@action:button"
+msgid "Rules"
+msgstr "Regeln"
+
+#: content/ui/ServerInformationPage.qml:80
 #, kde-format
 msgctxt "@action:button"
 msgid "Announcements"
 msgstr "Ankündigungen"
 
-#: content/ui/ServerInformationPage.qml:34
+#: content/ui/ServerInformationPage.qml:92
 #, kde-format
 msgctxt "@action:button"
 msgid "Privacy Policy"
 msgstr "Datenschutzrichtlinie"
+
+#: content/ui/ServerInformationPage.qml:93
+#, kde-format
+msgctxt "@title:window"
+msgid "Privacy Policy"
+msgstr "Datenschutzrichtlinie"
+
+#: content/ui/ServerInformationPage.qml:104
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Password Service"
+msgctxt "@action:button"
+msgid "Terms of Service"
+msgstr "Passwortdienst"
+
+#: content/ui/ServerInformationPage.qml:105
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Password Service"
+msgctxt "@title:window"
+msgid "Terms of Service"
+msgstr "Passwortdienst"
 
 #: content/ui/Settings/AccountPage.qml:26
 #, kde-format
@@ -5936,6 +5976,10 @@ msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "Vor einem Jahr"
 msgstr[1] "Vor %1 Jahren"
+
+#~ msgctxt "@info:placeholder"
+#~ msgid "No Privacy Policy"
+#~ msgstr "Keine Datenschutzrichtlinie"
 
 #~ msgctxt "@title:window"
 #~ msgid "Login"
