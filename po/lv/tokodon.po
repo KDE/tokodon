@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-19 00:42+0000\n"
-"PO-Revision-Date: 2025-06-04 16:03+0300\n"
+"PO-Revision-Date: 2025-06-18 17:00+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 25.04.1\n"
+"X-Generator: Lokalize 25.04.2\n"
 
 #: account/abstractaccount.cpp:33
 #, kde-format
@@ -147,13 +147,13 @@ msgstr "Neizdevās rediģēt piezīmi par kontu"
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Network request was interrupted"
-msgstr ""
+msgstr "Tīkla pieprasījums ir pārtraukts"
 
 #: account/account.cpp:308 account/account.cpp:315
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Failed to parse credentials"
-msgstr ""
+msgstr "Neizdevās parsēt akreditācijas datus"
 
 #: account/notificationhandler.cpp:32 account/notificationhandler.cpp:33
 #, kde-format
@@ -906,6 +906,8 @@ msgctxt "@info:tooltip"
 msgid ""
 "This account has an issue and can't login, switch to it for more details."
 msgstr ""
+"Ar šo kontu ir problēmas un tajā neizdodas ierakstīties, pārslēdzieties uz "
+"to, lai iegūtu vairāk informācijas."
 
 #: content/ui/Android/ShareAction.qml:15 content/ui/ShareAction.qml:19
 #, kde-format
@@ -1472,10 +1474,9 @@ msgid "Login Issue"
 msgstr "Problēmas ar ierakstīšanos"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:27
-#, fuzzy, kde-format
-#| msgid "There was an issue logging into the server:<br><b>%1</b>"
+#, kde-format
 msgid "There was an issue logging into %1:<br><b>%2</b>"
-msgstr "Ir radusies kļūda, ierakstoties serverī:<br><b>%1</b>"
+msgstr "Ir radusies kļūda, ierakstoties „%1“:<br><b>%2</b>"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:38
 #, kde-format
@@ -5264,13 +5265,13 @@ msgstr "Pievienot datni"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You can't have attachments and a poll in the same post."
-msgstr ""
+msgstr "Pielikumi un aptauja nevar atrasties vienā ierakstā."
 
 #: content/ui/StatusComposer/StatusComposer.qml:504
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You have the maximum allowed number of attachments."
-msgstr ""
+msgstr "Jau ir pievienots maksimālais atļautais pielikumu skaits."
 
 #: content/ui/StatusComposer/StatusComposer.qml:507
 #, kde-format
@@ -5288,7 +5289,7 @@ msgstr "Pievienot aptauju"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You can't modify or add a poll to an existing post."
-msgstr ""
+msgstr "Varat mainīt vai pievienot aptauju jau esošajam ierakstam."
 
 #: content/ui/StatusComposer/StatusComposer.qml:533
 #, kde-format
