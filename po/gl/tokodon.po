@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-19 00:42+0000\n"
-"PO-Revision-Date: 2025-05-23 10:11+0200\n"
+"PO-Revision-Date: 2025-06-21 10:34+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.04.1\n"
+"X-Generator: Lokalize 25.04.2\n"
 
 #: account/abstractaccount.cpp:33
 #, kde-format
@@ -147,13 +147,13 @@ msgstr "Non se editou a nota sobre a conta"
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Network request was interrupted"
-msgstr ""
+msgstr "Interrompeuse a solicitude de rede"
 
 #: account/account.cpp:308 account/account.cpp:315
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Failed to parse credentials"
-msgstr ""
+msgstr "Non foi posíbel analizar as credenciais"
 
 #: account/notificationhandler.cpp:32 account/notificationhandler.cpp:33
 #, kde-format
@@ -876,16 +876,13 @@ msgid "This user hasn't posted any media yet."
 msgstr "Esta persoa aínda non publicou contido multimedia."
 
 #: content/ui/AccountSwitchDialog.qml:26
-#, fuzzy, kde-format
-#| msgid "Switch Account"
+#, kde-format
 msgctxt "@title: dialog to switch between logged in accounts"
 msgid "Switch Account"
 msgstr "Cambiar de conta"
 
 #: content/ui/AccountSwitchDialog.qml:53
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add Account"
+#, kde-format
 msgctxt "@button: login to or register a new account."
 msgid "Add Account"
 msgstr "Engadir unha conta"
@@ -902,6 +899,8 @@ msgctxt "@info:tooltip"
 msgid ""
 "This account has an issue and can't login, switch to it for more details."
 msgstr ""
+"A conta ten un problema e non pode acceder, cambie a ela para máis "
+"información."
 
 #: content/ui/Android/ShareAction.qml:15 content/ui/ShareAction.qml:19
 #, kde-format
@@ -962,12 +961,10 @@ msgid "No emojis"
 msgstr "Nin hai expresións"
 
 #: content/ui/Components/ServerInformationCard.qml:28
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Embed Information"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Information"
-msgstr "Información incluída"
+msgstr "Non hai información"
 
 #: content/ui/Components/ServerInformationCard.qml:33
 #, kde-format
@@ -1278,11 +1275,10 @@ msgid "Open Post"
 msgstr "Abrir a publicación"
 
 #: content/ui/GenericServerInformationPage.qml:19
-#, fuzzy, kde-format
-#| msgid "Custom Server"
+#, kde-format
 msgctxt "@title:window"
 msgid "About Server"
-msgstr "Servidor personalizado"
+msgstr "Sobre o servidor"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:19
 #, kde-format
@@ -1469,10 +1465,9 @@ msgid "Login Issue"
 msgstr "Problema de acceso"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:27
-#, fuzzy, kde-format
-#| msgid "There was an issue logging into the server:<br><b>%1</b>"
+#, kde-format
 msgid "There was an issue logging into %1:<br><b>%2</b>"
-msgstr "Produciuse un problema ao acceder ao servidor:<br><b>%1</b>"
+msgstr "Produciuse un problema ao acceder a %1:<br><b>%2</b>"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:38
 #, kde-format
@@ -1607,7 +1602,7 @@ msgstr "Escoller un servidor"
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose your Existing Server"
-msgstr ""
+msgstr "Escolla o servidor existente"
 
 # skip-rule: trasno-close
 #: content/ui/LoginFlow/ServersPage.qml:38
@@ -1669,15 +1664,13 @@ msgstr ""
 "compatíbeis)."
 
 #: content/ui/LoginFlow/WelcomePage.qml:80
-#, fuzzy, kde-format
-#| msgid "Register"
+#, kde-format
 msgctxt "@action:button Pick a Mastodon server"
 msgid "Register"
 msgstr "Rexistrar"
 
 #: content/ui/LoginFlow/WelcomePage.qml:90
-#, fuzzy, kde-format
-#| msgid "Login"
+#, kde-format
 msgctxt "@action:button Use an existing Mastodon account"
 msgid "Login"
 msgstr "Acceder"
@@ -3367,18 +3360,16 @@ msgid "Follows"
 msgstr "Segue"
 
 #: content/ui/NotificationPage.qml:188
-#, fuzzy, kde-format
-#| msgid "News"
+#, kde-format
 msgctxt "@info:label New notifications"
 msgid "New"
 msgstr "Novas"
 
 #: content/ui/NotificationPage.qml:188
-#, fuzzy, kde-format
-#| msgid "Previous image"
+#, kde-format
 msgctxt "@info:label Previous notifications"
 msgid "Previous"
-msgstr "Imaxe anterior"
+msgstr "Anteriores"
 
 #: content/ui/NotificationPage.qml:315
 #, kde-format
@@ -4107,17 +4098,13 @@ msgid "Search for users, tags and posts"
 msgstr "Buscar xente, cancelos e publicacións"
 
 #: content/ui/ServerInformationPage.qml:27
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Rules"
+#, kde-format
 msgctxt "@title:window Server rules"
 msgid "Rules"
 msgstr "Regras"
 
 #: content/ui/ServerInformationPage.qml:68
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Rules"
+#, kde-format
 msgctxt "@action:button"
 msgid "Rules"
 msgstr "Regras"
@@ -4141,20 +4128,16 @@ msgid "Privacy Policy"
 msgstr "Directiva de privacidade"
 
 #: content/ui/ServerInformationPage.qml:104
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Password Service"
+#, kde-format
 msgctxt "@action:button"
 msgid "Terms of Service"
-msgstr "Servizo de contrasinais"
+msgstr "Condicións de servizo"
 
 #: content/ui/ServerInformationPage.qml:105
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Password Service"
+#, kde-format
 msgctxt "@title:window"
 msgid "Terms of Service"
-msgstr "Servizo de contrasinais"
+msgstr "Condicións de servizo"
 
 #: content/ui/Settings/AccountPage.qml:26
 #, kde-format
@@ -5265,13 +5248,13 @@ msgstr "Anexar un ficheiro"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You can't have attachments and a poll in the same post."
-msgstr ""
+msgstr "Non pode combinar anexos e unha enquisa na mesma publicación."
 
 #: content/ui/StatusComposer/StatusComposer.qml:504
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You have the maximum allowed number of attachments."
-msgstr ""
+msgstr "Acadou o número máximo permitido de anexos."
 
 #: content/ui/StatusComposer/StatusComposer.qml:507
 #, kde-format
@@ -5290,6 +5273,7 @@ msgstr "Anexar unha enquisa"
 msgctxt "@info:tooltip"
 msgid "You can't modify or add a poll to an existing post."
 msgstr ""
+"Non pode modificar ou engadir unha enquisa a unha publicación existente."
 
 #: content/ui/StatusComposer/StatusComposer.qml:533
 #, kde-format
