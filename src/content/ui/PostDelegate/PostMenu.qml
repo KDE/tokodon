@@ -181,9 +181,9 @@ Components.ConvergentContextMenu {
         }
         onTriggered: {
             if (root.authorIdentity.relationship && root.authorIdentity.relationship.blocking) {
-                AccountManager.selectedAccount.unblockAccount(root.authorIdentity.identity);
+                AccountManager.selectedAccount.unblockAccount(root.authorIdentity);
             } else {
-                AccountManager.selectedAccount.blockAccount(root.authorIdentity.identity);
+                AccountManager.selectedAccount.blockAccount(root.authorIdentity);
             }
         }
     }
