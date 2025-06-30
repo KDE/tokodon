@@ -251,6 +251,16 @@ bool SocialGraphModel::isList() const
     return m_followListName == QStringLiteral("list");
 }
 
+bool SocialGraphModel::isBlockList() const
+{
+    return m_followListName == QStringLiteral("blocks");
+}
+
+bool SocialGraphModel::isMuteList() const
+{
+    return m_followListName == QStringLiteral("mutes");
+}
+
 void SocialGraphModel::actionAllow(const QModelIndex &index)
 {
     auto account = AccountManager::instance().selectedAccount();
@@ -369,6 +379,36 @@ void SocialGraphModel::actionAddToList(const QString &accountId)
         m_accounts.push_back(account->identityLookup(accountId, {}));
         endInsertRows();
     });
+}
+
+void SocialGraphModel::actionUnblock(const QModelIndex &index)
+{
+    auto account = AccountManager::instance().selectedAccount();
+
+    if (!checkIndex(index, QAbstractItemModel::CheckIndexOption::IndexIsValid))
+        return;
+
+    auto requestIdentity = m_accounts[index.row()].get();
+    account->unblockAccount(requestIdentity);
+
+    beginRemoveRows({}, index.row(), index.row());
+    m_accounts.removeAt(index.row());
+    endRemoveRows();
+}
+
+void SocialGraphModel::actionUnmute(const QModelIndex &index)
+{
+    auto account = AccountManager::instance().selectedAccount();
+
+    if (!checkIndex(index, QAbstractItemModel::CheckIndexOption::IndexIsValid))
+        return;
+
+    auto requestIdentity = m_accounts[index.row()].get();
+    account->unmuteAccount(requestIdentity);
+
+    beginRemoveRows({}, index.row(), index.row());
+    m_accounts.removeAt(index.row());
+    endRemoveRows();
 }
 
 bool SocialGraphModel::canFetchMore(const QModelIndex &parent) const

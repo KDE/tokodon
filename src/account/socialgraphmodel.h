@@ -23,6 +23,8 @@ class SocialGraphModel : public QAbstractListModel
     Q_PROPERTY(bool isFollowing READ isFollowing CONSTANT)
     Q_PROPERTY(bool isFollower READ isFollower CONSTANT)
     Q_PROPERTY(bool isList READ isList CONSTANT)
+    Q_PROPERTY(bool isMuteList READ isMuteList CONSTANT)
+    Q_PROPERTY(bool isBlockList READ isBlockList CONSTANT)
 
     /**
      * @brief The account id of the account we want to display
@@ -56,6 +58,8 @@ public:
     [[nodiscard]] bool isFollowing() const;
     [[nodiscard]] bool isFollower() const;
     [[nodiscard]] bool isList() const;
+    [[nodiscard]] bool isMuteList() const;
+    [[nodiscard]] bool isBlockList() const;
     [[nodiscard]] QString statusId() const;
     void setStatusId(const QString &statusId);
     [[nodiscard]] int count() const;
@@ -70,6 +74,8 @@ public Q_SLOTS:
     void actionRemoveFollower(const QModelIndex &index);
     void actionRemoveFromList(const QModelIndex &index);
     void actionAddToList(const QString &accountId);
+    void actionUnblock(const QModelIndex &index);
+    void actionUnmute(const QModelIndex &index);
 
 Q_SIGNALS:
     void loadingChanged();

@@ -94,6 +94,18 @@ Kirigami.ScrollablePage {
                         onClicked: model.actionRemoveFromList(model.index(delegate.index, 0))
                         visible: model.isList && model.accountId === AccountManager.selectedAccount.identity.id
                     }
+
+                    QQC2.Button {
+                        text: i18nc("@action:button Unblock this user", "Unblock")
+                        onClicked: model.actionUnblock(model.index(delegate.index, 0))
+                        visible: model.isBlockList
+                    }
+
+                    QQC2.Button {
+                        text: i18nc("@action:button Unmute this user", "Unmute")
+                        onClicked: model.actionUnmute(model.index(delegate.index, 0))
+                        visible: model.isMuteList
+                    }
                 }
 
                 QQC2.ProgressBar {
