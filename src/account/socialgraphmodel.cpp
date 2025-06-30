@@ -233,32 +233,32 @@ void SocialGraphModel::setLoading(bool loading)
 
 bool SocialGraphModel::isFollowRequest() const
 {
-    return m_followListName == QStringLiteral("request");
+    return m_followListName == "request"_L1;
 }
 
 bool SocialGraphModel::isFollowing() const
 {
-    return m_followListName == QStringLiteral("following");
+    return m_followListName == "following"_L1;
 }
 
 bool SocialGraphModel::isFollower() const
 {
-    return m_followListName == QStringLiteral("followers");
+    return m_followListName == "followers"_L1;
 }
 
 bool SocialGraphModel::isList() const
 {
-    return m_followListName == QStringLiteral("list");
+    return m_followListName == "list"_L1;
 }
 
 bool SocialGraphModel::isBlockList() const
 {
-    return m_followListName == QStringLiteral("blocks");
+    return m_followListName == "blocks"_L1;
 }
 
 bool SocialGraphModel::isMuteList() const
 {
-    return m_followListName == QStringLiteral("mutes");
+    return m_followListName == "mutes"_L1;
 }
 
 void SocialGraphModel::actionAllow(const QModelIndex &index)
