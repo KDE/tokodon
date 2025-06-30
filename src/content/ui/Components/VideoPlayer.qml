@@ -17,6 +17,7 @@ Item {
     property alias source: player.source
     property alias position: player.position
     property bool looping
+    property alias volume: audioOutput.volume
 
     signal errorOccurred(error: int, errorString: string)
 
@@ -35,6 +36,9 @@ Item {
     MediaPlayer {
         id: player
         videoOutput: videoOutput
+        audioOutput: AudioOutput {
+            id: audioOutput
+        }
         loops: root.looping ? MediaPlayer.Infinite : 0
 
         onMediaStatusChanged: {
