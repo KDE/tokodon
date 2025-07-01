@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-19 00:42+0000\n"
+"POT-Creation-Date: 2025-07-01 00:42+0000\n"
 "PO-Revision-Date: 2025-06-01 15:24+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -3538,7 +3538,7 @@ msgid "Post"
 msgstr "Skriv innlegg"
 
 #: content/ui/PostDelegate/AudioAttachment.qml:81
-#: content/ui/PostDelegate/VideoAttachment.qml:111
+#: content/ui/PostDelegate/VideoAttachment.qml:120
 #, kde-format
 msgctxt "@action:button Start media playback"
 msgid "Play"
@@ -4019,6 +4019,12 @@ msgstr "Sitert innlegg"
 msgctxt "@info:label"
 msgid "Poll"
 msgstr "Avrøysting"
+
+#: content/ui/PostDelegate/VideoAttachment.qml:201
+#, kde-format
+msgctxt "@action:button"
+msgid "Volume"
+msgstr ""
 
 #: content/ui/ReadMarker.qml:15
 #, kde-format
@@ -4994,6 +5000,20 @@ msgstr "Fjern følgjar"
 msgctxt "@action:button Deny follow request"
 msgid "Remove"
 msgstr "Fjern"
+
+#: content/ui/SocialGraphPage.qml:99
+#, fuzzy, kde-format
+#| msgid "Unblock"
+msgctxt "@action:button Unblock this user"
+msgid "Unblock"
+msgstr "Avblokker"
+
+#: content/ui/SocialGraphPage.qml:105
+#, fuzzy, kde-format
+#| msgid "Unmute"
+msgctxt "@action:button Unmute this user"
+msgid "Unmute"
+msgstr "Slutt å dempa"
 
 #: content/ui/StandaloneComposer.qml:58
 #, kde-format

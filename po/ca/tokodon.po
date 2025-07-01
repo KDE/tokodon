@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-19 00:42+0000\n"
+"POT-Creation-Date: 2025-07-01 00:42+0000\n"
 "PO-Revision-Date: 2025-06-19 08:50+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -3559,7 +3559,7 @@ msgid "Post"
 msgstr "Publicació"
 
 #: content/ui/PostDelegate/AudioAttachment.qml:81
-#: content/ui/PostDelegate/VideoAttachment.qml:111
+#: content/ui/PostDelegate/VideoAttachment.qml:120
 #, kde-format
 msgctxt "@action:button Start media playback"
 msgid "Play"
@@ -4040,6 +4040,12 @@ msgstr "Publicació citada"
 msgctxt "@info:label"
 msgid "Poll"
 msgstr "Votació"
+
+#: content/ui/PostDelegate/VideoAttachment.qml:201
+#, kde-format
+msgctxt "@action:button"
+msgid "Volume"
+msgstr ""
 
 #: content/ui/ReadMarker.qml:15
 #, kde-format
@@ -5027,6 +5033,20 @@ msgstr "Elimina el seguidor"
 msgctxt "@action:button Deny follow request"
 msgid "Remove"
 msgstr "Elimina"
+
+#: content/ui/SocialGraphPage.qml:99
+#, fuzzy, kde-format
+#| msgid "Unblock"
+msgctxt "@action:button Unblock this user"
+msgid "Unblock"
+msgstr "Desbloqueja"
+
+#: content/ui/SocialGraphPage.qml:105
+#, fuzzy, kde-format
+#| msgid "Unmute"
+msgctxt "@action:button Unmute this user"
+msgid "Unmute"
+msgstr "Treu el silenciament"
 
 #: content/ui/StandaloneComposer.qml:58
 #, kde-format

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-19 00:42+0000\n"
+"POT-Creation-Date: 2025-07-01 00:42+0000\n"
 "PO-Revision-Date: 2025-06-26 10:31+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -3544,7 +3544,7 @@ msgid "Post"
 msgstr "انشر"
 
 #: content/ui/PostDelegate/AudioAttachment.qml:81
-#: content/ui/PostDelegate/VideoAttachment.qml:111
+#: content/ui/PostDelegate/VideoAttachment.qml:120
 #, kde-format
 msgctxt "@action:button Start media playback"
 msgid "Play"
@@ -4031,6 +4031,12 @@ msgstr "منشور مقتبس"
 msgctxt "@info:label"
 msgid "Poll"
 msgstr "تصويت"
+
+#: content/ui/PostDelegate/VideoAttachment.qml:201
+#, kde-format
+msgctxt "@action:button"
+msgid "Volume"
+msgstr ""
 
 #: content/ui/ReadMarker.qml:15
 #, kde-format
@@ -5006,6 +5012,20 @@ msgstr "أزل متابع"
 msgctxt "@action:button Deny follow request"
 msgid "Remove"
 msgstr "أزل"
+
+#: content/ui/SocialGraphPage.qml:99
+#, fuzzy, kde-format
+#| msgid "Unblock"
+msgctxt "@action:button Unblock this user"
+msgid "Unblock"
+msgstr "ألغِ الحظر"
+
+#: content/ui/SocialGraphPage.qml:105
+#, fuzzy, kde-format
+#| msgid "Unmute"
+msgctxt "@action:button Unmute this user"
+msgid "Unmute"
+msgstr "ألغ الكتم"
 
 #: content/ui/StandaloneComposer.qml:58
 #, kde-format

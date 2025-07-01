@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-19 00:42+0000\n"
+"POT-Creation-Date: 2025-07-01 00:42+0000\n"
 "PO-Revision-Date: 2025-06-10 21:52+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -3527,7 +3527,7 @@ msgid "Post"
 msgstr "게시물"
 
 #: content/ui/PostDelegate/AudioAttachment.qml:81
-#: content/ui/PostDelegate/VideoAttachment.qml:111
+#: content/ui/PostDelegate/VideoAttachment.qml:120
 #, kde-format
 msgctxt "@action:button Start media playback"
 msgid "Play"
@@ -4003,6 +4003,12 @@ msgstr "인용된 게시물"
 msgctxt "@info:label"
 msgid "Poll"
 msgstr "투표"
+
+#: content/ui/PostDelegate/VideoAttachment.qml:201
+#, kde-format
+msgctxt "@action:button"
+msgid "Volume"
+msgstr ""
 
 #: content/ui/ReadMarker.qml:15
 #, kde-format
@@ -4990,6 +4996,20 @@ msgstr "팔로워 삭제"
 msgctxt "@action:button Deny follow request"
 msgid "Remove"
 msgstr "삭제"
+
+#: content/ui/SocialGraphPage.qml:99
+#, fuzzy, kde-format
+#| msgid "Unblock"
+msgctxt "@action:button Unblock this user"
+msgid "Unblock"
+msgstr "차단 해제"
+
+#: content/ui/SocialGraphPage.qml:105
+#, fuzzy, kde-format
+#| msgid "Unmute"
+msgctxt "@action:button Unmute this user"
+msgid "Unmute"
+msgstr "음소거 해제"
 
 #: content/ui/StandaloneComposer.qml:58
 #, kde-format

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-19 00:42+0000\n"
+"POT-Creation-Date: 2025-07-01 00:42+0000\n"
 "PO-Revision-Date: 2025-06-19 14:25+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -3549,7 +3549,7 @@ msgid "Post"
 msgstr "Bericht"
 
 #: content/ui/PostDelegate/AudioAttachment.qml:81
-#: content/ui/PostDelegate/VideoAttachment.qml:111
+#: content/ui/PostDelegate/VideoAttachment.qml:120
 #, kde-format
 msgctxt "@action:button Start media playback"
 msgid "Play"
@@ -4029,6 +4029,12 @@ msgstr "Aanhaalde post"
 msgctxt "@info:label"
 msgid "Poll"
 msgstr "Peiling"
+
+#: content/ui/PostDelegate/VideoAttachment.qml:201
+#, kde-format
+msgctxt "@action:button"
+msgid "Volume"
+msgstr ""
 
 #: content/ui/ReadMarker.qml:15
 #, kde-format
@@ -5015,6 +5021,20 @@ msgstr "Volger verwijderen"
 msgctxt "@action:button Deny follow request"
 msgid "Remove"
 msgstr "Verwijderen"
+
+#: content/ui/SocialGraphPage.qml:99
+#, fuzzy, kde-format
+#| msgid "Unblock"
+msgctxt "@action:button Unblock this user"
+msgid "Unblock"
+msgstr "Deblokkeren"
+
+#: content/ui/SocialGraphPage.qml:105
+#, fuzzy, kde-format
+#| msgid "Unmute"
+msgctxt "@action:button Unmute this user"
+msgid "Unmute"
+msgstr "Dempen opheffen"
 
 #: content/ui/StandaloneComposer.qml:58
 #, kde-format

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-19 00:42+0000\n"
+"POT-Creation-Date: 2025-07-01 00:42+0000\n"
 "PO-Revision-Date: 2023-07-13 00:20+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -3789,7 +3789,7 @@ msgid "Post"
 msgstr "Enviar"
 
 #: content/ui/PostDelegate/AudioAttachment.qml:81
-#: content/ui/PostDelegate/VideoAttachment.qml:111
+#: content/ui/PostDelegate/VideoAttachment.qml:120
 #, kde-format
 msgctxt "@action:button Start media playback"
 msgid "Play"
@@ -4322,6 +4322,12 @@ msgstr "Publicação não apresentada"
 msgctxt "@info:label"
 msgid "Poll"
 msgstr "Adicionar uma Pesquisa"
+
+#: content/ui/PostDelegate/VideoAttachment.qml:201
+#, kde-format
+msgctxt "@action:button"
+msgid "Volume"
+msgstr ""
 
 #: content/ui/ReadMarker.qml:15
 #, kde-format
@@ -5367,6 +5373,19 @@ msgstr "Sem seguidores"
 msgctxt "@action:button Deny follow request"
 msgid "Remove"
 msgstr "Remover"
+
+#: content/ui/SocialGraphPage.qml:99
+#, fuzzy, kde-format
+#| msgid "Block"
+msgctxt "@action:button Unblock this user"
+msgid "Unblock"
+msgstr "Bloquear"
+
+#: content/ui/SocialGraphPage.qml:105
+#, kde-format
+msgctxt "@action:button Unmute this user"
+msgid "Unmute"
+msgstr ""
 
 #: content/ui/StandaloneComposer.qml:58
 #, fuzzy, kde-format
