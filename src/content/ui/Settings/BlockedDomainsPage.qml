@@ -61,6 +61,7 @@ Kirigami.ScrollablePage {
 
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
+            icon.name: "internet-services-symbolic"
             text: i18nc("@info:placeholder", "No Blocked Domains")
             visible: listview.count === 0 && !listview.model.loading
             width: parent.width - Kirigami.Units.gridUnit * 4
