@@ -17,6 +17,7 @@ class Preferences final : public QObject
     Q_PROPERTY(QString defaultLanguage READ defaultLanguage WRITE setDefaultLanguage NOTIFY defaultLanguageChanged)
     Q_PROPERTY(QString extendMedia READ extendMedia NOTIFY extendMediaChanged)
     Q_PROPERTY(bool extendSpoiler READ extendSpoiler NOTIFY extendSpoilerChanged)
+    Q_PROPERTY(bool indexable READ indexable WRITE setIndexable NOTIFY indexableChanged)
 
 public:
     explicit Preferences(AbstractAccount *account);
@@ -72,6 +73,19 @@ public:
      */
     [[nodiscard]] bool extendSpoiler() const;
 
+    /**
+     * @return Whether public posts should be indexed.
+     * @see setIndexable()
+     */
+    [[nodiscard]] bool indexable() const;
+
+    /**
+     * @brief Set whether public posts should be indexed.
+     * @param indexable Whether or not public posts are indexed.
+     * @see indexable()
+     */
+    void setIndexable(bool indexable);
+
 Q_SIGNALS:
     /**
      * @brief Emitted when the default status visibility preference has been changed.
@@ -101,6 +115,11 @@ Q_SIGNALS:
      */
     void extendSpoilerChanged();
 
+    /**
+     * @brief Emitted when the indexable preference has been changed.
+     */
+    void indexableChanged();
+
 private:
     void setPreferencesField(const QString &name, const QString &value);
 
@@ -111,4 +130,5 @@ private:
     QString m_defaultLanguage;
     QString m_extendMedia;
     bool m_extendSpoiler;
+    bool m_indexable;
 };

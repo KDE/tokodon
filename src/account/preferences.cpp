@@ -26,11 +26,13 @@ Preferences::Preferences(AbstractAccount *account)
             m_defaultVisibility = Post::stringToVisibility(obj[QStringLiteral("posting:default:visibility")].toString());
             m_extendSpoiler = obj[QStringLiteral("reading:expand:spoilers")].toBool();
             m_extendMedia = obj[QStringLiteral("reading:expand:media")].toString();
+            m_indexable = obj[QStringLiteral("indexable")].toBool();
             Q_EMIT defaultVisibilityChanged();
             Q_EMIT defaultSensitiveChanged();
             Q_EMIT defaultLanguageChanged();
             Q_EMIT extendMediaChanged();
             Q_EMIT extendSpoilerChanged();
+            Q_EMIT indexableChanged();
         });
     });
 }
@@ -98,6 +100,23 @@ QString Preferences::extendMedia() const
 bool Preferences::extendSpoiler() const
 {
     return m_extendSpoiler;
+}
+
+bool Preferences::indexable() const
+{
+    return m_indexable;
+}
+
+void Preferences::setIndexable(bool indexable)
+{
+    if (indexable == m_indexable) {
+        return;
+    }
+
+    m_indexable = indexable;
+    Q_EMIT indexableChanged();
+
+    setPreferencesField(QStringLiteral("indexable"), indexable ? QStringLiteral("true") : QStringLiteral("false"));
 }
 
 void Preferences::setPreferencesField(const QString &name, const QString &value)

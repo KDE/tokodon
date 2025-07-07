@@ -174,6 +174,15 @@ Kirigami.Page {
                     FormCard.FormDelegateSeparator {
                     }
 
+                    FormCard.FormSwitchDelegate {
+                        text: i18nc("@label Account preferences", "Include public posts in search results")
+                        checked: AccountManager.selectedAccount.preferences.indexable
+                        onToggled: AccountManager.selectedAccount.preferences.indexable = checked
+                    }
+
+                    FormCard.FormDelegateSeparator {
+                    }
+
                     FormCard.FormButtonDelegate {
                         text: i18nc("@label Account preferences", "Default post language")
                         description: Qt.locale(AccountManager.selectedAccount.preferences.defaultLanguage).nativeLanguageName
