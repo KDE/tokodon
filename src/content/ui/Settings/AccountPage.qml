@@ -119,7 +119,8 @@ Kirigami.Page {
                 anchors.fill: parent
 
                 FormCard.FormCard {
-                    Layout.topMargin: Kirigami.Units.largeSpacing
+                    Layout.topMargin: Kirigami.Units.largeSpacing * 4
+                    Layout.bottomMargin: Kirigami.Units.largeSpacing * 4
                     Layout.fillWidth: true
 
                     enabled: canEditProfile
