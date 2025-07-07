@@ -10,6 +10,8 @@
 
 #include "account/abstractaccount.h"
 
+using namespace Qt::StringLiterals;
+
 Preferences::Preferences(AbstractAccount *account)
     : QObject(account)
     , m_account(account)
@@ -18,16 +20,16 @@ Preferences::Preferences(AbstractAccount *account)
         account->get(account->apiUrl(QStringLiteral("/api/v1/preferences")), true, this, [this](QNetworkReply *reply) {
             const auto obj = QJsonDocument::fromJson(reply->readAll()).object();
 
-            if (const auto defaultLanguage = obj[QStringLiteral("posting:default:language")]; !defaultLanguage.isNull()) {
+            if (const auto defaultLanguage = obj["posting:default:language"_L1]; !defaultLanguage.isNull()) {
                 m_defaultLanguage = defaultLanguage.toString();
             }
 
-            m_defaultSensitive = obj[QStringLiteral("posting:default:sensitive")].toBool();
-            m_defaultVisibility = Post::stringToVisibility(obj[QStringLiteral("posting:default:visibility")].toString());
-            m_extendSpoiler = obj[QStringLiteral("reading:expand:spoilers")].toBool();
-            m_extendMedia = obj[QStringLiteral("reading:expand:media")].toString();
-            m_indexable = obj[QStringLiteral("indexable")].toBool();
-            m_hideCollections = obj[QStringLiteral("hide_collections")].toBool();
+            m_defaultSensitive = obj["posting:default:sensitive"_L1].toBool();
+            m_defaultVisibility = Post::stringToVisibility(obj["posting:default:visibility"_L1].toString());
+            m_extendSpoiler = obj["reading:expand:spoilers"_L1].toBool();
+            m_extendMedia = obj["reading:expand:media"_L1].toString();
+            m_indexable = obj["indexable"_L1].toBool();
+            m_hideCollections = obj["hide_collections"_L1].toBool();
             Q_EMIT defaultVisibilityChanged();
             Q_EMIT defaultSensitiveChanged();
             Q_EMIT defaultLanguageChanged();
