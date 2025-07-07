@@ -18,6 +18,7 @@ class Preferences final : public QObject
     Q_PROPERTY(QString extendMedia READ extendMedia NOTIFY extendMediaChanged)
     Q_PROPERTY(bool extendSpoiler READ extendSpoiler NOTIFY extendSpoilerChanged)
     Q_PROPERTY(bool indexable READ indexable WRITE setIndexable NOTIFY indexableChanged)
+    Q_PROPERTY(bool hideCollections READ hideCollections WRITE setHideCollections NOTIFY hideCollectionsChanged)
 
 public:
     explicit Preferences(AbstractAccount *account);
@@ -86,6 +87,19 @@ public:
      */
     void setIndexable(bool indexable);
 
+    /**
+     * @return Whether to hide followers and followed accounts.
+     * @see setHideCollections()
+     */
+    [[nodiscard]] bool hideCollections() const;
+
+    /**
+     * @brief Set whether to hide followers and followed accounts.
+     * @param hide Whether or not followers and followed accounts are shown.
+     * @see hideCollections()
+     */
+    void setHideCollections(bool hide);
+
 Q_SIGNALS:
     /**
      * @brief Emitted when the default status visibility preference has been changed.
@@ -120,6 +134,11 @@ Q_SIGNALS:
      */
     void indexableChanged();
 
+    /**
+     * @brief Emitted when the hide collections preference has been changed.
+     */
+    void hideCollectionsChanged();
+
 private:
     void setPreferencesField(const QString &name, const QString &value);
 
@@ -131,4 +150,5 @@ private:
     QString m_extendMedia;
     bool m_extendSpoiler;
     bool m_indexable;
+    bool m_hideCollections;
 };
