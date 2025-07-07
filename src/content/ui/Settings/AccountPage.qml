@@ -155,11 +155,11 @@ Kirigami.Page {
                     FormCard.FormDelegateSeparator {
                     }
 
-                    FormCard.FormCheckDelegate {
+                    FormCard.FormSwitchDelegate {
                         text: i18n("Publicly list follows and followers")
                         description: i18n("By default everyone you follow and everyone who follows you is public.")
                         checked: !root.account.preferences.hideCollections
-                        onCheckedChanged: root.account.preferences.hideCollections = !checked
+                        onToggled: root.account.preferences.hideCollections = !checked
                     }
 
                     FormCard.FormDelegateSeparator {
