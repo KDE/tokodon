@@ -568,6 +568,11 @@ public:
     Q_INVOKABLE bool isFavoriteList(const QString &id);
 
     /**
+     * @return True if the account is on a server that implements at least the @p api of @p version.
+     */
+    Q_INVOKABLE bool supportsApiVersion(const QString &api, int minimumVersion);
+
+    /**
      * @brief Type of account action.
      */
     enum AccountAction {
@@ -758,6 +763,7 @@ protected:
     QString m_instanceVapidPublicKey;
     int m_maxCharactersPerOption;
     QString m_streamingUri;
+    QHash<QString, int> m_supportedApiVersions;
 
     // updates and notifications
     void handleNotification(const QJsonDocument &doc);

@@ -470,6 +470,14 @@ void AbstractAccount::fetchInstanceMetadata()
 
             const auto obj = doc.object();
 
+            if (obj.contains("api_versions"_L1)) {
+                const auto apiVersions = obj["api_versions"_L1].toObject();
+                for (const auto &api : apiVersions.keys()) {
+                    const auto version = apiVersions[api].toInt();
+                    m_supportedApiVersions[api] = version;
+                }
+            }
+
             if (obj.contains("configuration"_L1)) {
                 const auto configObj = obj["configuration"_L1].toObject();
 
@@ -890,6 +898,14 @@ void AbstractAccount::removeFavoriteList(const QString &id)
 bool AbstractAccount::isFavoriteList(const QString &id)
 {
     return config()->favoriteListIds().contains(id);
+}
+
+bool AbstractAccount::supportsApiVersion(const QString &api, int minimumVersion)
+{
+    if (m_supportedApiVersions.contains(api)) {
+        return m_supportedApiVersions[api] >= minimumVersion;
+    }
+    return false;
 }
 
 #include "moc_abstractaccount.cpp"
