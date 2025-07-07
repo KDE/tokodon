@@ -433,7 +433,7 @@ void SocialGraphModel::fillTimeline()
     }
 
     if ((m_followListName == QStringLiteral("followers") || m_followListName == QStringLiteral("following")
-         || m_followListName == QStringLiteral("familiar_followers"))
+         || m_followListName == QStringLiteral("familiar_followers") || m_followListName == QStringLiteral("featured"))
         && (m_accountId.isEmpty() || m_accountId.isNull())) {
         return;
     }
@@ -464,7 +464,7 @@ void SocialGraphModel::fillTimeline()
     } else if (m_followListName == QStringLiteral("blocks")) {
         uri = QStringLiteral("/api/v1/blocks");
     } else if (m_followListName == QStringLiteral("featured")) {
-        uri = QStringLiteral("/api/v1/endorsements");
+        uri = QStringLiteral("/api/v1/accounts/%1/endorsements").arg(m_accountId);
     } else if (m_followListName == QStringLiteral("favourited_by")) {
         uri = QStringLiteral("/api/v1/statuses/%1/favourited_by").arg(m_statusId);
     } else if (m_followListName == QStringLiteral("reblogged_by")) {

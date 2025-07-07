@@ -446,9 +446,8 @@ QQC2.Pane {
                         },
                         Kirigami.Action {
                             icon.name: "favorite"
-                            visible: root.isSelf
                             text: i18n("Featured Users")
-                            onTriggered: pageStack.push(socialGraphComponent, { name: "featured" });
+                            onTriggered: pageStack.push(socialGraphComponent, { name: "featured", accountId: root.identity.id });
                         },
                         Kirigami.Action {
                             icon.name: "resource-calendar-insert"
