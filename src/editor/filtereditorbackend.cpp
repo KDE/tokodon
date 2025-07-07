@@ -60,8 +60,8 @@ void FilterEditorBackend::setFilterId(const QString &filterId)
         m_profilesContext = context.contains("account"_L1);
         Q_EMIT profilesContextChanged();
 
-        m_hideCompletely = document["filter_action"_L1] == "hide"_L1;
-        Q_EMIT hideCompletelyChanged();
+        m_filterAction = document["filter_action"_L1].toString();
+        Q_EMIT filterActionChanged();
 
         m_keywords = document["keywords"_L1].toArray().toVariantList();
         Q_EMIT keywordsChanged();
@@ -105,11 +105,7 @@ void FilterEditorBackend::submit()
         formdata.addQueryItem(QStringLiteral("context[]"), QStringLiteral("account"));
     }
 
-    if (m_hideCompletely) {
-        formdata.addQueryItem(QStringLiteral("filter_action"), QStringLiteral("hide"));
-    } else {
-        formdata.addQueryItem(QStringLiteral("filter_action"), QStringLiteral("warn"));
-    }
+    formdata.addQueryItem(QStringLiteral("filter_action"), m_filterAction);
 
     if (m_originalKeywords != m_keywords) {
         // Delete any keywords the user has removed
