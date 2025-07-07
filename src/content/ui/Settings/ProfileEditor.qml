@@ -36,7 +36,8 @@ ColumnLayout {
     ]
 
     FormCard.FormCard {
-        Layout.topMargin: Kirigami.Units.largeSpacing
+        Layout.topMargin: Kirigami.Units.largeSpacing * 4
+        Layout.bottomMargin: Kirigami.Units.largeSpacing * 4
 
         enabled: canEditProfile
 
