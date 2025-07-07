@@ -447,6 +447,7 @@ QQC2.Pane {
                         Kirigami.Action {
                             icon.name: "favorite"
                             text: i18n("Featured Users")
+                            visible: AccountManager.selectedAccount.supportsApiVersion("mastodon", 5) // Featured Users became useful again in Mastodon 4.4.0
                             onTriggered: pageStack.push(socialGraphComponent, { name: "featured", accountId: root.identity.id });
                         },
                         Kirigami.Action {
