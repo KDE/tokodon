@@ -42,6 +42,15 @@ Kirigami.OverlayDrawer {
     topPadding: 0
     bottomPadding: 0
 
+    /// Handles unchecking extra actions that are not part of the main group (e.g. favorited lists)
+    function uncheckAuxiliaryActions(): void {
+        // favorited lists
+        for (let i = 0; i < favoriteListRepeater.count; i++) {
+            const actionDelegate = favoriteListRepeater.itemAt(i);
+            actionDelegate.checked = false;
+        }
+    }
+
     component ActionDelegate: Delegates.RoundedItemDelegate {
         id: delegate
 
@@ -52,7 +61,10 @@ Kirigami.OverlayDrawer {
         activeFocusOnTab: true
 
         onClicked: {
-            checked = true;
+            if (delegate.checkable) {
+                drawer.uncheckAuxiliaryActions();
+                checked = true;
+            }
             if (drawer.modal) {
                 drawer.close();
             }
@@ -171,6 +183,7 @@ Kirigami.OverlayDrawer {
                                 pageStack.clear();
                                 Navigation.openList(delegate.id, delegate.name);
                                 checked = true;
+                                drawer.application.uncheckMainActions();
                             }
                         }
                     }
