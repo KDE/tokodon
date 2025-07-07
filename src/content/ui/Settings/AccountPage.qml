@@ -14,7 +14,7 @@ import ".."
 Kirigami.Page {
     id: root
 
-    property var account
+    property AbstractAccount account
 
     readonly property ProfileEditorBackend backend : ProfileEditorBackend {
         account: root.account
@@ -167,8 +167,8 @@ Kirigami.Page {
 
                     FormCard.FormSwitchDelegate {
                         text: i18nc("@label Account preferences", "Mark uploaded media as sensitive by default")
-                        checked: AccountManager.selectedAccount.preferences.defaultSensitive
-                        onToggled: AccountManager.selectedAccount.preferences.defaultSensitive = checked
+                        checked: root.account.preferences.defaultSensitive
+                        onToggled: root.account.preferences.defaultSensitive = checked
                     }
 
                     FormCard.FormDelegateSeparator {
@@ -176,8 +176,8 @@ Kirigami.Page {
 
                     FormCard.FormSwitchDelegate {
                         text: i18nc("@label Account preferences", "Include public posts in search results")
-                        checked: AccountManager.selectedAccount.preferences.indexable
-                        onToggled: AccountManager.selectedAccount.preferences.indexable = checked
+                        checked: root.account.preferences.indexable
+                        onToggled: root.account.preferences.indexable = checked
                     }
 
                     FormCard.FormDelegateSeparator {
@@ -185,7 +185,7 @@ Kirigami.Page {
 
                     FormCard.FormButtonDelegate {
                         text: i18nc("@label Account preferences", "Default post language")
-                        description: Qt.locale(AccountManager.selectedAccount.preferences.defaultLanguage).nativeLanguageName
+                        description: Qt.locale(root.account.preferences.defaultLanguage).nativeLanguageName
 
                         onClicked: languageSelect.createObject().open()
 
@@ -195,10 +195,10 @@ Kirigami.Page {
                             LanguageSelector {
                                 parent: root.QQC2.Overlay.overlay
                                 onAboutToShow: {
-                                    const sourceIndex = listView.model.sourceModel.indexOfValue(AccountManager.selectedAccount.preferences.defaultLanguage);
+                                    const sourceIndex = listView.model.sourceModel.indexOfValue(root.account.preferences.defaultLanguage);
                                     listView.currentIndex = listView.model.mapFromSource(sourceIndex).row;
                                 }
-                                onCodeSelected: code => AccountManager.selectedAccount.preferences.defaultLanguage = code
+                                onCodeSelected: code => root.account.preferences.defaultLanguage = code
                                 onClosed: destroyed()
                             }
                         }
@@ -216,8 +216,8 @@ Kirigami.Page {
                             i18nc("@item:inlistbox Default post visibility rule", "Unlisted"),
                             i18nc("@item:inlistbox Default post visibility rule", "Private")
                         ]
-                        Component.onCompleted: currentIndex = AccountManager.selectedAccount.preferences.defaultVisibility
-                        onCurrentValueChanged: AccountManager.selectedAccount.preferences.defaultVisibility = currentIndex
+                        Component.onCompleted: currentIndex = root.account.preferences.defaultVisibility
+                        onCurrentValueChanged: root.account.preferences.defaultVisibility = currentIndex
                     }
 
                     FormCard.FormDelegateSeparator {
@@ -229,7 +229,7 @@ Kirigami.Page {
                         icon.name: "globe-symbolic"
                         text: i18nc("@abel Account preferences", "Open Server in Browser")
                         description: i18n("Some settings can only be configured on your server's website.")
-                        url: AccountManager.selectedAccount.instanceUri
+                        url: root.account.instanceUri
                     }
                 }
             }
