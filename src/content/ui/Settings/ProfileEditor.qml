@@ -18,7 +18,7 @@ ColumnLayout {
 
     readonly property ProfileEditorBackend backend : ProfileEditorBackend {
         account: root.account
-        onSendNotification: applicationWindow().showPassiveNotification(message)
+        onSendNotification: message => applicationWindow().showPassiveNotification(message)
     }
 
     readonly property bool canEditProfile: !AccountManager.accountHasIssue(account)
