@@ -17,7 +17,7 @@ class FilterEditorBackend : public QObject
     Q_PROPERTY(bool publicTimelinesContext MEMBER m_publicTimelinesContext NOTIFY publicTimelinesContextChanged)
     Q_PROPERTY(bool conversationsContext MEMBER m_conversationsContext NOTIFY conversationsContextChanged)
     Q_PROPERTY(bool profilesContext MEMBER m_profilesContext NOTIFY profilesContextChanged)
-    Q_PROPERTY(bool hideCompletely MEMBER m_hideCompletely NOTIFY hideCompletelyChanged)
+    Q_PROPERTY(QString filterAction MEMBER m_filterAction NOTIFY filterActionChanged)
     Q_PROPERTY(QVariantList keywords MEMBER m_keywords NOTIFY keywordsChanged)
 
 public:
@@ -46,7 +46,7 @@ Q_SIGNALS:
     void publicTimelinesContextChanged();
     void conversationsContextChanged();
     void profilesContextChanged();
-    void hideCompletelyChanged();
+    void filterActionChanged();
     void keywordsChanged();
 
 private:
@@ -58,7 +58,7 @@ private:
     bool m_publicTimelinesContext = false;
     bool m_conversationsContext = false;
     bool m_profilesContext = false;
-    bool m_hideCompletely = false;
+    QString m_filterAction = QStringLiteral("warn");
     QVariantList m_keywords;
     QVariantList m_originalKeywords;
 };

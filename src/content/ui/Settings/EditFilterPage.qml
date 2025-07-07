@@ -52,8 +52,19 @@ FormCard.FormCardPage {
             publicTimelinesDelegate.checked = backend.publicTimelinesContext;
             conversationsDelegate.checked = backend.conversationsContext;
             profilesDelegate.checked = backend.profilesContext;
-            hideWithNoticeDelegate.checked = !backend.hideCompletely;
-            hideCompletelyDelegate.checked = backend.hideCompletely;
+
+
+            hideWithNoticeDelegate.checked = false;
+            hideMediaOnlyDelegate.checked = false;
+            hideCompletelyDelegate.checked = false;
+
+            if (backend.filterAction === "warn") {
+                hideWithNoticeDelegate.checked = true;
+            } else if (backend.filterAction === "blur") {
+                hideMediaOnlyDelegate.checked = true;
+            } else if (backend.filterAction === "hide") {
+                hideCompletelyDelegate.checked = true;
+            }
         }
 
         function onDone(): void {
@@ -121,13 +132,20 @@ FormCard.FormCardPage {
         FormCard.FormRadioDelegate {
             id: hideWithNoticeDelegate
             text: i18nc("@label:radiobutton", "Hide with Content Notice")
-            onToggled: backend.hideCompletely = false
+            onToggled: backend.filterAction = "warn"
+        }
+
+        FormCard.FormRadioDelegate {
+            id: hideMediaOnlyDelegate
+            text: i18nc("@label:radiobutton", "Hide Media with Content Notice")
+            visible: AccountManager.selectedAccount.supportsApiVersion("mastodon", 5)
+            onToggled: backend.filterAction = "blur"
         }
 
         FormCard.FormRadioDelegate {
             id: hideCompletelyDelegate
             text: i18nc("@label:radiobutton", "Hide Completely")
-            onToggled: backend.hideCompletely = true
+            onToggled: backend.filterAction = "hide"
         }
     }
 
