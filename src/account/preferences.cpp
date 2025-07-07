@@ -27,12 +27,14 @@ Preferences::Preferences(AbstractAccount *account)
             m_extendSpoiler = obj[QStringLiteral("reading:expand:spoilers")].toBool();
             m_extendMedia = obj[QStringLiteral("reading:expand:media")].toString();
             m_indexable = obj[QStringLiteral("indexable")].toBool();
+            m_hideCollections = obj[QStringLiteral("hide_collections")].toBool();
             Q_EMIT defaultVisibilityChanged();
             Q_EMIT defaultSensitiveChanged();
             Q_EMIT defaultLanguageChanged();
             Q_EMIT extendMediaChanged();
             Q_EMIT extendSpoilerChanged();
             Q_EMIT indexableChanged();
+            Q_EMIT hideCollectionsChanged();
         });
     });
 }
@@ -117,6 +119,23 @@ void Preferences::setIndexable(bool indexable)
     Q_EMIT indexableChanged();
 
     setPreferencesField(QStringLiteral("indexable"), indexable ? QStringLiteral("true") : QStringLiteral("false"));
+}
+
+bool Preferences::hideCollections() const
+{
+    return m_hideCollections;
+}
+
+void Preferences::setHideCollections(bool hide)
+{
+    if (hide == m_hideCollections) {
+        return;
+    }
+
+    m_hideCollections = hide;
+    Q_EMIT hideCollectionsChanged();
+
+    setPreferencesField(QStringLiteral("hide_collections"), hide ? QStringLiteral("true") : QStringLiteral("false"));
 }
 
 void Preferences::setPreferencesField(const QString &name, const QString &value)
