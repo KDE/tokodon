@@ -24,6 +24,11 @@ public:
 
     [[nodiscard]] QList<KirigamiActionCollection *> actionCollections() const override;
 
+    /**
+     * @brief Visually unchecks the main page actions, if needed.
+     */
+    Q_INVOKABLE void uncheckMainActions();
+
 Q_SIGNALS:
     void accountManagerChanged();
     void configureAccount(AbstractAccount *account);
@@ -54,4 +59,5 @@ private:
     KirigamiActionCollection *m_accountCollection = nullptr;
     QHash<AbstractAccount *, QAction *> m_switchUserActions;
     QHash<AbstractAccount *, QAction *> m_configureUserActions;
+    QAction *m_dummyAction;
 };

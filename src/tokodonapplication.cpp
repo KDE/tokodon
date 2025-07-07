@@ -81,14 +81,16 @@ void TokodonApplication::setupActions()
 {
     AbstractKirigamiApplication::setupActions();
 
+    auto pagesGroup = new QActionGroup(this);
+    pagesGroup->setExclusive(true);
+
     auto configureAction = mainCollection()->addAction(u"open_status_composer"_s, this, [] {
         Q_EMIT Navigation::instance().openComposer(QString{});
     });
+    configureAction->setCheckable(false);
     configureAction->setText(i18nc("@action:button", "Write a New Post"));
     configureAction->setIcon(QIcon::fromTheme(QStringLiteral("list-add")));
-
-    auto pagesGroup = new QActionGroup(this);
-    pagesGroup->setExclusive(true);
+    mainCollection()->setDefaultShortcut(configureAction, QKeySequence(Qt::CTRL | Qt::Key_N));
 
     auto homeTimelineAction = mainCollection()->addAction(u"home_timeline"_s, this, &TokodonApplication::openHomeTimeline);
     homeTimelineAction->setCheckable(true);
@@ -174,10 +176,11 @@ void TokodonApplication::setupActions()
     profileAction->setText(i18nc("@action:button This account's profile", "Open Profile"));
     profileAction->setIcon(QIcon::fromTheme(QStringLiteral("user")));
 
-    updateAccountActions();
+    m_dummyAction = new QAction();
+    m_dummyAction->setCheckable(true);
+    m_dummyAction->setActionGroup(pagesGroup);
 
-    mainCollection()->addAction(configureAction->objectName(), configureAction);
-    mainCollection()->setDefaultShortcut(configureAction, QKeySequence(Qt::CTRL | Qt::Key_N));
+    updateAccountActions();
 }
 
 void TokodonApplication::setupAccountCollection()
@@ -250,6 +253,11 @@ QList<KirigamiActionCollection *> TokodonApplication::actionCollections() const
         mainCollection(),
         m_accountCollection,
     };
+}
+
+void TokodonApplication::uncheckMainActions()
+{
+    m_dummyAction->trigger();
 }
 
 #include "moc_tokodonapplication.cpp"
