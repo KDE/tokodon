@@ -60,8 +60,13 @@ public:
      * @param locale The user's locale.
      * @param reason If the server requires approval, a reason given to register.
      */
-    Q_INVOKABLE void
-    registerAccount(const QString &username, const QString &email, const QString &password, bool agreement, const QString &locale, const QString &reason);
+    Q_INVOKABLE void registerAccount(const QString &username,
+                                     const QString &email,
+                                     const QString &password,
+                                     bool agreement,
+                                     const QString &locale,
+                                     const QDate &dateOfBirth,
+                                     const QString &reason);
 
     /**
      * @return If the account has successfully authenticated with the server.

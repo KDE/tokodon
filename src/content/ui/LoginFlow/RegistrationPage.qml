@@ -123,6 +123,14 @@ MastoPage {
 
         FormCard.FormDelegateSeparator {}
 
+        FormCard.FormDateTimeDelegate {
+            id: dateOfBirthField
+            text: i18n("Date of Birth")
+            dateTimeDisplay: FormCard.FormDateTimeDelegate.Date
+        }
+
+        FormCard.FormDelegateSeparator {}
+
         FormCard.FormTextFieldDelegate {
             id: reasonField
             label: i18n("Reason")
@@ -136,7 +144,7 @@ MastoPage {
             id: continueButton
             text: i18n("Register")
             onClicked: {
-                root.account.registerAccount(usernameField.text, emailField.text, passwordField.text, true, "en", reasonField.text);
+                root.account.registerAccount(usernameField.text, emailField.text, passwordField.text, true, "en", dateOfBirthField.value, reasonField.text);
 
                 account.authenticated.connect(() => {
                     pageStack.layers.clear();

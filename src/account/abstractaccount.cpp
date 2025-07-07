@@ -199,6 +199,7 @@ void AbstractAccount::registerAccount(const QString &username,
                                       const QString &password,
                                       bool agreement,
                                       const QString &locale,
+                                      const QDate &dateOfBirth,
                                       const QString &reason)
 {
     // get an app-level access token, obviously we don't have a user token yet.
@@ -210,7 +211,7 @@ void AbstractAccount::registerAccount(const QString &username,
     q.addQueryItem(QStringLiteral("grant_type"), QStringLiteral("client_credentials"));
     q.addQueryItem(QStringLiteral("scope"), QStringLiteral("write"));
 
-    post(tokenUrl, q, false, this, [this, username, email, password, agreement, locale, reason](QNetworkReply *reply) {
+    post(tokenUrl, q, false, this, [this, username, email, password, agreement, locale, reason, dateOfBirth](QNetworkReply *reply) {
         auto data = reply->readAll();
         auto doc = QJsonDocument::fromJson(data);
 
@@ -224,6 +225,7 @@ void AbstractAccount::registerAccount(const QString &username,
             {QStringLiteral("agreement"), agreement ? QStringLiteral("1") : QStringLiteral("0")},
             {QStringLiteral("locale"), locale},
             {QStringLiteral("reason"), reason},
+            {QStringLiteral("date_of_birth"), dateOfBirth.toString(Qt::DateFormat::ISODate)},
         };
 
         post(
