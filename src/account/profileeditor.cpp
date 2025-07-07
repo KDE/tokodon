@@ -292,7 +292,7 @@ void ProfileEditorBackend::save()
     discoverablePart.setBody(discoverable() ? "1" : "0");
     multiPart->append(discoverablePart);
 
-    for (int i = 0; i < maxFields(); i++) {
+    for (int i = 0; i < m_fields.size(); i++) {
         QHttpPart fieldNamePart;
         fieldNamePart.setHeader(QNetworkRequest::ContentDispositionHeader, QStringLiteral("form-data; name=\"fields_attributes[%1][name]\"").arg(i));
         fieldNamePart.setBody(m_fields[i]["name"_L1].toString().toUtf8());
