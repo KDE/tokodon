@@ -34,7 +34,7 @@ private Q_SLOTS:
         url = account->apiUrl(QStringLiteral("/api/v1/blocks"));
         account->registerGet(url, new TestReply(QStringLiteral("socialgraphmodel_follows.json"), account));
 
-        url = account->apiUrl(QStringLiteral("/api/v1/endorsements"));
+        url = account->apiUrl(QStringLiteral("/api/v1/accounts/mock/endorsements"));
         account->registerGet(url, new TestReply(QStringLiteral("socialgraphmodel_follows.json"), account));
 
         url = account->apiUrl(QStringLiteral("/api/v1/statuses/mock/favourited_by"));
