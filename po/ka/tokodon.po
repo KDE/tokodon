@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-01 00:42+0000\n"
+"POT-Creation-Date: 2025-07-08 00:42+0000\n"
 "PO-Revision-Date: 2025-07-01 04:05+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -82,62 +82,62 @@ msgstr "M4V ვიდეო (*.m4v)"
 msgid "QuickTime video (*.mov)"
 msgstr "QuickTime ვიდეო (*.mov)"
 
-#: account/abstractaccount.cpp:45 account/abstractaccount.cpp:502
+#: account/abstractaccount.cpp:45 account/abstractaccount.cpp:512
 #, kde-format
 msgid "All files (*)"
 msgstr "ყველა ფაილი (*)"
 
-#: account/abstractaccount.cpp:501
+#: account/abstractaccount.cpp:511
 #, kde-format
 msgid "All supported formats (%1)"
 msgstr "ყველა მხარდაჭერილი ფორმატი (%1)"
 
-#: account/abstractaccount.cpp:656
+#: account/abstractaccount.cpp:666
 #, kde-format
 msgid "Could not follow account"
 msgstr "ანგარიშზე მიყოლის შეცდომა"
 
-#: account/abstractaccount.cpp:657
+#: account/abstractaccount.cpp:667
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "ანგარიშზე მიყოლის გაუქმების შეცდომა"
 
-#: account/abstractaccount.cpp:658
+#: account/abstractaccount.cpp:668
 #, kde-format
 msgid "Could not remove account as your follower"
 msgstr "ანგარიშის წაშლა შეუძლებელია თქვენი მომყოლის სახით"
 
-#: account/abstractaccount.cpp:659
+#: account/abstractaccount.cpp:669
 #, kde-format
 msgid "Could not block account"
 msgstr "ანგარიშის დაბლოკვის შეცდომა"
 
-#: account/abstractaccount.cpp:660
+#: account/abstractaccount.cpp:670
 #, kde-format
 msgid "Could not unblock account"
 msgstr "ანგარიშის განბლოკვის შეცდომა"
 
-#: account/abstractaccount.cpp:661
+#: account/abstractaccount.cpp:671
 #, kde-format
 msgid "Could not mute account"
 msgstr "ანგარიშის დადუმების შეცდომა"
 
-#: account/abstractaccount.cpp:662
+#: account/abstractaccount.cpp:672
 #, kde-format
 msgid "Could not unmute account"
 msgstr "ანგარიშის დადუმების მოხსნის შეცდომა"
 
-#: account/abstractaccount.cpp:663
+#: account/abstractaccount.cpp:673
 #, kde-format
 msgid "Could not feature account"
 msgstr "ანგარიშის მიმაგრების შეცდომა"
 
-#: account/abstractaccount.cpp:664
+#: account/abstractaccount.cpp:674
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "ანგარიშის მიმაგრების მოხსნის შეცდომა"
 
-#: account/abstractaccount.cpp:665
+#: account/abstractaccount.cpp:675
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "ანგარიშის შესახებ შენიშვნის ჩასწორების შეცდომა"
@@ -705,7 +705,7 @@ msgstr "პროფილის ჩასწორება"
 msgid "Account editor"
 msgstr "ანგარიშების რედაქტორი"
 
-#: content/ui/AccountHeader.qml:450
+#: content/ui/AccountHeader.qml:449
 #, kde-format
 msgid "Featured Users"
 msgstr "მიმაგრებული მომხმარებლები"
@@ -1557,10 +1557,15 @@ msgstr "პაროლი"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:128
 #, kde-format
+msgid "Date of Birth"
+msgstr ""
+
+#: content/ui/LoginFlow/RegistrationPage.qml:136
+#, kde-format
 msgid "Reason"
 msgstr "მიზეზი"
 
-#: content/ui/LoginFlow/RegistrationPage.qml:137
+#: content/ui/LoginFlow/RegistrationPage.qml:145
 #, kde-format
 msgid "Register"
 msgstr "რეგისტრაცია"
@@ -3956,8 +3961,8 @@ msgid "Edit"
 msgstr "ჩასწორება"
 
 #: content/ui/PostDelegate/PostMenu.qml:215
-#: content/ui/Settings/ProfileEditor.qml:151
-#: content/ui/Settings/ProfileEditor.qml:213
+#: content/ui/Settings/ProfileEditor.qml:152
+#: content/ui/Settings/ProfileEditor.qml:214
 #, kde-format
 msgid "Delete"
 msgstr "წაშლა"
@@ -4164,12 +4169,12 @@ msgstr "პროფილი"
 msgid "Account"
 msgstr "ანგარიში"
 
-#: content/ui/Settings/AccountPage.qml:128
+#: content/ui/Settings/AccountPage.qml:129
 #, kde-format
 msgid "Require approval for new followers"
 msgstr "გამოწერის მოთხოვნა ახალი მომყოლებისთვის"
 
-#: content/ui/Settings/AccountPage.qml:129
+#: content/ui/Settings/AccountPage.qml:130
 #, kde-format
 msgid ""
 "By default new followers are automatically accepted. Uncheck if you want to "
@@ -4180,12 +4185,12 @@ msgstr ""
 "გნებავთ, ისინი ხელით დაადასტუროთ. იმისათვის, რომ ვინმეს აიძულოთ, თქვენი "
 "მიმდევრობა გააუქმოთ, ეს პარამეტრი უნდა გამოიყენოთ."
 
-#: content/ui/Settings/AccountPage.qml:138
+#: content/ui/Settings/AccountPage.qml:139
 #, kde-format
 msgid "Is automated"
 msgstr "ავტომატიზებულია"
 
-#: content/ui/Settings/AccountPage.qml:139
+#: content/ui/Settings/AccountPage.qml:140
 #, kde-format
 msgid ""
 "Whether to publicly mark this account as doing any kind of automated actions."
@@ -4193,71 +4198,77 @@ msgstr ""
 "ექნება თუ არა საჯარო ნიშანი ამ ანგარიშს, რომ ის ავტომატიზებულ ქმედებებს "
 "იყენებს."
 
-#: content/ui/Settings/AccountPage.qml:148
+#: content/ui/Settings/AccountPage.qml:149
 #, kde-format
 msgid "Feature profile and posts"
 msgstr "ამ პროფილის და პოსტების ჩვენება"
 
-#: content/ui/Settings/AccountPage.qml:149
+#: content/ui/Settings/AccountPage.qml:150
 #, kde-format
 msgid "Your public profile and posts may be featured to other users."
 msgstr "თქვენი საჯარო პროფილი და პოსტები, შეიძლება სხვა მომხმარებლებმაც ნახონ."
 
-#: content/ui/Settings/AccountPage.qml:158
+#: content/ui/Settings/AccountPage.qml:159
 #, kde-format
 msgid "Publicly list follows and followers"
 msgstr "თქვენი მიყოლების და თქვენზე მიყოლების საჯარო ჩამონათვალი"
 
-#: content/ui/Settings/AccountPage.qml:159
+#: content/ui/Settings/AccountPage.qml:160
 #, kde-format
 msgid "By default everyone you follow and everyone who follows you is public."
 msgstr ""
 "ნაგულისხმევად სია ყველასი, ვისაც თქვენ მისდევთ და ვინც თქვენ მოგდევთ, "
 "საჯაროა."
 
-#: content/ui/Settings/AccountPage.qml:168
+#: content/ui/Settings/AccountPage.qml:169
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Mark uploaded media as sensitive by default"
 msgstr "შემცველობის მგრძნობიარედ ნაგულისხმევად მონიშვნა"
 
-#: content/ui/Settings/AccountPage.qml:177
+#: content/ui/Settings/AccountPage.qml:178
+#, kde-format
+msgctxt "@label Account preferences"
+msgid "Include public posts in search results"
+msgstr ""
+
+#: content/ui/Settings/AccountPage.qml:187
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post language"
 msgstr "ნაგულისხმევი პოსტის ენა"
 
-#: content/ui/Settings/AccountPage.qml:203
+#: content/ui/Settings/AccountPage.qml:213
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post visibility"
 msgstr "პოსტის ნაგულისხმევი ხილვადობა"
 
-#: content/ui/Settings/AccountPage.qml:205
+#: content/ui/Settings/AccountPage.qml:215
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Public"
 msgstr "საჯარო"
 
-#: content/ui/Settings/AccountPage.qml:206
+#: content/ui/Settings/AccountPage.qml:216
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Unlisted"
 msgstr "სიაში არაა"
 
-#: content/ui/Settings/AccountPage.qml:207
+#: content/ui/Settings/AccountPage.qml:217
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Private"
 msgstr "პირადი"
 
-#: content/ui/Settings/AccountPage.qml:220
+#: content/ui/Settings/AccountPage.qml:230
 #, kde-format
 msgctxt "@abel Account preferences"
 msgid "Open Server in Browser"
 msgstr "სერვისის ბრაუზერში გახსნა"
 
-#: content/ui/Settings/AccountPage.qml:221
+#: content/ui/Settings/AccountPage.qml:231
 #, kde-format
 msgid "Some settings can only be configured on your server's website."
 msgstr ""
@@ -4376,7 +4387,7 @@ msgctxt "@action:button"
 msgid "Unblock"
 msgstr "განბლოკვა"
 
-#: content/ui/Settings/BlockedDomainsPage.qml:64
+#: content/ui/Settings/BlockedDomainsPage.qml:65
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Blocked Domains"
@@ -4394,127 +4405,135 @@ msgctxt "@title:window"
 msgid "Edit Filter"
 msgstr "ფილტრის ჩასწორება"
 
-#: content/ui/Settings/EditFilterPage.qml:73
+#: content/ui/Settings/EditFilterPage.qml:84
 #, kde-format
 msgctxt "@label:textbox Filter title"
 msgid "Title"
 msgstr "სათაური"
 
-#: content/ui/Settings/EditFilterPage.qml:78
+#: content/ui/Settings/EditFilterPage.qml:89
 #, kde-format
 msgctxt "@info:header"
 msgid "Contexts"
 msgstr "კონტექსტები"
 
-#: content/ui/Settings/EditFilterPage.qml:85
+#: content/ui/Settings/EditFilterPage.qml:96
 #, kde-format
 msgctxt "@info"
 msgid "Select one or more contexts where this filter should apply:"
 msgstr "აირჩიეთ ერთი ან მეტი კონტექსტი, რომელზეც ეს ფილტრი უნდა გადატარდეს:"
 
-#: content/ui/Settings/EditFilterPage.qml:90
+#: content/ui/Settings/EditFilterPage.qml:101
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Home and Lists"
 msgstr "საწყისი და სიები"
 
-#: content/ui/Settings/EditFilterPage.qml:95
+#: content/ui/Settings/EditFilterPage.qml:106
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Notifications"
 msgstr "გაფრთხილებები"
 
-#: content/ui/Settings/EditFilterPage.qml:100
+#: content/ui/Settings/EditFilterPage.qml:111
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Public Timelines"
 msgstr "გლობალური დროის ხაზები"
 
-#: content/ui/Settings/EditFilterPage.qml:105
+#: content/ui/Settings/EditFilterPage.qml:116
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Conversations"
 msgstr "საუბრები"
 
-#: content/ui/Settings/EditFilterPage.qml:110
+#: content/ui/Settings/EditFilterPage.qml:121
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Profiles"
 msgstr "პროფილები"
 
-#: content/ui/Settings/EditFilterPage.qml:115
+#: content/ui/Settings/EditFilterPage.qml:126
 #, kde-format
 msgctxt "@info:header"
 msgid "Action"
 msgstr "მდებარეობა"
 
-#: content/ui/Settings/EditFilterPage.qml:123
+#: content/ui/Settings/EditFilterPage.qml:134
 #, kde-format
 msgctxt "@label:radiobutton"
 msgid "Hide with Content Notice"
 msgstr "დამალვა შემცველობის გაფრთხილებასთან ერთად"
 
-#: content/ui/Settings/EditFilterPage.qml:129
+#: content/ui/Settings/EditFilterPage.qml:140
+#, fuzzy, kde-format
+#| msgctxt "@label:radiobutton"
+#| msgid "Hide with Content Notice"
+msgctxt "@label:radiobutton"
+msgid "Hide Media with Content Notice"
+msgstr "დამალვა შემცველობის გაფრთხილებასთან ერთად"
+
+#: content/ui/Settings/EditFilterPage.qml:147
 #, kde-format
 msgctxt "@label:radiobutton"
 msgid "Hide Completely"
 msgstr "მთლიანად დამალვა"
 
-#: content/ui/Settings/EditFilterPage.qml:135
+#: content/ui/Settings/EditFilterPage.qml:153
 #, kde-format
 msgctxt "@info:header"
 msgid "Keywords"
 msgstr "საკვანძო სიტყვები"
 
-#: content/ui/Settings/EditFilterPage.qml:138
+#: content/ui/Settings/EditFilterPage.qml:156
 #, kde-format
 msgctxt "@action:button Add keyword"
 msgid "Add"
 msgstr "დამატება"
 
-#: content/ui/Settings/EditFilterPage.qml:148
+#: content/ui/Settings/EditFilterPage.qml:166
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No keywords"
 msgstr "საკვანძო სიტყვების გარეშე"
 
-#: content/ui/Settings/EditFilterPage.qml:176
+#: content/ui/Settings/EditFilterPage.qml:194
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Whole word"
 msgstr "მთლიანი სიტყვა"
 
-#: content/ui/Settings/EditFilterPage.qml:182
+#: content/ui/Settings/EditFilterPage.qml:200
 #, kde-format
 msgctxt "@action:button Remove keyword"
 msgid "Remove"
 msgstr "წაშლა"
 
-#: content/ui/Settings/EditFilterPage.qml:209
+#: content/ui/Settings/EditFilterPage.qml:227
 #, kde-format
 msgctxt "@action:button Create the filter"
 msgid "Create"
 msgstr "შექმნა"
 
-#: content/ui/Settings/EditFilterPage.qml:211
+#: content/ui/Settings/EditFilterPage.qml:229
 #, kde-format
 msgctxt "@action:button Edit the filter"
 msgid "Edit"
 msgstr "ჩასწორება"
 
-#: content/ui/Settings/EditFilterPage.qml:224
+#: content/ui/Settings/EditFilterPage.qml:242
 #, kde-format
 msgctxt "@action:button Delete the filter"
 msgid "Delete"
 msgstr "წაშლა"
 
-#: content/ui/Settings/EditFilterPage.qml:231
+#: content/ui/Settings/EditFilterPage.qml:249
 #, kde-format
 msgctxt "@title"
 msgid "Deleting Filter"
 msgstr "ფილტრის წაშლა"
 
-#: content/ui/Settings/EditFilterPage.qml:232
+#: content/ui/Settings/EditFilterPage.qml:250
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to delete this filter?"
@@ -4610,7 +4629,7 @@ msgid "User"
 msgstr "მომხმარებელი"
 
 #: content/ui/Settings/NetworkProxyPage.qml:141
-#: content/ui/Settings/ProfileEditor.qml:303
+#: content/ui/Settings/ProfileEditor.qml:304
 #, kde-format
 msgid "Apply"
 msgstr "გამოყენება"
@@ -4862,55 +4881,55 @@ msgstr "წლიური ანგარიში"
 msgid "When you receive your #FediWrapped at the end of the year."
 msgstr "როდესაც თქვენ მიიღებთ თქვენს #FediWrapped წლის ბოლოს."
 
-#: content/ui/Settings/ProfileEditor.qml:59
+#: content/ui/Settings/ProfileEditor.qml:60
 #, kde-format
 msgid "Display Name"
 msgstr "საჩვენებელი სახელი"
 
-#: content/ui/Settings/ProfileEditor.qml:77
+#: content/ui/Settings/ProfileEditor.qml:78
 #, kde-format
 msgid "Bio"
 msgstr "ბიო"
 
-#: content/ui/Settings/ProfileEditor.qml:103
+#: content/ui/Settings/ProfileEditor.qml:104
 #, kde-format
 msgid "Header"
 msgstr "სათაური"
 
-#: content/ui/Settings/ProfileEditor.qml:138
+#: content/ui/Settings/ProfileEditor.qml:139
 #, kde-format
 msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 1500x500px"
 msgstr "PNG, GIF ან JPG. მაქს 2 მბ. დაპატარავდება ზომებამდე 1500x500px"
 
-#: content/ui/Settings/ProfileEditor.qml:166
+#: content/ui/Settings/ProfileEditor.qml:167
 #, kde-format
 msgid "Avatar"
 msgstr "ავატარი"
 
-#: content/ui/Settings/ProfileEditor.qml:199
+#: content/ui/Settings/ProfileEditor.qml:200
 #, kde-format
 msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 400x400px"
 msgstr "PNG, GIF ან JPG. მაქს 2 მბ. დაპატარავდება ზომებამდე 400x400px"
 
-#: content/ui/Settings/ProfileEditor.qml:230
+#: content/ui/Settings/ProfileEditor.qml:231
 #, kde-format
 msgctxt "Profile fields"
 msgid "Fields"
 msgstr "ველები"
 
-#: content/ui/Settings/ProfileEditor.qml:269
+#: content/ui/Settings/ProfileEditor.qml:270
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove"
 msgstr "წაშლა"
 
-#: content/ui/Settings/ProfileEditor.qml:280
+#: content/ui/Settings/ProfileEditor.qml:281
 #, kde-format
 msgctxt "@action:button"
 msgid "Add"
 msgstr "დამატება"
 
-#: content/ui/Settings/ProfileEditor.qml:296
+#: content/ui/Settings/ProfileEditor.qml:297
 #, kde-format
 msgid "Reset"
 msgstr "თავიდან ჩართვა"
@@ -5671,7 +5690,7 @@ msgctxt "@action:button"
 msgid "Switch to '%1'"
 msgstr "%1-ზე გადართვა"
 
-#: tokodonapplication.cpp:65 tokodonapplication.cpp:216
+#: tokodonapplication.cpp:65 tokodonapplication.cpp:219
 #, kde-format
 msgctxt "@action:button"
 msgid "Configure '%1'"
@@ -5683,86 +5702,86 @@ msgctxt "@action:button"
 msgid "Add Account"
 msgstr "ანგარიშის დამატება"
 
-#: tokodonapplication.cpp:87
+#: tokodonapplication.cpp:91
 #, kde-format
 msgctxt "@action:button"
 msgid "Write a New Post"
 msgstr "დაწერეთ ახალი პოსტი"
 
-#: tokodonapplication.cpp:96
+#: tokodonapplication.cpp:98
 #, kde-format
 msgctxt "@action:button Home Timeline"
 msgid "Open Home Timeline"
 msgstr "თქვენი დროის ხაზის გახსნა"
 
-#: tokodonapplication.cpp:102
+#: tokodonapplication.cpp:104
 #, kde-format
 msgctxt "@action:button Account Notifications"
 msgid "Open Notifications"
 msgstr "გაფრთხილებების გახსნა"
 
-#: tokodonapplication.cpp:108
+#: tokodonapplication.cpp:110
 #, kde-format
 msgctxt "@action:button Follows that require explicit allow/deny"
 msgid "Open Follow Requests"
 msgstr "მიყოლის მოთხოვნების გახსნა"
 
-#: tokodonapplication.cpp:114
+#: tokodonapplication.cpp:116
 #, kde-format
 msgctxt "@action:button Local timeline of posts from the account's own server"
 msgid "Open Local Timeline"
 msgstr "ლოკალური დროის ხაზის გახსნა"
 
-#: tokodonapplication.cpp:120
+#: tokodonapplication.cpp:122
 #, kde-format
 msgctxt ""
 "@action:button Global timeline of posts from the entire Fediverse network"
 msgid "Open Global Timeline"
 msgstr "გლობალური დროის ხაზი გახსნა"
 
-#: tokodonapplication.cpp:126
+#: tokodonapplication.cpp:128
 #, kde-format
 msgctxt "@action:button Direct one-on-one messages between users"
 msgid "Open Conversations"
 msgstr "საუბრის გახსნა"
 
-#: tokodonapplication.cpp:132
+#: tokodonapplication.cpp:134
 #, kde-format
 msgctxt "@action:button This account's favorited posts"
 msgid "Open Favorites"
 msgstr "რჩეულების გახსნა"
 
-#: tokodonapplication.cpp:138
+#: tokodonapplication.cpp:140
 #, kde-format
 msgctxt "@action:button This account's bookmarked posts"
 msgid "Open Bookmarks"
 msgstr "სანიშნეების გახსნა"
 
-#: tokodonapplication.cpp:144
+#: tokodonapplication.cpp:146
 #, kde-format
 msgctxt "@action:button Explore this server's trending posts, news, and more"
 msgid "Open Explore"
 msgstr "დათვალიერების გახსნა"
 
-#: tokodonapplication.cpp:150
+#: tokodonapplication.cpp:152
 #, kde-format
 msgctxt "@action:button A list of this account's followed accounts"
 msgid "Open Following"
 msgstr "მიყოლილების გახსნა"
 
-#: tokodonapplication.cpp:156
+#: tokodonapplication.cpp:158
 #, kde-format
 msgctxt "@action:button Search for users, posts and tags"
 msgid "Open Search"
 msgstr "ძებნის გახსნა"
 
-#: tokodonapplication.cpp:162
+#: tokodonapplication.cpp:164
 #, kde-format
 msgctxt "@action:button"
 msgid "Open Server Information"
 msgstr "სერვერის ინფორმაციის გახსნა"
 
-#: tokodonapplication.cpp:168
+#: tokodonapplication.cpp:170
 #, kde-format
 msgctxt ""
 "@action:button This account's lists, or timelines consisting of a groups of "
@@ -5770,13 +5789,13 @@ msgctxt ""
 msgid "Open Lists"
 msgstr "სიების გახსნა"
 
-#: tokodonapplication.cpp:174
+#: tokodonapplication.cpp:176
 #, kde-format
 msgctxt "@action:button This account's profile"
 msgid "Open Profile"
 msgstr "პროფილის გახსნა"
 
-#: tokodonapplication.cpp:208
+#: tokodonapplication.cpp:211
 #, kde-format
 msgctxt "@action:button"
 msgid "Switch '%1'"
