@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-07 02:32+0000\n"
-"PO-Revision-Date: 2025-06-22 16:58+0200\n"
+"PO-Revision-Date: 2025-07-08 22:49+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.04.2\n"
+"X-Generator: Lokalize 25.04.3\n"
 
 #: account/abstractaccount.cpp:33
 #, kde-format
@@ -146,13 +146,13 @@ msgstr "Nem sikerült szerkeszteni egy fiókhoz tartozó megjegyzést"
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Network request was interrupted"
-msgstr ""
+msgstr "Hálózati kérés megszakítva"
 
 #: account/account.cpp:308 account/account.cpp:315
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Failed to parse credentials"
-msgstr ""
+msgstr "Nem sikerült feldolgozni a hitelesítési adatokat"
 
 #: account/notificationhandler.cpp:32 account/notificationhandler.cpp:33
 #, kde-format
@@ -875,16 +875,13 @@ msgid "This user hasn't posted any media yet."
 msgstr "Ez a felhasználó még nem tett közzé médiát."
 
 #: content/ui/AccountSwitchDialog.qml:26
-#, fuzzy, kde-format
-#| msgid "Switch Account"
+#, kde-format
 msgctxt "@title: dialog to switch between logged in accounts"
 msgid "Switch Account"
 msgstr "Fiókváltás"
 
 #: content/ui/AccountSwitchDialog.qml:53
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add Account"
+#, kde-format
 msgctxt "@button: login to or register a new account."
 msgid "Add Account"
 msgstr "Fiók hozzáadása"
@@ -901,6 +898,8 @@ msgctxt "@info:tooltip"
 msgid ""
 "This account has an issue and can't login, switch to it for more details."
 msgstr ""
+"Ennek a fióknak problémája van, és nem tud bejelentkezni, váltson rá a "
+"további részletekért."
 
 #: content/ui/Android/ShareAction.qml:15 content/ui/ShareAction.qml:19
 #, kde-format
@@ -961,12 +960,10 @@ msgid "No emojis"
 msgstr "Nincsenek emojik"
 
 #: content/ui/Components/ServerInformationCard.qml:28
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Embed Information"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Information"
-msgstr "Információk beágyazása"
+msgstr "Nincs információ"
 
 #: content/ui/Components/ServerInformationCard.qml:33
 #, kde-format
@@ -1278,11 +1275,10 @@ msgid "Open Post"
 msgstr "Bejegyzés megnyitása"
 
 #: content/ui/GenericServerInformationPage.qml:19
-#, fuzzy, kde-format
-#| msgid "Custom Server"
+#, kde-format
 msgctxt "@title:window"
 msgid "About Server"
-msgstr "Egyéni kiszolgáló"
+msgstr "A kiszolgálóról"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:19
 #, kde-format
@@ -1471,10 +1467,9 @@ msgid "Login Issue"
 msgstr "Bejelentkezési hiba"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:27
-#, fuzzy, kde-format
-#| msgid "There was an issue logging into the server:<br><b>%1</b>"
+#, kde-format
 msgid "There was an issue logging into %1:<br><b>%2</b>"
-msgstr "Hiba történt a kiszolgálóra bejelentkezés során:<br><b>%1</b>"
+msgstr "Hiba történt a kiszolgálóra bejelentkezés során ide: %1:<br><b>%2</b>"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:38
 #, kde-format
@@ -1568,7 +1563,7 @@ msgstr "Jelszó"
 #: content/ui/LoginFlow/RegistrationPage.qml:128
 #, kde-format
 msgid "Date of Birth"
-msgstr ""
+msgstr "Születési dátum"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:136
 #, kde-format
@@ -1614,7 +1609,7 @@ msgstr "Kiszolgáló kiválasztása"
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose your Existing Server"
-msgstr ""
+msgstr "Válassza ki a meglévő kiszolgálót"
 
 #: content/ui/LoginFlow/ServersPage.qml:38
 #, kde-format
@@ -1674,15 +1669,13 @@ msgstr ""
 "kompatibilis szoftverekben)."
 
 #: content/ui/LoginFlow/WelcomePage.qml:80
-#, fuzzy, kde-format
-#| msgid "Register"
+#, kde-format
 msgctxt "@action:button Pick a Mastodon server"
 msgid "Register"
 msgstr "Regisztráció"
 
 #: content/ui/LoginFlow/WelcomePage.qml:90
-#, fuzzy, kde-format
-#| msgid "Login"
+#, kde-format
 msgctxt "@action:button Use an existing Mastodon account"
 msgid "Login"
 msgstr "Bejelentkezés"
@@ -3278,11 +3271,9 @@ msgid "Reported By:"
 msgstr "Jelentő:"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:201
-#, fuzzy, kde-format
-#| msgctxt "@info: The comment attached with the ip rule"
-#| msgid "Comment"
+#, kde-format
 msgid "Comment:"
-msgstr "Megjegyzés"
+msgstr "Megjegyzés:"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:224
 #, kde-format
@@ -3373,18 +3364,16 @@ msgid "Follows"
 msgstr "Követések"
 
 #: content/ui/NotificationPage.qml:188
-#, fuzzy, kde-format
-#| msgid "News"
+#, kde-format
 msgctxt "@info:label New notifications"
 msgid "New"
-msgstr "Hírek"
+msgstr "Új"
 
 #: content/ui/NotificationPage.qml:188
-#, fuzzy, kde-format
-#| msgid "Previous image"
+#, kde-format
 msgctxt "@info:label Previous notifications"
 msgid "Previous"
-msgstr "Előző kép"
+msgstr "Előző"
 
 #: content/ui/NotificationPage.qml:315
 #, kde-format
@@ -4047,7 +4036,7 @@ msgstr "Szavazás"
 #, kde-format
 msgctxt "@action:button"
 msgid "Volume"
-msgstr ""
+msgstr "Hangerő"
 
 #: content/ui/ReadMarker.qml:15
 #, kde-format
@@ -4118,17 +4107,13 @@ msgid "Search for users, tags and posts"
 msgstr "Felhasználók, címkék és bejegyzések keresése"
 
 #: content/ui/ServerInformationPage.qml:27
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Rules"
+#, kde-format
 msgctxt "@title:window Server rules"
 msgid "Rules"
 msgstr "Szabályok"
 
 #: content/ui/ServerInformationPage.qml:68
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Rules"
+#, kde-format
 msgctxt "@action:button"
 msgid "Rules"
 msgstr "Szabályok"
@@ -4152,20 +4137,16 @@ msgid "Privacy Policy"
 msgstr "Adatvédelmi irányelvek"
 
 #: content/ui/ServerInformationPage.qml:104
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Password Service"
+#, kde-format
 msgctxt "@action:button"
 msgid "Terms of Service"
-msgstr "Jelszószolgáltatás"
+msgstr "Szolgáltatás feltételei"
 
 #: content/ui/ServerInformationPage.qml:105
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Password Service"
+#, kde-format
 msgctxt "@title:window"
 msgid "Terms of Service"
-msgstr "Jelszószolgáltatás"
+msgstr "Szolgáltatás feltételei"
 
 #: content/ui/Settings/AccountPage.qml:26
 #, kde-format
@@ -4258,7 +4239,7 @@ msgstr "Feltöltött média megjelelölése érzékeny tartalomként alapértelm
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Include public posts in search results"
-msgstr ""
+msgstr "Nyilvános bejegyzések megjelenítése a keresési eredményekben"
 
 #: content/ui/Settings/AccountPage.qml:187
 #, kde-format
@@ -4493,12 +4474,10 @@ msgid "Hide with Content Notice"
 msgstr "Elrejtés tartalmi figyelmeztetéssel"
 
 #: content/ui/Settings/EditFilterPage.qml:140
-#, fuzzy, kde-format
-#| msgctxt "@label:radiobutton"
-#| msgid "Hide with Content Notice"
+#, kde-format
 msgctxt "@label:radiobutton"
 msgid "Hide Media with Content Notice"
-msgstr "Elrejtés tartalmi figyelmeztetéssel"
+msgstr "Média elrejtése tartalmi figyelmeztetéssel"
 
 #: content/ui/Settings/EditFilterPage.qml:147
 #, kde-format
@@ -5055,15 +5034,13 @@ msgid "Remove"
 msgstr "Eltávolítás"
 
 #: content/ui/SocialGraphPage.qml:99
-#, fuzzy, kde-format
-#| msgid "Unblock"
+#, kde-format
 msgctxt "@action:button Unblock this user"
 msgid "Unblock"
 msgstr "Letiltás feloldása"
 
 #: content/ui/SocialGraphPage.qml:105
-#, fuzzy, kde-format
-#| msgid "Unmute"
+#, kde-format
 msgctxt "@action:button Unmute this user"
 msgid "Unmute"
 msgstr "Némítás feloldása"
@@ -5308,13 +5285,13 @@ msgstr "Fájl csatolása"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You can't have attachments and a poll in the same post."
-msgstr ""
+msgstr "Nem lehetnek mellékletek és szavazások ugyanabban a bejegyzésben."
 
 #: content/ui/StatusComposer/StatusComposer.qml:504
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You have the maximum allowed number of attachments."
-msgstr ""
+msgstr "Elérte a megengedett maximális mellékletszámot."
 
 #: content/ui/StatusComposer/StatusComposer.qml:507
 #, kde-format
@@ -5332,7 +5309,7 @@ msgstr "Szavazás csatolása"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You can't modify or add a poll to an existing post."
-msgstr ""
+msgstr "Nem módosíthat vagy adhat hozzá szavazást egy meglévő bejegyzéshez."
 
 #: content/ui/StatusComposer/StatusComposer.qml:533
 #, kde-format
