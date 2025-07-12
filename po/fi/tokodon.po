@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-07 02:32+0000\n"
-"PO-Revision-Date: 2025-05-27 23:23+0300\n"
+"PO-Revision-Date: 2025-07-10 19:49+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -147,13 +147,13 @@ msgstr "Tiliä koskevaa muistiinpanoa ei voitu muokata"
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Network request was interrupted"
-msgstr ""
+msgstr "Verkkopyyntö keskeytettiin"
 
 #: account/account.cpp:308 account/account.cpp:315
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Failed to parse credentials"
-msgstr ""
+msgstr "Todennustietojen jäsentäminen epäonnistui"
 
 #: account/notificationhandler.cpp:32 account/notificationhandler.cpp:33
 #, kde-format
@@ -895,6 +895,8 @@ msgctxt "@info:tooltip"
 msgid ""
 "This account has an issue and can't login, switch to it for more details."
 msgstr ""
+"Tilillä on ongelma eikä kirjautuminen onnistu: lisätietoa näkyy vaihtamalla "
+"siihen."
 
 #: content/ui/Android/ShareAction.qml:15 content/ui/ShareAction.qml:19
 #, kde-format
@@ -955,12 +957,10 @@ msgid "No emojis"
 msgstr "Ei emojeja"
 
 #: content/ui/Components/ServerInformationCard.qml:28
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Embed Information"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Information"
-msgstr "Upota tieto"
+msgstr "Ei tietoa"
 
 #: content/ui/Components/ServerInformationCard.qml:33
 #, kde-format
@@ -1269,11 +1269,10 @@ msgid "Open Post"
 msgstr "Avaa julkaisu"
 
 #: content/ui/GenericServerInformationPage.qml:19
-#, fuzzy, kde-format
-#| msgid "Custom Server"
+#, kde-format
 msgctxt "@title:window"
 msgid "About Server"
-msgstr "Mukautettu palvelin"
+msgstr "Tietoa palvelimesta"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:19
 #, kde-format
@@ -1460,10 +1459,9 @@ msgid "Login Issue"
 msgstr "Kirjautumisongelma"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:27
-#, fuzzy, kde-format
-#| msgid "There was an issue logging into the server:<br><b>%1</b>"
+#, kde-format
 msgid "There was an issue logging into %1:<br><b>%2</b>"
-msgstr "Palvelimeen kirjauduttaessa ilmeni ongelma:<br><b>%1</b>"
+msgstr "Palvelimeen %1 kirjauduttaessa ilmeni ongelma:<br><b>%2</b>"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:38
 #, kde-format
@@ -4099,17 +4097,13 @@ msgid "Search for users, tags and posts"
 msgstr "Etsi käyttäjiä, tagit ja jukaisut"
 
 #: content/ui/ServerInformationPage.qml:27
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Rules"
+#, kde-format
 msgctxt "@title:window Server rules"
 msgid "Rules"
 msgstr "Säännöt"
 
 #: content/ui/ServerInformationPage.qml:68
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Rules"
+#, kde-format
 msgctxt "@action:button"
 msgid "Rules"
 msgstr "Säännöt"
@@ -4133,20 +4127,16 @@ msgid "Privacy Policy"
 msgstr "Yksityisyyskäytäntö"
 
 #: content/ui/ServerInformationPage.qml:104
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Password Service"
+#, kde-format
 msgctxt "@action:button"
 msgid "Terms of Service"
-msgstr "Salasanapalvelu"
+msgstr "Käyttöehdot"
 
 #: content/ui/ServerInformationPage.qml:105
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Password Service"
+#, kde-format
 msgctxt "@title:window"
 msgid "Terms of Service"
-msgstr "Salasanapalvelu"
+msgstr "Käyttöehdot"
 
 #: content/ui/Settings/AccountPage.qml:26
 #, kde-format
@@ -5282,13 +5272,13 @@ msgstr "Liitä tiedosto"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You can't have attachments and a poll in the same post."
-msgstr ""
+msgstr "Liitteitä ja kyselyä ei voi olla samassa julkaisussa."
 
 #: content/ui/StatusComposer/StatusComposer.qml:504
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You have the maximum allowed number of attachments."
-msgstr ""
+msgstr "Liitteitä on suurin sallittu määrä."
 
 #: content/ui/StatusComposer/StatusComposer.qml:507
 #, kde-format
@@ -5306,7 +5296,7 @@ msgstr "Liitä kysely"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You can't modify or add a poll to an existing post."
-msgstr ""
+msgstr "Kyselyä ei voi muokata tai lisätä olemassa olevaan julkaisuun."
 
 #: content/ui/StatusComposer/StatusComposer.qml:533
 #, kde-format
