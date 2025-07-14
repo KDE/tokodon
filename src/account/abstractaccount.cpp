@@ -156,7 +156,7 @@ void AbstractAccount::registerApplication(const QString &appName, const QString 
     const QJsonObject obj{
         {QStringLiteral("client_name"), appName},
         {QStringLiteral("redirect_uris"), m_redirectUri},
-        {QStringLiteral("scopes"), QStringLiteral("read write follow %1").arg(m_additionalScopes)},
+        {QStringLiteral("scopes"), QStringLiteral("read write follow %1").arg(m_additionalScopes).trimmed()},
         {QStringLiteral("website"), website},
     };
     const QJsonDocument doc(obj);
