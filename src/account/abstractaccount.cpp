@@ -358,9 +358,14 @@ void AbstractAccount::setInstanceUri(const QString &instance_uri)
     m_instance_uri = instance_url.toString();
 }
 
-QString AbstractAccount::instanceUri() const
+QUrl AbstractAccount::instanceUri() const
 {
-    return m_instance_uri;
+    QUrl instance_url = QUrl::fromUserInput(m_instance_uri);
+    if (instance_url.scheme().isEmpty()) {
+        instance_url.setScheme(QStringLiteral("https"));
+    }
+
+    return instance_url;
 }
 
 void AbstractAccount::setToken(const QString &authcode)

@@ -203,7 +203,7 @@ void TokodonApplication::switchAccount(AbstractAccount *account)
 
 void TokodonApplication::createAccountActions(AbstractAccount *account)
 {
-    auto switchAction = m_accountCollection->addAction(u"switch_account_"_s + account->username() + account->instanceUri(), this, [this, account] {
+    auto switchAction = m_accountCollection->addAction(u"switch_account_"_s + account->username() + account->instanceUri().host(), this, [this, account] {
         switchAccount(account);
     });
     // We are intentionally using AbstractAccount::username() here because the identity may not be filled out yet
@@ -213,7 +213,7 @@ void TokodonApplication::createAccountActions(AbstractAccount *account)
     m_switchUserActions[account] = switchAction;
     m_accountCollection->setShortcutsConfigurable(switchAction, false);
 
-    auto configureAction = m_accountCollection->addAction(u"configure_account_"_s + account->username() + account->instanceUri(), this, [this, account] {
+    auto configureAction = m_accountCollection->addAction(u"configure_account_"_s + account->username() + account->instanceUri().host(), this, [this, account] {
         Q_EMIT configureAccount(account);
     });
     configureAction->setText(i18nc("@action:button", "Configure '%1'", account->username()));
