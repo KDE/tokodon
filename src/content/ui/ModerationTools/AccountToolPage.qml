@@ -12,6 +12,7 @@ import org.kde.kirigamiaddons.delegates 1 as Delegates
 import "../PostDelegate"
 
 Kirigami.ScrollablePage {
+    id: root
 
     function reset() {
         username.text = ""

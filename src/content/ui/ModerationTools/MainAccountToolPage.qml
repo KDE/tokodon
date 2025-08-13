@@ -27,6 +27,7 @@ Kirigami.ScrollablePage {
     Kirigami.PromptDialog {
         id: actionDailog
         title: i18n("Perform moderation action on %1", root.identity.userLevelIdentity.account)
+        parent: root.QQC2.ApplicationWindow.window.overlay
         mainItem: ColumnLayout {
             Layout.fillWidth: true
             QQC2.RadioButton {
