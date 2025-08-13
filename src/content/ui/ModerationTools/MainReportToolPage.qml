@@ -431,6 +431,7 @@ Kirigami.ScrollablePage {
                         sensitive: true
                         secondary: false
                         inViewPort: true
+                        viewportWidth: parent.width
                         visible: postContent.visible && modelData.attachments.length > 0
                     }
 
