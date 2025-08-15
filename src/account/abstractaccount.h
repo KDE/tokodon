@@ -32,7 +32,7 @@ class AbstractAccount : public QObject
 
     Q_PROPERTY(QString username READ username WRITE setUsername NOTIFY usernameChanged)
 
-    Q_PROPERTY(QString instanceUri READ instanceUri CONSTANT)
+    Q_PROPERTY(QUrl instanceUri READ instanceUri CONSTANT)
     Q_PROPERTY(int maxPostLength READ maxPostLength NOTIFY fetchedInstanceMetadata)
     Q_PROPERTY(int maxPollOptions READ maxPollOptions NOTIFY fetchedInstanceMetadata)
     Q_PROPERTY(int maxCharactersPerOption READ maxCharactersPerOption NOTIFY fetchedInstanceMetadata)
@@ -145,7 +145,7 @@ public:
      * @return The instance URI.
      * @see setInstanceUri()
      */
-    [[nodiscard]] QString instanceUri() const;
+    [[nodiscard]] QUrl instanceUri() const;
 
     /**
      * @return The max allowable length of posts in characters.
