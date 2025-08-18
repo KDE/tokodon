@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-15 00:45+0000\n"
-"PO-Revision-Date: 2025-02-23 11:33+0100\n"
+"PO-Revision-Date: 2025-08-17 12:52+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
-"Language-Team: Polish <kde-i18n-doc@kde.org>\n"
+"Language-Team: pl\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 25.08.0\n"
 
 #: account/abstractaccount.cpp:33
 #, kde-format
@@ -146,13 +147,13 @@ msgstr "Nie można zmienić uwagi o koncie"
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Network request was interrupted"
-msgstr ""
+msgstr "Przerwano żądanie sieciowe"
 
 #: account/account.cpp:308 account/account.cpp:315
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Failed to parse credentials"
-msgstr ""
+msgstr "Nie udało się sczytać danych dostępowych"
 
 #: account/notificationhandler.cpp:32 account/notificationhandler.cpp:33
 #, kde-format
@@ -423,14 +424,14 @@ msgstr ""
 msgctxt "@info:placeholder"
 msgid ""
 "No one is following this user, or they have chosen to hide this information."
-msgstr ""
+msgstr "Nikt nie obserwuje tego użytkownika lub postanowili ukryć ten fakt."
 
 #: account/socialgraphmodel.cpp:88
 #, kde-format
 msgctxt "@info:placeholder"
 msgid ""
 "This user isn't following anyone, or has chosen to hide this information."
-msgstr ""
+msgstr "Ten użytkownik nie obserwuje nikogo lub postanowił ukryć ten fakt."
 
 #: account/socialgraphmodel.cpp:90
 #, kde-format
@@ -879,16 +880,13 @@ msgid "This user hasn't posted any media yet."
 msgstr "Ten użytkownik nie wysłał jeszcze żadnych treści."
 
 #: content/ui/AccountSwitchDialog.qml:26
-#, fuzzy, kde-format
-#| msgid "Switch Account"
+#, kde-format
 msgctxt "@title: dialog to switch between logged in accounts"
 msgid "Switch Account"
 msgstr "Przełącz konto"
 
 #: content/ui/AccountSwitchDialog.qml:53
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add Account"
+#, kde-format
 msgctxt "@button: login to or register a new account."
 msgid "Add Account"
 msgstr "Dodaj konto"
@@ -905,6 +903,8 @@ msgctxt "@info:tooltip"
 msgid ""
 "This account has an issue and can't login, switch to it for more details."
 msgstr ""
+"To konto jest kłopotliwe i nie można się na nie zalogować. Przełącz na nie "
+"po więcej szczegółów."
 
 #: content/ui/Android/ShareAction.qml:15 content/ui/ShareAction.qml:19
 #, kde-format
@@ -965,12 +965,10 @@ msgid "No emojis"
 msgstr "Bez emoji"
 
 #: content/ui/Components/ServerInformationCard.qml:28
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Embed Information"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Information"
-msgstr "Osadź informację"
+msgstr "Bez informacji"
 
 #: content/ui/Components/ServerInformationCard.qml:33
 #, kde-format
@@ -1281,11 +1279,10 @@ msgid "Open Post"
 msgstr "Otwórz wpis"
 
 #: content/ui/GenericServerInformationPage.qml:19
-#, fuzzy, kde-format
-#| msgid "Custom Server"
+#, kde-format
 msgctxt "@title:window"
 msgid "About Server"
-msgstr "Własny serwer"
+msgstr "O serwerze"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:19
 #, kde-format
@@ -1474,10 +1471,9 @@ msgid "Login Issue"
 msgstr "Kłopoty z logowaniem"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:27
-#, fuzzy, kde-format
-#| msgid "There was an issue logging into the server:<br><b>%1</b>"
+#, kde-format
 msgid "There was an issue logging into %1:<br><b>%2</b>"
-msgstr "Napotkano kłopot przy wchodzeniu na serwer:<br><b>%1</b>"
+msgstr "Napotkano kłopot przy logowaniu na %1:<br><b>%2</b>"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:38
 #, kde-format
@@ -1572,7 +1568,7 @@ msgstr "Hasło"
 #: content/ui/LoginFlow/RegistrationPage.qml:128
 #, kde-format
 msgid "Date of Birth"
-msgstr ""
+msgstr "Data urodzenia"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:136
 #, kde-format
@@ -1618,7 +1614,7 @@ msgstr "Wybierz serwer"
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose your Existing Server"
-msgstr ""
+msgstr "Wybierz swój istniejący serwer"
 
 #: content/ui/LoginFlow/ServersPage.qml:38
 #, kde-format
@@ -1633,7 +1629,7 @@ msgstr "Ten serwer zamknął się na rejestrację i nie podał powodu."
 #: content/ui/LoginFlow/ServersPage.qml:178
 #, kde-format
 msgid "Search or enter URL…"
-msgstr "Poszukaj lub wpisz adres URL..."
+msgstr "Poszukaj lub wpisz adres URL…"
 
 #: content/ui/LoginFlow/ServersPage.qml:217
 #, kde-format
@@ -1678,15 +1674,13 @@ msgstr ""
 "programach)."
 
 #: content/ui/LoginFlow/WelcomePage.qml:80
-#, fuzzy, kde-format
-#| msgid "Register"
+#, kde-format
 msgctxt "@action:button Pick a Mastodon server"
 msgid "Register"
 msgstr "Zarejestruj"
 
 #: content/ui/LoginFlow/WelcomePage.qml:90
-#, fuzzy, kde-format
-#| msgid "Login"
+#, kde-format
 msgctxt "@action:button Use an existing Mastodon account"
 msgid "Login"
 msgstr "Zaloguj"
@@ -3280,11 +3274,9 @@ msgid "Reported By:"
 msgstr "Zgłoszony przez:"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:201
-#, fuzzy, kde-format
-#| msgctxt "@info: The comment attached with the ip rule"
-#| msgid "Comment"
+#, kde-format
 msgid "Comment:"
-msgstr "Uwaga"
+msgstr "Komentarz:"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:224
 #, kde-format
@@ -3375,18 +3367,16 @@ msgid "Follows"
 msgstr "Obserwuje"
 
 #: content/ui/NotificationPage.qml:188
-#, fuzzy, kde-format
-#| msgid "News"
+#, kde-format
 msgctxt "@info:label New notifications"
 msgid "New"
-msgstr "Wieści"
+msgstr "Nowe"
 
 #: content/ui/NotificationPage.qml:188
-#, fuzzy, kde-format
-#| msgid "Previous image"
+#, kde-format
 msgctxt "@info:label Previous notifications"
 msgid "Previous"
-msgstr "Poprzedni obraz"
+msgstr "Poprzednie"
 
 #: content/ui/NotificationPage.qml:315
 #, kde-format
@@ -4049,7 +4039,7 @@ msgstr "Głosowanie"
 #, kde-format
 msgctxt "@action:button"
 msgid "Volume"
-msgstr ""
+msgstr "Głośność"
 
 #: content/ui/ReadMarker.qml:15
 #, kde-format
@@ -4120,17 +4110,13 @@ msgid "Search for users, tags and posts"
 msgstr "Poszukaj użytkowników, znaczników i wpisów"
 
 #: content/ui/ServerInformationPage.qml:27
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Rules"
+#, kde-format
 msgctxt "@title:window Server rules"
 msgid "Rules"
 msgstr "Zasady"
 
 #: content/ui/ServerInformationPage.qml:68
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Rules"
+#, kde-format
 msgctxt "@action:button"
 msgid "Rules"
 msgstr "Zasady"
@@ -4154,20 +4140,16 @@ msgid "Privacy Policy"
 msgstr "Zasady prywatności"
 
 #: content/ui/ServerInformationPage.qml:104
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Password Service"
+#, kde-format
 msgctxt "@action:button"
 msgid "Terms of Service"
-msgstr "Usługa haseł"
+msgstr "Warunki użytkowania"
 
 #: content/ui/ServerInformationPage.qml:105
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Password Service"
+#, kde-format
 msgctxt "@title:window"
 msgid "Terms of Service"
-msgstr "Usługa haseł"
+msgstr "Warunki użytkowania"
 
 #: content/ui/Settings/AccountPage.qml:26
 #, kde-format
@@ -4257,7 +4239,7 @@ msgstr "Oznacz wysłane pliki multimedialne domyślnie jako wrażliwe"
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Include public posts in search results"
-msgstr ""
+msgstr "Uwzględniaj wpisy publiczne w wynikach wyszukiwania"
 
 #: content/ui/Settings/AccountPage.qml:187
 #, kde-format
@@ -4493,12 +4475,10 @@ msgid "Hide with Content Notice"
 msgstr "Ukryj z uwaga co do treści"
 
 #: content/ui/Settings/EditFilterPage.qml:140
-#, fuzzy, kde-format
-#| msgctxt "@label:radiobutton"
-#| msgid "Hide with Content Notice"
+#, kde-format
 msgctxt "@label:radiobutton"
 msgid "Hide Media with Content Notice"
-msgstr "Ukryj z uwaga co do treści"
+msgstr "Ukryj multimedia z uwagą o nich w treści"
 
 #: content/ui/Settings/EditFilterPage.qml:147
 #, kde-format
@@ -5058,15 +5038,13 @@ msgid "Remove"
 msgstr "Usuń"
 
 #: content/ui/SocialGraphPage.qml:99
-#, fuzzy, kde-format
-#| msgid "Unblock"
+#, kde-format
 msgctxt "@action:button Unblock this user"
 msgid "Unblock"
 msgstr "Odblokuj"
 
 #: content/ui/SocialGraphPage.qml:105
-#, fuzzy, kde-format
-#| msgid "Unmute"
+#, kde-format
 msgctxt "@action:button Unmute this user"
 msgid "Unmute"
 msgstr "Wyłącz wyciszenie"
@@ -5311,13 +5289,13 @@ msgstr "Załącz plik"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You can't have attachments and a poll in the same post."
-msgstr ""
+msgstr "W jednym wpisie nie możesz mieć jednocześnie załącznika i ankiety."
 
 #: content/ui/StatusComposer/StatusComposer.qml:504
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You have the maximum allowed number of attachments."
-msgstr ""
+msgstr "Masz dopuszczalną liczbę załączników."
 
 #: content/ui/StatusComposer/StatusComposer.qml:507
 #, kde-format
@@ -5335,7 +5313,7 @@ msgstr "Załącz ankietę"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You can't modify or add a poll to an existing post."
-msgstr ""
+msgstr "Nie możesz zmienić lub dodać ankiety do istniejącego wpisu."
 
 #: content/ui/StatusComposer/StatusComposer.qml:533
 #, kde-format
@@ -5516,7 +5494,7 @@ msgctxt ""
 "@info:label %1 is the native language name, and %2 is the localized name. "
 "For example, 'dansk (Danish)'"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: editor/listeditorbackend.cpp:121
 #, kde-format
@@ -5592,10 +5570,9 @@ msgid "Browse the Fediverse"
 msgstr "Przejrzyj Fediverse"
 
 #: main.cpp:106
-#, fuzzy, kde-format
-#| msgid "© 2021-2024 KDE Community"
+#, kde-format
 msgid "© 2021-2025 KDE Community"
-msgstr "© 2021-2024 Społeczność KDE"
+msgstr "© 2021-2025 Społeczność KDE"
 
 #: main.cpp:107
 #, kde-format
@@ -5744,115 +5721,91 @@ msgid "Write a New Post"
 msgstr "Napisz nowy wpis"
 
 #: tokodonapplication.cpp:98
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "End of Timeline"
+#, kde-format
 msgctxt "@action:button Home Timeline"
 msgid "Open Home Timeline"
-msgstr "Koniec osi czasu"
+msgstr "Otwórz domową oś czasu"
 
 #: tokodonapplication.cpp:104
-#, fuzzy, kde-format
-#| msgctxt "@action:button Account Notifications"
-#| msgid "Notifications"
+#, kde-format
 msgctxt "@action:button Account Notifications"
 msgid "Open Notifications"
-msgstr "Powiadomienia"
+msgstr "Otwórz powiadomienia"
 
 #: tokodonapplication.cpp:110
-#, fuzzy, kde-format
-#| msgctxt "@action:button Follows that require explicit allow/deny"
-#| msgid "Follow Requests"
+#, kde-format
 msgctxt "@action:button Follows that require explicit allow/deny"
 msgid "Open Follow Requests"
-msgstr "Żądania obserwacji"
+msgstr "Otwórz prośbę o obserwację"
 
 #: tokodonapplication.cpp:116
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Local Timeline"
+#, kde-format
 msgctxt "@action:button Local timeline of posts from the account's own server"
 msgid "Open Local Timeline"
-msgstr "Lokalna oś czasu"
+msgstr "Otwórz lokalną oś czasu"
 
 #: tokodonapplication.cpp:122
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Global Timeline"
+#, kde-format
 msgctxt ""
 "@action:button Global timeline of posts from the entire Fediverse network"
 msgid "Open Global Timeline"
-msgstr "Globalna oś czasu"
+msgstr "Otwórz globalną oś czasu"
 
 #: tokodonapplication.cpp:128
-#, fuzzy, kde-format
-#| msgid "Conversations"
+#, kde-format
 msgctxt "@action:button Direct one-on-one messages between users"
 msgid "Open Conversations"
-msgstr "Rozmowy"
+msgstr "Otwórz rozmowy"
 
 #: tokodonapplication.cpp:134
-#, fuzzy, kde-format
-#| msgctxt "@action:button This account's favorited posts"
-#| msgid "Favorites"
+#, kde-format
 msgctxt "@action:button This account's favorited posts"
 msgid "Open Favorites"
-msgstr "Ulubione"
+msgstr "Otwórz ulubione"
 
 #: tokodonapplication.cpp:140
-#, fuzzy, kde-format
-#| msgctxt "@action:button This account's bookmarked posts"
-#| msgid "Bookmarks"
+#, kde-format
 msgctxt "@action:button This account's bookmarked posts"
 msgid "Open Bookmarks"
-msgstr "Zakładki"
+msgstr "Otwórz zakładki"
 
 #: tokodonapplication.cpp:146
-#, fuzzy, kde-format
-#| msgid "Explore"
+#, kde-format
 msgctxt "@action:button Explore this server's trending posts, news, and more"
 msgid "Open Explore"
-msgstr "Odkrywaj"
+msgstr "Otwórz odkrywanie"
 
 #: tokodonapplication.cpp:152
-#, fuzzy, kde-format
-#| msgctxt "@action:button A list of this account's followed accounts"
-#| msgid "Following"
+#, kde-format
 msgctxt "@action:button A list of this account's followed accounts"
 msgid "Open Following"
-msgstr "Obserwowani"
+msgstr "Otwórz obserwowanych"
 
 #: tokodonapplication.cpp:158
-#, fuzzy, kde-format
-#| msgctxt "@action:button Search for users, posts and tags"
-#| msgid "Search"
+#, kde-format
 msgctxt "@action:button Search for users, posts and tags"
 msgid "Open Search"
-msgstr "Poszukaj"
+msgstr "Otwórz szukanie"
 
 #: tokodonapplication.cpp:164
-#, fuzzy, kde-format
-#| msgctxt "@abel Account preferences"
-#| msgid "Open Server in Browser"
+#, kde-format
 msgctxt "@action:button"
 msgid "Open Server Information"
-msgstr "Otwórz serwer w przeglądarce"
+msgstr "Otwórz dane o serwerze"
 
 #: tokodonapplication.cpp:170
-#, fuzzy, kde-format
-#| msgid "Open Link"
+#, kde-format
 msgctxt ""
 "@action:button This account's lists, or timelines consisting of a groups of "
 "accounts"
 msgid "Open Lists"
-msgstr "Otwórz odnośnik"
+msgstr "Otwórz listy"
 
 #: tokodonapplication.cpp:176
-#, fuzzy, kde-format
-#| msgid "View Profile"
+#, kde-format
 msgctxt "@action:button This account's profile"
 msgid "Open Profile"
-msgstr "Obejrzyj profil"
+msgstr "Otwórz profil"
 
 #: tokodonapplication.cpp:211
 #, kde-format
