@@ -113,6 +113,10 @@
             "name": "kunifiedpush",
             "buildsystem": "cmake-ninja",
             "builddir": true,
+            "config-opts": [
+                "-DENABLE_TESTING=OFF",
+                "-DKUNIFIEDPUSH_CLIENT_ONLY=ON"
+            ],
             "sources": [
                 {
                     "type": "git",
