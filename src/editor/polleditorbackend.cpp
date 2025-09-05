@@ -3,8 +3,6 @@
 
 #include "editor/polleditorbackend.h"
 
-#include <QJsonArray>
-
 using namespace Qt::Literals::StringLiterals;
 
 PollEditorBackend::PollEditorBackend(QObject *parent)
