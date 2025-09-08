@@ -31,6 +31,348 @@ StatefulApp.StatefulWindow {
         }
     }
 
+    ActionGroup {
+        id: pagesGroup
+        exclusionPolicy: ActionGroup.Exclusive
+    }
+    ActionCollection {
+        ActionData {
+            name: "open_status_composer"
+            icon: "list-add"
+            text: i18nc("@action:button", "Write a New Post")
+            defaultShortcut: "Ctrl+N"
+            action: Kirigami.Action {
+                onTriggered: root.openComposer("", undefined);
+            }
+        }
+        ActionData {
+            name: "home_timeline"
+            icon: "go-home-large"
+            text: i18nc("@action:button Home Timeline", "Home")
+            actionGroup: pagesGroup
+            checkable: true
+            action: Kirigami.Action {
+                id: homeAction
+                onTriggered: {
+                    if (root.checkIfCurrentPage("home")) {
+                        return;
+                    }
+
+                    pageStack.clear();
+                    pageStack.push(mainTimeline.createObject(root), {
+                        pageId: "home",
+                        name: "home",
+                        iconName: "go-home-large",
+                        placeholderText: i18n("No Posts"),
+                        placeholderExplanation: i18n("It seems pretty quiet right now, try posting something!")
+                    });
+                }
+            }
+        }
+        ActionData {
+            name: "notifications"
+            icon: "notifications"
+            text: i18nc("@action:button Account Notifications", "Notifications")
+            actionGroup: pagesGroup
+            checkable: true
+            action: Kirigami.Action {
+                id: notificationAction
+                onTriggered: {
+                    if (root.checkIfCurrentPage("notifications")) {
+                        return;
+                    }
+
+                    pageStack.clear();
+                    pageStack.push(notificationTimeline.createObject(root, { pageId: "notifications" }));
+                }
+            }
+        }
+        ActionData {
+            name: "follow_requests"
+            icon: "list-add-user"
+            text: i18nc("@action:button Follows that require explicit allow/deny", "Follow Requests")
+            actionGroup: pagesGroup
+            checkable: true
+            visible: AccountManager.hasAccounts && AccountManager.selectedAccount && alertCount > 0
+            action: Kirigami.Action {
+                id: followRequestAction
+                onTriggered: {
+                    if (root.checkIfCurrentPage("followRequests")) {
+                        return;
+                    }
+
+                    pageStack.clear();
+                    pageStack.push(socialGraphComponent.createObject(root), {
+                        pageId: "followRequests",
+                        name: "request",
+                    });
+                }
+            }
+        }
+        ActionData { //TODO: actiongroup
+            name: "local_timeline"
+            icon: "system-users"
+            text: i18nc("@action:button Local timeline of posts from the account's own server", "Local")
+            actionGroup: pagesGroup
+            action: Kirigami.Action {
+                id: localTimelineAction
+                onTriggered: {
+                    if (root.checkIfCurrentPage("local")) {
+                        return;
+                    }
+
+                    pageStack.clear();
+                    pageStack.push(mainTimeline.createObject(root), {
+                        pageId: "local",
+                        name: "public",
+                        iconName: "system-users",
+                        placeholderText: i18n("No Posts"),
+                        placeholderExplanation: i18n("It seems pretty quiet right now, try posting something!")
+                    });
+                }
+            }
+        }
+        ActionData {
+            name: "global_timeline"
+            icon: "kstars_xplanet"
+            text: i18nc("@action:button Global timeline of posts from the entire Fediverse network", "Open Global Timeline")
+            actionGroup: pagesGroup
+            action: Kirigami.Action {
+                id: globalTimelineAction
+                onTriggered: {
+                    if (root.checkIfCurrentPage("global")) {
+                        return;
+                    }
+
+                    pageStack.clear();
+                    pageStack.push(mainTimeline.createObject(root), {
+                        pageId: "global",
+                        name: "federated",
+                        iconName: "kstars_xplanet",
+                        placeholderText: i18n("No Posts"),
+                        placeholderExplanation: i18n("It seems pretty quiet right now, try posting something!")
+                    });
+                }
+            }
+        }
+        ActionData {
+            name: "conversations"
+            icon: "view-conversation-balloon-symbolic"
+            text: i18nc("@action:button Direct one-on-one messages between users", "Conversations")
+            actionGroup: pagesGroup
+            action: Kirigami.Action {
+                id: conversationAction
+                onTriggered: {
+                    if (root.checkIfCurrentPage("conversations")) {
+                        return;
+                    }
+
+                    pageStack.clear();
+                    pageStack.push(Qt.createComponent("org.kde.tokodon", "ConversationPage"), {
+                        pageId: "conversations",
+                    });
+                }
+            }
+        }
+        ActionData {
+            name: "account_switcher"
+            icon: "user"
+            text: i18nc("@action:button", "Open Account Switcher")
+            actionGroup: pagesGroup
+            action: Kirigami.Action {
+                id: conversationAction
+                onTriggered: {
+                    let dialog = Qt.createComponent("org.kde.tokodon", "AccountSwitchDialog").createObject(root.QQC2.Overlay.overlay, {
+                        application: root.application,
+                        userInfo: root,
+                    });
+                    dialog.open();
+                }
+            }
+        }
+        ActionData {
+            name: "favorites"
+            icon: "favorite"
+            text: i18nc("@action:button This account's favorited posts", "Favorites")
+            actionGroup: pagesGroup
+            action: Kirigami.Action {
+                id: favouritesAction
+                onTriggered: {
+                    if (root.checkIfCurrentPage("favorites")) {
+                        return;
+                    }
+
+                    pageStack.clear();
+                    pageStack.push(mainTimeline.createObject(root), {
+                        pageId: "favorites",
+                        name: "favourites",
+                        iconName: "favorite",
+                        placeholderText: i18n("No Favorites"),
+                        placeholderExplanation: i18n("Posts that you favorite will show up here. If you appreciate someone's post, favorite it!")
+                    });
+                }
+            }
+        }
+        ActionData {
+            name: "bookmarks"
+            icon: "bookmarks"
+            text: i18nc("@action:button This account's bookmarked posts", "Bookmarks")
+            actionGroup: pagesGroup
+            action: Kirigami.Action {
+                id: bookmarksAction
+                onTriggered: {
+                    if (root.checkIfCurrentPage("bookmarks")) {
+                        return;
+                    }
+
+                    pageStack.clear();
+                    pageStack.push(mainTimeline.createObject(root), {
+                        pageId: "bookmarks",
+                        name: "bookmarks",
+                        iconName: "bookmarks",
+                        placeholderText: i18n("No Bookmarks"),
+                        placeholderExplanation: i18n("Bookmark posts and they will show up here. Bookmarks are always kept private, even to the post's author.")
+                    });
+                }
+            }
+        }
+        ActionData {
+            name: "explore"
+            icon: "kstars_planets"
+            text: i18nc("@action:button Explore this server's trending posts, news, and more", "Explore")
+            actionGroup: pagesGroup
+            action: Kirigami.Action {
+                id: exploreAction
+                onTriggered: {
+                    if (root.checkIfCurrentPage("explore")) {
+                        return;
+                    }
+
+                    pageStack.clear();
+                    pageStack.push(exploreTimeline.createObject(root, { pageId: "explore" }));
+                }
+            }
+        }
+        ActionData {
+            name: "following"
+            icon: "user-group-properties-symbolic"
+            text: i18nc("@action:button A list of this account's followed accounts", "Following")
+            actionGroup: pagesGroup
+            action: Kirigami.Action {
+                id: followingAction
+                onTriggered: {
+                    if (root.checkIfCurrentPage("following")) {
+                        return;
+                    }
+
+                    pageStack.clear();
+                    pageStack.push(followingTimeline.createObject(root, { pageId: "following" }));
+                }
+            }
+        }
+        ActionData {
+            name: "search"
+            icon: "search"
+            text: i18nc("@action:button Search for users, posts and tags", "Open Search")
+            actionGroup: pagesGroup
+            action: Kirigami.Action {
+                id: searchAction
+                onTriggered: {
+                    if (root.checkIfCurrentPage("search")) {
+                        return;
+                    }
+
+                    pageStack.clear();
+                    pageStack.push(searchPage.createObject(root, { pageId: "search" }));
+                }
+            }
+        }
+        ActionData {
+            name: "server_information"
+            icon: "note"
+            text: i18nc("@action:button", "Open Server Information")
+            actionGroup: pagesGroup
+            action: Kirigami.Action {
+                id: serverInformationAction
+                onTriggered:{
+                    if (root.checkIfCurrentPage("serverInformation")) {
+                        return;
+                    }
+
+                    pageStack.clear();
+                    pageStack.push(serverInformationPage.createObject(root, { pageId: "serverInformation" }));
+                }
+            }
+        }
+        ActionData {
+            name: "lists"
+            icon: "view-list-text"
+            text: i18nc("@action:button This account's lists, or timelines consisting of a groups of accounts", "Open Lists")
+            actionGroup: pagesGroup
+            action: Kirigami.Action {
+                id: listsAction
+                onTriggered: {
+                    if (root.checkIfCurrentPage("lists")) {
+                        return;
+                    }
+
+                    pageStack.clear();
+                    pageStack.push(listsPage.createObject(root, { pageId: "lists" }));
+                }
+            }
+        }
+        ActionData {
+            name: "profile"
+            icon: "user"
+            text: i18nc("@action:button This account's profile", "Open Profile")
+            actionGroup: pagesGroup
+            action: Kirigami.Action {
+                id: profileAction
+                onTriggered: {
+                    if (root.checkIfCurrentPage("profile")) {
+                        return;
+                    }
+
+                    pageStack.clear();
+                    pageStack.push(Qt.createComponent("org.kde.tokodon", "AccountInfo"), {
+                        pageId: "profile",
+                        accountId: AccountManager.selectedAccountId,
+                    });
+                }
+            }
+        }
+    }
+
+    component AccountActionCollection: ActionCollection {
+        id: collection
+        required property AbstractAccount account
+        readonly property string accountString: account.username + (new URL(account.instanceUri)).host
+        ActionData {
+            name: "switch_account_" + accountString
+            text: i18nc("@action:button", "Switch '%1'", account.username)
+            action: Kirigami.Action {
+                onTriggered: root.application.switchAccount(account)
+            }
+        }
+        ActionData {
+            name: "configure_account_" + collection.accountString
+            text: i18nc("@action:button", "Configure '%1'", account.username)
+            action: Kirigami.Action {
+                onTriggered: {
+                    root.pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "ProfileEditor"), {
+                        account: account,
+                    });
+                }
+            }
+        }
+    }
+
+    Instantiator {
+        model: AccountManager
+        delegate: AccountActionCollection {}
+    }
+
+
     title: pageStack.currentItem?.title ?? ""
     windowName: "Main"
 
@@ -243,12 +585,6 @@ StatefulApp.StatefulWindow {
     Connections {
         target: root.application
 
-        function onConfigureAccount(account: AbstractAccount): void {
-            root.pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "ProfileEditor"), {
-                account: account,
-            });
-        }
-
         function onAddAccount(): void {
             let page;
             // pushDialogLayer is inherently broken in Kirigami, so let's push it as a page on mobile instead
@@ -258,178 +594,6 @@ StatefulApp.StatefulWindow {
                 page = root.pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "WelcomePage"), { application: root.application, showSettingsButton: false });
             }
             page.QQC2.ApplicationWindow.window.pageStack.columnView.columnResizeMode = Kirigami.ColumnView.SingleColumn;
-        }
-
-        function onOpenHomeTimeline(): void {
-            if (root.checkIfCurrentPage("home")) {
-                return;
-            }
-
-            root.pageStack.clear();
-            root.pageStack.push(mainTimeline.createObject(root), {
-                pageId: "home",
-                name: "home",
-                iconName: "go-home-large",
-                placeholderText: i18n("No Posts"),
-                placeholderExplanation: i18n("It seems pretty quiet right now, try posting something!")
-            });
-        }
-
-        function onOpenNotifications(): void {
-            if (root.checkIfCurrentPage("notifications")) {
-                return;
-            }
-
-            root.pageStack.clear();
-            root.pageStack.push(notificationTimeline.createObject(root, { pageId: "notifications" }));
-        }
-
-        function onOpenFollowRequests(): void {
-            if (root.checkIfCurrentPage("followRequests")) {
-                return;
-            }
-
-            root.pageStack.clear();
-            root.pageStack.push(socialGraphComponent.createObject(root), {
-                pageId: "followRequests",
-                name: "request",
-            });
-        }
-
-        function onOpenLocalTimeline(): void {
-            if (root.checkIfCurrentPage("local")) {
-                return;
-            }
-
-            root.pageStack.clear();
-            root.pageStack.push(mainTimeline.createObject(root), {
-                pageId: "local",
-                name: "public",
-                iconName: "system-users",
-                placeholderText: i18n("No Posts"),
-                placeholderExplanation: i18n("It seems pretty quiet right now, try posting something!")
-            });
-        }
-
-        function onOpenGlobalTimeline(): void {
-            if (root.checkIfCurrentPage("global")) {
-                return;
-            }
-
-            root.pageStack.clear();
-            root.pageStack.push(mainTimeline.createObject(root), {
-                pageId: "global",
-                name: "federated",
-                iconName: "kstars_xplanet",
-                placeholderText: i18n("No Posts"),
-                placeholderExplanation: i18n("It seems pretty quiet right now, try posting something!")
-            });
-        }
-
-        function onOpenFavorites(): void {
-            if (root.checkIfCurrentPage("favorites")) {
-                return;
-            }
-
-            root.pageStack.clear();
-            root.pageStack.push(mainTimeline.createObject(root), {
-                pageId: "favorites",
-                name: "favourites",
-                iconName: "favorite",
-                placeholderText: i18n("No Favorites"),
-                placeholderExplanation: i18n("Posts that you favorite will show up here. If you appreciate someone's post, favorite it!")
-            });
-        }
-
-        function onOpenBookmarks(): void {
-            if (root.checkIfCurrentPage("bookmarks")) {
-                return;
-            }
-
-            root.pageStack.clear();
-            root.pageStack.push(mainTimeline.createObject(root), {
-                pageId: "bookmarks",
-                name: "bookmarks",
-                iconName: "bookmarks",
-                placeholderText: i18n("No Bookmarks"),
-                placeholderExplanation: i18n("Bookmark posts and they will show up here. Bookmarks are always kept private, even to the post's author.")
-            });
-        }
-
-        function onOpenExplore(): void {
-            if (root.checkIfCurrentPage("explore")) {
-                return;
-            }
-
-            root.pageStack.clear();
-            root.pageStack.push(exploreTimeline.createObject(root, { pageId: "explore" }));
-        }
-
-        function onOpenFollowing(): void {
-            if (root.checkIfCurrentPage("following")) {
-                return;
-            }
-
-            root.pageStack.clear();
-            root.pageStack.push(followingTimeline.createObject(root, { pageId: "following" }));
-        }
-
-        function onOpenSearch(): void {
-            if (root.checkIfCurrentPage("search")) {
-                return;
-            }
-
-            root.pageStack.clear();
-            root.pageStack.push(searchPage.createObject(root, { pageId: "search" }));
-        }
-
-        function onOpenServerInformation(): void {
-            if (root.checkIfCurrentPage("serverInformation")) {
-                return;
-            }
-
-            root.pageStack.clear();
-            root.pageStack.push(serverInformationPage.createObject(root, { pageId: "serverInformation" }));
-        }
-
-        function onOpenLists(): void {
-            if (root.checkIfCurrentPage("lists")) {
-                return;
-            }
-
-            root.pageStack.clear();
-            root.pageStack.push(listsPage.createObject(root, { pageId: "lists" }));
-        }
-
-        function onOpenProfile(): void {
-            if (root.checkIfCurrentPage("profile")) {
-                return;
-            }
-
-            root.pageStack.clear();
-            root.pageStack.push(Qt.createComponent("org.kde.tokodon", "AccountInfo"), {
-                pageId: "profile",
-                accountId: AccountManager.selectedAccountId,
-            });
-        }
-
-        function onOpenConversations(): void {
-            if (root.checkIfCurrentPage("conversations")) {
-                return;
-            }
-
-            root.pageStack.clear();
-            root.pageStack.push(Qt.createComponent("org.kde.tokodon", "ConversationPage"), {
-                pageId: "conversations",
-            });
-        }
-
-        function onOpenAccountSwitcher(): void {
-            let dialog = Qt.createComponent("org.kde.tokodon", "AccountSwitchDialog").createObject(root.QQC2.Overlay.overlay, {
-                application: root.application,
-                userInfo: root,
-            });
-            dialog.open();
         }
     }
 
@@ -595,65 +759,6 @@ StatefulApp.StatefulWindow {
         bottomActions: [root.serverInformationAction, root.debugAction, root.moderationToolsAction, root.configureAction]
     }
 
-    readonly property Kirigami.Action homeAction: Kirigami.Action {
-        text: i18nc("@action:button Home Timeline", "Home")
-        fromQAction: root.application.action('home_timeline')
-    }
-    readonly property Kirigami.Action notificationAction: Kirigami.Action {
-        readonly property int alertCount: AccountManager.selectedAccount ? AccountManager.selectedAccount.unreadNotificationsCount : 0
-        text: i18nc("@action:button Account Notifications", "Notifications")
-        fromQAction: root.application.action('notifications')
-    }
-    readonly property Kirigami.Action followRequestAction: Kirigami.Action {
-        readonly property int alertCount: AccountManager.selectedAccount ? AccountManager.selectedAccount.followRequestCount : 0
-        text: i18nc("@action:button Follows that require explicit allow/deny", "Follow Requests")
-        fromQAction: root.application.action('follow_requests')
-        visible: AccountManager.hasAccounts && AccountManager.selectedAccount && alertCount > 0
-    }
-    readonly property Kirigami.Action localTimelineAction: Kirigami.Action {
-        text: i18nc("@action:button Local timeline of posts from the account's own server", "Local")
-        fromQAction: root.application.action('local_timeline')
-    }
-    readonly property Kirigami.Action globalTimelineAction: Kirigami.Action {
-        text: i18nc("@action:button Global timeline of posts from the entire Fediverse network", "Global")
-        fromQAction: root.application.action('global_timeline')
-    }
-    readonly property Kirigami.Action conversationAction: Kirigami.Action {
-        text: i18nc("@action:button Direct one-on-one messages between users", "Conversations")
-        fromQAction: root.application.action('conversations')
-    }
-    readonly property Kirigami.Action favouritesAction: Kirigami.Action {
-        text: i18nc("@action:button This account's favorited posts", "Favorites")
-        fromQAction: root.application.action('favorites')
-    }
-    readonly property Kirigami.Action bookmarksAction: Kirigami.Action {
-        text: i18nc("@action:button This account's bookmarked posts", "Bookmarks")
-        fromQAction: root.application.action('bookmarks')
-    }
-    readonly property Kirigami.Action exploreAction: Kirigami.Action {
-        text: i18nc("@action:button Explore this server's trending posts, news, and more", "Explore")
-        fromQAction: root.application.action('explore')
-    }
-    readonly property Kirigami.Action followingAction: Kirigami.Action {
-        text: i18nc("@action:button A list of this account's followed accounts", "Following")
-        fromQAction: root.application.action('following')
-    }
-    readonly property Kirigami.Action searchAction: Kirigami.Action {
-        text: i18nc("@action:button Search for users, posts and tags", "Search")
-        fromQAction: root.application.action('search')
-    }
-    readonly property Kirigami.Action serverInformationAction: Kirigami.Action {
-        text: AccountManager.selectedAccount ? AccountManager.selectedAccount.instanceName : ""
-        fromQAction: root.application.action('server_information')
-    }
-    readonly property Kirigami.Action listsAction: Kirigami.Action {
-        text: i18nc("@action:button This account's lists, or timelines consisting of a groups of accounts", "Lists")
-        fromQAction: root.application.action('lists')
-    }
-    readonly property Kirigami.Action profileAction: Kirigami.Action {
-        text: i18nc("@action:button This account's profile", "Profile")
-        fromQAction: root.application.action('profile')
-    }
     readonly property Kirigami.Action debugAction: Kirigami.Action {
         icon.name: "debug-run"
         onTriggered: root.pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "DebugPage"))

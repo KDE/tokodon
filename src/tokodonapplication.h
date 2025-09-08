@@ -29,6 +29,8 @@ public:
      */
     Q_INVOKABLE void uncheckMainActions();
 
+    Q_INVOKABLE void switchAccount(AbstractAccount *account);
+
 Q_SIGNALS:
     void accountManagerChanged();
     void configureAccount(AbstractAccount *account);
@@ -52,7 +54,6 @@ Q_SIGNALS:
 private:
     void setupActions() override;
     void setupAccountCollection();
-    void switchAccount(AbstractAccount *account);
     void createAccountActions(AbstractAccount *account);
     void updateAccountActions();
 
