@@ -198,6 +198,10 @@ target_sources(tokodon_static
     notification/notificationgroupingmodel.h
     notification/notificationmodel.cpp
     notification/notificationmodel.h
+
+    #Actioncollection to move elsewhere
+    actioncollection/actioncollection.cpp
+    actioncollection/actiondata.cpp
 )
 
 qt_target_qml_sources(tokodon_static
@@ -360,6 +364,7 @@ target_include_directories(tokodon_static PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/net
 target_include_directories(tokodon_static PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/admin)
 target_include_directories(tokodon_static PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/conversation)
 target_include_directories(tokodon_static PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/editor)
+target_include_directories(tokodon_static PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/actioncollection)
 
 if (BUILD_TESTING)
     qt_target_qml_sources(tokodon_static
