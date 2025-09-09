@@ -98,6 +98,10 @@ target_sources(tokodon_static
     conversation/conversationmodel.h
 
     # Data types
+    datatypes/application.cpp
+    datatypes/application.h
+    datatypes/card.cpp
+    datatypes/card.h
     datatypes/poll.cpp
     datatypes/poll.h
     datatypes/post.cpp
