@@ -58,7 +58,7 @@ public:
     QString name() const;
     void setName(const QString &name);
 
-    ActionData *action(const QString &name);
+    Q_INVOKABLE ActionData *action(const QString &name);
     // All known actions in this collection
     QList<ActionData *> actions() const;
     // All actions in this collections that have an active and working Kirigami.Action instance in this moment

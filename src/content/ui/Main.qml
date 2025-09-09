@@ -31,11 +31,15 @@ StatefulApp.StatefulWindow {
         }
     }
 
+    property alias globalActions: globalActions
+    property alias systemActions: systemActions
+
     ActionGroup {
         id: pagesGroup
         exclusionPolicy: ActionGroup.Exclusive
     }
     ActionCollection {
+        id: globalActions
         ActionData {
             name: "open_status_composer"
             icon: "list-add"
@@ -114,6 +118,7 @@ StatefulApp.StatefulWindow {
             icon: "system-users"
             text: i18nc("@action:button Local timeline of posts from the account's own server", "Local")
             actionGroup: pagesGroup
+            checkable: true
             action: Kirigami.Action {
                 id: localTimelineAction
                 onTriggered: {
@@ -137,6 +142,7 @@ StatefulApp.StatefulWindow {
             icon: "kstars_xplanet"
             text: i18nc("@action:button Global timeline of posts from the entire Fediverse network", "Open Global Timeline")
             actionGroup: pagesGroup
+            checkable: true
             action: Kirigami.Action {
                 id: globalTimelineAction
                 onTriggered: {
@@ -160,6 +166,7 @@ StatefulApp.StatefulWindow {
             icon: "view-conversation-balloon-symbolic"
             text: i18nc("@action:button Direct one-on-one messages between users", "Conversations")
             actionGroup: pagesGroup
+            checkable: true
             action: Kirigami.Action {
                 id: conversationAction
                 onTriggered: {
@@ -195,6 +202,7 @@ StatefulApp.StatefulWindow {
             icon: "favorite"
             text: i18nc("@action:button This account's favorited posts", "Favorites")
             actionGroup: pagesGroup
+            checkable: true
             action: Kirigami.Action {
                 id: favouritesAction
                 onTriggered: {
@@ -218,6 +226,7 @@ StatefulApp.StatefulWindow {
             icon: "bookmarks"
             text: i18nc("@action:button This account's bookmarked posts", "Bookmarks")
             actionGroup: pagesGroup
+            checkable: true
             action: Kirigami.Action {
                 id: bookmarksAction
                 onTriggered: {
@@ -241,6 +250,7 @@ StatefulApp.StatefulWindow {
             icon: "kstars_planets"
             text: i18nc("@action:button Explore this server's trending posts, news, and more", "Explore")
             actionGroup: pagesGroup
+            checkable: true
             action: Kirigami.Action {
                 id: exploreAction
                 onTriggered: {
@@ -258,6 +268,7 @@ StatefulApp.StatefulWindow {
             icon: "user-group-properties-symbolic"
             text: i18nc("@action:button A list of this account's followed accounts", "Following")
             actionGroup: pagesGroup
+            checkable: true
             action: Kirigami.Action {
                 id: followingAction
                 onTriggered: {
@@ -275,6 +286,7 @@ StatefulApp.StatefulWindow {
             icon: "search"
             text: i18nc("@action:button Search for users, posts and tags", "Open Search")
             actionGroup: pagesGroup
+            checkable: true
             action: Kirigami.Action {
                 id: searchAction
                 onTriggered: {
@@ -292,6 +304,7 @@ StatefulApp.StatefulWindow {
             icon: "note"
             text: i18nc("@action:button", "Open Server Information")
             actionGroup: pagesGroup
+            checkable: true
             action: Kirigami.Action {
                 id: serverInformationAction
                 onTriggered:{
@@ -309,6 +322,7 @@ StatefulApp.StatefulWindow {
             icon: "view-list-text"
             text: i18nc("@action:button This account's lists, or timelines consisting of a groups of accounts", "Open Lists")
             actionGroup: pagesGroup
+            checkable: true
             action: Kirigami.Action {
                 id: listsAction
                 onTriggered: {
@@ -326,6 +340,7 @@ StatefulApp.StatefulWindow {
             icon: "user"
             text: i18nc("@action:button This account's profile", "Open Profile")
             actionGroup: pagesGroup
+            checkable: true
             action: Kirigami.Action {
                 id: profileAction
                 onTriggered: {
@@ -339,6 +354,26 @@ StatefulApp.StatefulWindow {
                         accountId: AccountManager.selectedAccountId,
                     });
                 }
+            }
+        }
+    }
+
+    ActionCollection {
+        id: systemActions
+        ActionData {
+            name: "open_kcommand_bar"
+            defaultShortcut: "Ctrl+Alt+I"
+            action: Kirigami.Action {
+                onTriggered: root.application.openKCommandBarAction()
+            }
+        }
+        ActionData {
+            name: "options_configure"
+            icon: "settings-configure"
+            text: i18nc("@action:button Open settings dialog", "Settings")
+            action: Kirigami.Action {
+                id: configureAction
+                onTriggered: root.application.configurationView.open()
             }
         }
     }
@@ -462,14 +497,6 @@ StatefulApp.StatefulWindow {
             return true;
         }
         return false;
-    }
-
-    Kirigami.Action {
-        fromQAction: root.application.action('open_status_composer')
-    }
-
-    Kirigami.Action {
-        fromQAction: root.application.action('open_kcommand_bar')
     }
 
     Loader {
@@ -780,11 +807,6 @@ StatefulApp.StatefulWindow {
         visible: AccountManager.selectedAccount && (AccountManager.selectedAccount.identity.permission & AdminAccountInfo.ManageUsers)
 
         onTriggered: moderationToolsView.open()
-    }
-
-    property Kirigami.Action configureAction: Kirigami.Action {
-        text: i18nc("@action:button Open settings dialog", "Settings")
-        fromQAction: root.application.action('options_configure')
     }
 
     property Component serverInformationPage: Qt.createComponent("org.kde.tokodon", "ServerInformationPage", Qt.Asynchronous)

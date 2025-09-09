@@ -73,10 +73,12 @@ Q_SIGNALS:
     void actionGroupChanged(QActionGroup *group);
     void actionChanged(QObject *action);
 
+private Q_SLOTS:
+    void syncUp();
+
 private:
     // TODO: dpointer
     void syncDown();
-    void syncUp();
     QString m_name;
     QString m_text;
     QString m_icon;
