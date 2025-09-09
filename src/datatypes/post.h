@@ -5,8 +5,8 @@
 
 #pragma once
 
+#include "datatypes/poll.h"
 #include "timeline/attachment.h"
-#include "timeline/poll.h"
 
 #include <QImage>
 
@@ -178,7 +178,13 @@ public:
     /**
      * @brief The possible visibility levels of a post.
      */
-    enum Visibility { Public, Unlisted, Private, Direct, Local };
+    enum Visibility {
+        Public,
+        Unlisted,
+        Private,
+        Direct,
+        Local
+    };
     Q_ENUM(Visibility)
 
     /**

@@ -97,17 +97,19 @@ target_sources(tokodon_static
     conversation/conversationmodel.cpp
     conversation/conversationmodel.h
 
+    # Data types
+    datatypes/poll.cpp
+    datatypes/poll.h
+    datatypes/post.cpp
+    datatypes/post.h
+    datatypes/tag.h
+    datatypes/tag.cpp
+
     # Timeline
-    timeline/post.cpp
-    timeline/post.h
     timeline/attachment.cpp
     timeline/attachment.h
     timeline/notification.cpp
     timeline/notification.h
-    timeline/poll.cpp
-    timeline/poll.h
-    timeline/tag.h
-    timeline/tag.cpp
     timeline/accountmodel.cpp
     timeline/accountmodel.h
     timeline/threadmodel.cpp
@@ -360,6 +362,7 @@ target_include_directories(tokodon_static PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/net
 target_include_directories(tokodon_static PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/admin)
 target_include_directories(tokodon_static PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/conversation)
 target_include_directories(tokodon_static PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/editor)
+target_include_directories(tokodon_static PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/datatypes)
 
 if (BUILD_TESTING)
     qt_target_qml_sources(tokodon_static

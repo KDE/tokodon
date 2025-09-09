@@ -4,7 +4,7 @@
 #pragma once
 
 #include "account/identity.h"
-#include "timeline/post.h"
+#include "datatypes/post.h"
 
 /**
  * @brief Deals with navigation in the QML pages but also allows C++ to control some of the navigation too.
