@@ -278,7 +278,8 @@ QWebSocket *Account::streamingSocket(const QString &stream)
     });
 
     QNetworkRequest request(url);
-    request.setHeader(QNetworkRequest::UserAgentHeader, QStringLiteral("Tokodon/").append(QStringLiteral(TOKODON_VERSION_STRING)));
+    request.setHeader(QNetworkRequest::UserAgentHeader,
+                      QStringLiteral("%1/%2").arg(QCoreApplication::applicationName(), QCoreApplication::applicationVersion()));
     socket->open(request);
 
     m_websockets[stream] = socket;
