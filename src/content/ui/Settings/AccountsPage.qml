@@ -98,7 +98,7 @@ FormCard.FormCardPage {
         FormCard.FormButtonDelegate {
             id: addAccountDelegate
             action: Kirigami.Action {
-                fromQAction: root.application.globalActions.action('add_account')
+                fromQAction: root.globalActions.action('add_account')
             }
         }
     }
