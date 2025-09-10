@@ -447,7 +447,7 @@ QQC2.Pane {
                         },
                         Kirigami.Action {
                             visible: root.isSelf
-                            fromQAction: (toolbar.QQC2.ApplicationWindow.window as StatefulApp.StatefulWindow)?.application.globalActions.action("options_configure") ?? null
+                            fromQAction: (toolbar.QQC2.ApplicationWindow.window as StatefulApp.StatefulWindow)?.globalActions.action("options_configure") ?? null
                         },
                         Kirigami.Action {
                             icon.name: "favorite"

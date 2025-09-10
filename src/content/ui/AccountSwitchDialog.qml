@@ -62,7 +62,7 @@ Kirigami.Dialog {
             }
 
             action: Kirigami.Action {
-                fromQAction: root.application.globalActions.action('add_account')
+                fromQAction: root.globalActions.action('add_account')
             }
 
             onClicked: root.close()

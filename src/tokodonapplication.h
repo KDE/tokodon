@@ -8,7 +8,7 @@
 
 #include "account/accountmanager.h"
 
-class TokodonApplication : public AbstractKirigamiApplication
+class TokodonApplication : public QObject
 {
     Q_OBJECT
     QML_ELEMENT
@@ -21,13 +21,6 @@ public:
 
     [[nodiscard]] AccountManager *accountManager() const;
     void setAccountManager(AccountManager *accountManager);
-
-    [[nodiscard]] QList<KirigamiActionCollection *> actionCollections() const override;
-
-    /**
-     * @brief Visually unchecks the main page actions, if needed.
-     */
-    Q_INVOKABLE void uncheckMainActions();
 
     Q_INVOKABLE void switchAccount(AbstractAccount *account);
 
@@ -52,14 +45,5 @@ Q_SIGNALS:
     void openAccountSwitcher();
 
 private:
-    void setupActions() override;
-    void setupAccountCollection();
-    void createAccountActions(AbstractAccount *account);
-    void updateAccountActions();
-
     AccountManager *m_accountManager = nullptr;
-    KirigamiActionCollection *m_accountCollection = nullptr;
-    QHash<AbstractAccount *, QAction *> m_switchUserActions;
-    QHash<AbstractAccount *, QAction *> m_configureUserActions;
-    QAction *m_dummyAction;
 };

@@ -22,13 +22,18 @@ import "./PostDelegate"
 StatefulApp.StatefulWindow {
     id: root
 
-    application: TokodonApplication {
+    property QtObject application: TokodonApplication {
         accountManager: AccountManager
-
-        configurationView: TokodonConfigurationView {
-            window: root
-            application: root.application
+        // FIXME: avoidable?
+        function uncheckMainActions() {
+            dummyAction.checked = true;
         }
+    }
+
+    TokodonConfigurationView {
+        id: configurationView
+        window: root
+        application: root.application
     }
 
     property alias globalActions: globalActions
@@ -47,6 +52,23 @@ StatefulApp.StatefulWindow {
             defaultShortcut: "Ctrl+N"
             action: Kirigami.Action {
                 onTriggered: root.openComposer("", undefined);
+            }
+        }
+        ActionData {
+            name: "add_account"
+            icon: "list-add-user-symbolic"
+            text: i18nc("@action:button", "Add Account")
+            action: Kirigami.Action {
+                onTriggered: {
+                    let page;
+                    // pushDialogLayer is inherently broken in Kirigami, so let's push it as a page on mobile instead
+                    if (Kirigami.Settings.isMobile) {
+                        page = root.pageStack.push(Qt.createComponent("org.kde.tokodon", "WelcomePage"), { application: root.application, showSettingsButton: false });
+                    } else {
+                        page = root.pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "WelcomePage"), { application: root.application, showSettingsButton: false });
+                    }
+                    page.QQC2.ApplicationWindow.window.pageStack.columnView.columnResizeMode = Kirigami.ColumnView.SingleColumn;
+                }
             }
         }
         ActionData {
@@ -356,6 +378,15 @@ StatefulApp.StatefulWindow {
                 }
             }
         }
+        ActionData {
+            // FIXME: avoidable?
+            id: dummyAction
+            name: "dummy_action"
+            visible: false
+            actionGroup: pagesGroup
+            checkable: true
+            action: Kirigami.Action {}
+        }
     }
 
     ActionCollection {
@@ -373,7 +404,7 @@ StatefulApp.StatefulWindow {
             text: i18nc("@action:button Open settings dialog", "Settings")
             action: Kirigami.Action {
                 id: configureAction
-                onTriggered: root.application.configurationView.open()
+                onTriggered: configurationView.open()
             }
         }
     }
@@ -606,21 +637,6 @@ StatefulApp.StatefulWindow {
 
         function onAccountsReady(): void {
             root.startupAccountCheck();
-        }
-    }
-
-    Connections {
-        target: root.application
-
-        function onAddAccount(): void {
-            let page;
-            // pushDialogLayer is inherently broken in Kirigami, so let's push it as a page on mobile instead
-            if (Kirigami.Settings.isMobile) {
-                page = root.pageStack.push(Qt.createComponent("org.kde.tokodon", "WelcomePage"), { application: root.application, showSettingsButton: false });
-            } else {
-                page = root.pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "WelcomePage"), { application: root.application, showSettingsButton: false });
-            }
-            page.QQC2.ApplicationWindow.window.pageStack.columnView.columnResizeMode = Kirigami.ColumnView.SingleColumn;
         }
     }
 
