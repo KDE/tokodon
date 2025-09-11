@@ -345,6 +345,10 @@ qt_target_qml_sources(tokodon_static
         content/ui/ServerInformationPage.qml
         content/ui/GenericServerInformationPage.qml
         content/ui/AccountSwitchDialog.qml
+
+
+        #ActionCollection
+        actioncollection/KQuickCommandBarPage.qml
 )
 
 set_source_files_properties(../org.kde.tokodon.svg PROPERTIES

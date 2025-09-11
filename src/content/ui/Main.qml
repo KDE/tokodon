@@ -45,6 +45,7 @@ StatefulApp.StatefulWindow {
     }
     ActionCollection {
         id: globalActions
+        name: "tokodon_actions"
         ActionData {
             name: "open_status_composer"
             icon: "list-add"
@@ -395,7 +396,7 @@ StatefulApp.StatefulWindow {
             name: "open_kcommand_bar"
             defaultShortcut: "Ctrl+Alt+I"
             action: Kirigami.Action {
-                onTriggered: root.application.openKCommandBarAction()
+                onTriggered: commandBarPage.open()
             }
         }
         ActionData {
@@ -436,6 +437,10 @@ StatefulApp.StatefulWindow {
     Instantiator {
         model: AccountManager
         delegate: AccountActionCollection {}
+    }
+
+    KQuickCommandBarPage {
+        id: commandBarPage
     }
 
 
