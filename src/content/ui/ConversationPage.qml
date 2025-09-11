@@ -1,6 +1,8 @@
 // SPDX-FileCopyrightText: 2022 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import org.kde.kirigami 2 as Kirigami
 import QtQuick.Controls 2 as QQC2
@@ -100,6 +102,8 @@ Kirigami.ScrollablePage {
                         Kirigami.SearchField {
                             id: searchField
                             placeholderText: i18n("Search for user…")
+
+                            focus: true
 
                             Layout.fillWidth: true
                             Layout.margins: Kirigami.Units.largeSpacing
