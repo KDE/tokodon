@@ -51,8 +51,11 @@ KirigamiSettings.ConfigurationView {
             icon.name: "network-connect"
             page: () => Qt.createComponent("org.kde.tokodon", "NetworkProxyPage")
         },
-        KirigamiSettings.ShortcutsConfigurationModule {
-            application: root.application
+        KirigamiSettings.ConfigurationModule {
+            moduleId: "shortcuts"
+            text: i18n("Shortcuts")
+            icon.name: "configure-shortcuts-symbolic"
+            page: () => Qt.createComponent("org.kde.tokodon", "ShortcutsEditor")
         },
         KirigamiSettings.ConfigurationModule {
             moduleId: "errorlog"
