@@ -8,7 +8,6 @@ import QtQuick.Layouts
 import org.kde.kitemmodels
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
-import org.kde.kirigamiaddons.delegates as Delegates
 import org.kde.kirigamiaddons.components as Components
 
 Kirigami.ScrollablePage {
@@ -32,44 +31,56 @@ Kirigami.ScrollablePage {
 
         model: KSortFilterProxyModel {
             id: searchFilterProxyModel
+            sourceModel: ActionsModel {
+                id: actionsModel
+                // TODO: this should just fetch all actions of all collections
+                collectionName: "tokodon_actions"
+                shownActions: ActionsModel.ActiveActions
+            }
 
             filterRoleName: 'actionName'
             filterCaseSensitivity: Qt.CaseInsensitive
         }
 
-        delegate: Delegates.RoundedItemDelegate {
+        delegate: QQC2.ItemDelegate {
             id: shortcutDelegate
 
             required property int index
-            required property string actionName
-            required property var shortcut
-            required property string shortcutDisplay
-            required property string alternateShortcuts
+            required property QtObject actionDescription
+            required property QtObject actionInstance
 
-            text: actionName.replace('&', '')
+            width: ListView.view.width
+            text: actionDescription.text//actionName.replace('&', '')
 
-            Accessible.description: shortcutDisplay
+            Accessible.description: actionDescription.shortcut
 
             contentItem: RowLayout {
                 spacing: Kirigami.Units.smallSpacing
 
+                Kirigami.Icon {
+                    implicitWidth: Kirigami.Units.iconSizes.small
+                    implicitHeight: implicitWidth
+                    source: actionDescription.icon
+                }
+
                 QQC2.Label {
-                    text: shortcutDelegate.text
+                    text: actionDescription.text
                     Layout.fillWidth: true
                     Accessible.ignored: true
                 }
 
                 QQC2.Label {
-                    text: shortcutDelegate.shortcutDisplay
+                    text: actionDescription?.shortcut
                     Accessible.ignored: true
                 }
             }
 
             onClicked: {
-                shortcutDialog.title = i18ndc("kirigami-addons6", "@title:window", "Shortcut: %1",  shortcutDelegate.text);
-                shortcutDialog.keySequence = shortcutDelegate.shortcut;
+                shortcutDialog.title = i18ndc("kirigami-addons6", "@title:window", "Shortcut: %1",  actionDescription.text);
+                shortcutDialog.actionDescription = actionDescription;
+                shortcutDialog.keySequence = actionDescription.shortcut;
                 shortcutDialog.index = shortcutDelegate.index;
-                shortcutDialog.alternateShortcuts = shortcutDelegate.alternateShortcuts;
+                //shortcutDialog.alternateShortcuts = shortcutDelegate.alternateShortcuts;
                 shortcutDialog.open()
             }
         }
@@ -77,6 +88,7 @@ Kirigami.ScrollablePage {
         FormCard.FormCardDialog {
             id: shortcutDialog
 
+            property ActionData actionDescription
             property alias keySequence: keySequenceItem.keySequence
             property var alternateShortcuts
             property int index: -1
@@ -88,7 +100,7 @@ Kirigami.ScrollablePage {
 
                 label: i18ndc("kirigami-addons6", "@label", "Shortcut:")
                 onKeySequenceModified: {
-                    root.model.updateShortcut(shortcutDialog.index, 0, keySequence);
+                    shortcutDialog.actionDescription.shortcut = keySequence;
                 }
 
                 onErrorOccurred: (title, message) => {
@@ -134,7 +146,7 @@ Kirigami.ScrollablePage {
             Repeater {
                 id: alternateRepeater
 
-                model: shortcutDialog.alternateShortcuts
+                model: shortcutDialog.actionDescription.shortcuts
                 KeySequenceItem {
                     id: alternateKeySequenceItem
 
@@ -146,8 +158,8 @@ Kirigami.ScrollablePage {
                     keySequence: modelData
                     onKeySequenceModified: {
                         const alternates = root.model.updateShortcut(shortcutDialog.index, index + 1, keySequence);
-                        if (alternates !== shortcutDialog.alternateShortcuts) {
-                            shortcutDialog.alternateShortcuts = alternates;
+                        if (alternates !== shortcutDialog.actionDescription.shortcuts) {
+                            shortcutDialog.actionDescription.shortcuts = alternates;
                         }
                     }
 
@@ -172,8 +184,9 @@ Kirigami.ScrollablePage {
                 label: alternateRepeater.count === 0 ? i18ndc("kirigami-addons6", "@label", "Alternative:") : ''
 
                 onKeySequenceModified: {
-                    shortcutDialog.alternateShortcuts = root.model.updateShortcut(shortcutDialog.index, alternateRepeater.count + 1, keySequence);
-                    keySequence = root.model.emptyKeySequence();
+                    //shortcutDialog.alternateShortcuts = root.model.updateShortcut(shortcutDialog.index, alternateRepeater.count + 1, keySequence);
+                    shortcutDialog.actionDescription.shortcuts = keySequence;
+                    //keySequence = root.model.emptyKeySequence();
                 }
 
                 onErrorOccurred: (title, message) => {

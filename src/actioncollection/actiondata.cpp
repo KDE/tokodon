@@ -124,6 +124,35 @@ void ActionData::setVariantShortcut(const QVariant &shortcut)
     Q_EMIT shortcutChanged(shortcut);
 }
 
+QVariant ActionData::variantShortcut() const
+{
+    return m_shortcut;
+}
+
+void ActionData::setVariantShortcut(const QList<QKeySequence> &shortcuts)
+{
+    if (m_alternateShortcuts == shortcuts) {
+        return;
+    }
+
+    m_alternateShortcuts = shortcuts;
+
+    KConfigGroup cg(KSharedConfig::openConfig(), QStringLiteral("Shortcuts"));
+    cg = KConfigGroup(&cg, m_collection->name());
+    qWarning() << "AAA" << shortcuts << m_defaultShortcut << (shortcuts == m_defaultShortcut);
+    if (shortcuts != m_defaultShortcut) {
+        cg.writeEntry(m_name, variantToKeySequence(shortcuts).toString());
+    } else {
+        cg.deleteEntry(m_name);
+    }
+
+    // if (m_action) {
+    //     m_action->setProperty("shortcut", shortcuts);
+    // }
+
+    Q_EMIT shortcutChanged(shortcuts);
+}
+
 QVariant ActionData::defaultShortcut() const
 {
     return m_defaultShortcut;
