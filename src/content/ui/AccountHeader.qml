@@ -20,6 +20,13 @@ QQC2.Pane {
 
     required property var identity
     required property bool isSelf
+    required property bool largeScreen
+    required property bool canExcludeBoosts
+    required property bool excludeBoosts
+    required property string accountId
+
+    signal excludeBoostsToggled(bool checked)
+    signal selectedTagChanged(string selectedTag)
 
     leftPadding: 0
     rightPadding: 0
@@ -192,9 +199,9 @@ QQC2.Pane {
                     Layout.alignment: Qt.AlignHCenter
 
                     Kirigami.ShadowedRectangle {
-                        Layout.margins: accountInfo.largeScreen ? Kirigami.Units.gridUnit * 2 : Kirigami.Units.largeSpacing
-                        Layout.preferredWidth: accountInfo.largeScreen ? Kirigami.Units.gridUnit * 5 : Kirigami.Units.gridUnit * 3
-                        Layout.preferredHeight: accountInfo.largeScreen ? Kirigami.Units.gridUnit * 5 : Kirigami.Units.gridUnit * 3
+                        Layout.margins: root.largeScreen ? Kirigami.Units.gridUnit * 2 : Kirigami.Units.largeSpacing
+                        Layout.preferredWidth: root.largeScreen ? Kirigami.Units.gridUnit * 5 : Kirigami.Units.gridUnit * 3
+                        Layout.preferredHeight: root.largeScreen ? Kirigami.Units.gridUnit * 5 : Kirigami.Units.gridUnit * 3
 
                         color: Kirigami.Theme.backgroundColor
                         radius: width
@@ -922,10 +929,10 @@ QQC2.Pane {
                 QQC2.Switch {
                     text: i18nc("@option:check", "Hide boosts")
 
-                    checked: accountInfo.excludeBoosts
-                    enabled: accountInfo.canExcludeBoosts && !root.loading
+                    checked: root.excludeBoosts
+                    enabled: root.canExcludeBoosts && !root.loading
 
-                    onToggled: accountInfo.excludeBoosts = checked
+                    onToggled: root.excludeBoostsToggled(checked)
                 }
 
                 QQC2.ScrollView {
@@ -944,14 +951,14 @@ QQC2.Pane {
                             closable: false
                             checked: true
 
-                            onClicked: accountInfo.selectedTag = ""
+                            onClicked: root.selectedTagChanged('')
 
                             QQC2.ButtonGroup.group: tagGroup
                         }
 
                         Repeater {
                             model: FeaturedTagsModel {
-                                accountId: accountInfo.accountId
+                                accountId: root.accountId
                             }
 
                             delegate: Kirigami.Chip {
@@ -960,7 +967,7 @@ QQC2.Pane {
                                 text: '#' + name
                                 closable: false
 
-                                onClicked: accountInfo.selectedTag = name
+                                onClicked: root.selectedTagChanged(name)
 
                                 QQC2.ButtonGroup.group: tagGroup
                             }

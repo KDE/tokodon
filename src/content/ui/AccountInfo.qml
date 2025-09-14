@@ -4,13 +4,6 @@
 pragma ComponentBehavior: Bound
 
 import QtQuick
-import QtQuick.Effects
-import org.kde.kirigami 2 as Kirigami
-import org.kde.kirigamiaddons.components 1 as Components
-import org.kde.kirigamiaddons.labs.components as Labs
-import org.kde.kirigamiaddons.formcard 1 as FormCard
-import org.kde.kquickcontrolsaddons as KQuickControlsAddons
-import org.kde.kirigamiaddons.statefulapp as StatefulApp
 import QtQuick.Controls 2 as QQC2
 import QtQuick.Layouts
 import org.kde.tokodon
@@ -117,6 +110,11 @@ Kirigami.Page {
                         identity: accountModel.identity
                         isSelf: accountModel.isSelf
                         width: timelineView.width
+                        largeScreen: accountInfo.largeScreen
+                        canExcludeBoosts: accountInfo.canExcludeBoosts
+                        excludeBoosts: accountInfo.excludeBoosts
+                        onExcludeBoostsToggled: (checked) => accountInfo.excludeBoosts = checked
+                        onSelectedTagChanged: (selectedTag) => accountInfo.selectedTag = selectedTag;
                     }
                 }
 
@@ -156,6 +154,10 @@ Kirigami.Page {
                         identity: accountModel.identity
                         isSelf: accountModel.isSelf
                         width: gridView.width
+                        largeScreen: accountInfo.largeScreen
+                        canExcludeBoosts: accountInfo.canExcludeBoosts
+                        excludeBoosts: accountInfo.excludeBoosts
+                        onExcludeBoostsToggled: (checked) => accountInfo.excludeBoosts = checked
                     }
                     cellWidth: cellSize
                     cellHeight: cellSize

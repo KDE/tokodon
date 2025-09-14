@@ -4,12 +4,10 @@
 pragma ComponentBehavior: Bound
 
 import QtQuick
-import QtQuick.Controls 2 as QQC2
 import QtQuick.Layouts
 
-import org.kde.kirigami 2 as Kirigami
-import org.kde.kirigamiaddons.formcard 1 as FormCard
-import org.kde.kirigamiaddons.components 1 as KirigamiComponents
+import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.formcard as FormCard
 
 import org.kde.tokodon
 
@@ -43,7 +41,7 @@ FormCard.FormCardPage {
                         spacing: 0
 
                         FormCard.FormDelegateSeparator {
-                            visible: index !== 0
+                            visible: ruleLayout.index !== 0
                             opacity: 0.5
                         }
 
@@ -66,7 +64,7 @@ FormCard.FormCardPage {
             id: rulesButton
 
             text: i18nc("@action:button", "Rules")
-            onClicked: pageStack.push(rulesPage);
+            onClicked: root.Kirigami.PageStack.push(rulesPage);
         }
 
         FormCard.FormDelegateSeparator {
@@ -78,7 +76,7 @@ FormCard.FormCardPage {
             id: announcementsButton
 
             text: i18nc("@action:button", "Announcements")
-            onClicked: pageStack.push(Qt.createComponent("org.kde.tokodon", "AnnouncementsPage"));
+            onClicked: root.Kirigami.PageStack.push(Qt.createComponent("org.kde.tokodon", "AnnouncementsPage"));
         }
 
         FormCard.FormDelegateSeparator {
@@ -90,7 +88,7 @@ FormCard.FormCardPage {
             id: privacyPolicyButton
 
             text: i18nc("@action:button", "Privacy Policy")
-            onClicked: pageStack.push(Qt.createComponent("org.kde.tokodon", "GenericServerInformationPage"), { title: i18nc("@title:window", "Privacy Policy"), kind: "privacy_policy" });
+            onClicked: root.Kirigami.PageStack.push(Qt.createComponent("org.kde.tokodon", "GenericServerInformationPage"), { title: i18nc("@title:window", "Privacy Policy"), kind: "privacy_policy" });
         }
 
         FormCard.FormDelegateSeparator {
@@ -102,7 +100,7 @@ FormCard.FormCardPage {
             id: termsOfServiceButton
 
             text: i18nc("@action:button", "Terms of Service")
-            onClicked: pageStack.push(Qt.createComponent("org.kde.tokodon", "GenericServerInformationPage"), { title: i18nc("@title:window", "Terms of Service"), kind: "terms_of_service" });
+            onClicked: root.Kirigami.PageStack.push(Qt.createComponent("org.kde.tokodon", "GenericServerInformationPage"), { title: i18nc("@title:window", "Terms of Service"), kind: "terms_of_service" });
         }
     }
 

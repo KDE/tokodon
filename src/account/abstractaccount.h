@@ -465,6 +465,20 @@ public:
      */
     virtual void updatePushNotifications() = 0;
 
+    // The following are internal for the mock account
+    Q_INVOKABLE virtual void updateNotification();
+    Q_INVOKABLE virtual void unknownNotification();
+    Q_INVOKABLE virtual void annualReportNotification();
+    Q_INVOKABLE virtual void statusNotification();
+    Q_INVOKABLE virtual void mentionNotification();
+    Q_INVOKABLE virtual void favoriteNotification();
+    Q_INVOKABLE virtual void boostNotification();
+    Q_INVOKABLE virtual void followNotification();
+    Q_INVOKABLE virtual void followRequestNotification();
+    Q_INVOKABLE virtual void pollNotification();
+    Q_INVOKABLE virtual void increaseFollowRequests();
+    Q_INVOKABLE virtual void decreaseFollowRequests();
+
     /**
      * @brief Follow the given account. Can also be used to update whether to show reblogs or enable notifications.
      * @param identity The account to follow.

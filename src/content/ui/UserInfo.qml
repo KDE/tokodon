@@ -2,20 +2,21 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 import QtQuick
-import QtQuick.Controls 2 as QQC2
+import QtQuick.Controls as QQC2
 import QtQuick.Layouts
-import org.kde.kirigami 2 as Kirigami
-import org.kde.kirigamiaddons.delegates 1 as Delegates
-import org.kde.kirigamiaddons.labs.components 1 as KirigamiComponents
+import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.delegates as Delegates
+import org.kde.kirigamiaddons.labs.components as KirigamiComponents
 import org.kde.kirigamiaddons.statefulapp as StatefulApp
 
 import org.kde.tokodon
 
 QQC2.Pane {
-    id: userInfo
+    id: root
 
     required property TokodonApplication application
-    required property Kirigami.OverlayDrawer sidebar
+    required property Sidebar sidebar
+    readonly property Kirigami.PageRow pageStack: (QQC2.ApplicationWindow.window as Main).pageStack
 
     visible: AccountManager.selectedAccount
     padding: 0
@@ -27,7 +28,7 @@ QQC2.Pane {
         }
 
         const accountId = AccountManager.selectedAccountId;
-        if (!pageStack.currentItem.model || !pageStack.currentItem.model.accountId || accountId !== pageStack.currentItem.accountId) {
+        if (!root.pageStack.currentItem.model || !root.pageStack.currentItem.model.accountId || accountId !== root.pageStack.currentItem.accountId) {
             Navigation.openAccount(accountId);
         }
     }
@@ -55,9 +56,9 @@ QQC2.Pane {
             text: name
 
             onClicked: {
-                openAccountPage()
-                if (userInfo.sidebar.modal) {
-                    userInfo.sidebar.close();
+                root.openAccountPage()
+                if (root.sidebar.modal) {
+                    root.sidebar.close();
                 }
             }
             Layout.fillWidth: true
@@ -76,7 +77,7 @@ QQC2.Pane {
                         source: AccountManager.selectedAccount ? AccountManager.selectedAccount.identity.avatarUrl : ''
                     }
 
-                    onClicked: openAccountPage()
+                    onClicked: root.openAccountPage()
                 }
 
                 Delegates.SubtitleContentItem {
@@ -89,18 +90,23 @@ QQC2.Pane {
                 QQC2.ToolButton {
                     icon.name: "system-switch-user"
                     onClicked: {
-                        if (userInfo.sidebar.modal) {
-                            userInfo.sidebar.close();
+                        if (root.sidebar.modal) {
+                            root.sidebar.close();
                         }
 
-                        let dialog = Qt.createComponent("org.kde.tokodon", "AccountSwitchDialog").createObject(root.QQC2.Overlay.overlay, { application });
+                        let dialog = Qt.createComponent("org.kde.tokodon", "AccountSwitchDialog").createObject(root.QQC2.Overlay.overlay, {
+                            application: root.application,
+                            userInfo: root,
+                        });
                         dialog.open();
                     }
                     text: i18n("Switch Account")
                     display: QQC2.AbstractButton.IconOnly
+
                     QQC2.ToolTip.text: i18n("Switch account")
                     QQC2.ToolTip.visible: hovered
                     QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+
                     Layout.minimumWidth: Layout.preferredWidth
                 }
             }

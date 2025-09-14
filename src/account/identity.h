@@ -4,6 +4,7 @@
 #pragma once
 
 #include <QJsonArray>
+#include <qqmlregistration.h>
 
 class AbstractAccount;
 class Relationship;
@@ -16,6 +17,8 @@ class Relationship;
 class Identity : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_UNCREATABLE("C++ only")
 
     Q_PROPERTY(QString id READ id NOTIFY identityUpdated)
     Q_PROPERTY(QString displayName READ displayName NOTIFY identityUpdated)

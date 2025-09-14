@@ -721,6 +721,54 @@ QStringList AbstractAccount::attachmentFilterStrings() const
     return m_attachmentFilterStrings;
 }
 
+void AbstractAccount::unknownNotification()
+{
+}
+
+void AbstractAccount::annualReportNotification()
+{
+}
+
+void AbstractAccount::updateNotification()
+{
+}
+
+void AbstractAccount::statusNotification()
+{
+}
+
+void AbstractAccount::mentionNotification()
+{
+}
+
+void AbstractAccount::favoriteNotification()
+{
+}
+
+void AbstractAccount::boostNotification()
+{
+}
+
+void AbstractAccount::followNotification()
+{
+}
+
+void AbstractAccount::followRequestNotification()
+{
+}
+
+void AbstractAccount::pollNotification()
+{
+}
+
+void AbstractAccount::increaseFollowRequests()
+{
+}
+
+void AbstractAccount::decreaseFollowRequests()
+{
+}
+
 void AbstractAccount::followAccount(Identity *identity, bool reblogs, bool notify)
 {
     executeAction(identity,

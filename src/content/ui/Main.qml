@@ -65,16 +65,16 @@ StatefulApp.StatefulWindow {
     }
 
     function decideDefaultPage(): void {
-        pageStack.clear();
+        root.pageStack.clear();
 
         if (InitialSetupFlow.isSetupNeeded()) {
             globalDrawer.drawerOpen = false;
-            pageStack.push(Qt.createComponent("org.kde.tokodon", "SetupWelcome"));
+            root.pageStack.push(Qt.createComponent("org.kde.tokodon", "SetupWelcome"));
             return;
         }
 
         if (AccountManager.selectedAccountHasIssue) {
-            pageStack.push(Qt.createComponent("org.kde.tokodon", "LoginIssuePage"));
+            root.pageStack.push(Qt.createComponent("org.kde.tokodon", "LoginIssuePage"));
         } else {
             homeAction.trigger();
         }
@@ -84,13 +84,13 @@ StatefulApp.StatefulWindow {
         if (AccountManager.hasAccounts) {
             decideDefaultPage();
         } else {
-            pageStack.push(Qt.createComponent("org.kde.tokodon", "WelcomePage"), { application: root.application });
+            root.pageStack.push(Qt.createComponent("org.kde.tokodon", "WelcomePage"), { application: root.application });
         }
     }
 
     function navigateLink(link: string, shouldOpenInternalLinks: bool): void {
         if (link.startsWith('hashtag:/') && shouldOpenInternalLinks) {
-            pageStack.push(tagModelComponent, {
+            root.pageStack.push(tagModelComponent, {
                 hashtag: link.substring(9),
             })
         } else if (link.startsWith('account:/') && shouldOpenInternalLinks) {
@@ -112,9 +112,9 @@ StatefulApp.StatefulWindow {
     // Checks if the current item matches the expected pageId
     // If true, then it has sent us back to the top and you shouldn't push the same page.
     function checkIfCurrentPage(pageId: string): bool {
-        if (pageStack.currentItem?.pageId === pageId) {
-            if (pageStack.currentItem?.returnToTop) {
-                pageStack.currentItem.returnToTop();
+        if (root.pageStack.currentItem?.pageId === pageId) {
+            if (root.pageStack.currentItem?.returnToTop) {
+                root.pageStack.currentItem.returnToTop();
             }
 
             return true;
@@ -224,14 +224,14 @@ StatefulApp.StatefulWindow {
 
         function onAccountRemoved(): void {
             if (!AccountManager.hasAccounts) {
-                pageStack.clear();
-                pageStack.push(Qt.createComponent("org.kde.tokodon", "WelcomePage"), { application: root.application });
+                root.pageStack.clear();
+                root.pageStack.push(Qt.createComponent("org.kde.tokodon", "WelcomePage"), { application: root.application });
                 globalDrawer.drawerOpen = false;
             }
         }
 
         function onAccountsReloaded(): void {
-            pageStack.replace(mainTimeline.createObject(root), {
+            root.pageStack.replace(mainTimeline.createObject(root), {
                 name: "home"
             });
         }
@@ -266,8 +266,8 @@ StatefulApp.StatefulWindow {
                 return;
             }
 
-            pageStack.clear();
-            pageStack.push(mainTimeline.createObject(root), {
+            root.pageStack.clear();
+            root.pageStack.push(mainTimeline.createObject(root), {
                 pageId: "home",
                 name: "home",
                 iconName: "go-home-large",
@@ -281,8 +281,8 @@ StatefulApp.StatefulWindow {
                 return;
             }
 
-            pageStack.clear();
-            pageStack.push(notificationTimeline.createObject(root, { pageId: "notifications" }));
+            root.pageStack.clear();
+            root.pageStack.push(notificationTimeline.createObject(root, { pageId: "notifications" }));
         }
 
         function onOpenFollowRequests(): void {
@@ -290,8 +290,8 @@ StatefulApp.StatefulWindow {
                 return;
             }
 
-            pageStack.clear();
-            pageStack.push(socialGraphComponent.createObject(root), {
+            root.pageStack.clear();
+            root.pageStack.push(socialGraphComponent.createObject(root), {
                 pageId: "followRequests",
                 name: "request",
             });
@@ -302,8 +302,8 @@ StatefulApp.StatefulWindow {
                 return;
             }
 
-            pageStack.clear();
-            pageStack.push(mainTimeline.createObject(root), {
+            root.pageStack.clear();
+            root.pageStack.push(mainTimeline.createObject(root), {
                 pageId: "local",
                 name: "public",
                 iconName: "system-users",
@@ -317,8 +317,8 @@ StatefulApp.StatefulWindow {
                 return;
             }
 
-            pageStack.clear();
-            pageStack.push(mainTimeline.createObject(root), {
+            root.pageStack.clear();
+            root.pageStack.push(mainTimeline.createObject(root), {
                 pageId: "global",
                 name: "federated",
                 iconName: "kstars_xplanet",
@@ -332,8 +332,8 @@ StatefulApp.StatefulWindow {
                 return;
             }
 
-            pageStack.clear();
-            pageStack.push(mainTimeline.createObject(root), {
+            root.pageStack.clear();
+            root.pageStack.push(mainTimeline.createObject(root), {
                 pageId: "favorites",
                 name: "favourites",
                 iconName: "favorite",
@@ -347,8 +347,8 @@ StatefulApp.StatefulWindow {
                 return;
             }
 
-            pageStack.clear();
-            pageStack.push(mainTimeline.createObject(root), {
+            root.pageStack.clear();
+            root.pageStack.push(mainTimeline.createObject(root), {
                 pageId: "bookmarks",
                 name: "bookmarks",
                 iconName: "bookmarks",
@@ -362,8 +362,8 @@ StatefulApp.StatefulWindow {
                 return;
             }
 
-            pageStack.clear();
-            pageStack.push(exploreTimeline.createObject(root, { pageId: "explore" }));
+            root.pageStack.clear();
+            root.pageStack.push(exploreTimeline.createObject(root, { pageId: "explore" }));
         }
 
         function onOpenFollowing(): void {
@@ -371,8 +371,8 @@ StatefulApp.StatefulWindow {
                 return;
             }
 
-            pageStack.clear();
-            pageStack.push(followingTimeline.createObject(root, { pageId: "following" }));
+            root.pageStack.clear();
+            root.pageStack.push(followingTimeline.createObject(root, { pageId: "following" }));
         }
 
         function onOpenSearch(): void {
@@ -380,8 +380,8 @@ StatefulApp.StatefulWindow {
                 return;
             }
 
-            pageStack.clear();
-            pageStack.push(searchPage.createObject(root, { pageId: "search" }));
+            root.pageStack.clear();
+            root.pageStack.push(searchPage.createObject(root, { pageId: "search" }));
         }
 
         function onOpenServerInformation(): void {
@@ -389,8 +389,8 @@ StatefulApp.StatefulWindow {
                 return;
             }
 
-            pageStack.clear();
-            pageStack.push(serverInformationPage.createObject(root, { pageId: "serverInformation" }));
+            root.pageStack.clear();
+            root.pageStack.push(serverInformationPage.createObject(root, { pageId: "serverInformation" }));
         }
 
         function onOpenLists(): void {
@@ -398,8 +398,8 @@ StatefulApp.StatefulWindow {
                 return;
             }
 
-            pageStack.clear();
-            pageStack.push(listsPage.createObject(root, { pageId: "lists" }));
+            root.pageStack.clear();
+            root.pageStack.push(listsPage.createObject(root, { pageId: "lists" }));
         }
 
         function onOpenProfile(): void {
@@ -407,8 +407,8 @@ StatefulApp.StatefulWindow {
                 return;
             }
 
-            pageStack.clear();
-            pageStack.push(Qt.createComponent("org.kde.tokodon", "AccountInfo"), {
+            root.pageStack.clear();
+            root.pageStack.push(Qt.createComponent("org.kde.tokodon", "AccountInfo"), {
                 pageId: "profile",
                 accountId: AccountManager.selectedAccountId,
             });
@@ -419,8 +419,8 @@ StatefulApp.StatefulWindow {
                 return;
             }
 
-            pageStack.clear();
-            pageStack.push(Qt.createComponent("org.kde.tokodon", "ConversationPage"), {
+            root.pageStack.clear();
+            root.pageStack.push(Qt.createComponent("org.kde.tokodon", "ConversationPage"), {
                 pageId: "conversations",
             });
         }
@@ -473,7 +473,7 @@ StatefulApp.StatefulWindow {
                 }
             });
         } else {
-            pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "StatusComposer"), {
+            root.pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "StatusComposer"), {
                 purpose: StatusComposer.New,
                 initialText,
                 visibility: visibility ?? AccountManager.selectedAccount.preferences.defaultVisibility
@@ -520,7 +520,7 @@ StatefulApp.StatefulWindow {
                     }
                 });
             } else {
-                const item = pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "StatusComposer"), {
+                const item = root.pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "StatusComposer"), {
                     purpose: StatusComposer.Reply,
                     previewPost: post
                 });
@@ -530,23 +530,23 @@ StatefulApp.StatefulWindow {
         }
 
         function onOpenPost(postId: string): void {
-            if (!pageStack.currentItem.postId || pageStack.currentItem.postId !== postId) {
-                pageStack.push(Qt.createComponent("org.kde.tokodon", "ThreadPage"), {
+            if (!root.pageStack.currentItem.postId || root.pageStack.currentItem.postId !== postId) {
+                root.pageStack.push(Qt.createComponent("org.kde.tokodon", "ThreadPage"), {
                     postId: postId,
                 });
             }
         }
 
         function onOpenAccount(accountId: string): void {
-            if (!pageStack.currentItem.accountId || pageStack.currentItem.accountId !== accountId) {
-                pageStack.push(Qt.createComponent("org.kde.tokodon", "AccountInfo"), {
+            if (!root.pageStack.currentItem.accountId || root.pageStack.currentItem.accountId !== accountId) {
+                root.pageStack.push(Qt.createComponent("org.kde.tokodon", "AccountInfo"), {
                     accountId: accountId,
                 });
             }
         }
 
         function onOpenTag(tag: string): void {
-            pageStack.push(tagModelComponent, {
+            root.pageStack.push(tagModelComponent, {
                 hashtag: tag,
             })
         }
@@ -569,7 +569,7 @@ StatefulApp.StatefulWindow {
         }
 
         function onOpenList(listId: string, name: string): void {
-            pageStack.push(listTimelinePage.createObject(root, {
+            root.pageStack.push(listTimelinePage.createObject(root, {
                 name,
                 listId
             }));
@@ -583,9 +583,9 @@ StatefulApp.StatefulWindow {
         application: root.application
         shouldCollapse: !root.wideMode
         actions: !root.wideMode ?
-            [searchAction, followRequestAction, followingAction, localTimelineAction, globalTimelineAction, conversationAction, bookmarksAction, favouritesAction, listsAction] :
-            [homeAction, notificationAction, followRequestAction, followingAction, exploreAction, localTimelineAction, globalTimelineAction, conversationAction, bookmarksAction, favouritesAction, listsAction]
-        bottomActions: [serverInformationAction, debugAction, moderationToolsAction, configureAction]
+            [root.searchAction, root.followRequestAction, root.followingAction, root.localTimelineAction, root.globalTimelineAction, root.conversationAction, root.bookmarksAction, root.favouritesAction, root.listsAction] :
+            [root.homeAction, root.notificationAction, root.followRequestAction, root.followingAction, root.exploreAction, root.localTimelineAction, root.globalTimelineAction, root.conversationAction, root.bookmarksAction, root.favouritesAction, root.listsAction]
+        bottomActions: [root.serverInformationAction, root.debugAction, root.moderationToolsAction, root.configureAction]
     }
 
     readonly property Kirigami.Action homeAction: Kirigami.Action {
@@ -649,7 +649,7 @@ StatefulApp.StatefulWindow {
     }
     readonly property Kirigami.Action debugAction: Kirigami.Action {
         icon.name: "debug-run"
-        onTriggered: pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "DebugPage"))
+        onTriggered: root.pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "DebugPage"))
         visible: AccountManager.testMode
         text: i18nc("@action:button Open debug page", "Debug")
     }
@@ -682,14 +682,14 @@ StatefulApp.StatefulWindow {
         id: tabbar
 
         // Make sure we take in count drawer width
-        visible: pageStack.layers.depth <= 1 && AccountManager.hasAccounts && !root.wideMode && AccountManager.isReady
+        visible: root.pageStack.layers.depth <= 1 && AccountManager.hasAccounts && !root.wideMode && AccountManager.isReady
         enabled: !AccountManager.selectedAccountHasIssue
 
         contentItem: RowLayout {
             spacing: 0
 
             Repeater {
-                model: [homeAction, notificationAction, exploreAction, profileAction]
+                model: [root.homeAction, root.notificationAction, root.exploreAction, root.profileAction]
 
                 delegate: Kirigami.NavigationTabButton {
                     id: delegateButton

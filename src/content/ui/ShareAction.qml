@@ -1,9 +1,9 @@
 // SPDX-FileCopyrightText: 2021 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
-import QtQuick.Layouts
-import QtQuick.Controls 2 as QQC2
 import org.kde.kirigami 2 as Kirigami
 
 /**
@@ -14,12 +14,12 @@ import org.kde.kirigami 2 as Kirigami
  * TODO add Android support
  */
 Kirigami.Action {
-    id: shareAction
+    id: root
+
     icon.name: "emblem-shared-symbolic"
     text: i18n("Share")
     tooltip: i18n("Share the selected media")
 
-    property var doBeforeSharing: () => {}
     visible: false
 
     /**
@@ -38,37 +38,39 @@ Kirigami.Action {
 
     property Instantiator _instantiator: Instantiator {
         Component.onCompleted: {
-            const purposeModel = Qt.createQmlObject('import org.kde.purpose 1.0 as Purpose;
+            const purposeModel = Qt.createQmlObject(`import org.kde.purpose 1.0 as Purpose;
 Purpose.PurposeAlternativesModel {
     pluginType: "ShareUrl"
     // Copying to clipboard rarely works, due to how Mastodon and most Fediverse software behave and are dependent on JavaScript.
     // We also already have a way to copy the URL to the clipboard, so having a second way is just confusing.
     disabledPlugins: ["clipboardplugin"]
-}', shareAction._instantiator);
+}`, root._instantiator);
             purposeModel.inputData = Qt.binding(function() {
-                return shareAction.inputData;
+                return root.inputData;
             });
-            _instantiator.model = purposeModel;
-            shareAction.visible = true;
+            root._instantiator.model = purposeModel;
+            root.visible = true;
         }
 
         delegate: Kirigami.Action {
-            property int index
-            text: model.display ?? ""
-            icon.name: model.iconName
+            required property int index
+            required property string actionDisplay
+            required property string iconName
+
+            text: actionDisplay
+            icon.name: iconName
             onTriggered: {
-                doBeforeSharing();
                 applicationWindow().pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "ShareDialog"), {
-                    title: shareAction.tooltip,
+                    title: root.tooltip,
                     index: index,
-                    model: shareAction._instantiator.model
+                    model: root._instantiator.model
                 })
             }
         }
         onObjectAdded: (index, object) => {
             object.index = index;
-            shareAction.children.push(object)
+            root.children.push(object)
         }
-        onObjectRemoved: (index, object) => shareAction.children = Array.from(shareAction.children).filter(obj => obj.pluginId !== object.pluginId)
+        onObjectRemoved: (index, object) => root.children = Array.from(root.children).filter(obj => obj.pluginId !== object.pluginId)
     }
 }

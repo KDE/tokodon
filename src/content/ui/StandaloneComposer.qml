@@ -1,18 +1,17 @@
 // SPDX-FileCopyrightText: 2023 Joshua Goins <josh@redstrate.com>
 // SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import org.kde.kirigami 2 as Kirigami
-import QtQuick.Controls 2 as QQC2
-import QtQuick.Layouts
-import QtQml.Models
 import org.kde.tokodon
 
 import "./StatusComposer"
 import "./PostDelegate"
 
 Kirigami.ApplicationWindow {
-    id: appwindow
+    id: root
 
     minimumWidth: Kirigami.Units.gridUnit * 15
     minimumHeight: Kirigami.Units.gridUnit * 20
@@ -20,7 +19,7 @@ Kirigami.ApplicationWindow {
     Connections {
         target: AccountManager
 
-        function onAccountsReady() {
+        function onAccountsReady(): void {
             if (!AccountManager.hasAccounts) {
                 missingAccountMessage.visible = true;
             }
@@ -30,8 +29,8 @@ Kirigami.ApplicationWindow {
     Connections {
         target: Controller
 
-        function onOpenComposer(text) {
-            pageStack.push(Qt.createComponent("org.kde.tokodon", "StatusComposer"), {
+        function onOpenComposer(text: string): void {
+            root.pageStack.push(Qt.createComponent("org.kde.tokodon", "StatusComposer"), {
                 purpose: StatusComposer.New,
                 initialText: text,
                 closeApplicationWhenFinished: true,

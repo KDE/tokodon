@@ -66,19 +66,19 @@ public:
 
     void updatePushNotifications() override {};
 
-    Q_INVOKABLE void mentionNotification();
-    Q_INVOKABLE void favoriteNotification();
-    Q_INVOKABLE void boostNotification();
-    Q_INVOKABLE void followNotification();
-    Q_INVOKABLE void followRequestNotification();
-    Q_INVOKABLE void statusNotification();
-    Q_INVOKABLE void updateNotification();
-    Q_INVOKABLE void pollNotification();
-    Q_INVOKABLE void annualReportNotification();
-    Q_INVOKABLE void unknownNotification();
+    Q_INVOKABLE void mentionNotification() override;
+    Q_INVOKABLE void favoriteNotification() override;
+    Q_INVOKABLE void boostNotification() override;
+    Q_INVOKABLE void followNotification() override;
+    Q_INVOKABLE void followRequestNotification() override;
+    Q_INVOKABLE void statusNotification() override;
+    Q_INVOKABLE void updateNotification() override;
+    Q_INVOKABLE void pollNotification() override;
+    Q_INVOKABLE void annualReportNotification() override;
+    Q_INVOKABLE void unknownNotification() override;
 
-    Q_INVOKABLE void increaseFollowRequests();
-    Q_INVOKABLE void decreaseFollowRequests();
+    Q_INVOKABLE void increaseFollowRequests() override;
+    Q_INVOKABLE void decreaseFollowRequests() override;
 
 private:
     void readNotificationFromFile(QLatin1String filename);

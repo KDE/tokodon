@@ -4,6 +4,7 @@
 #pragma once
 
 #include "account/abstractaccount.h"
+#include <qqmlintegration.h>
 
 class AccountWarning
 {
@@ -14,7 +15,15 @@ class AccountWarning
     Q_PROPERTY(QString text READ text CONSTANT)
 
 public:
-    enum Action { None, Disable, MarkStatusesAsSensitive, DeleteStatuses, Sensitive, Silence, Suspend };
+    enum Action {
+        None,
+        Disable,
+        MarkStatusesAsSensitive,
+        DeleteStatuses,
+        Sensitive,
+        Silence,
+        Suspend,
+    };
     Q_ENUM(Action);
 
     AccountWarning(const QJsonObject &source);
@@ -84,9 +93,7 @@ private:
 class Notification
 {
     Q_GADGET
-    QML_ELEMENT
-    QML_NAMED_ELEMENT(notification)
-    QML_UNCREATABLE("Only for enums")
+    QML_VALUE_TYPE(notification)
 
 public:
     Notification() = default;
@@ -135,4 +142,15 @@ private:
     QDateTime m_createdAt;
 
     Post *createPost(AbstractAccount *account, const QJsonObject &obj, QObject *parent);
+};
+
+struct NotificationDerived : public Notification {
+    Q_GADGET
+};
+
+namespace NotificationDerivedForeign
+{
+Q_NAMESPACE
+QML_NAMED_ELEMENT(Notification)
+QML_FOREIGN_NAMESPACE(NotificationDerived)
 };

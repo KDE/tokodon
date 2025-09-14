@@ -4,10 +4,7 @@
 // SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 
 import QtQuick
-import QtQuick.Controls 2 as QQC2
-import QtQuick.Layouts
-import org.kde.kirigami 2 as Kirigami
-import org.kde.kirigamiaddons.labs.components 1 as KirigamiComponents
+import org.kde.kirigamiaddons.labs.components as KirigamiComponents
 import org.kde.tokodon
 
 /**

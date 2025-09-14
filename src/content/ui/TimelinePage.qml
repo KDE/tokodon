@@ -1,11 +1,11 @@
 // SPDX-FileCopyrightText: 2021 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
-import org.kde.kirigami 2 as Kirigami
-import org.kde.kirigamiaddons.components 1 as Components
-import org.kde.kirigamiaddons.statefulapp as StatefulApp
-import QtQuick.Controls 2 as QQC2
+import org.kde.kirigami as Kirigami
+import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import org.kde.tokodon
 import './PostDelegate'
@@ -72,10 +72,12 @@ Kirigami.ScrollablePage {
 
     globalToolBarStyle: Kirigami.ApplicationHeaderStyle.ToolBar
 
-    onBackRequested: if (dialog) {
-        dialog.close();
-        dialog = null;
-        event.accepted = true;
+    onBackRequested: (event) => {
+        if (dialog) {
+            dialog.close();
+            dialog = null;
+            event.accepted = true;
+        }
     }
 
     supportsRefreshing: true
@@ -90,7 +92,7 @@ Kirigami.ScrollablePage {
         function onStateChanged(): void {
             // If we're switching back to the application, ensure we refresh the timeline.
             // This only happens on Android because I'm not sure how this would happen on other platforms.
-            if (Qt.platform.os == "android" && Qt.application.state == Qt.ApplicationActive) {
+            if (Qt.platform.os == "android" && Application.state == Qt.ApplicationActive) {
                 root.model.refresh();
             }
         }
@@ -201,7 +203,7 @@ Kirigami.ScrollablePage {
         section {
             property: "showReadMarker"
             delegate: Kirigami.FlexColumn {
-                id: flexColumn
+                id: flexColumnMarker
 
                 required property bool section
 
@@ -214,7 +216,7 @@ Kirigami.ScrollablePage {
 
                 RowLayout {
                     spacing: Kirigami.Units.smallSpacing
-                    visible: flexColumn.section
+                    visible: flexColumnMarker.section
 
                     Layout.fillWidth: true
                     Layout.fillHeight: true
@@ -245,7 +247,7 @@ Kirigami.ScrollablePage {
                 }
 
                 Kirigami.Separator {
-                    visible: flexColumn.section
+                    visible: flexColumnMarker.section
                     Layout.fillWidth: true
                 }
             }
