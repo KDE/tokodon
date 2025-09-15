@@ -31,11 +31,11 @@ Kirigami.ScrollablePage {
 
         model: KSortFilterProxyModel {
             id: searchFilterProxyModel
-            sourceModel: ActionsModel {
-                id: actionsModel
+            sourceModel: ActionModel {
+                id: actionModel
                 // TODO: this should just fetch all actions of all collections
                 collectionName: "tokodon_actions"
-                shownActions: ActionsModel.ActiveActions
+                shownActions: ActionModel.ActiveActions
             }
 
             filterRoleName: 'actionName'
@@ -146,7 +146,7 @@ Kirigami.ScrollablePage {
             Repeater {
                 id: alternateRepeater
 
-                model: shortcutDialog.actionDescription.shortcuts
+                //model: shortcutDialog.actionDescription.shortcuts
                 KeySequenceItem {
                     id: alternateKeySequenceItem
 

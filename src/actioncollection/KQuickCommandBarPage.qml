@@ -11,11 +11,11 @@ Kirigami.SearchDialog {
     id: root
 
     model: KSortFilterProxyModel {
-        sourceModel: ActionsModel {
-            id: actionsModel
+        sourceModel: ActionModel {
+            id: actionModel
             // TODO: this should just fetch all actions of all collections
             collectionName: "tokodon_actions"
-            shownActions: ActionsModel.ActiveActions
+            shownActions: ActionModel.ActiveActions
         }
         sortRole: Qt.DisplayRole
         sortCaseSensitivity: Qt.CaseInsensitive

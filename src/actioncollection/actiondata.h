@@ -33,8 +33,8 @@ class ActionData : public QAction, public QQmlParserStatus
     Q_PROPERTY(QString icon READ icon WRITE setIcon NOTIFY iconChanged FINAL)
     Q_PROPERTY(QVariant defaultShortcut READ defaultShortcut WRITE setDefaultShortcut NOTIFY defaultShortcutChanged FINAL)
     Q_PROPERTY(QVariant shortcut READ variantShortcut WRITE setVariantShortcut NOTIFY shortcutChanged FINAL)
-    Q_PROPERTY(QList<QKeySequence> alternateShortcuts READ alternateShortcuts WRITE setShortcuts NOTIFY alternateShortcutsChanged)
-    // TODO: checkable? other Action properties to proxy? proxy trigger and triggered? at this poing might well be a QAction?
+    // Q_PROPERTY(QList<QKeySequence> alternateShortcuts READ alternateShortcuts WRITE setShortcuts NOTIFY alternateShortcutsChanged)
+    //  TODO: checkable? other Action properties to proxy? proxy trigger and triggered? at this poing might well be a QAction?
     Q_PROPERTY(QObject *action READ action() WRITE setAction NOTIFY actionChanged)
     Q_PROPERTY(QActionGroup *actionGroup READ actionGroup WRITE setActionGroupNotify NOTIFY actionGroupChanged)
 public:
