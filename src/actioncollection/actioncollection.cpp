@@ -202,136 +202,7 @@ QQmlListProperty<ActionData> ActionCollection::actionsProperty()
     return QQmlListProperty<ActionData>(this, nullptr, actions_append, actions_count, actions_at, actions_clear);
 }
 
-/////////////////////////////////
-
-ActionsModel::ActionsModel(QObject *parent)
-    : QAbstractListModel(parent)
-{
-}
-
-ActionsModel::~ActionsModel()
-{
-}
-
-QString ActionsModel::collectionName() const
-{
-    if (m_collection) {
-        return m_collection->name();
-    }
-
-    return {};
-}
-
-void ActionsModel::setCollectionName(const QString &name)
-{
-    if (m_collection && name == m_collection->name()) {
-        return;
-    }
-
-    if (m_collection) {
-        disconnect(m_collection, nullptr, this, nullptr);
-    }
-
-    m_collection = ActionCollections::self()->collection(name);
-
-    connect(m_collection, &ActionCollection::aboutToAddActionInstance, this, [this](int position, QObject *action) {
-        if (m_shownActions != ActiveActions) {
-            return;
-        }
-        beginInsertRows(QModelIndex(), position, position);
-    });
-    connect(m_collection, &ActionCollection::actionInstanceAdded, this, [this](int position, QObject *action) {
-        if (m_shownActions != ActiveActions) {
-            return;
-        }
-        endInsertRows();
-    });
-    connect(m_collection, &ActionCollection::aboutToRemoveActionInstance, this, [this](int position, QObject *action) {
-        if (m_shownActions != ActiveActions) {
-            return;
-        }
-        beginRemoveRows(QModelIndex(), position, position);
-    });
-    connect(m_collection, &ActionCollection::actionInstanceRemoved, this, [this](int position, QObject *action) {
-        Q_UNUSED(position);
-        Q_UNUSED(action);
-        if (m_shownActions != ActiveActions) {
-            return;
-        }
-        endRemoveRows();
-    });
-
-    Q_EMIT collectionNameChanged(m_collection ? name : QString());
-}
-
-ActionsModel::ShownActions ActionsModel::shownActions() const
-{
-    return m_shownActions;
-}
-
-void ActionsModel::setShownActions(ShownActions shown)
-{
-    if (shown == m_shownActions) {
-        return;
-    }
-
-    beginResetModel();
-    m_shownActions = shown;
-    endResetModel();
-
-    Q_EMIT shownActionsChanged(shown);
-}
-
-ActionCollection *ActionsModel::collection() const
-{
-    return m_collection;
-}
-
-int ActionsModel::rowCount(const QModelIndex &parent) const
-{
-    if (!m_collection || parent.isValid()) {
-        return 0;
-    }
-
-    if (m_shownActions == ActiveActions) {
-        return m_collection->activeActions().count();
-    }
-    return m_collection->actions().count();
-}
-
-QVariant ActionsModel::data(const QModelIndex &index, int role) const
-{
-    Q_ASSERT(checkIndex(index, QAbstractItemModel::CheckIndexOption::IndexIsValid));
-
-    if (!m_collection) {
-        return {};
-    }
-
-    ActionData *action;
-    if (m_shownActions == ActiveActions) {
-        action = m_collection->activeActions()[index.row()];
-    } else {
-        action = m_collection->actions()[index.row()];
-    }
-
-    switch (role) {
-    case Qt::DisplayRole:
-        return action->text();
-    case ActionDescriptionRole:
-        return QVariant::fromValue(action);
-    case ActionInstanceRole:
-        return QVariant::fromValue(action->action());
-    }
-
-    return {};
-}
-
-QHash<int, QByteArray> ActionsModel::roleNames() const
-{
-    return {{Qt::DisplayRole, "display"}, {ActionDescriptionRole, "actionDescription"}, {ActionInstanceRole, "actionInstance"}};
-}
-
-/////////////////////////////////
+///////////////////////////////////
 
 ActionCollections::ActionCollections(QObject *parent)
     : QObject(parent)
@@ -350,11 +221,23 @@ ActionCollections *ActionCollections::self()
 void ActionCollections::insertCollection(ActionCollection *collection)
 {
     m_collections.insert(collection->name(), collection);
+
+    connect(collection, &QObject::destroyed, this, [this, collection]() {
+        m_collections.remove(collection->name());
+        Q_EMIT collectionRemoved(collection);
+    });
+
+    Q_EMIT collectionInserted(collection);
 }
 
 ActionCollection *ActionCollections::collection(const QString &name)
 {
     return m_collections.value(name);
+}
+
+QList<ActionCollection *> ActionCollections::collections()
+{
+    return m_collections.values();
 }
 
 #include "moc_actioncollection.cpp"

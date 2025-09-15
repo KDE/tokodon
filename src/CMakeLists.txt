@@ -208,6 +208,7 @@ target_sources(tokodon_static
     #Actioncollection to move elsewhere
     actioncollection/actioncollection.cpp
     actioncollection/actiondata.cpp
+    actioncollection/actionmodel.cpp
 )
 
 qt_target_qml_sources(tokodon_static

@@ -392,8 +392,11 @@ StatefulApp.StatefulWindow {
 
     ActionCollection {
         id: systemActions
+        name: "system_actions"
         ActionData {
             name: "open_kcommand_bar"
+            icon: "edit-find-symbolic"
+            text: i18nc("@action:button Open Actions Command Bar", "Find Action...")
             defaultShortcut: "Ctrl+Alt+I"
             action: Kirigami.Action {
                 onTriggered: commandBarPage.open()
@@ -412,6 +415,7 @@ StatefulApp.StatefulWindow {
 
     component AccountActionCollection: ActionCollection {
         id: collection
+        name: accountString + "_actions"
         required property AbstractAccount account
         readonly property string accountString: account.username + (new URL(account.instanceUri)).host
         ActionData {

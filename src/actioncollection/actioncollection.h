@@ -4,7 +4,6 @@
 #ifndef ACTIONCOLLECTION_H
 #define ACTIONCOLLECTION_H
 
-#include <QAbstractListModel>
 #include <QObject>
 #include <QQmlEngine>
 #include <fontconfig/fontconfig.h>
@@ -93,50 +92,6 @@ private:
 
 QML_DECLARE_TYPEINFO(ActionCollectionAttached, QML_HAS_ATTACHED_PROPERTIES)
 
-class ActionsModel : public QAbstractListModel
-{
-    Q_OBJECT
-    QML_NAMED_ELEMENT(ActionsModel)
-    // TODO: this should be able to have multiple collections? or just a KConcatenateProxyModel?
-    Q_PROPERTY(QString collectionName READ collectionName WRITE setCollectionName NOTIFY collectionNameChanged FINAL)
-    Q_PROPERTY(ShownActions shownActions READ shownActions WRITE setShownActions NOTIFY shownActionsChanged FINAL)
-
-public:
-    enum ShownActions {
-        AllActions = 0,
-        ActiveActions
-    };
-    Q_ENUM(ShownActions);
-
-    enum Role {
-        ActionDescriptionRole = Qt::UserRole + 1,
-        ActionInstanceRole
-    };
-
-    explicit ActionsModel(QObject *parent = nullptr);
-    ~ActionsModel() override;
-
-    QString collectionName() const;
-    void setCollectionName(const QString &name);
-
-    ShownActions shownActions() const;
-    void setShownActions(ShownActions shown);
-
-    ActionCollection *collection() const;
-
-    int rowCount(const QModelIndex &parent = QModelIndex()) const override;
-    QVariant data(const QModelIndex &index, int role) const override;
-    QHash<int, QByteArray> roleNames() const override;
-
-Q_SIGNALS:
-    void collectionNameChanged(const QString &name);
-    void shownActionsChanged(ShownActions shown);
-
-private:
-    QPointer<ActionCollection> m_collection;
-    ShownActions m_shownActions = AllActions;
-};
-
 // C++ only api TODO: hide all of this behind a single static of ActionCollection
 class ActionCollections : public QObject
 {
@@ -150,9 +105,15 @@ public:
 
     void insertCollection(ActionCollection *collection);
     ActionCollection *collection(const QString &name);
+    QList<ActionCollection *> collections();
+
+Q_SIGNALS:
+    void collectionInserted(ActionCollection *collection);
+    void collectionRemoved(ActionCollection *collection);
 
 private:
-    QHash<QString, ActionCollection *> m_collections;
+    // QMap as we want a deterministic order
+    QMap<QString, ActionCollection *> m_collections;
 };
 
 #endif
