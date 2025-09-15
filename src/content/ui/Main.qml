@@ -48,7 +48,7 @@ StatefulApp.StatefulWindow {
         name: "tokodon_actions"
         ActionData {
             name: "open_status_composer"
-            icon: "list-add"
+            icon.name: "list-add"
             text: i18nc("@action:button", "Write a New Post")
             defaultShortcut: "Ctrl+N"
             action: Kirigami.Action {
@@ -57,7 +57,7 @@ StatefulApp.StatefulWindow {
         }
         ActionData {
             name: "add_account"
-            icon: "list-add-user-symbolic"
+            icon.name: "list-add-user-symbolic"
             text: i18nc("@action:button", "Add Account")
             action: Kirigami.Action {
                 onTriggered: {
@@ -74,7 +74,7 @@ StatefulApp.StatefulWindow {
         }
         ActionData {
             name: "home_timeline"
-            icon: "go-home-large"
+            icon.name: "go-home-large"
             text: i18nc("@action:button Home Timeline", "Home")
             actionGroup: pagesGroup
             checkable: true
@@ -98,7 +98,7 @@ StatefulApp.StatefulWindow {
         }
         ActionData {
             name: "notifications"
-            icon: "notifications"
+            icon.name: "notifications"
             text: i18nc("@action:button Account Notifications", "Notifications")
             actionGroup: pagesGroup
             checkable: true
@@ -116,7 +116,7 @@ StatefulApp.StatefulWindow {
         }
         ActionData {
             name: "follow_requests"
-            icon: "list-add-user"
+            icon.name: "list-add-user"
             text: i18nc("@action:button Follows that require explicit allow/deny", "Follow Requests")
             actionGroup: pagesGroup
             checkable: true
@@ -138,7 +138,7 @@ StatefulApp.StatefulWindow {
         }
         ActionData { //TODO: actiongroup
             name: "local_timeline"
-            icon: "system-users"
+            icon.name: "system-users"
             text: i18nc("@action:button Local timeline of posts from the account's own server", "Local")
             actionGroup: pagesGroup
             checkable: true
@@ -162,7 +162,7 @@ StatefulApp.StatefulWindow {
         }
         ActionData {
             name: "global_timeline"
-            icon: "kstars_xplanet"
+            icon.name: "kstars_xplanet"
             text: i18nc("@action:button Global timeline of posts from the entire Fediverse network", "Open Global Timeline")
             actionGroup: pagesGroup
             checkable: true
@@ -186,7 +186,7 @@ StatefulApp.StatefulWindow {
         }
         ActionData {
             name: "conversations"
-            icon: "view-conversation-balloon-symbolic"
+            icon.name: "view-conversation-balloon-symbolic"
             text: i18nc("@action:button Direct one-on-one messages between users", "Conversations")
             actionGroup: pagesGroup
             checkable: true
@@ -222,7 +222,7 @@ StatefulApp.StatefulWindow {
         }
         ActionData {
             name: "favorites"
-            icon: "favorite"
+            icon.name: "favorite"
             text: i18nc("@action:button This account's favorited posts", "Favorites")
             actionGroup: pagesGroup
             checkable: true
@@ -246,7 +246,7 @@ StatefulApp.StatefulWindow {
         }
         ActionData {
             name: "bookmarks"
-            icon: "bookmarks"
+            icon.name: "bookmarks"
             text: i18nc("@action:button This account's bookmarked posts", "Bookmarks")
             actionGroup: pagesGroup
             checkable: true
@@ -270,7 +270,7 @@ StatefulApp.StatefulWindow {
         }
         ActionData {
             name: "explore"
-            icon: "kstars_planets"
+            icon.name: "kstars_planets"
             text: i18nc("@action:button Explore this server's trending posts, news, and more", "Explore")
             actionGroup: pagesGroup
             checkable: true
@@ -288,7 +288,7 @@ StatefulApp.StatefulWindow {
         }
         ActionData {
             name: "following"
-            icon: "user-group-properties-symbolic"
+            icon.name: "user-group-properties-symbolic"
             text: i18nc("@action:button A list of this account's followed accounts", "Following")
             actionGroup: pagesGroup
             checkable: true
@@ -306,7 +306,7 @@ StatefulApp.StatefulWindow {
         }
         ActionData {
             name: "search"
-            icon: "search"
+            icon.name: "search"
             text: i18nc("@action:button Search for users, posts and tags", "Open Search")
             actionGroup: pagesGroup
             checkable: true
@@ -324,7 +324,7 @@ StatefulApp.StatefulWindow {
         }
         ActionData {
             name: "server_information"
-            icon: "note"
+            icon.name: "note"
             text: i18nc("@action:button", "Open Server Information")
             actionGroup: pagesGroup
             checkable: true
@@ -342,7 +342,7 @@ StatefulApp.StatefulWindow {
         }
         ActionData {
             name: "lists"
-            icon: "view-list-text"
+            icon.name: "view-list-text"
             text: i18nc("@action:button This account's lists, or timelines consisting of a groups of accounts", "Open Lists")
             actionGroup: pagesGroup
             checkable: true
@@ -360,7 +360,7 @@ StatefulApp.StatefulWindow {
         }
         ActionData {
             name: "profile"
-            icon: "user"
+            icon.name: "user"
             text: i18nc("@action:button This account's profile", "Open Profile")
             actionGroup: pagesGroup
             checkable: true
@@ -395,7 +395,7 @@ StatefulApp.StatefulWindow {
         name: "system_actions"
         ActionData {
             name: "open_kcommand_bar"
-            icon: "edit-find-symbolic"
+            icon.name: "edit-find-symbolic"
             text: i18nc("@action:button Open Actions Command Bar", "Find Action...")
             defaultShortcut: "Ctrl+Alt+I"
             action: Kirigami.Action {
@@ -404,7 +404,7 @@ StatefulApp.StatefulWindow {
         }
         ActionData {
             name: "options_configure"
-            icon: "settings-configure"
+            icon.name: "settings-configure"
             text: i18nc("@action:button Open settings dialog", "Settings")
             action: Kirigami.Action {
                 id: configureAction
