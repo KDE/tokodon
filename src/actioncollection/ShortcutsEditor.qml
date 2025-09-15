@@ -60,7 +60,7 @@ Kirigami.ScrollablePage {
                 Kirigami.Icon {
                     implicitWidth: Kirigami.Units.iconSizes.small
                     implicitHeight: implicitWidth
-                    source: actionDescription.icon
+                    source: actionDescription.icon.name || actionDescription.icon.source
                 }
 
                 QQC2.Label {

@@ -26,9 +26,165 @@ ActionGroup::ActionGroup(QObject *parent)
 {
 }
 
+class IconGroupPrivate
+{
+public:
+    IconGroupPrivate(IconGroup *group)
+        : q(group)
+    {
+    }
+
+    IconGroup *q;
+    ActionData *m_ad = nullptr;
+    QString m_name;
+    QString m_source;
+    qreal m_width = -1;
+    qreal m_height = -1;
+    QColor m_color = Qt::transparent;
+    bool m_cache = true;
+};
+
+IconGroup::IconGroup(ActionData *parent)
+    : QObject(parent)
+    , d(std::make_unique<IconGroupPrivate>(this))
+{
+    d->m_ad = parent;
+}
+
+IconGroup::~IconGroup()
+{
+}
+
+QString IconGroup::name() const
+{
+    return d->m_name;
+}
+
+void IconGroup::setName(const QString &name)
+{
+    if (d->m_name == name) {
+        return;
+    }
+
+    d->m_name = name;
+
+    if (d->m_ad->action()) {
+        QQmlProperty property(d->m_ad->action(), QStringLiteral("icon.name"));
+        property.write(name);
+    }
+
+    Q_EMIT nameChanged();
+}
+
+QString IconGroup::source() const
+{
+    return d->m_source;
+}
+
+void IconGroup::setSource(const QString &source)
+{
+    if (d->m_source != source) {
+        return;
+    }
+
+    d->m_source = source;
+
+    if (d->m_ad->action()) {
+        QQmlProperty property(d->m_ad->action(), QStringLiteral("icon.source"));
+        property.write(source);
+    }
+
+    Q_EMIT sourceChanged();
+}
+
+qreal IconGroup::width() const
+{
+    return d->m_width;
+}
+
+void IconGroup::setWidth(qreal width)
+{
+    if (qFuzzyCompare(d->m_width, width)) {
+        return;
+    }
+
+    d->m_width = width;
+
+    if (d->m_ad->action()) {
+        QQmlProperty property(d->m_ad->action(), QStringLiteral("icon.width"));
+        property.write(width);
+    }
+
+    Q_EMIT widthChanged();
+}
+
+qreal IconGroup::height() const
+{
+    return d->m_height;
+}
+
+void IconGroup::setHeight(qreal height)
+{
+    if (qFuzzyCompare(d->m_height, height)) {
+        return;
+    }
+
+    d->m_height = height;
+
+    if (d->m_ad->action()) {
+        QQmlProperty property(d->m_ad->action(), QStringLiteral("icon.height"));
+        property.write(height);
+    }
+
+    Q_EMIT heightChanged();
+}
+
+QColor IconGroup::color() const
+{
+    return d->m_color;
+}
+
+void IconGroup::setColor(const QColor &color)
+{
+    if (d->m_color == color) {
+        return;
+    }
+
+    d->m_color = color;
+
+    if (d->m_ad->action()) {
+        QQmlProperty property(d->m_ad->action(), QStringLiteral("icon.color"));
+        property.write(color);
+    }
+
+    Q_EMIT colorChanged();
+}
+
+bool IconGroup::cache() const
+{
+    return d->m_cache;
+}
+
+void IconGroup::setCache(bool cache)
+{
+    if (d->m_cache == cache) {
+        return;
+    }
+
+    d->m_cache = cache;
+
+    if (d->m_ad->action()) {
+        QQmlProperty property(d->m_ad->action(), QStringLiteral("icon.cache"));
+        property.write(cache);
+    }
+
+    Q_EMIT cacheChanged();
+}
+
 ActionData::ActionData(QObject *parent)
     : QAction(parent)
 {
+    m_icon = new IconGroup(this);
     connect(this, &ActionData::textChanged, this, &ActionData::syncDown);
     connect(this, &ActionData::checkableChanged, this, &ActionData::syncDown);
     connect(this, &ActionData::toggled, this, &ActionData::syncDown);
@@ -74,25 +230,9 @@ void ActionData::setName(const QString &name)
 //     Q_EMIT textChanged(text);
 // }
 
-QString ActionData::icon() const
+IconGroup *ActionData::icon() const
 {
     return m_icon;
-}
-
-void ActionData::setIcon(const QString &icon)
-{
-    if (m_icon == icon) {
-        return;
-    }
-
-    m_icon = icon;
-
-    if (m_action) {
-        QQmlProperty property(m_action, QStringLiteral("icon.name"));
-        property.write(icon);
-    }
-
-    Q_EMIT iconChanged(icon);
 }
 
 QVariant ActionData::variantShortcut() const
@@ -177,8 +317,8 @@ void ActionData::syncDown()
 {
     if (m_action) {
         m_action->setProperty("text", text());
-        QQmlProperty property(m_action, QStringLiteral("icon.name"));
-        property.write(m_icon);
+        // QQmlProperty property(m_action, QStringLiteral("icon.name"));
+        // property.write(m_icon);
         m_action->setProperty("shortcut", m_shortcut);
         m_action->setProperty("checkable", isCheckable());
         m_action->setProperty("checked", isChecked());
