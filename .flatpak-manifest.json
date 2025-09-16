@@ -67,12 +67,16 @@
                 "-DCMAKE_INSTALL_LIBDIR=/app/lib",
                 "-DLIB_INSTALL_DIR=/app/lib",
                 "-DBUILD_TRANSLATIONS=NO",
-                "-DBUILD_WITH_QT6=ON"
+                "-DBUILD_WITH_QT6=ON",
+                "-DENABLE_TESTING=OFF"
             ]
         },
         {
             "name": "QtWebView",
             "buildsystem": "cmake-ninja",
+            "config-opts": [
+                "-DENABLE_TESTING=OFF"
+            ],
             "sources": [
                 {
                     "type": "archive",
@@ -113,6 +117,7 @@
             ],
             "config-opts": [
                 "-DTOKODON_FLATPAK=ON",
+                "-DENABLE_TESTING=OFF",
                 "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
                 "-DUSE_QTMULTIMEDIA=ON"
             ]
