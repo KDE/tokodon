@@ -755,7 +755,7 @@ QQC2.Pane {
         FormCard.FormCard {
             id: followingCard
 
-            visible: followsRepeater.count !== 0
+            visible: followsRepeater.count !== 0 && !root.isSelf
 
             Layout.topMargin: Kirigami.Units.largeSpacing
 
