@@ -10,10 +10,11 @@ import org.kde.kirigamiaddons.components 1 as KirigamiComponents
 
 import org.kde.tokodon
 
-
 // The label that sits above posts, e.g. "FooBar replied to" or "BarFoo boosted"
 RowLayout {
     id: root
+
+    spacing: Kirigami.Units.smallSpacing
 
     readonly property var identity: {
         if (boostAuthorIdentity) {
@@ -50,52 +51,33 @@ RowLayout {
         Layout.preferredWidth: Kirigami.Units.largeSpacing * 2
     }
 
-    RowLayout {
-        KirigamiComponents.AvatarButton {
-            implicitHeight: Math.round(Kirigami.Units.gridUnit * 1.5)
-            implicitWidth: implicitHeight
+    QQC2.Label {
+        id: interactionLabel
 
-            name: root.identity ? root.identity.displayName : ''
-            source: root.identity ? root.identity.avatarUrl : ''
-            cache: true
-
-            onClicked: Navigation.openAccount(root.identity.id)
-
-            QQC2.ToolTip.text: i18n("View profile")
-            QQC2.ToolTip.visible: hovered
-            QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
-
-            Accessible.name: i18nc("@info", "Interaction")
-            Accessible.description: interactionLabel.text
-        }
-        QQC2.Label {
-            id: interactionLabel
-
-            text: {
-                if (!root.identity) {
-                    return i18nc("@info Loading user that started this interaction", "Loading…");
-                }
-
-                if (root.isBoosted) {
-                    return root.identity ? i18n("%1 boosted", root.identity.displayNameHtml) : '';
-                } else if (root.isReply) {
-                    return root.identity ? i18n("In reply to %1", root.identity.displayNameHtml) : '';
-                }
+        text: {
+            if (!root.identity) {
+                return i18nc("@info Loading user that started this interaction", "Loading…");
             }
-            color: Kirigami.Theme.disabledTextColor
-            font: Config.defaultFont
 
-            Layout.alignment: Qt.AlignBaseline
-            Layout.fillWidth: true
+            if (root.isBoosted) {
+                return root.identity ? i18n("%1 boosted", root.identity.displayNameHtml) : '';
+            } else if (root.isReply) {
+                return root.identity ? i18n("In reply to %1", root.identity.displayNameHtml) : '';
+            }
         }
+        color: Kirigami.Theme.disabledTextColor
+        font: Config.defaultFont
 
-        TapHandler {
-            acceptedButtons: Qt.LeftButton
-            onTapped: Navigation.openAccount(root.identity.id)
-        }
+        Layout.alignment: Qt.AlignBaseline
+        Layout.fillWidth: true
+    }
 
-        HoverHandler {
-            cursorShape: Qt.PointingHandCursor
-        }
+    TapHandler {
+        acceptedButtons: Qt.LeftButton
+        onTapped: Navigation.openAccount(root.identity.id)
+    }
+
+    HoverHandler {
+        cursorShape: Qt.PointingHandCursor
     }
 }
