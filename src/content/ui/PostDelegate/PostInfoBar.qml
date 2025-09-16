@@ -18,7 +18,6 @@ ClickableIdentityInfo {
     required property bool selected
     required property string absoluteTime
     required property string editedAt
-    required property int visibility
 
     signal moreOpened(parentItem: var)
 
@@ -55,49 +54,6 @@ ClickableIdentityInfo {
         iconName: "document-edit"
         tooltip: i18nc("Edited on <datetime>", "Edited on %1", root.editedAt)
         visible: !root.selected && root.wasEdited
-
-        Layout.alignment: Qt.AlignVCenter
-    }
-
-    Kirigami.Icon {
-        visible: !root.selected
-        Layout.preferredWidth: Kirigami.Units.iconSizes.smallMedium
-        Layout.preferredHeight: Layout.preferredWidth
-        source: {
-            switch (root.visibility) {
-                case Post.Public:
-                    return "kstars_xplanet";
-                case Post.Unlisted:
-                    return "unlock";
-                case Post.Private:
-                    return "lock";
-                case Post.Direct:
-                    return "mail-message";
-                default:
-                    return "kstars_xplanet";
-            }
-        }
-
-        HoverHandler {
-            id: hover2
-        }
-
-        QQC2.ToolTip.text: {
-            switch (root.visibility) {
-                case Post.Public:
-                    return i18n("Public");
-                case Post.Unlisted:
-                    return i18n("Unlisted");
-                case Post.Private:
-                    return i18n("Private");
-                case Post.Direct:
-                    return i18n("Direct Message");
-                default:
-                    return i18n("Public");
-            }
-        }
-        QQC2.ToolTip.visible: hover2.hovered
-        QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
 
         Layout.alignment: Qt.AlignVCenter
     }

@@ -220,7 +220,6 @@ QQC2.ItemDelegate {
             selected: root.selected
             wasEdited: root.wasEdited
             editedAt: root.editedAt
-            visibility: root.visibility
             absoluteTime: root.absoluteTime
 
             Layout.fillWidth: true
