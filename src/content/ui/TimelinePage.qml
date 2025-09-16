@@ -7,6 +7,7 @@ import QtQuick
 import org.kde.kirigami as Kirigami
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
+import org.kde.kirigamiaddons.statefulapp as StatefulApp
 import org.kde.tokodon
 import './PostDelegate'
 import './StatusComposer'

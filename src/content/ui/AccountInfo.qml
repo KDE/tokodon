@@ -6,6 +6,7 @@ pragma ComponentBehavior: Bound
 import QtQuick
 import QtQuick.Controls 2 as QQC2
 import QtQuick.Layouts
+import org.kde.kirigami as Kirigami
 import org.kde.tokodon
 
 Kirigami.Page {

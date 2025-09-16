@@ -23,7 +23,6 @@ QQC2.Pane {
     required property bool largeScreen
     required property bool canExcludeBoosts
     required property bool excludeBoosts
-    required property string accountId
 
     signal excludeBoostsToggled(bool checked)
     signal selectedTagChanged(string selectedTag)
@@ -847,7 +846,7 @@ QQC2.Pane {
                     onClicked: {
                         pageStack.push(socialGraphComponent, {
                             name: "following",
-                            accountId: accountId,
+                            accountId: root.identity.id,
                         });
                     }
                     text: i18ncp("@label User's number of followed accounts", "<b>%1</b> follows", "<b>%1</b> following", root.identity.followingCount)
@@ -860,7 +859,7 @@ QQC2.Pane {
                     onClicked: {
                         pageStack.push(socialGraphComponent, {
                             name: "followers",
-                            accountId: accountId,
+                            accountId: root.identity.id,
                         });
                     }
                     text: i18ncp("@label User's number of followers", "<b>%1</b> follower", "<b>%1</b> followers", root.identity.followersCount)
@@ -958,7 +957,7 @@ QQC2.Pane {
 
                         Repeater {
                             model: FeaturedTagsModel {
-                                accountId: root.accountId
+                                accountId: root.identity.id
                             }
 
                             delegate: Kirigami.Chip {

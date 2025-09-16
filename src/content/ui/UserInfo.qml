@@ -15,7 +15,8 @@ QQC2.Pane {
     id: root
 
     required property TokodonApplication application
-    required property Sidebar sidebar
+    // NOTE: we can't specify Sidebar here explicitly or else it becomes a cyclic dependency
+    required property var sidebar
     readonly property Kirigami.PageRow pageStack: (QQC2.ApplicationWindow.window as Main).pageStack
 
     visible: AccountManager.selectedAccount
