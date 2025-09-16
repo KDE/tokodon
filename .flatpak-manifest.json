@@ -64,11 +64,11 @@
                 }
             ],
             "config-opts": [
-                "-DCMAKE_INSTALL_LIBDIR=/app/lib",
-                "-DLIB_INSTALL_DIR=/app/lib",
                 "-DBUILD_TRANSLATIONS=NO",
                 "-DBUILD_WITH_QT6=ON",
-                "-DENABLE_TESTING=OFF"
+                "-DCMAKE_INSTALL_LIBDIR=/app/lib",
+                "-DENABLE_TESTING=OFF",
+                "-DLIB_INSTALL_DIR=/app/lib"
             ]
         },
         {
@@ -116,9 +116,9 @@
                 }
             ],
             "config-opts": [
-                "-DTOKODON_FLATPAK=ON",
-                "-DENABLE_TESTING=OFF",
                 "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+                "-DENABLE_TESTING=OFF",
+                "-DTOKODON_FLATPAK=ON",
                 "-DUSE_QTMULTIMEDIA=ON"
             ]
         }
