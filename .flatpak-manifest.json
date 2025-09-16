@@ -77,7 +77,13 @@
                 {
                     "type": "archive",
                     "url": "https://download.qt.io/official_releases/qt/6.8/6.8.3/submodules/qtwebview-everywhere-src-6.8.3.tar.xz",
-                    "sha256": "2c46e472034c8a254bb4dbd15250a3fa8f727135a14718a3ff1175697b487ed2"
+                    "sha256": "2c46e472034c8a254bb4dbd15250a3fa8f727135a14718a3ff1175697b487ed2",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 7927,
+                        "stable-only": true,
+                        "url-template": "https://download.qt.io/official_releases/qt/${major}.${minor}/$version/submodules/qtwebview-everywhere-src-$version.tar.xz"
+                    }
                 }
             ]
         },
