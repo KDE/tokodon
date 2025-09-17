@@ -42,7 +42,7 @@ set_package_properties(Qt6WebView PROPERTIES
 )
 set(USE_QTWEBVIEW ${Qt6WebView_FOUND})
 
-find_package(KF6 ${KF_MIN_VERSION} COMPONENTS Kirigami KirigamiPlatform I18n Notifications Config CoreAddons ColorScheme IconThemes)
+find_package(KF6 ${KF_MIN_VERSION} COMPONENTS Kirigami KirigamiPlatform I18n Notifications Config CoreAddons ColorScheme)
 set_package_properties(KF6 PROPERTIES
     TYPE REQUIRED
     PURPOSE "Required application components"
@@ -53,6 +53,13 @@ set_package_properties(KF6Crash PROPERTIES
         TYPE OPTIONAL
         PURPOSE "For crash handling"
 )
+if (NOT ANDROID)
+    find_package(KF6 ${KF_MIN_VERSION} COMPONENTS IconThemes)
+    set_package_properties(KF6 PROPERTIES
+        TYPE REQUIRED
+        PURPOSE "Required application components"
+    )
+endif()
 
 find_package(KF6KirigamiAddons 1.1.0)
 set_package_properties(KF6KirigamiAddons PROPERTIES
