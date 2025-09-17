@@ -16,6 +16,7 @@
 #include <QGuiApplication>
 #else
 #include <QApplication>
+#include <KIconTheme>
 #endif
 
 #ifdef HAVE_KDBUSADDONS
@@ -23,7 +24,6 @@
 #include <KWindowSystem>
 #include <QDBusConnection>
 #endif
-#include <KIconTheme>
 #include <KLocalizedQmlContext>
 #include <KLocalizedString>
 
@@ -61,7 +61,6 @@ Q_DECL_EXPORT
 #endif
 int main(int argc, char *argv[])
 {
-    KIconTheme::initTheme();
     QNetworkProxyFactory::setUseSystemConfiguration(true);
 
 #ifdef HAVE_WEBVIEW
@@ -77,6 +76,7 @@ int main(int argc, char *argv[])
     });
     QQuickStyle::setStyle(QStringLiteral("org.kde.breeze"));
 #else
+    KIconTheme::initTheme();
     QApplication app(argc, argv);
     // Default to org.kde.desktop style unless the user forces another style
     if (qEnvironmentVariableIsEmpty("QT_QUICK_CONTROLS_STYLE")) {

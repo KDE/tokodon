@@ -426,7 +426,6 @@ target_link_libraries(tokodon_static
         KF6::ConfigGui
         KF6::CoreAddons
         KF6::ColorScheme
-        KF6::IconThemes
         KirigamiAddonsStatefulApp
         ${QTKEYCHAIN_LIBRARIES}
         QCoro::Core
@@ -442,6 +441,10 @@ endif()
 if (TARGET KUnifiedPush)
     target_compile_definitions(tokodon_static PUBLIC -DHAVE_KUNIFIEDPUSH)
     target_link_libraries(tokodon_static PUBLIC KUnifiedPush)
+endif()
+
+if (TARGET KF6::IconThemes)
+    target_link_libraries(tokodon_static PUBLIC KF6::IconThemes)
 endif()
 
 if (SAILFISHOS)
