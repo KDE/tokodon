@@ -20,7 +20,7 @@ bool Navigation::isDebug() const
 
 bool Navigation::hasWebView() const
 {
-#ifdef HAVE_WEBVIEW
+#if defined(HAVE_WEBVIEW) && !defined(Q_OS_ANDROID)
     return true;
 #else
     return false;
