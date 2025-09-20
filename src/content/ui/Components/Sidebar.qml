@@ -5,6 +5,7 @@
 
 import QtQuick
 import org.kde.kirigami 2 as Kirigami
+import org.kde.kirigami.private.polyfill // remove once we depend on Qt 6.9
 import QtQuick.Controls 2 as QQC2
 import QtQuick.Layouts
 import QtQml.Models
@@ -37,10 +38,10 @@ Kirigami.OverlayDrawer {
     handleVisible: modal && !isShowingFullScreenImage && enabled
     onModalChanged: drawerOpen = !modal
 
-    leftPadding: 0
-    rightPadding: 0
-    topPadding: 0
-    bottomPadding: 0
+    leftPadding: parent.SafeArea.margins.left
+    rightPadding: parent.SafeArea.margins.right
+    topPadding: parent.SafeArea.margins.top
+    bottomPadding: parent.SafeArea.margins.bottom
 
     /// Handles unchecking extra actions that are not part of the main group (e.g. favorited lists)
     function uncheckAuxiliaryActions(): void {
