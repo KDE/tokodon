@@ -390,7 +390,7 @@ QQC2.ItemDelegate {
         RowLayout {
             id: buttonLayout
 
-            readonly property bool shouldExpand: Kirigami.Settings.isMobile || Kirigami.Settings.tabletMode
+            readonly property bool shouldExpand: !(root.QQC2.ApplicationWindow.window as Main)?.wideMode ?? false
             readonly property real buttonPadding: shouldExpand ? Kirigami.Units.mediumSpacing : Kirigami.Units.smallSpacing
 
             visible: root.showInteractionButton
