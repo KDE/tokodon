@@ -155,7 +155,7 @@ void AbstractAccount::registerApplication(const QString &appName, const QString 
     const QUrl regUrl = apiUrl(QStringLiteral("/api/v1/apps"));
     const QJsonObject obj{
         {QStringLiteral("client_name"), appName},
-        {QStringLiteral("redirect_uris"), m_redirectUri},
+        {QStringLiteral("redirect_uris"), QJsonArray{m_redirectUri}},
         {QStringLiteral("scopes"), QStringLiteral("read write follow %1").arg(m_additionalScopes).trimmed()},
         {QStringLiteral("website"), website},
     };
@@ -334,9 +334,9 @@ QUrl AbstractAccount::getAuthorizeUrl() const
     QUrlQuery q;
 
     q.addQueryItem(QStringLiteral("client_id"), m_client_id);
-    q.addQueryItem(QStringLiteral("redirect_uri"), m_redirectUri);
+    q.addQueryItem(QStringLiteral("redirect_uri"), QUrl(m_redirectUri).toString());
     q.addQueryItem(QStringLiteral("response_type"), QStringLiteral("code"));
-    q.addQueryItem(QStringLiteral("scope"), QStringLiteral("read write follow ") + m_additionalScopes);
+    q.addQueryItem(QStringLiteral("scope"), QStringLiteral("read write follow %1").arg(m_additionalScopes).trimmed());
 
     url.setQuery(q);
 
