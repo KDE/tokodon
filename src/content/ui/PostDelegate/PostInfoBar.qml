@@ -35,7 +35,7 @@ ClickableIdentityInfo {
         font.pixelSize: Config.defaultFont.pixelSize + 1
         font.pointSize: -1
         text: root.relativeTime
-        color: root.secondary ? Kirigami.Theme.disabledTextColor : Kirigami.Theme.textColor
+        color: Kirigami.Theme.disabledTextColor
         elide: Text.ElideRight
         visible: !root.selected
 
