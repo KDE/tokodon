@@ -47,6 +47,7 @@ Q_SIGNALS:
     void openServerInformation();
     void openLists();
     void openProfile();
+    void openAccountSwitcher();
 
 private:
     void setupActions() override;

@@ -176,6 +176,11 @@ void TokodonApplication::setupActions()
     profileAction->setText(i18nc("@action:button This account's profile", "Open Profile"));
     profileAction->setIcon(QIcon::fromTheme(QStringLiteral("user")));
 
+    auto accountSwitcherAction = mainCollection()->addAction(u"account_switcher"_s, this, &TokodonApplication::openAccountSwitcher);
+    accountSwitcherAction->setText(i18nc("@action:button", "Open Account Switcher"));
+    accountSwitcherAction->setIcon(QIcon::fromTheme(QStringLiteral("user")));
+    mainCollection()->setDefaultShortcut(accountSwitcherAction, QKeySequence(Qt::CTRL | Qt::Key_U));
+
     m_dummyAction = new QAction();
     m_dummyAction->setCheckable(true);
     m_dummyAction->setActionGroup(pagesGroup);

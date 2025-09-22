@@ -424,6 +424,14 @@ StatefulApp.StatefulWindow {
                 pageId: "conversations",
             });
         }
+
+        function onOpenAccountSwitcher(): void {
+            let dialog = Qt.createComponent("org.kde.tokodon", "AccountSwitchDialog").createObject(root.QQC2.Overlay.overlay, {
+                application: root.application,
+                userInfo: root,
+            });
+            dialog.open();
+        }
     }
 
     function popoutStatusComposer(originalEditor: StatusComposer): void {
@@ -652,6 +660,9 @@ StatefulApp.StatefulWindow {
         onTriggered: root.pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "DebugPage"))
         visible: AccountManager.testMode
         text: i18nc("@action:button Open debug page", "Debug")
+    }
+    readonly property Kirigami.Action accountSwitcherAction: Kirigami.Action {
+        fromQAction: root.application.action('account_switcher')
     }
 
     property ModerationToolsView moderationToolsView: ModerationToolsView {
