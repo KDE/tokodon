@@ -57,6 +57,7 @@ public:
         ReblogsCountRole, /** Number of accounts who boosted this post. */
         RepliesCountRole, /** Number of accounts who replied to this post. */
         FavouritesCountRole, /** Number of accounts who favorited this post. */
+        QuotesCountRole, /** Number of quotes of this post. */
 
         // User self interaction
         FavouritedRole, /** Did your own account favorite this post? */

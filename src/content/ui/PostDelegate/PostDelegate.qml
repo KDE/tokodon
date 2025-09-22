@@ -38,6 +38,7 @@ QQC2.ItemDelegate {
     required property int reblogsCount
     required property int repliesCount
     required property int favouritesCount
+    required property int quotesCount
 
     // User self interaction
     required property bool favourited
@@ -518,6 +519,7 @@ QQC2.ItemDelegate {
                 editedAt: root.editedAt
                 favouritesCount: root.favouritesCount
                 reblogsCount: root.reblogsCount
+                quotesCount: root.quotesCount
                 application: root.application
                 absoluteTime: root.absoluteTime
             }

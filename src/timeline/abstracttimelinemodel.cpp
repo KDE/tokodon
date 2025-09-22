@@ -70,6 +70,7 @@ QHash<int, QByteArray> AbstractTimelineModel::roleNames() const
         {ReblogsCountRole, QByteArrayLiteral("reblogsCount")},
         {RepliesCountRole, QByteArrayLiteral("repliesCount")},
         {FavouritesCountRole, QByteArrayLiteral("favouritesCount")},
+        {QuotesCountRole, QByteArrayLiteral("quotesCount")},
 
         // User self interaction
         {FavouritedRole, QByteArrayLiteral("favourited")},
@@ -134,6 +135,8 @@ QVariant AbstractTimelineModel::postData(Post *post, int role) const
         return post->repliesCount();
     case ReblogsCountRole:
         return post->reblogsCount();
+    case QuotesCountRole:
+        return post->quotesCount();
     case SensitiveRole:
         return post->sensitive();
     case SpoilerTextRole:

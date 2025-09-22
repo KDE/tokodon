@@ -135,6 +135,7 @@ void Post::fromJson(QJsonObject obj)
     m_favouritesCount = obj["favourites_count"_L1].toInt();
     m_reblogsCount = obj["reblogs_count"_L1].toInt();
     m_repliesCount = obj["replies_count"_L1].toInt();
+    m_quotesCount = obj["quotes_count"_L1].toInt();
 
     m_favourited = obj["favourited"_L1].toBool();
     m_reblogged = obj["reblogged"_L1].toBool();
@@ -278,6 +279,11 @@ int Post::favouritesCount() const
 int Post::reblogsCount() const
 {
     return m_reblogsCount;
+}
+
+int Post::quotesCount() const
+{
+    return m_quotesCount;
 }
 
 QUrl Post::url() const

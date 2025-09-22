@@ -176,6 +176,11 @@ public:
     [[nodiscard]] int reblogsCount() const;
 
     /**
+     * @brief The number of time this post has been quoted.
+     */
+    [[nodiscard]] int quotesCount() const;
+
+    /**
      * @return A web accessible URL to this post.
      */
     [[nodiscard]] QUrl url() const;
@@ -379,4 +384,5 @@ private:
     int m_reblogsCount = 0;
     int m_favouritesCount = 0;
     int m_repliesCount = 0;
+    int m_quotesCount = 0;
 };

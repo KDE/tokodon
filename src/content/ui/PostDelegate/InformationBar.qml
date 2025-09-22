@@ -18,6 +18,7 @@ ColumnLayout {
     required property string editedAt
     required property int favouritesCount
     required property int reblogsCount
+    required property int quotesCount
     required property var application
     required property string absoluteTime
     required property string postId
@@ -127,6 +128,25 @@ ColumnLayout {
                     count: root.reblogsCount
                 });
             }
+        }
+
+        Kirigami.Chip {
+            icon.name: "format-text-blockquote-symbolic"
+            icon.color: Kirigami.Theme.textColor
+            iconMask: true
+            text: {
+                if (root.quotesCount === 0) {
+                    return i18n("No quotes");
+                } else {
+                    return i18np("%1 quotes", "%1 quotes", root.quotesCount);
+                }
+            }
+            closable: false
+            checkable: false
+            visible: root.quotesCount > 0
+            enabled: visible
+
+            // TODO: show statuses that quoted this
         }
 
         Kirigami.Chip {
