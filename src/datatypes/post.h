@@ -6,9 +6,9 @@
 #pragma once
 
 #include "datatypes/application.h"
+#include "datatypes/attachment.h"
 #include "datatypes/card.h"
 #include "datatypes/poll.h"
-#include "timeline/attachment.h"
 
 #include <QImage>
 

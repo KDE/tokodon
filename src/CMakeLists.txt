@@ -100,6 +100,8 @@ target_sources(tokodon_static
     # Data types
     datatypes/application.cpp
     datatypes/application.h
+    datatypes/attachment.cpp
+    datatypes/attachment.h
     datatypes/card.cpp
     datatypes/card.h
     datatypes/poll.cpp
@@ -110,8 +112,6 @@ target_sources(tokodon_static
     datatypes/tag.cpp
 
     # Timeline
-    timeline/attachment.cpp
-    timeline/attachment.h
     timeline/notification.cpp
     timeline/notification.h
     timeline/accountmodel.cpp
