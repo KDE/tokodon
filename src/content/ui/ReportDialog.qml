@@ -21,6 +21,11 @@ Kirigami.Page {
 
     title: type === ReportDialog.Post ? i18nc("@title", "Report Post") : i18nc("@title", "Report User")
 
+    topPadding: 0
+    bottomPadding: 0
+    leftPadding: 0
+    rightPadding: 0
+
     property ReportEditorBackend backend: ReportEditorBackend {
         accountId: root.identity !== undefined ? root.identity.id : ""
         postId: root.postId
@@ -41,6 +46,11 @@ Kirigami.Page {
         anchors.fill: parent
         wrapMode: TextEdit.Wrap
         enabled: !backend.loading
+        focus: true
+
+        background: Rectangle {
+            color: Kirigami.Theme.backgroundColor
+        }
     }
 
     footer: QQC2.ToolBar {
@@ -61,6 +71,7 @@ Kirigami.Page {
                 }
             }
             QQC2.Button {
+                icon.name: "dialog-cancel-symbolic"
                 text: i18nc("@action", "Cancel")
                 QQC2.DialogButtonBox.buttonRole: QQC2.DialogButtonBox.RejectRole
                 onClicked: root.closeDialog()
