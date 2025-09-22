@@ -43,7 +43,7 @@ Purpose.PurposeAlternativesModel {
     pluginType: "ShareUrl"
     // Copying to clipboard rarely works, due to how Mastodon and most Fediverse software behave and are dependent on JavaScript.
     // We also already have a way to copy the URL to the clipboard, so having a second way is just confusing.
-    disabledPlugins: ["clipboardplugin"]
+    disabledPlugins: ["clipboardplugin", "tokodonplugin"]
 }`, root._instantiator);
             purposeModel.inputData = Qt.binding(function() {
                 return root.inputData;
