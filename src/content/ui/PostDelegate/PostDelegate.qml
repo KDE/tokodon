@@ -268,7 +268,6 @@ QQC2.ItemDelegate {
             index: root.index
             postId: root.id
             url: root.url
-            bookmarked: root.bookmarked
             isSelf: root.isSelf
             expandedPost: root.expandedPost
             pinned: root.pinned

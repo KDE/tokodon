@@ -20,7 +20,6 @@ Components.ConvergentContextMenu {
     required property int index
     required property string postId
     required property string url
-    required property bool bookmarked
     required property bool isSelf
     required property bool expandedPost
     required property bool pinned
@@ -120,12 +119,7 @@ Components.ConvergentContextMenu {
 
     Kirigami.Action {
         separator: true
-    }
-
-    QQC2.Action {
-        icon.name: "bookmark-new"
-        text: root.bookmarked ? i18nc("@action:inmenu", "Remove Bookmark") : i18nc("@action:inmenu", "Bookmark")
-        onTriggered: timelineModel.actionBookmark(timelineModel.index(root.index, 0))
+        visible: root.isSelf
     }
 
     Kirigami.Action {
