@@ -21,6 +21,7 @@
 #ifdef HAVE_KDBUSADDONS
 #include <KDBusService>
 #include <KWindowSystem>
+#include <QDBusConnection>
 #endif
 #include <KIconTheme>
 #include <KLocalizedQmlContext>
@@ -141,6 +142,29 @@ int main(int argc, char *argv[])
     parser.process(app);
     about.processCommandLine(&parser);
 
+#ifdef HAVE_KUNIFIEDPUSH
+    if (parser.isSet(notifyOption)) {
+        qInfo(TOKODON_LOG) << "Beginning to check for notifications...";
+
+#ifdef HAVE_KDBUSADDONS
+        // We *don't* want to use KDBusService here. I don't know why, but it makes activation super unreliable. We don't really need it anyway.
+        const auto serviceName = QStringLiteral("org.kde.tokodon");
+        if (!QDBusConnection::sessionBus().registerService(serviceName)) {
+            // Gracefully fail if Tokodon is already running
+            qWarning() << "Tokodon already running, not sending push notifications.";
+            return 0;
+        }
+#endif
+
+        NetworkController::instance().setupPushNotifications(true);
+
+        // Process events before quitting.
+        QTimer::singleShot(std::chrono::seconds(5), &app, &QCoreApplication::quit);
+
+        return QCoreApplication::exec();
+    }
+#endif
+
     auto &colorSchemer = ColorSchemer::instance();
     if (!Config::colorScheme().isEmpty()) {
         colorSchemer.apply(Config::colorScheme());
@@ -148,38 +172,11 @@ int main(int argc, char *argv[])
 
     QQmlApplicationEngine engine;
 
-#ifdef HAVE_KUNIFIEDPUSH
-    if (parser.isSet(notifyOption)) {
-        qInfo(TOKODON_LOG) << "Beginning to check for notifications...";
-
-#ifdef HAVE_KDBUSADDONS
-        // We want to be replaceable by the main client
-        KDBusService service(KDBusService::Replace);
-#endif
-
-        NetworkController::instance().setupPushNotifications();
-
-        // create the lazy instance
-        AccountManager::instance().loadFromSettings();
-
-        QObject::connect(&AccountManager::instance(), &AccountManager::accountsReady, [] {
-            qInfo(TOKODON_LOG) << "Accounts have finished loading. Checking notification queue...";
-            // queue notification
-            AccountManager::instance().queueNotifications();
-        });
-
-        QObject::connect(AccountManager::instance().notificationHandler(), &NotificationHandler::lastNotificationClosed, qApp, &QCoreApplication::quit);
-        QObject::connect(&AccountManager::instance(), &AccountManager::finishedNotificationQueue, qApp, &QCoreApplication::quit);
-
-        return QCoreApplication::exec();
-    }
-#endif
-
 #ifdef HAVE_KDBUSADDONS
     KDBusService service(KDBusService::Unique);
 #endif
 
-    NetworkController::instance().setupPushNotifications();
+    NetworkController::instance().setupPushNotifications(false);
 
 #ifdef HAVE_KDBUSADDONS
     QObject::connect(&service, &KDBusService::activateRequested, &engine, [&engine](const QStringList &arguments, const QString & /*workingDirectory*/) {

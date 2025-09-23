@@ -115,8 +115,6 @@ public:
      */
     void reloadAccounts();
 
-    void queueNotifications();
-
     /**
      * @return If the currently selected account has issues with authentication.
      */
@@ -211,8 +209,6 @@ Q_SIGNALS:
     void accountSelected(AbstractAccount *account);
 
     void identityChanged(AbstractAccount *account);
-
-    void finishedNotificationQueue();
 
 public Q_SLOTS:
 

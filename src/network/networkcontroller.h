@@ -86,8 +86,10 @@ public:
 
     /**
      * @brief Register with the KUnifiedPush distributor, if available.
+     *
+     * @param sendNotifications Whether to send notifications (for daemon mode.)
      */
-    void setupPushNotifications();
+    void setupPushNotifications(bool sendNotifications);
 
 #ifdef HAVE_KUNIFIEDPUSH
     /**
@@ -107,7 +109,6 @@ Q_SIGNALS:
     void networkErrorOccurred(const QString &errorString);
     void receivedAuthCode(QString authCode);
     void errorMessagesChanged();
-    void pushMessageReceived(const QByteArray &msg);
 
 private:
     explicit NetworkController(QObject *parent = nullptr);
