@@ -6,6 +6,7 @@
 #include "account/account.h"
 #include "account/accountmanager.h"
 #include "network/networkcontroller.h"
+#include "tokodon_debug.h"
 
 #include <QPainter>
 
@@ -16,6 +17,8 @@
 #ifdef HAVE_KIO
 #include <KIO/ApplicationLauncherJob>
 #endif
+
+using namespace Qt::StringLiterals;
 
 NotificationHandler::NotificationHandler(QNetworkAccessManager *nam, QObject *parent)
     : QObject(parent)
@@ -176,16 +179,90 @@ void NotificationHandler::handle(std::shared_ptr<Notification> notification, Abs
 
     knotification->setHint(QStringLiteral("x-kde-origin-name"), account->identity()->displayName());
 
-    if (m_lastConnection != nullptr) {
-        disconnect(m_lastConnection);
-    }
-    m_lastConnection = connect(knotification, &KNotification::closed, this, &NotificationHandler::lastNotificationClosed);
-
     if (!notification->identity()->avatarUrl().isEmpty() && !notification->identity()->limited()) {
         const auto avatarUrl = notification->identity()->avatarUrl();
         auto request = QNetworkRequest(avatarUrl);
         auto reply = m_nam->get(request);
         connect(reply, &QNetworkReply::finished, this, [reply, knotification]() {
+            reply->deleteLater();
+            if (reply->error() != QNetworkReply::NoError) {
+                knotification->sendEvent();
+                return;
+            }
+            QPixmap img;
+            img.loadFromData(reply->readAll());
+
+            // Handle avatars that are lopsided in one dimension
+            const int biggestDimension = std::max(img.width(), img.height());
+            const QRect imageRect{0, 0, biggestDimension, biggestDimension};
+
+            QImage roundedImage(imageRect.size(), QImage::Format_ARGB32);
+            roundedImage.fill(Qt::transparent);
+
+            QPainter painter(&roundedImage);
+            painter.setRenderHint(QPainter::SmoothPixmapTransform);
+            painter.setPen(Qt::NoPen);
+
+            // Fill background for transparent avatars
+            painter.setBrush(Qt::white);
+            painter.drawRoundedRect(imageRect, imageRect.width(), imageRect.height());
+
+            QBrush brush(img.scaledToHeight(biggestDimension));
+            painter.setBrush(brush);
+            painter.drawRoundedRect(imageRect, imageRect.width(), imageRect.height());
+            painter.end();
+
+            knotification->setPixmap(QPixmap::fromImage(std::move(roundedImage)));
+            knotification->sendEvent();
+        });
+    } else {
+        knotification->sendEvent();
+    }
+}
+
+void NotificationHandler::handlePush(const QByteArray &message)
+{
+    const QJsonDocument document = QJsonDocument::fromJson(message);
+    if (!document.object().contains("notification_type"_L1)) {
+        return;
+    }
+
+    // Convert their notification type to ours from the notifyrc
+    const QString &theirType = document["notification_type"_L1].toString();
+    QString ourType;
+    if (theirType == "mention"_L1) {
+        ourType = QStringLiteral("mention");
+    } else if (theirType == "status"_L1) {
+        ourType = QStringLiteral("status");
+    } else if (theirType == "reblog"_L1) {
+        ourType = QStringLiteral("boost");
+    } else if (theirType == "follow"_L1) {
+        ourType = QStringLiteral("follow");
+    } else if (theirType == "follow_request"_L1) {
+        ourType = QStringLiteral("follow-request");
+    } else if (theirType == "favourite"_L1) {
+        ourType = QStringLiteral("favorite");
+    } else if (theirType == "poll"_L1) {
+        ourType = QStringLiteral("poll");
+    } else if (theirType == "update"_L1) {
+        ourType = QStringLiteral("update");
+    } else {
+        qCWarning(TOKODON_LOG) << "Unknown push notification type" << theirType << "falling back to other.";
+        ourType = QStringLiteral("other");
+    }
+
+    auto knotification = new KNotification(ourType);
+    knotification->setTitle(document["title"_L1].toString());
+    knotification->setText(document["body"_L1].toString());
+
+    // Load icon if available
+    const QString &iconUrl = document["icon"_L1].toString();
+    if (!iconUrl.isEmpty()) {
+        QNetworkAccessManager *manager = new QNetworkAccessManager();
+        auto request = QNetworkRequest(QUrl(iconUrl));
+        auto reply = manager->get(request);
+        // TODO: de-duplicate code that's also used in normal notifications
+        connect(reply, &QNetworkReply::finished, manager, [reply, knotification]() {
             reply->deleteLater();
             if (reply->error() != QNetworkReply::NoError) {
                 knotification->sendEvent();

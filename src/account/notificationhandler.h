@@ -24,10 +24,13 @@ public:
      */
     void handle(std::shared_ptr<Notification> notification, AbstractAccount *account);
 
-Q_SIGNALS:
-    void lastNotificationClosed();
+    /**
+     * @brief Display a new push notification for an account.
+     * @param message The QByteArray that contains the notification data JSON.
+     * @param account The account the notification belongs to.
+     */
+    static void handlePush(const QByteArray &message);
 
 private:
     QNetworkAccessManager *m_nam;
-    QMetaObject::Connection m_lastConnection;
 };

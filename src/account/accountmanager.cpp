@@ -488,69 +488,6 @@ bool AccountManager::testMode() const
     return m_testMode;
 }
 
-void AccountManager::queueNotifications()
-{
-    static qsizetype accountsLeft = m_accounts.size();
-    static qsizetype totalNotifications = 0;
-
-    const auto checkIfDone = [this]() {
-        // If there's no more accounts left to check, and none of them have notifications then early exit
-        if (accountsLeft <= 0 && totalNotifications <= 0) {
-            Q_EMIT finishedNotificationQueue();
-        }
-    };
-
-    for (auto account : m_accounts) {
-        QUrl uri = account->apiUrl(QStringLiteral("/api/v1/notifications"));
-
-        QUrlQuery urlQuery(uri);
-        urlQuery.addQueryItem(QStringLiteral("limit"), QString::number(10));
-        if (!account->config()->lastPushNotification().isEmpty()) {
-            urlQuery.addQueryItem(QStringLiteral("since_id"), account->config()->lastPushNotification());
-        }
-        uri.setQuery(urlQuery);
-
-        account->get(
-            uri,
-            true,
-            this,
-            [account, checkIfDone](QNetworkReply *reply) {
-                const auto data = reply->readAll();
-                const auto doc = QJsonDocument::fromJson(data);
-
-                if (!doc.isArray() || doc.array().isEmpty()) {
-                    accountsLeft--;
-                    checkIfDone();
-                    return;
-                }
-
-                // We want to post the notifications in reverse order, because the way Plasma displays them.
-                // If we post the newest notification, it would be buried by the older ones.
-                auto notifications = doc.array().toVariantList();
-                std::ranges::reverse(notifications);
-
-                for (const auto &notification : notifications) {
-                    if (notification.canConvert<QJsonObject>()) {
-                        std::shared_ptr<Notification> n = std::make_shared<Notification>(account, notification.toJsonObject());
-                        Q_EMIT account->notification(n);
-                    }
-                }
-
-                account->config()->setLastPushNotification(doc.array().first()["id"_L1].toString());
-                account->config()->save();
-
-                totalNotifications = doc.array().size();
-
-                accountsLeft--;
-                checkIfDone();
-            },
-            [checkIfDone](QNetworkReply *) {
-                accountsLeft--;
-                checkIfDone();
-            });
-    }
-}
-
 QList<AbstractAccount *> AccountManager::accounts() const
 {
     return m_accounts;

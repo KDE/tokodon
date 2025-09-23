@@ -288,14 +288,18 @@ void NetworkController::openLink(const QString &input)
     }
 }
 
-void NetworkController::setupPushNotifications()
+void NetworkController::setupPushNotifications(const bool sendNotifications)
 {
 #ifdef HAVE_KUNIFIEDPUSH
     m_connector = new KUnifiedPush::Connector(QStringLiteral("org.kde.tokodon"));
     QObject::connect(m_connector, &KUnifiedPush::Connector::endpointChanged, [this](const auto &newEndpoint) {
         endpoint = newEndpoint;
     });
-    QObject::connect(m_connector, &KUnifiedPush::Connector::messageReceived, this, &NetworkController::pushMessageReceived);
+    if (sendNotifications) {
+        QObject::connect(m_connector, &KUnifiedPush::Connector::messageReceived, this, [](const auto msg) {
+            NotificationHandler::handlePush(msg);
+        });
+    }
 
     endpoint = m_connector->endpoint();
 
