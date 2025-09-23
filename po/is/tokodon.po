@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-17 00:43+0000\n"
+"POT-Creation-Date: 2025-09-23 00:42+0000\n"
 "PO-Revision-Date: 2022-10-14 14:00+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -732,7 +732,7 @@ msgstr "Útiloka"
 msgid "Block"
 msgstr "Útiloka"
 
-#: content/ui/AccountHeader.qml:436 content/ui/PostDelegate/PostMenu.qml:195
+#: content/ui/AccountHeader.qml:436 content/ui/PostDelegate/PostMenu.qml:189
 #, kde-format
 msgctxt "@action:inmenu Report this post"
 msgid "Report…"
@@ -771,7 +771,7 @@ msgid "Draft Posts"
 msgstr "Eyða orði"
 
 #: content/ui/AccountHeader.qml:489 content/ui/PostDelegate/LinkMenu.qml:25
-#: content/ui/PostDelegate/PostMenu.qml:52
+#: content/ui/PostDelegate/PostMenu.qml:51
 #, kde-format
 msgctxt "@action:inmenu 'Browser' being a web browser"
 msgid "Open in Browser"
@@ -915,7 +915,7 @@ msgctxt "@action:button"
 msgid "Post"
 msgstr "Endurbirta"
 
-#: content/ui/AccountInfo.qml:132
+#: content/ui/AccountInfo.qml:137
 #, fuzzy, kde-format
 #| msgctxt "Share a post"
 #| msgid "Boost"
@@ -923,18 +923,18 @@ msgctxt "@label"
 msgid "No Posts"
 msgstr "Endurbirta"
 
-#: content/ui/AccountInfo.qml:133
+#: content/ui/AccountInfo.qml:138
 #, kde-format
 msgid "This user hasn't posted anything yet."
 msgstr ""
 
-#: content/ui/AccountInfo.qml:241
+#: content/ui/AccountInfo.qml:251
 #, kde-format
 msgctxt "@label"
 msgid "No Media"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:242
+#: content/ui/AccountInfo.qml:252
 #, kde-format
 msgid "This user hasn't posted any media yet."
 msgstr ""
@@ -1016,7 +1016,6 @@ msgstr "Endurbirta"
 
 #: content/ui/Components/ClickableIdentityInfo.qml:43
 #: content/ui/Notifications/UserInteractionLabel.qml:68
-#: content/ui/PostDelegate/PostInteractionLabel.qml:64
 #: content/ui/PostDelegate/QuotePost.qml:60
 #, fuzzy, kde-format
 #| msgid "Feature on profile"
@@ -1869,53 +1868,53 @@ msgid ""
 "private, even to the post's author."
 msgstr ""
 
-#: content/ui/Main.qml:438
+#: content/ui/Main.qml:446
 #, fuzzy, kde-format
 #| msgid "Write a new toot"
 msgid "Write a New Post"
 msgstr "Skrifa nýja færslu"
 
-#: content/ui/Main.qml:465
+#: content/ui/Main.qml:473
 #, fuzzy, kde-format
 #| msgid "Write a new toot"
 msgid "Write a new post"
 msgstr "Skrifa nýja færslu"
 
-#: content/ui/Main.qml:510
+#: content/ui/Main.qml:518
 #, fuzzy, kde-format
 #| msgid "Write a new toot"
 msgid "Reply to post"
 msgstr "Skrifa nýja færslu"
 
-#: content/ui/Main.qml:592
+#: content/ui/Main.qml:600
 #, fuzzy, kde-format
 #| msgid "Home"
 msgctxt "@action:button Home Timeline"
 msgid "Home"
 msgstr "Heim"
 
-#: content/ui/Main.qml:597
+#: content/ui/Main.qml:605
 #, fuzzy, kde-format
 #| msgid "Notifications"
 msgctxt "@action:button Account Notifications"
 msgid "Notifications"
 msgstr "Tilkynningar"
 
-#: content/ui/Main.qml:602
+#: content/ui/Main.qml:610
 #, fuzzy, kde-format
 #| msgid "Follow"
 msgctxt "@action:button Follows that require explicit allow/deny"
 msgid "Follow Requests"
 msgstr "Fylgjast með"
 
-#: content/ui/Main.qml:607
+#: content/ui/Main.qml:615
 #, fuzzy, kde-format
 #| msgid "Local"
 msgctxt "@action:button Local timeline of posts from the account's own server"
 msgid "Local"
 msgstr "Staðvært"
 
-#: content/ui/Main.qml:611
+#: content/ui/Main.qml:619
 #, fuzzy, kde-format
 #| msgid "Global"
 msgctxt ""
@@ -1923,7 +1922,7 @@ msgctxt ""
 msgid "Global"
 msgstr "Víðvært"
 
-#: content/ui/Main.qml:615
+#: content/ui/Main.qml:623
 #, fuzzy, kde-format
 #| msgctxt "Show only mentions"
 #| msgid "Mentions"
@@ -1931,40 +1930,40 @@ msgctxt "@action:button Direct one-on-one messages between users"
 msgid "Conversations"
 msgstr "Minnst á"
 
-#: content/ui/Main.qml:619
+#: content/ui/Main.qml:627
 #, fuzzy, kde-format
 #| msgid "%1 favorited your post"
 msgctxt "@action:button This account's favorited posts"
 msgid "Favorites"
 msgstr "%1s setti færslu frá þér í eftirlæti"
 
-#: content/ui/Main.qml:623
+#: content/ui/Main.qml:631
 #, kde-format
 msgctxt "@action:button This account's bookmarked posts"
 msgid "Bookmarks"
 msgstr ""
 
-#: content/ui/Main.qml:627
+#: content/ui/Main.qml:635
 #, kde-format
 msgctxt "@action:button Explore this server's trending posts, news, and more"
 msgid "Explore"
 msgstr ""
 
-#: content/ui/Main.qml:631
+#: content/ui/Main.qml:639
 #, fuzzy, kde-format
 #| msgid "Following"
 msgctxt "@action:button A list of this account's followed accounts"
 msgid "Following"
 msgstr "Fylgist með"
 
-#: content/ui/Main.qml:635
+#: content/ui/Main.qml:643
 #, fuzzy, kde-format
 #| msgid "Accounts"
 msgctxt "@action:button Search for users, posts and tags"
 msgid "Search"
 msgstr "Notandaaðgangar"
 
-#: content/ui/Main.qml:643
+#: content/ui/Main.qml:651
 #, kde-format
 msgctxt ""
 "@action:button This account's lists, or timelines consisting of a groups of "
@@ -1972,20 +1971,20 @@ msgctxt ""
 msgid "Lists"
 msgstr ""
 
-#: content/ui/Main.qml:647
+#: content/ui/Main.qml:655
 #, fuzzy, kde-format
 #| msgid "Feature on profile"
 msgctxt "@action:button This account's profile"
 msgid "Profile"
 msgstr "Birta í forgrunni á notandasniði"
 
-#: content/ui/Main.qml:654
+#: content/ui/Main.qml:662
 #, kde-format
 msgctxt "@action:button Open debug page"
 msgid "Debug"
 msgstr ""
 
-#: content/ui/Main.qml:664
+#: content/ui/Main.qml:675
 #, fuzzy, kde-format
 #| msgctxt "Show only mentions"
 #| msgid "Mentions"
@@ -1993,7 +1992,7 @@ msgctxt "@action:button Open moderation tools"
 msgid "Moderation Tools"
 msgstr "Minnst á"
 
-#: content/ui/Main.qml:671
+#: content/ui/Main.qml:682
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "Settings"
@@ -2001,21 +2000,21 @@ msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Stillingar"
 
-#: content/ui/Main.qml:810
+#: content/ui/Main.qml:821
 #, fuzzy, kde-format
 #| msgid "Follow"
 msgctxt "@action:intoolbar"
 msgid "Unfollow"
 msgstr "Fylgjast með"
 
-#: content/ui/Main.qml:810
+#: content/ui/Main.qml:821
 #, fuzzy, kde-format
 #| msgid "Follow"
 msgctxt "@action:intoolbar"
 msgid "Follow"
 msgstr "Fylgjast með"
 
-#: content/ui/Main.qml:858
+#: content/ui/Main.qml:869
 #, kde-format
 msgctxt "@title"
 msgid "Embed Information"
@@ -3610,13 +3609,13 @@ msgid "%1 users boosted your post"
 msgstr "%1s endurbirti færsluna þína"
 
 #: content/ui/Notifications/MinimalPostDelegate.qml:79
-#: content/ui/PostDelegate/PostDelegate.qml:102
+#: content/ui/PostDelegate/PostDelegate.qml:103
 #, kde-format
 msgid "Normal Status"
 msgstr ""
 
 #: content/ui/Notifications/MinimalPostDelegate.qml:79
-#: content/ui/PostDelegate/PostDelegate.qml:102
+#: content/ui/PostDelegate/PostDelegate.qml:103
 #, kde-format
 msgid "Spoiler Status"
 msgstr ""
@@ -3774,45 +3773,40 @@ msgctxt "@action:button"
 msgid "Show Anyway"
 msgstr ""
 
-#: content/ui/PostDelegate/InformationBar.qml:33
+#: content/ui/PostDelegate/InformationBar.qml:34
 #, kde-format
 msgctxt "Posted on 26 March 2024 Tuesday 20:43:18 +03"
 msgid "Posted on %1"
 msgstr ""
 
-#: content/ui/PostDelegate/InformationBar.qml:63
-#: content/ui/PostDelegate/InformationBar.qml:71
-#: content/ui/PostDelegate/PostInfoBar.qml:88
-#: content/ui/PostDelegate/PostInfoBar.qml:96
+#: content/ui/PostDelegate/InformationBar.qml:64
+#: content/ui/PostDelegate/InformationBar.qml:72
 #, kde-format
 msgid "Public"
 msgstr "Opinbert"
 
-#: content/ui/PostDelegate/InformationBar.qml:65
-#: content/ui/PostDelegate/PostInfoBar.qml:90
+#: content/ui/PostDelegate/InformationBar.qml:66
 #, kde-format
 msgid "Unlisted"
 msgstr "Óskráð"
 
-#: content/ui/PostDelegate/InformationBar.qml:67
-#: content/ui/PostDelegate/PostInfoBar.qml:92
+#: content/ui/PostDelegate/InformationBar.qml:68
 #, kde-format
 msgid "Private"
 msgstr "Einka"
 
-#: content/ui/PostDelegate/InformationBar.qml:69
-#: content/ui/PostDelegate/PostInfoBar.qml:94
+#: content/ui/PostDelegate/InformationBar.qml:70
 #, kde-format
 msgid "Direct Message"
 msgstr "Bein skilaboð"
 
-#: content/ui/PostDelegate/InformationBar.qml:91
+#: content/ui/PostDelegate/InformationBar.qml:92
 #, fuzzy, kde-format
 #| msgid "%1 favorited your post"
 msgid "No favorites"
 msgstr "%1s setti færslu frá þér í eftirlæti"
 
-#: content/ui/PostDelegate/InformationBar.qml:93
+#: content/ui/PostDelegate/InformationBar.qml:94
 #, fuzzy, kde-format
 #| msgid "%1 favorited your post"
 msgid "%1 favorite"
@@ -3820,14 +3814,14 @@ msgid_plural "%1 favorites"
 msgstr[0] "%1s setti færslu frá þér í eftirlæti"
 msgstr[1] "%1s setti færslu frá þér í eftirlæti"
 
-#: content/ui/PostDelegate/InformationBar.qml:114
+#: content/ui/PostDelegate/InformationBar.qml:115
 #, fuzzy, kde-format
 #| msgctxt "Share a post"
 #| msgid "Boost"
 msgid "No boosts"
 msgstr "Endurbirta"
 
-#: content/ui/PostDelegate/InformationBar.qml:116
+#: content/ui/PostDelegate/InformationBar.qml:117
 #, fuzzy, kde-format
 #| msgctxt "Share a post"
 #| msgid "Boost"
@@ -3836,8 +3830,20 @@ msgid_plural "%1 boosts"
 msgstr[0] "Endurbirta"
 msgstr[1] "Endurbirta"
 
+#: content/ui/PostDelegate/InformationBar.qml:139
+#, kde-format
+msgid "No quotes"
+msgstr ""
+
+#: content/ui/PostDelegate/InformationBar.qml:141
+#, kde-format
+msgid "%1 quotes"
+msgid_plural "%1 quotes"
+msgstr[0] ""
+msgstr[1] ""
+
 #: content/ui/PostDelegate/LinkMenu.qml:33
-#: content/ui/PostDelegate/PostMenu.qml:60
+#: content/ui/PostDelegate/PostMenu.qml:59
 #, fuzzy, kde-format
 #| msgid "Copy link"
 msgctxt "@action:inmenu"
@@ -3845,7 +3851,7 @@ msgid "Copy Link"
 msgstr "Afrita tengil"
 
 #: content/ui/PostDelegate/LinkMenu.qml:36
-#: content/ui/PostDelegate/PostMenu.qml:63
+#: content/ui/PostDelegate/PostMenu.qml:62
 #, kde-format
 msgid "Post link copied."
 msgstr ""
@@ -3908,33 +3914,33 @@ msgctxt "@info"
 msgid "Post content"
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:171
+#: content/ui/PostDelegate/PostDelegate.qml:170
 #, fuzzy, kde-format
 #| msgid "Feature on profile"
 msgctxt "@label"
 msgid "Pinned Post"
 msgstr "Birta í forgrunni á notandasniði"
 
-#: content/ui/PostDelegate/PostDelegate.qml:242
+#: content/ui/PostDelegate/PostDelegate.qml:240
 #, fuzzy, kde-format
 #| msgid "Delete word"
 msgctxt "@title"
 msgid "Delete Post"
 msgstr "Eyða orði"
 
-#: content/ui/PostDelegate/PostDelegate.qml:243
+#: content/ui/PostDelegate/PostDelegate.qml:241
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to delete this post?"
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:258
+#: content/ui/PostDelegate/PostDelegate.qml:256
 #, kde-format
 msgctxt "@title"
 msgid "Delete & Re-draft Post"
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:259
+#: content/ui/PostDelegate/PostDelegate.qml:257
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -3942,101 +3948,101 @@ msgid ""
 "post."
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:411
+#: content/ui/PostDelegate/PostDelegate.qml:408
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Svara"
 
-#: content/ui/PostDelegate/PostDelegate.qml:438
+#: content/ui/PostDelegate/PostDelegate.qml:435
 #, kde-format
 msgid "Cannot boost direct messages"
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:440
+#: content/ui/PostDelegate/PostDelegate.qml:437
 #, kde-format
 msgid "Cannot boost private posts"
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:442
+#: content/ui/PostDelegate/PostDelegate.qml:439
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Endurbirta"
 
-#: content/ui/PostDelegate/PostDelegate.qml:460
+#: content/ui/PostDelegate/PostDelegate.qml:457
 #, fuzzy, kde-format
 #| msgctxt "Share a post"
 #| msgid "Boost"
 msgid "Boosted"
 msgstr "Endurbirta"
 
-#: content/ui/PostDelegate/PostDelegate.qml:460
+#: content/ui/PostDelegate/PostDelegate.qml:457
 #, fuzzy, kde-format
 #| msgctxt "Share a post"
 #| msgid "Boost"
 msgid "Boost"
 msgstr "Endurbirta"
 
-#: content/ui/PostDelegate/PostDelegate.qml:480
+#: content/ui/PostDelegate/PostDelegate.qml:477
 #, kde-format
 msgctxt "Favorite a post"
 msgid "Favorite"
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:483
+#: content/ui/PostDelegate/PostDelegate.qml:480
 #, fuzzy, kde-format
 #| msgid "%1 favorited your post"
 msgid "Favorited"
 msgstr "%1s setti færslu frá þér í eftirlæti"
 
-#: content/ui/PostDelegate/PostDelegate.qml:483
+#: content/ui/PostDelegate/PostDelegate.qml:480
 #, fuzzy, kde-format
 #| msgid "%1 favorited your post"
 msgid "Favorite"
 msgstr "%1s setti færslu frá þér í eftirlæti"
 
-#: content/ui/PostDelegate/PostDelegate.qml:502
+#: content/ui/PostDelegate/PostDelegate.qml:499
 #, kde-format
 msgid "Remove bookmark"
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:502
+#: content/ui/PostDelegate/PostDelegate.qml:499
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:505
+#: content/ui/PostDelegate/PostDelegate.qml:502
 #, kde-format
 msgid "Bookmarked"
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:505
+#: content/ui/PostDelegate/PostDelegate.qml:502
 #, kde-format
 msgid "Bookmark"
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:538
+#: content/ui/PostDelegate/PostDelegate.qml:536
 #, kde-format
 msgid ""
 "This post has been marked private. Some posts may be missing because its "
 "replies are marked as private by default."
 msgstr ""
 
-#: content/ui/PostDelegate/PostInfoBar.qml:27
+#: content/ui/PostDelegate/PostInfoBar.qml:26
 #, kde-format
 msgctxt "@info"
 msgid "Post Author"
 msgstr ""
 
-#: content/ui/PostDelegate/PostInfoBar.qml:56
+#: content/ui/PostDelegate/PostInfoBar.qml:55
 #, kde-format
 msgctxt "Edited on <datetime>"
 msgid "Edited on %1"
 msgstr ""
 
-#: content/ui/PostDelegate/PostInfoBar.qml:109
+#: content/ui/PostDelegate/PostInfoBar.qml:65
 #, fuzzy, kde-format
 #| msgctxt "Show only mentions"
 #| msgid "Mentions"
@@ -4044,32 +4050,24 @@ msgctxt "Show more options"
 msgid "More actions"
 msgstr "Minnst á"
 
-#: content/ui/PostDelegate/PostInteractionLabel.qml:68
-#, fuzzy, kde-format
-#| msgctxt "Show only mentions"
-#| msgid "Mentions"
-msgctxt "@info"
-msgid "Interaction"
-msgstr "Minnst á"
-
-#: content/ui/PostDelegate/PostInteractionLabel.qml:76
+#: content/ui/PostDelegate/PostInteractionLabel.qml:59
 #, fuzzy, kde-format
 #| msgid "Loading"
 msgctxt "@info Loading user that started this interaction"
 msgid "Loading…"
 msgstr "Hleð inn"
 
-#: content/ui/PostDelegate/PostInteractionLabel.qml:80
+#: content/ui/PostDelegate/PostInteractionLabel.qml:63
 #, kde-format
 msgid "%1 boosted"
 msgstr "%1 endurbirti"
 
-#: content/ui/PostDelegate/PostInteractionLabel.qml:82
+#: content/ui/PostDelegate/PostInteractionLabel.qml:65
 #, kde-format
 msgid "In reply to %1"
 msgstr ""
 
-#: content/ui/PostDelegate/PostMenu.qml:44
+#: content/ui/PostDelegate/PostMenu.qml:43
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Thread"
@@ -4077,19 +4075,19 @@ msgctxt "@action:inmenu 'Thread' is a series of posts."
 msgid "Open Thread"
 msgstr "Spjallþráður"
 
-#: content/ui/PostDelegate/PostMenu.qml:69
+#: content/ui/PostDelegate/PostMenu.qml:68
 #, kde-format
 msgctxt "@action Open embed into website dialog"
 msgid "Embed"
 msgstr ""
 
-#: content/ui/PostDelegate/PostMenu.qml:85
+#: content/ui/PostDelegate/PostMenu.qml:84
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open as…"
 msgstr ""
 
-#: content/ui/PostDelegate/PostMenu.qml:93
+#: content/ui/PostDelegate/PostMenu.qml:92
 #, fuzzy, kde-format
 #| msgctxt "Reply to a post"
 #| msgid "Reply"
@@ -4097,14 +4095,14 @@ msgctxt "@action:inmenu"
 msgid "Reply as…"
 msgstr "Svara"
 
-#: content/ui/PostDelegate/PostMenu.qml:101
+#: content/ui/PostDelegate/PostMenu.qml:100
 #, fuzzy, kde-format
 #| msgid "%1 favorited your post"
 msgctxt "@action:inmenu"
 msgid "Favorite as…"
 msgstr "%1s setti færslu frá þér í eftirlæti"
 
-#: content/ui/PostDelegate/PostMenu.qml:109
+#: content/ui/PostDelegate/PostMenu.qml:108
 #, fuzzy, kde-format
 #| msgctxt "Share a post"
 #| msgid "Boost"
@@ -4112,39 +4110,27 @@ msgctxt "@action:inmenu"
 msgid "Boost as…"
 msgstr "Endurbirta"
 
-#: content/ui/PostDelegate/PostMenu.qml:117
+#: content/ui/PostDelegate/PostMenu.qml:116
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Bookmark as…"
 msgstr ""
 
-#: content/ui/PostDelegate/PostMenu.qml:127
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Remove Bookmark"
-msgstr ""
-
-#: content/ui/PostDelegate/PostMenu.qml:127
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Bookmark"
-msgstr ""
-
-#: content/ui/PostDelegate/PostMenu.qml:135
+#: content/ui/PostDelegate/PostMenu.qml:129
 #, fuzzy, kde-format
 #| msgid "Feature on profile"
 msgctxt "@action:inmenu"
 msgid "Unpin on Profile"
 msgstr "Birta í forgrunni á notandasniði"
 
-#: content/ui/PostDelegate/PostMenu.qml:135
+#: content/ui/PostDelegate/PostMenu.qml:129
 #, fuzzy, kde-format
 #| msgid "Feature on profile"
 msgctxt "@action:inmenu"
 msgid "Pin on Profile"
 msgstr "Birta í forgrunni á notandasniði"
 
-#: content/ui/PostDelegate/PostMenu.qml:147
+#: content/ui/PostDelegate/PostMenu.qml:141
 #, fuzzy, kde-format
 #| msgctxt "Show only mentions"
 #| msgid "Mentions"
@@ -4152,7 +4138,7 @@ msgctxt "@action:inmenu"
 msgid "Unmute Conversation"
 msgstr "Minnst á"
 
-#: content/ui/PostDelegate/PostMenu.qml:147
+#: content/ui/PostDelegate/PostMenu.qml:141
 #, fuzzy, kde-format
 #| msgctxt "Show only mentions"
 #| msgid "Mentions"
@@ -4160,40 +4146,40 @@ msgctxt "@action:inmenu"
 msgid "Mute Conversation"
 msgstr "Minnst á"
 
-#: content/ui/PostDelegate/PostMenu.qml:157
+#: content/ui/PostDelegate/PostMenu.qml:151
 #, kde-format
 msgctxt "@action:inmenu Unmute account"
 msgid "Unmute @%1"
 msgstr ""
 
-#: content/ui/PostDelegate/PostMenu.qml:159
+#: content/ui/PostDelegate/PostMenu.qml:153
 #, fuzzy, kde-format
 #| msgid "Mute"
 msgctxt "@action:inmenu Mute account"
 msgid "Mute @%1"
 msgstr "Þagga niður"
 
-#: content/ui/PostDelegate/PostMenu.qml:177
+#: content/ui/PostDelegate/PostMenu.qml:171
 #, fuzzy, kde-format
 #| msgid "Block"
 msgctxt "@action:inmenu Unblock account"
 msgid "Unblock @%1"
 msgstr "Útiloka"
 
-#: content/ui/PostDelegate/PostMenu.qml:179
+#: content/ui/PostDelegate/PostMenu.qml:173
 #, fuzzy, kde-format
 #| msgid "Block"
 msgctxt "@action:inmenu Block account"
 msgid "Block @%1"
 msgstr "Útiloka"
 
-#: content/ui/PostDelegate/PostMenu.qml:207
+#: content/ui/PostDelegate/PostMenu.qml:201
 #: content/ui/StatusComposer/EditorAttachmentGrid.qml:59
 #, kde-format
 msgid "Edit"
 msgstr ""
 
-#: content/ui/PostDelegate/PostMenu.qml:215
+#: content/ui/PostDelegate/PostMenu.qml:209
 #: content/ui/Settings/ProfileEditor.qml:152
 #: content/ui/Settings/ProfileEditor.qml:214
 #, fuzzy, kde-format
@@ -4201,7 +4187,7 @@ msgstr ""
 msgid "Delete"
 msgstr "Eyða orði"
 
-#: content/ui/PostDelegate/PostMenu.qml:223
+#: content/ui/PostDelegate/PostMenu.qml:217
 #, kde-format
 msgid "Delete & Re-draft"
 msgstr ""
@@ -4292,25 +4278,25 @@ msgctxt "@title"
 msgid "Report User"
 msgstr ""
 
-#: content/ui/ReportDialog.qml:40
+#: content/ui/ReportDialog.qml:45
 #, kde-format
 msgctxt "@title"
 msgid "Reason for reporting this post"
 msgstr ""
 
-#: content/ui/ReportDialog.qml:40
+#: content/ui/ReportDialog.qml:45
 #, kde-format
 msgctxt "@title"
 msgid "Reason for reporting this user"
 msgstr ""
 
-#: content/ui/ReportDialog.qml:55
+#: content/ui/ReportDialog.qml:65
 #, kde-format
 msgctxt "@action:button 'Report' as in 'Report this to moderators'"
 msgid "Report"
 msgstr ""
 
-#: content/ui/ReportDialog.qml:64
+#: content/ui/ReportDialog.qml:75
 #, kde-format
 msgctxt "@action"
 msgid "Cancel"
@@ -6014,7 +6000,7 @@ msgctxt "@action:button"
 msgid "Switch to '%1'"
 msgstr ""
 
-#: tokodonapplication.cpp:65 tokodonapplication.cpp:219
+#: tokodonapplication.cpp:65 tokodonapplication.cpp:224
 #, kde-format
 msgctxt "@action:button"
 msgid "Configure '%1'"
@@ -6138,7 +6124,14 @@ msgctxt "@action:button This account's profile"
 msgid "Open Profile"
 msgstr "Birta í forgrunni á notandasniði"
 
-#: tokodonapplication.cpp:211
+#: tokodonapplication.cpp:180
+#, fuzzy, kde-format
+#| msgid "Accounts"
+msgctxt "@action:button"
+msgid "Open Account Switcher"
+msgstr "Notandaaðgangar"
+
+#: tokodonapplication.cpp:216
 #, fuzzy, kde-format
 #| msgid "Add Account"
 msgctxt "@action:button"
@@ -6294,6 +6287,13 @@ msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] ""
 msgstr[1] ""
+
+#, fuzzy
+#~| msgctxt "Show only mentions"
+#~| msgid "Mentions"
+#~ msgctxt "@info"
+#~ msgid "Interaction"
+#~ msgstr "Minnst á"
 
 #, fuzzy
 #~| msgid "Login"
