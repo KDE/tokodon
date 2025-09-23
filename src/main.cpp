@@ -127,13 +127,13 @@ int main(int argc, char *argv[])
 
     QCommandLineParser parser;
     parser.setApplicationDescription(i18n("Browse the Fediverse"));
-    parser.addPositionalArgument(QStringLiteral("urls"), i18n("Supports https, tokodon and web+ap url scheme"));
+    parser.addPositionalArgument(QStringLiteral("url"), i18n("Supports https, and web+ap url schemes."));
 
-    QCommandLineOption shareOption(QStringLiteral("share"), i18n("Share a line of text in the standalone composer."), i18n("The text to share."));
+    QCommandLineOption shareOption(QStringLiteral("share"));
     shareOption.setFlags(QCommandLineOption::Flag::HiddenFromHelp);
     parser.addOption(shareOption);
 
-    QCommandLineOption notifyOption(QStringLiteral("dbus-activated"), i18n("Internal usage only."));
+    QCommandLineOption notifyOption(QStringLiteral("dbus-activated"));
     notifyOption.setFlags(QCommandLineOption::Flag::HiddenFromHelp);
     parser.addOption(notifyOption);
 
