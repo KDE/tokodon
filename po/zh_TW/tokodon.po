@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-23 00:42+0000\n"
+"POT-Creation-Date: 2025-09-24 00:43+0000\n"
 "PO-Revision-Date: 2025-08-16 13:30+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -156,61 +156,61 @@ msgctxt "@info:label Error message"
 msgid "Failed to parse credentials"
 msgstr "剖析認證資訊失敗"
 
-#: account/notificationhandler.cpp:32 account/notificationhandler.cpp:33
+#: account/notificationhandler.cpp:35 account/notificationhandler.cpp:36
 #, kde-format
 msgid "View Post"
 msgstr "檢視嘟文"
 
-#: account/notificationhandler.cpp:53 account/notificationhandler.cpp:54
+#: account/notificationhandler.cpp:56 account/notificationhandler.cpp:57
 #, kde-format
 msgid "View Profile"
 msgstr "檢視個人檔案"
 
-#: account/notificationhandler.cpp:76
+#: account/notificationhandler.cpp:79
 #: content/ui/Notifications/UserInteractionLabel.qml:81
 #, kde-format
 msgid "%1 mentioned you"
 msgstr "%1 提及您"
 
-#: account/notificationhandler.cpp:84
+#: account/notificationhandler.cpp:87
 #: content/ui/Notifications/UserInteractionLabel.qml:89
 #, kde-format
 msgid "%1 wrote a new post"
 msgstr "%1 撰寫了新的嘟文"
 
-#: account/notificationhandler.cpp:92
+#: account/notificationhandler.cpp:95
 #: content/ui/Notifications/UserInteractionLabel.qml:79
 #, kde-format
 msgid "%1 boosted your post"
 msgstr "%1 轉嘟了您的嘟文"
 
-#: account/notificationhandler.cpp:100 content/ui/FollowDelegate.qml:70
+#: account/notificationhandler.cpp:103 content/ui/FollowDelegate.qml:70
 #, kde-format
 msgid "%1 followed you"
 msgstr "%1 已跟隨您"
 
-#: account/notificationhandler.cpp:108
+#: account/notificationhandler.cpp:111
 #, kde-format
 msgid "%1 requested to follow you"
 msgstr "%1 已請求跟隨您"
 
-#: account/notificationhandler.cpp:116
+#: account/notificationhandler.cpp:119
 #: content/ui/Notifications/UserInteractionLabel.qml:83
 #, kde-format
 msgid "%1 favorited your post"
 msgstr "%1 將您的嘟文加入最愛"
 
-#: account/notificationhandler.cpp:124
+#: account/notificationhandler.cpp:127
 #, kde-format
 msgid "Poll by %1 has ended"
 msgstr "%1 的投票已結束"
 
-#: account/notificationhandler.cpp:132
+#: account/notificationhandler.cpp:135
 #, kde-format
 msgid "%1 edited a post"
 msgstr "%1 編輯了一篇嘟文"
 
-#: account/notificationhandler.cpp:143
+#: account/notificationhandler.cpp:146
 #, kde-format
 msgctxt ""
 "@title this is used for notifications, when an annual report is available. "
@@ -220,33 +220,33 @@ msgctxt ""
 msgid "Your %1 #FediWrapped awaits!"
 msgstr "您的 %1 年 #FediWrapped 在等您！"
 
-#: account/notificationhandler.cpp:145
+#: account/notificationhandler.cpp:148
 #, kde-format
 msgid "Unveil your year's highlights and memorable moments on Mastodon!"
 msgstr "發現您今年在 Mastodon 上的精選與回憶時光吧！"
 
-#: account/notificationhandler.cpp:149
+#: account/notificationhandler.cpp:152
 #, kde-format
 msgctxt "@title"
 msgid "New Notification"
 msgstr "新通知"
 
-#: account/notificationhandler.cpp:150
+#: account/notificationhandler.cpp:153
 #, kde-format
 msgid "You received a new notification."
 msgstr "您收到了新通知。"
 
-#: account/notificationhandler.cpp:158
+#: account/notificationhandler.cpp:161
 #, kde-kuit-format
 msgid "<b>Content Notice</b>: %1"
 msgstr "<b>內容告警</b>：%1"
 
-#: account/notificationhandler.cpp:162
+#: account/notificationhandler.cpp:165
 #, kde-format
 msgid "This post has no text."
 msgstr "這個嘟文沒有文字。"
 
-#: account/notificationhandler.cpp:169
+#: account/notificationhandler.cpp:172
 #, kde-format
 msgid ""
 "The moderators of your server has limited this user, view this in Tokodon to "
@@ -254,7 +254,7 @@ msgid ""
 msgstr ""
 "您的伺服器的 Mod 已限制這個使用者，在 Tokodon 檢視這個來查看其個人檔案。"
 
-#: account/notificationhandler.cpp:173
+#: account/notificationhandler.cpp:176
 #, kde-format
 msgid "This user doesn't have a description."
 msgstr "這個使用者沒有描述。"
@@ -5460,69 +5460,55 @@ msgstr "7 天"
 msgid "An unknown error occurred."
 msgstr "發生未知的錯誤。"
 
-#: main.cpp:102
+#: main.cpp:103
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:104 main.cpp:129
+#: main.cpp:105 main.cpp:130
 #, kde-format
 msgid "Browse the Fediverse"
 msgstr "瀏覽聯邦宇宙"
 
-#: main.cpp:106
+#: main.cpp:107
 #, kde-format
 msgid "© 2021-2025 KDE Community"
 msgstr "© 2021-2025 KDE 社群"
 
-#: main.cpp:107
+#: main.cpp:108
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:108 main.cpp:113
+#: main.cpp:109 main.cpp:114
 #, kde-format
 msgid "Maintainer"
 msgstr "維護者"
 
-#: main.cpp:112
+#: main.cpp:113
 #, kde-format
 msgid "Joshua Goins"
 msgstr "Joshua Goins"
 
-#: main.cpp:117
+#: main.cpp:118
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Kisaragi Hiu"
 
-#: main.cpp:117
+#: main.cpp:118
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "mail@kisaragi-hiu.com"
 
-#: main.cpp:130
-#, kde-format
-msgid "Supports https, tokodon and web+ap url scheme"
+#: main.cpp:131
+#, fuzzy, kde-format
+#| msgid "Supports https, tokodon and web+ap url scheme"
+msgid "Supports https, and web+ap url schemes."
 msgstr "支援 https、tokodon 和 web+ap 網址機制"
 
-#: main.cpp:132
-#, kde-format
-msgid "Share a line of text in the standalone composer."
-msgstr "用獨立撰寫工具分享一行文字。"
-
-#: main.cpp:132
-#, kde-format
-msgid "The text to share."
-msgstr "要分享的文字。"
-
-#: main.cpp:136
-#, kde-format
-msgid "Internal usage only."
-msgstr "僅內部用。"
-
-#: network/networkcontroller.cpp:303
+#: network/networkcontroller.cpp:307
 #, kde-format
 msgid "Receiving push notifications"
 msgstr "正在接收推送通知"
@@ -5863,6 +5849,15 @@ msgstr[0] "%1 個月前"
 msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "%1 年前"
+
+#~ msgid "Share a line of text in the standalone composer."
+#~ msgstr "用獨立撰寫工具分享一行文字。"
+
+#~ msgid "The text to share."
+#~ msgstr "要分享的文字。"
+
+#~ msgid "Internal usage only."
+#~ msgstr "僅內部用。"
 
 #~ msgctxt "@info"
 #~ msgid "Interaction"

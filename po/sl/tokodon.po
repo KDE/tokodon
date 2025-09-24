@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-23 00:42+0000\n"
-"PO-Revision-Date: 2025-07-08 06:43+0200\n"
+"POT-Creation-Date: 2025-09-24 00:43+0000\n"
+"PO-Revision-Date: 2025-09-23 06:58+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Poedit 3.7\n"
 
 #: account/abstractaccount.cpp:33
 #, kde-format
@@ -155,61 +155,61 @@ msgctxt "@info:label Error message"
 msgid "Failed to parse credentials"
 msgstr "Razčlenjevanje poverilnic ni uspelo"
 
-#: account/notificationhandler.cpp:32 account/notificationhandler.cpp:33
+#: account/notificationhandler.cpp:35 account/notificationhandler.cpp:36
 #, kde-format
 msgid "View Post"
 msgstr "Poglej objavo"
 
-#: account/notificationhandler.cpp:53 account/notificationhandler.cpp:54
+#: account/notificationhandler.cpp:56 account/notificationhandler.cpp:57
 #, kde-format
 msgid "View Profile"
 msgstr "Poglej profil"
 
-#: account/notificationhandler.cpp:76
+#: account/notificationhandler.cpp:79
 #: content/ui/Notifications/UserInteractionLabel.qml:81
 #, kde-format
 msgid "%1 mentioned you"
 msgstr "%1 vas je omenil"
 
-#: account/notificationhandler.cpp:84
+#: account/notificationhandler.cpp:87
 #: content/ui/Notifications/UserInteractionLabel.qml:89
 #, kde-format
 msgid "%1 wrote a new post"
 msgstr "%1 je napisal novo objavo"
 
-#: account/notificationhandler.cpp:92
+#: account/notificationhandler.cpp:95
 #: content/ui/Notifications/UserInteractionLabel.qml:79
 #, kde-format
 msgid "%1 boosted your post"
 msgstr "%1 je izpostavil vašo objavo"
 
-#: account/notificationhandler.cpp:100 content/ui/FollowDelegate.qml:70
+#: account/notificationhandler.cpp:103 content/ui/FollowDelegate.qml:70
 #, kde-format
 msgid "%1 followed you"
 msgstr "%1 vam sledi"
 
-#: account/notificationhandler.cpp:108
+#: account/notificationhandler.cpp:111
 #, kde-format
 msgid "%1 requested to follow you"
 msgstr "%1 je zahteval, da vam sledi"
 
-#: account/notificationhandler.cpp:116
+#: account/notificationhandler.cpp:119
 #: content/ui/Notifications/UserInteractionLabel.qml:83
 #, kde-format
 msgid "%1 favorited your post"
 msgstr "%1 je vzljubil vašo objavo"
 
-#: account/notificationhandler.cpp:124
+#: account/notificationhandler.cpp:127
 #, kde-format
 msgid "Poll by %1 has ended"
 msgstr "Anketa od %1 se je zaključila"
 
-#: account/notificationhandler.cpp:132
+#: account/notificationhandler.cpp:135
 #, kde-format
 msgid "%1 edited a post"
 msgstr "%1 je uredil objavo"
 
-#: account/notificationhandler.cpp:143
+#: account/notificationhandler.cpp:146
 #, kde-format
 msgctxt ""
 "@title this is used for notifications, when an annual report is available. "
@@ -219,33 +219,33 @@ msgctxt ""
 msgid "Your %1 #FediWrapped awaits!"
 msgstr "Vaš %1 #FediWrapped čaka!"
 
-#: account/notificationhandler.cpp:145
+#: account/notificationhandler.cpp:148
 #, kde-format
 msgid "Unveil your year's highlights and memorable moments on Mastodon!"
 msgstr "Razkrij vrhunce svojega leta in nepozabne trenutke na Mastodonu!"
 
-#: account/notificationhandler.cpp:149
+#: account/notificationhandler.cpp:152
 #, kde-format
 msgctxt "@title"
 msgid "New Notification"
 msgstr "Novo obvestilo"
 
-#: account/notificationhandler.cpp:150
+#: account/notificationhandler.cpp:153
 #, kde-format
 msgid "You received a new notification."
 msgstr "Prejeli ste novo obvestilo."
 
-#: account/notificationhandler.cpp:158
+#: account/notificationhandler.cpp:161
 #, kde-kuit-format
 msgid "<b>Content Notice</b>: %1"
 msgstr "<b>Obvestilo o vsebini</b>: %1"
 
-#: account/notificationhandler.cpp:162
+#: account/notificationhandler.cpp:165
 #, kde-format
 msgid "This post has no text."
 msgstr "Ta objava nima besedila."
 
-#: account/notificationhandler.cpp:169
+#: account/notificationhandler.cpp:172
 #, kde-format
 msgid ""
 "The moderators of your server has limited this user, view this in Tokodon to "
@@ -254,7 +254,7 @@ msgstr ""
 "Moderatorji vašega strežnika so omejili tega uporabnika, oglejte si to v "
 "Tokodonu, če želite videti njihov profil."
 
-#: account/notificationhandler.cpp:173
+#: account/notificationhandler.cpp:176
 #, kde-format
 msgid "This user doesn't have a description."
 msgstr "Ta uporabnik nima opisa."
@@ -3679,19 +3679,18 @@ msgstr[2] "%1 pospeška"
 msgstr[3] "%1 pospeški"
 
 #: content/ui/PostDelegate/InformationBar.qml:139
-#, fuzzy, kde-format
-#| msgid "(No votes)"
+#, kde-format
 msgid "No quotes"
-msgstr "(Ni glasov)"
+msgstr "Ni omemb"
 
 #: content/ui/PostDelegate/InformationBar.qml:141
 #, kde-format
 msgid "%1 quotes"
 msgid_plural "%1 quotes"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%1 omemb"
+msgstr[1] "%1 omemba"
+msgstr[2] "%1 omembi"
+msgstr[3] "%1 omembe"
 
 #: content/ui/PostDelegate/LinkMenu.qml:33
 #: content/ui/PostDelegate/PostMenu.qml:59
@@ -5581,69 +5580,55 @@ msgstr "7 dni"
 msgid "An unknown error occurred."
 msgstr "Prišlo je do neznane napake."
 
-#: main.cpp:102
+#: main.cpp:103
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:104 main.cpp:129
+#: main.cpp:105 main.cpp:130
 #, kde-format
 msgid "Browse the Fediverse"
 msgstr "Prebrskaj Fediverse"
 
-#: main.cpp:106
+#: main.cpp:107
 #, kde-format
 msgid "© 2021-2025 KDE Community"
 msgstr "© 2021–2025 skupnost KDE"
 
-#: main.cpp:107
+#: main.cpp:108
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:108 main.cpp:113
+#: main.cpp:109 main.cpp:114
 #, kde-format
 msgid "Maintainer"
 msgstr "Vzdrževalec"
 
-#: main.cpp:112
+#: main.cpp:113
 #, kde-format
 msgid "Joshua Goins"
 msgstr "Joshua Goins"
 
-#: main.cpp:117
+#: main.cpp:118
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Matjaž Jeran,Martin Srebotnjak,Jure Repinc"
 
-#: main.cpp:117
+#: main.cpp:118
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "matjaz.jeran@amis.net,miles@filmsi.net,jlp@holodeck1.com"
 
-#: main.cpp:130
-#, kde-format
-msgid "Supports https, tokodon and web+ap url scheme"
+#: main.cpp:131
+#, fuzzy, kde-format
+#| msgid "Supports https, tokodon and web+ap url scheme"
+msgid "Supports https, and web+ap url schemes."
 msgstr "Podpira sheme https, tokodon in web+ap url"
 
-#: main.cpp:132
-#, kde-format
-msgid "Share a line of text in the standalone composer."
-msgstr "Deli vrstico besedila v samostojnem sestavljalniku."
-
-#: main.cpp:132
-#, kde-format
-msgid "The text to share."
-msgstr "Besedilo namenjeno za deljenje."
-
-#: main.cpp:136
-#, kde-format
-msgid "Internal usage only."
-msgstr "Samo za notranjo rabo."
-
-#: network/networkcontroller.cpp:303
+#: network/networkcontroller.cpp:307
 #, kde-format
 msgid "Receiving push notifications"
 msgstr "Sprejemanje potisnih obvestil"
@@ -5830,11 +5815,10 @@ msgid "Open Profile"
 msgstr "Odpri profil"
 
 #: tokodonapplication.cpp:180
-#, fuzzy, kde-format
-#| msgid "Account editor"
+#, kde-format
 msgctxt "@action:button"
 msgid "Open Account Switcher"
-msgstr "Urejevalnik računa"
+msgstr "Preklopnik odprtega računa"
 
 #: tokodonapplication.cpp:216
 #, kde-format
@@ -5992,6 +5976,15 @@ msgstr[0] "pred %1 leti"
 msgstr[1] "pred %1 letom"
 msgstr[2] "pred %1 letoma"
 msgstr[3] "pred %1 leti"
+
+#~ msgid "Share a line of text in the standalone composer."
+#~ msgstr "Deli vrstico besedila v samostojnem sestavljalniku."
+
+#~ msgid "The text to share."
+#~ msgstr "Besedilo namenjeno za deljenje."
+
+#~ msgid "Internal usage only."
+#~ msgstr "Samo za notranjo rabo."
 
 #~ msgctxt "@info"
 #~ msgid "Interaction"
