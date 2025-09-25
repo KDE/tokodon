@@ -17,6 +17,7 @@ QQC2.ItemDelegate {
     required property int index
     required property var notificationActorIdentity
     required property bool selected
+    required property string relativeTime
 
     required property var type
     readonly property bool isAdminSignUp: type === Notification.AdminSignUp
@@ -72,6 +73,15 @@ QQC2.ItemDelegate {
                 textFormat: Text.StyledText
                 Layout.fillWidth: true
                 Layout.alignment: Qt.AlignVCenter
+            }
+
+            Item {
+                Layout.fillWidth: true
+            }
+
+            QQC2.Label {
+                text: root.relativeTime
+                color: Kirigami.Theme.disabledTextColor
             }
         }
 
