@@ -82,16 +82,11 @@ Kirigami.Page {
             ListView {
                 id: listview
 
-                model: KItemModels.KSortFilterProxyModel {
-                    sourceModel: SocialGraphModel {
-                        id: socialGraphModel
-                        name: "following"
-                        accountId: AccountManager.selectedAccount.identity.id
-                    }
-                    sortRoleName: "lastStatusAt"
-                    sortOrder: Qt.DescendingOrder
+                model: SocialGraphModel {
+                    id: socialGraphModel
+                    name: "following"
+                    accountId: AccountManager.selectedAccount.identity.id
                 }
-
                 currentIndex: -1
                 clip: true
 
