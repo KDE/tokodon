@@ -64,7 +64,7 @@ MediaContainer {
     Image {
         anchors.fill: parent
         source: visible ? modelData.tempSource : ''
-        visible: previewImage.visible && (previewImage.status !== Image.Ready || root.isSensitive)
+        visible: previewImage.status !== Image.Ready || root.isSensitive
     }
 
     Image {
