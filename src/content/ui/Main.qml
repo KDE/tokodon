@@ -794,20 +794,43 @@ StatefulApp.StatefulWindow {
     }
 
     property Item hoverLinkIndicator: QQC2.Control {
+        property string text
+
         parent: overlay
-        property alias text: linkText.text
         opacity: text.length > 0 ? 1 : 0
         visible: !Kirigami.Settings.isMobile && !text.startsWith("hashtag:") && !text.startsWith("account:")
 
         z: root.globalDrawer.z + 1
         x: 0
         y: parent.height - implicitHeight
+
+        Kirigami.Theme.colorSet: Kirigami.Theme.View
+
+        onTextChanged: {
+            // This is done so the text doesn't disappear for a split second while in the opacity transition
+            if (text.length > 0) {
+                linkText.text = text;
+            }
+        }
+
+        Behavior on opacity {
+            OpacityAnimator {
+                duration: Kirigami.Units.shortDuration
+                easing.type: Easing.InOutQuad
+            }
+        }
+
         contentItem: QQC2.Label {
             id: linkText
         }
-        Kirigami.Theme.colorSet: Kirigami.Theme.View
-        background: Rectangle {
-             color: Kirigami.Theme.backgroundColor
+
+        background: Kirigami.ShadowedRectangle {
+            corners.topRightRadius: Kirigami.Units.cornerRadius
+            color: Kirigami.Theme.backgroundColor
+            border {
+                color: Kirigami.ColorUtils.linearInterpolation(Kirigami.Theme.backgroundColor, Kirigami.Theme.textColor, Kirigami.Theme.frameContrast)
+                width: 1
+            }
         }
     }
 
