@@ -156,6 +156,14 @@ Kirigami.Page {
                         text: i18n("No User Selected")
                         explanation: i18n("With the Following view, easily check on each user you're following and only their posts - sorted by recent activity.")
                     }
+
+                    Kirigami.PlaceholderMessage {
+                        anchors.centerIn: parent
+                        text: i18nc("@label", "No Posts")
+                        explanation: i18n("This user hasn't posted anything yet.")
+                        visible: timelineListView.count === 0 && !timelineListView.model.loading
+                        width: parent.width - Kirigami.Units.gridUnit * 4
+                    }
                 }
             }
         }
