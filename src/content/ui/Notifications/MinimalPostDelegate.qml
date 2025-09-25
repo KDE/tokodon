@@ -158,6 +158,7 @@ QQC2.ItemDelegate {
 
             QQC2.Label {
                 text: root.relativeTime
+                color: Kirigami.Theme.disabledTextColor
             }
         }
 
