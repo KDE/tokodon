@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-24 00:43+0000\n"
-"PO-Revision-Date: 2025-09-23 06:58+0200\n"
+"POT-Creation-Date: 2025-09-26 00:42+0000\n"
+"PO-Revision-Date: 2025-09-25 07:13+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -183,7 +183,7 @@ msgstr "%1 je napisal novo objavo"
 msgid "%1 boosted your post"
 msgstr "%1 je izpostavil vašo objavo"
 
-#: account/notificationhandler.cpp:103 content/ui/FollowDelegate.qml:70
+#: account/notificationhandler.cpp:103 content/ui/FollowDelegate.qml:71
 #, kde-format
 msgid "%1 followed you"
 msgstr "%1 vam sledi"
@@ -863,13 +863,13 @@ msgctxt "@action:button"
 msgid "Post"
 msgstr "Objavi"
 
-#: content/ui/AccountInfo.qml:137
+#: content/ui/AccountInfo.qml:137 content/ui/FollowingPage.qml:162
 #, kde-format
 msgctxt "@label"
 msgid "No Posts"
 msgstr "Ni objav"
 
-#: content/ui/AccountInfo.qml:138
+#: content/ui/AccountInfo.qml:138 content/ui/FollowingPage.qml:163
 #, kde-format
 msgid "This user hasn't posted anything yet."
 msgstr "Ta uporabnik ni še ničesar objavil."
@@ -1221,7 +1221,7 @@ msgctxt "@info:placeholder"
 msgid "No Users"
 msgstr "Ni uporabnikov"
 
-#: content/ui/FollowDelegate.qml:68
+#: content/ui/FollowDelegate.qml:69
 #, kde-format
 msgid "%1 signed up"
 msgstr "%1 se je prijavil"
@@ -1263,12 +1263,12 @@ msgctxt "@title:window"
 msgid "Filters"
 msgstr "Filtri"
 
-#: content/ui/FollowingPage.qml:161
+#: content/ui/FollowingPage.qml:156
 #, kde-format
 msgid "No User Selected"
 msgstr "Ni izbranega uporabnika"
 
-#: content/ui/FollowingPage.qml:162
+#: content/ui/FollowingPage.qml:157
 #, kde-format
 msgid ""
 "With the Following view, easily check on each user you're following and only "
@@ -1921,19 +1921,19 @@ msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Nastavitve"
 
-#: content/ui/Main.qml:821
+#: content/ui/Main.qml:844
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Unfollow"
 msgstr "Prenehaj slediti"
 
-#: content/ui/Main.qml:821
+#: content/ui/Main.qml:844
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Follow"
 msgstr "Sledi"
 
-#: content/ui/Main.qml:869
+#: content/ui/Main.qml:892
 #, kde-format
 msgctxt "@title"
 msgid "Embed Information"
@@ -5623,10 +5623,9 @@ msgid "Your emails"
 msgstr "matjaz.jeran@amis.net,miles@filmsi.net,jlp@holodeck1.com"
 
 #: main.cpp:131
-#, fuzzy, kde-format
-#| msgid "Supports https, tokodon and web+ap url scheme"
+#, kde-format
 msgid "Supports https, and web+ap url schemes."
-msgstr "Podpira sheme https, tokodon in web+ap url"
+msgstr "Podpira sheme https in web+ap url"
 
 #: network/networkcontroller.cpp:307
 #, kde-format

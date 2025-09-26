@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-24 00:43+0000\n"
-"PO-Revision-Date: 2025-07-08 08:58+0200\n"
+"POT-Creation-Date: 2025-09-26 00:42+0000\n"
+"PO-Revision-Date: 2025-09-24 14:16+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.04.3\n"
+"X-Generator: Lokalize 25.08.1\n"
 
 #: account/abstractaccount.cpp:33
 #, kde-format
@@ -179,7 +179,7 @@ msgstr "%1 a écrit un nouveau message"
 msgid "%1 boosted your post"
 msgstr "%1 a mis en avant votre message"
 
-#: account/notificationhandler.cpp:103 content/ui/FollowDelegate.qml:70
+#: account/notificationhandler.cpp:103 content/ui/FollowDelegate.qml:71
 #, kde-format
 msgid "%1 followed you"
 msgstr "%1 vous a suivi"
@@ -860,13 +860,13 @@ msgctxt "@action:button"
 msgid "Post"
 msgstr "Message"
 
-#: content/ui/AccountInfo.qml:137
+#: content/ui/AccountInfo.qml:137 content/ui/FollowingPage.qml:162
 #, kde-format
 msgctxt "@label"
 msgid "No Posts"
 msgstr "Aucun message"
 
-#: content/ui/AccountInfo.qml:138
+#: content/ui/AccountInfo.qml:138 content/ui/FollowingPage.qml:163
 #, kde-format
 msgid "This user hasn't posted anything yet."
 msgstr "Cet utilisateur n'a encore rien publié."
@@ -1220,7 +1220,7 @@ msgctxt "@info:placeholder"
 msgid "No Users"
 msgstr "Aucun utilisateur"
 
-#: content/ui/FollowDelegate.qml:68
+#: content/ui/FollowDelegate.qml:69
 #, kde-format
 msgid "%1 signed up"
 msgstr "%1 s'est inscrit"
@@ -1262,12 +1262,12 @@ msgctxt "@title:window"
 msgid "Filters"
 msgstr "Filtres"
 
-#: content/ui/FollowingPage.qml:161
+#: content/ui/FollowingPage.qml:156
 #, kde-format
 msgid "No User Selected"
 msgstr "Aucun utilisateur n'est sélectionné. "
 
-#: content/ui/FollowingPage.qml:162
+#: content/ui/FollowingPage.qml:157
 #, kde-format
 msgid ""
 "With the Following view, easily check on each user you're following and only "
@@ -1895,19 +1895,19 @@ msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Configuration"
 
-#: content/ui/Main.qml:821
+#: content/ui/Main.qml:844
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Unfollow"
 msgstr "Se désabonner"
 
-#: content/ui/Main.qml:821
+#: content/ui/Main.qml:844
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Follow"
 msgstr "S'abonner"
 
-#: content/ui/Main.qml:869
+#: content/ui/Main.qml:892
 #, kde-format
 msgctxt "@title"
 msgid "Embed Information"
@@ -3653,17 +3653,16 @@ msgstr[0] "Coup de pouce %1"
 msgstr[1] "%1 coups de pouce"
 
 #: content/ui/PostDelegate/InformationBar.qml:139
-#, fuzzy, kde-format
-#| msgid "(No votes)"
+#, kde-format
 msgid "No quotes"
-msgstr "(Aucun vote)"
+msgstr "Aucune citation"
 
 #: content/ui/PostDelegate/InformationBar.qml:141
 #, kde-format
 msgid "%1 quotes"
 msgid_plural "%1 quotes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 citations"
+msgstr[1] "%1 citations"
 
 #: content/ui/PostDelegate/LinkMenu.qml:33
 #: content/ui/PostDelegate/PostMenu.qml:59
@@ -5817,11 +5816,10 @@ msgid "Open Profile"
 msgstr "Ouvrir un profil"
 
 #: tokodonapplication.cpp:180
-#, fuzzy, kde-format
-#| msgid "Account editor"
+#, kde-format
 msgctxt "@action:button"
 msgid "Open Account Switcher"
-msgstr "Éditeur de comptes"
+msgstr "Ouvrir le commutateur de comptes"
 
 #: tokodonapplication.cpp:216
 #, kde-format

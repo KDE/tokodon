@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-24 00:43+0000\n"
+"POT-Creation-Date: 2025-09-26 00:42+0000\n"
 "PO-Revision-Date: 2025-09-24 07:57+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -182,7 +182,7 @@ msgstr "נכתבה רשומה חדשה על ידי %1"
 msgid "%1 boosted your post"
 msgstr "הרשומה שלך עודדה על ידי %1"
 
-#: account/notificationhandler.cpp:103 content/ui/FollowDelegate.qml:70
+#: account/notificationhandler.cpp:103 content/ui/FollowDelegate.qml:71
 #, kde-format
 msgid "%1 followed you"
 msgstr "נוספת לרשימת המעקב של %1"
@@ -853,13 +853,13 @@ msgctxt "@action:button"
 msgid "Post"
 msgstr "פרסום"
 
-#: content/ui/AccountInfo.qml:137
+#: content/ui/AccountInfo.qml:137 content/ui/FollowingPage.qml:162
 #, kde-format
 msgctxt "@label"
 msgid "No Posts"
 msgstr "אין רשומות"
 
-#: content/ui/AccountInfo.qml:138
+#: content/ui/AccountInfo.qml:138 content/ui/FollowingPage.qml:163
 #, kde-format
 msgid "This user hasn't posted anything yet."
 msgstr "המשתמש או המשתמשת האלה לא פרסמו כלום עדיין."
@@ -1207,7 +1207,7 @@ msgctxt "@info:placeholder"
 msgid "No Users"
 msgstr "אין משתמשים"
 
-#: content/ui/FollowDelegate.qml:68
+#: content/ui/FollowDelegate.qml:69
 #, kde-format
 msgid "%1 signed up"
 msgstr "%1 נרשם או נרשמה"
@@ -1249,12 +1249,12 @@ msgctxt "@title:window"
 msgid "Filters"
 msgstr "מסננים"
 
-#: content/ui/FollowingPage.qml:161
+#: content/ui/FollowingPage.qml:156
 #, kde-format
 msgid "No User Selected"
 msgstr "לא נבחר אף משתמש"
 
-#: content/ui/FollowingPage.qml:162
+#: content/ui/FollowingPage.qml:157
 #, kde-format
 msgid ""
 "With the Following view, easily check on each user you're following and only "
@@ -1866,19 +1866,19 @@ msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "הגדרות"
 
-#: content/ui/Main.qml:821
+#: content/ui/Main.qml:844
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Unfollow"
 msgstr "ביטול מעקב"
 
-#: content/ui/Main.qml:821
+#: content/ui/Main.qml:844
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Follow"
 msgstr "מעקב"
 
-#: content/ui/Main.qml:869
+#: content/ui/Main.qml:892
 #, kde-format
 msgctxt "@title"
 msgid "Embed Information"
