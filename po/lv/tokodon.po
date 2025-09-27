@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-26 00:42+0000\n"
-"PO-Revision-Date: 2025-06-18 17:00+0300\n"
+"PO-Revision-Date: 2025-09-24 16:53+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 25.04.2\n"
+"X-Generator: Lokalize 25.08.0\n"
 
 #: account/abstractaccount.cpp:33
 #, kde-format
@@ -967,12 +967,10 @@ msgid "No emojis"
 msgstr "Nav emocijzīmju"
 
 #: content/ui/Components/ServerInformationCard.qml:28
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Embed Information"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Information"
-msgstr "Iegultā informācija"
+msgstr "Nav informācijas"
 
 #: content/ui/Components/ServerInformationCard.qml:33
 #, kde-format
@@ -1282,11 +1280,10 @@ msgid "Open Post"
 msgstr "Atvērt ierakstu"
 
 #: content/ui/GenericServerInformationPage.qml:17
-#, fuzzy, kde-format
-#| msgid "Custom Server"
+#, kde-format
 msgctxt "@title:window"
 msgid "About Server"
-msgstr "Pielāgots serveris"
+msgstr "Par serveri"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:19
 #, kde-format
@@ -1570,7 +1567,7 @@ msgstr "Parole"
 #: content/ui/LoginFlow/RegistrationPage.qml:128
 #, kde-format
 msgid "Date of Birth"
-msgstr ""
+msgstr "Dzimšanas datums"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:136
 #, kde-format
@@ -3645,18 +3642,17 @@ msgstr[1] "%1 pastiprinājumi"
 msgstr[2] "%1 pastiprinājumu"
 
 #: content/ui/PostDelegate/InformationBar.qml:139
-#, fuzzy, kde-format
-#| msgid "(No votes)"
+#, kde-format
 msgid "No quotes"
-msgstr "(nav balsu)"
+msgstr "Nav citātu"
 
 #: content/ui/PostDelegate/InformationBar.qml:141
 #, kde-format
 msgid "%1 quotes"
 msgid_plural "%1 quotes"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%1 citāts"
+msgstr[1] "%1 citāti"
+msgstr[2] "%1 citātu"
 
 #: content/ui/PostDelegate/LinkMenu.qml:33
 #: content/ui/PostDelegate/PostMenu.qml:59
@@ -4035,7 +4031,7 @@ msgstr "Aptauja"
 #, kde-format
 msgctxt "@action:button"
 msgid "Volume"
-msgstr ""
+msgstr "Skaļums"
 
 #: content/ui/ReadMarker.qml:13
 #, kde-format
@@ -4106,17 +4102,13 @@ msgid "Search for users, tags and posts"
 msgstr "Meklē lietotājus, birkas un tēmturus"
 
 #: content/ui/ServerInformationPage.qml:25
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Rules"
+#, kde-format
 msgctxt "@title:window Server rules"
 msgid "Rules"
 msgstr "Noteikumi"
 
 #: content/ui/ServerInformationPage.qml:66
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Rules"
+#, kde-format
 msgctxt "@action:button"
 msgid "Rules"
 msgstr "Noteikumi"
@@ -4140,20 +4132,16 @@ msgid "Privacy Policy"
 msgstr "Privātuma politika"
 
 #: content/ui/ServerInformationPage.qml:102
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Password Service"
+#, kde-format
 msgctxt "@action:button"
 msgid "Terms of Service"
-msgstr "Paroles serviss"
+msgstr "Lietošanas noteikumi"
 
 #: content/ui/ServerInformationPage.qml:103
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Password Service"
+#, kde-format
 msgctxt "@title:window"
 msgid "Terms of Service"
-msgstr "Paroles serviss"
+msgstr "Lietošanas noteikumi"
 
 #: content/ui/Settings/AccountPage.qml:26
 #, kde-format
@@ -4243,7 +4231,7 @@ msgstr "Pēc noklusējuma atzīmēt augšuplādēto multividi kā sensitīvu"
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Include public posts in search results"
-msgstr ""
+msgstr "Meklēšanas rezultātos iekļaut publiskos ierakstus"
 
 #: content/ui/Settings/AccountPage.qml:187
 #, kde-format
@@ -4479,12 +4467,10 @@ msgid "Hide with Content Notice"
 msgstr "Slēpt ar satura paziņojumu"
 
 #: content/ui/Settings/EditFilterPage.qml:140
-#, fuzzy, kde-format
-#| msgctxt "@label:radiobutton"
-#| msgid "Hide with Content Notice"
+#, kde-format
 msgctxt "@label:radiobutton"
 msgid "Hide Media with Content Notice"
-msgstr "Slēpt ar satura paziņojumu"
+msgstr "Slēpt multividi ar satura paziņojumiem"
 
 #: content/ui/Settings/EditFilterPage.qml:147
 #, kde-format
@@ -5042,15 +5028,13 @@ msgid "Remove"
 msgstr "Noņemt"
 
 #: content/ui/SocialGraphPage.qml:101
-#, fuzzy, kde-format
-#| msgid "Unblock"
+#, kde-format
 msgctxt "@action:button Unblock this user"
 msgid "Unblock"
 msgstr "Atbloķēt"
 
 #: content/ui/SocialGraphPage.qml:107
-#, fuzzy, kde-format
-#| msgid "Unmute"
+#, kde-format
 msgctxt "@action:button Unmute this user"
 msgid "Unmute"
 msgstr "Beigt apklusināšanu"
@@ -5609,10 +5593,9 @@ msgid "Your emails"
 msgstr "toms.trasuns@posteo.net"
 
 #: main.cpp:131
-#, fuzzy, kde-format
-#| msgid "Supports https, tokodon and web+ap url scheme"
+#, kde-format
 msgid "Supports https, and web+ap url schemes."
-msgstr "Atbalsta „https“, „tokodon“ un „web+ap“ URL shēmu"
+msgstr "Atbalsta HTTPS un „web+ap“ URL shēmu."
 
 #: network/networkcontroller.cpp:307
 #, kde-format
@@ -5801,11 +5784,10 @@ msgid "Open Profile"
 msgstr "Atvērt profilu"
 
 #: tokodonapplication.cpp:180
-#, fuzzy, kde-format
-#| msgid "Account editor"
+#, kde-format
 msgctxt "@action:button"
 msgid "Open Account Switcher"
-msgstr "Konta redaktors"
+msgstr "Atvērt konta pārslēdzēju"
 
 #: tokodonapplication.cpp:216
 #, kde-format
