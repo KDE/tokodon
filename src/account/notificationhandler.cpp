@@ -8,6 +8,7 @@
 #include "network/networkcontroller.h"
 #include "tokodon_debug.h"
 
+#include <QJsonDocument>
 #include <QPainter>
 
 #include <KLocalizedString>
