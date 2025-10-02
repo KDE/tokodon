@@ -219,14 +219,14 @@ FormCard.FormCardPage {
                 if (root.purpose === EditFilterPage.New) {
                     return "gtk-add";
                 } else {
-                    return "edit-rename";
+                    return "document-save-symbolic";
                 }
             }
             text: {
                 if (root.purpose === EditFilterPage.New) {
                     return i18nc("@action:button Create the filter", "Create");
                 } else {
-                    return i18nc("@action:button Edit the filter", "Edit");
+                    return i18nc("@action:button Save the edited filter", "Save");
                 }
             }
             onClicked: backend.submit()

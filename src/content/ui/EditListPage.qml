@@ -245,14 +245,14 @@ FormCard.FormCardPage {
                 if (root.purpose === EditListPage.New) {
                     return "gtk-add";
                 } else {
-                    return "edit-rename";
+                    return "document-save-symbolic";
                 }
             }
             text: {
                 if (root.purpose === EditListPage.New) {
                     return i18nc("@action:button Create the list", "Create");
                 } else {
-                    return i18nc("@action:button Edit the list", "Edit");
+                    return i18nc("@action:button Save the edited list", "Save");
                 }
             }
             onClicked: backend.submit()
