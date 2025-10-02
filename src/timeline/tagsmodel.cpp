@@ -40,7 +40,7 @@ void TagsModel::fetchMore(const QModelIndex &parent)
 bool TagsModel::canFetchMore(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
-    return m_next.has_value();
+    return m_next.has_value() && !loading();
 }
 
 void TagsModel::fillTimeline(const QString &fromId)

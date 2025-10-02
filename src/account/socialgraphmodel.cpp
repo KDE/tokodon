@@ -414,7 +414,7 @@ void SocialGraphModel::actionUnmute(const QModelIndex &index)
 bool SocialGraphModel::canFetchMore(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
-    return m_next.has_value();
+    return m_next.has_value() && !loading();
 }
 
 void SocialGraphModel::fetchMore(const QModelIndex &parent)

@@ -228,7 +228,7 @@ void ReportToolModel::executeReportAction(const int row, ReportAction reportActi
 bool ReportToolModel::canFetchMore(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
-    return m_next.has_value() && m_pagination;
+    return m_next.has_value() && m_pagination && !loading();
 }
 
 void ReportToolModel::fetchMore(const QModelIndex &parent)

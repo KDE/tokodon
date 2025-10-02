@@ -61,7 +61,7 @@ QString TagsTimelineModel::displayName() const
 bool TagsTimelineModel::canFetchMore(const QModelIndex &parent) const
 {
     Q_UNUSED(parent)
-    return m_next.has_value();
+    return m_next.has_value() && !loading();
 }
 
 void TagsTimelineModel::fillTimeline(const QString &fromId, bool backwards)

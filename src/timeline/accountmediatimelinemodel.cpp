@@ -187,7 +187,7 @@ void AccountMediaTimelineModel::reset()
 bool AccountMediaTimelineModel::canFetchMore(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
-    return true;
+    return !loading();
 }
 
 void AccountMediaTimelineModel::fetchMore(const QModelIndex &parent)

@@ -365,7 +365,7 @@ void MainTimelineModel::refresh()
 bool MainTimelineModel::canFetchMore(const QModelIndex &parent) const
 {
     Q_UNUSED(parent)
-    return !atEnd();
+    return !atEnd() && !loading();
 }
 
 QVariant MainTimelineModel::data(const QModelIndex &index, int role) const

@@ -249,7 +249,7 @@ void AccountsToolModel::actionAgainstAccount(const int row, const QString &type,
 bool AccountsToolModel::canFetchMore(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
-    return m_next.has_value() && m_pagination;
+    return m_next.has_value() && m_pagination && !loading();
 }
 
 void AccountsToolModel::deleteAccountData(const int row)

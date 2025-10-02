@@ -180,8 +180,7 @@ bool NotificationModel::canFetchMore(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
 
-    // Todo detect when there is nothing left
-    return !loading();
+    return !loading() && m_next.has_value();
 }
 
 int NotificationModel::rowCount(const QModelIndex &parent) const

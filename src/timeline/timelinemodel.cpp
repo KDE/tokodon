@@ -184,7 +184,7 @@ void TimelineModel::setShouldLoadMore(bool shouldLoadMore)
 bool TimelineModel::canFetchMore(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
-    return true;
+    return !loading();
 }
 
 int TimelineModel::rowCount(const QModelIndex &parent) const
