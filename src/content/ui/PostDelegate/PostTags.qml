@@ -16,10 +16,11 @@ import org.kde.tokodon
 QQC2.Control {
     id: root
 
-    required property var standaloneTags
+    required property list<string> standaloneTags
 
-    readonly property bool hasScrollbar: scrollView.QQC2.ScrollBar.horizontal.size !== 1.0
-    readonly property bool scrollAtEnd: (scrollView.QQC2.ScrollBar.horizontal.position + scrollView.QQC2.ScrollBar.horizontal.size) === 1.0
+    readonly property int conciseTagCount: 3
+    readonly property int hiddenTagCount: Math.max(standaloneTags.length - conciseTagCount, 0)
+    property bool expanded: false
 
     leftPadding: 0
     rightPadding: 0
@@ -30,102 +31,34 @@ QQC2.Control {
 
     background: null
 
-    contentItem: Item {
-        implicitWidth: scrollView.implicitWidth
-        implicitHeight: scrollView.implicitHeight
+    contentItem: Flow {
+        spacing: Kirigami.Units.smallSpacing
 
-        QQC2.ScrollView {
-            id: scrollView
+        Repeater {
+            model: root.expanded ? root.standaloneTags : root.standaloneTags.slice(0, root.conciseTagCount);
 
-            anchors.fill: parent
+            Kirigami.Chip {
+                required property string modelData
 
-            QQC2.ScrollBar.horizontal.policy: QQC2.ScrollBar.AlwaysOff
+                closable: false
+                checkable: false
 
-            RowLayout {
-                spacing: Kirigami.Units.smallSpacing
+                text: "#" + modelData
 
-                Repeater {
-                    model: root.standaloneTags
+                onClicked: Navigation.openTag(modelData)
 
-                    Kirigami.Chip {
-                        required property string modelData
-
-                        closable: false
-                        checkable: false
-
-                        text: "#" + modelData
-
-                        onClicked: Navigation.openTag(modelData)
-
-                        Accessible.name: i18nc("@info", "Tag")
-                        Accessible.description: modelData
-                    }
-                }
+                Accessible.name: i18nc("@info", "Tag")
+                Accessible.description: modelData
             }
         }
 
-        Rectangle {
-            anchors {
-                left: parent.left
-                top: parent.top
-                bottom: parent.bottom
-            }
+        Kirigami.Chip {
+            text: i18nc("@action:button expand the number of shown tags", "…and %1 more", root.hiddenTagCount)
+            visible: !root.expanded && root.hiddenTagCount > 0
+            closable: false
+            checkable: false
 
-            gradient: Gradient {
-                orientation: Gradient.Horizontal
-
-                GradientStop {
-                    position: 0.9; color: Kirigami.Theme.backgroundColor
-                }
-                GradientStop {
-                    position: 1.0; color: "transparent"
-                }
-            }
-
-            visible: root.hasScrollbar && scrollView.QQC2.ScrollBar.horizontal.position > 0.0
-            implicitWidth: prevButton.implicitWidth
-
-            QQC2.ToolButton {
-                id: prevButton
-
-                height: parent.height
-
-                icon.name: "go-previous"
-                autoRepeat: true
-                onClicked: scrollView.QQC2.ScrollBar.horizontal.decrease()
-            }
-        }
-
-        Rectangle {
-            anchors {
-                right: parent.right
-                top: parent.top
-                bottom: parent.bottom
-            }
-
-            gradient: Gradient {
-                orientation: Gradient.Horizontal
-
-                GradientStop {
-                    position: 0.0; color: "transparent"
-                }
-                GradientStop {
-                    position: 0.1; color: Kirigami.Theme.backgroundColor
-                }
-            }
-
-            visible: root.hasScrollbar && !root.scrollAtEnd
-            implicitWidth: nextButton.implicitWidth
-
-            QQC2.ToolButton {
-                id: nextButton
-
-                height: parent.height
-
-                icon.name: "go-next"
-                autoRepeat: true
-                onClicked: scrollView.QQC2.ScrollBar.horizontal.increase()
-            }
+            onClicked: root.expanded = true
         }
     }
 }
