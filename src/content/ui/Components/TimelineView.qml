@@ -22,6 +22,21 @@ ListView {
     // Set to the original post URL to show the "show more replies" message
     property string originalPostUrl
 
+    // Shows the post action in the bottom-right
+    property bool showPostAction: true
+
+    readonly property bool needsToShowBothActions: goToTopAction.visible && postAction.visible
+    readonly property var singleActionToShow: {
+        if (goToTopAction.visible) {
+            return goToTopAction;
+        }
+        if (postAction.visible) {
+            return postAction;
+        }
+        return null;
+    }
+    readonly property bool hasAnyActionToShow: singleActionToShow !== null
+
     // This causes jumping on the timeline. needs more investigation before it's re-enabled
     reuseItems: false
 
@@ -62,28 +77,57 @@ ListView {
         }
     }
 
-    Components.FloatingButton {
-        QQC2.ToolTip.text: i18nc("@info:tooltip", "Return to Top")
-        QQC2.ToolTip.visible: hovered
-        QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+    readonly property Kirigami.Action postAction: Kirigami.Action {
+        icon.name: "document-edit-symbolic"
+        text: i18nc("@action:button", "Create Post")
+        visible: root.showPostAction
 
-        opacity: root.atYBeginning ? 0 : 1
+        onTriggered: Navigation.openComposer("")
+    }
+
+    readonly property Kirigami.Action goToTopAction: Kirigami.Action {
+        icon.name: "arrow-up-symbolic"
+        text: i18nc("@info:tooltip", "Return to Top")
+        visible: !root.atYBeginning
+
+        onTriggered: root.positionViewAtBeginning()
+    }
+
+    // this is an empty item just meant for opacity layering
+    // otherwise the opacity animation when switching between single/double is bad
+    Item {
+        anchors.fill: parent
+
+        opacity: root.hasAnyActionToShow ? 1 : 0
         visible: opacity !== 0
 
         Behavior on opacity {
             NumberAnimation {}
         }
 
-        anchors {
-            right: parent.right
-            rightMargin: Kirigami.Units.largeSpacing
-            bottom: parent.bottom
-            bottomMargin: Kirigami.Units.largeSpacing
+        Components.FloatingButton {
+            anchors {
+                right: parent.right
+                rightMargin: Kirigami.Units.largeSpacing
+                bottom: parent.bottom
+                bottomMargin: Kirigami.Units.largeSpacing
+            }
+
+            visible: !root.needsToShowBothActions
+            action: root.singleActionToShow
         }
 
-        action: Kirigami.Action {
-            icon.name: "arrow-up"
-            onTriggered: root.positionViewAtBeginning()
+        Components.DoubleFloatingButton {
+            anchors {
+                right: parent.right
+                rightMargin: Kirigami.Units.largeSpacing
+                bottom: parent.bottom
+                bottomMargin: Kirigami.Units.largeSpacing
+            }
+
+            visible: root.needsToShowBothActions
+            leadingAction: root.goToTopAction
+            trailingAction: root.postAction
         }
     }
 
