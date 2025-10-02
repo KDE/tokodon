@@ -203,11 +203,25 @@ Kirigami.Page {
                             anchors.fill: parent
 
                             source: imageDelegate.tempSource
-                            visible: image.status !== Image.Ready || imageDelegate.sensitive
+                            visible: opacity !== 0.0
+                            opacity: image.status !== Image.Ready || imageDelegate.sensitive ? 1.0 : 0.0
 
                             Kirigami.Icon {
                                 anchors.centerIn: parent
                                 source: "view-hidden-symbolic"
+                                visible: imageDelegate.sensitive
+                            }
+
+                            QQC2.BusyIndicator {
+                                id: busyIndicator
+                                visible: !imageDelegate.sensitive
+                                anchors.centerIn: parent
+                            }
+
+                            Behavior on opacity {
+                                NumberAnimation {
+                                    duration: Kirigami.Units.longDuration
+                                }
                             }
                         }
 
