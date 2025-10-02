@@ -20,7 +20,7 @@ Kirigami.ScrollablePage {
     required property var model
     property bool expandedPost: false
     property alias listViewHeader: listview.header
-    property alias showPostAction: postAction.visible
+    property bool showPostAction: true
     property alias listView: listview
     readonly property bool showReplies: showRepliesAction.checked
     readonly property bool showBoosts: showBoostsAction.checked
@@ -105,13 +105,6 @@ Kirigami.ScrollablePage {
 
     actions: [
         Kirigami.Action {
-            id: postAction
-            icon.name: "list-add"
-            text: i18nc("@action:button", "Post")
-            enabled: AccountManager.hasAccounts
-            onTriggered: Navigation.openComposer("")
-        },
-        Kirigami.Action {
             id: filterAction
             text: i18nc("@action:button", "Filters")
             icon.name: "view-filter"
@@ -178,6 +171,7 @@ Kirigami.ScrollablePage {
         model: root.model
         isCurrentPage: root.isCurrentPage
         expandedPost: root.expandedPost
+        showPostAction: root.showPostAction
 
         header: Kirigami.FlexColumn {
             id: flexColumn

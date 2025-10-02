@@ -30,13 +30,6 @@ Kirigami.Page {
         event.accepted = true;
     }
 
-    actions: Kirigami.Action {
-        icon.name: "list-add"
-        text: i18nc("@action:button", "Post")
-        enabled: AccountManager.hasAccounts
-        onTriggered: Navigation.openComposer("")
-    }
-
     property Kirigami.Action trendingPostsAction: Kirigami.Action {
         text: i18n("Posts")
         icon.name: "view-conversation-balloon-symbolic"
