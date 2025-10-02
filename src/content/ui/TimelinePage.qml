@@ -55,7 +55,7 @@ Kirigami.ScrollablePage {
 
         text: root.title
 
-        textFormat: Text.StyledText
+        textFormat: Text.RichText
     }
 
     header: Kirigami.InlineMessage {
