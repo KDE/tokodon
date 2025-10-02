@@ -115,7 +115,7 @@ Kirigami.Page {
                         canExcludeBoosts: accountInfo.canExcludeBoosts
                         excludeBoosts: accountInfo.excludeBoosts
                         onExcludeBoostsToggled: (checked) => accountInfo.excludeBoosts = checked
-                        onSelectedTagChanged: (selectedTag) => accountInfo.selectedTag = selectedTag;
+                        onSelectedTagChanged: (selectedTag) => accountInfo.selectedTag = selectedTag
                     }
                 }
 
@@ -164,6 +164,7 @@ Kirigami.Page {
                         canExcludeBoosts: accountInfo.canExcludeBoosts
                         excludeBoosts: accountInfo.excludeBoosts
                         onExcludeBoostsToggled: (checked) => accountInfo.excludeBoosts = checked
+                        onSelectedTagChanged: (selectedTag) => accountInfo.selectedTag = selectedTag
                     }
                     cellWidth: cellSize
                     cellHeight: cellSize
