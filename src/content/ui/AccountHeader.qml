@@ -82,7 +82,6 @@ QQC2.Pane {
 
                     InlineIdentityInfo {
                         identity: root.identity.moved
-                        secondary: false
 
                         Layout.fillWidth: true
                     }

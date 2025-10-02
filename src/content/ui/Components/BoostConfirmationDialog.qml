@@ -38,7 +38,6 @@ Kirigami.PromptDialog {
         InlineIdentityInfo {
             id: sourceIdentityInfo
             identity: root.sourceIdentity
-            secondary: false
 
             Layout.alignment: Qt.AlignHCenter
             Layout.fillWidth: true
@@ -54,7 +53,6 @@ Kirigami.PromptDialog {
         InlineIdentityInfo {
             id: targetIdentityInfo
             identity: root.targetIdentity
-            secondary: false
 
             Layout.alignment: Qt.AlignHCenter
             Layout.fillWidth: true

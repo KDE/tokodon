@@ -247,7 +247,6 @@ Kirigami.ScrollablePage {
                     Layout.fillWidth: true
                     InlineIdentityInfo {
                         identity: delegate.identity.userLevelIdentity
-                        secondary: false
                         admin: true
                         ip: delegate.identity.ip
                     }

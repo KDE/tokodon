@@ -181,7 +181,6 @@ StatefulApp.StatefulWindow {
 
                         contentItem: InlineIdentityInfo {
                             identity: delegate.account.identity
-                            secondary: false
                         }
 
                         onClicked: crossActionDialog.takeAction(account)

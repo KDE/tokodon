@@ -131,7 +131,6 @@ Kirigami.ScrollablePage {
 
                     InlineIdentityInfo {
                         identity: delegate.reportInfo.targetAccount.userLevelIdentity
-                        secondary: false
                         admin: true
                         ip: delegate.reportInfo.targetAccount.ip
                     }

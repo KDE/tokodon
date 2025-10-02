@@ -19,7 +19,6 @@ ColumnLayout {
 
     InlineIdentityInfo {
         identity: root.post.authorIdentity
-        secondary: false
 
         Kirigami.Heading {
             id: heading

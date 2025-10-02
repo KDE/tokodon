@@ -16,7 +16,6 @@ RowLayout {
     id: root
 
     required property var identity
-    required property bool secondary
     property bool admin: false
     property string ip
     readonly property alias avatar: avatar
@@ -48,7 +47,7 @@ RowLayout {
             font.pointSize: -1
             text: root.identity?.displayNameHtml ?? ""
             type: Kirigami.Heading.Type.Primary
-            color: root.secondary ? Kirigami.Theme.disabledTextColor : Kirigami.Theme.textColor
+            color: Kirigami.Theme.textColor
             verticalAlignment: Text.AlignTop
             elide: Text.ElideRight
             textFormat: Text.StyledText

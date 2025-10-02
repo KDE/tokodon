@@ -77,7 +77,6 @@ ListView {
 
                 contentItem: InlineIdentityInfo {
                     identity: accountDelegate.authorIdentity
-                    secondary: false
                 }
             }
         }

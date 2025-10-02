@@ -55,7 +55,6 @@ Kirigami.ScrollablePage {
 
                         InlineIdentityInfo {
                             identity: delegate.authorIdentity
-                            secondary: false
 
                             Layout.fillWidth: true
                         }

@@ -32,7 +32,6 @@ Kirigami.AbstractCard {
             spacing: Kirigami.Units.smallSpacing
 
             InlineIdentityInfo {
-                secondary: false
                 identity: root.userIdentity
                 Layout.bottomMargin: Kirigami.Units.smallSpacing
             }

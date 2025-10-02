@@ -162,7 +162,6 @@ FormCard.FormCardPage {
 
                                     InlineIdentityInfo {
                                         identity: delegate.authorIdentity
-                                        secondary: false
                                     }
 
                                     Item {

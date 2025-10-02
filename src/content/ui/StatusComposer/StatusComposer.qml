@@ -325,7 +325,6 @@ Kirigami.ScrollablePage {
 
         InlineIdentityInfo {
             identity: AccountManager.selectedAccount.identity
-            secondary: false
 
             Layout.fillWidth: true
             Layout.bottomMargin: Kirigami.Units.smallSpacing * 2

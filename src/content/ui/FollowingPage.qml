@@ -103,7 +103,6 @@ Kirigami.Page {
                         spacing: Kirigami.Units.mediumSpacing
 
                         identity: delegate.identity
-                        secondary: false
                     }
 
                     onClicked: {
