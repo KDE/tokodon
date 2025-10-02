@@ -79,10 +79,15 @@ void AccountModel::fillTimeline(const QString &fromId, bool backwards)
     }
 
     auto uriPinned = m_account->apiUrl(QStringLiteral("/api/v1/accounts/%1/statuses").arg(m_accountId));
-    uriPinned.setQuery(QUrlQuery{{
+    QUrlQuery pinnedQuery{{
         QStringLiteral("pinned"),
         QStringLiteral("true"),
-    }});
+    }};
+
+    if (!m_tagged.isEmpty()) {
+        pinnedQuery.addQueryItem(QStringLiteral("tagged"), m_tagged);
+    }
+    uriPinned.setQuery(pinnedQuery);
 
     const auto account = m_account;
     const auto id = m_accountId;
