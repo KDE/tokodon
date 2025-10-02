@@ -206,7 +206,7 @@ Components.ConvergentContextMenu {
         icon.name: "edit-delete"
         visible: root.isSelf
         enabled: visible
-        text: i18n("Delete")
+        text: i18n("Delete…")
         onTriggered: root.deletePost()
     }
 
@@ -214,7 +214,7 @@ Components.ConvergentContextMenu {
         icon.name: "edit-cut"
         visible: root.isSelf
         enabled: visible
-        text: i18n("Delete & Re-draft")
+        text: i18n("Delete & Re-draft…")
         onTriggered: root.redraftPost()
     }
 
