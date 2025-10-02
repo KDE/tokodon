@@ -45,7 +45,7 @@ Kirigami.Page {
 
         text: accountModel.identity ? accountModel.identity.displayNameHtml : i18nc("@title:window", "Profile")
 
-        textFormat: Text.StyledText
+        textFormat: Text.RichText
     }
 
     topPadding: 0
