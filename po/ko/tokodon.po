@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-03 00:43+0000\n"
-"PO-Revision-Date: 2025-07-20 01:13+0200\n"
+"PO-Revision-Date: 2025-10-09 01:37+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -1124,9 +1124,7 @@ msgid "Create"
 msgstr "만들기"
 
 #: content/ui/EditListPage.qml:255
-#, fuzzy, kde-format
-#| msgctxt "@action:Button Save an edited a post"
-#| msgid "Save"
+#, kde-format
 msgctxt "@action:button Save the edited list"
 msgid "Save"
 msgstr "저장"
@@ -3614,16 +3612,15 @@ msgid_plural "%1 boosts"
 msgstr[0] "부스트 %1개"
 
 #: content/ui/PostDelegate/InformationBar.qml:139
-#, fuzzy, kde-format
-#| msgid "(No votes)"
+#, kde-format
 msgid "No quotes"
-msgstr "(투표 없음)"
+msgstr "인용 없음"
 
 #: content/ui/PostDelegate/InformationBar.qml:141
 #, kde-format
 msgid "%1 quotes"
 msgid_plural "%1 quotes"
-msgstr[0] ""
+msgstr[0] "인용 %1개"
 
 #: content/ui/PostDelegate/LinkMenu.qml:33
 #: content/ui/PostDelegate/PostMenu.qml:59
@@ -3931,16 +3928,14 @@ msgid "Edit"
 msgstr "편집"
 
 #: content/ui/PostDelegate/PostMenu.qml:209
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgid "Delete…"
-msgstr "삭제"
+msgstr "삭제…"
 
 #: content/ui/PostDelegate/PostMenu.qml:217
-#, fuzzy, kde-format
-#| msgid "Delete & Re-draft"
+#, kde-format
 msgid "Delete & Re-draft…"
-msgstr "삭제하고 다시 쓰기"
+msgstr "삭제하고 다시 초안 쓰기…"
 
 #: content/ui/PostDelegate/PostPoll.qml:41
 #, kde-format
@@ -3984,7 +3979,7 @@ msgstr "태그"
 #, kde-format
 msgctxt "@action:button expand the number of shown tags"
 msgid "…and %1 more"
-msgstr ""
+msgstr "…그리고 %1개 더"
 
 #: content/ui/PostDelegate/QuotePost.qml:66
 #, kde-format
@@ -4488,9 +4483,7 @@ msgid "Create"
 msgstr "만들기"
 
 #: content/ui/Settings/EditFilterPage.qml:229
-#, fuzzy, kde-format
-#| msgctxt "@action:Button Save an edited a post"
-#| msgid "Save"
+#, kde-format
 msgctxt "@action:button Save the edited filter"
 msgid "Save"
 msgstr "저장"
@@ -5568,10 +5561,9 @@ msgid "Your emails"
 msgstr "kde@peremen.name"
 
 #: main.cpp:131
-#, fuzzy, kde-format
-#| msgid "Supports https, tokodon and web+ap url scheme"
+#, kde-format
 msgid "Supports https, and web+ap url schemes."
-msgstr "https, tokodon, web+ap: URL 형식 지원"
+msgstr "https와 web+ap URL 형식을 지원합니다."
 
 #: network/networkcontroller.cpp:307
 #, kde-format
@@ -5760,11 +5752,10 @@ msgid "Open Profile"
 msgstr "프로필 열기"
 
 #: tokodonapplication.cpp:180
-#, fuzzy, kde-format
-#| msgid "Account editor"
+#, kde-format
 msgctxt "@action:button"
 msgid "Open Account Switcher"
-msgstr "계정 편집기"
+msgstr "계정 전환기 열기"
 
 #: tokodonapplication.cpp:216
 #, kde-format
