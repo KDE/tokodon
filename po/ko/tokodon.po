@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-03 00:43+0000\n"
+"POT-Creation-Date: 2025-10-13 00:42+0000\n"
 "PO-Revision-Date: 2025-10-09 01:37+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -840,31 +840,24 @@ msgctxt "@title:window"
 msgid "Profile"
 msgstr "프로필"
 
-#: content/ui/AccountInfo.qml:52 content/ui/ExplorePage.qml:35
-#: content/ui/TimelinePage.qml:110
-#, kde-format
-msgctxt "@action:button"
-msgid "Post"
-msgstr "게시물"
-
-#: content/ui/AccountInfo.qml:137 content/ui/FollowingPage.qml:161
+#: content/ui/AccountInfo.qml:130 content/ui/FollowingPage.qml:161
 #, kde-format
 msgctxt "@label"
 msgid "No Posts"
 msgstr "게시물 없음"
 
-#: content/ui/AccountInfo.qml:138 content/ui/FollowingPage.qml:162
+#: content/ui/AccountInfo.qml:131 content/ui/FollowingPage.qml:162
 #, kde-format
 msgid "This user hasn't posted anything yet."
 msgstr "이 사용자의 게시물이 없습니다."
 
-#: content/ui/AccountInfo.qml:266
+#: content/ui/AccountInfo.qml:259
 #, kde-format
 msgctxt "@label"
 msgid "No Media"
 msgstr "미디어 없음"
 
-#: content/ui/AccountInfo.qml:267
+#: content/ui/AccountInfo.qml:260
 #, kde-format
 msgid "This user hasn't posted any media yet."
 msgstr "이 사용자가 게시한 미디어가 없습니다."
@@ -965,30 +958,37 @@ msgctxt "@info Last updated: relative date and time (e.g. 2 years ago)"
 msgid "Last updated: %1"
 msgstr "마지막 업데이트: %1"
 
-#: content/ui/Components/TimelineView.qml:66
+#: content/ui/Components/TimelineView.qml:82
+#, fuzzy, kde-format
+#| msgid "Create List"
+msgctxt "@action:button"
+msgid "Create Post"
+msgstr "리스트 만들기"
+
+#: content/ui/Components/TimelineView.qml:90
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Return to Top"
 msgstr "맨 위로 돌아가기"
 
-#: content/ui/Components/TimelineView.qml:130
+#: content/ui/Components/TimelineView.qml:174
 #, kde-format
 msgctxt "@info:status"
 msgid "Some replies are not available"
 msgstr "일부 답글을 사용할 수 없음"
 
-#: content/ui/Components/TimelineView.qml:131
+#: content/ui/Components/TimelineView.qml:175
 #, kde-format
 msgid "To view all replies, open the post on the original server."
 msgstr "모든 답글을 보려면 원본 서버에서 게시물을 여십시오."
 
-#: content/ui/Components/TimelineView.qml:134
+#: content/ui/Components/TimelineView.qml:178
 #, kde-format
 msgctxt "@action:button 'Browser' being a web browser"
 msgid "Open in Browser"
 msgstr "브라우저로 열기"
 
-#: content/ui/Components/TimelineView.qml:143
+#: content/ui/Components/TimelineView.qml:187
 #, kde-format
 msgctxt "@info:status"
 msgid "End of Timeline"
@@ -1152,51 +1152,51 @@ msgstr "이 리스트를 삭제하시겠습니까?"
 msgid "Explore"
 msgstr "탐색"
 
-#: content/ui/ExplorePage.qml:41 search/searchmodel.cpp:155
+#: content/ui/ExplorePage.qml:34 search/searchmodel.cpp:155
 #, kde-format
 msgid "Posts"
 msgstr "게시물"
 
-#: content/ui/ExplorePage.qml:47 search/searchmodel.cpp:153
+#: content/ui/ExplorePage.qml:40 search/searchmodel.cpp:153
 #, kde-format
 msgid "Hashtags"
 msgstr "해시태그"
 
-#: content/ui/ExplorePage.qml:53
+#: content/ui/ExplorePage.qml:46
 #, kde-format
 msgid "News"
 msgstr "뉴스"
 
-#: content/ui/ExplorePage.qml:59 search/searchmodel.cpp:151
+#: content/ui/ExplorePage.qml:52 search/searchmodel.cpp:151
 #, kde-format
 msgid "Users"
 msgstr "사용자"
 
-#: content/ui/ExplorePage.qml:117
+#: content/ui/ExplorePage.qml:110
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Posts"
 msgstr "게시물 없음"
 
-#: content/ui/ExplorePage.qml:144
+#: content/ui/ExplorePage.qml:137
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Tags"
 msgstr "태그 없음"
 
-#: content/ui/ExplorePage.qml:176
+#: content/ui/ExplorePage.qml:169
 #, kde-format
 msgid "%1 person is talking"
 msgid_plural "%1 people are talking"
 msgstr[0] "%1명이 대화 중"
 
-#: content/ui/ExplorePage.qml:268
+#: content/ui/ExplorePage.qml:261
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No News"
 msgstr "뉴스 없음"
 
-#: content/ui/ExplorePage.qml:305
+#: content/ui/ExplorePage.qml:298
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Users"
@@ -1214,7 +1214,7 @@ msgid "Following"
 msgstr "팔로잉"
 
 #: content/ui/FollowingPage.qml:41 content/ui/Settings/SafetyPage.qml:26
-#: content/ui/TimelinePage.qml:116
+#: content/ui/TimelinePage.qml:109
 #, kde-format
 msgctxt "@action:button"
 msgid "Filters"
@@ -1232,13 +1232,13 @@ msgctxt "@action:inmenu"
 msgid "Show Replies"
 msgstr "답장 표시"
 
-#: content/ui/FollowingPage.qml:65 content/ui/TimelinePage.qml:138
+#: content/ui/FollowingPage.qml:65 content/ui/TimelinePage.qml:131
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Configure Filters…"
 msgstr "필터 설정…"
 
-#: content/ui/FollowingPage.qml:66 content/ui/TimelinePage.qml:139
+#: content/ui/FollowingPage.qml:66 content/ui/TimelinePage.qml:132
 #, kde-format
 msgctxt "@title:window"
 msgid "Filters"
@@ -5399,23 +5399,23 @@ msgstr "불러오는 중"
 msgid "Home (%1)"
 msgstr "홈(%1)"
 
-#: content/ui/TimelinePage.qml:121
+#: content/ui/TimelinePage.qml:114
 #, kde-format
 msgid "Show Boosts"
 msgstr "부스트 표시"
 
-#: content/ui/TimelinePage.qml:128
+#: content/ui/TimelinePage.qml:121
 #, kde-format
 msgid "Show Replies"
 msgstr "답장 표시"
 
-#: content/ui/TimelinePage.qml:154
+#: content/ui/TimelinePage.qml:147
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
 msgstr "서버와 통신할 수 없음: %1. 설정을 확인하십시오."
 
-#: content/ui/TimelinePage.qml:194
+#: content/ui/TimelinePage.qml:188
 #, kde-format
 msgctxt "@action:button Load more posts above this"
 msgid "Load More"
@@ -5904,6 +5904,10 @@ msgstr[0] "%1개월 전"
 msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "%1년 전"
+
+#~ msgctxt "@action:button"
+#~ msgid "Post"
+#~ msgstr "게시물"
 
 #~ msgctxt "@action:button Edit the list"
 #~ msgid "Edit"

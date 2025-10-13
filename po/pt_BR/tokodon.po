@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-03 00:43+0000\n"
+"POT-Creation-Date: 2025-10-13 00:42+0000\n"
 "PO-Revision-Date: 2025-10-03 07:15-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -852,31 +852,24 @@ msgctxt "@title:window"
 msgid "Profile"
 msgstr "Perfil"
 
-#: content/ui/AccountInfo.qml:52 content/ui/ExplorePage.qml:35
-#: content/ui/TimelinePage.qml:110
-#, kde-format
-msgctxt "@action:button"
-msgid "Post"
-msgstr "Postagem"
-
-#: content/ui/AccountInfo.qml:137 content/ui/FollowingPage.qml:161
+#: content/ui/AccountInfo.qml:130 content/ui/FollowingPage.qml:161
 #, kde-format
 msgctxt "@label"
 msgid "No Posts"
 msgstr "Sem postagens"
 
-#: content/ui/AccountInfo.qml:138 content/ui/FollowingPage.qml:162
+#: content/ui/AccountInfo.qml:131 content/ui/FollowingPage.qml:162
 #, kde-format
 msgid "This user hasn't posted anything yet."
 msgstr "Este usuário ainda não postou nada."
 
-#: content/ui/AccountInfo.qml:266
+#: content/ui/AccountInfo.qml:259
 #, kde-format
 msgctxt "@label"
 msgid "No Media"
 msgstr "Nenhuma mídia"
 
-#: content/ui/AccountInfo.qml:267
+#: content/ui/AccountInfo.qml:260
 #, kde-format
 msgid "This user hasn't posted any media yet."
 msgstr "Este usuário ainda não postou nenhuma mídia."
@@ -977,30 +970,37 @@ msgctxt "@info Last updated: relative date and time (e.g. 2 years ago)"
 msgid "Last updated: %1"
 msgstr "Última atualização: %1"
 
-#: content/ui/Components/TimelineView.qml:66
+#: content/ui/Components/TimelineView.qml:82
+#, fuzzy, kde-format
+#| msgid "Create List"
+msgctxt "@action:button"
+msgid "Create Post"
+msgstr "Criar lista"
+
+#: content/ui/Components/TimelineView.qml:90
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Return to Top"
 msgstr "Retorna ao topo"
 
-#: content/ui/Components/TimelineView.qml:130
+#: content/ui/Components/TimelineView.qml:174
 #, kde-format
 msgctxt "@info:status"
 msgid "Some replies are not available"
 msgstr "Algumas respostas não estão disponíveis"
 
-#: content/ui/Components/TimelineView.qml:131
+#: content/ui/Components/TimelineView.qml:175
 #, kde-format
 msgid "To view all replies, open the post on the original server."
 msgstr "Para ver todas as respostas, abra a postagem no servidor original."
 
-#: content/ui/Components/TimelineView.qml:134
+#: content/ui/Components/TimelineView.qml:178
 #, kde-format
 msgctxt "@action:button 'Browser' being a web browser"
 msgid "Open in Browser"
 msgstr "Abrir no navegador"
 
-#: content/ui/Components/TimelineView.qml:143
+#: content/ui/Components/TimelineView.qml:187
 #, kde-format
 msgctxt "@info:status"
 msgid "End of Timeline"
@@ -1166,52 +1166,52 @@ msgstr "Tem certeza de que deseja excluir esta lista?"
 msgid "Explore"
 msgstr "Explorar"
 
-#: content/ui/ExplorePage.qml:41 search/searchmodel.cpp:155
+#: content/ui/ExplorePage.qml:34 search/searchmodel.cpp:155
 #, kde-format
 msgid "Posts"
 msgstr "Postagens"
 
-#: content/ui/ExplorePage.qml:47 search/searchmodel.cpp:153
+#: content/ui/ExplorePage.qml:40 search/searchmodel.cpp:153
 #, kde-format
 msgid "Hashtags"
 msgstr "Hashtags"
 
-#: content/ui/ExplorePage.qml:53
+#: content/ui/ExplorePage.qml:46
 #, kde-format
 msgid "News"
 msgstr "Novidades"
 
-#: content/ui/ExplorePage.qml:59 search/searchmodel.cpp:151
+#: content/ui/ExplorePage.qml:52 search/searchmodel.cpp:151
 #, kde-format
 msgid "Users"
 msgstr "Usuários"
 
-#: content/ui/ExplorePage.qml:117
+#: content/ui/ExplorePage.qml:110
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Posts"
 msgstr "Sem postagens"
 
-#: content/ui/ExplorePage.qml:144
+#: content/ui/ExplorePage.qml:137
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Tags"
 msgstr "Sem tags"
 
-#: content/ui/ExplorePage.qml:176
+#: content/ui/ExplorePage.qml:169
 #, kde-format
 msgid "%1 person is talking"
 msgid_plural "%1 people are talking"
 msgstr[0] "%1 pessoa está falando"
 msgstr[1] "%1 pessoas estão falando"
 
-#: content/ui/ExplorePage.qml:268
+#: content/ui/ExplorePage.qml:261
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No News"
 msgstr "Nenhuma novidade"
 
-#: content/ui/ExplorePage.qml:305
+#: content/ui/ExplorePage.qml:298
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Users"
@@ -1229,7 +1229,7 @@ msgid "Following"
 msgstr "Seguindo"
 
 #: content/ui/FollowingPage.qml:41 content/ui/Settings/SafetyPage.qml:26
-#: content/ui/TimelinePage.qml:116
+#: content/ui/TimelinePage.qml:109
 #, kde-format
 msgctxt "@action:button"
 msgid "Filters"
@@ -1247,13 +1247,13 @@ msgctxt "@action:inmenu"
 msgid "Show Replies"
 msgstr "Mostrar respostas"
 
-#: content/ui/FollowingPage.qml:65 content/ui/TimelinePage.qml:138
+#: content/ui/FollowingPage.qml:65 content/ui/TimelinePage.qml:131
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Configure Filters…"
 msgstr "Configurar filtros..."
 
-#: content/ui/FollowingPage.qml:66 content/ui/TimelinePage.qml:139
+#: content/ui/FollowingPage.qml:66 content/ui/TimelinePage.qml:132
 #, kde-format
 msgctxt "@title:window"
 msgid "Filters"
@@ -5438,23 +5438,23 @@ msgstr "Carregando"
 msgid "Home (%1)"
 msgstr "Início (%1)"
 
-#: content/ui/TimelinePage.qml:121
+#: content/ui/TimelinePage.qml:114
 #, kde-format
 msgid "Show Boosts"
 msgstr "Mostrar impulsionamentos"
 
-#: content/ui/TimelinePage.qml:128
+#: content/ui/TimelinePage.qml:121
 #, kde-format
 msgid "Show Replies"
 msgstr "Mostrar respostas"
 
-#: content/ui/TimelinePage.qml:154
+#: content/ui/TimelinePage.qml:147
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
 msgstr "Falha ao contatar o servidor: %1. Verifique suas configurações."
 
-#: content/ui/TimelinePage.qml:194
+#: content/ui/TimelinePage.qml:188
 #, kde-format
 msgctxt "@action:button Load more posts above this"
 msgid "Load More"
@@ -5947,6 +5947,10 @@ msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "1 ano atrás"
 msgstr[1] "%1 anos atrás"
+
+#~ msgctxt "@action:button"
+#~ msgid "Post"
+#~ msgstr "Postagem"
 
 #~ msgctxt "@action:button Edit the list"
 #~ msgid "Edit"

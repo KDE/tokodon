@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-03 00:43+0000\n"
+"POT-Creation-Date: 2025-10-13 00:42+0000\n"
 "PO-Revision-Date: 2025-10-03 18:12+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -857,31 +857,24 @@ msgctxt "@title:window"
 msgid "Profile"
 msgstr "Профіль"
 
-#: content/ui/AccountInfo.qml:52 content/ui/ExplorePage.qml:35
-#: content/ui/TimelinePage.qml:110
-#, kde-format
-msgctxt "@action:button"
-msgid "Post"
-msgstr "Надіслати"
-
-#: content/ui/AccountInfo.qml:137 content/ui/FollowingPage.qml:161
+#: content/ui/AccountInfo.qml:130 content/ui/FollowingPage.qml:161
 #, kde-format
 msgctxt "@label"
 msgid "No Posts"
 msgstr "Немає дописів"
 
-#: content/ui/AccountInfo.qml:138 content/ui/FollowingPage.qml:162
+#: content/ui/AccountInfo.qml:131 content/ui/FollowingPage.qml:162
 #, kde-format
 msgid "This user hasn't posted anything yet."
 msgstr "Цей користувач ще не створював дописів."
 
-#: content/ui/AccountInfo.qml:266
+#: content/ui/AccountInfo.qml:259
 #, kde-format
 msgctxt "@label"
 msgid "No Media"
 msgstr "Немає мультимедійних даних"
 
-#: content/ui/AccountInfo.qml:267
+#: content/ui/AccountInfo.qml:260
 #, kde-format
 msgid "This user hasn't posted any media yet."
 msgstr "Цей користувач ще не додавав мультимедійних даних до дописів."
@@ -982,30 +975,37 @@ msgctxt "@info Last updated: relative date and time (e.g. 2 years ago)"
 msgid "Last updated: %1"
 msgstr "Останнє оновлення: %1"
 
-#: content/ui/Components/TimelineView.qml:66
+#: content/ui/Components/TimelineView.qml:82
+#, fuzzy, kde-format
+#| msgid "Create List"
+msgctxt "@action:button"
+msgid "Create Post"
+msgstr "Створити список"
+
+#: content/ui/Components/TimelineView.qml:90
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Return to Top"
 msgstr "Повернутися до початку"
 
-#: content/ui/Components/TimelineView.qml:130
+#: content/ui/Components/TimelineView.qml:174
 #, kde-format
 msgctxt "@info:status"
 msgid "Some replies are not available"
 msgstr "Деякі відповіді недоступні"
 
-#: content/ui/Components/TimelineView.qml:131
+#: content/ui/Components/TimelineView.qml:175
 #, kde-format
 msgid "To view all replies, open the post on the original server."
 msgstr "Щоб переглянути усі відповіді, відкрийте допис на початковому сервері."
 
-#: content/ui/Components/TimelineView.qml:134
+#: content/ui/Components/TimelineView.qml:178
 #, kde-format
 msgctxt "@action:button 'Browser' being a web browser"
 msgid "Open in Browser"
 msgstr "Відкрити у переглядачі"
 
-#: content/ui/Components/TimelineView.qml:143
+#: content/ui/Components/TimelineView.qml:187
 #, kde-format
 msgctxt "@info:status"
 msgid "End of Timeline"
@@ -1170,39 +1170,39 @@ msgstr "Ви справді хочете вилучити цей список?"
 msgid "Explore"
 msgstr "Ознайомлення"
 
-#: content/ui/ExplorePage.qml:41 search/searchmodel.cpp:155
+#: content/ui/ExplorePage.qml:34 search/searchmodel.cpp:155
 #, kde-format
 msgid "Posts"
 msgstr "Дописи"
 
-#: content/ui/ExplorePage.qml:47 search/searchmodel.cpp:153
+#: content/ui/ExplorePage.qml:40 search/searchmodel.cpp:153
 #, kde-format
 msgid "Hashtags"
 msgstr "Хештеґи"
 
-#: content/ui/ExplorePage.qml:53
+#: content/ui/ExplorePage.qml:46
 #, kde-format
 msgid "News"
 msgstr "Новини"
 
-#: content/ui/ExplorePage.qml:59 search/searchmodel.cpp:151
+#: content/ui/ExplorePage.qml:52 search/searchmodel.cpp:151
 #, kde-format
 msgid "Users"
 msgstr "Користувачі"
 
-#: content/ui/ExplorePage.qml:117
+#: content/ui/ExplorePage.qml:110
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Posts"
 msgstr "Немає дописів"
 
-#: content/ui/ExplorePage.qml:144
+#: content/ui/ExplorePage.qml:137
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Tags"
 msgstr "Немає міток"
 
-#: content/ui/ExplorePage.qml:176
+#: content/ui/ExplorePage.qml:169
 #, kde-format
 msgid "%1 person is talking"
 msgid_plural "%1 people are talking"
@@ -1211,13 +1211,13 @@ msgstr[1] "Розмовляє %1 людей"
 msgstr[2] "Розмовляє %1 людей"
 msgstr[3] "Розмовляє %1 людина"
 
-#: content/ui/ExplorePage.qml:268
+#: content/ui/ExplorePage.qml:261
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No News"
 msgstr "Немає новин"
 
-#: content/ui/ExplorePage.qml:305
+#: content/ui/ExplorePage.qml:298
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Users"
@@ -1235,7 +1235,7 @@ msgid "Following"
 msgstr "Стеження"
 
 #: content/ui/FollowingPage.qml:41 content/ui/Settings/SafetyPage.qml:26
-#: content/ui/TimelinePage.qml:116
+#: content/ui/TimelinePage.qml:109
 #, kde-format
 msgctxt "@action:button"
 msgid "Filters"
@@ -1253,13 +1253,13 @@ msgctxt "@action:inmenu"
 msgid "Show Replies"
 msgstr "Показати відповіді"
 
-#: content/ui/FollowingPage.qml:65 content/ui/TimelinePage.qml:138
+#: content/ui/FollowingPage.qml:65 content/ui/TimelinePage.qml:131
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Configure Filters…"
 msgstr "Налаштувати фільтри…"
 
-#: content/ui/FollowingPage.qml:66 content/ui/TimelinePage.qml:139
+#: content/ui/FollowingPage.qml:66 content/ui/TimelinePage.qml:132
 #, kde-format
 msgctxt "@title:window"
 msgid "Filters"
@@ -5464,17 +5464,17 @@ msgstr "Завантаження"
 msgid "Home (%1)"
 msgstr "Домівка (%1)"
 
-#: content/ui/TimelinePage.qml:121
+#: content/ui/TimelinePage.qml:114
 #, kde-format
 msgid "Show Boosts"
 msgstr "Показати підсилення"
 
-#: content/ui/TimelinePage.qml:128
+#: content/ui/TimelinePage.qml:121
 #, kde-format
 msgid "Show Replies"
 msgstr "Показати відповіді"
 
-#: content/ui/TimelinePage.qml:154
+#: content/ui/TimelinePage.qml:147
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
@@ -5482,7 +5482,7 @@ msgstr ""
 "Не вдалося зв'язатися з сервером: %1. Будь ласка, перевірте, чи правильно "
 "задано параметри."
 
-#: content/ui/TimelinePage.qml:194
+#: content/ui/TimelinePage.qml:188
 #, kde-format
 msgctxt "@action:button Load more posts above this"
 msgid "Load More"
@@ -5983,6 +5983,10 @@ msgstr[0] "%1 рік тому"
 msgstr[1] "%1 роки тому"
 msgstr[2] "%1 років тому"
 msgstr[3] "1 рік тому"
+
+#~ msgctxt "@action:button"
+#~ msgid "Post"
+#~ msgstr "Надіслати"
 
 #~ msgctxt "@action:button Edit the list"
 #~ msgid "Edit"
