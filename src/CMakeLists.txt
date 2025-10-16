@@ -443,10 +443,6 @@ if (TARGET KUnifiedPush)
     target_link_libraries(tokodon_static PUBLIC KUnifiedPush)
 endif()
 
-if (TARGET KF6::IconThemes)
-    target_link_libraries(tokodon_static PUBLIC KF6::IconThemes)
-endif()
-
 if (SAILFISHOS)
     target_compile_definitions(tokodon_static PUBLIC -DSAILFISHOS)
 endif()
@@ -468,11 +464,7 @@ add_executable(tokodon
 )
 
 target_include_directories(tokodon PRIVATE ${CMAKE_BINARY_DIR})
-target_link_libraries(tokodon PRIVATE tokodon_static tokodon_staticplugin)
-
-if (TARGET KF6::Crash)
-    target_link_libraries(tokodon PUBLIC KF6::Crash)
-endif()
+target_link_libraries(tokodon PRIVATE tokodon_static tokodon_staticplugin KirigamiApp)
 
 if(ANDROID)
     target_link_libraries(tokodon PRIVATE Qt::Svg OpenSSL::SSL)
@@ -482,7 +474,6 @@ if(ANDROID)
 else()
     target_link_libraries(tokodon PRIVATE Qt::Widgets)
 endif()
-
 
 if (TARGET KF6::DBusAddons AND NOT HAIKU)
     target_link_libraries(tokodon PRIVATE KF6::DBusAddons KF6::WindowSystem)
@@ -511,7 +502,7 @@ if(BUILD_TESTING AND NOT ANDRIOID)
             main.cpp
             autotests/mockaccount.cpp)
     target_compile_definitions(tokodon-offline PUBLIC TEST_MODE=1)
-    target_link_libraries(tokodon-offline PRIVATE tokodon_static tokodon_staticplugin Qt::Widgets)
+    target_link_libraries(tokodon-offline PRIVATE tokodon_static tokodon_staticplugin Qt::Widgets KirigamiApp)
     target_include_directories(tokodon-offline PRIVATE ${CMAKE_BINARY_DIR})
 
     if (TARGET KF6::DBusAddons)

@@ -16,7 +16,6 @@
 #include <QGuiApplication>
 #else
 #include <QApplication>
-#include <KIconTheme>
 #endif
 
 #ifdef HAVE_KDBUSADDONS
@@ -24,8 +23,8 @@
 #include <KWindowSystem>
 #include <QDBusConnection>
 #endif
-#include <KLocalizedQmlContext>
 #include <KLocalizedString>
+#include <KirigamiApp>
 
 #include <QNetworkProxyFactory>
 
@@ -41,17 +40,9 @@
 #include "utils/blurhashimageprovider.h"
 #include "utils/colorschemer.h"
 
-#ifdef Q_OS_WINDOWS
-#include <Windows.h>
-#endif
-
 #ifdef TEST_MODE
 #include "autotests/helperreply.h"
 #include "autotests/mockaccount.h"
-#endif
-
-#if __has_include("KCrash")
-#include <KCrash>
 #endif
 
 using namespace Qt::Literals::StringLiterals;
@@ -67,36 +58,18 @@ int main(int argc, char *argv[])
     QtWebView::initialize();
 #endif
 
+    KirigamiApp::App app(argc, argv);
+    KirigamiApp kapp;
+
 #ifdef Q_OS_ANDROID
-    QGuiApplication app(argc, argv);
     app.connect(&app, &QGuiApplication::applicationStateChanged, [](Qt::ApplicationState state) {
         if (state == Qt::ApplicationActive) {
             AndroidUtils::instance().checkPendingIntents();
         }
     });
-    QQuickStyle::setStyle(QStringLiteral("org.kde.breeze"));
-#else
-    KIconTheme::initTheme();
-    QApplication app(argc, argv);
-    // Default to org.kde.desktop style unless the user forces another style
-    if (qEnvironmentVariableIsEmpty("QT_QUICK_CONTROLS_STYLE")) {
-        QQuickStyle::setStyle(QStringLiteral("org.kde.desktop"));
-    }
 #endif
 
-#ifdef Q_OS_WINDOWS
-    if (AttachConsole(ATTACH_PARENT_PROCESS)) {
-        freopen("CONOUT$", "w", stdout);
-        freopen("CONOUT$", "w", stderr);
-    }
-
-    QApplication::setStyle(QStringLiteral("breeze"));
-    auto font = app.font();
-    font.setPointSize(10);
-    app.setFont(font);
-#endif
     KLocalizedString::setApplicationDomain(QByteArrayLiteral("tokodon"));
-
     QCoreApplication::setOrganizationName(QStringLiteral("KDE"));
 
     KAboutData about(QStringLiteral("tokodon"),
@@ -121,10 +94,6 @@ int main(int argc, char *argv[])
 
     KAboutData::setApplicationData(about);
     QGuiApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("org.kde.tokodon")));
-
-#if __has_include("KCrash")
-    KCrash::initialize();
-#endif
 
     QCommandLineParser parser;
     parser.setApplicationDescription(i18n("Browse the Fediverse"));
@@ -210,8 +179,6 @@ int main(int argc, char *argv[])
         }
     });
 #endif
-    KLocalization::setupLocalizedContext(&engine);
-
     NetworkAccessManagerFactory namFactory;
     engine.setNetworkAccessManagerFactory(&namFactory);
 
@@ -245,11 +212,11 @@ int main(int argc, char *argv[])
 #endif
 
     if (parser.isSet(shareOption)) {
-        engine.loadFromModule("org.kde.tokodon", "StandaloneComposer");
+        kapp.start("org.kde.tokodon", "StandaloneComposer", &engine);
 
         NetworkController::instance().startComposing(parser.value(shareOption));
     } else {
-        engine.loadFromModule("org.kde.tokodon", "Main");
+        kapp.start("org.kde.tokodon", "Main", &engine);
 
         if (!parser.positionalArguments().empty()) {
             NetworkController::instance().openWebApLink(parser.positionalArguments()[0]);

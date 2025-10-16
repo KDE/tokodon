@@ -48,20 +48,7 @@ set_package_properties(KF6 PROPERTIES
     PURPOSE "Required application components"
 )
 
-find_package(KF6Crash ${KF_MIN_VERSION})
-set_package_properties(KF6Crash PROPERTIES
-        TYPE OPTIONAL
-        PURPOSE "For crash handling"
-)
-if (NOT ANDROID)
-    find_package(KF6 ${KF_MIN_VERSION} COMPONENTS IconThemes)
-    set_package_properties(KF6 PROPERTIES
-        TYPE REQUIRED
-        PURPOSE "Required application components"
-    )
-endif()
-
-find_package(KF6KirigamiAddons 1.1.0)
+find_package(KF6KirigamiAddons 1.10.0)
 set_package_properties(KF6KirigamiAddons PROPERTIES
     TYPE REQUIRED
     PURPOSE "Required application components and runtime dependency"
