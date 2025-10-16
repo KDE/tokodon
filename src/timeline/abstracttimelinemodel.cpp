@@ -196,7 +196,7 @@ void AbstractTimelineModel::actionFavorite(const QModelIndex &index, Post *post)
         post->setFavourited(false);
     }
 
-    Q_EMIT dataChanged(index, index, {FavouritedRole});
+    Q_EMIT dataChanged(index, index, {FavouritedRole, FavouritesCountRole});
 }
 
 void AbstractTimelineModel::actionRepeat(const QModelIndex &index, Post *post)
@@ -209,7 +209,7 @@ void AbstractTimelineModel::actionRepeat(const QModelIndex &index, Post *post)
         post->setReblogged(false);
     }
 
-    Q_EMIT dataChanged(index, index, {RebloggedRole});
+    Q_EMIT dataChanged(index, index, {RebloggedRole, ReblogsCountRole});
 }
 
 void AbstractTimelineModel::actionRedraft(const QModelIndex &index, Post *post, bool isEdit)
