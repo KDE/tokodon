@@ -344,6 +344,11 @@ bool Post::favourited() const
 void Post::setFavourited(bool favourited)
 {
     m_favourited = favourited;
+    if (favourited) {
+        m_favouritesCount++;
+    } else {
+        m_favouritesCount--;
+    }
 }
 
 bool Post::reblogged() const
@@ -354,6 +359,11 @@ bool Post::reblogged() const
 void Post::setReblogged(bool reblogged)
 {
     m_reblogged = reblogged;
+    if (reblogged) {
+        m_reblogsCount++;
+    } else {
+        m_reblogsCount--;
+    }
 }
 
 bool Post::bookmarked() const
