@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-17 00:42+0000\n"
-"PO-Revision-Date: 2025-07-17 17:59+0300\n"
+"PO-Revision-Date: 2025-10-15 19:20+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: account/abstractaccount.cpp:33
 #, kde-format
@@ -961,11 +961,10 @@ msgid "Last updated: %1"
 msgstr "Viimeksi päivitetty: %1"
 
 #: content/ui/Components/TimelineView.qml:82
-#, fuzzy, kde-format
-#| msgid "Create List"
+#, kde-format
 msgctxt "@action:button"
 msgid "Create Post"
-msgstr "Luo luettelo"
+msgstr "Luo viesti"
 
 #: content/ui/Components/TimelineView.qml:90
 #, kde-format
@@ -1126,9 +1125,7 @@ msgid "Create"
 msgstr "Luo"
 
 #: content/ui/EditListPage.qml:255
-#, fuzzy, kde-format
-#| msgctxt "@action:Button Save an edited a post"
-#| msgid "Save"
+#, kde-format
 msgctxt "@action:button Save the edited list"
 msgid "Save"
 msgstr "Tallenna"
@@ -3629,17 +3626,16 @@ msgstr[0] "%1 tehostus"
 msgstr[1] "%1 tehostusta"
 
 #: content/ui/PostDelegate/InformationBar.qml:139
-#, fuzzy, kde-format
-#| msgid "(No votes)"
+#, kde-format
 msgid "No quotes"
-msgstr "(Ei ääniä)"
+msgstr "Ei lainauksia"
 
 #: content/ui/PostDelegate/InformationBar.qml:141
 #, kde-format
 msgid "%1 quotes"
 msgid_plural "%1 quotes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 lainaus"
+msgstr[1] "%1 lainausta"
 
 #: content/ui/PostDelegate/LinkMenu.qml:33
 #: content/ui/PostDelegate/PostMenu.qml:59
@@ -3948,16 +3944,14 @@ msgid "Edit"
 msgstr "Muokkaa"
 
 #: content/ui/PostDelegate/PostMenu.qml:209
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgid "Delete…"
-msgstr "Poista"
+msgstr "Poista…"
 
 #: content/ui/PostDelegate/PostMenu.qml:217
-#, fuzzy, kde-format
-#| msgid "Delete & Re-draft"
+#, kde-format
 msgid "Delete & Re-draft…"
-msgstr "Poista ja kirjoita uudelleen"
+msgstr "Poista ja luonnostele uudelleen…"
 
 #: content/ui/PostDelegate/PostPoll.qml:41
 #, kde-format
@@ -4001,7 +3995,7 @@ msgstr "Luokitus"
 #, kde-format
 msgctxt "@action:button expand the number of shown tags"
 msgid "…and %1 more"
-msgstr ""
+msgstr "…ja %1 lisää"
 
 #: content/ui/PostDelegate/QuotePost.qml:66
 #, kde-format
@@ -4504,9 +4498,7 @@ msgid "Create"
 msgstr "Luo"
 
 #: content/ui/Settings/EditFilterPage.qml:229
-#, fuzzy, kde-format
-#| msgctxt "@action:Button Save an edited a post"
-#| msgid "Save"
+#, kde-format
 msgctxt "@action:button Save the edited filter"
 msgid "Save"
 msgstr "Tallenna"
@@ -5585,10 +5577,9 @@ msgid "Your emails"
 msgstr "translator@legisign.org"
 
 #: main.cpp:100
-#, fuzzy, kde-format
-#| msgid "Supports https, tokodon and web+ap url scheme"
+#, kde-format
 msgid "Supports https, and web+ap url schemes."
-msgstr "Tukee https-, tokodon- ja web+ap-verkko-osoitemalleja"
+msgstr "Tukee https- ja web+ap-verkko-osoitemalleja"
 
 #: network/networkcontroller.cpp:307
 #, kde-format
@@ -5778,11 +5769,10 @@ msgid "Open Profile"
 msgstr "Avaa profiili"
 
 #: tokodonapplication.cpp:180
-#, fuzzy, kde-format
-#| msgid "Account editor"
+#, kde-format
 msgctxt "@action:button"
 msgid "Open Account Switcher"
-msgstr "Tilimuokkain"
+msgstr "Avaa tilinvaihto"
 
 #: tokodonapplication.cpp:216
 #, kde-format
