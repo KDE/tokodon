@@ -46,6 +46,7 @@ QQC2.ItemDelegate {
 
         maximumWidth: Kirigami.Units.gridUnit * 40
         spacing: 0
+        padding: 0
 
         RowLayout {
             spacing: Kirigami.Units.smallSpacing

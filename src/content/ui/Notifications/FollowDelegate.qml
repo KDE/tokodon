@@ -6,10 +6,11 @@ import QtQuick.Controls 2 as QQC2
 import QtQuick.Layouts
 import Qt.labs.qmlmodels 1.0
 import org.kde.kirigami 2 as Kirigami
+import org.kde.kirigamiaddons.statefulapp as StatefulApp
 import org.kde.tokodon
 
-import "./PostDelegate"
-import "./Components"
+import "../PostDelegate"
+import "../Components"
 
 QQC2.ItemDelegate {
     id: root
@@ -21,11 +22,18 @@ QQC2.ItemDelegate {
 
     required property var type
     readonly property bool isAdminSignUp: type === Notification.AdminSignUp
+    readonly property bool isFollowRequest: type === Notification.FollowRequest
 
-    topPadding: Kirigami.Units.smallSpacing
-    bottomPadding: Kirigami.Units.largeSpacing * 2
-    leftPadding: Kirigami.Units.largeSpacing * 2
-    rightPadding: Kirigami.Units.largeSpacing * 2
+    padding: 0
+    topPadding: Kirigami.Units.largeSpacing
+    bottomPadding: Kirigami.Units.largeSpacing
+    leftPadding: Kirigami.Units.largeSpacing
+    rightPadding: Kirigami.Units.largeSpacing
+
+    topInset: 0
+    leftInset: 0
+    rightInset: 0
+    bottomInset: 0
 
     highlighted: false
     hoverEnabled: false
@@ -49,7 +57,8 @@ QQC2.ItemDelegate {
         id: flexColumn
 
         maximumWidth: Kirigami.Units.gridUnit * 40
-        spacing: 0
+        spacing: Kirigami.Units.largeSpacing
+        padding: 0
 
         RowLayout {
             spacing: Kirigami.Units.smallSpacing
@@ -65,8 +74,10 @@ QQC2.ItemDelegate {
 
             QQC2.Label {
                 font: Config.defaultFont
-                text: if (isAdminSignUp) {
+                text: if (root.isAdminSignUp) {
                     i18n("%1 signed up", root.notificationActorIdentity.displayNameHtml)
+                } else if(root.isFollowRequest) {
+                    i18n("%1 requested to follow you", root.notificationActorIdentity.displayNameHtml)
                 } else {
                     i18n("%1 followed you", root.notificationActorIdentity.displayNameHtml)
                 }
@@ -90,6 +101,14 @@ QQC2.ItemDelegate {
 
             Kirigami.Theme.colorSet: Kirigami.Theme.Window
             Kirigami.Theme.inherit: false
+        }
+
+        QQC2.Button {
+            text: i18nc("@action:button", "Manage Follow Requests")
+            icon.name: "list-add-user"
+            onClicked: (root.QQC2.ApplicationWindow.window as StatefulApp.StatefulWindow)?.application.action("follow_requests").trigger()
+
+            Layout.fillWidth: true
         }
     }
 }

@@ -20,7 +20,7 @@ Kirigami.ScrollablePage {
     property var dialog: null
 
     property alias listViewHeader: listview.header
-    readonly property bool typesAreGroupable: showAllAction.checked
+    readonly property bool typesAreGroupable: notificationModel.excludeTypes === []
     property bool shouldGroupNotifications: typesAreGroupable
     readonly property var currentModel: shouldGroupNotifications ? groupedNotificationModel : notificationModel
 
@@ -243,6 +243,11 @@ Kirigami.ScrollablePage {
             }
 
             DelegateChoice {
+                roleValue: Notification.FollowRequest
+                FollowDelegate {}
+            }
+
+            DelegateChoice {
                 roleValue: Notification.Update
                 PostDelegate {
                     width: ListView.view.width
@@ -258,11 +263,10 @@ Kirigami.ScrollablePage {
                 roleValue: Notification.Status
                 PostDelegate {
                     width: ListView.view.width
-                    secondary: true
+                    secondary: false
                     timelineModel: groupedNotificationModel
                     loading: listview.model.loading
                     showSeparator: index !== ListView.view.count - 1
-                    showInteractionButton: false
                 }
             }
 
@@ -301,6 +305,11 @@ Kirigami.ScrollablePage {
             DelegateChoice {
                 roleValue: Notification.AnnualReport
                 AnnualReportDelegate {}
+            }
+
+            // If we don't have this, any unknown notification will prevent loading the entire notification page
+            DelegateChoice {
+                UnknownNotificationDelegate {}
             }
         }
 
