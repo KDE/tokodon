@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-17 00:42+0000\n"
+"POT-Creation-Date: 2025-10-23 00:42+0000\n"
 "PO-Revision-Date: 2025-10-13 22:33+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -181,12 +181,14 @@ msgstr "%1 skev ett nytt inlägg"
 msgid "%1 boosted your post"
 msgstr "%1 förstärkte ditt inlägg"
 
-#: account/notificationhandler.cpp:103 content/ui/FollowDelegate.qml:71
+#: account/notificationhandler.cpp:103
+#: content/ui/Notifications/FollowDelegate.qml:82
 #, kde-format
 msgid "%1 followed you"
 msgstr "%1 följer dig"
 
 #: account/notificationhandler.cpp:111
+#: content/ui/Notifications/FollowDelegate.qml:80
 #, kde-format
 msgid "%1 requested to follow you"
 msgstr "%1 begärde att få följa dig"
@@ -1205,11 +1207,6 @@ msgstr "Inga nyheter"
 msgctxt "@info:placeholder"
 msgid "No Users"
 msgstr "Inga användare"
-
-#: content/ui/FollowDelegate.qml:69
-#, kde-format
-msgid "%1 signed up"
-msgstr "%1 registrerade sig"
 
 #: content/ui/FollowingPage.qml:20
 #, kde-format
@@ -3365,12 +3362,12 @@ msgctxt "@info:label Previous notifications"
 msgid "Previous"
 msgstr "Föregående"
 
-#: content/ui/NotificationPage.qml:315
+#: content/ui/NotificationPage.qml:324
 #, kde-format
 msgid "No Notifications"
 msgstr "Inga underrättelser"
 
-#: content/ui/NotificationPage.qml:316
+#: content/ui/NotificationPage.qml:325
 #, kde-format
 msgid ""
 "You have no notifications yet. When people reply, favorite or boost your "
@@ -3379,12 +3376,12 @@ msgstr ""
 "Du har inga underrättelser ännu. När personer svarar, favoritmarkerar eller "
 "förstärker dina inlägg dyker de upp här."
 
-#: content/ui/Notifications/AccountWarningDelegate.qml:66
+#: content/ui/Notifications/AccountWarningDelegate.qml:67
 #, kde-format
 msgid "%1 has issued a warning against your account"
 msgstr "%1 har utfärdat en varning mot ditt konto"
 
-#: content/ui/Notifications/AnnualReportDelegate.qml:63
+#: content/ui/Notifications/AnnualReportDelegate.qml:64
 #, kde-kuit-format
 msgctxt ""
 "@info:label this is used for notifications, when an annual report is "
@@ -3398,11 +3395,24 @@ msgstr ""
 "Din %1 #FediWrapped väntar. Avslöja årets höjdpunkter och minnesvärda "
 "stunder på Mastodon."
 
-#: content/ui/Notifications/AnnualReportDelegate.qml:70
+#: content/ui/Notifications/AnnualReportDelegate.qml:71
 #, kde-format
 msgctxt "@action:button"
 msgid "View #FediWrapped"
 msgstr "Visa #FediWrapped"
+
+#: content/ui/Notifications/FollowDelegate.qml:78
+#, kde-format
+msgid "%1 signed up"
+msgstr "%1 registrerade sig"
+
+#: content/ui/Notifications/FollowDelegate.qml:107
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Follow Requests"
+msgctxt "@action:button"
+msgid "Manage Follow Requests"
+msgstr "Förfrågan om att följa"
 
 #: content/ui/Notifications/GroupInteractionLabel.qml:64
 #, kde-format
@@ -3431,7 +3441,7 @@ msgstr "Normal status"
 msgid "Spoiler Status"
 msgstr "Spoilerstatus"
 
-#: content/ui/Notifications/RelationshipSeveranceDelegate.qml:62
+#: content/ui/Notifications/RelationshipSeveranceDelegate.qml:63
 #, kde-kuit-format
 msgctxt "@info:label"
 msgid ""
@@ -3441,11 +3451,19 @@ msgstr ""
 "Moderering har blockerat <b>%1</b>, inklusive %2 av dina följare och %3 "
 "konton som du följer."
 
-#: content/ui/Notifications/ReportDelegate.qml:61
+#: content/ui/Notifications/ReportDelegate.qml:62
 #, kde-format
 msgctxt "@info:label"
 msgid "A report has been filed against a user in your server."
 msgstr "En rapport har lämnats mot en användare på din server."
+
+#: content/ui/Notifications/UnknownNotificationDelegate.qml:48
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Unknown Action"
+msgctxt "@info"
+msgid "Unknown notification"
+msgstr "Okänd åtgärd"
 
 #: content/ui/Notifications/UserInteractionLabel.qml:85
 #, kde-format

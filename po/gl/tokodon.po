@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-17 00:42+0000\n"
+"POT-Creation-Date: 2025-10-23 00:42+0000\n"
 "PO-Revision-Date: 2025-06-21 10:34+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -183,12 +183,14 @@ msgstr "%1 escribiu unha nova publicación"
 msgid "%1 boosted your post"
 msgstr "%1 promoveu a túa publicación"
 
-#: account/notificationhandler.cpp:103 content/ui/FollowDelegate.qml:71
+#: account/notificationhandler.cpp:103
+#: content/ui/Notifications/FollowDelegate.qml:82
 #, kde-format
 msgid "%1 followed you"
 msgstr "%1 seguiulle"
 
 #: account/notificationhandler.cpp:111
+#: content/ui/Notifications/FollowDelegate.qml:80
 #, kde-format
 msgid "%1 requested to follow you"
 msgstr "%1 solicitou seguir a vostede"
@@ -1211,11 +1213,6 @@ msgstr "Non hai novas"
 msgctxt "@info:placeholder"
 msgid "No Users"
 msgstr "Non hai xente"
-
-#: content/ui/FollowDelegate.qml:69
-#, kde-format
-msgid "%1 signed up"
-msgstr "%1 rexistrouse"
 
 #: content/ui/FollowingPage.qml:20
 #, kde-format
@@ -3377,12 +3374,12 @@ msgctxt "@info:label Previous notifications"
 msgid "Previous"
 msgstr "Anteriores"
 
-#: content/ui/NotificationPage.qml:315
+#: content/ui/NotificationPage.qml:324
 #, kde-format
 msgid "No Notifications"
 msgstr "Sen Notificacións"
 
-#: content/ui/NotificationPage.qml:316
+#: content/ui/NotificationPage.qml:325
 #, kde-format
 msgid ""
 "You have no notifications yet. When people reply, favorite or boost your "
@@ -3391,13 +3388,13 @@ msgstr ""
 "Aínda non ten notificacións. Cando alguén responda a unha das publicacións, "
 "a marque como favorita ou a promova, aparecerá unha notificación aquí."
 
-#: content/ui/Notifications/AccountWarningDelegate.qml:66
+#: content/ui/Notifications/AccountWarningDelegate.qml:67
 #, kde-format
 msgid "%1 has issued a warning against your account"
 msgstr "%1 emitiu un aviso sobre a súa conta."
 
 # skip-rule: trasno-highlight
-#: content/ui/Notifications/AnnualReportDelegate.qml:63
+#: content/ui/Notifications/AnnualReportDelegate.qml:64
 #, kde-kuit-format
 msgctxt ""
 "@info:label this is used for notifications, when an annual report is "
@@ -3411,11 +3408,24 @@ msgstr ""
 "O seu #FediWrapped de %1 está listo! Revele o salientábel e memorábel do seu "
 "último ano en Mastodon!"
 
-#: content/ui/Notifications/AnnualReportDelegate.qml:70
+#: content/ui/Notifications/AnnualReportDelegate.qml:71
 #, kde-format
 msgctxt "@action:button"
 msgid "View #FediWrapped"
 msgstr "Ver o #FediWrapped"
+
+#: content/ui/Notifications/FollowDelegate.qml:78
+#, kde-format
+msgid "%1 signed up"
+msgstr "%1 rexistrouse"
+
+#: content/ui/Notifications/FollowDelegate.qml:107
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Follow Requests"
+msgctxt "@action:button"
+msgid "Manage Follow Requests"
+msgstr "Solicitudes de seguimento"
 
 #: content/ui/Notifications/GroupInteractionLabel.qml:64
 #, kde-format
@@ -3444,7 +3454,7 @@ msgstr "Estado normal"
 msgid "Spoiler Status"
 msgstr "Estado de revelación"
 
-#: content/ui/Notifications/RelationshipSeveranceDelegate.qml:62
+#: content/ui/Notifications/RelationshipSeveranceDelegate.qml:63
 #, kde-kuit-format
 msgctxt "@info:label"
 msgid ""
@@ -3454,11 +3464,19 @@ msgstr ""
 "A moderación bloqueou a <b>%1</b>, incluídas %2 das súas seguidoras e %3 "
 "contas seguidas."
 
-#: content/ui/Notifications/ReportDelegate.qml:61
+#: content/ui/Notifications/ReportDelegate.qml:62
 #, kde-format
 msgctxt "@info:label"
 msgid "A report has been filed against a user in your server."
 msgstr "Entregouse un informe contra unha persoa do seu servidor."
+
+#: content/ui/Notifications/UnknownNotificationDelegate.qml:48
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Unknown Action"
+msgctxt "@info"
+msgid "Unknown notification"
+msgstr "Acción descoñecida"
 
 #: content/ui/Notifications/UserInteractionLabel.qml:85
 #, kde-format

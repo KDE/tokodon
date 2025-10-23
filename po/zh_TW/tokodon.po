@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-17 00:42+0000\n"
+"POT-Creation-Date: 2025-10-23 00:42+0000\n"
 "PO-Revision-Date: 2025-09-25 01:52+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -184,12 +184,14 @@ msgstr "%1 撰寫了新的嘟文"
 msgid "%1 boosted your post"
 msgstr "%1 轉嘟了您的嘟文"
 
-#: account/notificationhandler.cpp:103 content/ui/FollowDelegate.qml:71
+#: account/notificationhandler.cpp:103
+#: content/ui/Notifications/FollowDelegate.qml:82
 #, kde-format
 msgid "%1 followed you"
 msgstr "%1 已跟隨您"
 
 #: account/notificationhandler.cpp:111
+#: content/ui/Notifications/FollowDelegate.qml:80
 #, kde-format
 msgid "%1 requested to follow you"
 msgstr "%1 已請求跟隨您"
@@ -1187,11 +1189,6 @@ msgstr "沒有新聞"
 msgctxt "@info:placeholder"
 msgid "No Users"
 msgstr "沒有使用者"
-
-#: content/ui/FollowDelegate.qml:69
-#, kde-format
-msgid "%1 signed up"
-msgstr "%1 已註冊"
 
 #: content/ui/FollowingPage.qml:20
 #, kde-format
@@ -3326,24 +3323,24 @@ msgctxt "@info:label Previous notifications"
 msgid "Previous"
 msgstr "先前的"
 
-#: content/ui/NotificationPage.qml:315
+#: content/ui/NotificationPage.qml:324
 #, kde-format
 msgid "No Notifications"
 msgstr "沒有通知"
 
-#: content/ui/NotificationPage.qml:316
+#: content/ui/NotificationPage.qml:325
 #, kde-format
 msgid ""
 "You have no notifications yet. When people reply, favorite or boost your "
 "posts they will show up here."
 msgstr "您還沒有通知。當別人回覆、最愛或轉嘟您的嘟文的時候會作為通知顯示在此。"
 
-#: content/ui/Notifications/AccountWarningDelegate.qml:66
+#: content/ui/Notifications/AccountWarningDelegate.qml:67
 #, kde-format
 msgid "%1 has issued a warning against your account"
 msgstr "%1 已對您的帳號提出警告"
 
-#: content/ui/Notifications/AnnualReportDelegate.qml:63
+#: content/ui/Notifications/AnnualReportDelegate.qml:64
 #, kde-kuit-format
 msgctxt ""
 "@info:label this is used for notifications, when an annual report is "
@@ -3356,11 +3353,24 @@ msgid ""
 msgstr ""
 "您的 %1 #FediWrapped 正在等您！發現您今年在 Mastodon 上的精選與回憶時光吧！"
 
-#: content/ui/Notifications/AnnualReportDelegate.qml:70
+#: content/ui/Notifications/AnnualReportDelegate.qml:71
 #, kde-format
 msgctxt "@action:button"
 msgid "View #FediWrapped"
 msgstr "查看 #FediWrapped"
+
+#: content/ui/Notifications/FollowDelegate.qml:78
+#, kde-format
+msgid "%1 signed up"
+msgstr "%1 已註冊"
+
+#: content/ui/Notifications/FollowDelegate.qml:107
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Follow Requests"
+msgctxt "@action:button"
+msgid "Manage Follow Requests"
+msgstr "跟隨請求"
 
 #: content/ui/Notifications/GroupInteractionLabel.qml:64
 #, kde-format
@@ -3389,7 +3399,7 @@ msgstr "正常狀態"
 msgid "Spoiler Status"
 msgstr "暴雷狀態"
 
-#: content/ui/Notifications/RelationshipSeveranceDelegate.qml:62
+#: content/ui/Notifications/RelationshipSeveranceDelegate.qml:63
 #, kde-kuit-format
 msgctxt "@info:label"
 msgid ""
@@ -3397,11 +3407,19 @@ msgid ""
 "account you follow."
 msgstr "Mod 已封鎖 <b>%1</b>，包含您 %2 個跟隨者與 %3 個您跟隨的帳號。"
 
-#: content/ui/Notifications/ReportDelegate.qml:61
+#: content/ui/Notifications/ReportDelegate.qml:62
 #, kde-format
 msgctxt "@info:label"
 msgid "A report has been filed against a user in your server."
 msgstr "您的伺服器上的一名使用者已被檢舉。"
+
+#: content/ui/Notifications/UnknownNotificationDelegate.qml:48
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Unknown Action"
+msgctxt "@info"
+msgid "Unknown notification"
+msgstr "未知動作"
 
 #: content/ui/Notifications/UserInteractionLabel.qml:85
 #, kde-format

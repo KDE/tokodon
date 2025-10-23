@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-17 00:42+0000\n"
+"POT-Creation-Date: 2025-10-23 00:42+0000\n"
 "PO-Revision-Date: 2025-10-09 01:37+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -185,12 +185,14 @@ msgstr "%1 님이 새 게시물을 작성함"
 msgid "%1 boosted your post"
 msgstr "%1 님이 내 글을 부스트함"
 
-#: account/notificationhandler.cpp:103 content/ui/FollowDelegate.qml:71
+#: account/notificationhandler.cpp:103
+#: content/ui/Notifications/FollowDelegate.qml:82
 #, kde-format
 msgid "%1 followed you"
 msgstr "%1 님이 팔로우함"
 
 #: account/notificationhandler.cpp:111
+#: content/ui/Notifications/FollowDelegate.qml:80
 #, kde-format
 msgid "%1 requested to follow you"
 msgstr "%1 님이 팔로우 요청함"
@@ -1201,11 +1203,6 @@ msgstr "뉴스 없음"
 msgctxt "@info:placeholder"
 msgid "No Users"
 msgstr "사용자 없음"
-
-#: content/ui/FollowDelegate.qml:69
-#, kde-format
-msgid "%1 signed up"
-msgstr "%1 님이 등록함"
 
 #: content/ui/FollowingPage.qml:20
 #, kde-format
@@ -3352,12 +3349,12 @@ msgctxt "@info:label Previous notifications"
 msgid "Previous"
 msgstr "이전 항목"
 
-#: content/ui/NotificationPage.qml:315
+#: content/ui/NotificationPage.qml:324
 #, kde-format
 msgid "No Notifications"
 msgstr "알림 없음"
 
-#: content/ui/NotificationPage.qml:316
+#: content/ui/NotificationPage.qml:325
 #, kde-format
 msgid ""
 "You have no notifications yet. When people reply, favorite or boost your "
@@ -3366,12 +3363,12 @@ msgstr ""
 "알림이 없습니다. 내 게시물에 답장을 쓰거나, 좋아요 표시하거나, 부스트하면 여"
 "기에 표시됩니다."
 
-#: content/ui/Notifications/AccountWarningDelegate.qml:66
+#: content/ui/Notifications/AccountWarningDelegate.qml:67
 #, kde-format
 msgid "%1 has issued a warning against your account"
 msgstr "%1 님이 내 계정에 경고 조치를 취했습니다"
 
-#: content/ui/Notifications/AnnualReportDelegate.qml:63
+#: content/ui/Notifications/AnnualReportDelegate.qml:64
 #, kde-kuit-format
 msgctxt ""
 "@info:label this is used for notifications, when an annual report is "
@@ -3385,11 +3382,24 @@ msgstr ""
 "내 %1 #FediWrapped 결산이 기다리고 있습니다! 마스토돈에서의 올해의 하이라이트"
 "와 기억에 남는 순간을 발견하세요!"
 
-#: content/ui/Notifications/AnnualReportDelegate.qml:70
+#: content/ui/Notifications/AnnualReportDelegate.qml:71
 #, kde-format
 msgctxt "@action:button"
 msgid "View #FediWrapped"
 msgstr "#FediWrapped 보기"
+
+#: content/ui/Notifications/FollowDelegate.qml:78
+#, kde-format
+msgid "%1 signed up"
+msgstr "%1 님이 등록함"
+
+#: content/ui/Notifications/FollowDelegate.qml:107
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Follow Requests"
+msgctxt "@action:button"
+msgid "Manage Follow Requests"
+msgstr "팔로우 요청"
 
 #: content/ui/Notifications/GroupInteractionLabel.qml:64
 #, kde-format
@@ -3418,7 +3428,7 @@ msgstr "일반 글"
 msgid "Spoiler Status"
 msgstr "스포일러 글"
 
-#: content/ui/Notifications/RelationshipSeveranceDelegate.qml:62
+#: content/ui/Notifications/RelationshipSeveranceDelegate.qml:63
 #, kde-kuit-format
 msgctxt "@info:label"
 msgid ""
@@ -3428,11 +3438,19 @@ msgstr ""
 "중재 결정으로 <b>%1</b> 님을 차단했으며, 팔로워 %2명 및 팔로우하는 계정 %3개"
 "를 포함합니다."
 
-#: content/ui/Notifications/ReportDelegate.qml:61
+#: content/ui/Notifications/ReportDelegate.qml:62
 #, kde-format
 msgctxt "@info:label"
 msgid "A report has been filed against a user in your server."
 msgstr "내 서버의 특정 사용자에게 신고가 접수되었습니다."
+
+#: content/ui/Notifications/UnknownNotificationDelegate.qml:48
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Unknown Action"
+msgctxt "@info"
+msgid "Unknown notification"
+msgstr "알 수 없는 작업"
 
 #: content/ui/Notifications/UserInteractionLabel.qml:85
 #, kde-format

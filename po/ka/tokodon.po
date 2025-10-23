@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-17 00:42+0000\n"
+"POT-Creation-Date: 2025-10-23 00:42+0000\n"
 "PO-Revision-Date: 2025-10-13 04:44+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -182,12 +182,14 @@ msgstr "%1-მა ახალი პოსტი დაწერა"
 msgid "%1 boosted your post"
 msgstr "%1 -მა ასწია თქვენი პოსტი"
 
-#: account/notificationhandler.cpp:103 content/ui/FollowDelegate.qml:71
+#: account/notificationhandler.cpp:103
+#: content/ui/Notifications/FollowDelegate.qml:82
 #, kde-format
 msgid "%1 followed you"
 msgstr "%1 მოგყვებათ"
 
 #: account/notificationhandler.cpp:111
+#: content/ui/Notifications/FollowDelegate.qml:80
 #, kde-format
 msgid "%1 requested to follow you"
 msgstr "%1-მა თქვენთვის მოყოლა მოითხოვა"
@@ -1207,11 +1209,6 @@ msgstr "სიახლეების გარეშე"
 msgctxt "@info:placeholder"
 msgid "No Users"
 msgstr "მომხმარებლების გარეშე"
-
-#: content/ui/FollowDelegate.qml:69
-#, kde-format
-msgid "%1 signed up"
-msgstr "%1 დარეგისტრირდა"
 
 #: content/ui/FollowingPage.qml:20
 #, kde-format
@@ -3367,12 +3364,12 @@ msgctxt "@info:label Previous notifications"
 msgid "Previous"
 msgstr "წინა"
 
-#: content/ui/NotificationPage.qml:315
+#: content/ui/NotificationPage.qml:324
 #, kde-format
 msgid "No Notifications"
 msgstr "შეტყობინებების გარეშე"
 
-#: content/ui/NotificationPage.qml:316
+#: content/ui/NotificationPage.qml:325
 #, kde-format
 msgid ""
 "You have no notifications yet. When people reply, favorite or boost your "
@@ -3381,12 +3378,12 @@ msgstr ""
 "ჯერ გაფრთხილებები არ გაქვთ. როცა ხალხი უპასუხებს თქვენს პოსტს, ჩაინიშნავს, "
 "ან ასწევს მას, ისინი აქ გამოჩნდება."
 
-#: content/ui/Notifications/AccountWarningDelegate.qml:66
+#: content/ui/Notifications/AccountWarningDelegate.qml:67
 #, kde-format
 msgid "%1 has issued a warning against your account"
 msgstr "%1-მა გამოსცა გაფრთხილება თქვენი ანგარიშის შესახებ"
 
-#: content/ui/Notifications/AnnualReportDelegate.qml:63
+#: content/ui/Notifications/AnnualReportDelegate.qml:64
 #, kde-kuit-format
 msgctxt ""
 "@info:label this is used for notifications, when an annual report is "
@@ -3400,11 +3397,24 @@ msgstr ""
 "თქვენი %1 #FediWrapped გელოდებათ! გამოაქვეყნეთ თქვენი წლის მაჩვენებლები და "
 "დასამახსოვრებელი მომენტები მასტოდონზე!"
 
-#: content/ui/Notifications/AnnualReportDelegate.qml:70
+#: content/ui/Notifications/AnnualReportDelegate.qml:71
 #, kde-format
 msgctxt "@action:button"
 msgid "View #FediWrapped"
 msgstr "იხილეთ #FediWrapped"
+
+#: content/ui/Notifications/FollowDelegate.qml:78
+#, kde-format
+msgid "%1 signed up"
+msgstr "%1 დარეგისტრირდა"
+
+#: content/ui/Notifications/FollowDelegate.qml:107
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Follow Requests"
+msgctxt "@action:button"
+msgid "Manage Follow Requests"
+msgstr "მიყოლის მოთხოვნები"
 
 #: content/ui/Notifications/GroupInteractionLabel.qml:64
 #, kde-format
@@ -3433,7 +3443,7 @@ msgstr "ნორმალური სტატუსი"
 msgid "Spoiler Status"
 msgstr "შესვლის სტატუსი"
 
-#: content/ui/Notifications/RelationshipSeveranceDelegate.qml:62
+#: content/ui/Notifications/RelationshipSeveranceDelegate.qml:63
 #, kde-kuit-format
 msgctxt "@info:label"
 msgid ""
@@ -3443,11 +3453,19 @@ msgstr ""
 "მოდერაციამ დაბლოკა <b>%1</b>, თქვენი %2 მიმდევრის ჩათვლით და %3 ანგარიში, "
 "რომელსაც თქვენ მისდევთ."
 
-#: content/ui/Notifications/ReportDelegate.qml:61
+#: content/ui/Notifications/ReportDelegate.qml:62
 #, kde-format
 msgctxt "@info:label"
 msgid "A report has been filed against a user in your server."
 msgstr "თქვენს სერვერზე მომხმარებლის წინააღმდეგ ანგარიშის ფორმა შეავსეს."
+
+#: content/ui/Notifications/UnknownNotificationDelegate.qml:48
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Unknown Action"
+msgctxt "@info"
+msgid "Unknown notification"
+msgstr "უცნობი ქმედება"
 
 #: content/ui/Notifications/UserInteractionLabel.qml:85
 #, kde-format

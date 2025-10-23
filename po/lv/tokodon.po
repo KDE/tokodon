@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-17 00:42+0000\n"
+"POT-Creation-Date: 2025-10-23 00:42+0000\n"
 "PO-Revision-Date: 2025-09-24 16:53+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -183,12 +183,14 @@ msgstr "%1 publicēja jaunu ierakstu"
 msgid "%1 boosted your post"
 msgstr "%1 pastiprināja tavu ierakstu"
 
-#: account/notificationhandler.cpp:103 content/ui/FollowDelegate.qml:71
+#: account/notificationhandler.cpp:103
+#: content/ui/Notifications/FollowDelegate.qml:82
 #, kde-format
 msgid "%1 followed you"
 msgstr "%1 sāka tev sekot"
 
 #: account/notificationhandler.cpp:111
+#: content/ui/Notifications/FollowDelegate.qml:80
 #, kde-format
 msgid "%1 requested to follow you"
 msgstr "%1 pieprasīja tev sekot"
@@ -1218,11 +1220,6 @@ msgstr "Nav ziņu"
 msgctxt "@info:placeholder"
 msgid "No Users"
 msgstr "Nav lietotāju"
-
-#: content/ui/FollowDelegate.qml:69
-#, kde-format
-msgid "%1 signed up"
-msgstr "%1 pierakstījās"
 
 #: content/ui/FollowingPage.qml:20
 #, kde-format
@@ -3380,12 +3377,12 @@ msgctxt "@info:label Previous notifications"
 msgid "Previous"
 msgstr "Iepriekšējais"
 
-#: content/ui/NotificationPage.qml:315
+#: content/ui/NotificationPage.qml:324
 #, kde-format
 msgid "No Notifications"
 msgstr "Nav paziņojumu"
 
-#: content/ui/NotificationPage.qml:316
+#: content/ui/NotificationPage.qml:325
 #, kde-format
 msgid ""
 "You have no notifications yet. When people reply, favorite or boost your "
@@ -3394,12 +3391,12 @@ msgstr ""
 "Jums vēl nav paziņojumu. Ja kāds profils jums atbildēs, pieliks zvaigznīti "
 "vai pastiprinās kādu jūsu ierakstu, tas te būs redzams."
 
-#: content/ui/Notifications/AccountWarningDelegate.qml:66
+#: content/ui/Notifications/AccountWarningDelegate.qml:67
 #, kde-format
 msgid "%1 has issued a warning against your account"
 msgstr "%1 ir izdevis brīdinājumu par jūsu kontu"
 
-#: content/ui/Notifications/AnnualReportDelegate.qml:63
+#: content/ui/Notifications/AnnualReportDelegate.qml:64
 #, kde-kuit-format
 msgctxt ""
 "@info:label this is used for notifications, when an annual report is "
@@ -3413,11 +3410,24 @@ msgstr ""
 "Jūsu %1. gada #FediWrapped gaida! Apskatiet savus gada „Mastodon“ spilgtākos "
 "un atmiņā paliekošākos brīžus!"
 
-#: content/ui/Notifications/AnnualReportDelegate.qml:70
+#: content/ui/Notifications/AnnualReportDelegate.qml:71
 #, kde-format
 msgctxt "@action:button"
 msgid "View #FediWrapped"
 msgstr "Apskatīt #FediWrapped"
+
+#: content/ui/Notifications/FollowDelegate.qml:78
+#, kde-format
+msgid "%1 signed up"
+msgstr "%1 pierakstījās"
+
+#: content/ui/Notifications/FollowDelegate.qml:107
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Follow Requests"
+msgctxt "@action:button"
+msgid "Manage Follow Requests"
+msgstr "Sekošanas lūgums"
 
 #: content/ui/Notifications/GroupInteractionLabel.qml:64
 #, kde-format
@@ -3446,7 +3456,7 @@ msgstr "Normāls statuss"
 msgid "Spoiler Status"
 msgstr "Sižeta atklāšanas statuss"
 
-#: content/ui/Notifications/RelationshipSeveranceDelegate.qml:62
+#: content/ui/Notifications/RelationshipSeveranceDelegate.qml:63
 #, kde-kuit-format
 msgctxt "@info:label"
 msgid ""
@@ -3456,11 +3466,19 @@ msgstr ""
 "Moderēšanas komanda ir bloķējusi <b>%1</b>, ieskaitot %2 no taviem "
 "sekotājiem un %3 kontu, kuram tu seko."
 
-#: content/ui/Notifications/ReportDelegate.qml:61
+#: content/ui/Notifications/ReportDelegate.qml:62
 #, kde-format
 msgctxt "@info:label"
 msgid "A report has been filed against a user in your server."
 msgstr "Par lietotāju jūsu serverī ir iesniegts ziņojums."
+
+#: content/ui/Notifications/UnknownNotificationDelegate.qml:48
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Unknown Action"
+msgctxt "@info"
+msgid "Unknown notification"
+msgstr "Nezināma darbība"
 
 #: content/ui/Notifications/UserInteractionLabel.qml:85
 #, kde-format

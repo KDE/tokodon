@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-17 00:42+0000\n"
+"POT-Creation-Date: 2025-10-23 00:42+0000\n"
 "PO-Revision-Date: 2022-04-07 18:19+0200\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -179,12 +179,14 @@ msgstr "Neuvedené"
 msgid "%1 boosted your post"
 msgstr ""
 
-#: account/notificationhandler.cpp:103 content/ui/FollowDelegate.qml:71
+#: account/notificationhandler.cpp:103
+#: content/ui/Notifications/FollowDelegate.qml:82
 #, fuzzy, kde-format
 msgid "%1 followed you"
 msgstr "Nasledovatelia"
 
 #: account/notificationhandler.cpp:111
+#: content/ui/Notifications/FollowDelegate.qml:80
 #, fuzzy, kde-format
 msgid "%1 requested to follow you"
 msgstr "Nasledovatelia"
@@ -1233,11 +1235,6 @@ msgstr ""
 msgctxt "@info:placeholder"
 msgid "No Users"
 msgstr "Užívateľské meno:"
-
-#: content/ui/FollowDelegate.qml:69
-#, fuzzy, kde-format
-msgid "%1 signed up"
-msgstr "Nasledovatelia"
 
 #: content/ui/FollowingPage.qml:20
 #, fuzzy, kde-format
@@ -3387,24 +3384,24 @@ msgctxt "@info:label Previous notifications"
 msgid "Previous"
 msgstr "Predchádzajúci obrázok"
 
-#: content/ui/NotificationPage.qml:315
+#: content/ui/NotificationPage.qml:324
 #, fuzzy, kde-format
 msgid "No Notifications"
 msgstr "Upozornenia"
 
-#: content/ui/NotificationPage.qml:316
+#: content/ui/NotificationPage.qml:325
 #, kde-format
 msgid ""
 "You have no notifications yet. When people reply, favorite or boost your "
 "posts they will show up here."
 msgstr ""
 
-#: content/ui/Notifications/AccountWarningDelegate.qml:66
+#: content/ui/Notifications/AccountWarningDelegate.qml:67
 #, kde-format
 msgid "%1 has issued a warning against your account"
 msgstr ""
 
-#: content/ui/Notifications/AnnualReportDelegate.qml:63
+#: content/ui/Notifications/AnnualReportDelegate.qml:64
 #, kde-kuit-format
 msgctxt ""
 "@info:label this is used for notifications, when an annual report is "
@@ -3416,11 +3413,23 @@ msgid ""
 "moments on Mastodon!"
 msgstr ""
 
-#: content/ui/Notifications/AnnualReportDelegate.qml:70
+#: content/ui/Notifications/AnnualReportDelegate.qml:71
 #, kde-format
 msgctxt "@action:button"
 msgid "View #FediWrapped"
 msgstr ""
+
+#: content/ui/Notifications/FollowDelegate.qml:78
+#, fuzzy, kde-format
+msgid "%1 signed up"
+msgstr "Nasledovatelia"
+
+#: content/ui/Notifications/FollowDelegate.qml:107
+#, fuzzy, kde-format
+#| msgid "Follow"
+msgctxt "@action:button"
+msgid "Manage Follow Requests"
+msgstr "Navštíviť"
 
 #: content/ui/Notifications/GroupInteractionLabel.qml:64
 #, kde-format
@@ -3449,7 +3458,7 @@ msgstr ""
 msgid "Spoiler Status"
 msgstr ""
 
-#: content/ui/Notifications/RelationshipSeveranceDelegate.qml:62
+#: content/ui/Notifications/RelationshipSeveranceDelegate.qml:63
 #, kde-kuit-format
 msgctxt "@info:label"
 msgid ""
@@ -3457,11 +3466,17 @@ msgid ""
 "account you follow."
 msgstr ""
 
-#: content/ui/Notifications/ReportDelegate.qml:61
+#: content/ui/Notifications/ReportDelegate.qml:62
 #, kde-format
 msgctxt "@info:label"
 msgid "A report has been filed against a user in your server."
 msgstr ""
+
+#: content/ui/Notifications/UnknownNotificationDelegate.qml:48
+#, fuzzy, kde-format
+msgctxt "@info"
+msgid "Unknown notification"
+msgstr "Upozornenia"
 
 #: content/ui/Notifications/UserInteractionLabel.qml:85
 #, kde-format

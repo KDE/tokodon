@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-17 00:42+0000\n"
-"PO-Revision-Date: 2025-10-13 09:10+0200\n"
+"POT-Creation-Date: 2025-10-23 00:42+0000\n"
+"PO-Revision-Date: 2025-10-19 17:31+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: account/abstractaccount.cpp:33
 #, kde-format
@@ -185,12 +185,14 @@ msgstr "%1 ha escrit una publicació nova"
 msgid "%1 boosted your post"
 msgstr "%1 ha impulsat la vostra publicació"
 
-#: account/notificationhandler.cpp:103 content/ui/FollowDelegate.qml:71
+#: account/notificationhandler.cpp:103
+#: content/ui/Notifications/FollowDelegate.qml:82
 #, kde-format
 msgid "%1 followed you"
 msgstr "%1 vos seguix"
 
 #: account/notificationhandler.cpp:111
+#: content/ui/Notifications/FollowDelegate.qml:80
 #, kde-format
 msgid "%1 requested to follow you"
 msgstr "%1 ha sol·licitat seguir-vos"
@@ -1172,7 +1174,7 @@ msgstr "Publicacions"
 #: content/ui/ExplorePage.qml:40 search/searchmodel.cpp:153
 #, kde-format
 msgid "Hashtags"
-msgstr "Etiqueta"
+msgstr "Etiquetes"
 
 #: content/ui/ExplorePage.qml:46
 #, kde-format
@@ -1214,11 +1216,6 @@ msgstr "Sense notícies"
 msgctxt "@info:placeholder"
 msgid "No Users"
 msgstr "Sense usuaris"
-
-#: content/ui/FollowDelegate.qml:69
-#, kde-format
-msgid "%1 signed up"
-msgstr "%1 s'ha registrat"
 
 #: content/ui/FollowingPage.qml:20
 #, kde-format
@@ -3382,12 +3379,12 @@ msgctxt "@info:label Previous notifications"
 msgid "Previous"
 msgstr "Anterior"
 
-#: content/ui/NotificationPage.qml:315
+#: content/ui/NotificationPage.qml:324
 #, kde-format
 msgid "No Notifications"
 msgstr "Sense notificacions"
 
-#: content/ui/NotificationPage.qml:316
+#: content/ui/NotificationPage.qml:325
 #, kde-format
 msgid ""
 "You have no notifications yet. When people reply, favorite or boost your "
@@ -3396,12 +3393,12 @@ msgstr ""
 "Encara no teniu notificacions. Quan la gent contesti, preferisca o impulsi "
 "les vostres publicacions, es mostraran ací."
 
-#: content/ui/Notifications/AccountWarningDelegate.qml:66
+#: content/ui/Notifications/AccountWarningDelegate.qml:67
 #, kde-format
 msgid "%1 has issued a warning against your account"
 msgstr "%1 ha emés un avís contra el vostre compte"
 
-#: content/ui/Notifications/AnnualReportDelegate.qml:63
+#: content/ui/Notifications/AnnualReportDelegate.qml:64
 #, kde-kuit-format
 msgctxt ""
 "@info:label this is used for notifications, when an annual report is "
@@ -3415,11 +3412,24 @@ msgstr ""
 "El #FediWrapped %1 vos espera! Descobriu els vostres moments més destacats i "
 "memorables de l'any en Mastodon!"
 
-#: content/ui/Notifications/AnnualReportDelegate.qml:70
+#: content/ui/Notifications/AnnualReportDelegate.qml:71
 #, kde-format
 msgctxt "@action:button"
 msgid "View #FediWrapped"
 msgstr "Visualitzeu el #FediWrapped"
+
+#: content/ui/Notifications/FollowDelegate.qml:78
+#, kde-format
+msgid "%1 signed up"
+msgstr "%1 s'ha registrat"
+
+#: content/ui/Notifications/FollowDelegate.qml:107
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Follow Requests"
+msgctxt "@action:button"
+msgid "Manage Follow Requests"
+msgstr "Sol·licituds de seguiment"
 
 #: content/ui/Notifications/GroupInteractionLabel.qml:64
 #, kde-format
@@ -3448,7 +3458,7 @@ msgstr "Estat normal"
 msgid "Spoiler Status"
 msgstr "Estat d'espòiler"
 
-#: content/ui/Notifications/RelationshipSeveranceDelegate.qml:62
+#: content/ui/Notifications/RelationshipSeveranceDelegate.qml:63
 #, kde-kuit-format
 msgctxt "@info:label"
 msgid ""
@@ -3458,11 +3468,19 @@ msgstr ""
 "La moderació ha bloquejat <b>%1</b>, incloent-hi %2 dels vostres seguidors i "
 "%3 comptes que seguiu."
 
-#: content/ui/Notifications/ReportDelegate.qml:61
+#: content/ui/Notifications/ReportDelegate.qml:62
 #, kde-format
 msgctxt "@info:label"
 msgid "A report has been filed against a user in your server."
 msgstr "S'ha escrit un informe contra un usuari del vostre servidor."
+
+#: content/ui/Notifications/UnknownNotificationDelegate.qml:48
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Unknown Action"
+msgctxt "@info"
+msgid "Unknown notification"
+msgstr "Acció desconeguda"
 
 #: content/ui/Notifications/UserInteractionLabel.qml:85
 #, kde-format

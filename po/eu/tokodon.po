@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-17 00:42+0000\n"
+"POT-Creation-Date: 2025-10-23 00:42+0000\n"
 "PO-Revision-Date: 2025-10-18 12:04+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -184,12 +184,14 @@ msgstr "%1(e)k posta berri bat Idatzi du"
 msgid "%1 boosted your post"
 msgstr "%1(e)k zure posta goratu du"
 
-#: account/notificationhandler.cpp:103 content/ui/FollowDelegate.qml:71
+#: account/notificationhandler.cpp:103
+#: content/ui/Notifications/FollowDelegate.qml:82
 #, kde-format
 msgid "%1 followed you"
 msgstr "%1(e)k jarraitu zaituzte"
 
 #: account/notificationhandler.cpp:111
+#: content/ui/Notifications/FollowDelegate.qml:80
 #, kde-format
 msgid "%1 requested to follow you"
 msgstr "%1(e)k zuri jarraitzea eskatu du"
@@ -1219,11 +1221,6 @@ msgstr "Albisterik ez"
 msgctxt "@info:placeholder"
 msgid "No Users"
 msgstr "Erabiltzailerik ez"
-
-#: content/ui/FollowDelegate.qml:69
-#, kde-format
-msgid "%1 signed up"
-msgstr "%1(e)k sinatu du"
 
 #: content/ui/FollowingPage.qml:20
 #, kde-format
@@ -3390,12 +3387,12 @@ msgctxt "@info:label Previous notifications"
 msgid "Previous"
 msgstr "Aurrekoa"
 
-#: content/ui/NotificationPage.qml:315
+#: content/ui/NotificationPage.qml:324
 #, kde-format
 msgid "No Notifications"
 msgstr "Jakinarazpenik ez"
 
-#: content/ui/NotificationPage.qml:316
+#: content/ui/NotificationPage.qml:325
 #, kde-format
 msgid ""
 "You have no notifications yet. When people reply, favorite or boost your "
@@ -3404,12 +3401,12 @@ msgstr ""
 "Oraindik ez duzu jakinarazpenik. Jendeak zure postei erantzun, haiek gogoko "
 "egin edo goratzen dituztenean, hemen azalduko dira."
 
-#: content/ui/Notifications/AccountWarningDelegate.qml:66
+#: content/ui/Notifications/AccountWarningDelegate.qml:67
 #, kde-format
 msgid "%1 has issued a warning against your account"
 msgstr "%1(e)k zure kontuaren aurkako ohartarazpen bat egin du"
 
-#: content/ui/Notifications/AnnualReportDelegate.qml:63
+#: content/ui/Notifications/AnnualReportDelegate.qml:64
 #, kde-kuit-format
 msgctxt ""
 "@info:label this is used for notifications, when an annual report is "
@@ -3423,11 +3420,24 @@ msgstr ""
 "Zure %1 #FediWrapped zain duzu! Urteko zure aipagarrienak eta momentu "
 "gogoangarriak Mastodon-en aurkeztu!"
 
-#: content/ui/Notifications/AnnualReportDelegate.qml:70
+#: content/ui/Notifications/AnnualReportDelegate.qml:71
 #, kde-format
 msgctxt "@action:button"
 msgid "View #FediWrapped"
 msgstr "Ikusi #FediWrapped"
+
+#: content/ui/Notifications/FollowDelegate.qml:78
+#, kde-format
+msgid "%1 signed up"
+msgstr "%1(e)k sinatu du"
+
+#: content/ui/Notifications/FollowDelegate.qml:107
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Follow Requests"
+msgctxt "@action:button"
+msgid "Manage Follow Requests"
+msgstr "Jarraipen eskaerak"
 
 #: content/ui/Notifications/GroupInteractionLabel.qml:64
 #, kde-format
@@ -3456,7 +3466,7 @@ msgstr "Egoera arrunta"
 msgid "Spoiler Status"
 msgstr "Zapuzle egoera"
 
-#: content/ui/Notifications/RelationshipSeveranceDelegate.qml:62
+#: content/ui/Notifications/RelationshipSeveranceDelegate.qml:63
 #, kde-kuit-format
 msgctxt "@info:label"
 msgid ""
@@ -3466,11 +3476,19 @@ msgstr ""
 "Moderazioak <b>%1</b> oztopatu ditu, zure jarraitzaileetako %2 eta zuk "
 "jarraitzen dituzun %3 kontu barne."
 
-#: content/ui/Notifications/ReportDelegate.qml:61
+#: content/ui/Notifications/ReportDelegate.qml:62
 #, kde-format
 msgctxt "@info:label"
 msgid "A report has been filed against a user in your server."
 msgstr "Zure zerbitzariko erabiltzaile baten aurkako salaketa bat aurkeztu da."
+
+#: content/ui/Notifications/UnknownNotificationDelegate.qml:48
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Unknown Action"
+msgctxt "@info"
+msgid "Unknown notification"
+msgstr "Ekintza ezezaguna"
 
 #: content/ui/Notifications/UserInteractionLabel.qml:85
 #, kde-format

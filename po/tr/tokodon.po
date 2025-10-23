@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-17 00:42+0000\n"
+"POT-Creation-Date: 2025-10-23 00:42+0000\n"
 "PO-Revision-Date: 2025-10-14 15:51+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -182,12 +182,14 @@ msgstr "%1 yeni bir gönderi yazdı"
 msgid "%1 boosted your post"
 msgstr "%1 gönderinizi boostladı"
 
-#: account/notificationhandler.cpp:103 content/ui/FollowDelegate.qml:71
+#: account/notificationhandler.cpp:103
+#: content/ui/Notifications/FollowDelegate.qml:82
 #, kde-format
 msgid "%1 followed you"
 msgstr "%1 sizi takip etti"
 
 #: account/notificationhandler.cpp:111
+#: content/ui/Notifications/FollowDelegate.qml:80
 #, kde-format
 msgid "%1 requested to follow you"
 msgstr "%1 size takip isteği gönderdi"
@@ -1210,11 +1212,6 @@ msgstr "Haber yok"
 msgctxt "@info:placeholder"
 msgid "No Users"
 msgstr "Kullanıcı yok"
-
-#: content/ui/FollowDelegate.qml:69
-#, kde-format
-msgid "%1 signed up"
-msgstr "%1 kayıt oldu"
 
 #: content/ui/FollowingPage.qml:20
 #, kde-format
@@ -3372,12 +3369,12 @@ msgctxt "@info:label Previous notifications"
 msgid "Previous"
 msgstr "Önceki"
 
-#: content/ui/NotificationPage.qml:315
+#: content/ui/NotificationPage.qml:324
 #, kde-format
 msgid "No Notifications"
 msgstr "Bildirim yok"
 
-#: content/ui/NotificationPage.qml:316
+#: content/ui/NotificationPage.qml:325
 #, kde-format
 msgid ""
 "You have no notifications yet. When people reply, favorite or boost your "
@@ -3386,12 +3383,12 @@ msgstr ""
 "Henüz bildiriminiz yok. Kişiler gönderilerinizi yanıtladığında, favorilerine "
 "eklediğinde veya öne çıkardığında bunlar burada görünecek."
 
-#: content/ui/Notifications/AccountWarningDelegate.qml:66
+#: content/ui/Notifications/AccountWarningDelegate.qml:67
 #, kde-format
 msgid "%1 has issued a warning against your account"
 msgstr "%1, hesabınıza bir uyarı gönderdi."
 
-#: content/ui/Notifications/AnnualReportDelegate.qml:63
+#: content/ui/Notifications/AnnualReportDelegate.qml:64
 #, kde-kuit-format
 msgctxt ""
 "@info:label this is used for notifications, when an annual report is "
@@ -3405,11 +3402,24 @@ msgstr ""
 "%1 #FediWrapped’iniz sizi bekliyor! Mastodon’da geçtiğimiz yılın önemli "
 "noktalarını ve unutulmaz anlarını ortaya çıkarın!"
 
-#: content/ui/Notifications/AnnualReportDelegate.qml:70
+#: content/ui/Notifications/AnnualReportDelegate.qml:71
 #, kde-format
 msgctxt "@action:button"
 msgid "View #FediWrapped"
 msgstr "#FediWrapped’i Görüntüle"
+
+#: content/ui/Notifications/FollowDelegate.qml:78
+#, kde-format
+msgid "%1 signed up"
+msgstr "%1 kayıt oldu"
+
+#: content/ui/Notifications/FollowDelegate.qml:107
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Follow Requests"
+msgctxt "@action:button"
+msgid "Manage Follow Requests"
+msgstr "Takip İstekleri"
 
 #: content/ui/Notifications/GroupInteractionLabel.qml:64
 #, kde-format
@@ -3438,7 +3448,7 @@ msgstr "Olağan Durumu"
 msgid "Spoiler Status"
 msgstr "Sürprizbozan Durumu"
 
-#: content/ui/Notifications/RelationshipSeveranceDelegate.qml:62
+#: content/ui/Notifications/RelationshipSeveranceDelegate.qml:63
 #, kde-kuit-format
 msgctxt "@info:label"
 msgid ""
@@ -3448,11 +3458,19 @@ msgstr ""
 "Moderasyon, <b>%1</b> engelini devreye aldı. Bunun içinde takipçilerinizden "
 "%2 ve takip ettiklerinizden %3 kişi var."
 
-#: content/ui/Notifications/ReportDelegate.qml:61
+#: content/ui/Notifications/ReportDelegate.qml:62
 #, kde-format
 msgctxt "@info:label"
 msgid "A report has been filed against a user in your server."
 msgstr "Sunucunuzdaki bir kullanıcı hakkında bir rapor dosyalandı."
+
+#: content/ui/Notifications/UnknownNotificationDelegate.qml:48
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Unknown Action"
+msgctxt "@info"
+msgid "Unknown notification"
+msgstr "Bilinmeyen Eylem"
 
 #: content/ui/Notifications/UserInteractionLabel.qml:85
 #, kde-format
