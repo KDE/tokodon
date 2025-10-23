@@ -206,11 +206,11 @@ StatefulApp.StatefulWindow {
         }
         ActionData {
             name: "account_switcher"
-            icon: "user"
+            icon.name: "user"
             text: i18nc("@action:button", "Open Account Switcher")
             actionGroup: pagesGroup
             action: Kirigami.Action {
-                id: conversationAction
+                id: accountSwitcherAction
                 onTriggered: {
                     let dialog = Qt.createComponent("org.kde.tokodon", "AccountSwitchDialog").createObject(root.QQC2.Overlay.overlay, {
                         application: root.application,
