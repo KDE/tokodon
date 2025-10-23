@@ -806,9 +806,9 @@ StatefulApp.StatefulWindow {
         application: root.application
         shouldCollapse: !root.wideMode
         actions: !root.wideMode ?
-            [root.searchAction, root.followRequestAction, root.followingAction, root.localTimelineAction, root.globalTimelineAction, root.conversationAction, root.bookmarksAction, root.favouritesAction, root.listsAction] :
-            [root.homeAction, root.notificationAction, root.followRequestAction, root.followingAction, root.exploreAction, root.localTimelineAction, root.globalTimelineAction, root.conversationAction, root.bookmarksAction, root.favouritesAction, root.listsAction]
-        bottomActions: [root.serverInformationAction, root.debugAction, root.moderationToolsAction, root.configureAction]
+            [searchAction, followRequestAction, followingAction, localTimelineAction, globalTimelineAction, conversationAction, bookmarksAction, favouritesAction, listsAction] :
+            [homeAction, notificationAction, followRequestAction, followingAction, exploreAction, localTimelineAction, globalTimelineAction, conversationAction, bookmarksAction, favouritesAction, listsAction]
+        bottomActions: [serverInformationAction, debugAction, moderationToolsAction, configureAction]
     }
 
     readonly property Kirigami.Action debugAction: Kirigami.Action {
