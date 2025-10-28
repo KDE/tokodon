@@ -106,6 +106,8 @@ QQC2.ItemDelegate {
         QQC2.Button {
             text: i18nc("@action:button", "Manage Follow Requests")
             icon.name: "list-add-user"
+            visible: root.isFollowRequest
+
             onClicked: (root.QQC2.ApplicationWindow.window as StatefulApp.StatefulWindow)?.application.action("follow_requests").trigger()
 
             Layout.fillWidth: true
