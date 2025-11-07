@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-23 00:42+0000\n"
-"PO-Revision-Date: 2025-07-08 22:49+0200\n"
+"PO-Revision-Date: 2025-11-06 21:16+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.04.3\n"
+"X-Generator: Lokalize 25.08.2\n"
 
 #: account/abstractaccount.cpp:33
 #, kde-format
@@ -966,11 +966,10 @@ msgid "Last updated: %1"
 msgstr "Utoljára frissítve: %1"
 
 #: content/ui/Components/TimelineView.qml:82
-#, fuzzy, kde-format
-#| msgid "Create List"
+#, kde-format
 msgctxt "@action:button"
 msgid "Create Post"
-msgstr "Lista létrehozása"
+msgstr "Bejegyzés létrehozása"
 
 #: content/ui/Components/TimelineView.qml:90
 #, kde-format
@@ -1134,9 +1133,7 @@ msgid "Create"
 msgstr "Létrehozás"
 
 #: content/ui/EditListPage.qml:255
-#, fuzzy, kde-format
-#| msgctxt "@action:Button Save an edited a post"
-#| msgid "Save"
+#, kde-format
 msgctxt "@action:button Save the edited list"
 msgid "Save"
 msgstr "Mentés"
@@ -3418,12 +3415,10 @@ msgid "%1 signed up"
 msgstr "%1 feliratkozott"
 
 #: content/ui/Notifications/FollowDelegate.qml:107
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Follow Requests"
+#, kde-format
 msgctxt "@action:button"
 msgid "Manage Follow Requests"
-msgstr "Követési kérések"
+msgstr "Követési kérések kezelése"
 
 #: content/ui/Notifications/GroupInteractionLabel.qml:64
 #, kde-format
@@ -3469,12 +3464,10 @@ msgid "A report has been filed against a user in your server."
 msgstr "Bejelentés érkezett egy felhasználó ellen a kiszolgálóján."
 
 #: content/ui/Notifications/UnknownNotificationDelegate.qml:48
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Unknown Action"
+#, kde-format
 msgctxt "@info"
 msgid "Unknown notification"
-msgstr "Ismeretlen művelet"
+msgstr "Ismeretlen értesítés"
 
 #: content/ui/Notifications/UserInteractionLabel.qml:85
 #, kde-format
@@ -3656,17 +3649,16 @@ msgstr[0] "%1 megtolás"
 msgstr[1] "%1 megtolás"
 
 #: content/ui/PostDelegate/InformationBar.qml:139
-#, fuzzy, kde-format
-#| msgid "(No votes)"
+#, kde-format
 msgid "No quotes"
-msgstr "(Nincsenek szavazatok)"
+msgstr "Nincsenek idézések"
 
 #: content/ui/PostDelegate/InformationBar.qml:141
 #, kde-format
 msgid "%1 quotes"
 msgid_plural "%1 quotes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 idézés"
+msgstr[1] "%1 idézés"
 
 #: content/ui/PostDelegate/LinkMenu.qml:33
 #: content/ui/PostDelegate/PostMenu.qml:59
@@ -3976,16 +3968,14 @@ msgid "Edit"
 msgstr "Szerkesztés"
 
 #: content/ui/PostDelegate/PostMenu.qml:209
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgid "Delete…"
-msgstr "Törlés"
+msgstr "Törlés…"
 
 #: content/ui/PostDelegate/PostMenu.qml:217
-#, fuzzy, kde-format
-#| msgid "Delete & Re-draft"
+#, kde-format
 msgid "Delete & Re-draft…"
-msgstr "Törlés és ismét piszkozat"
+msgstr "Törlés és ismét piszkozat…"
 
 #: content/ui/PostDelegate/PostPoll.qml:41
 #, kde-format
@@ -4029,7 +4019,7 @@ msgstr "Címke"
 #, kde-format
 msgctxt "@action:button expand the number of shown tags"
 msgid "…and %1 more"
-msgstr ""
+msgstr "…és %1 további"
 
 #: content/ui/PostDelegate/QuotePost.qml:66
 #, kde-format
@@ -4537,9 +4527,7 @@ msgid "Create"
 msgstr "Létrehozás"
 
 #: content/ui/Settings/EditFilterPage.qml:229
-#, fuzzy, kde-format
-#| msgctxt "@action:Button Save an edited a post"
-#| msgid "Save"
+#, kde-format
 msgctxt "@action:button Save the edited filter"
 msgid "Save"
 msgstr "Mentés"
@@ -5621,10 +5609,9 @@ msgid "Your emails"
 msgstr "ulysses@fsf.hu"
 
 #: main.cpp:100
-#, fuzzy, kde-format
-#| msgid "Supports https, tokodon and web+ap url scheme"
+#, kde-format
 msgid "Supports https, and web+ap url schemes."
-msgstr "A https, tokodon és web+ap URL-sémák támogatása"
+msgstr "A https és web+ap URL-sémák támogatása."
 
 #: network/networkcontroller.cpp:307
 #, kde-format
@@ -5813,11 +5800,10 @@ msgid "Open Profile"
 msgstr "Profil megnyitása"
 
 #: tokodonapplication.cpp:180
-#, fuzzy, kde-format
-#| msgid "Account editor"
+#, kde-format
 msgctxt "@action:button"
 msgid "Open Account Switcher"
-msgstr "Fiókszerkesztő"
+msgstr "Fiókváltó megnyitása"
 
 #: tokodonapplication.cpp:216
 #, kde-format
