@@ -89,7 +89,7 @@ msgstr "所有文件 (*)"
 #: account/abstractaccount.cpp:516
 #, kde-format
 msgid "All supported formats (%1)"
-msgstr ""
+msgstr "所有支持的格式 (%1)"
 
 #: account/abstractaccount.cpp:671
 #, kde-format
@@ -104,7 +104,7 @@ msgstr "无法解除关注账户"
 #: account/abstractaccount.cpp:673
 #, kde-format
 msgid "Could not remove account as your follower"
-msgstr ""
+msgstr "无法删除您关注的账户"
 
 #: account/abstractaccount.cpp:674
 #, kde-format
@@ -145,13 +145,13 @@ msgstr "无法编辑账户的备注"
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Network request was interrupted"
-msgstr ""
+msgstr "网络请求被中断"
 
 #: account/account.cpp:309 account/account.cpp:316
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Failed to parse credentials"
-msgstr ""
+msgstr "解析凭据失败"
 
 #: account/notificationhandler.cpp:35 account/notificationhandler.cpp:36
 #, kde-format
@@ -217,45 +217,45 @@ msgctxt ""
 "the year. The variable is the current year e.g. 2024. Please don't translate "
 "the hashtag."
 msgid "Your %1 #FediWrapped awaits!"
-msgstr ""
+msgstr "您的 %1 #FediWrapped 已准备好！"
 
 #: account/notificationhandler.cpp:148
 #, kde-format
 msgid "Unveil your year's highlights and memorable moments on Mastodon!"
-msgstr ""
+msgstr "揭晓您在Mastodon上的年度亮点与难忘时刻！"
 
 #: account/notificationhandler.cpp:152
 #, kde-format
 msgctxt "@title"
 msgid "New Notification"
-msgstr ""
+msgstr "新通知"
 
 #: account/notificationhandler.cpp:153
 #, kde-format
 msgid "You received a new notification."
-msgstr ""
+msgstr "您收到了一个新通知。"
 
 #: account/notificationhandler.cpp:161
 #, kde-kuit-format
 msgid "<b>Content Notice</b>: %1"
-msgstr ""
+msgstr "<b>内容通知</b>: %1"
 
 #: account/notificationhandler.cpp:165
 #, kde-format
 msgid "This post has no text."
-msgstr ""
+msgstr "此嘟文没有文本。"
 
 #: account/notificationhandler.cpp:172
 #, kde-format
 msgid ""
 "The moderators of your server has limited this user, view this in Tokodon to "
 "see their profile."
-msgstr ""
+msgstr "服务器的版主已限制此用户，请在 Tokodon 中查看其个人资料。"
 
 #: account/notificationhandler.cpp:176
 #, kde-format
 msgid "This user doesn't have a description."
-msgstr ""
+msgstr "该用户没有描述。"
 
 #: account/profileeditor.cpp:188
 #, kde-format
@@ -276,19 +276,19 @@ msgstr "账户详细信息已保存"
 #, kde-format
 msgid ""
 "This server provided no rules. Please see their website for more information."
-msgstr ""
+msgstr "此服务器未提供规则。请访问其网站获取更多信息。"
 
 #: account/scheduledstatusesmodel.cpp:59
 #, kde-format
 msgctxt "@title:window"
 msgid "Draft Posts"
-msgstr ""
+msgstr "草稿"
 
 #: account/scheduledstatusesmodel.cpp:59
 #, kde-format
 msgctxt "@title:window"
 msgid "Scheduled Posts"
-msgstr ""
+msgstr "定时发送"
 
 #: account/socialgraphmodel.cpp:32
 #, kde-format
@@ -331,7 +331,7 @@ msgstr "推荐的用户"
 msgctxt "@title"
 msgid "%1 favorite"
 msgid_plural "%1 favorites"
-msgstr[0] ""
+msgstr[0] "%1 收藏"
 
 #: account/socialgraphmodel.cpp:46
 #, kde-format
@@ -344,43 +344,43 @@ msgstr[0] "%1 次转嘟"
 #, kde-format
 msgctxt "@title"
 msgid "Familiar Followers"
-msgstr ""
+msgstr "熟悉的关注者"
 
 #: account/socialgraphmodel.cpp:50
 #, kde-format
 msgctxt "@title"
 msgid "Manage List Users"
-msgstr ""
+msgstr "管理列表用户"
 
 #: account/socialgraphmodel.cpp:58
 #, kde-format
 msgid "No Follow Requests"
-msgstr ""
+msgstr "无关注请求"
 
 #: account/socialgraphmodel.cpp:60
 #, kde-format
 msgid "No Followers"
-msgstr ""
+msgstr "无关注者"
 
 #: account/socialgraphmodel.cpp:62
 #, kde-format
 msgid "No Followed Users"
-msgstr ""
+msgstr "没有关注的用户"
 
 #: account/socialgraphmodel.cpp:64
 #, kde-format
 msgid "No Muted Users"
-msgstr ""
+msgstr "没有静音的用户"
 
 #: account/socialgraphmodel.cpp:66
 #, kde-format
 msgid "No Blocked Users"
-msgstr ""
+msgstr "没有屏蔽的用户"
 
 #: account/socialgraphmodel.cpp:68
 #, kde-format
 msgid "No Featured Users"
-msgstr ""
+msgstr "没有推荐的用户"
 
 #: account/socialgraphmodel.cpp:70
 #, kde-format
@@ -390,7 +390,7 @@ msgstr "没有用户喜欢此嘟文"
 #: account/socialgraphmodel.cpp:72
 #, kde-format
 msgid "No Users Boosted This Post"
-msgstr ""
+msgstr "无用户转嘟此嘟文"
 
 #: account/socialgraphmodel.cpp:74
 #, kde-format
@@ -943,11 +943,10 @@ msgid "Last updated: %1"
 msgstr ""
 
 #: content/ui/Components/TimelineView.qml:82
-#, fuzzy, kde-format
-#| msgid "Create List"
+#, kde-format
 msgctxt "@action:button"
 msgid "Create Post"
-msgstr "创建列表"
+msgstr ""
 
 #: content/ui/Components/TimelineView.qml:90
 #, kde-format
@@ -1106,11 +1105,10 @@ msgid "Create"
 msgstr "创建"
 
 #: content/ui/EditListPage.qml:255
-#, fuzzy, kde-format
-#| msgid "Saved"
+#, kde-format
 msgctxt "@action:button Save the edited list"
 msgid "Save"
-msgstr "已保存"
+msgstr ""
 
 #: content/ui/EditListPage.qml:268
 #, kde-format
@@ -3349,12 +3347,10 @@ msgid "%1 signed up"
 msgstr ""
 
 #: content/ui/Notifications/FollowDelegate.qml:107
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Follow Requests"
+#, kde-format
 msgctxt "@action:button"
 msgid "Manage Follow Requests"
-msgstr "关注请求"
+msgstr ""
 
 #: content/ui/Notifications/GroupInteractionLabel.qml:64
 #, kde-format
@@ -3398,12 +3394,10 @@ msgid "A report has been filed against a user in your server."
 msgstr ""
 
 #: content/ui/Notifications/UnknownNotificationDelegate.qml:48
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Unknown Action"
+#, kde-format
 msgctxt "@info"
 msgid "Unknown notification"
-msgstr "未知操作"
+msgstr ""
 
 #: content/ui/Notifications/UserInteractionLabel.qml:85
 #, kde-format
@@ -3897,17 +3891,14 @@ msgid "Edit"
 msgstr "编辑"
 
 #: content/ui/PostDelegate/PostMenu.qml:209
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgid "Delete…"
-msgstr "删除"
+msgstr ""
 
 #: content/ui/PostDelegate/PostMenu.qml:217
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Delete & Re-draft Post"
+#, kde-format
 msgid "Delete & Re-draft…"
-msgstr "删除并重新起草嘟文"
+msgstr ""
 
 #: content/ui/PostDelegate/PostPoll.qml:41
 #, kde-format
@@ -4400,7 +4391,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label:radiobutton"
 msgid "Hide Media with Content Notice"
-msgstr ""
+msgstr "隐藏含内容提示的媒体"
 
 #: content/ui/Settings/EditFilterPage.qml:147
 #, kde-format
@@ -4445,11 +4436,10 @@ msgid "Create"
 msgstr ""
 
 #: content/ui/Settings/EditFilterPage.qml:229
-#, fuzzy, kde-format
-#| msgid "Saved"
+#, kde-format
 msgctxt "@action:button Save the edited filter"
 msgid "Save"
-msgstr "已保存"
+msgstr ""
 
 #: content/ui/Settings/EditFilterPage.qml:242
 #, kde-format
@@ -5855,11 +5845,3 @@ msgstr[0] "%1 个月前"
 msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "%1 年前"
-
-#~ msgctxt "@action:button Edit the list"
-#~ msgid "Edit"
-#~ msgstr "编辑"
-
-#~ msgctxt "@action:button Edit the filter"
-#~ msgid "Edit"
-#~ msgstr "编辑"
