@@ -1,7 +1,7 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the tokodon package.
 #
-# SPDX-FileCopyrightText: 2023, 2024 Alexander Yavorsky <kekcuha@gmail.com>
+# SPDX-FileCopyrightText: 2023, 2024, 2025 Alexander Yavorsky <kekcuha@gmail.com>
 # SPDX-FileCopyrightText: 2024, 2025 Olesya Gerasimenko <translation-team@basealt.ru>
 # Alexander Yavorsky <kekcuha@gmail.com>, 2024.
 msgid ""
@@ -9,16 +9,16 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-23 00:42+0000\n"
-"PO-Revision-Date: 2025-03-31 14:29+0300\n"
-"Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
-"Language-Team: Basealt Translation Team\n"
+"PO-Revision-Date: 2025-11-11 18:10+0300\n"
+"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
+"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 25.08.2\n"
 
 #: account/abstractaccount.cpp:33
 #, kde-format
@@ -1149,9 +1149,7 @@ msgid "Create"
 msgstr "Создать"
 
 #: content/ui/EditListPage.qml:255
-#, fuzzy, kde-format
-#| msgctxt "@action:Button Save an edited a post"
-#| msgid "Save"
+#, kde-format
 msgctxt "@action:button Save the edited list"
 msgid "Save"
 msgstr "Сохранить"
@@ -1290,11 +1288,10 @@ msgid "Open Post"
 msgstr "Открыть публикацию"
 
 #: content/ui/GenericServerInformationPage.qml:17
-#, fuzzy, kde-format
-#| msgid "Custom Server"
+#, kde-format
 msgctxt "@title:window"
 msgid "About Server"
-msgstr "Пользовательский сервер"
+msgstr "О сервере"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:19
 #, kde-format
@@ -1485,10 +1482,9 @@ msgid "Login Issue"
 msgstr "Ошибка входа"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:27
-#, fuzzy, kde-format
-#| msgid "There was an issue logging into the server:<br><b>%1</b>"
+#, kde-format
 msgid "There was an issue logging into %1:<br><b>%2</b>"
-msgstr "При входе на сервер произошла ошибка:<br><b>%1</b>"
+msgstr "При входе на сервер %1 произошла ошибка:<br><b>%2</b>"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:38
 #, kde-format
@@ -1581,7 +1577,7 @@ msgstr "Пароль"
 #: content/ui/LoginFlow/RegistrationPage.qml:128
 #, kde-format
 msgid "Date of Birth"
-msgstr ""
+msgstr "Дата рождения"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:136
 #, kde-format
@@ -1627,7 +1623,7 @@ msgstr "Выбор сервера"
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose your Existing Server"
-msgstr ""
+msgstr "Выбор сервера"
 
 #: content/ui/LoginFlow/ServersPage.qml:38
 #, kde-format
@@ -1683,22 +1679,20 @@ msgid ""
 "Browse the Fediverse and connect with people on Mastodon (and other "
 "compatible software)."
 msgstr ""
-"Подключайтесь к распределённой социальной сети и общайтесь в Mastodon или "
+"Подключайтесь к федеративной социальной сети и общайтесь в Mastodon или "
 "других совместимых сетях."
 
 #: content/ui/LoginFlow/WelcomePage.qml:80
-#, fuzzy, kde-format
-#| msgid "Register"
+#, kde-format
 msgctxt "@action:button Pick a Mastodon server"
 msgid "Register"
-msgstr "Регистрация"
+msgstr "Зарегистрироваться"
 
 #: content/ui/LoginFlow/WelcomePage.qml:90
-#, fuzzy, kde-format
-#| msgid "Login"
+#, kde-format
 msgctxt "@action:button Use an existing Mastodon account"
 msgid "Login"
-msgstr "Вход в систему"
+msgstr "Войти"
 
 #: content/ui/LoginFlow/WelcomePage.qml:105
 #, kde-format
@@ -4010,10 +4004,9 @@ msgid "Edit"
 msgstr "Изменить"
 
 #: content/ui/PostDelegate/PostMenu.qml:209
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgid "Delete…"
-msgstr "Удалить"
+msgstr "Удалить…"
 
 #: content/ui/PostDelegate/PostMenu.qml:217
 #, fuzzy, kde-format
@@ -4063,7 +4056,7 @@ msgstr "Метка"
 #, kde-format
 msgctxt "@action:button expand the number of shown tags"
 msgid "…and %1 more"
-msgstr ""
+msgstr "…и ещё %1"
 
 #: content/ui/PostDelegate/QuotePost.qml:66
 #, kde-format
@@ -4085,7 +4078,7 @@ msgstr "Опрос"
 #, kde-format
 msgctxt "@action:button"
 msgid "Volume"
-msgstr ""
+msgstr "Громкость"
 
 #: content/ui/ReadMarker.qml:13
 #, kde-format
@@ -4156,17 +4149,13 @@ msgid "Search for users, tags and posts"
 msgstr "Поиск пользователей, меток и публикаций"
 
 #: content/ui/ServerInformationPage.qml:25
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Rules"
+#, kde-format
 msgctxt "@title:window Server rules"
 msgid "Rules"
 msgstr "Правила"
 
 #: content/ui/ServerInformationPage.qml:66
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Rules"
+#, kde-format
 msgctxt "@action:button"
 msgid "Rules"
 msgstr "Правила"
@@ -4190,20 +4179,16 @@ msgid "Privacy Policy"
 msgstr "Политика конфиденциальности"
 
 #: content/ui/ServerInformationPage.qml:102
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Password Service"
+#, kde-format
 msgctxt "@action:button"
 msgid "Terms of Service"
-msgstr "Служба паролей"
+msgstr "Условия использования"
 
 #: content/ui/ServerInformationPage.qml:103
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Password Service"
+#, kde-format
 msgctxt "@title:window"
 msgid "Terms of Service"
-msgstr "Служба паролей"
+msgstr "Условия использования"
 
 #: content/ui/Settings/AccountPage.qml:26
 #, kde-format
@@ -4532,12 +4517,10 @@ msgid "Hide with Content Notice"
 msgstr "Скрывать с предупреждением о содержимом"
 
 #: content/ui/Settings/EditFilterPage.qml:140
-#, fuzzy, kde-format
-#| msgctxt "@label:radiobutton"
-#| msgid "Hide with Content Notice"
+#, kde-format
 msgctxt "@label:radiobutton"
 msgid "Hide Media with Content Notice"
-msgstr "Скрывать с предупреждением о содержимом"
+msgstr "Скрывать медиафайлы с предупреждением о содержимом"
 
 #: content/ui/Settings/EditFilterPage.qml:147
 #, kde-format
@@ -4582,9 +4565,7 @@ msgid "Create"
 msgstr "Создать"
 
 #: content/ui/Settings/EditFilterPage.qml:229
-#, fuzzy, kde-format
-#| msgctxt "@action:Button Save an edited a post"
-#| msgid "Save"
+#, kde-format
 msgctxt "@action:button Save the edited filter"
 msgid "Save"
 msgstr "Сохранить"
@@ -5108,15 +5089,13 @@ msgid "Remove"
 msgstr "Удалить"
 
 #: content/ui/SocialGraphPage.qml:100
-#, fuzzy, kde-format
-#| msgid "Unblock"
+#, kde-format
 msgctxt "@action:button Unblock this user"
 msgid "Unblock"
 msgstr "Разблокировать"
 
 #: content/ui/SocialGraphPage.qml:106
-#, fuzzy, kde-format
-#| msgid "Unmute"
+#, kde-format
 msgctxt "@action:button Unmute this user"
 msgid "Unmute"
 msgstr "Перестать игнорировать"
@@ -5569,7 +5548,7 @@ msgctxt ""
 "@info:label %1 is the native language name, and %2 is the localized name. "
 "For example, 'dansk (Danish)'"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: editor/listeditorbackend.cpp:121
 #, kde-format
@@ -5642,13 +5621,12 @@ msgstr "Tokodon"
 #: main.cpp:78 main.cpp:99
 #, kde-format
 msgid "Browse the Fediverse"
-msgstr "Просмотреть распределённую сеть"
+msgstr "Просмотр федеративной сети"
 
 #: main.cpp:80
-#, fuzzy, kde-format
-#| msgid "© 2021-2024 KDE Community"
+#, kde-format
 msgid "© 2021-2025 KDE Community"
-msgstr "© Сообщество KDE, 2021–2024"
+msgstr "© Сообщество KDE, 2021–2025"
 
 #: main.cpp:81
 #, kde-format
@@ -5678,10 +5656,9 @@ msgid "Your emails"
 msgstr "translation-team@basealt.ru"
 
 #: main.cpp:100
-#, fuzzy, kde-format
-#| msgid "Supports https, tokodon and web+ap url scheme"
+#, kde-format
 msgid "Supports https, and web+ap url schemes."
-msgstr "Предусмотрена поддержка https и схемы URL-адреса web+ap"
+msgstr "Предусмотрена поддержка https и схемы URL-адреса web+ap."
 
 #: network/networkcontroller.cpp:307
 #, kde-format
@@ -5783,123 +5760,97 @@ msgid "Write a New Post"
 msgstr "Создать публикацию"
 
 #: tokodonapplication.cpp:98
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "End of Timeline"
+#, kde-format
 msgctxt "@action:button Home Timeline"
 msgid "Open Home Timeline"
-msgstr "Конец ленты новостей"
+msgstr "Открыть ленту новостей"
 
 #: tokodonapplication.cpp:104
-#, fuzzy, kde-format
-#| msgctxt "@action:button Account Notifications"
-#| msgid "Notifications"
+#, kde-format
 msgctxt "@action:button Account Notifications"
 msgid "Open Notifications"
-msgstr "Уведомления"
+msgstr "Открыть уведомления"
 
 #: tokodonapplication.cpp:110
-#, fuzzy, kde-format
-#| msgctxt "@action:button Follows that require explicit allow/deny"
-#| msgid "Follow Requests"
+#, kde-format
 msgctxt "@action:button Follows that require explicit allow/deny"
 msgid "Open Follow Requests"
-msgstr "Запросы на подписку"
+msgstr "Открыть запросы на подписку"
 
 #: tokodonapplication.cpp:116
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Local Timeline"
+#, kde-format
 msgctxt "@action:button Local timeline of posts from the account's own server"
 msgid "Open Local Timeline"
-msgstr "Локальная лента новостей"
+msgstr "Открыть локальную ленту новостей"
 
 #: tokodonapplication.cpp:122
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Local Timeline"
+#, kde-format
 msgctxt ""
 "@action:button Global timeline of posts from the entire Fediverse network"
 msgid "Open Global Timeline"
-msgstr "Локальная лента новостей"
+msgstr "Открыть глобальную ленту новостей"
 
 #: tokodonapplication.cpp:128
-#, fuzzy, kde-format
-#| msgid "Conversations"
+#, kde-format
 msgctxt "@action:button Direct one-on-one messages between users"
 msgid "Open Conversations"
-msgstr "Чаты"
+msgstr "Открыть чаты"
 
 #: tokodonapplication.cpp:134
-#, fuzzy, kde-format
-#| msgctxt "@action:button This account's favorited posts"
-#| msgid "Favorites"
+#, kde-format
 msgctxt "@action:button This account's favorited posts"
 msgid "Open Favorites"
-msgstr "Избранное"
+msgstr "Открыть избранное"
 
 #: tokodonapplication.cpp:140
-#, fuzzy, kde-format
-#| msgctxt "@action:button This account's bookmarked posts"
-#| msgid "Bookmarks"
+#, kde-format
 msgctxt "@action:button This account's bookmarked posts"
 msgid "Open Bookmarks"
-msgstr "Закладки"
+msgstr "Открыть закладки"
 
 #: tokodonapplication.cpp:146
-#, fuzzy, kde-format
-#| msgid "Explore"
+#, kde-format
 msgctxt "@action:button Explore this server's trending posts, news, and more"
 msgid "Open Explore"
-msgstr "Обзор"
+msgstr "Открыть обзор"
 
 #: tokodonapplication.cpp:152
-#, fuzzy, kde-format
-#| msgctxt "@action:button A list of this account's followed accounts"
-#| msgid "Following"
+#, kde-format
 msgctxt "@action:button A list of this account's followed accounts"
 msgid "Open Following"
-msgstr "Подписки"
+msgstr "Открыть подписки"
 
 #: tokodonapplication.cpp:158
-#, fuzzy, kde-format
-#| msgctxt "@action:button Search for users, posts and tags"
-#| msgid "Search"
+#, kde-format
 msgctxt "@action:button Search for users, posts and tags"
 msgid "Open Search"
-msgstr "Поиск"
+msgstr "Открыть поиск"
 
 #: tokodonapplication.cpp:164
-#, fuzzy, kde-format
-#| msgctxt "@abel Account preferences"
-#| msgid "Open Server in Browser"
+#, kde-format
 msgctxt "@action:button"
 msgid "Open Server Information"
-msgstr "Открыть в браузере"
+msgstr "Открыть сведения о сервере"
 
 #: tokodonapplication.cpp:170
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar"
-#| msgid "Open Post"
+#, kde-format
 msgctxt ""
 "@action:button This account's lists, or timelines consisting of a groups of "
 "accounts"
 msgid "Open Lists"
-msgstr "Открыть публикацию"
+msgstr "Открыть списки"
 
 #: tokodonapplication.cpp:176
-#, fuzzy, kde-format
-#| msgid "View Profile"
+#, kde-format
 msgctxt "@action:button This account's profile"
 msgid "Open Profile"
-msgstr "Показать профиль"
+msgstr "Открыть профиль"
 
 #: tokodonapplication.cpp:180
-#, fuzzy, kde-format
-#| msgid "Account editor"
+#, kde-format
 msgctxt "@action:button"
 msgid "Open Account Switcher"
-msgstr "Редактор учётной записи"
+msgstr "Открыть окно выбора учётной записи"
 
 #: tokodonapplication.cpp:216
 #, kde-format
