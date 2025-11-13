@@ -12,9 +12,9 @@
 
 #include <KLocalizedString>
 #include <QJsonDocument>
+#include <QMimeDatabase>
 #include <QNetworkReply>
 #include <QUrlQuery>
-#include <qmimedatabase.h>
 
 using namespace Qt::Literals::StringLiterals;
 

@@ -3,10 +3,10 @@
 
 #include "account/preferences.h"
 
+#include <QHttpMultiPart>
 #include <QJsonDocument>
 #include <QNetworkReply>
 #include <QNetworkRequest>
-#include <qhttpmultipart.h>
 
 #include "account/abstractaccount.h"
 

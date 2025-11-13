@@ -7,12 +7,12 @@
 #include "utils/texthandler.h"
 
 #include <KLocalizedString>
+#include <QFileInfo>
+#include <QHttpMultiPart>
 #include <QJsonDocument>
+#include <QMimeDatabase>
 #include <QNetworkReply>
 #include <QTextDocument>
-#include <qfileinfo.h>
-#include <qhttpmultipart.h>
-#include <qmimedatabase.h>
 
 using namespace Qt::Literals::StringLiterals;
 
