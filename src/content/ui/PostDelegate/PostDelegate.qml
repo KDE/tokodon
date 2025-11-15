@@ -273,6 +273,8 @@ QQC2.ItemDelegate {
             authorIdentity: root.authorIdentity
             isPrivate: root.visibility === Post.Direct || root.visibility === Post.Private
             muted: root.muted
+            content: root.content
+            hasContent: root.post.hasContent
 
             onDeletePost: {
                 deleteDialog.active = true;

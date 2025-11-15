@@ -26,6 +26,8 @@ Components.ConvergentContextMenu {
     required property var authorIdentity
     required property bool isPrivate
     required property bool muted
+    required property string content
+    required property bool hasContent
 
     readonly property bool hasMultipleAccounts: AccountManager.rowCount() > 1
 
@@ -55,11 +57,21 @@ Components.ConvergentContextMenu {
     }
 
     QQC2.Action {
-        icon.name: "edit-copy"
+        icon.name: "edit-link-symbolic"
         text: i18nc("@action:inmenu", "Copy Link")
         onTriggered: {
             clipboard.content = root.url;
             applicationWindow().showPassiveNotification(i18n("Post link copied."));
+        }
+    }
+
+    Kirigami.Action {
+        icon.name: "edit-copy-symbolic"
+        text: i18nc("@action:inmenu", "Copy Text")
+        visible: root.hasContent
+        onTriggered: {
+            clipboard.content = TextHandler.stripHtml(root.content);
+            applicationWindow().showPassiveNotification(i18n("Post text copied."));
         }
     }
 
