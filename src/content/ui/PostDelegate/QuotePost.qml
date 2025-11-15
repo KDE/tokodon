@@ -88,29 +88,40 @@ QQC2.AbstractButton {
             }
         }
 
-        Loader {
-            active: root.post.content.length > 0
-            visible: active
+        ColumnLayout {
+            visible: root.post.hasContent
+            spacing: Kirigami.Units.largeSpacing
 
             Layout.fillWidth: true
 
-            sourceComponent: PostContent {
-                content: root.post.content
-                expandedPost: false
-                secondary: true
-                shouldOpenInternalLinks: false
-                hoverEnabled: false
+            Loader {
+                visible: root.post.spoilerText.length !== 0
+                active: visible
 
                 Layout.fillWidth: true
 
-                HoverHandler {
-                    cursorShape: Qt.PointingHandCursor
+                sourceComponent: ContentNotice {
+                    postContent: postContent
+                    spoilerText: root.post.spoilerText
+
+                    // This is intentional as navigating sub-toots is really awkward. Just open it!
+                    onToggleNotice: root.clicked()
                 }
+            }
+
+            PostContent {
+                id: postContent
+
+                content: root.post.content
+                expandedPost: false
+                secondary: root.post.secondary
+                visible: root.post.spoilerText.length === 0 || AccountManager.selectedAccount.preferences.extendSpoiler
+                shouldOpenInternalLinks: true
             }
         }
 
         Loader {
-            active: root.post.attachments.length > 0
+            active: root.post.attachments.length > 0 && postContent.visible
             visible: active
 
             Layout.fillWidth: true
@@ -118,7 +129,7 @@ QQC2.AbstractButton {
             sourceComponent: AttachmentGrid {
                 expandedPost: false
                 attachments: root.post.attachments
-                sensitive: false
+                sensitive: root.post.sensitive
                 secondary: false
                 inViewPort: true
                 canHideMedia: false
