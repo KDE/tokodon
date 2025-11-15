@@ -81,12 +81,12 @@ private Q_SLOTS:
         MainTimelineModel timelineModel;
         timelineModel.setName(QStringLiteral("home"));
 
-        QCOMPARE(timelineModel.rowCount({}), 5);
+        QCOMPARE(timelineModel.rowCount({}), 7);
         QVERIFY(timelineModel.canFetchMore({}));
 
         // TODO: this is supposed to be 10, but now due to post id de-duplication this now works as a test of that. that's not intentional
         timelineModel.fetchMore({});
-        QCOMPARE(timelineModel.rowCount({}), 5);
+        QCOMPARE(timelineModel.rowCount({}), 7);
     }
 
     void testTagModel()
@@ -103,12 +103,12 @@ private Q_SLOTS:
         TagsTimelineModel tagModel;
         tagModel.setHashtag(QStringLiteral("home"));
 
-        QCOMPARE(tagModel.rowCount({}), 5);
+        QCOMPARE(tagModel.rowCount({}), 7);
         QVERIFY(tagModel.canFetchMore({}));
 
         // TODO: this is supposed to be 10, but now due to post id de-duplication this now works as a test of that. that's not intentional
         tagModel.fetchMore({});
-        QCOMPARE(tagModel.rowCount({}), 5);
+        QCOMPARE(tagModel.rowCount({}), 7);
     }
 
     void testThreadModel()
@@ -145,9 +145,9 @@ private Q_SLOTS:
         statusExampleApi.setFileName(QLatin1String(DATA_DIR "/status-poll.json"));
         statusExampleApi.open(QIODevice::ReadOnly);
         account->streamingEvent(AbstractAccount::StreamingEventType::UpdateEvent, statusExampleApi.readAll());
-        QCOMPARE(timelineModel.rowCount({}), 6);
+        QCOMPARE(timelineModel.rowCount({}), 8);
 
-        QCOMPARE(timelineModel.data(timelineModel.index(0, 0), AbstractTimelineModel::IdRole).value<QString>(), QStringLiteral("103270115826048976"));
+        QCOMPARE(timelineModel.data(timelineModel.index(0, 0), AbstractTimelineModel::IdRole).value<QString>(), QStringLiteral("100000"));
         QCOMPARE(timelineModel.data(timelineModel.index(0, 0), AbstractTimelineModel::MentionsRole).value<QStringList>(), QStringList{});
         QCOMPARE(timelineModel.data(timelineModel.index(0, 0), AbstractTimelineModel::ContentRole).value<QString>(), QStringLiteral("<p>LOREM</p>"));
         QCOMPARE(timelineModel.data(timelineModel.index(0, 0), AbstractTimelineModel::AuthorIdentityRole).value<Identity *>()->id(), QStringLiteral("1"));
@@ -205,12 +205,12 @@ private Q_SLOTS:
 
         timelineModel.setListId(QStringLiteral("1"));
 
-        QCOMPARE(timelineModel.rowCount({}), 5);
+        QCOMPARE(timelineModel.rowCount({}), 7);
         QVERIFY(timelineModel.canFetchMore({}));
 
         // TODO: this is supposed to be 10, but now due to post id de-duplication this now works as a test of that. that's not intentional
         timelineModel.fetchMore({});
-        QCOMPARE(timelineModel.rowCount({}), 5);
+        QCOMPARE(timelineModel.rowCount({}), 7);
     }
 
 private:
