@@ -78,29 +78,40 @@ void Post::fromJson(QJsonObject obj)
 
     processContent(obj);
 
-    // Process all URLs in the body
-    auto matchIterator = TextRegex::url.globalMatch(m_content);
-    while (matchIterator.hasNext()) {
-        const QRegularExpressionMatch match = matchIterator.next();
-        // To whittle down the number of requests (which in most cases should be zero) check if the URL could point to a valid post.
-        if (TextHandler::isPostUrl(match.captured(0))) {
-            // Then request said URL from our server
-            m_parent->requestRemoteObject(QUrl(match.captured(0)), this, [this](QNetworkReply *reply) {
-                const auto searchResult = QJsonDocument::fromJson(reply->readAll()).object();
+    // Check if there is a native Mastodon quote
+    // TODO: unilaterally switch to this on a high enough Mastodon version
+    if (obj.contains("quote"_L1)) {
+        const auto quoteObj = obj["quote"_L1].toObject();
+        if (quoteObj.contains("quoted_status"_L1)) {
+            m_quotedPost = new Post(m_parent, quoteObj["quoted_status"_L1].toObject(), this);
+        }
+    }
 
-                const auto statuses = searchResult[QStringLiteral("statuses")].toArray();
+    // Process all URLs in the body if no native quote was found
+    if (!m_quotedPost) {
+        auto matchIterator = TextRegex::url.globalMatch(m_content);
+        while (matchIterator.hasNext()) {
+            const QRegularExpressionMatch match = matchIterator.next();
+            // To whittle down the number of requests (which in most cases should be zero) check if the URL could point to a valid post.
+            if (TextHandler::isPostUrl(match.captured(0))) {
+                // Then request said URL from our server
+                m_parent->requestRemoteObject(QUrl(match.captured(0)), this, [this](QNetworkReply *reply) {
+                    const auto searchResult = QJsonDocument::fromJson(reply->readAll()).object();
 
-                if (statuses.isEmpty()) {
-                    qCDebug(TOKODON_LOG) << "Failed to find any statuses!";
-                } else {
-                    const auto status = statuses.first().toObject();
+                    const auto statuses = searchResult[QStringLiteral("statuses")].toArray();
 
-                    m_quotedPost = new Post(m_parent, status, this);
-                    Q_EMIT quotedPostChanged();
-                }
-            });
+                    if (statuses.isEmpty()) {
+                        qCDebug(TOKODON_LOG) << "Failed to find any statuses!";
+                    } else {
+                        const auto status = statuses.first().toObject();
 
-            break;
+                        m_quotedPost = new Post(m_parent, status, this);
+                        Q_EMIT quotedPostChanged();
+                    }
+                });
+
+                break;
+            }
         }
     }
 
