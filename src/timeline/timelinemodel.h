@@ -19,6 +19,7 @@ class TimelineModel : public AbstractTimelineModel
     Q_PROPERTY(bool shouldLoadMore MEMBER m_shouldLoadMore WRITE setShouldLoadMore NOTIFY shouldLoadMoreChanged)
     Q_PROPERTY(bool showReplies MEMBER m_showReplies NOTIFY showRepliesChanged)
     Q_PROPERTY(bool showBoosts MEMBER m_showBoosts NOTIFY showBoostsChanged)
+    Q_PROPERTY(bool showQuotes MEMBER m_showQuotes NOTIFY showQuotesChanged)
 
 public:
     explicit TimelineModel(QObject *parent = nullptr);
@@ -112,6 +113,7 @@ Q_SIGNALS:
 
     void showRepliesChanged();
     void showBoostsChanged();
+    void showQuotesChanged();
 
     void repositionAt(int index);
     void streamedPostAdded(const QString &postId);
@@ -132,5 +134,6 @@ protected:
     bool m_shouldLoadMore = true;
     bool m_showReplies = true;
     bool m_showBoosts = true;
+    bool m_showQuotes = true;
     friend class TimelineTest;
 };

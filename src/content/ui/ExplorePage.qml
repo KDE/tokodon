@@ -212,6 +212,7 @@ Kirigami.Page {
                                 name: "link"
                                 showReplies: timelinePage.showReplies
                                 showBoosts: timelinePage.showBoosts
+                                showQuotes: timelinePage.showQuotes
                             }
                         }
                     }

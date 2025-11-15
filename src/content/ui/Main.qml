@@ -755,6 +755,7 @@ StatefulApp.StatefulWindow {
                 id: timelineModel
                 showReplies: timelinePage.showReplies
                 showBoosts: timelinePage.showBoosts
+                showQuotes: timelinePage.showQuotes
             }
         }
     }
@@ -849,6 +850,7 @@ StatefulApp.StatefulWindow {
                 hashtag: tagPage.hashtag
                 showReplies: tagPage.showReplies
                 showBoosts: tagPage.showBoosts
+                showQuotes: tagPage.showQuotes
             }
         }
     }

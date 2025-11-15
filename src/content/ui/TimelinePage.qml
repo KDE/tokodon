@@ -24,6 +24,7 @@ Kirigami.ScrollablePage {
     property alias listView: listview
     readonly property bool showReplies: showRepliesAction.checked
     readonly property bool showBoosts: showBoostsAction.checked
+    readonly property bool showQuotes: showQuotesAction.checked
     property alias showFilterAction: filterAction.visible
     property alias originalPostUrl: listview.originalPostUrl
     property string iconName
@@ -113,6 +114,13 @@ Kirigami.ScrollablePage {
                 id: showBoostsAction
                 text: i18n("Show Boosts")
                 icon.name: "boost"
+                checkable: true
+                checked: true
+            }
+            Kirigami.Action {
+                id: showQuotesAction
+                text: i18n("Show Quotes")
+                icon.name: "format-text-blockquote-symbolic"
                 checkable: true
                 checked: true
             }

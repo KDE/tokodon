@@ -114,7 +114,7 @@ QQC2.AbstractButton {
 
                 content: root.post.content
                 expandedPost: false
-                secondary: root.post.secondary
+                secondary: false
                 visible: root.post.spoilerText.length === 0 || AccountManager.selectedAccount.preferences.extendSpoiler
                 shouldOpenInternalLinks: true
             }

@@ -50,6 +50,14 @@ Kirigami.Page {
                 enabled: root.currentAccountId !== ""
             }
             Kirigami.Action {
+                id: showQuotesAction
+                text: i18nc("@action:inmenu", "Show Quotes")
+                icon.name: "format-text-blockquote-symbolic"
+                checkable: true
+                checked: true
+                enabled: root.currentAccountId !== ""
+            }
+            Kirigami.Action {
                 id: showRepliesAction
                 text: i18nc("@action:inmenu", "Show Replies")
                 icon.name: "view-conversation-balloon-symbolic"
@@ -115,6 +123,7 @@ Kirigami.Page {
                             loader.item?.forceActiveFocus(Qt.MouseFocusReason);
                             accountModel.excludeBoosts = Qt.binding(() => !showBoostsAction.checked);
                             accountModel.excludeReplies = Qt.binding(() => !showRepliesAction.checked);
+                            accountModel.excludeQuotes = Qt.binding(() => !showQuotesAction.checked);
                         }
                     }
                 }

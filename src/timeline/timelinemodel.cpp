@@ -32,6 +32,10 @@ void TimelineModel::init()
         reset();
         fillTimeline();
     });
+    connect(this, &TimelineModel::showQuotesChanged, this, [this] {
+        reset();
+        fillTimeline();
+    });
 
     connect(m_manager, &AccountManager::accountSelected, this, [this](AbstractAccount *account) {
         if (m_account == account || account == nullptr) {
@@ -93,6 +97,10 @@ int TimelineModel::fetchedTimeline(const QByteArray &data, bool alwaysAppendToEn
                                            }
                                            // Don't show replies if requested
                                            if (!m_showReplies && !post->inReplyTo().isEmpty()) {
+                                               return true;
+                                           }
+                                           // Don't show quotes if requested
+                                           if (!m_showQuotes && post->quotedPost()) {
                                                return true;
                                            }
                                            // Make sure we aren't adding the same post we already have
