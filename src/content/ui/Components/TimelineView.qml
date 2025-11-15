@@ -41,7 +41,7 @@ ListView {
     reuseItems: false
 
     // Call this function in Keys.onPressed to get PgUp/PgDn support
-    function handleKeyEvent(event): void {
+    function handleKeyEvent(event: KeyEvent): void {
         if (event.key === Qt.Key_PageUp && !root.atYBeginning) {
             event.accepted = true;
             root.contentY -= height;
@@ -49,7 +49,9 @@ ListView {
             event.accepted = true;
             root.contentY += height;
         }
-        root.contentY = Math.min(Math.max(root.contentY, 0), root.contentHeight);
+        if (event.accepted) {
+            root.contentY = Math.min(Math.max(root.contentY, 0), root.contentHeight);
+        }
     }
 
     // Used for pages like TimelinePage to control video playback
