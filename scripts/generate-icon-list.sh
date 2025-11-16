@@ -4,8 +4,9 @@
 
 grep -hre 'icon.name: "' src | sed 's/.*icon.name: "\(.*\)"/\1/' > src/icon-list-1.txt
 grep -hre 'icon.name: "' src | sed 's/.*icon.name: "\(.*\)"/\1/' > src/icon-list-2.txt
-cat src/icon-list-1.txt src/icon-list-2.txt | sort | uniq > src/icon-list.txt
-rm src/icon-list-1.txt src/icon-list-2.txt
+grep -hre 'QIcon::fromTheme(QStringLiteral("' src | sed 's/.*QIcon::fromTheme(QStringLiteral("\(.*\)")));/\1/' > src/icon-list-3.txt
+cat src/icon-list-1.txt src/icon-list-2.txt src/icon-list-3.txt | sort | uniq > src/icon-list.txt
+rm src/icon-list-1.txt src/icon-list-2.txt src/icon-list-3.txt
 
 if [[ `git status --porcelain` && $1 == '--ci' ]]; then
     echo Outdated icon-list.txt. Please run: bash scripts/generate-icon-list.sh
