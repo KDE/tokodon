@@ -66,6 +66,8 @@ QQC2.ItemDelegate {
     required property string editedAt
     required property bool isThreadReply
     required property bool isLastThreadReply
+    required property bool hasContent
+    required property var standaloneTags
 
     required property var post
 
@@ -274,7 +276,7 @@ QQC2.ItemDelegate {
             isPrivate: root.visibility === Post.Direct || root.visibility === Post.Private
             muted: root.muted
             content: root.content
-            hasContent: root.post.hasContent
+            hasContent: root.hasContent
 
             onDeletePost: {
                 deleteDialog.active = true;
@@ -296,7 +298,7 @@ QQC2.ItemDelegate {
         }
 
         ColumnLayout {
-            visible: !root.filtered && root.post.hasContent
+            visible: !root.filtered && root.hasContent
             spacing: Kirigami.Units.largeSpacing
 
             Layout.fillWidth: true
@@ -381,8 +383,8 @@ QQC2.ItemDelegate {
         }
 
         PostTags {
-            standaloneTags: root.post.standaloneTags
-            visible: !root.filtered && postContent.visible && root.post.standaloneTags.length !== 0
+            standaloneTags: root.standaloneTags
+            visible: !root.filtered && postContent.visible && root.standaloneTags.length !== 0
 
             Layout.fillWidth: true
         }

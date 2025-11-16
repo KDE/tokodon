@@ -36,8 +36,12 @@ QVariant ScheduledStatusesModel::data(const QModelIndex &index, int role) const
         }
         return status.scheduledAt.toString(Qt::DateFormat::TextDate);
     }
-    case TextRole:
+    case ContentRole:
         return QVariant::fromValue(status.text);
+    case AttachmentsRole:
+        return QVariant::fromValue(status.attachments);
+    case HasContentRole:
+        return true; // TODO: eh? maybe not always true
     default:
         return {};
     }
@@ -51,7 +55,7 @@ int ScheduledStatusesModel::rowCount(const QModelIndex &parent) const
 
 QHash<int, QByteArray> ScheduledStatusesModel::roleNames() const
 {
-    return {{IdRole, "id"}, {ScheduledAtRole, "scheduledAt"}, {TextRole, "text"}};
+    return {{IdRole, "id"}, {ScheduledAtRole, "scheduledAt"}, {ContentRole, "content"}, {AttachmentsRole, "attachments"}, {HasContentRole, "hasContent"}};
 }
 
 QString ScheduledStatusesModel::displayName() const
@@ -130,6 +134,11 @@ ScheduledStatusesModel::ScheduledStatus ScheduledStatusesModel::fromSourceData(c
     status.id = object["id"_L1].toString();
     status.scheduledAt = QDateTime::fromString(object["scheduled_at"_L1].toString(), Qt::ISODate).toLocalTime();
     status.text = object["params"_L1].toObject()["text"_L1].toString();
+
+    const auto mediaAttachments = object["media_attachments"_L1].toArray();
+    for (const auto attachment : mediaAttachments) {
+        status.attachments.push_back(new Attachment(attachment.toObject()));
+    }
 
     return status;
 }

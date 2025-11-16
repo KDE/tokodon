@@ -57,6 +57,8 @@ QHash<int, QByteArray> AbstractTimelineModel::roleNames() const
         {PollRole, QByteArrayLiteral("poll")},
         {MentionsRole, QByteArrayLiteral("mentions")},
         {AttachmentsRole, QByteArrayLiteral("attachments")},
+        {HasContentRole, QByteArrayLiteral("hasContent")},
+        {StandaloneTagsRole, QByteArrayLiteral("standaloneTags")},
 
         // Reblog
         {IsBoostedRole, "isBoosted"},
@@ -181,6 +183,10 @@ QVariant AbstractTimelineModel::postData(Post *post, int role) const
         return QVariant::fromValue<Post *>(post);
     case MutedRole:
         return post->muted();
+    case HasContentRole:
+        return post->hasContent();
+    case StandaloneTagsRole:
+        return post->standaloneTags();
     }
 
     return {};

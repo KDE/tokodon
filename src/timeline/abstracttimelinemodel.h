@@ -44,6 +44,7 @@ public:
         ApplicationRole, /** Application used for publishing the post. */
         PollRole, /** Poll for the post, which can be null. */
         MentionsRole, /** List of mentions in the post. */
+        StandaloneTagsRole, /** List of standalone tags in a post. See Post::standaloneTags. */
 
         // Reblog
         IsBoostedRole, /** Does this post show up because it's boosted? */
@@ -75,6 +76,7 @@ public:
 
         SelectedRole, /** Used in ThreadModel. Is this post the selected (or root) post? */
         FiltersRole, /** The filters that may have hidden this post. */
+        HasContentRole, /** Whether this post has content. See Post::hasContent. */
 
         PostRole, /** The original Post object. */
 

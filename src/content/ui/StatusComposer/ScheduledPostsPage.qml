@@ -44,59 +44,56 @@ Kirigami.ScrollablePage {
             drafts: root.drafts
         }
 
-        delegate: Delegates.RoundedItemDelegate {
+        delegate: MinimalPostDelegate {
             id: delegate
 
-            required property string id
             required property string scheduledAt
-            required text
-            required property int index
 
-            contentItem: RowLayout {
-                spacing: Kirigami.Units.largeSpacing
+            authorIdentity: null
 
-                ColumnLayout {
-                    spacing: 0
+            notificationActorIdentity: null
 
-                    Layout.fillHeight: true
+            spoilerText: ""
+            relativeTime: ""
+            poll: null
+            selected: false
+            filters: []
+            sensitive: false
+            type: 0
 
-                    Kirigami.Heading {
-                        level: 4
-                        text: root.drafts ? i18nc("Draft, unfinished post", "Draft") : i18nc("Scheduled for this date", "Scheduled for %1", delegate.scheduledAt)
-                    }
+            post: null
 
-                    PostDelegate.PostContent {
-                        content: delegate.text
-                        expandedPost: false
-                        secondary: true
-                        shouldOpenInternalLinks: false
-                        hoverEnabled: false
+            isGroup: false
+            numInGroup: 0
+            standaloneTags: []
 
-                        Layout.fillWidth: true
-                    }
+            width: ListView.view.width
+
+            function clicked(): bool {
+                // You can only really "open" draft posts
+                if (root.drafts) {
+                    root.opened(id);
                 }
-
-                Item {
-                    Layout.fillWidth: true
-                }
-
-                QQC2.Button {
-                    text: i18nc("@action:button Discard this post", "Discard…")
-                    icon.name: "delete-symbolic"
-                    onClicked: {
-                        root.deletedRow = delegate.index;
-                        discardDraftPrompt.open();
-                    }
-                }
-
-                QQC2.Label {
-                    text: delegate.scheduledAt
-                    visible: root.drafts
-                    color: Kirigami.Theme.disabledTextColor
-                }
+                return true;
             }
 
-            onClicked: root.opened(id)
+            Kirigami.Heading {
+                level: 4
+                text: root.drafts ? i18nc("Draft, unfinished post", "Created %1 ago", delegate.scheduledAt) : i18nc("Scheduled for this date", "Scheduled for %1", delegate.scheduledAt)
+            }
+
+            Item {
+                Layout.fillWidth: true
+            }
+
+            QQC2.Button {
+                text: i18nc("@action:button Discard this post", "Discard…")
+                icon.name: "delete-symbolic"
+                onClicked: {
+                    root.deletedRow = delegate.index;
+                    discardDraftPrompt.open();
+                }
+            }
         }
 
         Kirigami.PlaceholderMessage {

@@ -18,42 +18,31 @@ import "../Notifications" as Notifications
 QQC2.ItemDelegate {
     id: root
 
+    default property alias children: extraItemsLayout.children
+
     // The model roles
     required property int index
 
     required property string id
-    required property string originalId
-    required property string url
     required property var authorIdentity
-
-    required property bool isBoosted
-    required property var boostAuthorIdentity
-
-    required property bool isReply
-    required property var replyAuthorIdentity
 
     required property var notificationActorIdentity
 
     required property string content
     required property string spoilerText
     required property string relativeTime
-    required property string absoluteTime
-    required property string publishedAt
     required property var attachments
     required property var poll
     required property bool selected
     required property var filters
     required property bool sensitive
     required property int type
-    required property var mentions
-    required property int visibility
-    required property bool wasEdited
-    required property string editedAt
+    required property bool hasContent
+    required property var standaloneTags
 
     required property var post
 
     required property bool isGroup
-    required property bool isInGroup
     required property int numInGroup
 
     property bool filtered: root.filters.length > 0
@@ -79,6 +68,9 @@ QQC2.ItemDelegate {
     Accessible.description: root.spoilerText.length === 0 ? i18n("Normal Status") : i18n("Spoiler Status")
 
     function openPost(): void {
+        if (root.clicked()) {
+            return;
+        }
         if (postContent.hoveredLink) {
             return;
         }
@@ -108,6 +100,8 @@ QQC2.ItemDelegate {
     }
 
     TapHandler {
+        id: tapHandler
+
         onTapped: eventPoint => {
             // Get the inner ColumnLayout for the FlexColumn
             const innerChild = flexColumn.children[0];
@@ -127,6 +121,14 @@ QQC2.ItemDelegate {
         isLastThreadReply: false
 
         RowLayout {
+            id: extraItemsLayout
+
+            spacing: 0
+        }
+
+        // TODO: create notification-specific delegate for this! and then use the new children default property
+        RowLayout {
+            visible: root.notificationActorIdentity !== undefined && root.relativeTime !== ""
             spacing: 0
 
             // Interaction labels for notifications
@@ -172,7 +174,7 @@ QQC2.ItemDelegate {
         }
 
         ColumnLayout {
-            visible: !root.filtered && root.post.hasContent
+            visible: !root.filtered && root.hasContent
             spacing: Kirigami.Units.largeSpacing
 
             Layout.fillWidth: true
@@ -217,7 +219,7 @@ QQC2.ItemDelegate {
         Loader {
             sourceComponent: AttachmentGrid {
                 expandedPost: false
-                attachments: root.post.attachments
+                attachments: root.attachments
                 identity: root.authorIdentity
                 sensitive: root.sensitive
                 secondary: false
@@ -234,8 +236,8 @@ QQC2.ItemDelegate {
         }
 
         PostTags {
-            standaloneTags: root.post.standaloneTags
-            visible: !root.filtered && postContent.visible && root.post.standaloneTags.length !== 0
+            standaloneTags: root.standaloneTags
+            visible: !root.filtered && postContent.visible && root.standaloneTags.length !== 0
 
             Layout.fillWidth: true
         }

@@ -19,12 +19,13 @@ public:
         IdRole = Qt::UserRole,
         ScheduledAtRole,
         PollRole,
-        TextRole,
-        MediaIdsRole,
+        ContentRole,
+        AttachmentsRole,
         SensitiveRole,
         VisibilityRole,
         SpoilerTextRole,
         InReplyToRole,
+        HasContentRole,
     };
 
     QVariant data(const QModelIndex &index, int role) const override;
@@ -49,6 +50,7 @@ private:
         QString id;
         QDateTime scheduledAt;
         QString text;
+        QList<Attachment *> attachments;
     };
     QList<ScheduledStatus> m_statuses;
     [[nodiscard]] ScheduledStatus fromSourceData(const QJsonObject &object) const;
