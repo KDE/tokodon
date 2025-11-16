@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-23 00:42+0000\n"
+"POT-Creation-Date: 2025-11-16 00:41+0000\n"
 "PO-Revision-Date: 2025-10-23 06:33+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -691,7 +691,7 @@ msgstr "განბლოკვა"
 msgid "Block"
 msgstr "დაბლოკვა"
 
-#: content/ui/AccountHeader.qml:435 content/ui/PostDelegate/PostMenu.qml:189
+#: content/ui/AccountHeader.qml:435 content/ui/PostDelegate/PostMenu.qml:201
 #, kde-format
 msgctxt "@action:inmenu Report this post"
 msgid "Report…"
@@ -725,7 +725,7 @@ msgid "Draft Posts"
 msgstr "პოსტის მონახაზები"
 
 #: content/ui/AccountHeader.qml:488 content/ui/PostDelegate/LinkMenu.qml:25
-#: content/ui/PostDelegate/PostMenu.qml:51
+#: content/ui/PostDelegate/PostMenu.qml:53
 #, kde-format
 msgctxt "@action:inmenu 'Browser' being a web browser"
 msgid "Open in Browser"
@@ -847,13 +847,13 @@ msgctxt "@title:window"
 msgid "Profile"
 msgstr "პროფილი"
 
-#: content/ui/AccountInfo.qml:130 content/ui/FollowingPage.qml:161
+#: content/ui/AccountInfo.qml:130 content/ui/FollowingPage.qml:170
 #, kde-format
 msgctxt "@label"
 msgid "No Posts"
 msgstr "პოსტების გარეშე"
 
-#: content/ui/AccountInfo.qml:131 content/ui/FollowingPage.qml:162
+#: content/ui/AccountInfo.qml:131 content/ui/FollowingPage.qml:171
 #, kde-format
 msgid "This user hasn't posted anything yet."
 msgstr "ამ მომხმარებელს ჯერ არაფერი დაუპოსტავს."
@@ -965,36 +965,36 @@ msgctxt "@info Last updated: relative date and time (e.g. 2 years ago)"
 msgid "Last updated: %1"
 msgstr "უკანასკნელი განახლება: %1"
 
-#: content/ui/Components/TimelineView.qml:82
+#: content/ui/Components/TimelineView.qml:84
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Post"
 msgstr "პოსტის შექმნა"
 
-#: content/ui/Components/TimelineView.qml:90
+#: content/ui/Components/TimelineView.qml:92
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Return to Top"
 msgstr "ზემოთ დაბრუნება"
 
-#: content/ui/Components/TimelineView.qml:174
+#: content/ui/Components/TimelineView.qml:176
 #, kde-format
 msgctxt "@info:status"
 msgid "Some replies are not available"
 msgstr "ზოგიერთი პასუხი ხელმისაწვდომი არაა"
 
-#: content/ui/Components/TimelineView.qml:175
+#: content/ui/Components/TimelineView.qml:177
 #, kde-format
 msgid "To view all replies, open the post on the original server."
 msgstr "ყველა პასუხის სანახავად პოსტი ორიგინალ სერვერზე გახსენით."
 
-#: content/ui/Components/TimelineView.qml:178
+#: content/ui/Components/TimelineView.qml:180
 #, kde-format
 msgctxt "@action:button 'Browser' being a web browser"
 msgid "Open in Browser"
 msgstr "ბრაუზერში გახსნა"
 
-#: content/ui/Components/TimelineView.qml:187
+#: content/ui/Components/TimelineView.qml:189
 #, kde-format
 msgctxt "@info:status"
 msgid "End of Timeline"
@@ -1198,13 +1198,13 @@ msgid_plural "%1 people are talking"
 msgstr[0] "საუბრობს %1 პიროვნება"
 msgstr[1] "საუბრობს %1 პიროვნება"
 
-#: content/ui/ExplorePage.qml:261
+#: content/ui/ExplorePage.qml:262
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No News"
 msgstr "სიახლეების გარეშე"
 
-#: content/ui/ExplorePage.qml:298
+#: content/ui/ExplorePage.qml:299
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Users"
@@ -1217,7 +1217,7 @@ msgid "Following"
 msgstr "მიჰყვებით"
 
 #: content/ui/FollowingPage.qml:41 content/ui/Settings/SafetyPage.qml:26
-#: content/ui/TimelinePage.qml:109
+#: content/ui/TimelinePage.qml:110
 #, kde-format
 msgctxt "@action:button"
 msgid "Filters"
@@ -1230,29 +1230,37 @@ msgid "Show Boosts"
 msgstr "აწევების ჩვენება"
 
 #: content/ui/FollowingPage.qml:54
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "Show Boosts"
+msgctxt "@action:inmenu"
+msgid "Show Quotes"
+msgstr "აწევების ჩვენება"
+
+#: content/ui/FollowingPage.qml:62
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Show Replies"
 msgstr "პასუხების ჩვენება"
 
-#: content/ui/FollowingPage.qml:65 content/ui/TimelinePage.qml:131
+#: content/ui/FollowingPage.qml:73 content/ui/TimelinePage.qml:139
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Configure Filters…"
 msgstr "ფილტრების მორგება…"
 
-#: content/ui/FollowingPage.qml:66 content/ui/TimelinePage.qml:132
+#: content/ui/FollowingPage.qml:74 content/ui/TimelinePage.qml:140
 #, kde-format
 msgctxt "@title:window"
 msgid "Filters"
 msgstr "ფილტრები"
 
-#: content/ui/FollowingPage.qml:155
+#: content/ui/FollowingPage.qml:164
 #, kde-format
 msgid "No User Selected"
 msgstr "მომხმარებელი მონიშნული არაა"
 
-#: content/ui/FollowingPage.qml:156
+#: content/ui/FollowingPage.qml:165
 #, kde-format
 msgid ""
 "With the Following view, easily check on each user you're following and only "
@@ -1871,19 +1879,19 @@ msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "მორგება"
 
-#: content/ui/Main.qml:843
+#: content/ui/Main.qml:844
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Unfollow"
 msgstr "გამოწერის გაუქმება"
 
-#: content/ui/Main.qml:843
+#: content/ui/Main.qml:844
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Follow"
 msgstr "გამოწერა"
 
-#: content/ui/Main.qml:891
+#: content/ui/Main.qml:893
 #, kde-format
 msgctxt "@title"
 msgid "Embed Information"
@@ -3655,14 +3663,14 @@ msgstr[0] "%1 ციტატა"
 msgstr[1] "%1 ციტატა"
 
 #: content/ui/PostDelegate/LinkMenu.qml:33
-#: content/ui/PostDelegate/PostMenu.qml:59
+#: content/ui/PostDelegate/PostMenu.qml:61
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy Link"
 msgstr "ბმულის კოპირება"
 
 #: content/ui/PostDelegate/LinkMenu.qml:36
-#: content/ui/PostDelegate/PostMenu.qml:62
+#: content/ui/PostDelegate/PostMenu.qml:64
 #, kde-format
 msgid "Post link copied."
 msgstr "პოსტის ბმული დაკოპირდა."
@@ -3753,76 +3761,76 @@ msgstr ""
 "დარწმუნებული ბრძანდებით, რომ გნებავთ, თავიდან დაწეროთ ეს პოსტი? ეს ორიგინალ "
 "პოსტს წაშლის."
 
-#: content/ui/PostDelegate/PostDelegate.qml:408
+#: content/ui/PostDelegate/PostDelegate.qml:410
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "პასუხი"
 
-#: content/ui/PostDelegate/PostDelegate.qml:435
+#: content/ui/PostDelegate/PostDelegate.qml:437
 #, kde-format
 msgid "Cannot boost direct messages"
 msgstr "პირდაპირი შეტყობინებების აწევა შეუძლებელია"
 
-#: content/ui/PostDelegate/PostDelegate.qml:437
+#: content/ui/PostDelegate/PostDelegate.qml:439
 #, kde-format
 msgid "Cannot boost private posts"
 msgstr "პირადი პოსტების აწევა შეუძლებელია"
 
-#: content/ui/PostDelegate/PostDelegate.qml:439
+#: content/ui/PostDelegate/PostDelegate.qml:441
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "გაძლიერება"
 
-#: content/ui/PostDelegate/PostDelegate.qml:457
+#: content/ui/PostDelegate/PostDelegate.qml:459
 #, kde-format
 msgid "Boosted"
 msgstr "აწეულია"
 
-#: content/ui/PostDelegate/PostDelegate.qml:457
+#: content/ui/PostDelegate/PostDelegate.qml:459
 #, kde-format
 msgid "Boost"
 msgstr "აწევა"
 
-#: content/ui/PostDelegate/PostDelegate.qml:477
+#: content/ui/PostDelegate/PostDelegate.qml:479
 #, kde-format
 msgctxt "Favorite a post"
 msgid "Favorite"
 msgstr "რჩეული"
 
-#: content/ui/PostDelegate/PostDelegate.qml:480
+#: content/ui/PostDelegate/PostDelegate.qml:482
 #, kde-format
 msgid "Favorited"
 msgstr "რჩეულებში"
 
-#: content/ui/PostDelegate/PostDelegate.qml:480
+#: content/ui/PostDelegate/PostDelegate.qml:482
 #, kde-format
 msgid "Favorite"
 msgstr "რჩეული"
 
-#: content/ui/PostDelegate/PostDelegate.qml:499
+#: content/ui/PostDelegate/PostDelegate.qml:501
 #, kde-format
 msgid "Remove bookmark"
 msgstr "სანიშნეს წაშლა"
 
-#: content/ui/PostDelegate/PostDelegate.qml:499
+#: content/ui/PostDelegate/PostDelegate.qml:501
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "სანიშნე"
 
-#: content/ui/PostDelegate/PostDelegate.qml:502
+#: content/ui/PostDelegate/PostDelegate.qml:504
 #, kde-format
 msgid "Bookmarked"
 msgstr "ჩამატებულია სანიშნეებში"
 
-#: content/ui/PostDelegate/PostDelegate.qml:502
+#: content/ui/PostDelegate/PostDelegate.qml:504
 #, kde-format
 msgid "Bookmark"
 msgstr "სანიშნე"
 
-#: content/ui/PostDelegate/PostDelegate.qml:536
+#: content/ui/PostDelegate/PostDelegate.qml:538
 #, kde-format
 msgid ""
 "This post has been marked private. Some posts may be missing because its "
@@ -3865,108 +3873,121 @@ msgstr "%1 აწეულია"
 msgid "In reply to %1"
 msgstr "%1-ის პასუხად"
 
-#: content/ui/PostDelegate/PostMenu.qml:43
+#: content/ui/PostDelegate/PostMenu.qml:45
 #, kde-format
 msgctxt "@action:inmenu 'Thread' is a series of posts."
 msgid "Open Thread"
 msgstr "თემის გახსნა"
 
-#: content/ui/PostDelegate/PostMenu.qml:68
+#: content/ui/PostDelegate/PostMenu.qml:70
+#, fuzzy, kde-format
+#| msgid "Copy Image"
+msgctxt "@action:inmenu"
+msgid "Copy Text"
+msgstr "ნახატის კოპირება"
+
+#: content/ui/PostDelegate/PostMenu.qml:74
+#, fuzzy, kde-format
+#| msgid "Post link copied."
+msgid "Post text copied."
+msgstr "პოსტის ბმული დაკოპირდა."
+
+#: content/ui/PostDelegate/PostMenu.qml:80
 #, kde-format
 msgctxt "@action Open embed into website dialog"
 msgid "Embed"
 msgstr "ჩაშენება"
 
-#: content/ui/PostDelegate/PostMenu.qml:84
+#: content/ui/PostDelegate/PostMenu.qml:96
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open as…"
 msgstr "გახსნა, როგორც…"
 
-#: content/ui/PostDelegate/PostMenu.qml:92
+#: content/ui/PostDelegate/PostMenu.qml:104
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Reply as…"
 msgstr "პასუხი, როგორც…"
 
-#: content/ui/PostDelegate/PostMenu.qml:100
+#: content/ui/PostDelegate/PostMenu.qml:112
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Favorite as…"
 msgstr "რჩეულებში ჩამატება, როგორც…"
 
-#: content/ui/PostDelegate/PostMenu.qml:108
+#: content/ui/PostDelegate/PostMenu.qml:120
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Boost as…"
 msgstr "გაძლიერება, როგორც…"
 
-#: content/ui/PostDelegate/PostMenu.qml:116
+#: content/ui/PostDelegate/PostMenu.qml:128
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Bookmark as…"
 msgstr "ჩანიშვნა, როგორც…"
 
-#: content/ui/PostDelegate/PostMenu.qml:129
+#: content/ui/PostDelegate/PostMenu.qml:141
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Unpin on Profile"
 msgstr "პროფილიდან მოხსნა"
 
-#: content/ui/PostDelegate/PostMenu.qml:129
+#: content/ui/PostDelegate/PostMenu.qml:141
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Pin on Profile"
 msgstr "პროფილზე მიმაგრება"
 
-#: content/ui/PostDelegate/PostMenu.qml:141
+#: content/ui/PostDelegate/PostMenu.qml:153
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Unmute Conversation"
 msgstr "საუბრის დადუმების გაუქმება"
 
-#: content/ui/PostDelegate/PostMenu.qml:141
+#: content/ui/PostDelegate/PostMenu.qml:153
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Mute Conversation"
 msgstr "საუბრის დადუმება"
 
-#: content/ui/PostDelegate/PostMenu.qml:151
+#: content/ui/PostDelegate/PostMenu.qml:163
 #, kde-format
 msgctxt "@action:inmenu Unmute account"
 msgid "Unmute @%1"
 msgstr "@%1-ის დადუმების გამორთვა"
 
-#: content/ui/PostDelegate/PostMenu.qml:153
+#: content/ui/PostDelegate/PostMenu.qml:165
 #, kde-format
 msgctxt "@action:inmenu Mute account"
 msgid "Mute @%1"
 msgstr "@%1-ის დადუმება"
 
-#: content/ui/PostDelegate/PostMenu.qml:171
+#: content/ui/PostDelegate/PostMenu.qml:183
 #, kde-format
 msgctxt "@action:inmenu Unblock account"
 msgid "Unblock @%1"
 msgstr "@%1-ის განბლოკვა"
 
-#: content/ui/PostDelegate/PostMenu.qml:173
+#: content/ui/PostDelegate/PostMenu.qml:185
 #, kde-format
 msgctxt "@action:inmenu Block account"
 msgid "Block @%1"
 msgstr "@%1-ის დაბლოკვა"
 
-#: content/ui/PostDelegate/PostMenu.qml:201
+#: content/ui/PostDelegate/PostMenu.qml:213
 #: content/ui/StatusComposer/EditorAttachmentGrid.qml:59
 #, kde-format
 msgid "Edit"
 msgstr "ჩასწორება"
 
-#: content/ui/PostDelegate/PostMenu.qml:209
+#: content/ui/PostDelegate/PostMenu.qml:221
 #, kde-format
 msgid "Delete…"
 msgstr "წაშლა…"
 
-#: content/ui/PostDelegate/PostMenu.qml:217
+#: content/ui/PostDelegate/PostMenu.qml:229
 #, kde-format
 msgid "Delete & Re-draft…"
 msgstr "წაშლა და მონახაზის თავიდან შექმნა…"
@@ -4025,7 +4046,7 @@ msgstr "პოსტი %1-დან"
 msgid "Quoted post"
 msgstr "ციტირებული პოსტი"
 
-#: content/ui/PostDelegate/QuotePost.qml:143
+#: content/ui/PostDelegate/QuotePost.qml:154
 #, kde-format
 msgctxt "@info:label"
 msgid "Poll"
@@ -5426,33 +5447,39 @@ msgstr ""
 "ზოგიერთ თქვენს მედიას ტექსტი აკლია. აღწერის დამატება ყველას დაეხმარება, "
 "განსაკუთრებით, თუ მათ თვალთ აკლიათ."
 
-#: content/ui/TimelinePage.qml:40 timeline/accountmodel.cpp:41
+#: content/ui/TimelinePage.qml:41 timeline/accountmodel.cpp:41
 #, kde-format
 msgid "Loading"
 msgstr "ჩატვირთვა"
 
-#: content/ui/TimelinePage.qml:42
+#: content/ui/TimelinePage.qml:43
 #, kde-format
 msgid "Home (%1)"
 msgstr "საწყისი (%1)"
 
-#: content/ui/TimelinePage.qml:114
+#: content/ui/TimelinePage.qml:115
 #, kde-format
 msgid "Show Boosts"
 msgstr "აწევების ჩვენება"
 
-#: content/ui/TimelinePage.qml:121
+#: content/ui/TimelinePage.qml:122
+#, fuzzy, kde-format
+#| msgid "Show Boosts"
+msgid "Show Quotes"
+msgstr "აწევების ჩვენება"
+
+#: content/ui/TimelinePage.qml:129
 #, kde-format
 msgid "Show Replies"
 msgstr "პასუხების ჩვენება"
 
-#: content/ui/TimelinePage.qml:147
+#: content/ui/TimelinePage.qml:155
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
 msgstr "სერვერთან დაკავშირების შეცდომა: %1. შეამოწმეთ თქვენი პარამეტრები."
 
-#: content/ui/TimelinePage.qml:188
+#: content/ui/TimelinePage.qml:196
 #, kde-format
 msgctxt "@action:button Load more posts above this"
 msgid "Load More"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-23 00:42+0000\n"
+"POT-Creation-Date: 2025-11-16 00:41+0000\n"
 "PO-Revision-Date: 2025-11-08 21:10-0300\n"
 "Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -697,7 +697,7 @@ msgstr "Desbloqueie"
 msgid "Block"
 msgstr "Bloqueie"
 
-#: content/ui/AccountHeader.qml:435 content/ui/PostDelegate/PostMenu.qml:189
+#: content/ui/AccountHeader.qml:435 content/ui/PostDelegate/PostMenu.qml:201
 #, kde-format
 msgctxt "@action:inmenu Report this post"
 msgid "Report…"
@@ -731,7 +731,7 @@ msgid "Draft Posts"
 msgstr "Rascunhos de postagens"
 
 #: content/ui/AccountHeader.qml:488 content/ui/PostDelegate/LinkMenu.qml:25
-#: content/ui/PostDelegate/PostMenu.qml:51
+#: content/ui/PostDelegate/PostMenu.qml:53
 #, kde-format
 msgctxt "@action:inmenu 'Browser' being a web browser"
 msgid "Open in Browser"
@@ -854,13 +854,13 @@ msgctxt "@title:window"
 msgid "Profile"
 msgstr "Perfil"
 
-#: content/ui/AccountInfo.qml:130 content/ui/FollowingPage.qml:161
+#: content/ui/AccountInfo.qml:130 content/ui/FollowingPage.qml:170
 #, kde-format
 msgctxt "@label"
 msgid "No Posts"
 msgstr "Sem postagens"
 
-#: content/ui/AccountInfo.qml:131 content/ui/FollowingPage.qml:162
+#: content/ui/AccountInfo.qml:131 content/ui/FollowingPage.qml:171
 #, kde-format
 msgid "This user hasn't posted anything yet."
 msgstr "Este usuário ainda não postou nada."
@@ -972,36 +972,36 @@ msgctxt "@info Last updated: relative date and time (e.g. 2 years ago)"
 msgid "Last updated: %1"
 msgstr "Última atualização: %1"
 
-#: content/ui/Components/TimelineView.qml:82
+#: content/ui/Components/TimelineView.qml:84
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Post"
 msgstr "Criar postagem"
 
-#: content/ui/Components/TimelineView.qml:90
+#: content/ui/Components/TimelineView.qml:92
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Return to Top"
 msgstr "Retorna ao topo"
 
-#: content/ui/Components/TimelineView.qml:174
+#: content/ui/Components/TimelineView.qml:176
 #, kde-format
 msgctxt "@info:status"
 msgid "Some replies are not available"
 msgstr "Algumas respostas não estão disponíveis"
 
-#: content/ui/Components/TimelineView.qml:175
+#: content/ui/Components/TimelineView.qml:177
 #, kde-format
 msgid "To view all replies, open the post on the original server."
 msgstr "Para ver todas as respostas, abra a postagem no servidor original."
 
-#: content/ui/Components/TimelineView.qml:178
+#: content/ui/Components/TimelineView.qml:180
 #, kde-format
 msgctxt "@action:button 'Browser' being a web browser"
 msgid "Open in Browser"
 msgstr "Abrir no navegador"
 
-#: content/ui/Components/TimelineView.qml:187
+#: content/ui/Components/TimelineView.qml:189
 #, kde-format
 msgctxt "@info:status"
 msgid "End of Timeline"
@@ -1206,13 +1206,13 @@ msgid_plural "%1 people are talking"
 msgstr[0] "%1 pessoa está falando"
 msgstr[1] "%1 pessoas estão falando"
 
-#: content/ui/ExplorePage.qml:261
+#: content/ui/ExplorePage.qml:262
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No News"
 msgstr "Nenhuma novidade"
 
-#: content/ui/ExplorePage.qml:298
+#: content/ui/ExplorePage.qml:299
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Users"
@@ -1225,7 +1225,7 @@ msgid "Following"
 msgstr "Seguindo"
 
 #: content/ui/FollowingPage.qml:41 content/ui/Settings/SafetyPage.qml:26
-#: content/ui/TimelinePage.qml:109
+#: content/ui/TimelinePage.qml:110
 #, kde-format
 msgctxt "@action:button"
 msgid "Filters"
@@ -1238,29 +1238,37 @@ msgid "Show Boosts"
 msgstr "Mostrar impulsionamentos"
 
 #: content/ui/FollowingPage.qml:54
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "Show Boosts"
+msgctxt "@action:inmenu"
+msgid "Show Quotes"
+msgstr "Mostrar impulsionamentos"
+
+#: content/ui/FollowingPage.qml:62
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Show Replies"
 msgstr "Mostrar respostas"
 
-#: content/ui/FollowingPage.qml:65 content/ui/TimelinePage.qml:131
+#: content/ui/FollowingPage.qml:73 content/ui/TimelinePage.qml:139
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Configure Filters…"
 msgstr "Configurar filtros…"
 
-#: content/ui/FollowingPage.qml:66 content/ui/TimelinePage.qml:132
+#: content/ui/FollowingPage.qml:74 content/ui/TimelinePage.qml:140
 #, kde-format
 msgctxt "@title:window"
 msgid "Filters"
 msgstr "Filtros"
 
-#: content/ui/FollowingPage.qml:155
+#: content/ui/FollowingPage.qml:164
 #, kde-format
 msgid "No User Selected"
 msgstr "Nenhum usuário selecionado"
 
-#: content/ui/FollowingPage.qml:156
+#: content/ui/FollowingPage.qml:165
 #, kde-format
 msgid ""
 "With the Following view, easily check on each user you're following and only "
@@ -1882,19 +1890,19 @@ msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Configurações"
 
-#: content/ui/Main.qml:843
+#: content/ui/Main.qml:844
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Unfollow"
 msgstr "Não seguir"
 
-#: content/ui/Main.qml:843
+#: content/ui/Main.qml:844
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Follow"
 msgstr "Seguir"
 
-#: content/ui/Main.qml:891
+#: content/ui/Main.qml:893
 #, kde-format
 msgctxt "@title"
 msgid "Embed Information"
@@ -3666,14 +3674,14 @@ msgstr[0] "%1 citação"
 msgstr[1] "%1 citações"
 
 #: content/ui/PostDelegate/LinkMenu.qml:33
-#: content/ui/PostDelegate/PostMenu.qml:59
+#: content/ui/PostDelegate/PostMenu.qml:61
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy Link"
 msgstr "Copiar link"
 
 #: content/ui/PostDelegate/LinkMenu.qml:36
-#: content/ui/PostDelegate/PostMenu.qml:62
+#: content/ui/PostDelegate/PostMenu.qml:64
 #, kde-format
 msgid "Post link copied."
 msgstr "Link da postagem copiado."
@@ -3764,76 +3772,76 @@ msgstr ""
 "Tem certeza de que deseja reescrever esta publicação? Isso excluirá a "
 "publicação original."
 
-#: content/ui/PostDelegate/PostDelegate.qml:408
+#: content/ui/PostDelegate/PostDelegate.qml:410
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Responder"
 
-#: content/ui/PostDelegate/PostDelegate.qml:435
+#: content/ui/PostDelegate/PostDelegate.qml:437
 #, kde-format
 msgid "Cannot boost direct messages"
 msgstr "Não é possível impulsionar mensagens diretas"
 
-#: content/ui/PostDelegate/PostDelegate.qml:437
+#: content/ui/PostDelegate/PostDelegate.qml:439
 #, kde-format
 msgid "Cannot boost private posts"
 msgstr "Não é possível impulsionar postagens privadas"
 
-#: content/ui/PostDelegate/PostDelegate.qml:439
+#: content/ui/PostDelegate/PostDelegate.qml:441
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Impulsionar"
 
-#: content/ui/PostDelegate/PostDelegate.qml:457
+#: content/ui/PostDelegate/PostDelegate.qml:459
 #, kde-format
 msgid "Boosted"
 msgstr "Impulsionado"
 
-#: content/ui/PostDelegate/PostDelegate.qml:457
+#: content/ui/PostDelegate/PostDelegate.qml:459
 #, kde-format
 msgid "Boost"
 msgstr "Impulsionar"
 
-#: content/ui/PostDelegate/PostDelegate.qml:477
+#: content/ui/PostDelegate/PostDelegate.qml:479
 #, kde-format
 msgctxt "Favorite a post"
 msgid "Favorite"
 msgstr "Favoritar"
 
-#: content/ui/PostDelegate/PostDelegate.qml:480
+#: content/ui/PostDelegate/PostDelegate.qml:482
 #, kde-format
 msgid "Favorited"
 msgstr "Favoritado"
 
-#: content/ui/PostDelegate/PostDelegate.qml:480
+#: content/ui/PostDelegate/PostDelegate.qml:482
 #, kde-format
 msgid "Favorite"
 msgstr "Favorito"
 
-#: content/ui/PostDelegate/PostDelegate.qml:499
+#: content/ui/PostDelegate/PostDelegate.qml:501
 #, kde-format
 msgid "Remove bookmark"
 msgstr "Remover marcador"
 
-#: content/ui/PostDelegate/PostDelegate.qml:499
+#: content/ui/PostDelegate/PostDelegate.qml:501
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "Marcar"
 
-#: content/ui/PostDelegate/PostDelegate.qml:502
+#: content/ui/PostDelegate/PostDelegate.qml:504
 #, kde-format
 msgid "Bookmarked"
 msgstr "Marcado"
 
-#: content/ui/PostDelegate/PostDelegate.qml:502
+#: content/ui/PostDelegate/PostDelegate.qml:504
 #, kde-format
 msgid "Bookmark"
 msgstr "Marcado"
 
-#: content/ui/PostDelegate/PostDelegate.qml:536
+#: content/ui/PostDelegate/PostDelegate.qml:538
 #, kde-format
 msgid ""
 "This post has been marked private. Some posts may be missing because its "
@@ -3876,108 +3884,121 @@ msgstr "%1 impulsionado"
 msgid "In reply to %1"
 msgstr "Em resposta à %1"
 
-#: content/ui/PostDelegate/PostMenu.qml:43
+#: content/ui/PostDelegate/PostMenu.qml:45
 #, kde-format
 msgctxt "@action:inmenu 'Thread' is a series of posts."
 msgid "Open Thread"
 msgstr "Abrir tópico"
 
-#: content/ui/PostDelegate/PostMenu.qml:68
+#: content/ui/PostDelegate/PostMenu.qml:70
+#, fuzzy, kde-format
+#| msgid "Copy Image"
+msgctxt "@action:inmenu"
+msgid "Copy Text"
+msgstr "Copiar imagem"
+
+#: content/ui/PostDelegate/PostMenu.qml:74
+#, fuzzy, kde-format
+#| msgid "Post link copied."
+msgid "Post text copied."
+msgstr "Link da postagem copiado."
+
+#: content/ui/PostDelegate/PostMenu.qml:80
 #, kde-format
 msgctxt "@action Open embed into website dialog"
 msgid "Embed"
 msgstr "Embutir"
 
-#: content/ui/PostDelegate/PostMenu.qml:84
+#: content/ui/PostDelegate/PostMenu.qml:96
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open as…"
 msgstr "Abrir como…"
 
-#: content/ui/PostDelegate/PostMenu.qml:92
+#: content/ui/PostDelegate/PostMenu.qml:104
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Reply as…"
 msgstr "Responder como…"
 
-#: content/ui/PostDelegate/PostMenu.qml:100
+#: content/ui/PostDelegate/PostMenu.qml:112
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Favorite as…"
 msgstr "Favoritar como…"
 
-#: content/ui/PostDelegate/PostMenu.qml:108
+#: content/ui/PostDelegate/PostMenu.qml:120
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Boost as…"
 msgstr "Impulsionar como…"
 
-#: content/ui/PostDelegate/PostMenu.qml:116
+#: content/ui/PostDelegate/PostMenu.qml:128
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Bookmark as…"
 msgstr "Marcar como…"
 
-#: content/ui/PostDelegate/PostMenu.qml:129
+#: content/ui/PostDelegate/PostMenu.qml:141
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Unpin on Profile"
 msgstr "Desafixar no perfil"
 
-#: content/ui/PostDelegate/PostMenu.qml:129
+#: content/ui/PostDelegate/PostMenu.qml:141
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Pin on Profile"
 msgstr "Fixar no perfil"
 
-#: content/ui/PostDelegate/PostMenu.qml:141
+#: content/ui/PostDelegate/PostMenu.qml:153
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Unmute Conversation"
 msgstr "Remover silêncio da conversa"
 
-#: content/ui/PostDelegate/PostMenu.qml:141
+#: content/ui/PostDelegate/PostMenu.qml:153
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Mute Conversation"
 msgstr "Silenciar conversa"
 
-#: content/ui/PostDelegate/PostMenu.qml:151
+#: content/ui/PostDelegate/PostMenu.qml:163
 #, kde-format
 msgctxt "@action:inmenu Unmute account"
 msgid "Unmute @%1"
 msgstr "Remover silêncio @%1"
 
-#: content/ui/PostDelegate/PostMenu.qml:153
+#: content/ui/PostDelegate/PostMenu.qml:165
 #, kde-format
 msgctxt "@action:inmenu Mute account"
 msgid "Mute @%1"
 msgstr "Silenciar @%1"
 
-#: content/ui/PostDelegate/PostMenu.qml:171
+#: content/ui/PostDelegate/PostMenu.qml:183
 #, kde-format
 msgctxt "@action:inmenu Unblock account"
 msgid "Unblock @%1"
 msgstr "Desbloquear @%1"
 
-#: content/ui/PostDelegate/PostMenu.qml:173
+#: content/ui/PostDelegate/PostMenu.qml:185
 #, kde-format
 msgctxt "@action:inmenu Block account"
 msgid "Block @%1"
 msgstr "Bloquear @%1"
 
-#: content/ui/PostDelegate/PostMenu.qml:201
+#: content/ui/PostDelegate/PostMenu.qml:213
 #: content/ui/StatusComposer/EditorAttachmentGrid.qml:59
 #, kde-format
 msgid "Edit"
 msgstr "Editar"
 
-#: content/ui/PostDelegate/PostMenu.qml:209
+#: content/ui/PostDelegate/PostMenu.qml:221
 #, kde-format
 msgid "Delete…"
 msgstr "Excluir…"
 
-#: content/ui/PostDelegate/PostMenu.qml:217
+#: content/ui/PostDelegate/PostMenu.qml:229
 #, kde-format
 msgid "Delete & Re-draft…"
 msgstr "Excluir & reescrever…"
@@ -4036,7 +4057,7 @@ msgstr "Postagem de %1"
 msgid "Quoted post"
 msgstr "Postagem citada"
 
-#: content/ui/PostDelegate/QuotePost.qml:143
+#: content/ui/PostDelegate/QuotePost.qml:154
 #, kde-format
 msgctxt "@info:label"
 msgid "Poll"
@@ -5441,33 +5462,39 @@ msgstr ""
 "Algumas das suas mídias não têm texto alternativo. Adicionar descrições "
 "ajuda a todos, especialmente os deficientes visuais."
 
-#: content/ui/TimelinePage.qml:40 timeline/accountmodel.cpp:41
+#: content/ui/TimelinePage.qml:41 timeline/accountmodel.cpp:41
 #, kde-format
 msgid "Loading"
 msgstr "Carregando"
 
-#: content/ui/TimelinePage.qml:42
+#: content/ui/TimelinePage.qml:43
 #, kde-format
 msgid "Home (%1)"
 msgstr "Início (%1)"
 
-#: content/ui/TimelinePage.qml:114
+#: content/ui/TimelinePage.qml:115
 #, kde-format
 msgid "Show Boosts"
 msgstr "Mostrar impulsionamentos"
 
-#: content/ui/TimelinePage.qml:121
+#: content/ui/TimelinePage.qml:122
+#, fuzzy, kde-format
+#| msgid "Show Boosts"
+msgid "Show Quotes"
+msgstr "Mostrar impulsionamentos"
+
+#: content/ui/TimelinePage.qml:129
 #, kde-format
 msgid "Show Replies"
 msgstr "Mostrar respostas"
 
-#: content/ui/TimelinePage.qml:147
+#: content/ui/TimelinePage.qml:155
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
 msgstr "Falha ao contatar o servidor: %1. Verifique suas configurações."
 
-#: content/ui/TimelinePage.qml:188
+#: content/ui/TimelinePage.qml:196
 #, kde-format
 msgctxt "@action:button Load more posts above this"
 msgid "Load More"
