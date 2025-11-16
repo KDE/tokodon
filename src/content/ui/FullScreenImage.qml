@@ -42,6 +42,7 @@ Components.AlbumMaximizeComponent {
     leading: ClickableIdentityInfo {
         identity: root.identity
         secondary: false
+        visible: root.identity
         onClicked: {
             close();
             Navigation.openAccount(root.identity.id);
