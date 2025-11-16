@@ -123,7 +123,7 @@ QQC2.ItemDelegate {
         RowLayout {
             id: extraItemsLayout
 
-            spacing: 0
+            spacing: Kirigami.Units.smallSpacing
         }
 
         // TODO: create notification-specific delegate for this! and then use the new children default property

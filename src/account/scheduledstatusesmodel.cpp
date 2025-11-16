@@ -11,6 +11,8 @@
 
 #include "texthandler.h"
 
+#include <QUrlQuery>
+
 using namespace Qt::StringLiterals;
 
 ScheduledStatusesModel::ScheduledStatusesModel(QObject *parent)
@@ -36,6 +38,8 @@ QVariant ScheduledStatusesModel::data(const QModelIndex &index, int role) const
         }
         return status.scheduledAt.toString(Qt::DateFormat::TextDate);
     }
+    case ScheduledAtDateRole:
+        return status.scheduledAt;
     case ContentRole:
         return QVariant::fromValue(status.text);
     case AttachmentsRole:
@@ -55,7 +59,12 @@ int ScheduledStatusesModel::rowCount(const QModelIndex &parent) const
 
 QHash<int, QByteArray> ScheduledStatusesModel::roleNames() const
 {
-    return {{IdRole, "id"}, {ScheduledAtRole, "scheduledAt"}, {ContentRole, "content"}, {AttachmentsRole, "attachments"}, {HasContentRole, "hasContent"}};
+    return {{IdRole, "id"},
+            {ScheduledAtRole, "scheduledAt"},
+            {ContentRole, "content"},
+            {AttachmentsRole, "attachments"},
+            {HasContentRole, "hasContent"},
+            {ScheduledAtDateRole, "scheduledAtDate"}};
 }
 
 QString ScheduledStatusesModel::displayName() const
@@ -126,6 +135,24 @@ void ScheduledStatusesModel::deleteDraft(const QModelIndex index)
                                   m_statuses.removeAt(index.row());
                                   endRemoveRows();
                               });
+}
+
+void ScheduledStatusesModel::reschedule(QModelIndex index, QDateTime newDateTime)
+{
+    const auto &status = m_statuses[index.row()];
+
+    const QUrlQuery query{{QStringLiteral("scheduled_at"), newDateTime.toUTC().toString(Qt::DateFormat::ISODate)}};
+
+    account()->put(account()->apiUrl(QStringLiteral("/api/v1/scheduled_statuses/%1").arg(status.id)),
+                   query,
+                   true,
+                   this,
+                   [this, index, newDateTime](QNetworkReply *reply) {
+                       Q_UNUSED(reply)
+                       auto &status = m_statuses[index.row()];
+                       status.scheduledAt = newDateTime;
+                       Q_EMIT dataChanged(index, index, {ScheduledAtRole, ScheduledAtDateRole});
+                   });
 }
 
 ScheduledStatusesModel::ScheduledStatus ScheduledStatusesModel::fromSourceData(const QJsonObject &object) const

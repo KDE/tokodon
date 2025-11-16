@@ -9,6 +9,7 @@ import QtQuick.Layouts
 
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.delegates as Delegates
+import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.tokodon
 
 import "../PostDelegate" as PostDelegate
@@ -22,7 +23,8 @@ Kirigami.ScrollablePage {
     // To make sure we're gone once the post is loaded
     property PostEditorBackend backend
 
-    property int deletedRow
+    // Current row being interacted with (e.g. deletion)
+    property int currentRow
 
     title: model.displayName
 
@@ -48,6 +50,7 @@ Kirigami.ScrollablePage {
             id: delegate
 
             required property string scheduledAt
+            required property date scheduledAtDate
 
             authorIdentity: null
 
@@ -87,10 +90,20 @@ Kirigami.ScrollablePage {
             }
 
             QQC2.Button {
+                text: i18nc("@action:button Re-schedule this post", "Re-schedule…")
+                icon.name: "resource-calendar-insert"
+                onClicked: {
+                    root.currentRow = delegate.index;
+                    schedulePostPrompt.value = delegate.scheduledAtDate;
+                    schedulePostPrompt.open();
+                }
+            }
+
+            QQC2.Button {
                 text: i18nc("@action:button Discard this post", "Discard…")
                 icon.name: "delete-symbolic"
                 onClicked: {
-                    root.deletedRow = delegate.index;
+                    root.currentRow = delegate.index;
                     discardDraftPrompt.open();
                 }
             }
@@ -118,10 +131,43 @@ Kirigami.ScrollablePage {
                 text: i18nc("@action:button Discard this draft", "Discard")
                 icon.name: "delete-symbolic"
                 onTriggered: {
-                    model.deleteDraft(model.index(root.deletedRow, 0));
+                    model.deleteDraft(model.index(root.currentRow, 0));
                     discardDraftPrompt.close();
                 }
             }
         ]
+    }
+
+
+    Kirigami.Dialog {
+        id: schedulePostPrompt
+
+        property alias value: scheduleDateTimeDelegate.value
+
+        title: i18nc("@title", "Re-Schedule Post")
+        standardButtons: Kirigami.Dialog.Cancel
+        showCloseButton: false
+        implicitWidth: 300
+
+        customFooterActions: [
+            Kirigami.Action {
+                text: i18nc("@action:button Set this post's schedule to when it should be posted", "Set New Schedule")
+                icon.name: "resource-calendar-insert"
+                onTriggered: {
+                    model.reschedule(model.index(root.currentRow, 0), schedulePostPrompt.value);
+                    schedulePostPrompt.close();
+                }
+            }
+        ]
+
+        ColumnLayout {
+            spacing: 0
+
+            FormCard.FormCard {
+                FormCard.FormDateTimeDelegate {
+                    id: scheduleDateTimeDelegate
+                }
+            }
+        }
     }
 }

@@ -18,6 +18,7 @@ public:
     enum CustomRoles {
         IdRole = Qt::UserRole,
         ScheduledAtRole,
+        ScheduledAtDateRole,
         PollRole,
         ContentRole,
         AttachmentsRole,
@@ -39,6 +40,7 @@ public:
 
 public Q_SLOTS:
     void deleteDraft(QModelIndex index);
+    void reschedule(QModelIndex index, QDateTime newDateTime);
 
 Q_SIGNALS:
     void draftsChanged();
