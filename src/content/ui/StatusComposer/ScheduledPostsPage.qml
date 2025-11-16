@@ -92,6 +92,7 @@ Kirigami.ScrollablePage {
             QQC2.Button {
                 text: i18nc("@action:button Re-schedule this post", "Re-schedule…")
                 icon.name: "resource-calendar-insert"
+                visible: !root.drafts
                 onClicked: {
                     root.currentRow = delegate.index;
                     schedulePostPrompt.value = delegate.scheduledAtDate;
