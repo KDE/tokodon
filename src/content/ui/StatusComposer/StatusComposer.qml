@@ -215,6 +215,7 @@ Kirigami.ScrollablePage {
         title: i18nc("@title", "Schedule Post")
         standardButtons: Kirigami.Dialog.Cancel
         showCloseButton: false
+        implicitWidth: 300
 
         customFooterActions: [
             Kirigami.Action {
