@@ -641,7 +641,10 @@ Kirigami.ScrollablePage {
                                         listView.currentIndex = listView.model.mapFromSource(sourceIndex).row;
                                     }
                                     onCodeSelected: code => backend.language = code
-                                    onClosed: destroy()
+                                    onClosed: {
+                                        destroy();
+                                        languageButton.checked = false;
+                                    }
                                 }
                             }
                         }
