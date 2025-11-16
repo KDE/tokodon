@@ -81,7 +81,7 @@ Kirigami.ScrollablePage {
                 }
 
                 QQC2.Button {
-                    text: i18nc("@action:button Discard this post", "Discard")
+                    text: i18nc("@action:button Discard this post", "Discard…")
                     icon.name: "delete-symbolic"
                     onClicked: {
                         root.deletedRow = delegate.index;
@@ -111,8 +111,8 @@ Kirigami.ScrollablePage {
     Kirigami.PromptDialog {
         id: discardDraftPrompt
 
-        title: i18nc("@title", "Discard Draft")
-        subtitle: i18nc("@label", "Are you sure you want to discard your draft?")
+        title: root.drafts ? i18nc("@title", "Discard Draft") : i18nc("@title", "Discard Scheduled Post")
+        subtitle: root.drafts ? i18nc("@label", "Are you sure you want to discard this draft?") : i18nc("@label", "Are you sure you want to discard this scheduled post?")
         standardButtons: Kirigami.Dialog.Cancel
         showCloseButton: false
 
