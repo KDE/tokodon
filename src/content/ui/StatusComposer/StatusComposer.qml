@@ -512,7 +512,7 @@ Kirigami.ScrollablePage {
 
                         QQC2.ToolButton {
                             id: addPool
-                            icon.name: "gnumeric-graphguru"
+                            icon.name: "amarok_playcount"
                             checkable: true
                             checked: backend.pollEnabled
                             enabled: backend.attachmentEditorModel.count === 0 && root.purpose !== StatusComposer.Edit

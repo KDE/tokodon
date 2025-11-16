@@ -38,7 +38,7 @@ RowLayout {
             } else if (root.isUpdate) {
                 return "cell_edit"
             } else if (root.isPoll) {
-                return "office-chart-bar"
+                return "amarok_playcount"
             }
 
             return ''

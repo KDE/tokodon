@@ -144,7 +144,7 @@ QQC2.AbstractButton {
             visible: root.post.hasPoll
 
             Kirigami.Icon {
-                source: "gnumeric-graphguru"
+                source: "amarok_playcount"
 
                 Layout.preferredWidth: Kirigami.Units.iconSizes.sizeForLabels
                 Layout.preferredHeight: Kirigami.Units.iconSizes.sizeForLabels

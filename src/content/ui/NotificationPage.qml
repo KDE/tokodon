@@ -111,7 +111,7 @@ Kirigami.ScrollablePage {
         }
 
         QQC2.Action {
-            icon.name: "office-chart-bar"
+            icon.name: "amarok_playcount"
             text: i18nc("Show only poll results", "Poll Results")
             onTriggered: {
                 notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow', 'follow_request', 'favourite', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning'];
