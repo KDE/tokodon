@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-16 00:41+0000\n"
-"PO-Revision-Date: 2025-10-23 06:19+0200\n"
+"POT-Creation-Date: 2025-11-17 00:42+0000\n"
+"PO-Revision-Date: 2025-11-16 08:16+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.7\n"
+"X-Generator: Poedit 3.8\n"
 
 #: account/abstractaccount.cpp:33
 #, kde-format
@@ -284,13 +284,13 @@ msgstr ""
 "Ta strežnik ni zagotovil nobenih pravil. Za več informacij obiščite njihovo "
 "spletno stran."
 
-#: account/scheduledstatusesmodel.cpp:59
+#: account/scheduledstatusesmodel.cpp:72
 #, kde-format
 msgctxt "@title:window"
 msgid "Draft Posts"
 msgstr "Osnutki objav"
 
-#: account/scheduledstatusesmodel.cpp:59
+#: account/scheduledstatusesmodel.cpp:72
 #, kde-format
 msgctxt "@title:window"
 msgid "Scheduled Posts"
@@ -858,13 +858,13 @@ msgctxt "@title:window"
 msgid "Profile"
 msgstr "Profil"
 
-#: content/ui/AccountInfo.qml:130 content/ui/FollowingPage.qml:170
+#: content/ui/AccountInfo.qml:130 content/ui/FollowingPage.qml:161
 #, kde-format
 msgctxt "@label"
 msgid "No Posts"
 msgstr "Ni objav"
 
-#: content/ui/AccountInfo.qml:131 content/ui/FollowingPage.qml:171
+#: content/ui/AccountInfo.qml:131 content/ui/FollowingPage.qml:162
 #, kde-format
 msgid "This user hasn't posted anything yet."
 msgstr "Ta uporabnik ni še ničesar objavil."
@@ -1242,37 +1242,29 @@ msgid "Show Boosts"
 msgstr "Prikaži izpostavitve"
 
 #: content/ui/FollowingPage.qml:54
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Show Boosts"
-msgctxt "@action:inmenu"
-msgid "Show Quotes"
-msgstr "Prikaži izpostavitve"
-
-#: content/ui/FollowingPage.qml:62
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Show Replies"
 msgstr "Prikaži odgovore"
 
-#: content/ui/FollowingPage.qml:73 content/ui/TimelinePage.qml:139
+#: content/ui/FollowingPage.qml:65 content/ui/TimelinePage.qml:139
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Configure Filters…"
 msgstr "Konfiguriraj filtre…"
 
-#: content/ui/FollowingPage.qml:74 content/ui/TimelinePage.qml:140
+#: content/ui/FollowingPage.qml:66 content/ui/TimelinePage.qml:140
 #, kde-format
 msgctxt "@title:window"
 msgid "Filters"
 msgstr "Filtri"
 
-#: content/ui/FollowingPage.qml:164
+#: content/ui/FollowingPage.qml:155
 #, kde-format
 msgid "No User Selected"
 msgstr "Ni izbranega uporabnika"
 
-#: content/ui/FollowingPage.qml:165
+#: content/ui/FollowingPage.qml:156
 #, kde-format
 msgid ""
 "With the Following view, easily check on each user you're following and only "
@@ -3482,14 +3474,14 @@ msgstr "%1 je vzljubil vašo objavo"
 msgid "%1 users boosted your post"
 msgstr "%1 uporabnikov je izpostavilo vašo objavo"
 
-#: content/ui/Notifications/MinimalPostDelegate.qml:79
-#: content/ui/PostDelegate/PostDelegate.qml:103
+#: content/ui/Notifications/MinimalPostDelegate.qml:68
+#: content/ui/PostDelegate/PostDelegate.qml:105
 #, kde-format
 msgid "Normal Status"
 msgstr "Običajno stanje"
 
-#: content/ui/Notifications/MinimalPostDelegate.qml:79
-#: content/ui/PostDelegate/PostDelegate.qml:103
+#: content/ui/Notifications/MinimalPostDelegate.qml:68
+#: content/ui/PostDelegate/PostDelegate.qml:105
 #, kde-format
 msgid "Spoiler Status"
 msgstr "Stanje pokvarljivca"
@@ -3778,31 +3770,31 @@ msgctxt "@info"
 msgid "Post content"
 msgstr "Vsebina objave"
 
-#: content/ui/PostDelegate/PostDelegate.qml:170
+#: content/ui/PostDelegate/PostDelegate.qml:172
 #, kde-format
 msgctxt "@label"
 msgid "Pinned Post"
 msgstr "Pripeta objava"
 
-#: content/ui/PostDelegate/PostDelegate.qml:240
+#: content/ui/PostDelegate/PostDelegate.qml:242
 #, kde-format
 msgctxt "@title"
 msgid "Delete Post"
 msgstr "Izbriši objavo"
 
-#: content/ui/PostDelegate/PostDelegate.qml:241
+#: content/ui/PostDelegate/PostDelegate.qml:243
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to delete this post?"
 msgstr "Ali ste prepričani, da želite izbrisati to objavo?"
 
-#: content/ui/PostDelegate/PostDelegate.qml:256
+#: content/ui/PostDelegate/PostDelegate.qml:258
 #, kde-format
 msgctxt "@title"
 msgid "Delete & Re-draft Post"
 msgstr "Izbriši in spiši objavo na novo"
 
-#: content/ui/PostDelegate/PostDelegate.qml:257
+#: content/ui/PostDelegate/PostDelegate.qml:259
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -3812,76 +3804,76 @@ msgstr ""
 "Ali ste prepričani, da želite spremeniti to objavo v osnutek? To bo "
 "izbrisalo izvirno objavo."
 
-#: content/ui/PostDelegate/PostDelegate.qml:410
+#: content/ui/PostDelegate/PostDelegate.qml:412
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Odgovori"
 
-#: content/ui/PostDelegate/PostDelegate.qml:437
+#: content/ui/PostDelegate/PostDelegate.qml:439
 #, kde-format
 msgid "Cannot boost direct messages"
 msgstr "Ni mogoče pospešiti neposrednih sporočil"
 
-#: content/ui/PostDelegate/PostDelegate.qml:439
+#: content/ui/PostDelegate/PostDelegate.qml:441
 #, kde-format
 msgid "Cannot boost private posts"
 msgstr "Ni mogoče pospešiti zasebnih objav"
 
-#: content/ui/PostDelegate/PostDelegate.qml:441
+#: content/ui/PostDelegate/PostDelegate.qml:443
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Izpostavi"
 
-#: content/ui/PostDelegate/PostDelegate.qml:459
+#: content/ui/PostDelegate/PostDelegate.qml:461
 #, kde-format
 msgid "Boosted"
 msgstr "Izpostavljeno"
 
-#: content/ui/PostDelegate/PostDelegate.qml:459
+#: content/ui/PostDelegate/PostDelegate.qml:461
 #, kde-format
 msgid "Boost"
 msgstr "Izpostavi"
 
-#: content/ui/PostDelegate/PostDelegate.qml:479
+#: content/ui/PostDelegate/PostDelegate.qml:481
 #, kde-format
 msgctxt "Favorite a post"
 msgid "Favorite"
 msgstr "Vzljubi"
 
-#: content/ui/PostDelegate/PostDelegate.qml:482
+#: content/ui/PostDelegate/PostDelegate.qml:484
 #, kde-format
 msgid "Favorited"
 msgstr "Vzljubljeno"
 
-#: content/ui/PostDelegate/PostDelegate.qml:482
+#: content/ui/PostDelegate/PostDelegate.qml:484
 #, kde-format
 msgid "Favorite"
 msgstr "Priljubljen"
 
-#: content/ui/PostDelegate/PostDelegate.qml:501
+#: content/ui/PostDelegate/PostDelegate.qml:503
 #, kde-format
 msgid "Remove bookmark"
 msgstr "Odstrani zaznamek"
 
-#: content/ui/PostDelegate/PostDelegate.qml:501
+#: content/ui/PostDelegate/PostDelegate.qml:503
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "Zaznamuj"
 
-#: content/ui/PostDelegate/PostDelegate.qml:504
+#: content/ui/PostDelegate/PostDelegate.qml:506
 #, kde-format
 msgid "Bookmarked"
 msgstr "Dodano med zaznamke"
 
-#: content/ui/PostDelegate/PostDelegate.qml:504
+#: content/ui/PostDelegate/PostDelegate.qml:506
 #, kde-format
 msgid "Bookmark"
 msgstr "Zaznamuj"
 
-#: content/ui/PostDelegate/PostDelegate.qml:538
+#: content/ui/PostDelegate/PostDelegate.qml:540
 #, kde-format
 msgid ""
 "This post has been marked private. Some posts may be missing because its "
@@ -3931,17 +3923,15 @@ msgid "Open Thread"
 msgstr "Odpri nit"
 
 #: content/ui/PostDelegate/PostMenu.qml:70
-#, fuzzy, kde-format
-#| msgid "Copy Image"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy Text"
-msgstr "Kopiraj sliko"
+msgstr "Kopiraj besedilo"
 
 #: content/ui/PostDelegate/PostMenu.qml:74
-#, fuzzy, kde-format
-#| msgid "Post link copied."
+#, kde-format
 msgid "Post text copied."
-msgstr "Povezava na objavo prekopirana."
+msgstr "Besedilo objave je bilo kopirano."
 
 #: content/ui/PostDelegate/PostMenu.qml:80
 #, kde-format
@@ -5184,55 +5174,101 @@ msgstr "Skrij število glasov dokler se anketa ne zaključi"
 msgid "Remove"
 msgstr "Odstrani"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:65
-#, kde-format
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:85
+#, fuzzy, kde-format
+#| msgctxt "@info:Time when the domain was allowed to federate."
+#| msgid "Created at"
 msgctxt "Draft, unfinished post"
-msgid "Draft"
-msgstr "Osnutek"
+msgid "Created %1 ago"
+msgstr "Ustvarjena ob"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:65
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:85
 #, kde-format
 msgctxt "Scheduled for this date"
 msgid "Scheduled for %1"
 msgstr "Načrtovan za %1"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:84
-#, kde-format
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:93
+#, fuzzy, kde-format
+#| msgctxt "@action:button Schedule something to be posted later"
+#| msgid "Schedule"
+msgctxt "@action:button Re-schedule this post"
+msgid "Re-schedule…"
+msgstr "Načrtuj"
+
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:104
+#, fuzzy, kde-format
+#| msgctxt "@action:button Discard this post"
+#| msgid "Discard"
 msgctxt "@action:button Discard this post"
-msgid "Discard"
+msgid "Discard…"
 msgstr "Zavrzi"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:105
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:116
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Drafts"
 msgstr "Ni osnutkov"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:105
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:116
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Scheduled Posts"
 msgstr "Ni načrtovanih objav"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:114
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:125
 #: content/ui/StatusComposer/StatusComposer.qml:181
 #, kde-format
 msgctxt "@title"
 msgid "Discard Draft"
 msgstr "Zavrzi osnutek"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:115
-#: content/ui/StatusComposer/StatusComposer.qml:182
-#, kde-format
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:125
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Scheduled Posts"
+msgctxt "@title"
+msgid "Discard Scheduled Post"
+msgstr "Načrtovane objave"
+
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:126
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Are you sure you want to discard your draft?"
 msgctxt "@label"
-msgid "Are you sure you want to discard your draft?"
+msgid "Are you sure you want to discard this draft?"
 msgstr "Ali ste prepričani, da želite zavreči svoj osnutek?"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:121
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:126
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Are you sure you want to delete this post?"
+msgctxt "@label"
+msgid "Are you sure you want to discard this scheduled post?"
+msgstr "Ali ste prepričani, da želite izbrisati to objavo?"
+
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:132
 #, kde-format
 msgctxt "@action:button Discard this draft"
 msgid "Discard"
 msgstr "Zavrzi"
+
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:148
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Schedule Post"
+msgctxt "@title"
+msgid "Re-Schedule Post"
+msgstr "Načrtuj objave"
+
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:155
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "@action:button Set this post's schedule to when it should be posted"
+#| msgid "Set Schedule"
+msgctxt "@action:button Set this post's schedule to when it should be posted"
+msgid "Set New Schedule"
+msgstr "Nastavi načrt"
 
 #: content/ui/StatusComposer/StatusComposer.qml:62
 #, kde-format
@@ -5300,6 +5336,12 @@ msgctxt "@action:Button Save an edited a post"
 msgid "Save"
 msgstr "Shrani"
 
+#: content/ui/StatusComposer/StatusComposer.qml:182
+#, kde-format
+msgctxt "@label"
+msgid "Are you sure you want to discard your draft?"
+msgstr "Ali ste prepričani, da želite zavreči svoj osnutek?"
+
 #: content/ui/StatusComposer/StatusComposer.qml:188
 #, kde-format
 msgctxt "@action:button Keep this draft"
@@ -5318,171 +5360,171 @@ msgctxt "@title"
 msgid "Schedule Post"
 msgstr "Načrtuj objave"
 
-#: content/ui/StatusComposer/StatusComposer.qml:221
+#: content/ui/StatusComposer/StatusComposer.qml:222
 #, kde-format
 msgctxt "@action:button Set this post's schedule to when it should be posted"
 msgid "Set Schedule"
 msgstr "Nastavi načrt"
 
-#: content/ui/StatusComposer/StatusComposer.qml:336
+#: content/ui/StatusComposer/StatusComposer.qml:337
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Content notice"
 msgstr "Obvestilo o vsebini"
 
-#: content/ui/StatusComposer/StatusComposer.qml:350
+#: content/ui/StatusComposer/StatusComposer.qml:351
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "What's new?"
 msgstr "Kaj je novega?"
 
-#: content/ui/StatusComposer/StatusComposer.qml:489
+#: content/ui/StatusComposer/StatusComposer.qml:490
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a File"
 msgstr "Izberite datoteko"
 
-#: content/ui/StatusComposer/StatusComposer.qml:494
+#: content/ui/StatusComposer/StatusComposer.qml:495
 #, kde-format
 msgctxt "@action:button"
 msgid "Attach File"
 msgstr "Priloži datoteko"
 
-#: content/ui/StatusComposer/StatusComposer.qml:499
-#: content/ui/StatusComposer/StatusComposer.qml:529
+#: content/ui/StatusComposer/StatusComposer.qml:500
+#: content/ui/StatusComposer/StatusComposer.qml:530
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You can't have attachments and a poll in the same post."
 msgstr "V isti objavi ne morete imeti prilog in ankete."
 
-#: content/ui/StatusComposer/StatusComposer.qml:503
+#: content/ui/StatusComposer/StatusComposer.qml:504
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You have the maximum allowed number of attachments."
 msgstr "Imate največje dovoljeno število prilog."
 
-#: content/ui/StatusComposer/StatusComposer.qml:506
+#: content/ui/StatusComposer/StatusComposer.qml:507
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Attach file"
 msgstr "Priloži datoteko"
 
-#: content/ui/StatusComposer/StatusComposer.qml:518
+#: content/ui/StatusComposer/StatusComposer.qml:519
 #, kde-format
 msgctxt "@action:button"
 msgid "Attach Poll"
 msgstr "Priloži anketo"
 
-#: content/ui/StatusComposer/StatusComposer.qml:525
+#: content/ui/StatusComposer/StatusComposer.qml:526
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You can't modify or add a poll to an existing post."
 msgstr "Obstoječe objave ne morete spremeniti ali ji dodati ankete."
 
-#: content/ui/StatusComposer/StatusComposer.qml:532
+#: content/ui/StatusComposer/StatusComposer.qml:533
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add poll"
 msgstr "Dodaj anketo"
 
-#: content/ui/StatusComposer/StatusComposer.qml:542
+#: content/ui/StatusComposer/StatusComposer.qml:543
 #, kde-format
 msgctxt "@action:button"
 msgid "Content Notice"
 msgstr "Obvestilo o vsebini"
 
-#: content/ui/StatusComposer/StatusComposer.qml:554
+#: content/ui/StatusComposer/StatusComposer.qml:555
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Content notice"
 msgstr "Obvestilo o vsebini"
 
-#: content/ui/StatusComposer/StatusComposer.qml:580
+#: content/ui/StatusComposer/StatusComposer.qml:581
 #, kde-format
 msgctxt "@action:button"
 msgid "Visibility"
 msgstr "Vidnost"
 
-#: content/ui/StatusComposer/StatusComposer.qml:588
+#: content/ui/StatusComposer/StatusComposer.qml:589
 #, kde-format
 msgctxt "@title"
 msgid "Visibility"
 msgstr "Vidnost"
 
-#: content/ui/StatusComposer/StatusComposer.qml:592
+#: content/ui/StatusComposer/StatusComposer.qml:593
 #, kde-format
 msgctxt "@item:inmenu Local to this server"
 msgid "Local"
 msgstr "Krajevno"
 
-#: content/ui/StatusComposer/StatusComposer.qml:598
+#: content/ui/StatusComposer/StatusComposer.qml:599
 #, kde-format
 msgctxt "@item:inmenu Public to the world"
 msgid "Public"
 msgstr "Javno"
 
-#: content/ui/StatusComposer/StatusComposer.qml:603
+#: content/ui/StatusComposer/StatusComposer.qml:604
 #, kde-format
 msgctxt "@item:inmenu Public but less so"
 msgid "Unlisted"
 msgstr "Nenavedeno"
 
-#: content/ui/StatusComposer/StatusComposer.qml:608
+#: content/ui/StatusComposer/StatusComposer.qml:609
 #, kde-format
 msgctxt "@item:inmenu Only to followers"
 msgid "Private"
 msgstr "Zasebno"
 
-#: content/ui/StatusComposer/StatusComposer.qml:613
+#: content/ui/StatusComposer/StatusComposer.qml:614
 #, kde-format
 msgctxt "@item:inmenu Only to who is explicitly mentioned"
 msgid "Direct Message"
 msgstr "Neposredno sporočilo"
 
-#: content/ui/StatusComposer/StatusComposer.qml:618
+#: content/ui/StatusComposer/StatusComposer.qml:619
 #, kde-format
 msgctxt "@info:tooltip Post visibility"
 msgid "Visibility"
 msgstr "Vidnost"
 
-#: content/ui/StatusComposer/StatusComposer.qml:626
+#: content/ui/StatusComposer/StatusComposer.qml:627
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Post language"
 msgstr "Jezik objave"
 
-#: content/ui/StatusComposer/StatusComposer.qml:656
+#: content/ui/StatusComposer/StatusComposer.qml:660
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Emoji"
 msgstr "Dodaj čustvenčka"
 
-#: content/ui/StatusComposer/StatusComposer.qml:667
+#: content/ui/StatusComposer/StatusComposer.qml:671
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add emoji"
 msgstr "Dodaj čustvenčka"
 
-#: content/ui/StatusComposer/StatusComposer.qml:697
+#: content/ui/StatusComposer/StatusComposer.qml:701
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr "Znaki: <b>%1/%2</b>"
 
-#: content/ui/StatusComposer/StatusComposer.qml:707
-#: content/ui/StatusComposer/StatusComposer.qml:784
+#: content/ui/StatusComposer/StatusComposer.qml:711
+#: content/ui/StatusComposer/StatusComposer.qml:788
 #, kde-format
 msgctxt "@action:button Schedule something to be posted later"
 msgid "Schedule"
 msgstr "Načrtuj"
 
-#: content/ui/StatusComposer/StatusComposer.qml:758
+#: content/ui/StatusComposer/StatusComposer.qml:762
 #, kde-format
 msgctxt "@title"
 msgid "Alt Text Reminder"
 msgstr "Opomnik za nadomestno besedilo"
 
-#: content/ui/StatusComposer/StatusComposer.qml:762
+#: content/ui/StatusComposer/StatusComposer.qml:766
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -5508,10 +5550,9 @@ msgid "Show Boosts"
 msgstr "Prikaži izpostavitve"
 
 #: content/ui/TimelinePage.qml:122
-#, fuzzy, kde-format
-#| msgid "Show Boosts"
+#, kde-format
 msgid "Show Quotes"
-msgstr "Prikaži izpostavitve"
+msgstr "Prikaži citate"
 
 #: content/ui/TimelinePage.qml:129
 #, kde-format
@@ -6025,6 +6066,14 @@ msgstr[0] "pred %1 leti"
 msgstr[1] "pred %1 letom"
 msgstr[2] "pred %1 letoma"
 msgstr[3] "pred %1 leti"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Show Quotes"
+#~ msgstr "Prikaži citate"
+
+#~ msgctxt "Draft, unfinished post"
+#~ msgid "Draft"
+#~ msgstr "Osnutek"
 
 #~ msgctxt "@action:button"
 #~ msgid "Post"

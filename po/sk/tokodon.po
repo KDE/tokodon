@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-16 00:41+0000\n"
+"POT-Creation-Date: 2025-11-17 00:42+0000\n"
 "PO-Revision-Date: 2022-04-07 18:19+0200\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -276,14 +276,14 @@ msgid ""
 "This server provided no rules. Please see their website for more information."
 msgstr ""
 
-#: account/scheduledstatusesmodel.cpp:59
+#: account/scheduledstatusesmodel.cpp:72
 #, fuzzy, kde-format
 #| msgid "Add Account"
 msgctxt "@title:window"
 msgid "Draft Posts"
 msgstr "Účty"
 
-#: account/scheduledstatusesmodel.cpp:59
+#: account/scheduledstatusesmodel.cpp:72
 #, fuzzy, kde-format
 #| msgid "Add Account"
 msgctxt "@title:window"
@@ -868,13 +868,13 @@ msgctxt "@title:window"
 msgid "Profile"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:130 content/ui/FollowingPage.qml:170
+#: content/ui/AccountInfo.qml:130 content/ui/FollowingPage.qml:161
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "No Posts"
 msgstr "Zobraziť ďalších %1"
 
-#: content/ui/AccountInfo.qml:131 content/ui/FollowingPage.qml:171
+#: content/ui/AccountInfo.qml:131 content/ui/FollowingPage.qml:162
 #, kde-format
 msgid "This user hasn't posted anything yet."
 msgstr ""
@@ -1259,33 +1259,27 @@ msgstr "Zobraziť ďalších %1"
 #: content/ui/FollowingPage.qml:54
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
-msgid "Show Quotes"
-msgstr "Zobraziť ďalších %1"
-
-#: content/ui/FollowingPage.qml:62
-#, fuzzy, kde-format
-msgctxt "@action:inmenu"
 msgid "Show Replies"
 msgstr "Zobraziť ďalších %1"
 
-#: content/ui/FollowingPage.qml:73 content/ui/TimelinePage.qml:139
+#: content/ui/FollowingPage.qml:65 content/ui/TimelinePage.qml:139
 #, fuzzy, kde-format
 msgctxt "@action:intoolbar"
 msgid "Configure Filters…"
 msgstr "Upozornenia"
 
-#: content/ui/FollowingPage.qml:74 content/ui/TimelinePage.qml:140
+#: content/ui/FollowingPage.qml:66 content/ui/TimelinePage.qml:140
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Filters"
 msgstr "Nasledovatelia"
 
-#: content/ui/FollowingPage.qml:164
+#: content/ui/FollowingPage.qml:155
 #, kde-format
 msgid "No User Selected"
 msgstr ""
 
-#: content/ui/FollowingPage.qml:165
+#: content/ui/FollowingPage.qml:156
 #, kde-format
 msgid ""
 "With the Following view, easily check on each user you're following and only "
@@ -3452,14 +3446,14 @@ msgstr "Neuvedené"
 msgid "%1 users boosted your post"
 msgstr "Neuvedené"
 
-#: content/ui/Notifications/MinimalPostDelegate.qml:79
-#: content/ui/PostDelegate/PostDelegate.qml:103
+#: content/ui/Notifications/MinimalPostDelegate.qml:68
+#: content/ui/PostDelegate/PostDelegate.qml:105
 #, kde-format
 msgid "Normal Status"
 msgstr ""
 
-#: content/ui/Notifications/MinimalPostDelegate.qml:79
-#: content/ui/PostDelegate/PostDelegate.qml:103
+#: content/ui/Notifications/MinimalPostDelegate.qml:68
+#: content/ui/PostDelegate/PostDelegate.qml:105
 #, kde-format
 msgid "Spoiler Status"
 msgstr ""
@@ -3743,32 +3737,32 @@ msgctxt "@info"
 msgid "Post content"
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:170
+#: content/ui/PostDelegate/PostDelegate.qml:172
 #, kde-format
 msgctxt "@label"
 msgid "Pinned Post"
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:240
+#: content/ui/PostDelegate/PostDelegate.qml:242
 #, fuzzy, kde-format
 #| msgid "Add Account"
 msgctxt "@title"
 msgid "Delete Post"
 msgstr "Účty"
 
-#: content/ui/PostDelegate/PostDelegate.qml:241
+#: content/ui/PostDelegate/PostDelegate.qml:243
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to delete this post?"
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:256
+#: content/ui/PostDelegate/PostDelegate.qml:258
 #, kde-format
 msgctxt "@title"
 msgid "Delete & Re-draft Post"
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:257
+#: content/ui/PostDelegate/PostDelegate.qml:259
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -3776,76 +3770,76 @@ msgid ""
 "post."
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:410
+#: content/ui/PostDelegate/PostDelegate.qml:412
 #, fuzzy, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Odpovedať"
 
-#: content/ui/PostDelegate/PostDelegate.qml:437
+#: content/ui/PostDelegate/PostDelegate.qml:439
 #, kde-format
 msgid "Cannot boost direct messages"
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:439
+#: content/ui/PostDelegate/PostDelegate.qml:441
 #, kde-format
 msgid "Cannot boost private posts"
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:441
+#: content/ui/PostDelegate/PostDelegate.qml:443
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:459
+#: content/ui/PostDelegate/PostDelegate.qml:461
 #, kde-format
 msgid "Boosted"
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:459
+#: content/ui/PostDelegate/PostDelegate.qml:461
 #, kde-format
 msgid "Boost"
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:479
+#: content/ui/PostDelegate/PostDelegate.qml:481
 #, kde-format
 msgctxt "Favorite a post"
 msgid "Favorite"
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:482
+#: content/ui/PostDelegate/PostDelegate.qml:484
 #, kde-format
 msgid "Favorited"
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:482
+#: content/ui/PostDelegate/PostDelegate.qml:484
 #, kde-format
 msgid "Favorite"
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:501
+#: content/ui/PostDelegate/PostDelegate.qml:503
 #, kde-format
 msgid "Remove bookmark"
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:501
+#: content/ui/PostDelegate/PostDelegate.qml:503
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:504
+#: content/ui/PostDelegate/PostDelegate.qml:506
 #, kde-format
 msgid "Bookmarked"
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:504
+#: content/ui/PostDelegate/PostDelegate.qml:506
 #, kde-format
 msgid "Bookmark"
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:538
+#: content/ui/PostDelegate/PostDelegate.qml:540
 #, kde-format
 msgid ""
 "This post has been marked private. Some posts may be missing because its "
@@ -5151,56 +5145,90 @@ msgstr ""
 msgid "Remove"
 msgstr ""
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:65
-#, kde-format
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:85
+#, fuzzy, kde-format
+#| msgid "Add Account"
 msgctxt "Draft, unfinished post"
-msgid "Draft"
-msgstr ""
+msgid "Created %1 ago"
+msgstr "Účty"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:65
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:85
 #, kde-format
 msgctxt "Scheduled for this date"
 msgid "Scheduled for %1"
 msgstr ""
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:84
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:93
+#, fuzzy, kde-format
+#| msgid "Add Account"
+msgctxt "@action:button Re-schedule this post"
+msgid "Re-schedule…"
+msgstr "Účty"
+
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:104
 #, kde-format
 msgctxt "@action:button Discard this post"
-msgid "Discard"
+msgid "Discard…"
 msgstr ""
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:105
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:116
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Drafts"
 msgstr ""
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:105
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:116
 #, fuzzy, kde-format
 #| msgid "Add Account"
 msgctxt "@info:placeholder"
 msgid "No Scheduled Posts"
 msgstr "Účty"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:114
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:125
 #: content/ui/StatusComposer/StatusComposer.qml:181
 #, kde-format
 msgctxt "@title"
 msgid "Discard Draft"
 msgstr ""
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:115
-#: content/ui/StatusComposer/StatusComposer.qml:182
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:125
+#, fuzzy, kde-format
+#| msgid "Add Account"
+msgctxt "@title"
+msgid "Discard Scheduled Post"
+msgstr "Účty"
+
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:126
 #, kde-format
 msgctxt "@label"
-msgid "Are you sure you want to discard your draft?"
+msgid "Are you sure you want to discard this draft?"
 msgstr ""
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:121
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:126
+#, kde-format
+msgctxt "@label"
+msgid "Are you sure you want to discard this scheduled post?"
+msgstr ""
+
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:132
 #, kde-format
 msgctxt "@action:button Discard this draft"
 msgid "Discard"
 msgstr ""
+
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:148
+#, fuzzy, kde-format
+#| msgid "Add Account"
+msgctxt "@title"
+msgid "Re-Schedule Post"
+msgstr "Účty"
+
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:155
+#, fuzzy, kde-format
+#| msgid "Add Account"
+msgctxt "@action:button Set this post's schedule to when it should be posted"
+msgid "Set New Schedule"
+msgstr "Účty"
 
 #: content/ui/StatusComposer/StatusComposer.qml:62
 #, fuzzy, kde-format
@@ -5267,6 +5295,12 @@ msgctxt "@action:Button Save an edited a post"
 msgid "Save"
 msgstr ""
 
+#: content/ui/StatusComposer/StatusComposer.qml:182
+#, kde-format
+msgctxt "@label"
+msgid "Are you sure you want to discard your draft?"
+msgstr ""
+
 #: content/ui/StatusComposer/StatusComposer.qml:188
 #, kde-format
 msgctxt "@action:button Keep this draft"
@@ -5286,179 +5320,179 @@ msgctxt "@title"
 msgid "Schedule Post"
 msgstr "Účty"
 
-#: content/ui/StatusComposer/StatusComposer.qml:221
+#: content/ui/StatusComposer/StatusComposer.qml:222
 #, kde-format
 msgctxt "@action:button Set this post's schedule to when it should be posted"
 msgid "Set Schedule"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:336
+#: content/ui/StatusComposer/StatusComposer.qml:337
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Content notice"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:350
+#: content/ui/StatusComposer/StatusComposer.qml:351
 #, fuzzy, kde-format
 msgctxt "@info:placeholder"
 msgid "What's new?"
 msgstr "Čo je nové"
 
-#: content/ui/StatusComposer/StatusComposer.qml:489
+#: content/ui/StatusComposer/StatusComposer.qml:490
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Choose a File"
 msgstr "Prosím, vyberte súbor"
 
-#: content/ui/StatusComposer/StatusComposer.qml:494
+#: content/ui/StatusComposer/StatusComposer.qml:495
 #, fuzzy, kde-format
 #| msgid "Attach File"
 msgctxt "@action:button"
 msgid "Attach File"
 msgstr "Pripojiť súbor"
 
-#: content/ui/StatusComposer/StatusComposer.qml:499
-#: content/ui/StatusComposer/StatusComposer.qml:529
+#: content/ui/StatusComposer/StatusComposer.qml:500
+#: content/ui/StatusComposer/StatusComposer.qml:530
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You can't have attachments and a poll in the same post."
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:503
+#: content/ui/StatusComposer/StatusComposer.qml:504
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You have the maximum allowed number of attachments."
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:506
+#: content/ui/StatusComposer/StatusComposer.qml:507
 #, fuzzy, kde-format
 #| msgid "Attach File"
 msgctxt "@info:tooltip"
 msgid "Attach file"
 msgstr "Pripojiť súbor"
 
-#: content/ui/StatusComposer/StatusComposer.qml:518
+#: content/ui/StatusComposer/StatusComposer.qml:519
 #, fuzzy, kde-format
 #| msgid "Attach File"
 msgctxt "@action:button"
 msgid "Attach Poll"
 msgstr "Pripojiť súbor"
 
-#: content/ui/StatusComposer/StatusComposer.qml:525
+#: content/ui/StatusComposer/StatusComposer.qml:526
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You can't modify or add a poll to an existing post."
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:532
+#: content/ui/StatusComposer/StatusComposer.qml:533
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add poll"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:542
+#: content/ui/StatusComposer/StatusComposer.qml:543
 #, kde-format
 msgctxt "@action:button"
 msgid "Content Notice"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:554
+#: content/ui/StatusComposer/StatusComposer.qml:555
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Content notice"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:580
+#: content/ui/StatusComposer/StatusComposer.qml:581
 #, fuzzy, kde-format
 #| msgid "Visibility"
 msgctxt "@action:button"
 msgid "Visibility"
 msgstr "Viditeľnosť"
 
-#: content/ui/StatusComposer/StatusComposer.qml:588
+#: content/ui/StatusComposer/StatusComposer.qml:589
 #, fuzzy, kde-format
 #| msgid "Visibility"
 msgctxt "@title"
 msgid "Visibility"
 msgstr "Viditeľnosť"
 
-#: content/ui/StatusComposer/StatusComposer.qml:592
+#: content/ui/StatusComposer/StatusComposer.qml:593
 #, fuzzy, kde-format
 msgctxt "@item:inmenu Local to this server"
 msgid "Local"
 msgstr "Lokálne"
 
-#: content/ui/StatusComposer/StatusComposer.qml:598
+#: content/ui/StatusComposer/StatusComposer.qml:599
 #, fuzzy, kde-format
 msgctxt "@item:inmenu Public to the world"
 msgid "Public"
 msgstr "Verejné"
 
-#: content/ui/StatusComposer/StatusComposer.qml:603
+#: content/ui/StatusComposer/StatusComposer.qml:604
 #, fuzzy, kde-format
 msgctxt "@item:inmenu Public but less so"
 msgid "Unlisted"
 msgstr "Neuvedené"
 
-#: content/ui/StatusComposer/StatusComposer.qml:608
+#: content/ui/StatusComposer/StatusComposer.qml:609
 #, fuzzy, kde-format
 msgctxt "@item:inmenu Only to followers"
 msgid "Private"
 msgstr "Súkromné"
 
-#: content/ui/StatusComposer/StatusComposer.qml:613
+#: content/ui/StatusComposer/StatusComposer.qml:614
 #, kde-format
 msgctxt "@item:inmenu Only to who is explicitly mentioned"
 msgid "Direct Message"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:618
+#: content/ui/StatusComposer/StatusComposer.qml:619
 #, fuzzy, kde-format
 #| msgid "Visibility"
 msgctxt "@info:tooltip Post visibility"
 msgid "Visibility"
 msgstr "Viditeľnosť"
 
-#: content/ui/StatusComposer/StatusComposer.qml:626
+#: content/ui/StatusComposer/StatusComposer.qml:627
 #, fuzzy, kde-format
 #| msgid "Spell Checking"
 msgctxt "@info:tooltip"
 msgid "Post language"
 msgstr "Kontrola pravopisu"
 
-#: content/ui/StatusComposer/StatusComposer.qml:656
+#: content/ui/StatusComposer/StatusComposer.qml:660
 #, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Add Emoji"
 msgstr "Voľba"
 
-#: content/ui/StatusComposer/StatusComposer.qml:667
+#: content/ui/StatusComposer/StatusComposer.qml:671
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Add emoji"
 msgstr "Voľba"
 
-#: content/ui/StatusComposer/StatusComposer.qml:697
+#: content/ui/StatusComposer/StatusComposer.qml:701
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:707
-#: content/ui/StatusComposer/StatusComposer.qml:784
+#: content/ui/StatusComposer/StatusComposer.qml:711
+#: content/ui/StatusComposer/StatusComposer.qml:788
 #, fuzzy, kde-format
 #| msgid "Add Account"
 msgctxt "@action:button Schedule something to be posted later"
 msgid "Schedule"
 msgstr "Účty"
 
-#: content/ui/StatusComposer/StatusComposer.qml:758
+#: content/ui/StatusComposer/StatusComposer.qml:762
 #, kde-format
 msgctxt "@title"
 msgid "Alt Text Reminder"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:762
+#: content/ui/StatusComposer/StatusComposer.qml:766
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -6005,6 +6039,11 @@ msgid_plural "%1 years ago"
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
+
+#, fuzzy
+#~ msgctxt "@action:inmenu"
+#~ msgid "Show Quotes"
+#~ msgstr "Zobraziť ďalších %1"
 
 #, fuzzy
 #~ msgctxt "@action:button Edit the filter"

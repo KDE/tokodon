@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-16 00:41+0000\n"
+"POT-Creation-Date: 2025-11-17 00:42+0000\n"
 "PO-Revision-Date: 2025-10-09 01:37+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -286,13 +286,13 @@ msgstr ""
 "이 서버에서는 규칙을 지정하지 않았습니다. 더 많은 정보는 웹사이트를 참조하십"
 "시오."
 
-#: account/scheduledstatusesmodel.cpp:59
+#: account/scheduledstatusesmodel.cpp:72
 #, kde-format
 msgctxt "@title:window"
 msgid "Draft Posts"
 msgstr "초안 게시물"
 
-#: account/scheduledstatusesmodel.cpp:59
+#: account/scheduledstatusesmodel.cpp:72
 #, kde-format
 msgctxt "@title:window"
 msgid "Scheduled Posts"
@@ -842,13 +842,13 @@ msgctxt "@title:window"
 msgid "Profile"
 msgstr "프로필"
 
-#: content/ui/AccountInfo.qml:130 content/ui/FollowingPage.qml:170
+#: content/ui/AccountInfo.qml:130 content/ui/FollowingPage.qml:161
 #, kde-format
 msgctxt "@label"
 msgid "No Posts"
 msgstr "게시물 없음"
 
-#: content/ui/AccountInfo.qml:131 content/ui/FollowingPage.qml:171
+#: content/ui/AccountInfo.qml:131 content/ui/FollowingPage.qml:162
 #, kde-format
 msgid "This user hasn't posted anything yet."
 msgstr "이 사용자의 게시물이 없습니다."
@@ -1224,37 +1224,29 @@ msgid "Show Boosts"
 msgstr "부스트 표시"
 
 #: content/ui/FollowingPage.qml:54
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Show Boosts"
-msgctxt "@action:inmenu"
-msgid "Show Quotes"
-msgstr "부스트 표시"
-
-#: content/ui/FollowingPage.qml:62
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Show Replies"
 msgstr "답장 표시"
 
-#: content/ui/FollowingPage.qml:73 content/ui/TimelinePage.qml:139
+#: content/ui/FollowingPage.qml:65 content/ui/TimelinePage.qml:139
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Configure Filters…"
 msgstr "필터 설정…"
 
-#: content/ui/FollowingPage.qml:74 content/ui/TimelinePage.qml:140
+#: content/ui/FollowingPage.qml:66 content/ui/TimelinePage.qml:140
 #, kde-format
 msgctxt "@title:window"
 msgid "Filters"
 msgstr "필터"
 
-#: content/ui/FollowingPage.qml:164
+#: content/ui/FollowingPage.qml:155
 #, kde-format
 msgid "No User Selected"
 msgstr "선택한 사용자 없음"
 
-#: content/ui/FollowingPage.qml:165
+#: content/ui/FollowingPage.qml:156
 #, kde-format
 msgid ""
 "With the Following view, easily check on each user you're following and only "
@@ -3424,14 +3416,14 @@ msgstr "%1명이 좋아요 표시함"
 msgid "%1 users boosted your post"
 msgstr "%1명이 내 글을 부스트함"
 
-#: content/ui/Notifications/MinimalPostDelegate.qml:79
-#: content/ui/PostDelegate/PostDelegate.qml:103
+#: content/ui/Notifications/MinimalPostDelegate.qml:68
+#: content/ui/PostDelegate/PostDelegate.qml:105
 #, kde-format
 msgid "Normal Status"
 msgstr "일반 글"
 
-#: content/ui/Notifications/MinimalPostDelegate.qml:79
-#: content/ui/PostDelegate/PostDelegate.qml:103
+#: content/ui/Notifications/MinimalPostDelegate.qml:68
+#: content/ui/PostDelegate/PostDelegate.qml:105
 #, kde-format
 msgid "Spoiler Status"
 msgstr "스포일러 글"
@@ -3713,31 +3705,31 @@ msgctxt "@info"
 msgid "Post content"
 msgstr "게시물 내용"
 
-#: content/ui/PostDelegate/PostDelegate.qml:170
+#: content/ui/PostDelegate/PostDelegate.qml:172
 #, kde-format
 msgctxt "@label"
 msgid "Pinned Post"
 msgstr "고정된 게시물"
 
-#: content/ui/PostDelegate/PostDelegate.qml:240
+#: content/ui/PostDelegate/PostDelegate.qml:242
 #, kde-format
 msgctxt "@title"
 msgid "Delete Post"
 msgstr "게시물 삭제"
 
-#: content/ui/PostDelegate/PostDelegate.qml:241
+#: content/ui/PostDelegate/PostDelegate.qml:243
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to delete this post?"
 msgstr "이 게시물을 삭제하시겠습니까?"
 
-#: content/ui/PostDelegate/PostDelegate.qml:256
+#: content/ui/PostDelegate/PostDelegate.qml:258
 #, kde-format
 msgctxt "@title"
 msgid "Delete & Re-draft Post"
 msgstr "삭제하고 다시 쓰기"
 
-#: content/ui/PostDelegate/PostDelegate.qml:257
+#: content/ui/PostDelegate/PostDelegate.qml:259
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -3745,76 +3737,76 @@ msgid ""
 "post."
 msgstr "이 게시물을 삭제하고 다시 쓰시겠습니까? 원래 게시물이 삭제됩니다."
 
-#: content/ui/PostDelegate/PostDelegate.qml:410
+#: content/ui/PostDelegate/PostDelegate.qml:412
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "답장"
 
-#: content/ui/PostDelegate/PostDelegate.qml:437
+#: content/ui/PostDelegate/PostDelegate.qml:439
 #, kde-format
 msgid "Cannot boost direct messages"
 msgstr "개인적인 멘션을 부스트할 수 없음"
 
-#: content/ui/PostDelegate/PostDelegate.qml:439
+#: content/ui/PostDelegate/PostDelegate.qml:441
 #, kde-format
 msgid "Cannot boost private posts"
 msgstr "비공개 게시물을 부스트할 수 없음"
 
-#: content/ui/PostDelegate/PostDelegate.qml:441
+#: content/ui/PostDelegate/PostDelegate.qml:443
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "부스트"
 
-#: content/ui/PostDelegate/PostDelegate.qml:459
+#: content/ui/PostDelegate/PostDelegate.qml:461
 #, kde-format
 msgid "Boosted"
 msgstr "부스트됨"
 
-#: content/ui/PostDelegate/PostDelegate.qml:459
+#: content/ui/PostDelegate/PostDelegate.qml:461
 #, kde-format
 msgid "Boost"
 msgstr "부스트"
 
-#: content/ui/PostDelegate/PostDelegate.qml:479
+#: content/ui/PostDelegate/PostDelegate.qml:481
 #, kde-format
 msgctxt "Favorite a post"
 msgid "Favorite"
 msgstr "좋아요"
 
-#: content/ui/PostDelegate/PostDelegate.qml:482
+#: content/ui/PostDelegate/PostDelegate.qml:484
 #, kde-format
 msgid "Favorited"
 msgstr "좋아요 표시됨"
 
-#: content/ui/PostDelegate/PostDelegate.qml:482
+#: content/ui/PostDelegate/PostDelegate.qml:484
 #, kde-format
 msgid "Favorite"
 msgstr "좋아요"
 
-#: content/ui/PostDelegate/PostDelegate.qml:501
+#: content/ui/PostDelegate/PostDelegate.qml:503
 #, kde-format
 msgid "Remove bookmark"
 msgstr "북마크 삭제"
 
-#: content/ui/PostDelegate/PostDelegate.qml:501
+#: content/ui/PostDelegate/PostDelegate.qml:503
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "북마크"
 
-#: content/ui/PostDelegate/PostDelegate.qml:504
+#: content/ui/PostDelegate/PostDelegate.qml:506
 #, kde-format
 msgid "Bookmarked"
 msgstr "북마크에 추가됨"
 
-#: content/ui/PostDelegate/PostDelegate.qml:504
+#: content/ui/PostDelegate/PostDelegate.qml:506
 #, kde-format
 msgid "Bookmark"
 msgstr "북마크"
 
-#: content/ui/PostDelegate/PostDelegate.qml:538
+#: content/ui/PostDelegate/PostDelegate.qml:540
 #, kde-format
 msgid ""
 "This post has been marked private. Some posts may be missing because its "
@@ -5121,55 +5113,101 @@ msgstr "투표가 끝날 때까지 총 투표 수 숨기기"
 msgid "Remove"
 msgstr "삭제"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:65
-#, kde-format
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:85
+#, fuzzy, kde-format
+#| msgctxt "@info:Time when the domain was allowed to federate."
+#| msgid "Created at"
 msgctxt "Draft, unfinished post"
-msgid "Draft"
-msgstr "초안"
+msgid "Created %1 ago"
+msgstr "생성 시간"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:65
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:85
 #, kde-format
 msgctxt "Scheduled for this date"
 msgid "Scheduled for %1"
 msgstr "%1에 예정됨"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:84
-#, kde-format
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:93
+#, fuzzy, kde-format
+#| msgctxt "@action:button Schedule something to be posted later"
+#| msgid "Schedule"
+msgctxt "@action:button Re-schedule this post"
+msgid "Re-schedule…"
+msgstr "예약"
+
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:104
+#, fuzzy, kde-format
+#| msgctxt "@action:button Discard this post"
+#| msgid "Discard"
 msgctxt "@action:button Discard this post"
-msgid "Discard"
+msgid "Discard…"
 msgstr "삭제"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:105
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:116
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Drafts"
 msgstr "초안 없음"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:105
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:116
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Scheduled Posts"
 msgstr "예약된 게시물 없음"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:114
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:125
 #: content/ui/StatusComposer/StatusComposer.qml:181
 #, kde-format
 msgctxt "@title"
 msgid "Discard Draft"
 msgstr "임시 저장 삭제"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:115
-#: content/ui/StatusComposer/StatusComposer.qml:182
-#, kde-format
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:125
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Scheduled Posts"
+msgctxt "@title"
+msgid "Discard Scheduled Post"
+msgstr "예약된 게시물"
+
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:126
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Are you sure you want to discard your draft?"
 msgctxt "@label"
-msgid "Are you sure you want to discard your draft?"
+msgid "Are you sure you want to discard this draft?"
 msgstr "임시 저장된 게시물을 삭제하시겠습니까?"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:121
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:126
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Are you sure you want to delete this post?"
+msgctxt "@label"
+msgid "Are you sure you want to discard this scheduled post?"
+msgstr "이 게시물을 삭제하시겠습니까?"
+
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:132
 #, kde-format
 msgctxt "@action:button Discard this draft"
 msgid "Discard"
 msgstr "임시 저장 삭제"
+
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:148
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Schedule Post"
+msgctxt "@title"
+msgid "Re-Schedule Post"
+msgstr "게시물 예약"
+
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:155
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "@action:button Set this post's schedule to when it should be posted"
+#| msgid "Set Schedule"
+msgctxt "@action:button Set this post's schedule to when it should be posted"
+msgid "Set New Schedule"
+msgstr "예약 설정"
 
 #: content/ui/StatusComposer/StatusComposer.qml:62
 #, kde-format
@@ -5236,6 +5274,12 @@ msgctxt "@action:Button Save an edited a post"
 msgid "Save"
 msgstr "저장"
 
+#: content/ui/StatusComposer/StatusComposer.qml:182
+#, kde-format
+msgctxt "@label"
+msgid "Are you sure you want to discard your draft?"
+msgstr "임시 저장된 게시물을 삭제하시겠습니까?"
+
 #: content/ui/StatusComposer/StatusComposer.qml:188
 #, kde-format
 msgctxt "@action:button Keep this draft"
@@ -5254,171 +5298,171 @@ msgctxt "@title"
 msgid "Schedule Post"
 msgstr "게시물 예약"
 
-#: content/ui/StatusComposer/StatusComposer.qml:221
+#: content/ui/StatusComposer/StatusComposer.qml:222
 #, kde-format
 msgctxt "@action:button Set this post's schedule to when it should be posted"
 msgid "Set Schedule"
 msgstr "예약 설정"
 
-#: content/ui/StatusComposer/StatusComposer.qml:336
+#: content/ui/StatusComposer/StatusComposer.qml:337
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Content notice"
 msgstr "내용 경고"
 
-#: content/ui/StatusComposer/StatusComposer.qml:350
+#: content/ui/StatusComposer/StatusComposer.qml:351
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "What's new?"
 msgstr "지금 무엇을 하고 있나요?"
 
-#: content/ui/StatusComposer/StatusComposer.qml:489
+#: content/ui/StatusComposer/StatusComposer.qml:490
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a File"
 msgstr "파일 선택"
 
-#: content/ui/StatusComposer/StatusComposer.qml:494
+#: content/ui/StatusComposer/StatusComposer.qml:495
 #, kde-format
 msgctxt "@action:button"
 msgid "Attach File"
 msgstr "파일 첨부"
 
-#: content/ui/StatusComposer/StatusComposer.qml:499
-#: content/ui/StatusComposer/StatusComposer.qml:529
+#: content/ui/StatusComposer/StatusComposer.qml:500
+#: content/ui/StatusComposer/StatusComposer.qml:530
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You can't have attachments and a poll in the same post."
 msgstr "한 게시물에 첨부와 투표를 동시에 포함할 수 없습니다."
 
-#: content/ui/StatusComposer/StatusComposer.qml:503
+#: content/ui/StatusComposer/StatusComposer.qml:504
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You have the maximum allowed number of attachments."
 msgstr "최대 첨부 개수에 도달했습니다."
 
-#: content/ui/StatusComposer/StatusComposer.qml:506
+#: content/ui/StatusComposer/StatusComposer.qml:507
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Attach file"
 msgstr "파일 첨부"
 
-#: content/ui/StatusComposer/StatusComposer.qml:518
+#: content/ui/StatusComposer/StatusComposer.qml:519
 #, kde-format
 msgctxt "@action:button"
 msgid "Attach Poll"
 msgstr "투표 첨부"
 
-#: content/ui/StatusComposer/StatusComposer.qml:525
+#: content/ui/StatusComposer/StatusComposer.qml:526
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You can't modify or add a poll to an existing post."
 msgstr "기존 게시물에 투표를 추가하거나 수정할 수 없습니다."
 
-#: content/ui/StatusComposer/StatusComposer.qml:532
+#: content/ui/StatusComposer/StatusComposer.qml:533
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add poll"
 msgstr "투표 추가"
 
-#: content/ui/StatusComposer/StatusComposer.qml:542
+#: content/ui/StatusComposer/StatusComposer.qml:543
 #, kde-format
 msgctxt "@action:button"
 msgid "Content Notice"
 msgstr "내용 경고"
 
-#: content/ui/StatusComposer/StatusComposer.qml:554
+#: content/ui/StatusComposer/StatusComposer.qml:555
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Content notice"
 msgstr "내용 경고"
 
-#: content/ui/StatusComposer/StatusComposer.qml:580
+#: content/ui/StatusComposer/StatusComposer.qml:581
 #, kde-format
 msgctxt "@action:button"
 msgid "Visibility"
 msgstr "표시 여부"
 
-#: content/ui/StatusComposer/StatusComposer.qml:588
+#: content/ui/StatusComposer/StatusComposer.qml:589
 #, kde-format
 msgctxt "@title"
 msgid "Visibility"
 msgstr "표시 여부"
 
-#: content/ui/StatusComposer/StatusComposer.qml:592
+#: content/ui/StatusComposer/StatusComposer.qml:593
 #, kde-format
 msgctxt "@item:inmenu Local to this server"
 msgid "Local"
 msgstr "로컬"
 
-#: content/ui/StatusComposer/StatusComposer.qml:598
+#: content/ui/StatusComposer/StatusComposer.qml:599
 #, kde-format
 msgctxt "@item:inmenu Public to the world"
 msgid "Public"
 msgstr "공개"
 
-#: content/ui/StatusComposer/StatusComposer.qml:603
+#: content/ui/StatusComposer/StatusComposer.qml:604
 #, kde-format
 msgctxt "@item:inmenu Public but less so"
 msgid "Unlisted"
 msgstr "미등재"
 
-#: content/ui/StatusComposer/StatusComposer.qml:608
+#: content/ui/StatusComposer/StatusComposer.qml:609
 #, kde-format
 msgctxt "@item:inmenu Only to followers"
 msgid "Private"
 msgstr "비공개"
 
-#: content/ui/StatusComposer/StatusComposer.qml:613
+#: content/ui/StatusComposer/StatusComposer.qml:614
 #, kde-format
 msgctxt "@item:inmenu Only to who is explicitly mentioned"
 msgid "Direct Message"
 msgstr "다이렉트 메시지"
 
-#: content/ui/StatusComposer/StatusComposer.qml:618
+#: content/ui/StatusComposer/StatusComposer.qml:619
 #, kde-format
 msgctxt "@info:tooltip Post visibility"
 msgid "Visibility"
 msgstr "표시 여부"
 
-#: content/ui/StatusComposer/StatusComposer.qml:626
+#: content/ui/StatusComposer/StatusComposer.qml:627
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Post language"
 msgstr "게시물 언어"
 
-#: content/ui/StatusComposer/StatusComposer.qml:656
+#: content/ui/StatusComposer/StatusComposer.qml:660
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Emoji"
 msgstr "이모지 추가"
 
-#: content/ui/StatusComposer/StatusComposer.qml:667
+#: content/ui/StatusComposer/StatusComposer.qml:671
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add emoji"
 msgstr "이모지 추가"
 
-#: content/ui/StatusComposer/StatusComposer.qml:697
+#: content/ui/StatusComposer/StatusComposer.qml:701
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1/%2</b>글자"
 
-#: content/ui/StatusComposer/StatusComposer.qml:707
-#: content/ui/StatusComposer/StatusComposer.qml:784
+#: content/ui/StatusComposer/StatusComposer.qml:711
+#: content/ui/StatusComposer/StatusComposer.qml:788
 #, kde-format
 msgctxt "@action:button Schedule something to be posted later"
 msgid "Schedule"
 msgstr "예약"
 
-#: content/ui/StatusComposer/StatusComposer.qml:758
+#: content/ui/StatusComposer/StatusComposer.qml:762
 #, kde-format
 msgctxt "@title"
 msgid "Alt Text Reminder"
 msgstr "대체 텍스트 알림"
 
-#: content/ui/StatusComposer/StatusComposer.qml:762
+#: content/ui/StatusComposer/StatusComposer.qml:766
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -5949,6 +5993,17 @@ msgstr[0] "%1개월 전"
 msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "%1년 전"
+
+#, fuzzy
+#~| msgctxt "@action:inmenu"
+#~| msgid "Show Boosts"
+#~ msgctxt "@action:inmenu"
+#~ msgid "Show Quotes"
+#~ msgstr "부스트 표시"
+
+#~ msgctxt "Draft, unfinished post"
+#~ msgid "Draft"
+#~ msgstr "초안"
 
 #~ msgctxt "@action:button"
 #~ msgid "Post"

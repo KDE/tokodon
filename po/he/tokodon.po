@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-16 00:41+0000\n"
-"PO-Revision-Date: 2025-10-23 10:06+0300\n"
+"POT-Creation-Date: 2025-11-17 00:42+0000\n"
+"PO-Revision-Date: 2025-11-16 10:21+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 25.08.3\n"
 
 #: account/abstractaccount.cpp:33
 #, kde-format
@@ -280,13 +280,13 @@ msgid ""
 "This server provided no rules. Please see their website for more information."
 msgstr "השרת הזה לא סיפק כללים. נא לעיין באתר של מתחזקי השרת לקבלת מידע נוסף."
 
-#: account/scheduledstatusesmodel.cpp:59
+#: account/scheduledstatusesmodel.cpp:72
 #, kde-format
 msgctxt "@title:window"
 msgid "Draft Posts"
 msgstr "רשומות כטיוטות"
 
-#: account/scheduledstatusesmodel.cpp:59
+#: account/scheduledstatusesmodel.cpp:72
 #, kde-format
 msgctxt "@title:window"
 msgid "Scheduled Posts"
@@ -848,13 +848,13 @@ msgctxt "@title:window"
 msgid "Profile"
 msgstr "פרופיל"
 
-#: content/ui/AccountInfo.qml:130 content/ui/FollowingPage.qml:170
+#: content/ui/AccountInfo.qml:130 content/ui/FollowingPage.qml:161
 #, kde-format
 msgctxt "@label"
 msgid "No Posts"
 msgstr "אין רשומות"
 
-#: content/ui/AccountInfo.qml:131 content/ui/FollowingPage.qml:171
+#: content/ui/AccountInfo.qml:131 content/ui/FollowingPage.qml:162
 #, kde-format
 msgid "This user hasn't posted anything yet."
 msgstr "המשתמש או המשתמשת האלה לא פרסמו כלום עדיין."
@@ -1228,37 +1228,29 @@ msgid "Show Boosts"
 msgstr "הצגת עידודים"
 
 #: content/ui/FollowingPage.qml:54
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Show Boosts"
-msgctxt "@action:inmenu"
-msgid "Show Quotes"
-msgstr "הצגת עידודים"
-
-#: content/ui/FollowingPage.qml:62
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Show Replies"
 msgstr "הצגת תגובות"
 
-#: content/ui/FollowingPage.qml:73 content/ui/TimelinePage.qml:139
+#: content/ui/FollowingPage.qml:65 content/ui/TimelinePage.qml:139
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Configure Filters…"
 msgstr "הגדרת מסננים…"
 
-#: content/ui/FollowingPage.qml:74 content/ui/TimelinePage.qml:140
+#: content/ui/FollowingPage.qml:66 content/ui/TimelinePage.qml:140
 #, kde-format
 msgctxt "@title:window"
 msgid "Filters"
 msgstr "מסננים"
 
-#: content/ui/FollowingPage.qml:164
+#: content/ui/FollowingPage.qml:155
 #, kde-format
 msgid "No User Selected"
 msgstr "לא נבחר אף משתמש"
 
-#: content/ui/FollowingPage.qml:165
+#: content/ui/FollowingPage.qml:156
 #, kde-format
 msgid ""
 "With the Following view, easily check on each user you're following and only "
@@ -3420,14 +3412,14 @@ msgstr "%1 משתמשים הוסיפו את הרשומה שלך למועדפים
 msgid "%1 users boosted your post"
 msgstr "%1 משתמשים עודדו את הרשומה שלך"
 
-#: content/ui/Notifications/MinimalPostDelegate.qml:79
-#: content/ui/PostDelegate/PostDelegate.qml:103
+#: content/ui/Notifications/MinimalPostDelegate.qml:68
+#: content/ui/PostDelegate/PostDelegate.qml:105
 #, kde-format
 msgid "Normal Status"
 msgstr "מצב רגיל"
 
-#: content/ui/Notifications/MinimalPostDelegate.qml:79
-#: content/ui/PostDelegate/PostDelegate.qml:103
+#: content/ui/Notifications/MinimalPostDelegate.qml:68
+#: content/ui/PostDelegate/PostDelegate.qml:105
 #, kde-format
 msgid "Spoiler Status"
 msgstr "מצב קלקלן"
@@ -3714,31 +3706,31 @@ msgctxt "@info"
 msgid "Post content"
 msgstr "תוכן הרשומה"
 
-#: content/ui/PostDelegate/PostDelegate.qml:170
+#: content/ui/PostDelegate/PostDelegate.qml:172
 #, kde-format
 msgctxt "@label"
 msgid "Pinned Post"
 msgstr "רשומה נעוצה"
 
-#: content/ui/PostDelegate/PostDelegate.qml:240
+#: content/ui/PostDelegate/PostDelegate.qml:242
 #, kde-format
 msgctxt "@title"
 msgid "Delete Post"
 msgstr "מחיקת רשומה"
 
-#: content/ui/PostDelegate/PostDelegate.qml:241
+#: content/ui/PostDelegate/PostDelegate.qml:243
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to delete this post?"
 msgstr "למחוק את הרשומה הזאת?"
 
-#: content/ui/PostDelegate/PostDelegate.qml:256
+#: content/ui/PostDelegate/PostDelegate.qml:258
 #, kde-format
 msgctxt "@title"
 msgid "Delete & Re-draft Post"
 msgstr "מחיקה והחזרת הרשומה לטיוטה"
 
-#: content/ui/PostDelegate/PostDelegate.qml:257
+#: content/ui/PostDelegate/PostDelegate.qml:259
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -3746,76 +3738,76 @@ msgid ""
 "post."
 msgstr "להחזיר את הרשומה לטיוטה? הפעולה הזאת תמחק את הרשומה המקורית."
 
-#: content/ui/PostDelegate/PostDelegate.qml:410
+#: content/ui/PostDelegate/PostDelegate.qml:412
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "תגובה"
 
-#: content/ui/PostDelegate/PostDelegate.qml:437
+#: content/ui/PostDelegate/PostDelegate.qml:439
 #, kde-format
 msgid "Cannot boost direct messages"
 msgstr "לא ניתן לעודד הודעות ישירות"
 
-#: content/ui/PostDelegate/PostDelegate.qml:439
+#: content/ui/PostDelegate/PostDelegate.qml:441
 #, kde-format
 msgid "Cannot boost private posts"
 msgstr "לא ניתן לעודד רשומות פרטיות"
 
-#: content/ui/PostDelegate/PostDelegate.qml:441
+#: content/ui/PostDelegate/PostDelegate.qml:443
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "עידוד"
 
-#: content/ui/PostDelegate/PostDelegate.qml:459
+#: content/ui/PostDelegate/PostDelegate.qml:461
 #, kde-format
 msgid "Boosted"
 msgstr "קיבל עידוד"
 
-#: content/ui/PostDelegate/PostDelegate.qml:459
+#: content/ui/PostDelegate/PostDelegate.qml:461
 #, kde-format
 msgid "Boost"
 msgstr "עידוד"
 
-#: content/ui/PostDelegate/PostDelegate.qml:479
+#: content/ui/PostDelegate/PostDelegate.qml:481
 #, kde-format
 msgctxt "Favorite a post"
 msgid "Favorite"
 msgstr "הוספה למועדפים"
 
-#: content/ui/PostDelegate/PostDelegate.qml:482
+#: content/ui/PostDelegate/PostDelegate.qml:484
 #, kde-format
 msgid "Favorited"
 msgstr "נוסף למועדפים"
 
-#: content/ui/PostDelegate/PostDelegate.qml:482
+#: content/ui/PostDelegate/PostDelegate.qml:484
 #, kde-format
 msgid "Favorite"
 msgstr "הוספה למועדפים"
 
-#: content/ui/PostDelegate/PostDelegate.qml:501
+#: content/ui/PostDelegate/PostDelegate.qml:503
 #, kde-format
 msgid "Remove bookmark"
 msgstr "הסרת סימנייה"
 
-#: content/ui/PostDelegate/PostDelegate.qml:501
+#: content/ui/PostDelegate/PostDelegate.qml:503
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "הוספה לסימניות"
 
-#: content/ui/PostDelegate/PostDelegate.qml:504
+#: content/ui/PostDelegate/PostDelegate.qml:506
 #, kde-format
 msgid "Bookmarked"
 msgstr "נוסף לסימניות"
 
-#: content/ui/PostDelegate/PostDelegate.qml:504
+#: content/ui/PostDelegate/PostDelegate.qml:506
 #, kde-format
 msgid "Bookmark"
 msgstr "סימנייה"
 
-#: content/ui/PostDelegate/PostDelegate.qml:538
+#: content/ui/PostDelegate/PostDelegate.qml:540
 #, kde-format
 msgid ""
 "This post has been marked private. Some posts may be missing because its "
@@ -3865,17 +3857,15 @@ msgid "Open Thread"
 msgstr "פתיחת שרשור"
 
 #: content/ui/PostDelegate/PostMenu.qml:70
-#, fuzzy, kde-format
-#| msgid "Copy Image"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy Text"
-msgstr "העתקת תמונה"
+msgstr "העתקת טקסט"
 
 #: content/ui/PostDelegate/PostMenu.qml:74
-#, fuzzy, kde-format
-#| msgid "Post link copied."
+#, kde-format
 msgid "Post text copied."
-msgstr "הקישור לרשומה הועתק."
+msgstr "טקסט הפוסט הועתק."
 
 #: content/ui/PostDelegate/PostMenu.qml:80
 #, kde-format
@@ -5115,55 +5105,101 @@ msgstr "הסתרת מניין הקולות עד לסיום הסקר"
 msgid "Remove"
 msgstr "הסרה"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:65
-#, kde-format
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:85
+#, fuzzy, kde-format
+#| msgctxt "@info:Time when the domain was allowed to federate."
+#| msgid "Created at"
 msgctxt "Draft, unfinished post"
-msgid "Draft"
-msgstr "טיוטה"
+msgid "Created %1 ago"
+msgstr "נוצר ב־"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:65
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:85
 #, kde-format
 msgctxt "Scheduled for this date"
 msgid "Scheduled for %1"
 msgstr "מתוזמנת ל־%1"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:84
-#, kde-format
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:93
+#, fuzzy, kde-format
+#| msgctxt "@action:button Schedule something to be posted later"
+#| msgid "Schedule"
+msgctxt "@action:button Re-schedule this post"
+msgid "Re-schedule…"
+msgstr "תזמון"
+
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:104
+#, fuzzy, kde-format
+#| msgctxt "@action:button Discard this post"
+#| msgid "Discard"
 msgctxt "@action:button Discard this post"
-msgid "Discard"
+msgid "Discard…"
 msgstr "התעלמות"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:105
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:116
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Drafts"
 msgstr "אין טיוטות"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:105
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:116
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Scheduled Posts"
 msgstr "אין רשומות מתוזמנות"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:114
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:125
 #: content/ui/StatusComposer/StatusComposer.qml:181
 #, kde-format
 msgctxt "@title"
 msgid "Discard Draft"
 msgstr "התעלמות מטיוטה"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:115
-#: content/ui/StatusComposer/StatusComposer.qml:182
-#, kde-format
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:125
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Scheduled Posts"
+msgctxt "@title"
+msgid "Discard Scheduled Post"
+msgstr "רשומות מתוזמנות"
+
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:126
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Are you sure you want to discard your draft?"
 msgctxt "@label"
-msgid "Are you sure you want to discard your draft?"
+msgid "Are you sure you want to discard this draft?"
 msgstr "להתעלם מהטיוטה שלך?"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:121
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:126
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Are you sure you want to delete this post?"
+msgctxt "@label"
+msgid "Are you sure you want to discard this scheduled post?"
+msgstr "למחוק את הרשומה הזאת?"
+
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:132
 #, kde-format
 msgctxt "@action:button Discard this draft"
 msgid "Discard"
 msgstr "התעלמות"
+
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:148
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Schedule Post"
+msgctxt "@title"
+msgid "Re-Schedule Post"
+msgstr "תזמון רשומה"
+
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:155
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "@action:button Set this post's schedule to when it should be posted"
+#| msgid "Set Schedule"
+msgctxt "@action:button Set this post's schedule to when it should be posted"
+msgid "Set New Schedule"
+msgstr "הגדרת תזמון"
 
 #: content/ui/StatusComposer/StatusComposer.qml:62
 #, kde-format
@@ -5230,6 +5266,12 @@ msgctxt "@action:Button Save an edited a post"
 msgid "Save"
 msgstr "שמירה"
 
+#: content/ui/StatusComposer/StatusComposer.qml:182
+#, kde-format
+msgctxt "@label"
+msgid "Are you sure you want to discard your draft?"
+msgstr "להתעלם מהטיוטה שלך?"
+
 #: content/ui/StatusComposer/StatusComposer.qml:188
 #, kde-format
 msgctxt "@action:button Keep this draft"
@@ -5248,171 +5290,171 @@ msgctxt "@title"
 msgid "Schedule Post"
 msgstr "תזמון רשומה"
 
-#: content/ui/StatusComposer/StatusComposer.qml:221
+#: content/ui/StatusComposer/StatusComposer.qml:222
 #, kde-format
 msgctxt "@action:button Set this post's schedule to when it should be posted"
 msgid "Set Schedule"
 msgstr "הגדרת תזמון"
 
-#: content/ui/StatusComposer/StatusComposer.qml:336
+#: content/ui/StatusComposer/StatusComposer.qml:337
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Content notice"
 msgstr "התראת תוכן"
 
-#: content/ui/StatusComposer/StatusComposer.qml:350
+#: content/ui/StatusComposer/StatusComposer.qml:351
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "What's new?"
 msgstr "מה חדש?"
 
-#: content/ui/StatusComposer/StatusComposer.qml:489
+#: content/ui/StatusComposer/StatusComposer.qml:490
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a File"
 msgstr "נא לבחור קובץ"
 
-#: content/ui/StatusComposer/StatusComposer.qml:494
+#: content/ui/StatusComposer/StatusComposer.qml:495
 #, kde-format
 msgctxt "@action:button"
 msgid "Attach File"
 msgstr "צירוף קובץ"
 
-#: content/ui/StatusComposer/StatusComposer.qml:499
-#: content/ui/StatusComposer/StatusComposer.qml:529
+#: content/ui/StatusComposer/StatusComposer.qml:500
+#: content/ui/StatusComposer/StatusComposer.qml:530
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You can't have attachments and a poll in the same post."
 msgstr "אי אפשר לצרף קבצים וסקר באותה הרשומה."
 
-#: content/ui/StatusComposer/StatusComposer.qml:503
+#: content/ui/StatusComposer/StatusComposer.qml:504
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You have the maximum allowed number of attachments."
 msgstr "הגעת למספר המרבי של קבצים מצורפים."
 
-#: content/ui/StatusComposer/StatusComposer.qml:506
+#: content/ui/StatusComposer/StatusComposer.qml:507
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Attach file"
 msgstr "צירוף קובץ"
 
-#: content/ui/StatusComposer/StatusComposer.qml:518
+#: content/ui/StatusComposer/StatusComposer.qml:519
 #, kde-format
 msgctxt "@action:button"
 msgid "Attach Poll"
 msgstr "צירוף סקר"
 
-#: content/ui/StatusComposer/StatusComposer.qml:525
+#: content/ui/StatusComposer/StatusComposer.qml:526
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You can't modify or add a poll to an existing post."
 msgstr "אי אפשר לשנות או להוסיף סקר לרשומה קיימת."
 
-#: content/ui/StatusComposer/StatusComposer.qml:532
+#: content/ui/StatusComposer/StatusComposer.qml:533
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add poll"
 msgstr "הוספת סקר"
 
-#: content/ui/StatusComposer/StatusComposer.qml:542
+#: content/ui/StatusComposer/StatusComposer.qml:543
 #, kde-format
 msgctxt "@action:button"
 msgid "Content Notice"
 msgstr "התראת תוכן"
 
-#: content/ui/StatusComposer/StatusComposer.qml:554
+#: content/ui/StatusComposer/StatusComposer.qml:555
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Content notice"
 msgstr "התראת תוכן"
 
-#: content/ui/StatusComposer/StatusComposer.qml:580
+#: content/ui/StatusComposer/StatusComposer.qml:581
 #, kde-format
 msgctxt "@action:button"
 msgid "Visibility"
 msgstr "חשיפה"
 
-#: content/ui/StatusComposer/StatusComposer.qml:588
+#: content/ui/StatusComposer/StatusComposer.qml:589
 #, kde-format
 msgctxt "@title"
 msgid "Visibility"
 msgstr "חשיפה"
 
-#: content/ui/StatusComposer/StatusComposer.qml:592
+#: content/ui/StatusComposer/StatusComposer.qml:593
 #, kde-format
 msgctxt "@item:inmenu Local to this server"
 msgid "Local"
 msgstr "מקומי"
 
-#: content/ui/StatusComposer/StatusComposer.qml:598
+#: content/ui/StatusComposer/StatusComposer.qml:599
 #, kde-format
 msgctxt "@item:inmenu Public to the world"
 msgid "Public"
 msgstr "ציבורי"
 
-#: content/ui/StatusComposer/StatusComposer.qml:603
+#: content/ui/StatusComposer/StatusComposer.qml:604
 #, kde-format
 msgctxt "@item:inmenu Public but less so"
 msgid "Unlisted"
 msgstr "נסתר"
 
-#: content/ui/StatusComposer/StatusComposer.qml:608
+#: content/ui/StatusComposer/StatusComposer.qml:609
 #, kde-format
 msgctxt "@item:inmenu Only to followers"
 msgid "Private"
 msgstr "פרטי"
 
-#: content/ui/StatusComposer/StatusComposer.qml:613
+#: content/ui/StatusComposer/StatusComposer.qml:614
 #, kde-format
 msgctxt "@item:inmenu Only to who is explicitly mentioned"
 msgid "Direct Message"
 msgstr "הודעה ישירה"
 
-#: content/ui/StatusComposer/StatusComposer.qml:618
+#: content/ui/StatusComposer/StatusComposer.qml:619
 #, kde-format
 msgctxt "@info:tooltip Post visibility"
 msgid "Visibility"
 msgstr "חשיפה"
 
-#: content/ui/StatusComposer/StatusComposer.qml:626
+#: content/ui/StatusComposer/StatusComposer.qml:627
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Post language"
 msgstr "שפת הרשומה"
 
-#: content/ui/StatusComposer/StatusComposer.qml:656
+#: content/ui/StatusComposer/StatusComposer.qml:660
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Emoji"
 msgstr "הוספת אמוג׳י"
 
-#: content/ui/StatusComposer/StatusComposer.qml:667
+#: content/ui/StatusComposer/StatusComposer.qml:671
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add emoji"
 msgstr "הוספת אמוג׳י"
 
-#: content/ui/StatusComposer/StatusComposer.qml:697
+#: content/ui/StatusComposer/StatusComposer.qml:701
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1/%2</b> תווים"
 
-#: content/ui/StatusComposer/StatusComposer.qml:707
-#: content/ui/StatusComposer/StatusComposer.qml:784
+#: content/ui/StatusComposer/StatusComposer.qml:711
+#: content/ui/StatusComposer/StatusComposer.qml:788
 #, kde-format
 msgctxt "@action:button Schedule something to be posted later"
 msgid "Schedule"
 msgstr "תזמון"
 
-#: content/ui/StatusComposer/StatusComposer.qml:758
+#: content/ui/StatusComposer/StatusComposer.qml:762
 #, kde-format
 msgctxt "@title"
 msgid "Alt Text Reminder"
 msgstr "תזכורת טקסט חלופי"
 
-#: content/ui/StatusComposer/StatusComposer.qml:762
+#: content/ui/StatusComposer/StatusComposer.qml:766
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -5438,10 +5480,9 @@ msgid "Show Boosts"
 msgstr "הצגת עידודים"
 
 #: content/ui/TimelinePage.qml:122
-#, fuzzy, kde-format
-#| msgid "Show Boosts"
+#, kde-format
 msgid "Show Quotes"
-msgstr "הצגת עידודים"
+msgstr "הצגת ציטטות"
 
 #: content/ui/TimelinePage.qml:129
 #, kde-format
@@ -5955,6 +5996,16 @@ msgstr[0] "לפני שנה"
 msgstr[1] "לפני שנתיים"
 msgstr[2] "לפני %1 שנה"
 msgstr[3] "לפני %1 שנים"
+
+#~| msgctxt "@action:inmenu"
+#~| msgid "Show Boosts"
+#~ msgctxt "@action:inmenu"
+#~ msgid "Show Quotes"
+#~ msgstr "הצגת ציטטות"
+
+#~ msgctxt "Draft, unfinished post"
+#~ msgid "Draft"
+#~ msgstr "טיוטה"
 
 #~ msgctxt "@action:button"
 #~ msgid "Post"
