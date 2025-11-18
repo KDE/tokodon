@@ -27,7 +27,7 @@ TimelinePage {
     }
 
     actions: Kirigami.Action {
-        text: i18n("Edit List")
+        text: i18nc("@action:button Edit current list", "Edit…")
         icon.name: "edit-rename"
         onTriggered: {
             let page = pageStack.layers.push(editListPage.createObject(root), {

@@ -33,7 +33,7 @@ Kirigami.ScrollablePage {
     }
 
     actions: Kirigami.Action {
-        text: i18n("Create List")
+        text: i18nc("@action:button Create new list", "Create New…")
         icon.name: "gtk-add"
         onTriggered: {
             const page = pageStack.layers.push(editListPage.createObject(root), {
