@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:52+0000\n"
+"POT-Creation-Date: 2025-11-19 00:43+0000\n"
 "PO-Revision-Date: 2025-10-25 16:53+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -1388,9 +1388,12 @@ msgid "Lists"
 msgstr "القوائم"
 
 #: content/ui/ListsPage.qml:36
-#, kde-format
-msgid "Create List"
-msgstr "أنشئ قائمة"
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Create Rule"
+msgctxt "@action:button Create new list"
+msgid "Create New…"
+msgstr "أنشئ قاعدة"
 
 #: content/ui/ListsPage.qml:77
 #, kde-format
@@ -1418,9 +1421,11 @@ msgstr ""
 "قائمة."
 
 #: content/ui/ListTimelinePage.qml:30
-#, kde-format
-msgid "Edit List"
-msgstr "حرر القائمة"
+#, fuzzy, kde-format
+#| msgid "Edit"
+msgctxt "@action:button Edit current list"
+msgid "Edit…"
+msgstr "حرّر"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:26
 #, kde-format
@@ -6036,6 +6041,12 @@ msgstr[2] "قبل ستنتين"
 msgstr[3] "قبل %1 سنوات"
 msgstr[4] "قبل %1 سنة"
 msgstr[5] "قبل %1 سنة"
+
+#~ msgid "Create List"
+#~ msgstr "أنشئ قائمة"
+
+#~ msgid "Edit List"
+#~ msgstr "حرر القائمة"
 
 #, fuzzy
 #~| msgctxt "@action:inmenu"

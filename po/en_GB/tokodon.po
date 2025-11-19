@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:52+0000\n"
+"POT-Creation-Date: 2025-11-19 00:43+0000\n"
 "PO-Revision-Date: 2024-11-23 12:11+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -1400,9 +1400,12 @@ msgid "Lists"
 msgstr "Lists"
 
 #: content/ui/ListsPage.qml:36
-#, kde-format
-msgid "Create List"
-msgstr "Create List"
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Create Rule"
+msgctxt "@action:button Create new list"
+msgid "Create New…"
+msgstr "Create Rule"
 
 #: content/ui/ListsPage.qml:77
 #, kde-format
@@ -1428,9 +1431,11 @@ msgid ""
 msgstr ""
 
 #: content/ui/ListTimelinePage.qml:30
-#, kde-format
-msgid "Edit List"
-msgstr "Edit List"
+#, fuzzy, kde-format
+#| msgid "Edit"
+msgctxt "@action:button Edit current list"
+msgid "Edit…"
+msgstr "Edit"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:26
 #, kde-format
@@ -6194,6 +6199,12 @@ msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "1 year ago"
 msgstr[1] "%1 years ago"
+
+#~ msgid "Create List"
+#~ msgstr "Create List"
+
+#~ msgid "Edit List"
+#~ msgstr "Edit List"
 
 #, fuzzy
 #~| msgctxt "@action:inmenu"

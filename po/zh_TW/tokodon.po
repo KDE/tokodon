@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:52+0000\n"
+"POT-Creation-Date: 2025-11-19 00:43+0000\n"
 "PO-Revision-Date: 2025-11-13 22:38+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -1349,9 +1349,12 @@ msgid "Lists"
 msgstr "列表"
 
 #: content/ui/ListsPage.qml:36
-#, kde-format
-msgid "Create List"
-msgstr "建立列表"
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Create Rule"
+msgctxt "@action:button Create new list"
+msgid "Create New…"
+msgstr "建立規則"
 
 #: content/ui/ListsPage.qml:77
 #, kde-format
@@ -1377,9 +1380,11 @@ msgid ""
 msgstr "沒有來自您的列表中的使用者的嘟文。只有新的嘟文才會顯示在列表中。"
 
 #: content/ui/ListTimelinePage.qml:30
-#, kde-format
-msgid "Edit List"
-msgstr "編輯列表"
+#, fuzzy, kde-format
+#| msgid "Edit"
+msgctxt "@action:button Edit current list"
+msgid "Edit…"
+msgstr "編輯"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:26
 #, kde-format
@@ -5940,6 +5945,12 @@ msgstr[0] "%1 個月前"
 msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "%1 年前"
+
+#~ msgid "Create List"
+#~ msgstr "建立列表"
+
+#~ msgid "Edit List"
+#~ msgstr "編輯列表"
 
 #, fuzzy
 #~| msgctxt "@action:inmenu"

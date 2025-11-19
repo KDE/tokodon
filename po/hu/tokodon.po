@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:52+0000\n"
+"POT-Creation-Date: 2025-11-19 00:43+0000\n"
 "PO-Revision-Date: 2025-11-06 21:16+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -1378,9 +1378,12 @@ msgid "Lists"
 msgstr "Listák"
 
 #: content/ui/ListsPage.qml:36
-#, kde-format
-msgid "Create List"
-msgstr "Lista létrehozása"
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Create Rule"
+msgctxt "@action:button Create new list"
+msgid "Create New…"
+msgstr "Szabály létrehozása"
 
 #: content/ui/ListsPage.qml:77
 #, kde-format
@@ -1408,9 +1411,11 @@ msgstr ""
 "bejegyzések jelennek meg a listában."
 
 #: content/ui/ListTimelinePage.qml:30
-#, kde-format
-msgid "Edit List"
-msgstr "Lista szerkesztése"
+#, fuzzy, kde-format
+#| msgid "Edit"
+msgctxt "@action:button Edit current list"
+msgid "Edit…"
+msgstr "Szerkesztés"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:26
 #, kde-format
@@ -6026,6 +6031,12 @@ msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "1 évvel ezelőtt"
 msgstr[1] "%1 évvel ezelőtt"
+
+#~ msgid "Create List"
+#~ msgstr "Lista létrehozása"
+
+#~ msgid "Edit List"
+#~ msgstr "Lista szerkesztése"
 
 #, fuzzy
 #~| msgctxt "@action:inmenu"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:52+0000\n"
+"POT-Creation-Date: 2025-11-19 00:43+0000\n"
 "PO-Revision-Date: 2025-08-17 12:52+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
@@ -1386,9 +1386,12 @@ msgid "Lists"
 msgstr "Listy"
 
 #: content/ui/ListsPage.qml:36
-#, kde-format
-msgid "Create List"
-msgstr "Utwórz listę"
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Create Rule"
+msgctxt "@action:button Create new list"
+msgid "Create New…"
+msgstr "Utwórz zasadę"
 
 #: content/ui/ListsPage.qml:77
 #, kde-format
@@ -1416,9 +1419,11 @@ msgstr ""
 "pokazywać się tylko nowe wpisy."
 
 #: content/ui/ListTimelinePage.qml:30
-#, kde-format
-msgid "Edit List"
-msgstr "Edytuj listę"
+#, fuzzy, kde-format
+#| msgid "Edit"
+msgctxt "@action:button Edit current list"
+msgid "Edit…"
+msgstr "Edytuj"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:26
 #, kde-format
@@ -6048,6 +6053,12 @@ msgid_plural "%1 years ago"
 msgstr[0] "1 rok temu"
 msgstr[1] "%1 lata temu"
 msgstr[2] "%1 lat temu"
+
+#~ msgid "Create List"
+#~ msgstr "Utwórz listę"
+
+#~ msgid "Edit List"
+#~ msgstr "Edytuj listę"
 
 #, fuzzy
 #~| msgctxt "@action:inmenu"

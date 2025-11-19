@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:52+0000\n"
+"POT-Creation-Date: 2025-11-19 00:43+0000\n"
 "PO-Revision-Date: 2024-01-01 07:57-0600\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
@@ -1448,9 +1448,11 @@ msgid "Lists"
 msgstr ""
 
 #: content/ui/ListsPage.qml:36
-#, kde-format
-msgid "Create List"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Please choose a file"
+msgctxt "@action:button Create new list"
+msgid "Create New…"
+msgstr "ਫਾਇਲ ਚੁਣੋ ਜੀ"
 
 #: content/ui/ListsPage.qml:77
 #, kde-format
@@ -1479,7 +1481,8 @@ msgstr ""
 #: content/ui/ListTimelinePage.qml:30
 #, fuzzy, kde-format
 #| msgid "Edit"
-msgid "Edit List"
+msgctxt "@action:button Edit current list"
+msgid "Edit…"
 msgstr "ਸੋਧੋ"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:26
@@ -6384,6 +6387,11 @@ msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "1 ਸਾਲ ਪਹਿਲਾਂ"
 msgstr[1] "1 ਸਾਲ ਪਹਿਲਾਂ"
+
+#, fuzzy
+#~| msgid "Edit"
+#~ msgid "Edit List"
+#~ msgstr "ਸੋਧੋ"
 
 #, fuzzy
 #~| msgctxt "@item:inmenu Profile Post Filter"

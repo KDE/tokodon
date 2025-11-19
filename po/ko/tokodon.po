@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:52+0000\n"
+"POT-Creation-Date: 2025-11-19 00:43+0000\n"
 "PO-Revision-Date: 2025-10-09 01:37+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -1369,9 +1369,12 @@ msgid "Lists"
 msgstr "리스트"
 
 #: content/ui/ListsPage.qml:36
-#, kde-format
-msgid "Create List"
-msgstr "리스트 만들기"
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Create Rule"
+msgctxt "@action:button Create new list"
+msgid "Create New…"
+msgstr "규칙 만들기"
 
 #: content/ui/ListsPage.qml:77
 #, kde-format
@@ -1398,9 +1401,11 @@ msgstr ""
 "내 목록에 있는 사용자의 새 게시물이 없습니다. 새 게시물만 목록에 나타납니다."
 
 #: content/ui/ListTimelinePage.qml:30
-#, kde-format
-msgid "Edit List"
-msgstr "리스트 편집"
+#, fuzzy, kde-format
+#| msgid "Edit"
+msgctxt "@action:button Edit current list"
+msgid "Edit…"
+msgstr "편집"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:26
 #, kde-format
@@ -5993,6 +5998,12 @@ msgstr[0] "%1개월 전"
 msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "%1년 전"
+
+#~ msgid "Create List"
+#~ msgstr "리스트 만들기"
+
+#~ msgid "Edit List"
+#~ msgstr "리스트 편집"
 
 #, fuzzy
 #~| msgctxt "@action:inmenu"

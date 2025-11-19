@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:52+0000\n"
+"POT-Creation-Date: 2025-11-19 00:43+0000\n"
 "PO-Revision-Date: 2025-03-01 17:55+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -1360,9 +1360,12 @@ msgid "Lists"
 msgstr "Listoj"
 
 #: content/ui/ListsPage.qml:36
-#, kde-format
-msgid "Create List"
-msgstr "Krei Liston"
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Create Rule"
+msgctxt "@action:button Create new list"
+msgid "Create New…"
+msgstr "Krei Regulon"
 
 #: content/ui/ListsPage.qml:77
 #, kde-format
@@ -1388,9 +1391,11 @@ msgid ""
 msgstr ""
 
 #: content/ui/ListTimelinePage.qml:30
-#, kde-format
-msgid "Edit List"
-msgstr "Redakti Liston"
+#, fuzzy, kde-format
+#| msgid "Edit"
+msgctxt "@action:button Edit current list"
+msgid "Edit…"
+msgstr "Redakti"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:26
 #, kde-format
@@ -6017,6 +6022,12 @@ msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "Antaŭ unu jaro"
 msgstr[1] "Antaŭ %1 jaroj"
+
+#~ msgid "Create List"
+#~ msgstr "Krei Liston"
+
+#~ msgid "Edit List"
+#~ msgstr "Redakti Liston"
 
 #, fuzzy
 #~| msgctxt "@action:inmenu"

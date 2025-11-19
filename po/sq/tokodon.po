@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:52+0000\n"
+"POT-Creation-Date: 2025-11-19 00:43+0000\n"
 "PO-Revision-Date: 2025-04-30 13:11+0300\n"
 "Last-Translator: Besnik Bleta <besnik@programeshqip.org>\n"
 "Language-Team: Albanian <kde-i18n-sq@kde.org>\n"
@@ -1385,9 +1385,12 @@ msgid "Lists"
 msgstr "Lista"
 
 #: content/ui/ListsPage.qml:36
-#, kde-format
-msgid "Create List"
-msgstr "Krijoni Listë"
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Create Rule"
+msgctxt "@action:button Create new list"
+msgid "Create New…"
+msgstr "Krijoni Rregull"
 
 #: content/ui/ListsPage.qml:77
 #, kde-format
@@ -1415,9 +1418,11 @@ msgstr ""
 "postimet e reja."
 
 #: content/ui/ListTimelinePage.qml:30
-#, kde-format
-msgid "Edit List"
-msgstr "Përpunoni Listë"
+#, fuzzy, kde-format
+#| msgid "Edit"
+msgctxt "@action:button Edit current list"
+msgid "Edit…"
+msgstr "Përpunojeni"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:26
 #, kde-format
@@ -6070,6 +6075,12 @@ msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "1 vit më parë"
 msgstr[1] "%1 vjet më parë"
+
+#~ msgid "Create List"
+#~ msgstr "Krijoni Listë"
+
+#~ msgid "Edit List"
+#~ msgstr "Përpunoni Listë"
 
 #, fuzzy
 #~| msgctxt "@action:inmenu"

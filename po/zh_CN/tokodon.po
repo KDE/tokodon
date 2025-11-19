@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:52+0000\n"
+"POT-Creation-Date: 2025-11-19 00:43+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -1338,9 +1338,12 @@ msgid "Lists"
 msgstr "列表"
 
 #: content/ui/ListsPage.qml:36
-#, kde-format
-msgid "Create List"
-msgstr "创建列表"
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Create Rule"
+msgctxt "@action:button Create new list"
+msgid "Create New…"
+msgstr "创建规则"
 
 #: content/ui/ListsPage.qml:77
 #, kde-format
@@ -1366,9 +1369,11 @@ msgid ""
 msgstr ""
 
 #: content/ui/ListTimelinePage.qml:30
-#, kde-format
-msgid "Edit List"
-msgstr "编辑列表"
+#, fuzzy, kde-format
+#| msgid "Edit"
+msgctxt "@action:button Edit current list"
+msgid "Edit…"
+msgstr "编辑"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:26
 #, kde-format
@@ -5908,3 +5913,9 @@ msgstr[0] "%1 个月前"
 msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "%1 年前"
+
+#~ msgid "Create List"
+#~ msgstr "创建列表"
+
+#~ msgid "Edit List"
+#~ msgstr "编辑列表"

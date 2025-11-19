@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:52+0000\n"
+"POT-Creation-Date: 2025-11-19 00:43+0000\n"
 "PO-Revision-Date: 2022-10-14 14:00+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -1462,9 +1462,11 @@ msgid "Lists"
 msgstr ""
 
 #: content/ui/ListsPage.qml:36
-#, kde-format
-msgid "Create List"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Please choose a file"
+msgctxt "@action:button Create new list"
+msgid "Create New…"
+msgstr "Veldu skrá"
 
 #: content/ui/ListsPage.qml:77
 #, kde-format
@@ -1494,7 +1496,8 @@ msgstr ""
 #: content/ui/ListTimelinePage.qml:30
 #, fuzzy, kde-format
 #| msgid "Write a new toot"
-msgid "Edit List"
+msgctxt "@action:button Edit current list"
+msgid "Edit…"
 msgstr "Skrifa nýja færslu"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:26
@@ -6355,6 +6358,11 @@ msgstr[0] ""
 msgstr[1] ""
 
 #, fuzzy
+#~| msgid "Write a new toot"
+#~ msgid "Edit List"
+#~ msgstr "Skrifa nýja færslu"
+
+#, fuzzy
 #~| msgid "Stop hiding boosts from %1"
 #~ msgctxt "@action:inmenu"
 #~ msgid "Show Quotes"
@@ -6366,12 +6374,6 @@ msgstr[1] ""
 #~ msgctxt "@action:button"
 #~ msgid "Post"
 #~ msgstr "Endurbirta"
-
-#, fuzzy
-#~| msgid "Write a new toot"
-#~ msgctxt "@action:button Edit the filter"
-#~ msgid "Edit"
-#~ msgstr "Skrifa nýja færslu"
 
 #, fuzzy
 #~| msgctxt "Show only mentions"

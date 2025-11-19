@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:52+0000\n"
+"POT-Creation-Date: 2025-11-19 00:43+0000\n"
 "PO-Revision-Date: 2023-07-13 00:20+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -1463,9 +1463,11 @@ msgid "Lists"
 msgstr ""
 
 #: content/ui/ListsPage.qml:36
-#, kde-format
-msgid "Create List"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Filtered: %1"
+msgctxt "@action:button Create new list"
+msgid "Create New…"
+msgstr "Filtrados: %1"
 
 #: content/ui/ListsPage.qml:77
 #, kde-format
@@ -1493,7 +1495,8 @@ msgstr ""
 #: content/ui/ListTimelinePage.qml:30
 #, fuzzy, kde-format
 #| msgid "Edit"
-msgid "Edit List"
+msgctxt "@action:button Edit current list"
+msgid "Edit…"
 msgstr "Editar"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:26
@@ -6462,6 +6465,11 @@ msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "há 1 ano"
 msgstr[1] "há %1 anos"
+
+#, fuzzy
+#~| msgid "Edit"
+#~ msgid "Edit List"
+#~ msgstr "Editar"
 
 #, fuzzy
 #~| msgid "Stop Hiding Boosts from %1"

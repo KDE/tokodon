@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:52+0000\n"
+"POT-Creation-Date: 2025-11-19 00:43+0000\n"
 "PO-Revision-Date: 2025-03-02 14:46+0530\n"
 "Last-Translator: Shreekant Kalwar <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -1393,9 +1393,12 @@ msgid "Lists"
 msgstr "सूचीः"
 
 #: content/ui/ListsPage.qml:36
-#, kde-format
-msgid "Create List"
-msgstr "सूची रचयन्तु"
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Create Rule"
+msgctxt "@action:button Create new list"
+msgid "Create New…"
+msgstr "नियम रचयतु"
 
 #: content/ui/ListsPage.qml:77
 #, kde-format
@@ -1422,9 +1425,11 @@ msgstr ""
 "तव सूचीस्थितेषु उपयोगकर्तृषु किञ्चन लेखः नास्ति। केवलं नूतनाः लेखाः सूचीमध्ये प्रकटिष्यन्ते।"
 
 #: content/ui/ListTimelinePage.qml:30
-#, kde-format
-msgid "Edit List"
-msgstr "सूची सम्पादयतु"
+#, fuzzy, kde-format
+#| msgid "Edit"
+msgctxt "@action:button Edit current list"
+msgid "Edit…"
+msgstr "सम्पादन"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:26
 #, kde-format
@@ -6151,6 +6156,12 @@ msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "%1 वर्षपूर्वम्"
 msgstr[1] "%1 वर्षपूर्वम्"
+
+#~ msgid "Create List"
+#~ msgstr "सूची रचयन्तु"
+
+#~ msgid "Edit List"
+#~ msgstr "सूची सम्पादयतु"
 
 #, fuzzy
 #~| msgctxt "@action:inmenu"
