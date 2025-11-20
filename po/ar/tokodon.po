@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-19 00:43+0000\n"
-"PO-Revision-Date: 2025-10-25 16:53+0400\n"
+"PO-Revision-Date: 2025-11-19 20:35+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -1388,12 +1388,10 @@ msgid "Lists"
 msgstr "القوائم"
 
 #: content/ui/ListsPage.qml:36
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Create Rule"
+#, kde-format
 msgctxt "@action:button Create new list"
 msgid "Create New…"
-msgstr "أنشئ قاعدة"
+msgstr "أنشئ جديد..."
 
 #: content/ui/ListsPage.qml:77
 #, kde-format
@@ -1421,11 +1419,10 @@ msgstr ""
 "قائمة."
 
 #: content/ui/ListTimelinePage.qml:30
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@action:button Edit current list"
 msgid "Edit…"
-msgstr "حرّر"
+msgstr "حرّر…"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:26
 #, kde-format
@@ -3890,17 +3887,15 @@ msgid "Open Thread"
 msgstr "افتح الموضوع"
 
 #: content/ui/PostDelegate/PostMenu.qml:70
-#, fuzzy, kde-format
-#| msgid "Copy Image"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy Text"
-msgstr "انسخ الصورة"
+msgstr "انسخ النّصّ"
 
 #: content/ui/PostDelegate/PostMenu.qml:74
-#, fuzzy, kde-format
-#| msgid "Post link copied."
+#, kde-format
 msgid "Post text copied."
-msgstr "نُسخَ رابط المنشور."
+msgstr "نُسخَ نص المنشور."
 
 #: content/ui/PostDelegate/PostMenu.qml:80
 #, kde-format
@@ -5141,12 +5136,10 @@ msgid "Remove"
 msgstr "أزل"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:85
-#, fuzzy, kde-format
-#| msgctxt "@info:Time when the domain was allowed to federate."
-#| msgid "Created at"
+#, kde-format
 msgctxt "Draft, unfinished post"
 msgid "Created %1 ago"
-msgstr "أُنشئت في"
+msgstr "أُنشئت قبل %1"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:85
 #, kde-format
@@ -5155,20 +5148,16 @@ msgid "Scheduled for %1"
 msgstr "جدول لـ%1"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:93
-#, fuzzy, kde-format
-#| msgctxt "@action:button Schedule something to be posted later"
-#| msgid "Schedule"
+#, kde-format
 msgctxt "@action:button Re-schedule this post"
 msgid "Re-schedule…"
-msgstr "الجدولة"
+msgstr "أعد الجدولة…"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:104
-#, fuzzy, kde-format
-#| msgctxt "@action:button Discard this post"
-#| msgid "Discard"
+#, kde-format
 msgctxt "@action:button Discard this post"
 msgid "Discard…"
-msgstr "أهمِل"
+msgstr "أهمِل…"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:116
 #, kde-format
@@ -5190,28 +5179,22 @@ msgid "Discard Draft"
 msgstr "أهمِل المسودة"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:125
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Scheduled Posts"
+#, kde-format
 msgctxt "@title"
 msgid "Discard Scheduled Post"
-msgstr "المنشورات المجدولة"
+msgstr "أهمِل المنشورات المجدولة"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:126
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Are you sure you want to discard your draft?"
+#, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to discard this draft?"
-msgstr "هل أنت متأكد أنك تريد إهمال مسودتك؟"
+msgstr "هل أنت متأكد أنك تريد حذف هذه مسودتك؟"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:126
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Are you sure you want to delete this post?"
+#, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to discard this scheduled post?"
-msgstr "أمتأكد من حذف هذا المنشور؟"
+msgstr "أمتأكد من حذف هذا المنشور المجدول؟"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:132
 #, kde-format
@@ -5220,21 +5203,16 @@ msgid "Discard"
 msgstr "أهمِل"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:148
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Schedule Post"
+#, kde-format
 msgctxt "@title"
 msgid "Re-Schedule Post"
-msgstr "جدولة المنشورات"
+msgstr "أعد جدولة المنشور"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:155
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@action:button Set this post's schedule to when it should be posted"
-#| msgid "Set Schedule"
+#, kde-format
 msgctxt "@action:button Set this post's schedule to when it should be posted"
 msgid "Set New Schedule"
-msgstr "عين جدولة"
+msgstr "عين جدولة جديدة"
 
 #: content/ui/StatusComposer/StatusComposer.qml:62
 #, kde-format
@@ -5516,10 +5494,9 @@ msgid "Show Boosts"
 msgstr "أظهر إعادة نشر"
 
 #: content/ui/TimelinePage.qml:122
-#, fuzzy, kde-format
-#| msgid "Show Boosts"
+#, kde-format
 msgid "Show Quotes"
-msgstr "أظهر إعادة نشر"
+msgstr "أظهر الاقتباسات"
 
 #: content/ui/TimelinePage.qml:129
 #, kde-format
