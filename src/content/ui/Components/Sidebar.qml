@@ -105,11 +105,6 @@ Kirigami.OverlayDrawer {
             Layout.preferredHeight: pageStack.globalToolBar.preferredHeight
             Layout.bottomMargin: Kirigami.Units.smallSpacing / 2
 
-            leftPadding: 3
-            rightPadding: 3
-            topPadding: 3
-            bottomPadding: 3
-
             visible: !drawer.shouldCollapse
 
             contentItem: SearchField {}
