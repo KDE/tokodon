@@ -117,7 +117,7 @@ Kirigami.ScrollablePage {
         if (Kirigami.Settings.isMobile && Navigation.hasWebView()) {
             // Prefer the in-app authorization if possible on mobile, it's the best.
             openWebViewAuthPage();
-        } else if (Navigation.isDebug()) {
+        } else if (Navigation.isDebug() || Kirigami.Settings.isMobile) {
             // Prefer the auth code when debugging because it doesn't try to open the system Tokodon
             openCodeAuthPage();
         } else {
