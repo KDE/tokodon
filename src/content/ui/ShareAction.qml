@@ -4,7 +4,7 @@
 pragma ComponentBehavior: Bound
 
 import QtQuick
-import org.kde.kirigami 2 as Kirigami
+import org.kde.kirigami as Kirigami
 
 /**
  * Action that allows an user to share data with other apps and service
@@ -38,7 +38,7 @@ Kirigami.Action {
 
     property Instantiator _instantiator: Instantiator {
         Component.onCompleted: {
-            const purposeModel = Qt.createQmlObject(`import org.kde.purpose 1.0 as Purpose;
+            const purposeModel = Qt.createQmlObject(`import org.kde.purpose as Purpose;
 Purpose.PurposeAlternativesModel {
     pluginType: "ShareUrl"
     // Copying to clipboard rarely works, due to how Mastodon and most Fediverse software behave and are dependent on JavaScript.

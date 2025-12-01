@@ -3,7 +3,7 @@
 
 import QtQuick
 
-import org.kde.kirigamiaddons.formcard 1 as FormCard
+import org.kde.kirigamiaddons.formcard as FormCard
 
 import org.kde.tokodon
 

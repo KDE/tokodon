@@ -3,10 +3,10 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 import QtQuick
-import QtQuick.Controls 2 as QQC2
+import QtQuick.Controls as QQC2
 import org.kde.tokodon
 import org.kde.kquickcontrolsaddons as KQuickControlsAddons
-import org.kde.kirigami 2 as Kirigami
+import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.components as Components
 
 import ".."

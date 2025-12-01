@@ -3,13 +3,13 @@
 
 import QtCore
 import QtQuick
-import QtQuick.Controls 2 as QQC2
+import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import QtQuick.Dialogs
-import Qt.labs.qmlmodels 1.0
+import Qt.labs.qmlmodels
 
-import org.kde.kirigami 2 as Kirigami
-import org.kde.kirigamiaddons.labs.components 1 as Components
+import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.labs.components as Components
 import org.kde.tokodon
 
 import "./PostDelegate" as PostDelegate

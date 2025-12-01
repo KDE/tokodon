@@ -2,13 +2,13 @@
 // SPDX-License-Identifier: GPL-3.0-only
 
 import QtQuick
-import QtQuick.Controls 2 as QQC2
+import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 
-import org.kde.kirigami 2 as Kirigami
-import org.kde.kirigamiaddons.delegates 1 as Delegates
+import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.delegates as Delegates
 import org.kde.kitemmodels as KItemModels
-import org.kde.kirigamiaddons.components 1 as KirigamiComponents
+import org.kde.kirigamiaddons.components as KirigamiComponents
 
 import org.kde.tokodon
 

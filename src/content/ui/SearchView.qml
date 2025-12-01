@@ -3,10 +3,10 @@
 
 import QtQuick
 import QtQuick.Layouts
-import Qt.labs.qmlmodels 1.0
-import org.kde.kirigami 2 as Kirigami
-import org.kde.kirigamiaddons.delegates 1 as Delegates
-import org.kde.kirigamiaddons.components 1 as KirigamiComponents
+import Qt.labs.qmlmodels
+import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.delegates as Delegates
+import org.kde.kirigamiaddons.components as KirigamiComponents
 import org.kde.tokodon
 import './PostDelegate'
 

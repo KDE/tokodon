@@ -5,9 +5,9 @@ pragma ComponentBehavior: Bound
 
 import QtQuick
 import QtQuick.Layouts
-import QtQuick.Controls 2 as QQC2
-import org.kde.kirigami 2 as Kirigami
-import org.kde.kirigamiaddons.components 1 as Components
+import QtQuick.Controls as QQC2
+import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.components as Components
 import org.kde.tokodon
 
 import '..'

@@ -2,11 +2,11 @@
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
 import QtQuick
-import org.kde.kirigami 2 as Kirigami
-import QtQuick.Controls 2 as QQC2
+import org.kde.kirigami as Kirigami
+import QtQuick.Controls as QQC2
 import QtQuick.Layouts
-import org.kde.kirigamiaddons.delegates 1 as Delegates
-import org.kde.kirigamiaddons.components 1 as KirigamiComponents
+import org.kde.kirigamiaddons.delegates as Delegates
+import org.kde.kirigamiaddons.components as KirigamiComponents
 import org.kde.tokodon
 
 Delegates.IndicatorItemDelegate {

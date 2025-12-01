@@ -2,13 +2,13 @@
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
 import QtQuick
-import QtQuick.Controls 2 as QQC2
+import QtQuick.Controls as QQC2
 import QtQuick.Layouts
-import org.kde.kirigami 2 as Kirigami
+import org.kde.kirigami as Kirigami
 import org.kde.tokodon
 import QtQuick.Dialogs
-import org.kde.kirigamiaddons.formcard 1 as FormCard
-import org.kde.kirigamiaddons.components 1 as KirigamiComponents
+import org.kde.kirigamiaddons.formcard as FormCard
+import org.kde.kirigamiaddons.components as KirigamiComponents
 import ".."
 
 Kirigami.Page {

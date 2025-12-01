@@ -5,12 +5,12 @@
 pragma ComponentBehavior: Bound
 
 import QtQuick
-import org.kde.kirigami 2 as Kirigami
-import QtQuick.Controls 2 as QQC2
+import org.kde.kirigami as Kirigami
+import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import org.kde.tokodon
 
-import Qt.labs.qmlmodels 1.0
+import Qt.labs.qmlmodels
 
 import "../Components"
 

@@ -4,10 +4,10 @@
 pragma ComponentBehavior: Bound
 
 import QtQuick
-import QtQuick.Controls 2 as QQC2
+import QtQuick.Controls as QQC2
 import QtQuick.Layouts
-import Qt.labs.qmlmodels 1.0
-import org.kde.kirigami 2 as Kirigami
+import Qt.labs.qmlmodels
+import org.kde.kirigami as Kirigami
 import org.kde.tokodon
 import org.kde.kirigamiaddons.components as Components
 import "./PostDelegate"

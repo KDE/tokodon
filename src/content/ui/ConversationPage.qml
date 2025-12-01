@@ -4,8 +4,8 @@
 pragma ComponentBehavior: Bound
 
 import QtQuick
-import org.kde.kirigami 2 as Kirigami
-import QtQuick.Controls 2 as QQC2
+import org.kde.kirigami as Kirigami
+import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import QtQuick.Window
 import org.kde.kirigamiaddons.delegates as Delegates

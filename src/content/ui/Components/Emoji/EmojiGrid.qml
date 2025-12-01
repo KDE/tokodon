@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 import QtQuick
-import QtQuick.Controls 2 as QQC2
-import org.kde.kirigami 2 as Kirigami
+import QtQuick.Controls as QQC2
+import org.kde.kirigami as Kirigami
 import org.kde.tokodon
 
 QQC2.ScrollView {

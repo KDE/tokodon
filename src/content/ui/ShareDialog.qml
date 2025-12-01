@@ -5,10 +5,10 @@
 
 import QtQuick
 import QtQuick.Layouts
-import QtQuick.Controls 2 as QQC2
-import org.kde.purpose 1.0 as Purpose
-import org.kde.notification 1.0
-import org.kde.kirigami 2 as Kirigami
+import QtQuick.Controls as QQC2
+import org.kde.purpose as Purpose
+import org.kde.notification
+import org.kde.kirigami as Kirigami
 
 Kirigami.Page {
     id: window

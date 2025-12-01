@@ -3,10 +3,10 @@
 
 import QtQuick
 import QtQuick.Layouts
-import QtQuick.Controls 2 as QQC2
+import QtQuick.Controls as QQC2
 
-import org.kde.kirigami 2 as Kirigami
-import org.kde.kirigamiaddons.components 1 as KirigamiComponents
+import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.components as KirigamiComponents
 
 import org.kde.tokodon
 

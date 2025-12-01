@@ -3,8 +3,8 @@
 
 import QtQuick
 import QtMultimedia
-import org.kde.kirigami 2 as Kirigami
-import QtQuick.Controls 2 as QQC2
+import org.kde.kirigami as Kirigami
+import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 
 import org.kde.tokodon

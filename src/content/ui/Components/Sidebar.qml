@@ -4,9 +4,9 @@
 // SPDX-License-Identifier: GPL-3.0-only
 
 import QtQuick
-import org.kde.kirigami 2 as Kirigami
+import org.kde.kirigami as Kirigami
 import org.kde.kirigami.private.polyfill // remove once we depend on Qt 6.9
-import QtQuick.Controls 2 as QQC2
+import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import QtQml.Models
 import org.kde.tokodon
