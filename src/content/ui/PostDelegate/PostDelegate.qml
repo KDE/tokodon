@@ -298,7 +298,8 @@ QQC2.ItemDelegate {
         }
 
         ColumnLayout {
-            visible: !root.filtered && root.hasContent
+            // Text and quoted posts are both currently can be hidden by content notices, so they need to be checked here.
+            visible: !root.filtered && (root.hasContent || root.post.quotedPost)
             spacing: Kirigami.Units.largeSpacing
 
             Layout.fillWidth: true
