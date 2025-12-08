@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-03 00:43+0000\n"
-"PO-Revision-Date: 2025-10-18 12:04+0200\n"
+"PO-Revision-Date: 2025-12-07 18:46+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 25.08.3\n"
 
 #: account/abstractaccount.cpp:33
 #, kde-format
@@ -1390,12 +1390,10 @@ msgid "Lists"
 msgstr "Zerrendak"
 
 #: content/ui/ListsPage.qml:36
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Create Rule"
+#, kde-format
 msgctxt "@action:button Create new list"
 msgid "Create New…"
-msgstr "Sortu araua"
+msgstr "Sortu … berria"
 
 #: content/ui/ListsPage.qml:77
 #, kde-format
@@ -1424,11 +1422,10 @@ msgstr ""
 "agertuko dira zerrenda batean."
 
 #: content/ui/ListTimelinePage.qml:30
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@action:button Edit current list"
 msgid "Edit…"
-msgstr "Editatu"
+msgstr "Editatu…"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:26
 #, kde-format
@@ -3437,12 +3434,10 @@ msgid "%1 signed up"
 msgstr "%1(e)k sinatu du"
 
 #: content/ui/Notifications/FollowDelegate.qml:107
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Follow Requests"
+#, kde-format
 msgctxt "@action:button"
 msgid "Manage Follow Requests"
-msgstr "Jarraipen eskaerak"
+msgstr "Kudeatu Jarraipen eskaerak"
 
 #: content/ui/Notifications/GroupInteractionLabel.qml:64
 #, kde-format
@@ -3488,12 +3483,10 @@ msgid "A report has been filed against a user in your server."
 msgstr "Zure zerbitzariko erabiltzaile baten aurkako salaketa bat aurkeztu da."
 
 #: content/ui/Notifications/UnknownNotificationDelegate.qml:48
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Unknown Action"
+#, kde-format
 msgctxt "@info"
 msgid "Unknown notification"
-msgstr "Ekintza ezezaguna"
+msgstr "Jakinarazpen ezezaguna"
 
 #: content/ui/Notifications/UserInteractionLabel.qml:85
 #, kde-format
@@ -3904,17 +3897,15 @@ msgid "Open Thread"
 msgstr "Ireki haria"
 
 #: content/ui/PostDelegate/PostMenu.qml:70
-#, fuzzy, kde-format
-#| msgid "Copy Image"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy Text"
-msgstr "Kopiatu irudia"
+msgstr "Kopiatu testua"
 
 #: content/ui/PostDelegate/PostMenu.qml:74
-#, fuzzy, kde-format
-#| msgid "Post link copied."
+#, kde-format
 msgid "Post text copied."
-msgstr "Postako esteka kopiatu da."
+msgstr "Postako testua kopiatu da."
 
 #: content/ui/PostDelegate/PostMenu.qml:80
 #, kde-format
@@ -5168,12 +5159,10 @@ msgid "Remove"
 msgstr "Kendu"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:85
-#, fuzzy, kde-format
-#| msgctxt "@info:Time when the domain was allowed to federate."
-#| msgid "Created at"
+#, kde-format
 msgctxt "Draft, unfinished post"
 msgid "Created %1 ago"
-msgstr "Sorrera"
+msgstr "Duela %1 sortua"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:85
 #, kde-format
@@ -5182,20 +5171,16 @@ msgid "Scheduled for %1"
 msgstr "%1(e)rako antolatua"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:93
-#, fuzzy, kde-format
-#| msgctxt "@action:button Schedule something to be posted later"
-#| msgid "Schedule"
+#, kde-format
 msgctxt "@action:button Re-schedule this post"
 msgid "Re-schedule…"
-msgstr "Antolatu"
+msgstr "Berrantolatu…"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:104
-#, fuzzy, kde-format
-#| msgctxt "@action:button Discard this post"
-#| msgid "Discard"
+#, kde-format
 msgctxt "@action:button Discard this post"
 msgid "Discard…"
-msgstr "Baztertu"
+msgstr "Baztertu…"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:116
 #, kde-format
@@ -5217,28 +5202,22 @@ msgid "Discard Draft"
 msgstr "Baztertu zirriborroa"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:125
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Scheduled Posts"
+#, kde-format
 msgctxt "@title"
 msgid "Discard Scheduled Post"
-msgstr "Antolatutako postak"
+msgstr "Baztertu antolatutako posta"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:126
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Are you sure you want to discard your draft?"
+#, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to discard this draft?"
-msgstr "Ziur zaude zure zirriborroa baztertu nahi duzula?"
+msgstr "Ziur zaude zirriborro hau baztertu nahi duzula?"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:126
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Are you sure you want to delete this post?"
+#, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to discard this scheduled post?"
-msgstr "Ziur zaude posta hori ezabatu nahi duzula?"
+msgstr "Ziur zaude antolatutako posta hau ezabatu nahi duzula?"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:132
 #, kde-format
@@ -5247,21 +5226,16 @@ msgid "Discard"
 msgstr "Baztertu"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:148
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Schedule Post"
+#, kde-format
 msgctxt "@title"
 msgid "Re-Schedule Post"
-msgstr "Posta antolatu"
+msgstr "Posta berrantolatu"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:155
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@action:button Set this post's schedule to when it should be posted"
-#| msgid "Set Schedule"
+#, kde-format
 msgctxt "@action:button Set this post's schedule to when it should be posted"
 msgid "Set New Schedule"
-msgstr "Antolaketa ezarri"
+msgstr "Ezarri antolaketa berria"
 
 #: content/ui/StatusComposer/StatusComposer.qml:62
 #, kde-format
@@ -5544,10 +5518,9 @@ msgid "Show Boosts"
 msgstr "Erakutsi goratzeak"
 
 #: content/ui/TimelinePage.qml:122
-#, fuzzy, kde-format
-#| msgid "Show Boosts"
+#, kde-format
 msgid "Show Quotes"
-msgstr "Erakutsi goratzeak"
+msgstr "Erakutsi aipuak"
 
 #: content/ui/TimelinePage.qml:129
 #, kde-format
