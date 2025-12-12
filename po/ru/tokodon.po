@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-03 00:43+0000\n"
-"PO-Revision-Date: 2025-11-11 18:10+0300\n"
+"PO-Revision-Date: 2025-11-13 21:02+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 25.08.2\n"
+"X-Generator: Lokalize 25.08.3\n"
 
 #: account/abstractaccount.cpp:33
 #, kde-format
@@ -148,13 +148,13 @@ msgstr "Не удалось отредактировать заметку об �
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Network request was interrupted"
-msgstr ""
+msgstr "Сетевой запрос был прерван"
 
 #: account/account.cpp:309 account/account.cpp:316
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Failed to parse credentials"
-msgstr ""
+msgstr "Ошибка разбора учётных данных"
 
 #: account/notificationhandler.cpp:35 account/notificationhandler.cpp:36
 #, kde-format
@@ -968,12 +968,10 @@ msgid "No emojis"
 msgstr "Нет эмодзи"
 
 #: content/ui/Components/ServerInformationCard.qml:28
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Embed Information"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Information"
-msgstr "Встраивание информации"
+msgstr "Информация отсутствует"
 
 #: content/ui/Components/ServerInformationCard.qml:33
 #, kde-format
@@ -982,11 +980,10 @@ msgid "Last updated: %1"
 msgstr "Последнее обновление: %1"
 
 #: content/ui/Components/TimelineView.qml:84
-#, fuzzy, kde-format
-#| msgid "Create List"
+#, kde-format
 msgctxt "@action:button"
 msgid "Create Post"
-msgstr "Создать список"
+msgstr "Создать публикацию"
 
 #: content/ui/Components/TimelineView.qml:92
 #, kde-format
@@ -3389,17 +3386,16 @@ msgid "Follows"
 msgstr "Подписки"
 
 #: content/ui/NotificationPage.qml:188
-#, fuzzy, kde-format
-#| msgid "News"
+#, kde-format
 msgctxt "@info:label New notifications"
 msgid "New"
-msgstr "Новости"
+msgstr "Создать"
 
 #: content/ui/NotificationPage.qml:188
 #, kde-format
 msgctxt "@info:label Previous notifications"
 msgid "Previous"
-msgstr ""
+msgstr "Предыдущее"
 
 #: content/ui/NotificationPage.qml:324
 #, kde-format
@@ -3446,12 +3442,10 @@ msgid "%1 signed up"
 msgstr "%1 зарегистрировался(ась)"
 
 #: content/ui/Notifications/FollowDelegate.qml:107
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Follow Requests"
+#, kde-format
 msgctxt "@action:button"
 msgid "Manage Follow Requests"
-msgstr "Запросы на подписку"
+msgstr "Управление запросами на подписку"
 
 #: content/ui/Notifications/GroupInteractionLabel.qml:64
 #, kde-format
@@ -3497,12 +3491,10 @@ msgid "A report has been filed against a user in your server."
 msgstr "На пользователя на вашем сервере была подана жалоба."
 
 #: content/ui/Notifications/UnknownNotificationDelegate.qml:48
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Unknown Action"
+#, kde-format
 msgctxt "@info"
 msgid "Unknown notification"
-msgstr "Неизвестное действие"
+msgstr "Неизвестное уведомление"
 
 #: content/ui/Notifications/UserInteractionLabel.qml:85
 #, kde-format
@@ -3688,19 +3680,18 @@ msgstr[2] "%1 републикаций"
 msgstr[3] "%1 републикация"
 
 #: content/ui/PostDelegate/InformationBar.qml:139
-#, fuzzy, kde-format
-#| msgid "(No votes)"
+#, kde-format
 msgid "No quotes"
-msgstr "(Ответов нет)"
+msgstr "Нет ни одного цитирования"
 
 #: content/ui/PostDelegate/InformationBar.qml:141
 #, kde-format
 msgid "%1 quotes"
 msgid_plural "%1 quotes"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%1 цитирование"
+msgstr[1] "%1 цитирования"
+msgstr[2] "%1 цитирований"
+msgstr[3] "одно цитирование"
 
 #: content/ui/PostDelegate/LinkMenu.qml:33
 #: content/ui/PostDelegate/PostMenu.qml:61
@@ -5251,7 +5242,7 @@ msgstr "Запланированные публикации"
 #| msgid "Are you sure you want to discard your draft?"
 msgctxt "@label"
 msgid "Are you sure you want to discard this draft?"
-msgstr "Действительно удалить черновик?"
+msgstr "Что сделать черновиком этой публикации?"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:126
 #, fuzzy, kde-format
