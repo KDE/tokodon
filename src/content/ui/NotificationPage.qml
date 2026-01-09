@@ -136,6 +136,15 @@ Kirigami.ScrollablePage {
                 visibilityMenu.tookAction = true;
             }
         }
+
+        QQC2.Action {
+            icon.name: "format-text-blockquote-symbolic"
+            text: i18nc("Show only quotes", "Quotes")
+            onTriggered: {
+                notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow', 'follow_request', 'favourite', 'poll', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning'];
+                visibilityMenu.tookAction = true;
+            }
+        }
     }
 
     header: Kirigami.NavigationTabBar {
