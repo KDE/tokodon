@@ -41,7 +41,7 @@ If you have an issue with Tokodon, please [open a support thread on KDE Discuss]
 
 ## Building
 
-The easiest way to make changes and test Tokodon during development is to [build it with kdesrc-build](https://community.kde.org/Get_Involved/development/Build_software_with_kdesrc-build).
+The easiest way to make changes and test Tokodon during development is to [build it with kde-builder](https://develop.kde.org/docs/getting-started/building/kde-builder-compile/).
 
 ## Contributing
 

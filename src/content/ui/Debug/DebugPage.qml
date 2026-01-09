@@ -46,6 +46,11 @@ MastoPage {
         }
 
         FormCard.FormButtonDelegate {
+            text: "Quote"
+            onClicked: AccountManager.selectedAccount.quoteNotification()
+        }
+
+        FormCard.FormButtonDelegate {
             text: "Follow"
             onClicked: AccountManager.selectedAccount.followNotification()
         }

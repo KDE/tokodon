@@ -147,6 +147,14 @@ void NotificationHandler::handle(std::shared_ptr<Notification> notification, Abs
                   notification->annualReportEvent()->year()));
         knotification->setText(i18n("Unveil your year's highlights and memorable moments on Mastodon!"));
         break;
+    case Notification::Quote:
+        if (!AccountManager::instance().testMode() && !account->config()->notifyQuote()) {
+            return;
+        }
+        knotification = new KNotification(QStringLiteral("quote"));
+        knotification->setTitle(i18n("%1 quoted your post", notification->identity()->displayName()));
+        addViewPostAction();
+        break;
     default:
         knotification = new KNotification(QStringLiteral("other"));
         knotification->setTitle(i18nc("@title", "New Notification"));
@@ -154,8 +162,13 @@ void NotificationHandler::handle(std::shared_ptr<Notification> notification, Abs
         break;
     }
 
-    constexpr std::array notificationsWithPosts =
-        {Notification::Mention, Notification::Status, Notification::Repeat, Notification::Favorite, Notification::Poll, Notification::Update};
+    constexpr std::array notificationsWithPosts = {Notification::Mention,
+                                                   Notification::Status,
+                                                   Notification::Repeat,
+                                                   Notification::Favorite,
+                                                   Notification::Poll,
+                                                   Notification::Update,
+                                                   Notification::Quote};
     if (notification->post() != nullptr && std::ranges::find(notificationsWithPosts, notification->type()) != notificationsWithPosts.end()) {
         if (!notification->post()->spoilerText().isEmpty()) {
             knotification->setText(xi18n("<b>Content Notice</b>: %1", notification->post()->spoilerText()));
@@ -246,6 +259,8 @@ void NotificationHandler::handlePush(const QByteArray &message)
         ourType = QStringLiteral("poll");
     } else if (theirType == "update"_L1) {
         ourType = QStringLiteral("update");
+    } else if (theirType == "quote"_L1) {
+        ourType = QStringLiteral("quote");
     } else {
         qCWarning(TOKODON_LOG) << "Unknown push notification type" << theirType << "falling back to other.";
         ourType = QStringLiteral("other");

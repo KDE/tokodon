@@ -132,6 +132,7 @@ static QMap<QString, Notification::Type> str_to_not_type = {
     {QStringLiteral("severed_relationships"), Notification::Type::SeveredRelationships},
     {QStringLiteral("moderation_warning"), Notification::Type::ModerationWarning},
     {QStringLiteral("annual_report"), Notification::Type::AnnualReport},
+    {QStringLiteral("quote"), Notification::Type::Quote},
 };
 
 Notification::Notification(AbstractAccount *account, const QJsonObject &obj, QObject *parent)

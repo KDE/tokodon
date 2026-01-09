@@ -206,6 +206,11 @@ void MockAccount::boostNotification()
     readNotificationFromFile("notification_boost.json"_L1);
 }
 
+void MockAccount::quoteNotification()
+{
+    readNotificationFromFile("notification_quote.json"_L1);
+}
+
 void MockAccount::followNotification()
 {
     readNotificationFromFile("notification_follow.json"_L1);

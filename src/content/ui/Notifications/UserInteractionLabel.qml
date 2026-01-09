@@ -19,6 +19,7 @@ RowLayout {
     readonly property bool isPoll: type === Notification.Poll
     readonly property bool isUpdate: type === Notification.Update
     readonly property bool isStatus: type === Notification.Status
+    readonly property bool isQuote: type === Notification.Quote
 
     required property var type
     required property var notificationActorIdentity
@@ -39,6 +40,8 @@ RowLayout {
                 return "cell_edit"
             } else if (root.isPoll) {
                 return "amarok_playcount"
+            } else if (root.isQuote) {
+                return "format-text-blockquote-symbolic"
             }
 
             return ''
@@ -87,6 +90,8 @@ RowLayout {
                         return i18n("%1 updated their post", root.notificationActorIdentity.displayNameHtml)
                     } else if (root.isStatus) {
                         return i18n("%1 wrote a new post", root.notificationActorIdentity.displayNameHtml)
+                    } else if (root.isQuote) {
+                        return i18n("%1 quoted your post", root.notificationActorIdentity.displayNameHtml)
                     }
 
                     return '';

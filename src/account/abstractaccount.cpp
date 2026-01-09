@@ -769,6 +769,14 @@ void AbstractAccount::decreaseFollowRequests()
 {
 }
 
+void AbstractAccount::quoteNotification()
+{
+}
+
+void AbstractAccount::quotedStatusNotification()
+{
+}
+
 void AbstractAccount::followAccount(Identity *identity, bool reblogs, bool notify)
 {
     executeAction(identity,

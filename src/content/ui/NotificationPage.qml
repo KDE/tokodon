@@ -96,7 +96,7 @@ Kirigami.ScrollablePage {
             icon.name: "boost"
             text: i18nc("Show only boosts", "Boosts")
             onTriggered: {
-                notificationModel.excludeTypes = ['mention', 'status', 'follow', 'follow_request', 'favourite', 'poll', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning'];
+                notificationModel.excludeTypes = ['mention', 'status', 'follow', 'follow_request', 'favourite', 'poll', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning', 'quote'];
                 visibilityMenu.tookAction = true;
             }
         }
@@ -105,7 +105,7 @@ Kirigami.ScrollablePage {
             icon.name: "favorite"
             text: i18nc("Show only favorites", "Favorites")
             onTriggered: {
-                notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow', 'follow_request', 'poll', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning'];
+                notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow', 'follow_request', 'poll', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning', 'quote'];
                 visibilityMenu.tookAction = true;
             }
         }
@@ -114,7 +114,7 @@ Kirigami.ScrollablePage {
             icon.name: "amarok_playcount"
             text: i18nc("Show only poll results", "Poll Results")
             onTriggered: {
-                notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow', 'follow_request', 'favourite', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning'];
+                notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow', 'follow_request', 'favourite', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning', 'quote'];
                 visibilityMenu.tookAction = true;
             }
         }
@@ -123,7 +123,7 @@ Kirigami.ScrollablePage {
             icon.name: "user-home-symbolic"
             text: i18nc("Show only followed statuses", "Posts")
             onTriggered: {
-                notificationModel.excludeTypes = ['mention', 'reblog', 'follow', 'follow_request', 'favourite', 'poll', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning'];
+                notificationModel.excludeTypes = ['mention', 'reblog', 'follow', 'follow_request', 'favourite', 'poll', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning', 'quote'];
                 visibilityMenu.tookAction = true;
             }
         }
@@ -132,7 +132,7 @@ Kirigami.ScrollablePage {
             icon.name: "list-add-user"
             text: i18nc("Show only follows", "Follows")
             onTriggered: {
-                notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow_request', 'favourite', 'poll', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning'];
+                notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow_request', 'favourite', 'poll', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning', 'quote'];
                 visibilityMenu.tookAction = true;
             }
         }
@@ -305,6 +305,17 @@ Kirigami.ScrollablePage {
             DelegateChoice {
                 roleValue: Notification.AnnualReport
                 AnnualReportDelegate {}
+            }
+
+            DelegateChoice {
+                roleValue: Notification.Quote
+                PostDelegate {
+                    width: ListView.view.width
+                    secondary: true
+                    timelineModel: groupedNotificationModel
+                    loading: listview.model.loading
+                    showSeparator: index !== ListView.view.count - 1
+                }
             }
 
             // If we don't have this, any unknown notification will prevent loading the entire notification page

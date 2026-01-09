@@ -129,6 +129,19 @@ FormCard.FormCardPage {
         FormCard.FormDelegateSeparator {}
 
         FormCard.FormSwitchDelegate {
+            id: quotesDelegate
+            text: i18n("Quotes")
+            description: i18n("When someone quotes you in a new post")
+            checked: root.config.notifyQuote
+            onToggled: {
+                root.config.notifyQuote = checked;
+                root.saveConfig();
+            }
+        }
+
+        FormCard.FormDelegateSeparator {}
+
+        FormCard.FormSwitchDelegate {
             id: statusesDelegate
             text: i18n("Statuses")
             description: i18n("When a user you have notifications turned on for makes a new post.")

@@ -114,6 +114,7 @@ public:
         SeveredRelationships,
         ModerationWarning,
         AnnualReport,
+        Quote,
     };
     Q_ENUM(Type);
 

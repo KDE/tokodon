@@ -75,6 +75,7 @@ public:
     Q_INVOKABLE void updateNotification() override;
     Q_INVOKABLE void pollNotification() override;
     Q_INVOKABLE void annualReportNotification() override;
+    Q_INVOKABLE void quoteNotification() override;
     Q_INVOKABLE void unknownNotification() override;
 
     Q_INVOKABLE void increaseFollowRequests() override;

@@ -478,6 +478,8 @@ public:
     Q_INVOKABLE virtual void pollNotification();
     Q_INVOKABLE virtual void increaseFollowRequests();
     Q_INVOKABLE virtual void decreaseFollowRequests();
+    Q_INVOKABLE virtual void quoteNotification();
+    Q_INVOKABLE virtual void quotedStatusNotification();
 
     /**
      * @brief Follow the given account. Can also be used to update whether to show reblogs or enable notifications.
