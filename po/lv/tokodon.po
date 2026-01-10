@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-03 00:43+0000\n"
+"POT-Creation-Date: 2026-01-10 00:43+0000\n"
 "PO-Revision-Date: 2025-11-11 18:56+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -166,19 +166,19 @@ msgid "View Profile"
 msgstr "Skatīties profilu"
 
 #: account/notificationhandler.cpp:79
-#: content/ui/Notifications/UserInteractionLabel.qml:81
+#: content/ui/Notifications/UserInteractionLabel.qml:84
 #, kde-format
 msgid "%1 mentioned you"
 msgstr "%1 tevi pieminēja"
 
 #: account/notificationhandler.cpp:87
-#: content/ui/Notifications/UserInteractionLabel.qml:89
+#: content/ui/Notifications/UserInteractionLabel.qml:92
 #, kde-format
 msgid "%1 wrote a new post"
 msgstr "%1 publicēja jaunu ierakstu"
 
 #: account/notificationhandler.cpp:95
-#: content/ui/Notifications/UserInteractionLabel.qml:79
+#: content/ui/Notifications/UserInteractionLabel.qml:82
 #, kde-format
 msgid "%1 boosted your post"
 msgstr "%1 pastiprināja tavu ierakstu"
@@ -196,7 +196,7 @@ msgid "%1 requested to follow you"
 msgstr "%1 pieprasīja tev sekot"
 
 #: account/notificationhandler.cpp:119
-#: content/ui/Notifications/UserInteractionLabel.qml:83
+#: content/ui/Notifications/UserInteractionLabel.qml:86
 #, kde-format
 msgid "%1 favorited your post"
 msgstr "%1 pielika zvaigznīti tavam ierakstam"
@@ -227,28 +227,35 @@ msgid "Unveil your year's highlights and memorable moments on Mastodon!"
 msgstr ""
 "Apskatiet savus gada „Mastodon“ spilgtākos un atmiņā paliekošākos brīžus!"
 
-#: account/notificationhandler.cpp:152
+#: account/notificationhandler.cpp:155
+#: content/ui/Notifications/UserInteractionLabel.qml:94
+#, fuzzy, kde-format
+#| msgid "%1 boosted your post"
+msgid "%1 quoted your post"
+msgstr "%1 pastiprināja tavu ierakstu"
+
+#: account/notificationhandler.cpp:160
 #, kde-format
 msgctxt "@title"
 msgid "New Notification"
 msgstr "Jauns paziņojums"
 
-#: account/notificationhandler.cpp:153
+#: account/notificationhandler.cpp:161
 #, kde-format
 msgid "You received a new notification."
 msgstr "Jūs saņēmāt jaunu paziņojumus."
 
-#: account/notificationhandler.cpp:161
+#: account/notificationhandler.cpp:174
 #, kde-kuit-format
 msgid "<b>Content Notice</b>: %1"
 msgstr "<b>Satura brīdinājums</b>: %1"
 
-#: account/notificationhandler.cpp:165
+#: account/notificationhandler.cpp:178
 #, kde-format
 msgid "This post has no text."
 msgstr "Ierakstam nav teksta."
 
-#: account/notificationhandler.cpp:172
+#: account/notificationhandler.cpp:185
 #, kde-format
 msgid ""
 "The moderators of your server has limited this user, view this in Tokodon to "
@@ -257,7 +264,7 @@ msgstr ""
 "Jūsu servera moderators ir ierobežojis šo lietotāju, apskatiet to „Tokodon“ "
 "programmā, lai redzētu profilu."
 
-#: account/notificationhandler.cpp:176
+#: account/notificationhandler.cpp:189
 #, kde-format
 msgid "This user doesn't have a description."
 msgstr "Šim lietotājam nav apraksta."
@@ -950,7 +957,7 @@ msgid "Boost"
 msgstr "Pastiprināt"
 
 #: content/ui/Components/ClickableIdentityInfo.qml:43
-#: content/ui/Notifications/UserInteractionLabel.qml:68
+#: content/ui/Notifications/UserInteractionLabel.qml:71
 #: content/ui/PostDelegate/QuotePost.qml:60
 #, kde-format
 msgid "View profile"
@@ -3367,24 +3374,31 @@ msgctxt "Show only follows"
 msgid "Follows"
 msgstr "Seko"
 
-#: content/ui/NotificationPage.qml:188
+#: content/ui/NotificationPage.qml:142
+#, fuzzy, kde-format
+#| msgid "Show Boosts"
+msgctxt "Show only quotes"
+msgid "Quotes"
+msgstr "Parādīt pastiprinājumus"
+
+#: content/ui/NotificationPage.qml:197
 #, kde-format
 msgctxt "@info:label New notifications"
 msgid "New"
 msgstr "Jauns"
 
-#: content/ui/NotificationPage.qml:188
+#: content/ui/NotificationPage.qml:197
 #, kde-format
 msgctxt "@info:label Previous notifications"
 msgid "Previous"
 msgstr "Iepriekšējais"
 
-#: content/ui/NotificationPage.qml:324
+#: content/ui/NotificationPage.qml:344
 #, kde-format
 msgid "No Notifications"
 msgstr "Nav paziņojumu"
 
-#: content/ui/NotificationPage.qml:325
+#: content/ui/NotificationPage.qml:345
 #, kde-format
 msgid ""
 "You have no notifications yet. When people reply, favorite or boost your "
@@ -3478,12 +3492,12 @@ msgctxt "@info"
 msgid "Unknown notification"
 msgstr "Nezināms paziņojums"
 
-#: content/ui/Notifications/UserInteractionLabel.qml:85
+#: content/ui/Notifications/UserInteractionLabel.qml:88
 #, kde-format
 msgid "A poll has ended"
 msgstr "Aptauja ir beigusies"
 
-#: content/ui/Notifications/UserInteractionLabel.qml:87
+#: content/ui/Notifications/UserInteractionLabel.qml:90
 #, kde-format
 msgid "%1 updated their post"
 msgstr "%1 atjaunināja savu ierakstu"
@@ -4799,103 +4813,115 @@ msgstr ""
 "Kad kāds jūs piemin jaunā ierakstā vai atbild uz kādu no jūsu ierakstiem."
 
 #: content/ui/Settings/NotificationsPage.qml:133
+#, fuzzy, kde-format
+#| msgid "Show Boosts"
+msgid "Quotes"
+msgstr "Parādīt pastiprinājumus"
+
+#: content/ui/Settings/NotificationsPage.qml:134
+#, fuzzy, kde-format
+#| msgid "When someone boosted one of your posts."
+msgid "When someone quotes you in a new post"
+msgstr "Kad kāds pastiprina kādu jūsu ierakstu."
+
+#: content/ui/Settings/NotificationsPage.qml:146
 #, kde-format
 msgid "Statuses"
 msgstr "Statusi"
 
-#: content/ui/Settings/NotificationsPage.qml:134
+#: content/ui/Settings/NotificationsPage.qml:147
 #, kde-format
 msgid "When a user you have notifications turned on for makes a new post."
 msgstr ""
 "Kad lietotājs, par kuru lūdzāt sniegt paziņojumus, publicē jaunu ierakstu."
 
-#: content/ui/Settings/NotificationsPage.qml:146
+#: content/ui/Settings/NotificationsPage.qml:159
 #, kde-format
 msgid "Boosts"
 msgstr "Pastiprinājumi"
 
-#: content/ui/Settings/NotificationsPage.qml:147
+#: content/ui/Settings/NotificationsPage.qml:160
 #, kde-format
 msgid "When someone boosted one of your posts."
 msgstr "Kad kāds pastiprina kādu jūsu ierakstu."
 
-#: content/ui/Settings/NotificationsPage.qml:159
+#: content/ui/Settings/NotificationsPage.qml:172
 #, kde-format
 msgid "New followers"
 msgstr "Jauni sekotāji"
 
-#: content/ui/Settings/NotificationsPage.qml:160
+#: content/ui/Settings/NotificationsPage.qml:173
 #, kde-format
 msgid "When someone follows you."
 msgstr "Kad kāds jums seko"
 
-#: content/ui/Settings/NotificationsPage.qml:172
+#: content/ui/Settings/NotificationsPage.qml:185
 #, kde-format
 msgid "New follow requests"
 msgstr "Jaunu sekotāju lūgumi"
 
-#: content/ui/Settings/NotificationsPage.qml:173
+#: content/ui/Settings/NotificationsPage.qml:186
 #, kde-format
 msgid "When an account who requires manual approval wants to follow you."
 msgstr ""
 "Kad jums vēlas sekot konts, kuram ir nepieciešama manuāla apstiprināšana."
 
-#: content/ui/Settings/NotificationsPage.qml:185
+#: content/ui/Settings/NotificationsPage.qml:198
 #, kde-format
 msgid "Favorites"
 msgstr "Zvaigznītes"
 
-#: content/ui/Settings/NotificationsPage.qml:186
+#: content/ui/Settings/NotificationsPage.qml:199
 #, kde-format
 msgid "When a post you made was favorited by another user."
 msgstr "Kad cits lietotājs pieliek zvaigznīti jūsu ierakstam."
 
-#: content/ui/Settings/NotificationsPage.qml:198
+#: content/ui/Settings/NotificationsPage.qml:211
 #, kde-format
 msgid "Polls"
 msgstr "Aptaujas"
 
-#: content/ui/Settings/NotificationsPage.qml:199
+#: content/ui/Settings/NotificationsPage.qml:212
 #, kde-format
 msgid "When a poll you voted in has ended."
 msgstr "Kad ir beigusies aptauja, kurā piedalījāties"
 
-#: content/ui/Settings/NotificationsPage.qml:211
+#: content/ui/Settings/NotificationsPage.qml:224
 #, kde-format
 msgid "Edits"
 msgstr "Rediģējumi"
 
-#: content/ui/Settings/NotificationsPage.qml:212
+#: content/ui/Settings/NotificationsPage.qml:225
 #, kde-format
 msgid "When a post you interacted with was edited by the author."
 msgstr "Kad autors ir rediģējis ierakstu, ar kuru mijiedarbojāties."
 
-#: content/ui/Settings/NotificationsPage.qml:224
+#: content/ui/Settings/NotificationsPage.qml:237
 #, kde-format
 msgid "Server Sign-ups"
 msgstr "Reģistrācija serverī"
 
-#: content/ui/Settings/NotificationsPage.qml:225
+#: content/ui/Settings/NotificationsPage.qml:238
 #, kde-format
 msgid "When someone signs up to your server."
 msgstr "Kad kāds reģistrējas jūsu serverī."
 
-#: content/ui/Settings/NotificationsPage.qml:240
+#: content/ui/Settings/NotificationsPage.qml:253
 #, kde-format
 msgid "Server Reports"
 msgstr "Servera ziņojumi"
 
-#: content/ui/Settings/NotificationsPage.qml:241
+#: content/ui/Settings/NotificationsPage.qml:254
 #, kde-format
 msgid "When someone files a report against a user on your server."
 msgstr "Kad kāds iesniedz ziņojumu par lietotāju jūsu serverī."
 
-#: content/ui/Settings/NotificationsPage.qml:256
+#: content/ui/Settings/NotificationsPage.qml:269
 #, kde-format
 msgid "Severed Relationships"
 msgstr "Servera attiecības"
 
-#: content/ui/Settings/NotificationsPage.qml:257
+#: content/ui/Settings/NotificationsPage.qml:270
 #, kde-format
 msgid ""
 "When you or your server moderates another server, which you are following "
@@ -4904,13 +4930,13 @@ msgstr ""
 "Kad jūs vai jūsu serveris moderē citu serveri, kurā ir lietotāji, kuriem "
 "sekojat vai kuri seko jums."
 
-#: content/ui/Settings/NotificationsPage.qml:269
+#: content/ui/Settings/NotificationsPage.qml:282
 #, kde-format
 msgctxt "@option:check"
 msgid "Annual Report"
 msgstr "Ikgadējais ziņojums"
 
-#: content/ui/Settings/NotificationsPage.qml:270
+#: content/ui/Settings/NotificationsPage.qml:283
 #, kde-format
 msgid "When you receive your #FediWrapped at the end of the year."
 msgstr "Kad gada beigās saņemat savu #FediWrapped."

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-03 00:43+0000\n"
+"POT-Creation-Date: 2026-01-10 00:43+0000\n"
 "PO-Revision-Date: 2025-10-09 01:37+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -168,19 +168,19 @@ msgid "View Profile"
 msgstr "프로필 보기"
 
 #: account/notificationhandler.cpp:79
-#: content/ui/Notifications/UserInteractionLabel.qml:81
+#: content/ui/Notifications/UserInteractionLabel.qml:84
 #, kde-format
 msgid "%1 mentioned you"
 msgstr "%1 님이 멘션함"
 
 #: account/notificationhandler.cpp:87
-#: content/ui/Notifications/UserInteractionLabel.qml:89
+#: content/ui/Notifications/UserInteractionLabel.qml:92
 #, kde-format
 msgid "%1 wrote a new post"
 msgstr "%1 님이 새 게시물을 작성함"
 
 #: account/notificationhandler.cpp:95
-#: content/ui/Notifications/UserInteractionLabel.qml:79
+#: content/ui/Notifications/UserInteractionLabel.qml:82
 #, kde-format
 msgid "%1 boosted your post"
 msgstr "%1 님이 내 글을 부스트함"
@@ -198,7 +198,7 @@ msgid "%1 requested to follow you"
 msgstr "%1 님이 팔로우 요청함"
 
 #: account/notificationhandler.cpp:119
-#: content/ui/Notifications/UserInteractionLabel.qml:83
+#: content/ui/Notifications/UserInteractionLabel.qml:86
 #, kde-format
 msgid "%1 favorited your post"
 msgstr "%1 님이 좋아요 표시함"
@@ -228,28 +228,35 @@ msgstr "내 %1 #FediWrapped 결산이 기다리고 있습니다!"
 msgid "Unveil your year's highlights and memorable moments on Mastodon!"
 msgstr "마스토돈에서의 올해의 하이라이트와 기억에 남는 순간을 발견하세요!"
 
-#: account/notificationhandler.cpp:152
+#: account/notificationhandler.cpp:155
+#: content/ui/Notifications/UserInteractionLabel.qml:94
+#, fuzzy, kde-format
+#| msgid "%1 boosted your post"
+msgid "%1 quoted your post"
+msgstr "%1 님이 내 글을 부스트함"
+
+#: account/notificationhandler.cpp:160
 #, kde-format
 msgctxt "@title"
 msgid "New Notification"
 msgstr "새 알림"
 
-#: account/notificationhandler.cpp:153
+#: account/notificationhandler.cpp:161
 #, kde-format
 msgid "You received a new notification."
 msgstr "새 알림을 받았습니다."
 
-#: account/notificationhandler.cpp:161
+#: account/notificationhandler.cpp:174
 #, kde-kuit-format
 msgid "<b>Content Notice</b>: %1"
 msgstr "<b>내용 경고</b>: %1"
 
-#: account/notificationhandler.cpp:165
+#: account/notificationhandler.cpp:178
 #, kde-format
 msgid "This post has no text."
 msgstr "이 글에는 텍스트가 없습니다."
 
-#: account/notificationhandler.cpp:172
+#: account/notificationhandler.cpp:185
 #, kde-format
 msgid ""
 "The moderators of your server has limited this user, view this in Tokodon to "
@@ -258,7 +265,7 @@ msgstr ""
 "내 서버의 중재자가 이 사용자를 제한했습니다. Tokodon으로 열면 프로필을 볼 수 "
 "있습니다."
 
-#: account/notificationhandler.cpp:176
+#: account/notificationhandler.cpp:189
 #, kde-format
 msgid "This user doesn't have a description."
 msgstr "이 사용자에 대한 설명이 없습니다."
@@ -937,7 +944,7 @@ msgid "Boost"
 msgstr "부스트"
 
 #: content/ui/Components/ClickableIdentityInfo.qml:43
-#: content/ui/Notifications/UserInteractionLabel.qml:68
+#: content/ui/Notifications/UserInteractionLabel.qml:71
 #: content/ui/PostDelegate/QuotePost.qml:60
 #, kde-format
 msgid "View profile"
@@ -3342,24 +3349,31 @@ msgctxt "Show only follows"
 msgid "Follows"
 msgstr "팔로우"
 
-#: content/ui/NotificationPage.qml:188
+#: content/ui/NotificationPage.qml:142
+#, fuzzy, kde-format
+#| msgid "Show Boosts"
+msgctxt "Show only quotes"
+msgid "Quotes"
+msgstr "부스트 표시"
+
+#: content/ui/NotificationPage.qml:197
 #, kde-format
 msgctxt "@info:label New notifications"
 msgid "New"
 msgstr "새 항목"
 
-#: content/ui/NotificationPage.qml:188
+#: content/ui/NotificationPage.qml:197
 #, kde-format
 msgctxt "@info:label Previous notifications"
 msgid "Previous"
 msgstr "이전 항목"
 
-#: content/ui/NotificationPage.qml:324
+#: content/ui/NotificationPage.qml:344
 #, kde-format
 msgid "No Notifications"
 msgstr "알림 없음"
 
-#: content/ui/NotificationPage.qml:325
+#: content/ui/NotificationPage.qml:345
 #, kde-format
 msgid ""
 "You have no notifications yet. When people reply, favorite or boost your "
@@ -3457,12 +3471,12 @@ msgctxt "@info"
 msgid "Unknown notification"
 msgstr "알 수 없는 작업"
 
-#: content/ui/Notifications/UserInteractionLabel.qml:85
+#: content/ui/Notifications/UserInteractionLabel.qml:88
 #, kde-format
 msgid "A poll has ended"
 msgstr "투표가 종료됨"
 
-#: content/ui/Notifications/UserInteractionLabel.qml:87
+#: content/ui/Notifications/UserInteractionLabel.qml:90
 #, kde-format
 msgid "%1 updated their post"
 msgstr "%1 님이 게시물을 업데이트함"
@@ -4767,101 +4781,113 @@ msgid ""
 msgstr "누군가가 나를 새로운 게시물에서 멘션했거나 내 스레드에 답장했습니다."
 
 #: content/ui/Settings/NotificationsPage.qml:133
+#, fuzzy, kde-format
+#| msgid "Show Boosts"
+msgid "Quotes"
+msgstr "부스트 표시"
+
+#: content/ui/Settings/NotificationsPage.qml:134
+#, fuzzy, kde-format
+#| msgid "When someone boosted one of your posts."
+msgid "When someone quotes you in a new post"
+msgstr "누군가가 내 글을 부스트했습니다."
+
+#: content/ui/Settings/NotificationsPage.qml:146
 #, kde-format
 msgid "Statuses"
 msgstr "글"
 
-#: content/ui/Settings/NotificationsPage.qml:134
+#: content/ui/Settings/NotificationsPage.qml:147
 #, kde-format
 msgid "When a user you have notifications turned on for makes a new post."
 msgstr "알림을 활성화한 사용자가 새로운 게시물을 올렸습니다."
 
-#: content/ui/Settings/NotificationsPage.qml:146
+#: content/ui/Settings/NotificationsPage.qml:159
 #, kde-format
 msgid "Boosts"
 msgstr "부스트"
 
-#: content/ui/Settings/NotificationsPage.qml:147
+#: content/ui/Settings/NotificationsPage.qml:160
 #, kde-format
 msgid "When someone boosted one of your posts."
 msgstr "누군가가 내 글을 부스트했습니다."
 
-#: content/ui/Settings/NotificationsPage.qml:159
+#: content/ui/Settings/NotificationsPage.qml:172
 #, kde-format
 msgid "New followers"
 msgstr "새 팔로워"
 
-#: content/ui/Settings/NotificationsPage.qml:160
+#: content/ui/Settings/NotificationsPage.qml:173
 #, kde-format
 msgid "When someone follows you."
 msgstr "누군가가 나를 팔로우했습니다."
 
-#: content/ui/Settings/NotificationsPage.qml:172
+#: content/ui/Settings/NotificationsPage.qml:185
 #, kde-format
 msgid "New follow requests"
 msgstr "새 팔로우 요청"
 
-#: content/ui/Settings/NotificationsPage.qml:173
+#: content/ui/Settings/NotificationsPage.qml:186
 #, kde-format
 msgid "When an account who requires manual approval wants to follow you."
 msgstr "수동으로 승인해야 하는 계정에서 나를 팔로우했습니다."
 
-#: content/ui/Settings/NotificationsPage.qml:185
+#: content/ui/Settings/NotificationsPage.qml:198
 #, kde-format
 msgid "Favorites"
 msgstr "좋아요"
 
-#: content/ui/Settings/NotificationsPage.qml:186
+#: content/ui/Settings/NotificationsPage.qml:199
 #, kde-format
 msgid "When a post you made was favorited by another user."
 msgstr "내 게시물을 누군가가 좋아요 표시했습니다."
 
-#: content/ui/Settings/NotificationsPage.qml:198
+#: content/ui/Settings/NotificationsPage.qml:211
 #, kde-format
 msgid "Polls"
 msgstr "투표"
 
-#: content/ui/Settings/NotificationsPage.qml:199
+#: content/ui/Settings/NotificationsPage.qml:212
 #, kde-format
 msgid "When a poll you voted in has ended."
 msgstr "참여한 투표가 종료되었습니다."
 
-#: content/ui/Settings/NotificationsPage.qml:211
+#: content/ui/Settings/NotificationsPage.qml:224
 #, kde-format
 msgid "Edits"
 msgstr "편집"
 
-#: content/ui/Settings/NotificationsPage.qml:212
+#: content/ui/Settings/NotificationsPage.qml:225
 #, kde-format
 msgid "When a post you interacted with was edited by the author."
 msgstr "내가 참여한 게시물이 작성자에 의해 편집되었습니다."
 
-#: content/ui/Settings/NotificationsPage.qml:224
+#: content/ui/Settings/NotificationsPage.qml:237
 #, kde-format
 msgid "Server Sign-ups"
 msgstr "서버 계정 등록"
 
-#: content/ui/Settings/NotificationsPage.qml:225
+#: content/ui/Settings/NotificationsPage.qml:238
 #, kde-format
 msgid "When someone signs up to your server."
 msgstr "누군가가 내 서버에 계정을 등록했습니다."
 
-#: content/ui/Settings/NotificationsPage.qml:240
+#: content/ui/Settings/NotificationsPage.qml:253
 #, kde-format
 msgid "Server Reports"
 msgstr "서버 보고서"
 
-#: content/ui/Settings/NotificationsPage.qml:241
+#: content/ui/Settings/NotificationsPage.qml:254
 #, kde-format
 msgid "When someone files a report against a user on your server."
 msgstr "누군가가 내 서버의 특정 사용자에 대한 신고를 접수했습니다."
 
-#: content/ui/Settings/NotificationsPage.qml:256
+#: content/ui/Settings/NotificationsPage.qml:269
 #, kde-format
 msgid "Severed Relationships"
 msgstr "관계 끊어짐"
 
-#: content/ui/Settings/NotificationsPage.qml:257
+#: content/ui/Settings/NotificationsPage.qml:270
 #, kde-format
 msgid ""
 "When you or your server moderates another server, which you are following "
@@ -4870,13 +4896,13 @@ msgstr ""
 "해당 서버의 사용자를 팔로우하거나, 해당 서버의 사용자가 팔로우하는 서버를 나 "
 "또는 내 서버에서 중재 결정을 내렸습니다."
 
-#: content/ui/Settings/NotificationsPage.qml:269
+#: content/ui/Settings/NotificationsPage.qml:282
 #, kde-format
 msgctxt "@option:check"
 msgid "Annual Report"
 msgstr "연간 보고"
 
-#: content/ui/Settings/NotificationsPage.qml:270
+#: content/ui/Settings/NotificationsPage.qml:283
 #, kde-format
 msgid "When you receive your #FediWrapped at the end of the year."
 msgstr "연말에 #FediWrapped 보고서를 받을 때입니다."

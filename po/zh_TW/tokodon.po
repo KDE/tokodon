@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-03 00:43+0000\n"
+"POT-Creation-Date: 2026-01-10 00:43+0000\n"
 "PO-Revision-Date: 2025-11-20 21:06+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -167,19 +167,19 @@ msgid "View Profile"
 msgstr "檢視個人檔案"
 
 #: account/notificationhandler.cpp:79
-#: content/ui/Notifications/UserInteractionLabel.qml:81
+#: content/ui/Notifications/UserInteractionLabel.qml:84
 #, kde-format
 msgid "%1 mentioned you"
 msgstr "%1 提及您"
 
 #: account/notificationhandler.cpp:87
-#: content/ui/Notifications/UserInteractionLabel.qml:89
+#: content/ui/Notifications/UserInteractionLabel.qml:92
 #, kde-format
 msgid "%1 wrote a new post"
 msgstr "%1 撰寫了新的嘟文"
 
 #: account/notificationhandler.cpp:95
-#: content/ui/Notifications/UserInteractionLabel.qml:79
+#: content/ui/Notifications/UserInteractionLabel.qml:82
 #, kde-format
 msgid "%1 boosted your post"
 msgstr "%1 轉嘟了您的嘟文"
@@ -197,7 +197,7 @@ msgid "%1 requested to follow you"
 msgstr "%1 已請求跟隨您"
 
 #: account/notificationhandler.cpp:119
-#: content/ui/Notifications/UserInteractionLabel.qml:83
+#: content/ui/Notifications/UserInteractionLabel.qml:86
 #, kde-format
 msgid "%1 favorited your post"
 msgstr "%1 將您的嘟文加入最愛"
@@ -227,28 +227,35 @@ msgstr "您的 %1 年 #FediWrapped 在等您！"
 msgid "Unveil your year's highlights and memorable moments on Mastodon!"
 msgstr "發現您今年在 Mastodon 上的精選與回憶時光吧！"
 
-#: account/notificationhandler.cpp:152
+#: account/notificationhandler.cpp:155
+#: content/ui/Notifications/UserInteractionLabel.qml:94
+#, fuzzy, kde-format
+#| msgid "%1 boosted your post"
+msgid "%1 quoted your post"
+msgstr "%1 轉嘟了您的嘟文"
+
+#: account/notificationhandler.cpp:160
 #, kde-format
 msgctxt "@title"
 msgid "New Notification"
 msgstr "新通知"
 
-#: account/notificationhandler.cpp:153
+#: account/notificationhandler.cpp:161
 #, kde-format
 msgid "You received a new notification."
 msgstr "您收到了新通知。"
 
-#: account/notificationhandler.cpp:161
+#: account/notificationhandler.cpp:174
 #, kde-kuit-format
 msgid "<b>Content Notice</b>: %1"
 msgstr "<b>內容告警</b>：%1"
 
-#: account/notificationhandler.cpp:165
+#: account/notificationhandler.cpp:178
 #, kde-format
 msgid "This post has no text."
 msgstr "這個嘟文沒有文字。"
 
-#: account/notificationhandler.cpp:172
+#: account/notificationhandler.cpp:185
 #, kde-format
 msgid ""
 "The moderators of your server has limited this user, view this in Tokodon to "
@@ -256,7 +263,7 @@ msgid ""
 msgstr ""
 "您的伺服器的 Mod 已限制這個使用者，在 Tokodon 檢視這個來查看其個人檔案。"
 
-#: account/notificationhandler.cpp:176
+#: account/notificationhandler.cpp:189
 #, kde-format
 msgid "This user doesn't have a description."
 msgstr "這個使用者沒有描述。"
@@ -923,7 +930,7 @@ msgid "Boost"
 msgstr "轉嘟"
 
 #: content/ui/Components/ClickableIdentityInfo.qml:43
-#: content/ui/Notifications/UserInteractionLabel.qml:68
+#: content/ui/Notifications/UserInteractionLabel.qml:71
 #: content/ui/PostDelegate/QuotePost.qml:60
 #, kde-format
 msgid "View profile"
@@ -3310,24 +3317,31 @@ msgctxt "Show only follows"
 msgid "Follows"
 msgstr "跟隨"
 
-#: content/ui/NotificationPage.qml:188
+#: content/ui/NotificationPage.qml:142
+#, fuzzy, kde-format
+#| msgid "Show Quotes"
+msgctxt "Show only quotes"
+msgid "Quotes"
+msgstr "顯示引用"
+
+#: content/ui/NotificationPage.qml:197
 #, kde-format
 msgctxt "@info:label New notifications"
 msgid "New"
 msgstr "新的"
 
-#: content/ui/NotificationPage.qml:188
+#: content/ui/NotificationPage.qml:197
 #, kde-format
 msgctxt "@info:label Previous notifications"
 msgid "Previous"
 msgstr "先前的"
 
-#: content/ui/NotificationPage.qml:324
+#: content/ui/NotificationPage.qml:344
 #, kde-format
 msgid "No Notifications"
 msgstr "沒有通知"
 
-#: content/ui/NotificationPage.qml:325
+#: content/ui/NotificationPage.qml:345
 #, kde-format
 msgid ""
 "You have no notifications yet. When people reply, favorite or boost your "
@@ -3416,12 +3430,12 @@ msgctxt "@info"
 msgid "Unknown notification"
 msgstr "未知通知"
 
-#: content/ui/Notifications/UserInteractionLabel.qml:85
+#: content/ui/Notifications/UserInteractionLabel.qml:88
 #, kde-format
 msgid "A poll has ended"
 msgstr "一個投票已結束"
 
-#: content/ui/Notifications/UserInteractionLabel.qml:87
+#: content/ui/Notifications/UserInteractionLabel.qml:90
 #, kde-format
 msgid "%1 updated their post"
 msgstr "%1 更新了嘟文"
@@ -4710,101 +4724,113 @@ msgid ""
 msgstr "有人在新嘟文提及您，或在您的串文中回覆的時候。"
 
 #: content/ui/Settings/NotificationsPage.qml:133
+#, fuzzy, kde-format
+#| msgid "Show Quotes"
+msgid "Quotes"
+msgstr "顯示引用"
+
+#: content/ui/Settings/NotificationsPage.qml:134
+#, fuzzy, kde-format
+#| msgid "When someone boosted one of your posts."
+msgid "When someone quotes you in a new post"
+msgstr "有人轉嘟您的嘟文的時候。"
+
+#: content/ui/Settings/NotificationsPage.qml:146
 #, kde-format
 msgid "Statuses"
 msgstr "狀態"
 
-#: content/ui/Settings/NotificationsPage.qml:134
+#: content/ui/Settings/NotificationsPage.qml:147
 #, kde-format
 msgid "When a user you have notifications turned on for makes a new post."
 msgstr "您已為其啟用通知的使用者發出新嘟文的時候。"
 
-#: content/ui/Settings/NotificationsPage.qml:146
+#: content/ui/Settings/NotificationsPage.qml:159
 #, kde-format
 msgid "Boosts"
 msgstr "轉嘟"
 
-#: content/ui/Settings/NotificationsPage.qml:147
+#: content/ui/Settings/NotificationsPage.qml:160
 #, kde-format
 msgid "When someone boosted one of your posts."
 msgstr "有人轉嘟您的嘟文的時候。"
 
-#: content/ui/Settings/NotificationsPage.qml:159
+#: content/ui/Settings/NotificationsPage.qml:172
 #, kde-format
 msgid "New followers"
 msgstr "新跟隨者"
 
-#: content/ui/Settings/NotificationsPage.qml:160
+#: content/ui/Settings/NotificationsPage.qml:173
 #, kde-format
 msgid "When someone follows you."
 msgstr "有人跟隨您的時候。"
 
-#: content/ui/Settings/NotificationsPage.qml:172
+#: content/ui/Settings/NotificationsPage.qml:185
 #, kde-format
 msgid "New follow requests"
 msgstr "新跟隨請求"
 
-#: content/ui/Settings/NotificationsPage.qml:173
+#: content/ui/Settings/NotificationsPage.qml:186
 #, kde-format
 msgid "When an account who requires manual approval wants to follow you."
 msgstr "需要手動准許才能跟隨您的帳號希望跟隨您而發出跟隨請求的時候。"
 
-#: content/ui/Settings/NotificationsPage.qml:185
+#: content/ui/Settings/NotificationsPage.qml:198
 #, kde-format
 msgid "Favorites"
 msgstr "最愛"
 
-#: content/ui/Settings/NotificationsPage.qml:186
+#: content/ui/Settings/NotificationsPage.qml:199
 #, kde-format
 msgid "When a post you made was favorited by another user."
 msgstr "當您所發出的嘟文被另一名使用者加入最愛的時候。"
 
-#: content/ui/Settings/NotificationsPage.qml:198
+#: content/ui/Settings/NotificationsPage.qml:211
 #, kde-format
 msgid "Polls"
 msgstr "投票"
 
-#: content/ui/Settings/NotificationsPage.qml:199
+#: content/ui/Settings/NotificationsPage.qml:212
 #, kde-format
 msgid "When a poll you voted in has ended."
 msgstr "您有參與的投票結束的時候。"
 
-#: content/ui/Settings/NotificationsPage.qml:211
+#: content/ui/Settings/NotificationsPage.qml:224
 #, kde-format
 msgid "Edits"
 msgstr "編輯"
 
-#: content/ui/Settings/NotificationsPage.qml:212
+#: content/ui/Settings/NotificationsPage.qml:225
 #, kde-format
 msgid "When a post you interacted with was edited by the author."
 msgstr "您互動過的嘟文被作者編輯的時候。"
 
-#: content/ui/Settings/NotificationsPage.qml:224
+#: content/ui/Settings/NotificationsPage.qml:237
 #, kde-format
 msgid "Server Sign-ups"
 msgstr "伺服器註冊"
 
-#: content/ui/Settings/NotificationsPage.qml:225
+#: content/ui/Settings/NotificationsPage.qml:238
 #, kde-format
 msgid "When someone signs up to your server."
 msgstr "有人在您的伺服器上註冊的時候。"
 
-#: content/ui/Settings/NotificationsPage.qml:240
+#: content/ui/Settings/NotificationsPage.qml:253
 #, kde-format
 msgid "Server Reports"
 msgstr "伺服器報告"
 
-#: content/ui/Settings/NotificationsPage.qml:241
+#: content/ui/Settings/NotificationsPage.qml:254
 #, kde-format
 msgid "When someone files a report against a user on your server."
 msgstr "有人檢舉您的伺服器上的一個使用者的時候。"
 
-#: content/ui/Settings/NotificationsPage.qml:256
+#: content/ui/Settings/NotificationsPage.qml:269
 #, kde-format
 msgid "Severed Relationships"
 msgstr "關係已中斷"
 
-#: content/ui/Settings/NotificationsPage.qml:257
+#: content/ui/Settings/NotificationsPage.qml:270
 #, kde-format
 msgid ""
 "When you or your server moderates another server, which you are following "
@@ -4813,13 +4839,13 @@ msgstr ""
 "您或您的伺服器監管另一個伺服器的聯繫，而您與該伺服器上的使用者有跟隨關係的時"
 "候。"
 
-#: content/ui/Settings/NotificationsPage.qml:269
+#: content/ui/Settings/NotificationsPage.qml:282
 #, kde-format
 msgctxt "@option:check"
 msgid "Annual Report"
 msgstr "年度報告"
 
-#: content/ui/Settings/NotificationsPage.qml:270
+#: content/ui/Settings/NotificationsPage.qml:283
 #, kde-format
 msgid "When you receive your #FediWrapped at the end of the year."
 msgstr "當您在年尾收到 #FediWrapped 報告的時候。"

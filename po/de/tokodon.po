@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-03 00:43+0000\n"
+"POT-Creation-Date: 2026-01-10 00:43+0000\n"
 "PO-Revision-Date: 2025-05-18 19:45+0200\n"
 "Last-Translator: Frank Steinmetzger <dev-kde@felsenfleischer.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -166,19 +166,19 @@ msgid "View Profile"
 msgstr "Profil anzeigen"
 
 #: account/notificationhandler.cpp:79
-#: content/ui/Notifications/UserInteractionLabel.qml:81
+#: content/ui/Notifications/UserInteractionLabel.qml:84
 #, kde-format
 msgid "%1 mentioned you"
 msgstr "%1 hat Sie erwähnt"
 
 #: account/notificationhandler.cpp:87
-#: content/ui/Notifications/UserInteractionLabel.qml:89
+#: content/ui/Notifications/UserInteractionLabel.qml:92
 #, kde-format
 msgid "%1 wrote a new post"
 msgstr "%1 hat einen neuen Beitrag geschrieben"
 
 #: account/notificationhandler.cpp:95
-#: content/ui/Notifications/UserInteractionLabel.qml:79
+#: content/ui/Notifications/UserInteractionLabel.qml:82
 #, kde-format
 msgid "%1 boosted your post"
 msgstr "%1 teilte Ihren Beitrag"
@@ -196,7 +196,7 @@ msgid "%1 requested to follow you"
 msgstr "%1 möchte Ihnen folgen"
 
 #: account/notificationhandler.cpp:119
-#: content/ui/Notifications/UserInteractionLabel.qml:83
+#: content/ui/Notifications/UserInteractionLabel.qml:86
 #, kde-format
 msgid "%1 favorited your post"
 msgstr "%1 favorisierte Ihren Beitrag"
@@ -228,35 +228,42 @@ msgstr ""
 "Lüften Sie Ihre Highlights des Jahres und unvergesslichen Momente auf "
 "Mastodon!"
 
-#: account/notificationhandler.cpp:152
+#: account/notificationhandler.cpp:155
+#: content/ui/Notifications/UserInteractionLabel.qml:94
+#, fuzzy, kde-format
+#| msgid "%1 boosted your post"
+msgid "%1 quoted your post"
+msgstr "%1 teilte Ihren Beitrag"
+
+#: account/notificationhandler.cpp:160
 #, kde-format
 msgctxt "@title"
 msgid "New Notification"
 msgstr "Neue Benachrichtigung"
 
-#: account/notificationhandler.cpp:153
+#: account/notificationhandler.cpp:161
 #, kde-format
 msgid "You received a new notification."
 msgstr "Sie haben eine Benachrichtigung erhalten."
 
-#: account/notificationhandler.cpp:161
+#: account/notificationhandler.cpp:174
 #, kde-kuit-format
 msgid "<b>Content Notice</b>: %1"
 msgstr "<b>Inhaltswarnung</b>: %1"
 
-#: account/notificationhandler.cpp:165
+#: account/notificationhandler.cpp:178
 #, kde-format
 msgid "This post has no text."
 msgstr "Dieser Beitrag hat keinen Text."
 
-#: account/notificationhandler.cpp:172
+#: account/notificationhandler.cpp:185
 #, kde-format
 msgid ""
 "The moderators of your server has limited this user, view this in Tokodon to "
 "see their profile."
 msgstr ""
 
-#: account/notificationhandler.cpp:176
+#: account/notificationhandler.cpp:189
 #, kde-format
 msgid "This user doesn't have a description."
 msgstr "Dieser Benutzer hat keine Beschreibung."
@@ -948,7 +955,7 @@ msgid "Boost"
 msgstr "Teilen"
 
 #: content/ui/Components/ClickableIdentityInfo.qml:43
-#: content/ui/Notifications/UserInteractionLabel.qml:68
+#: content/ui/Notifications/UserInteractionLabel.qml:71
 #: content/ui/PostDelegate/QuotePost.qml:60
 #, kde-format
 msgid "View profile"
@@ -3386,26 +3393,33 @@ msgctxt "Show only follows"
 msgid "Follows"
 msgstr "Gefolgte"
 
-#: content/ui/NotificationPage.qml:188
+#: content/ui/NotificationPage.qml:142
+#, fuzzy, kde-format
+#| msgid "Show Boosts"
+msgctxt "Show only quotes"
+msgid "Quotes"
+msgstr "Geteilte Beiträge anzeigen"
+
+#: content/ui/NotificationPage.qml:197
 #, fuzzy, kde-format
 #| msgid "News"
 msgctxt "@info:label New notifications"
 msgid "New"
 msgstr "Neuigkeiten"
 
-#: content/ui/NotificationPage.qml:188
+#: content/ui/NotificationPage.qml:197
 #, fuzzy, kde-format
 #| msgid "Previous image"
 msgctxt "@info:label Previous notifications"
 msgid "Previous"
 msgstr "Vorheriges Bild"
 
-#: content/ui/NotificationPage.qml:324
+#: content/ui/NotificationPage.qml:344
 #, kde-format
 msgid "No Notifications"
 msgstr "Keine Benachrichtigungen"
 
-#: content/ui/NotificationPage.qml:325
+#: content/ui/NotificationPage.qml:345
 #, kde-format
 msgid ""
 "You have no notifications yet. When people reply, favorite or boost your "
@@ -3503,12 +3517,12 @@ msgctxt "@info"
 msgid "Unknown notification"
 msgstr "Unbekannte Aktion"
 
-#: content/ui/Notifications/UserInteractionLabel.qml:85
+#: content/ui/Notifications/UserInteractionLabel.qml:88
 #, kde-format
 msgid "A poll has ended"
 msgstr "Eine Umfrage ist abgelaufen"
 
-#: content/ui/Notifications/UserInteractionLabel.qml:87
+#: content/ui/Notifications/UserInteractionLabel.qml:90
 #, kde-format
 msgid "%1 updated their post"
 msgstr "%1 aktualisierte einen Betrag"
@@ -4844,106 +4858,118 @@ msgstr ""
 "Diskussionen antwortet."
 
 #: content/ui/Settings/NotificationsPage.qml:133
+#, fuzzy, kde-format
+#| msgid "Show Boosts"
+msgid "Quotes"
+msgstr "Geteilte Beiträge anzeigen"
+
+#: content/ui/Settings/NotificationsPage.qml:134
+#, fuzzy, kde-format
+#| msgid "When someone boosted one of your posts."
+msgid "When someone quotes you in a new post"
+msgstr "Wenn jemand einen Ihrer Beiträge teilt."
+
+#: content/ui/Settings/NotificationsPage.qml:146
 #, kde-format
 msgid "Statuses"
 msgstr "Status"
 
-#: content/ui/Settings/NotificationsPage.qml:134
+#: content/ui/Settings/NotificationsPage.qml:147
 #, kde-format
 msgid "When a user you have notifications turned on for makes a new post."
 msgstr ""
 "Wenn ein Benutzer, für den Sie Benachrichtigungen aktiviert haben, einen "
 "neuen Beitrag erstellt."
 
-#: content/ui/Settings/NotificationsPage.qml:146
+#: content/ui/Settings/NotificationsPage.qml:159
 #, kde-format
 msgid "Boosts"
 msgstr "Geteilte Beiträge"
 
-#: content/ui/Settings/NotificationsPage.qml:147
+#: content/ui/Settings/NotificationsPage.qml:160
 #, kde-format
 msgid "When someone boosted one of your posts."
 msgstr "Wenn jemand einen Ihrer Beiträge teilt."
 
-#: content/ui/Settings/NotificationsPage.qml:159
+#: content/ui/Settings/NotificationsPage.qml:172
 #, kde-format
 msgid "New followers"
 msgstr "Neue Follower"
 
-#: content/ui/Settings/NotificationsPage.qml:160
+#: content/ui/Settings/NotificationsPage.qml:173
 #, kde-format
 msgid "When someone follows you."
 msgstr "Wenn Ihnen jemand folgt."
 
-#: content/ui/Settings/NotificationsPage.qml:172
+#: content/ui/Settings/NotificationsPage.qml:185
 #, kde-format
 msgid "New follow requests"
 msgstr "Neue Folge-Anfrage"
 
-#: content/ui/Settings/NotificationsPage.qml:173
+#: content/ui/Settings/NotificationsPage.qml:186
 #, kde-format
 msgid "When an account who requires manual approval wants to follow you."
 msgstr "Wenn ein Konto, das manuelle Zustimmung benötigt, Ihnen folgen will."
 
-#: content/ui/Settings/NotificationsPage.qml:185
+#: content/ui/Settings/NotificationsPage.qml:198
 #, kde-format
 msgid "Favorites"
 msgstr "Favoriten"
 
-#: content/ui/Settings/NotificationsPage.qml:186
+#: content/ui/Settings/NotificationsPage.qml:199
 #, kde-format
 msgid "When a post you made was favorited by another user."
 msgstr ""
 "Wenn einer Ihrer Beiträge von einem anderen Benutzer favorisiert wurde."
 
-#: content/ui/Settings/NotificationsPage.qml:198
+#: content/ui/Settings/NotificationsPage.qml:211
 #, kde-format
 msgid "Polls"
 msgstr "Umfragen"
 
-#: content/ui/Settings/NotificationsPage.qml:199
+#: content/ui/Settings/NotificationsPage.qml:212
 #, kde-format
 msgid "When a poll you voted in has ended."
 msgstr "Wenn eine Umfrage, an der Sie teilgenommen haben, beendet ist."
 
-#: content/ui/Settings/NotificationsPage.qml:211
+#: content/ui/Settings/NotificationsPage.qml:224
 #, kde-format
 msgid "Edits"
 msgstr "Bearbeitungen"
 
-#: content/ui/Settings/NotificationsPage.qml:212
+#: content/ui/Settings/NotificationsPage.qml:225
 #, kde-format
 msgid "When a post you interacted with was edited by the author."
 msgstr ""
 "Wenn ein Beitrag, mit dem Sie interagierten, von seinem Autoren bearbeitet "
 "wurde."
 
-#: content/ui/Settings/NotificationsPage.qml:224
+#: content/ui/Settings/NotificationsPage.qml:237
 #, kde-format
 msgid "Server Sign-ups"
 msgstr "Server-Registrierungen"
 
-#: content/ui/Settings/NotificationsPage.qml:225
+#: content/ui/Settings/NotificationsPage.qml:238
 #, kde-format
 msgid "When someone signs up to your server."
 msgstr "Wenn sich jemand auf Ihrem Server registriert."
 
-#: content/ui/Settings/NotificationsPage.qml:240
+#: content/ui/Settings/NotificationsPage.qml:253
 #, kde-format
 msgid "Server Reports"
 msgstr "Server-Meldungen"
 
-#: content/ui/Settings/NotificationsPage.qml:241
+#: content/ui/Settings/NotificationsPage.qml:254
 #, kde-format
 msgid "When someone files a report against a user on your server."
 msgstr "Wenn jemand einen Benutzer Ihres Servers meldet."
 
-#: content/ui/Settings/NotificationsPage.qml:256
+#: content/ui/Settings/NotificationsPage.qml:269
 #, kde-format
 msgid "Severed Relationships"
 msgstr "Getrennte Beziehungen"
 
-#: content/ui/Settings/NotificationsPage.qml:257
+#: content/ui/Settings/NotificationsPage.qml:270
 #, kde-format
 msgid ""
 "When you or your server moderates another server, which you are following "
@@ -4952,13 +4978,13 @@ msgstr ""
 "Wenn Sie oder Ihr Server einen anderen Server moderieren, auf dem Sie "
 "Nutzern folgen oder Follower haben."
 
-#: content/ui/Settings/NotificationsPage.qml:269
+#: content/ui/Settings/NotificationsPage.qml:282
 #, kde-format
 msgctxt "@option:check"
 msgid "Annual Report"
 msgstr "Jahresbericht"
 
-#: content/ui/Settings/NotificationsPage.qml:270
+#: content/ui/Settings/NotificationsPage.qml:283
 #, kde-format
 msgid "When you receive your #FediWrapped at the end of the year."
 msgstr "Wenn Sie Ihr #FediWrapped zum Jahresende empfangen."
