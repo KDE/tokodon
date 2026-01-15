@@ -1,14 +1,14 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the tokodon package.
 #
-# Besnik Bleta <besnik@programeshqip.org>, 2024, 2025.
+# Besnik Bleta <besnik@programeshqip.org>, 2024, 2025, 2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 14:40+0000\n"
-"PO-Revision-Date: 2025-04-30 13:11+0300\n"
+"PO-Revision-Date: 2026-01-10 21:31+0200\n"
 "Last-Translator: Besnik Bleta <besnik@programeshqip.org>\n"
 "Language-Team: Albanian <kde-i18n-sq@kde.org>\n"
 "Language: sq\n"
@@ -146,13 +146,13 @@ msgstr "S’u përpunua dot shënim rreth një llogarie"
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Network request was interrupted"
-msgstr ""
+msgstr "Kërkesa ndaj rrjetit u ndërpre"
 
 #: account/account.cpp:309 account/account.cpp:316
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Failed to parse credentials"
-msgstr ""
+msgstr "S’u arrit të analizoheshin kredenciale"
 
 #: account/notificationhandler.cpp:35 account/notificationhandler.cpp:36
 #, kde-format
@@ -870,16 +870,13 @@ msgid "This user hasn't posted any media yet."
 msgstr "Ky postues s’ka postuar ende ndonjë media."
 
 #: content/ui/AccountSwitchDialog.qml:29
-#, fuzzy, kde-format
-#| msgid "Switch Account"
+#, kde-format
 msgctxt "@title: dialog to switch between logged in accounts"
 msgid "Switch Account"
 msgstr "Ndërroni Llogari"
 
 #: content/ui/AccountSwitchDialog.qml:56
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add Account"
+#, kde-format
 msgctxt "@button: login to or register a new account."
 msgid "Add Account"
 msgstr "Shtoni Llogari"
@@ -896,6 +893,8 @@ msgctxt "@info:tooltip"
 msgid ""
 "This account has an issue and can't login, switch to it for more details."
 msgstr ""
+"Kjo llogari ka një problem dhe s’mund të bëhet hyrje në të, për më tepër "
+"hollësi kaloni në të."
 
 #: content/ui/Android/ShareAction.qml:15 content/ui/ShareAction.qml:20
 #, kde-format
@@ -955,12 +954,10 @@ msgid "No emojis"
 msgstr "Pa emoxhi"
 
 #: content/ui/Components/ServerInformationCard.qml:28
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Embed Information"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Information"
-msgstr "Trupëzoni Hollësi"
+msgstr "Pa Hollësi"
 
 #: content/ui/Components/ServerInformationCard.qml:33
 #, kde-format
@@ -969,11 +966,10 @@ msgid "Last updated: %1"
 msgstr "Përditësuar së fundi më: %1"
 
 #: content/ui/Components/TimelineView.qml:84
-#, fuzzy, kde-format
-#| msgid "Create List"
+#, kde-format
 msgctxt "@action:button"
 msgid "Create Post"
-msgstr "Krijoni Listë"
+msgstr "Krijoje Postimin"
 
 #: content/ui/Components/TimelineView.qml:92
 #, kde-format
@@ -1135,9 +1131,7 @@ msgid "Create"
 msgstr "Krijoje"
 
 #: content/ui/EditListPage.qml:255
-#, fuzzy, kde-format
-#| msgctxt "@action:Button Save an edited a post"
-#| msgid "Save"
+#, kde-format
 msgctxt "@action:button Save the edited list"
 msgid "Save"
 msgstr "Ruaje"
@@ -1274,11 +1268,10 @@ msgid "Open Post"
 msgstr "Hape Postimin"
 
 #: content/ui/GenericServerInformationPage.qml:17
-#, fuzzy, kde-format
-#| msgid "Custom Server"
+#, kde-format
 msgctxt "@title:window"
 msgid "About Server"
-msgstr "Shërbyes Vetjak"
+msgstr "Rreth Shërbyesit"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:19
 #, kde-format
@@ -1468,10 +1461,9 @@ msgid "Login Issue"
 msgstr "Problem Hyrjeje"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:27
-#, fuzzy, kde-format
-#| msgid "There was an issue logging into the server:<br><b>%1</b>"
+#, kde-format
 msgid "There was an issue logging into %1:<br><b>%2</b>"
-msgstr "Pati një problem me hyrjen te shërbyesi:<br><b>%1</b>"
+msgstr "Pati një problem me hyrjen te %1:<br><b>%2</b>"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:38
 #, kde-format
@@ -1566,7 +1558,7 @@ msgstr "Fjalëkalim"
 #: content/ui/LoginFlow/RegistrationPage.qml:128
 #, kde-format
 msgid "Date of Birth"
-msgstr ""
+msgstr "Datëlindje"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:136
 #, kde-format
@@ -1612,7 +1604,7 @@ msgstr "Zgjidhni një Shërbyes"
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose your Existing Server"
-msgstr ""
+msgstr "Zgjidhni Shërbyesin tuaj Ekzistues"
 
 #: content/ui/LoginFlow/ServersPage.qml:38
 #, kde-format
@@ -1674,16 +1666,13 @@ msgstr ""
 "“software“ të përputhshëm)."
 
 #: content/ui/LoginFlow/WelcomePage.qml:80
-#, fuzzy, kde-format
-#| msgid "Register"
+#, kde-format
 msgctxt "@action:button Pick a Mastodon server"
 msgid "Register"
 msgstr "Regjistrohuni"
 
 #: content/ui/LoginFlow/WelcomePage.qml:90
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Login"
+#, kde-format
 msgctxt "@action:button Use an existing Mastodon account"
 msgid "Login"
 msgstr "Hyrje"
@@ -2545,7 +2534,7 @@ msgstr "Ngrije"
 msgctxt ""
 "@info: Force all this user's media attachments to be flagged as sensitive."
 msgid "Force-Sensitive"
-msgstr ""
+msgstr "Rezervat-Me-Detyrim"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:50
 #, kde-format
@@ -3280,11 +3269,9 @@ msgid "Reported By:"
 msgstr "Raportuar Nga:"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:200
-#, fuzzy, kde-format
-#| msgctxt "@info: The comment attached with the ip rule"
-#| msgid "Comment"
+#, kde-format
 msgid "Comment:"
-msgstr "Koment"
+msgstr "Koment:"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:223
 #, kde-format
@@ -3375,17 +3362,16 @@ msgid "Follows"
 msgstr "Ndjekje"
 
 #: content/ui/NotificationPage.qml:188
-#, fuzzy, kde-format
-#| msgid "News"
+#, kde-format
 msgctxt "@info:label New notifications"
 msgid "New"
-msgstr "Lajme"
+msgstr "I ri"
 
 #: content/ui/NotificationPage.qml:188
 #, kde-format
 msgctxt "@info:label Previous notifications"
 msgid "Previous"
-msgstr ""
+msgstr "I mëparshëm"
 
 #: content/ui/NotificationPage.qml:324
 #, kde-format
@@ -3432,12 +3418,10 @@ msgid "%1 signed up"
 msgstr "U regjistrua %1"
 
 #: content/ui/Notifications/FollowDelegate.qml:107
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Follow Requests"
+#, kde-format
 msgctxt "@action:button"
 msgid "Manage Follow Requests"
-msgstr "Kërkesa Për Ndjekje"
+msgstr "Administroni Kërkesa Ndjekjeje"
 
 #: content/ui/Notifications/GroupInteractionLabel.qml:64
 #, kde-format
@@ -3484,12 +3468,10 @@ msgstr ""
 "Është parashtruar një raportim kundër një përdoruesi në shërbyesin tuaj."
 
 #: content/ui/Notifications/UnknownNotificationDelegate.qml:48
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Unknown Action"
+#, kde-format
 msgctxt "@info"
 msgid "Unknown notification"
-msgstr "Veprim i Panjohur"
+msgstr "Njoftim i panjohur"
 
 #: content/ui/Notifications/UserInteractionLabel.qml:85
 #, kde-format
@@ -3671,17 +3653,16 @@ msgstr[0] "%1 përforcim"
 msgstr[1] "%1 përforcime"
 
 #: content/ui/PostDelegate/InformationBar.qml:139
-#, fuzzy, kde-format
-#| msgid "(No votes)"
+#, kde-format
 msgid "No quotes"
-msgstr "(S’ka Vota)"
+msgstr "Pa citime"
 
 #: content/ui/PostDelegate/InformationBar.qml:141
 #, kde-format
 msgid "%1 quotes"
 msgid_plural "%1 quotes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 citim"
+msgstr[1] "%1 citime"
 
 #: content/ui/PostDelegate/LinkMenu.qml:33
 #: content/ui/PostDelegate/PostMenu.qml:59
@@ -3991,16 +3972,14 @@ msgid "Edit"
 msgstr "Përpunojeni"
 
 #: content/ui/PostDelegate/PostMenu.qml:209
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgid "Delete…"
-msgstr "Fshije"
+msgstr "Fshini…"
 
 #: content/ui/PostDelegate/PostMenu.qml:217
-#, fuzzy, kde-format
-#| msgid "Delete & Re-draft"
+#, kde-format
 msgid "Delete & Re-draft…"
-msgstr "Fshijeni & Rihartojeni"
+msgstr "Fshijeni & Rihartoni…"
 
 #: content/ui/PostDelegate/PostPoll.qml:41
 #, kde-format
@@ -4044,7 +4023,7 @@ msgstr "Etiketë"
 #, kde-format
 msgctxt "@action:button expand the number of shown tags"
 msgid "…and %1 more"
-msgstr ""
+msgstr "…dhe %1 më tepër"
 
 #: content/ui/PostDelegate/QuotePost.qml:66
 #, kde-format
@@ -4066,7 +4045,7 @@ msgstr "Pyetësor"
 #, kde-format
 msgctxt "@action:button"
 msgid "Volume"
-msgstr ""
+msgstr "Volum"
 
 #: content/ui/ReadMarker.qml:13
 #, kde-format
@@ -4137,17 +4116,13 @@ msgid "Search for users, tags and posts"
 msgstr "Kërkoni për përdorime, etiketa dhe postime"
 
 #: content/ui/ServerInformationPage.qml:25
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Rules"
+#, kde-format
 msgctxt "@title:window Server rules"
 msgid "Rules"
 msgstr "Rregulla"
 
 #: content/ui/ServerInformationPage.qml:66
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Rules"
+#, kde-format
 msgctxt "@action:button"
 msgid "Rules"
 msgstr "Rregulla"
@@ -4171,20 +4146,16 @@ msgid "Privacy Policy"
 msgstr "Rregulla Privatësie"
 
 #: content/ui/ServerInformationPage.qml:102
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Password Service"
+#, kde-format
 msgctxt "@action:button"
 msgid "Terms of Service"
-msgstr "Shërbim Fjalëkalimesh"
+msgstr "Kushte Shërbimi"
 
 #: content/ui/ServerInformationPage.qml:103
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Password Service"
+#, kde-format
 msgctxt "@title:window"
 msgid "Terms of Service"
-msgstr "Shërbim Fjalëkalimesh"
+msgstr "Kushte Shërbimi"
 
 #: content/ui/Settings/AccountPage.qml:26
 #, kde-format
@@ -4273,7 +4244,7 @@ msgstr "Si parazgjedhje, mediave të ngarkuara vëru shenjë si me spec"
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Include public posts in search results"
-msgstr ""
+msgstr "Përfshi postime publike në përfundime kërkimi"
 
 #: content/ui/Settings/AccountPage.qml:187
 #, kde-format
@@ -4375,7 +4346,7 @@ msgstr "Postime"
 #: content/ui/Settings/AppearancePage.qml:103
 #, kde-format
 msgid "Show number of favorites and boosts"
-msgstr "Shfaq numër të parapëlqyerash dhe përforcimesh"
+msgstr "Shfaq numër të parapëlqyerish dhe përforcimesh"
 
 #: content/ui/Settings/AppearancePage.qml:118
 #, kde-format
@@ -4481,7 +4452,7 @@ msgstr "Njoftime"
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Public Timelines"
-msgstr "Rrjedha Kohore Publike"
+msgstr "Rrjedhë Kohore Publike"
 
 #: content/ui/Settings/EditFilterPage.qml:116
 #, kde-format
@@ -4508,12 +4479,10 @@ msgid "Hide with Content Notice"
 msgstr "Fshihe me Shënim Lënde"
 
 #: content/ui/Settings/EditFilterPage.qml:140
-#, fuzzy, kde-format
-#| msgctxt "@label:radiobutton"
-#| msgid "Hide with Content Notice"
+#, kde-format
 msgctxt "@label:radiobutton"
 msgid "Hide Media with Content Notice"
-msgstr "Fshihe me Shënim Lënde"
+msgstr "Fshih Media me Shënim Lënde"
 
 #: content/ui/Settings/EditFilterPage.qml:147
 #, kde-format
@@ -4558,9 +4527,7 @@ msgid "Create"
 msgstr "Krijoje"
 
 #: content/ui/Settings/EditFilterPage.qml:229
-#, fuzzy, kde-format
-#| msgctxt "@action:Button Save an edited a post"
-#| msgid "Save"
+#, kde-format
 msgctxt "@action:button Save the edited filter"
 msgid "Save"
 msgstr "Ruaje"
@@ -5084,15 +5051,13 @@ msgid "Remove"
 msgstr "Hiqe"
 
 #: content/ui/SocialGraphPage.qml:100
-#, fuzzy, kde-format
-#| msgid "Unblock"
+#, kde-format
 msgctxt "@action:button Unblock this user"
 msgid "Unblock"
 msgstr "Zhbllokoje"
 
 #: content/ui/SocialGraphPage.qml:106
-#, fuzzy, kde-format
-#| msgid "Unmute"
+#, kde-format
 msgctxt "@action:button Unmute this user"
 msgid "Unmute"
 msgstr "Ktheji zërin"
@@ -5337,13 +5302,13 @@ msgstr "Bashkëngjitni Kartelë"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You can't have attachments and a poll in the same post."
-msgstr ""
+msgstr "S’mund të keni bashkëngjitje dhe një pyetësor në të njëjtin postim."
 
 #: content/ui/StatusComposer/StatusComposer.qml:504
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You have the maximum allowed number of attachments."
-msgstr ""
+msgstr "Kennumrin maksimum të lejuar për bashkëngjitje."
 
 #: content/ui/StatusComposer/StatusComposer.qml:507
 #, kde-format
@@ -5362,6 +5327,7 @@ msgstr "Bashkëngjitni Pyetësor"
 msgctxt "@info:tooltip"
 msgid "You can't modify or add a poll to an existing post."
 msgstr ""
+"S’mund të ndryshoni ose të shtoni një pyetësor në një postim ekzistues."
 
 #: content/ui/StatusComposer/StatusComposer.qml:533
 #, kde-format
@@ -5651,10 +5617,9 @@ msgid "Your emails"
 msgstr "besnik@programeshqip.org"
 
 #: main.cpp:100
-#, fuzzy, kde-format
-#| msgid "Supports https, tokodon and web+ap url scheme"
+#, kde-format
 msgid "Supports https, and web+ap url schemes."
-msgstr "Mbulon skemë URL https, tokodon dhe web+ap"
+msgstr "Mbulon skemë URL https dhe web+ap"
 
 #: network/networkcontroller.cpp:307
 #, kde-format
@@ -5814,13 +5779,13 @@ msgstr "Hap Eksploroni"
 #, kde-format
 msgctxt "@action:button A list of this account's followed accounts"
 msgid "Open Following"
-msgstr "Hap të Ndjekur"
+msgstr "Hap “Të ndjekur”"
 
 #: tokodonapplication.cpp:158
 #, kde-format
 msgctxt "@action:button Search for users, posts and tags"
 msgid "Open Search"
-msgstr "Hap Kërkim"
+msgstr "Hap Kërkimin"
 
 #: tokodonapplication.cpp:164
 #, kde-format
@@ -5834,7 +5799,7 @@ msgctxt ""
 "@action:button This account's lists, or timelines consisting of a groups of "
 "accounts"
 msgid "Open Lists"
-msgstr "Hape Lista"
+msgstr "Hap Lista"
 
 #: tokodonapplication.cpp:176
 #, kde-format
@@ -5843,11 +5808,10 @@ msgid "Open Profile"
 msgstr "Hape Profilin"
 
 #: tokodonapplication.cpp:180
-#, fuzzy, kde-format
-#| msgid "Account editor"
+#, kde-format
 msgctxt "@action:button"
 msgid "Open Account Switcher"
-msgstr "Përpunues llogarish"
+msgstr "Hap Ndërrues Llogarie"
 
 #: tokodonapplication.cpp:216
 #, kde-format
@@ -5999,68 +5963,3 @@ msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "1 vit më parë"
 msgstr[1] "%1 vjet më parë"
-
-#~ msgctxt "@action:button"
-#~ msgid "Post"
-#~ msgstr "Postim"
-
-#~ msgctxt "@action:button Edit the list"
-#~ msgid "Edit"
-#~ msgstr "Përpunojeni"
-
-#~ msgctxt "@action:button Edit the filter"
-#~ msgid "Edit"
-#~ msgstr "Përpunoni"
-
-#~ msgid "The text to share."
-#~ msgstr "Teksti për ndarje."
-
-#~ msgid "Internal usage only."
-#~ msgstr "Vetëm për përdorim të brendshëm."
-
-#~ msgctxt "@info"
-#~ msgid "Interaction"
-#~ msgstr "Ndërveprim"
-
-#~ msgctxt "@action:inmenu"
-#~ msgid "Remove Bookmark"
-#~ msgstr "Hiqe Faqerojtësin"
-
-#~ msgctxt "@action:inmenu"
-#~ msgid "Bookmark"
-#~ msgstr "Faqeruaje"
-
-#~ msgctxt "@info:placeholder"
-#~ msgid "No Privacy Policy"
-#~ msgstr "S’ka Rregulla Privatësie"
-
-#~ msgctxt "@title:group"
-#~ msgid "Login"
-#~ msgstr "Hyrje"
-
-#~ msgid "Server URL:"
-#~ msgstr "URL Shërbyesi:"
-
-#~ msgid "mastodon.social"
-#~ msgstr "mastodon.social"
-
-#~ msgid "Enable moderation tools"
-#~ msgstr "Aktivizoni mjete moderim"
-
-#~ msgid ""
-#~ "Allow Tokodon to access moderation tools. Try disabling this if you have "
-#~ "trouble logging in."
-#~ msgstr ""
-#~ "Lejoje Tokodon-in të përdorë mjete moderimi. Nëse keni probleme hyrjeje, "
-#~ "provoni ta çaktivizoni këtë."
-
-#~ msgid "Server URL must not be empty!"
-#~ msgstr "URl-ja e shërbyesit s’duhet të jetë e zbrazët!"
-
-#~ msgctxt "@action:button Pick a Mastodon server"
-#~ msgid "Pick a Server"
-#~ msgstr "Zgjidhni një Shërbyes"
-
-#~ msgctxt "@action:button Use an existing Mastodon account"
-#~ msgid "Use an Existing Account"
-#~ msgstr "Përdorni një Llogari Ekzistuese"
