@@ -33,6 +33,7 @@ class Attachment : public QObject
     Q_PROPERTY(int sourceHeight MEMBER m_sourceHeight CONSTANT)
     Q_PROPERTY(double focusX READ focusX WRITE setFocusX NOTIFY focusXChanged)
     Q_PROPERTY(double focusY READ focusY WRITE setFocusY NOTIFY focusYChanged)
+    Q_PROPERTY(QJsonObject attributes READ attributes)
 
 public:
     explicit Attachment(QObject *parent = nullptr);
@@ -74,6 +75,8 @@ public:
 
     [[nodiscard]] double focusY() const;
     void setFocusY(double value);
+
+    [[nodiscard]] QJsonObject attributes() const;
 
     /**
      * @brief Copies the attachment image data to the clipboard.
