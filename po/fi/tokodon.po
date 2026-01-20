@@ -1,6 +1,6 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the tokodon package.
-# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024, 2025 Tommi Nieminen <translator@legisign.org>
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024, 2025, 2026 Tommi Nieminen <translator@legisign.org>
 # SPDX-FileCopyrightText: 2024 Kimmo Kujansuu <mrkujansuu@gmail.com>
 # Tommi Nieminen <translator@legisign.org>, 2024.
 #
@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-18 00:43+0000\n"
-"PO-Revision-Date: 2025-10-15 19:20+0300\n"
+"PO-Revision-Date: 2026-01-05 20:40+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -1379,12 +1379,10 @@ msgid "Lists"
 msgstr "Luettelot"
 
 #: content/ui/ListsPage.qml:36
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Create Rule"
+#, kde-format
 msgctxt "@action:button Create new list"
 msgid "Create New…"
-msgstr "Luo sääntö"
+msgstr "Luo uusi…"
 
 #: content/ui/ListsPage.qml:77
 #, kde-format
@@ -1412,11 +1410,10 @@ msgstr ""
 "julkaisut."
 
 #: content/ui/ListTimelinePage.qml:30
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@action:button Edit current list"
 msgid "Edit…"
-msgstr "Muokkaa"
+msgstr "Muokkaa…"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:26
 #, kde-format
@@ -3424,12 +3421,10 @@ msgid "%1 signed up"
 msgstr "%1 kirjautui"
 
 #: content/ui/Notifications/FollowDelegate.qml:107
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Follow Requests"
+#, kde-format
 msgctxt "@action:button"
 msgid "Manage Follow Requests"
-msgstr "Seurauspyynnöt"
+msgstr "Hallinnoi seuraamispyyntöjä"
 
 #: content/ui/Notifications/GroupInteractionLabel.qml:64
 #, kde-format
@@ -3476,12 +3471,10 @@ msgid "A report has been filed against a user in your server."
 msgstr "Palvelimellasi on tehty käyttäjästä ilmoitus."
 
 #: content/ui/Notifications/UnknownNotificationDelegate.qml:48
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Unknown Action"
+#, kde-format
 msgctxt "@info"
 msgid "Unknown notification"
-msgstr "Tuntematon toiminto"
+msgstr "Tuntematon ilmoitus"
 
 #: content/ui/Notifications/UserInteractionLabel.qml:88
 #, kde-format
@@ -3891,17 +3884,15 @@ msgid "Open Thread"
 msgstr "Avaa säie"
 
 #: content/ui/PostDelegate/PostMenu.qml:70
-#, fuzzy, kde-format
-#| msgid "Copy Image"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy Text"
-msgstr "Kopioi kuva"
+msgstr "Kopioi teksti"
 
 #: content/ui/PostDelegate/PostMenu.qml:74
-#, fuzzy, kde-format
-#| msgid "Post link copied."
+#, kde-format
 msgid "Post text copied."
-msgstr "Julkaisulinkki kopioitu."
+msgstr "Julkaisun teksti kopioitu."
 
 #: content/ui/PostDelegate/PostMenu.qml:80
 #, kde-format
@@ -5158,12 +5149,10 @@ msgid "Remove"
 msgstr "Poista"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:85
-#, fuzzy, kde-format
-#| msgctxt "@info:Time when the domain was allowed to federate."
-#| msgid "Created at"
+#, kde-format
 msgctxt "Draft, unfinished post"
 msgid "Created %1 ago"
-msgstr "Luotu"
+msgstr "Luotu %1 sitten"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:85
 #, kde-format
@@ -5172,20 +5161,16 @@ msgid "Scheduled for %1"
 msgstr "Ajastettu – %1"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:93
-#, fuzzy, kde-format
-#| msgctxt "@action:button Schedule something to be posted later"
-#| msgid "Schedule"
+#, kde-format
 msgctxt "@action:button Re-schedule this post"
 msgid "Re-schedule…"
-msgstr "Ajastus"
+msgstr "Aikatauluta uudelleen…"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:104
-#, fuzzy, kde-format
-#| msgctxt "@action:button Discard this post"
-#| msgid "Discard"
+#, kde-format
 msgctxt "@action:button Discard this post"
 msgid "Discard…"
-msgstr "Hylkää"
+msgstr "Hylkää…"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:116
 #, kde-format
@@ -5207,28 +5192,22 @@ msgid "Discard Draft"
 msgstr "Hylkää luonnos"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:125
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Scheduled Posts"
+#, kde-format
 msgctxt "@title"
 msgid "Discard Scheduled Post"
-msgstr "Ajastetut julkaisut"
+msgstr "Hylkää aikataulutettu julkaisu"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:126
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Are you sure you want to discard your draft?"
+#, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to discard this draft?"
-msgstr "Haluatko varmasti hylätä luonnoksen?"
+msgstr "Haluatko varmasti hylätä tämän luonnoksen?"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:126
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Are you sure you want to delete this post?"
+#, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to discard this scheduled post?"
-msgstr "Haluatko poistaa tämän julkaisun?"
+msgstr "Haluatko varmasti hylätä tämän aikataulutetun julkaisun?"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:132
 #, kde-format
@@ -5237,21 +5216,16 @@ msgid "Discard"
 msgstr "Hylkää"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:148
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Schedule Post"
+#, kde-format
 msgctxt "@title"
 msgid "Re-Schedule Post"
-msgstr "Ajasta julkaisu"
+msgstr "Aikatauluta julkaisu uudelleen"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:155
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@action:button Set this post's schedule to when it should be posted"
-#| msgid "Set Schedule"
+#, kde-format
 msgctxt "@action:button Set this post's schedule to when it should be posted"
 msgid "Set New Schedule"
-msgstr "Aseta ajastus"
+msgstr "Aseta uusi aikataulu"
 
 #: content/ui/StatusComposer/StatusComposer.qml:62
 #, kde-format
@@ -5534,10 +5508,9 @@ msgid "Show Boosts"
 msgstr "Piilota tehostukset"
 
 #: content/ui/TimelinePage.qml:122
-#, fuzzy, kde-format
-#| msgid "Show Boosts"
+#, kde-format
 msgid "Show Quotes"
-msgstr "Piilota tehostukset"
+msgstr "Näytä lainaukset"
 
 #: content/ui/TimelinePage.qml:129
 #, kde-format
