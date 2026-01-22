@@ -1,14 +1,14 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the tokodon package.
 #
-# SPDX-FileCopyrightText: 2023, 2024, 2025 Toms Trasūns <toms.trasuns@posteo.net>
+# SPDX-FileCopyrightText: 2023, 2024, 2025, 2026 Toms Trasūns <toms.trasuns@posteo.net>
 # Māris Nartišs <maris.kde@gmail.com>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-18 00:43+0000\n"
-"PO-Revision-Date: 2025-11-11 18:56+0200\n"
+"PO-Revision-Date: 2026-01-19 16:14+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 25.08.2\n"
+"X-Generator: Lokalize 25.12.1\n"
 
 #: account/abstractaccount.cpp:33
 #, kde-format
@@ -229,10 +229,9 @@ msgstr ""
 
 #: account/notificationhandler.cpp:155
 #: content/ui/Notifications/UserInteractionLabel.qml:94
-#, fuzzy, kde-format
-#| msgid "%1 boosted your post"
+#, kde-format
 msgid "%1 quoted your post"
-msgstr "%1 pastiprināja tavu ierakstu"
+msgstr "%1 citēja tavu ierakstu"
 
 #: account/notificationhandler.cpp:160
 #, kde-format
@@ -1391,12 +1390,10 @@ msgid "Lists"
 msgstr "Saraksti"
 
 #: content/ui/ListsPage.qml:36
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Create Rule"
+#, kde-format
 msgctxt "@action:button Create new list"
 msgid "Create New…"
-msgstr "Izveidot noteikumu"
+msgstr "Izveidot jaunu…"
 
 #: content/ui/ListsPage.qml:77
 #, kde-format
@@ -1423,11 +1420,10 @@ msgstr ""
 "Nav ierakstu no lietotājiem sarakstā. Sarakstā būs redzami jauni ieraksti."
 
 #: content/ui/ListTimelinePage.qml:30
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@action:button Edit current list"
 msgid "Edit…"
-msgstr "Rediģēt"
+msgstr "Rediģēt…"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:26
 #, kde-format
@@ -3375,11 +3371,10 @@ msgid "Follows"
 msgstr "Seko"
 
 #: content/ui/NotificationPage.qml:142
-#, fuzzy, kde-format
-#| msgid "Show Boosts"
+#, kde-format
 msgctxt "Show only quotes"
 msgid "Quotes"
-msgstr "Parādīt pastiprinājumus"
+msgstr "Citāti"
 
 #: content/ui/NotificationPage.qml:197
 #, kde-format
@@ -3904,17 +3899,15 @@ msgid "Open Thread"
 msgstr "Atvērt pavedienu"
 
 #: content/ui/PostDelegate/PostMenu.qml:70
-#, fuzzy, kde-format
-#| msgid "Copy Image"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy Text"
-msgstr "Kopēt attēlu"
+msgstr "Kopēt tekstu"
 
 #: content/ui/PostDelegate/PostMenu.qml:74
-#, fuzzy, kde-format
-#| msgid "Post link copied."
+#, kde-format
 msgid "Post text copied."
-msgstr "Ieraksta saite ir nokopēta"
+msgstr "Ieraksta teksts ir nokopēts."
 
 #: content/ui/PostDelegate/PostMenu.qml:80
 #, kde-format
@@ -4813,16 +4806,14 @@ msgstr ""
 "Kad kāds jūs piemin jaunā ierakstā vai atbild uz kādu no jūsu ierakstiem."
 
 #: content/ui/Settings/NotificationsPage.qml:133
-#, fuzzy, kde-format
-#| msgid "Show Boosts"
+#, kde-format
 msgid "Quotes"
-msgstr "Parādīt pastiprinājumus"
+msgstr "Citāti"
 
 #: content/ui/Settings/NotificationsPage.qml:134
-#, fuzzy, kde-format
-#| msgid "When someone boosted one of your posts."
+#, kde-format
 msgid "When someone quotes you in a new post"
-msgstr "Kad kāds pastiprina kādu jūsu ierakstu."
+msgstr "Kad kāds tevi citē jaunā ierakstā"
 
 #: content/ui/Settings/NotificationsPage.qml:146
 #, kde-format
@@ -5177,12 +5168,10 @@ msgid "Remove"
 msgstr "Noņemt"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:85
-#, fuzzy, kde-format
-#| msgctxt "@info:Time when the domain was allowed to federate."
-#| msgid "Created at"
+#, kde-format
 msgctxt "Draft, unfinished post"
 msgid "Created %1 ago"
-msgstr "Izveidots"
+msgstr "Izveidoja pirms %1"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:85
 #, kde-format
@@ -5191,20 +5180,16 @@ msgid "Scheduled for %1"
 msgstr "Ieplānot uz %1"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:93
-#, fuzzy, kde-format
-#| msgctxt "@action:button Schedule something to be posted later"
-#| msgid "Schedule"
+#, kde-format
 msgctxt "@action:button Re-schedule this post"
 msgid "Re-schedule…"
-msgstr "Ieplānot"
+msgstr "No jauna ieplānot…"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:104
-#, fuzzy, kde-format
-#| msgctxt "@action:button Discard this post"
-#| msgid "Discard"
+#, kde-format
 msgctxt "@action:button Discard this post"
 msgid "Discard…"
-msgstr "Izmest"
+msgstr "Izmest…"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:116
 #, kde-format
@@ -5226,28 +5211,22 @@ msgid "Discard Draft"
 msgstr "Izmest uzmetumu"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:125
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Scheduled Posts"
+#, kde-format
 msgctxt "@title"
 msgid "Discard Scheduled Post"
-msgstr "Ieplānotie ieraksti"
+msgstr "Ieplānota ieraksta izmešana"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:126
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Are you sure you want to discard your draft?"
+#, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to discard this draft?"
-msgstr "Vai tiešām vēlaties izmest savu uzmetumu?"
+msgstr "Vai tiešām vēlaties izmest šo uzmetumu?"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:126
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Are you sure you want to delete this post?"
+#, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to discard this scheduled post?"
-msgstr "Vai tiešām vēlaties dzēst šo ierakstu?"
+msgstr "Vai tiešām vēlaties izmest šo ieplānoto ierakstu?"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:132
 #, kde-format
@@ -5256,21 +5235,16 @@ msgid "Discard"
 msgstr "Izmest"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:148
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Schedule Post"
+#, kde-format
 msgctxt "@title"
 msgid "Re-Schedule Post"
-msgstr "Ieplānot ierakstu"
+msgstr "No jauna ieplānot ierakstu"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:155
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@action:button Set this post's schedule to when it should be posted"
-#| msgid "Set Schedule"
+#, kde-format
 msgctxt "@action:button Set this post's schedule to when it should be posted"
 msgid "Set New Schedule"
-msgstr "Saglabāt ieplānošanu"
+msgstr "Noteikt jaunu publicēšanas plānu"
 
 #: content/ui/StatusComposer/StatusComposer.qml:62
 #, kde-format
@@ -5552,10 +5526,9 @@ msgid "Show Boosts"
 msgstr "Parādīt pastiprinājumus"
 
 #: content/ui/TimelinePage.qml:122
-#, fuzzy, kde-format
-#| msgid "Show Boosts"
+#, kde-format
 msgid "Show Quotes"
-msgstr "Parādīt pastiprinājumus"
+msgstr "Parādīt citātus"
 
 #: content/ui/TimelinePage.qml:129
 #, kde-format
