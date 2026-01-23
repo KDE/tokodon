@@ -511,8 +511,6 @@ if(BUILD_TESTING AND NOT ANDRIOID)
         target_link_libraries(tokodon-offline PRIVATE KF6::DBusAddons KF6::WindowSystem)
         target_compile_definitions(tokodon-offline PRIVATE -DHAVE_KDBUSADDONS)
     endif ()
-
-    install(TARGETS tokodon-offline ${KF6_INSTALL_TARGETS_DEFAULT_ARGS})
 endif()
 
 if (UNIX AND NOT APPLE AND NOT ANDROID AND NOT TOKODON_FLATPAK)
