@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the tokodon package.
 #
-# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024, 2025 Stefan Asserhäll <stefan.asserhall@gmail.com>
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024, 2025, 2026 Stefan Asserhäll <stefan.asserhall@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-18 00:43+0000\n"
-"PO-Revision-Date: 2025-10-23 21:06+0200\n"
+"PO-Revision-Date: 2026-01-23 20:28+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.08.2\n"
+"X-Generator: Lokalize 25.12.1\n"
 
 #: account/abstractaccount.cpp:33
 #, kde-format
@@ -226,10 +226,9 @@ msgstr "Avslöja årets höjdpunkter och minnesvärda ögonblick på Mastodon."
 
 #: account/notificationhandler.cpp:155
 #: content/ui/Notifications/UserInteractionLabel.qml:94
-#, fuzzy, kde-format
-#| msgid "%1 boosted your post"
+#, kde-format
 msgid "%1 quoted your post"
-msgstr "%1 förstärkte ditt inlägg"
+msgstr "%1 citerade ditt inlägg"
 
 #: account/notificationhandler.cpp:160
 #, kde-format
@@ -1380,12 +1379,10 @@ msgid "Lists"
 msgstr "Listor"
 
 #: content/ui/ListsPage.qml:36
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Create Rule"
+#, kde-format
 msgctxt "@action:button Create new list"
 msgid "Create New…"
-msgstr "Skapa regel"
+msgstr "Skapa ny…"
 
 #: content/ui/ListsPage.qml:77
 #, kde-format
@@ -1413,11 +1410,10 @@ msgstr ""
 "en lista."
 
 #: content/ui/ListTimelinePage.qml:30
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@action:button Edit current list"
 msgid "Edit…"
-msgstr "Redigera"
+msgstr "Redigera…"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:26
 #, kde-format
@@ -3363,11 +3359,10 @@ msgid "Follows"
 msgstr "Följer"
 
 #: content/ui/NotificationPage.qml:142
-#, fuzzy, kde-format
-#| msgid "Show Boosts"
+#, kde-format
 msgctxt "Show only quotes"
 msgid "Quotes"
-msgstr "Visa förstärkningar"
+msgstr "Citat"
 
 #: content/ui/NotificationPage.qml:197
 #, kde-format
@@ -3888,17 +3883,15 @@ msgid "Open Thread"
 msgstr "Öppna tråd"
 
 #: content/ui/PostDelegate/PostMenu.qml:70
-#, fuzzy, kde-format
-#| msgid "Copy Image"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy Text"
-msgstr "Kopiera bild"
+msgstr "Kopiera text"
 
 #: content/ui/PostDelegate/PostMenu.qml:74
-#, fuzzy, kde-format
-#| msgid "Post link copied."
+#, kde-format
 msgid "Post text copied."
-msgstr "Inläggslänk kopierad"
+msgstr "Inläggets text kopierad."
 
 #: content/ui/PostDelegate/PostMenu.qml:80
 #, kde-format
@@ -4794,16 +4787,14 @@ msgstr ""
 "När någon nämner dig i ett nytt inlägg, eller svarar på en av dina trådar."
 
 #: content/ui/Settings/NotificationsPage.qml:133
-#, fuzzy, kde-format
-#| msgid "Show Boosts"
+#, kde-format
 msgid "Quotes"
-msgstr "Visa förstärkningar"
+msgstr "Citat"
 
 #: content/ui/Settings/NotificationsPage.qml:134
-#, fuzzy, kde-format
-#| msgid "When someone boosted one of your posts."
+#, kde-format
 msgid "When someone quotes you in a new post"
-msgstr "När någon förstärkte ett av dina inlägg."
+msgstr "När någon citerar dig i ett nytt inlägg"
 
 #: content/ui/Settings/NotificationsPage.qml:146
 #, kde-format
@@ -5159,12 +5150,10 @@ msgid "Remove"
 msgstr "Ta bort"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:85
-#, fuzzy, kde-format
-#| msgctxt "@info:Time when the domain was allowed to federate."
-#| msgid "Created at"
+#, kde-format
 msgctxt "Draft, unfinished post"
 msgid "Created %1 ago"
-msgstr "Skapad"
+msgstr "Skapad för %1 sedan"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:85
 #, kde-format
@@ -5173,20 +5162,16 @@ msgid "Scheduled for %1"
 msgstr "Schemalagd %1"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:93
-#, fuzzy, kde-format
-#| msgctxt "@action:button Schedule something to be posted later"
-#| msgid "Schedule"
+#, kde-format
 msgctxt "@action:button Re-schedule this post"
 msgid "Re-schedule…"
-msgstr "Schema"
+msgstr "Schemalägg igen…"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:104
-#, fuzzy, kde-format
-#| msgctxt "@action:button Discard this post"
-#| msgid "Discard"
+#, kde-format
 msgctxt "@action:button Discard this post"
 msgid "Discard…"
-msgstr "Kasta"
+msgstr "Ta bort…"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:116
 #, kde-format
@@ -5208,51 +5193,40 @@ msgid "Discard Draft"
 msgstr "Ta bort utkast"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:125
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Scheduled Posts"
+#, kde-format
 msgctxt "@title"
 msgid "Discard Scheduled Post"
-msgstr "Schemalagda inlägg"
+msgstr "Ta bort schemalagt inlägg"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:126
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Are you sure you want to discard your draft?"
+#, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to discard this draft?"
 msgstr "Är du säker på att du vill ta bort utkastet?"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:126
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Are you sure you want to delete this post?"
+#, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to discard this scheduled post?"
-msgstr "Är du säker på att du vill ta bort inlägget?"
+msgstr "Är du säker på att du vill ta bort det här schemalagda inlägget?"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:132
 #, kde-format
 msgctxt "@action:button Discard this draft"
 msgid "Discard"
-msgstr "Kasta"
+msgstr "Ta bort"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:148
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Schedule Post"
+#, kde-format
 msgctxt "@title"
 msgid "Re-Schedule Post"
-msgstr "Schemalägg inlägg"
+msgstr "Schemalägg om inlägg"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:155
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@action:button Set this post's schedule to when it should be posted"
-#| msgid "Set Schedule"
+#, kde-format
 msgctxt "@action:button Set this post's schedule to when it should be posted"
 msgid "Set New Schedule"
-msgstr "Ange schema"
+msgstr "Ange nytt schema"
 
 #: content/ui/StatusComposer/StatusComposer.qml:62
 #, kde-format
@@ -5536,10 +5510,9 @@ msgid "Show Boosts"
 msgstr "Visa förstärkningar"
 
 #: content/ui/TimelinePage.qml:122
-#, fuzzy, kde-format
-#| msgid "Show Boosts"
+#, kde-format
 msgid "Show Quotes"
-msgstr "Visa förstärkningar"
+msgstr "Visa citat"
 
 #: content/ui/TimelinePage.qml:129
 #, kde-format
