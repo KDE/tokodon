@@ -1,7 +1,7 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the tokodon package.
 #
-# SPDX-FileCopyrightText: 2023, 2024, 2025 Alexander Yavorsky <kekcuha@gmail.com>
+# SPDX-FileCopyrightText: 2023, 2024, 2025, 2026 Alexander Yavorsky <kekcuha@gmail.com>
 # SPDX-FileCopyrightText: 2024, 2025 Olesya Gerasimenko <translation-team@basealt.ru>
 # Alexander Yavorsky <kekcuha@gmail.com>, 2024.
 msgid ""
@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-18 02:55+0000\n"
-"PO-Revision-Date: 2025-11-13 21:02+0300\n"
-"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
+"PO-Revision-Date: 2026-01-28 20:15+0200\n"
+"Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 25.12.1\n"
 
 #: account/abstractaccount.cpp:33
 #, kde-format
@@ -432,6 +432,8 @@ msgctxt "@info:placeholder"
 msgid ""
 "No one is following this user, or they have chosen to hide this information."
 msgstr ""
+"На этого пользователя никто не подписан, либо он предпочёл скрыть эту "
+"информацию."
 
 #: account/socialgraphmodel.cpp:88
 #, kde-format
@@ -439,6 +441,8 @@ msgctxt "@info:placeholder"
 msgid ""
 "This user isn't following anyone, or has chosen to hide this information."
 msgstr ""
+"Этот пользователь ни на кого не подписан либо предпочёл скрыть эту "
+"информацию."
 
 #: account/socialgraphmodel.cpp:90
 #, kde-format
@@ -883,16 +887,13 @@ msgid "This user hasn't posted any media yet."
 msgstr "Этот пользователь ещё не опубликовал ни одного медиафайла."
 
 #: content/ui/AccountSwitchDialog.qml:29
-#, fuzzy, kde-format
-#| msgid "Switch Account"
+#, kde-format
 msgctxt "@title: dialog to switch between logged in accounts"
 msgid "Switch Account"
 msgstr "Сменить учётную запись"
 
 #: content/ui/AccountSwitchDialog.qml:56
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add Account"
+#, kde-format
 msgctxt "@button: login to or register a new account."
 msgid "Add Account"
 msgstr "Добавить учётную запись"
@@ -909,6 +910,8 @@ msgctxt "@info:tooltip"
 msgid ""
 "This account has an issue and can't login, switch to it for more details."
 msgstr ""
+"У этой учётной записи возникла проблема, и вход невозможен; переключитесь на "
+"неё для получения подробных сведений."
 
 #: content/ui/Android/ShareAction.qml:15 content/ui/ShareAction.qml:20
 #, kde-format
@@ -3286,11 +3289,9 @@ msgid "Reported By:"
 msgstr "Жалоба поступила от:"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:200
-#, fuzzy, kde-format
-#| msgctxt "@info: The comment attached with the ip rule"
-#| msgid "Comment"
+#, kde-format
 msgid "Comment:"
-msgstr "Комментарий"
+msgstr "Комментарий:"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:223
 #, kde-format
@@ -4000,10 +4001,9 @@ msgid "Delete…"
 msgstr "Удалить…"
 
 #: content/ui/PostDelegate/PostMenu.qml:217
-#, fuzzy, kde-format
-#| msgid "Delete & Re-draft"
+#, kde-format
 msgid "Delete & Re-draft…"
-msgstr "Удалить и создать заново"
+msgstr "Удалить и создать заново…"
 
 #: content/ui/PostDelegate/PostPoll.qml:41
 #, kde-format
@@ -4272,7 +4272,7 @@ msgstr "По умолчанию помечать отправленные мед
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Include public posts in search results"
-msgstr ""
+msgstr "Включать публичные записи в результаты поиска"
 
 #: content/ui/Settings/AccountPage.qml:187
 #, kde-format
@@ -5331,13 +5331,13 @@ msgstr "Прикрепить файл"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You can't have attachments and a poll in the same post."
-msgstr ""
+msgstr "Нельзя добавлять вложения и опрос в одну и ту же публикацию."
 
 #: content/ui/StatusComposer/StatusComposer.qml:504
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You have the maximum allowed number of attachments."
-msgstr ""
+msgstr "Вы уже добавили максимально допустимое количество вложений."
 
 #: content/ui/StatusComposer/StatusComposer.qml:507
 #, kde-format
@@ -5356,6 +5356,8 @@ msgstr "Прикрепить опрос"
 msgctxt "@info:tooltip"
 msgid "You can't modify or add a poll to an existing post."
 msgstr ""
+"Вы не можете изменить существующий опрос или добавить новый к уже "
+"опубликованной записи."
 
 #: content/ui/StatusComposer/StatusComposer.qml:533
 #, kde-format
