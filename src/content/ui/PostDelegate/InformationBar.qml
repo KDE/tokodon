@@ -138,7 +138,7 @@ ColumnLayout {
                 if (root.quotesCount === 0) {
                     return i18n("No quotes");
                 } else {
-                    return i18np("%1 quotes", "%1 quotes", root.quotesCount);
+                    return i18np("%1 quote", "%1 quotes", root.quotesCount);
                 }
             }
             closable: false
