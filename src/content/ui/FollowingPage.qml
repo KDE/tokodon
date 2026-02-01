@@ -160,7 +160,7 @@ Kirigami.Page {
                         anchors.centerIn: parent
                         text: i18nc("@label", "No Posts")
                         explanation: i18n("This user hasn't posted anything yet.")
-                        visible: timelineListView.count === 0 && !timelineListView.model.loading
+                        visible: timelineListView.count === 0 && !timelineListView.model.loading && !root.currentAccountId === ""
                         width: parent.width - Kirigami.Units.gridUnit * 4
                     }
                 }
