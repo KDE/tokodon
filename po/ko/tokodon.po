@@ -1,6 +1,6 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the tokodon package.
-# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024, 2025 Shinjo Park <kde@peremen.name>
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024, 2025, 2026 Shinjo Park <kde@peremen.name>
 #
 #
 # 마스토돈 한국어 번역을 참조할 것.
@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-29 00:44+0000\n"
-"PO-Revision-Date: 2025-10-09 01:37+0200\n"
+"PO-Revision-Date: 2026-02-03 22:57+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 24.12.3\n"
+"X-Generator: Lokalize 25.08.1\n"
 
 #: account/abstractaccount.cpp:33
 #, kde-format
@@ -230,10 +230,9 @@ msgstr "마스토돈에서의 올해의 하이라이트와 기억에 남는 순�
 
 #: account/notificationhandler.cpp:155
 #: content/ui/Notifications/UserInteractionLabel.qml:94
-#, fuzzy, kde-format
-#| msgid "%1 boosted your post"
+#, kde-format
 msgid "%1 quoted your post"
-msgstr "%1 님이 내 글을 부스트함"
+msgstr "%1 님이 내 글을 인용함"
 
 #: account/notificationhandler.cpp:160
 #, kde-format
@@ -968,11 +967,10 @@ msgid "Last updated: %1"
 msgstr "마지막 업데이트: %1"
 
 #: content/ui/Components/TimelineView.qml:84
-#, fuzzy, kde-format
-#| msgid "Create List"
+#, kde-format
 msgctxt "@action:button"
 msgid "Create Post"
-msgstr "리스트 만들기"
+msgstr "글 만들기"
 
 #: content/ui/Components/TimelineView.qml:92
 #, kde-format
@@ -1376,12 +1374,10 @@ msgid "Lists"
 msgstr "리스트"
 
 #: content/ui/ListsPage.qml:36
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Create Rule"
+#, kde-format
 msgctxt "@action:button Create new list"
 msgid "Create New…"
-msgstr "규칙 만들기"
+msgstr "새로 만들기…"
 
 #: content/ui/ListsPage.qml:77
 #, kde-format
@@ -1408,11 +1404,10 @@ msgstr ""
 "내 목록에 있는 사용자의 새 게시물이 없습니다. 새 게시물만 목록에 나타납니다."
 
 #: content/ui/ListTimelinePage.qml:30
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@action:button Edit current list"
 msgid "Edit…"
-msgstr "편집"
+msgstr "편집…"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:26
 #, kde-format
@@ -3350,11 +3345,10 @@ msgid "Follows"
 msgstr "팔로우"
 
 #: content/ui/NotificationPage.qml:142
-#, fuzzy, kde-format
-#| msgid "Show Boosts"
+#, kde-format
 msgctxt "Show only quotes"
 msgid "Quotes"
-msgstr "부스트 표시"
+msgstr "인용"
 
 #: content/ui/NotificationPage.qml:197
 #, kde-format
@@ -3413,12 +3407,10 @@ msgid "%1 signed up"
 msgstr "%1 님이 등록함"
 
 #: content/ui/Notifications/FollowDelegate.qml:107
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Follow Requests"
+#, kde-format
 msgctxt "@action:button"
 msgid "Manage Follow Requests"
-msgstr "팔로우 요청"
+msgstr "팔로우 요청 관리"
 
 #: content/ui/Notifications/GroupInteractionLabel.qml:64
 #, kde-format
@@ -3464,12 +3456,10 @@ msgid "A report has been filed against a user in your server."
 msgstr "내 서버의 특정 사용자에게 신고가 접수되었습니다."
 
 #: content/ui/Notifications/UnknownNotificationDelegate.qml:48
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Unknown Action"
+#, kde-format
 msgctxt "@info"
 msgid "Unknown notification"
-msgstr "알 수 없는 작업"
+msgstr "알 수 없는 알림"
 
 #: content/ui/Notifications/UserInteractionLabel.qml:88
 #, kde-format
@@ -3875,17 +3865,15 @@ msgid "Open Thread"
 msgstr "스레드 열기"
 
 #: content/ui/PostDelegate/PostMenu.qml:70
-#, fuzzy, kde-format
-#| msgid "Copy Image"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy Text"
-msgstr "그림 복사"
+msgstr "텍스트 복사"
 
 #: content/ui/PostDelegate/PostMenu.qml:74
-#, fuzzy, kde-format
-#| msgid "Post link copied."
+#, kde-format
 msgid "Post text copied."
-msgstr "게시물 링크를 복사했습니다."
+msgstr "게시물 텍스트를 복사했습니다."
 
 #: content/ui/PostDelegate/PostMenu.qml:80
 #, kde-format
@@ -4781,16 +4769,14 @@ msgid ""
 msgstr "누군가가 나를 새로운 게시물에서 멘션했거나 내 스레드에 답장했습니다."
 
 #: content/ui/Settings/NotificationsPage.qml:133
-#, fuzzy, kde-format
-#| msgid "Show Boosts"
+#, kde-format
 msgid "Quotes"
-msgstr "부스트 표시"
+msgstr "인용"
 
 #: content/ui/Settings/NotificationsPage.qml:134
-#, fuzzy, kde-format
-#| msgid "When someone boosted one of your posts."
+#, kde-format
 msgid "When someone quotes you in a new post"
-msgstr "누군가가 내 글을 부스트했습니다."
+msgstr "누군가가 내 글을 새 게시물에서 인용함"
 
 #: content/ui/Settings/NotificationsPage.qml:146
 #, kde-format
@@ -5145,12 +5131,10 @@ msgid "Remove"
 msgstr "삭제"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:85
-#, fuzzy, kde-format
-#| msgctxt "@info:Time when the domain was allowed to federate."
-#| msgid "Created at"
+#, kde-format
 msgctxt "Draft, unfinished post"
 msgid "Created %1 ago"
-msgstr "생성 시간"
+msgstr "%1 전에 생성됨"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:85
 #, kde-format
@@ -5159,20 +5143,16 @@ msgid "Scheduled for %1"
 msgstr "%1에 예정됨"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:93
-#, fuzzy, kde-format
-#| msgctxt "@action:button Schedule something to be posted later"
-#| msgid "Schedule"
+#, kde-format
 msgctxt "@action:button Re-schedule this post"
 msgid "Re-schedule…"
-msgstr "예약"
+msgstr "다시 예약…"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:104
-#, fuzzy, kde-format
-#| msgctxt "@action:button Discard this post"
-#| msgid "Discard"
+#, kde-format
 msgctxt "@action:button Discard this post"
 msgid "Discard…"
-msgstr "삭제"
+msgstr "삭제…"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:116
 #, kde-format
@@ -5194,28 +5174,22 @@ msgid "Discard Draft"
 msgstr "임시 저장 삭제"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:125
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Scheduled Posts"
+#, kde-format
 msgctxt "@title"
 msgid "Discard Scheduled Post"
-msgstr "예약된 게시물"
+msgstr "예약된 게시물 삭제"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:126
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Are you sure you want to discard your draft?"
+#, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to discard this draft?"
 msgstr "임시 저장된 게시물을 삭제하시겠습니까?"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:126
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Are you sure you want to delete this post?"
+#, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to discard this scheduled post?"
-msgstr "이 게시물을 삭제하시겠습니까?"
+msgstr "예약된 게시물을 삭제하시겠습니까?"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:132
 #, kde-format
@@ -5224,21 +5198,16 @@ msgid "Discard"
 msgstr "임시 저장 삭제"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:148
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Schedule Post"
+#, kde-format
 msgctxt "@title"
 msgid "Re-Schedule Post"
-msgstr "게시물 예약"
+msgstr "게시물 다시 예약"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:155
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@action:button Set this post's schedule to when it should be posted"
-#| msgid "Set Schedule"
+#, kde-format
 msgctxt "@action:button Set this post's schedule to when it should be posted"
 msgid "Set New Schedule"
-msgstr "예약 설정"
+msgstr "새 예약 설정"
 
 #: content/ui/StatusComposer/StatusComposer.qml:62
 #, kde-format
@@ -5519,10 +5488,9 @@ msgid "Show Boosts"
 msgstr "부스트 표시"
 
 #: content/ui/TimelinePage.qml:122
-#, fuzzy, kde-format
-#| msgid "Show Boosts"
+#, kde-format
 msgid "Show Quotes"
-msgstr "부스트 표시"
+msgstr "인용 표시"
 
 #: content/ui/TimelinePage.qml:129
 #, kde-format
