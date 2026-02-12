@@ -3,6 +3,7 @@
 
 import QtQuick
 import QtQuick.Layouts
+import QtQuick.Controls as QQC2
 import Qt.labs.qmlmodels
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.delegates as Delegates
@@ -20,19 +21,21 @@ ListView {
 
     signal itemSelected
 
-    header: Kirigami.Chip {
+    header: QQC2.Control {
+        padding: Kirigami.Units.smallSpacing
+        width: parent.width
+        height: isPopup ? implicitHeight : 0
+        visible: isPopup && root.count > 0
+
+        background: null
+        contentItem: QQC2.Button {
             icon.name: "open-link-symbolic"
-            Accessible.description: i18n("Pop out Search results to full page")
-            text: i18n("Search Results")
-            visible: isPopup
-            closable: false
+            text: i18nc("@action:button Pop out search results into its own page", "Pop Out")
 
-            onClicked: {
-                Navigation.searchFor(root.text);
-            }
-            width: parent.width
-            height: isPopup ? implicitHeight : 0
+            Accessible.description: i18nc("@info", "Pop out search results to a full page")
 
+            onClicked: Navigation.searchFor(root.text)
+        }
     }
 
     onTextChanged: {
@@ -43,7 +46,6 @@ ListView {
 
     model: SearchModel {
         id: searchModel
-
     }
 
     section {
@@ -65,7 +67,6 @@ ListView {
         }
 
     }
-
 
     Kirigami.PlaceholderMessage {
         text: i18n("Loading...")

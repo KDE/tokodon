@@ -14,8 +14,6 @@ Kirigami.ScrollablePage {
     property alias searchModel: searchView.model
     property string initialSearchTerms
 
-
-
     title: i18nc("@title", "Search")
 
     header: QQC2.Control {
