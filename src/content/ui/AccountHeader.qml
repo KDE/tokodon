@@ -560,6 +560,8 @@ QQC2.Pane {
                 hoverEnabled: false
 
                 contentItem: RowLayout {
+                    id: joinedRow
+
                     spacing: 0
 
                     QQC2.Label {
@@ -569,8 +571,8 @@ QQC2.Pane {
                         topPadding: Kirigami.Units.smallSpacing
                         bottomPadding: Kirigami.Units.smallSpacing
 
-                        Layout.minimumWidth: Kirigami.Units.gridUnit * 7
-                        Layout.maximumWidth: Kirigami.Units.gridUnit * 7
+                        Layout.minimumWidth: joinedRow.width / 3
+                        Layout.maximumWidth: joinedRow.width / 3
                     }
 
                     QQC2.TextArea {
@@ -612,20 +614,25 @@ QQC2.Pane {
                         }
 
                         contentItem: RowLayout {
+                            id: fieldRow
+
                             spacing: 0
 
-                            Row {
+                            RowLayout {
                                 spacing: Kirigami.Units.smallSpacing
 
-                                Layout.minimumWidth: Kirigami.Units.gridUnit * 7
-                                Layout.maximumWidth: Kirigami.Units.gridUnit * 7
+                                Layout.minimumWidth: fieldRow.width / 3
+                                Layout.maximumWidth: fieldRow.width / 3
 
                                 QQC2.Label {
                                     text: delegate.modelData.name
-                                    wrapMode: Text.Wrap
+                                    wrapMode: Text.NoWrap
+                                    elide: Text.ElideRight
 
                                     topPadding: Kirigami.Units.smallSpacing
                                     bottomPadding: Kirigami.Units.smallSpacing
+
+                                    Layout.fillWidth: true
                                 }
 
                                 Kirigami.Icon {
@@ -634,9 +641,10 @@ QQC2.Pane {
                                     }
 
                                     source: "checkmark-symbolic"
-                                    width: Kirigami.Units.iconSizes.sizeForLabels
-                                    height: Kirigami.Units.iconSizes.sizeForLabels
                                     visible: delegate.modelData.verified_at !== null
+
+                                    Layout.preferredWidth: Kirigami.Units.iconSizes.sizeForLabels
+                                    Layout.preferredHeight: Kirigami.Units.iconSizes.sizeForLabels
                                 }
                             }
 
