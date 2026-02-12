@@ -431,6 +431,20 @@ StatefulApp.StatefulWindow {
             });
             dialog.open();
         }
+
+        function onSearchFor(query: string): void {
+            if (root.checkIfCurrentPage("search")) {
+                return;
+            }
+
+            root.pageStack.clear();
+            root.pageStack.push(searchPage.createObject(root, {
+                pageId: "search",
+                initialSearchTerms: query
+
+            }));
+
+        }
     }
 
     function popoutStatusComposer(originalEditor: StatusComposer): void {
@@ -579,6 +593,13 @@ StatefulApp.StatefulWindow {
             root.pageStack.push(listTimelinePage.createObject(root, {
                 name,
                 listId
+            }));
+        }
+
+        function onSearchFor(query: string): void {
+            root.pageStack.push(searchPage.createObject(root, {
+                pageId: "search",
+                initialSearchTerms: query
             }));
         }
     }

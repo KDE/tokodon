@@ -12,15 +12,18 @@ Kirigami.ScrollablePage {
 
     property string pageId
     property alias searchModel: searchView.model
+    property string initialSearchTerms
+
+
 
     title: i18nc("@title", "Search")
 
     header: QQC2.Control {
         contentItem: Kirigami.SearchField {
             id: searchField
-
+            text: initialSearchTerms
             onAccepted: if (text.length > 2) {
-                root.searchModel.search(text)
+                root.searchModel.search(text);
             }
         }
     }

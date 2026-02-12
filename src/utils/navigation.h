@@ -93,6 +93,12 @@ Q_SIGNALS:
      */
     void openList(const QString &listId, const QString &listName);
 
+    /**
+     * @brief Opens the search page with text.
+     * @param query The terms to search for.
+     */
+    void searchFor(const QString &query);
+
 private:
     Navigation() = default;
 };

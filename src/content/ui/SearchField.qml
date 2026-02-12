@@ -13,7 +13,7 @@ import org.kde.tokodon
 KirigamiComponents.SearchPopupField {
     id: root
 
-    property alias searchModel: searchView.model
+    property alias searchModel: searchPopup.model
 
     leftPadding: 0
     topPadding: 0
@@ -21,12 +21,23 @@ KirigamiComponents.SearchPopupField {
     rightPadding: 0
 
     spaceAvailableLeft: false
-
     delaySearch: true
+
+    searchField {
+        Keys.onPressed: (event) => {
+            if (event.key == Qt.Key_Enter || event.key == Qt.Key_Return) {
+                root.popup.close()
+                Navigation.searchFor(root.text);
+            }
+            if (text.length === 0) {
+                root.searchModel.clear();
+            }
+        }
+    }
     onAccepted: searchModel.search(text)
 
     popupContentItem: SearchView {
-        id: searchView
+        id: searchPopup
         text: root.text
         onItemSelected: root.popup.close()
         clip: true

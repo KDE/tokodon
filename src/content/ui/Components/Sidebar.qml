@@ -25,18 +25,23 @@ Kirigami.OverlayDrawer {
     edge: Qt.application.layoutDirection === Qt.RightToLeft ? Qt.RightEdge : Qt.LeftEdge
     modal: shouldCollapse || !enabled
     z: modal ? Math.round(position * 10000000) : 100
-    width: Kirigami.Units.gridUnit * 14
+    preferredSize: {width: Kirigami.Units.gridUnit * 14}
     Behavior on width {
         NumberAnimation {
-            duration: Kirigami.Units.longDuration
+            duration: Kirigami.Units.shortDuration
             easing.type: Easing.InOutQuad
         }
     }
     Kirigami.Theme.colorSet: Kirigami.Theme.Window
     Kirigami.Theme.inherit: false
 
-    handleVisible: modal && !isShowingFullScreenImage && enabled
+    handleClosedIcon.name: "open-menu-symbolic"
+    handleOpenIcon.name: "sidebar-collapse"
+    handleVisible: !isShowingFullScreenImage && enabled
+
     onModalChanged: drawerOpen = !modal
+
+    interactiveResizeEnabled: enabled
 
     leftPadding: parent.SafeArea.margins.left
     rightPadding: parent.SafeArea.margins.right
@@ -105,7 +110,7 @@ Kirigami.OverlayDrawer {
             Layout.preferredHeight: pageStack.globalToolBar.preferredHeight
             Layout.bottomMargin: Kirigami.Units.smallSpacing / 2
 
-            visible: !drawer.shouldCollapse
+            visible: !drawer.shouldCollapse && !applicationWindow().checkIfCurrentPage("search")
 
             contentItem: SearchField {}
         }

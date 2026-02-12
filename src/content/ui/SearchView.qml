@@ -13,25 +13,59 @@ import './PostDelegate'
 ListView {
     id: root
 
+    clip: true
+
     required property string text
+    property bool isPopup: !applicationWindow().checkIfCurrentPage("search")
 
     signal itemSelected
 
-    onTextChanged: if (text.length === 0) {
-        searchModel.clear();
+    header: Kirigami.Chip {
+            icon.name: "open-link-symbolic"
+            Accessible.description: i18n("Pop out Search results to full page")
+            text: i18n("Search Results")
+            visible: isPopup
+            closable: false
+
+            onClicked: {
+                Navigation.searchFor(root.text);
+            }
+            width: parent.width
+            height: isPopup ? implicitHeight : 0
+
+    }
+
+    onTextChanged: {
+        if (text.length === 0) {
+            searchModel.clear();
+        }
     }
 
     model: SearchModel {
         id: searchModel
+
     }
 
     section {
         property: "type"
         delegate: Kirigami.ListSectionHeader {
+            icon.name: {
+                switch(searchModel.labelForType(section)){
+                    case "Users":
+                        return "user";
+                    case "Posts":
+                        return "comment-symbolic";
+                    case "Hashtags":
+                        return "tag-symbolic";
+                }
+            }
+
             text: searchModel.labelForType(section)
             width: parent.width
         }
+
     }
+
 
     Kirigami.PlaceholderMessage {
         text: i18n("Loading...")
@@ -64,10 +98,10 @@ ListView {
 
             Delegates.RoundedItemDelegate {
                 id: accountDelegate
+                clip: true
 
                 required property var authorIdentity
 
-                width: ListView.view.width
                 text: accountDelegate.authorIdentity.displayName
 
                 onClicked: {
@@ -77,7 +111,9 @@ ListView {
 
                 contentItem: InlineIdentityInfo {
                     identity: accountDelegate.authorIdentity
+
                 }
+
             }
         }
 
@@ -148,29 +184,19 @@ ListView {
 
             Delegates.RoundedItemDelegate {
                 id: delegate
-
                 required property string id
 
-                text: "#" + id
-                Accessible.description: i18n("Hashtag")
+                contentItem: RowLayout{
+                    Kirigami.Chip {
+                        text: "#" + delegate.id
+                        icon.name: "tag-symbolic"
+                        Accessible.description: i18n("Hashtag")
+                        closable:false
+                        onClicked: {
+                            Navigation.openTag(id);
+                            root.itemSelected();
 
-                onClicked: {
-                    Navigation.openTag(id);
-                    root.itemSelected();
-                }
-
-                contentItem: ColumnLayout {
-                    Layout.fillWidth: true
-                    Layout.bottomMargin: Kirigami.Units.smallSpacing
-                    Layout.leftMargin: Kirigami.Units.largeSpacing
-                    spacing: 0
-                    Kirigami.Heading {
-                        id: heading
-                        level: 5
-                        text: delegate.text
-                        type: Kirigami.Heading.Type.Primary
-                        color: Kirigami.Theme.textColor
-                        verticalAlignment: Text.AlignTop
+                        }
                     }
                 }
             }
