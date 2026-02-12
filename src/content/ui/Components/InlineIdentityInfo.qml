@@ -37,9 +37,9 @@ RowLayout {
     ColumnLayout {
         id: layout
 
-        Layout.fillWidth: true
-
         spacing: 0
+
+        Layout.fillWidth: true
 
         Kirigami.Heading {
             level: 4
@@ -65,6 +65,8 @@ RowLayout {
                 text: `@${root.identity?.account ?? ""}`
                 verticalAlignment: Text.AlignTop
                 maximumLineCount: 1
+
+                Layout.fillWidth: true
             }
 
             QQC2.Label {

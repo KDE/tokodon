@@ -101,9 +101,7 @@ ListView {
 
                 contentItem: InlineIdentityInfo {
                     identity: accountDelegate.authorIdentity
-
                 }
-
             }
         }
 
