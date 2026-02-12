@@ -158,6 +158,20 @@ QString SearchModel::labelForType(ResultType sectionType)
     }
 }
 
+QString SearchModel::iconForType(SearchModel::ResultType sectionType)
+{
+    switch (sectionType) {
+    case Account:
+        return QStringLiteral("user-symbolic");
+    case Hashtag:
+        return QStringLiteral("tag-symbolic");
+    case Status:
+        return QStringLiteral("comment-symbolic");
+    default:
+        return {};
+    }
+}
+
 bool SearchModel::loaded() const
 {
     return m_loaded;

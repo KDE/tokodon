@@ -51,21 +51,10 @@ ListView {
     section {
         property: "type"
         delegate: Kirigami.ListSectionHeader {
-            icon.name: {
-                switch(searchModel.labelForType(section)){
-                    case "Users":
-                        return "user";
-                    case "Posts":
-                        return "comment-symbolic";
-                    case "Hashtags":
-                        return "tag-symbolic";
-                }
-            }
-
+            icon.name: searchModel.iconForType(section)
             text: searchModel.labelForType(section)
             width: parent.width
         }
-
     }
 
     Kirigami.PlaceholderMessage {

@@ -72,6 +72,11 @@ public:
     Q_INVOKABLE QString labelForType(SearchModel::ResultType sectionType);
 
     /**
+     * @brief Get the icon name for a result type.
+     */
+    Q_INVOKABLE QString iconForType(SearchModel::ResultType sectionType);
+
+    /**
      * @brief Clear the fetched search results.
      */
     Q_INVOKABLE void clear();
