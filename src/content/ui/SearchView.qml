@@ -174,18 +174,10 @@ ListView {
                 id: delegate
                 required property string id
 
-                contentItem: RowLayout{
-                    Kirigami.Chip {
-                        text: "#" + delegate.id
-                        icon.name: "tag-symbolic"
-                        Accessible.description: i18n("Hashtag")
-                        closable:false
-                        onClicked: {
-                            Navigation.openTag(id);
-                            root.itemSelected();
-
-                        }
-                    }
+                text: "#" + delegate.id
+                onClicked: {
+                    Navigation.openTag(id);
+                    root.itemSelected();
                 }
             }
         }
