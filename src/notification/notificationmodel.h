@@ -55,6 +55,11 @@ public:
 
     bool fullyRead() const;
 
+    /**
+     * @return List of exclude types for the All filter, based on the user config.
+     */
+    Q_INVOKABLE QStringList allExcludeTypes();
+
 public Q_SLOTS:
     /**
      * @brief Reply to the notification at @p index.

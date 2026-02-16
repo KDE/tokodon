@@ -1,6 +1,7 @@
 // SPDX-FileCopyrightText: 2021 Carl Schwan <carlschwan@kde.org>
 // SPDX-License-Identifier: GPL-3.0-or-later
 
+#include "notificationmodel.h"
 #include "notification/notificationmodel.h"
 
 #include "account/abstractaccount.h"
@@ -89,6 +90,51 @@ void NotificationModel::markAllNotificationsAsRead()
 bool NotificationModel::fullyRead() const
 {
     return !data(index(0, 0), UnreadRole).toBool();
+}
+
+QStringList NotificationModel::allExcludeTypes()
+{
+    QStringList excludeTypes;
+    auto config = m_account->config();
+
+    if (!config->displayMention()) {
+        excludeTypes.push_back(QStringLiteral("mention"));
+    }
+    if (!config->displayBoost()) {
+        excludeTypes.push_back(QStringLiteral("reblog"));
+    }
+    if (!config->displayFavorite()) {
+        excludeTypes.push_back(QStringLiteral("favourite"));
+    }
+    if (!config->displayPoll()) {
+        excludeTypes.push_back(QStringLiteral("poll"));
+    }
+    if (!config->displayStatus()) {
+        excludeTypes.push_back(QStringLiteral("status"));
+    }
+    if (!config->displayFollow()) {
+        excludeTypes.push_back(QStringLiteral("follow"));
+    }
+    if (!config->displayFollowRequest()) {
+        excludeTypes.push_back(QStringLiteral("follow_request"));
+    }
+    if (!config->displayUpdate()) {
+        excludeTypes.push_back(QStringLiteral("update"));
+    }
+    if (!config->displaySignup()) {
+        excludeTypes.push_back(QStringLiteral("admin.sign_up"));
+    }
+    if (!config->displayReport()) {
+        excludeTypes.push_back(QStringLiteral("admin.report"));
+    }
+    if (!config->displayRelationships()) {
+        excludeTypes.push_back(QStringLiteral("severed_relationships"));
+    }
+    if (!config->displayQuote()) {
+        excludeTypes.push_back(QStringLiteral("quote"));
+    }
+
+    return excludeTypes;
 }
 
 void NotificationModel::fillTimeline(const QUrl &next)

@@ -24,6 +24,18 @@ Kirigami.ScrollablePage {
     property bool shouldGroupNotifications: typesAreGroupable
     readonly property var currentModel: shouldGroupNotifications ? groupedNotificationModel : notificationModel
 
+    Connections {
+        target: AccountManager.selectedAccount.config
+
+        function onConfigChanged(): void {
+            // If we are on the "All" action, refresh it when the config changes.
+            // This is because we (currently) use a bunch of different config keys and don't know which ones relate to this page.
+            if (showAllAction.checked) {
+                showAllAction.checkedChanged(true);
+            }
+        }
+    }
+
     actions: [
         Kirigami.Action {
             icon.name: "checkmark-symbolic"
@@ -52,7 +64,7 @@ Kirigami.ScrollablePage {
         onCheckedChanged: (checked) => {
             if (checked) {
                 visibilityMenu.lastCheckedIndex = 0;
-                notificationModel.excludeTypes = [];
+                notificationModel.excludeTypes = notificationModel.allExcludeTypes();
             }
         }
     }

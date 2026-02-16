@@ -1,6 +1,8 @@
 // SPDX-FileCopyrightText: 2021 Carl Schwan <carlschwan@kde.org>
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQml
 import QtQuick
 import QtQuick.Controls as QQC2
@@ -10,14 +12,13 @@ import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.tokodon
 
-
 FormCard.FormCardPage {
     id: root
 
     property var account: AccountManager.selectedAccount
     readonly property var config: account.config
 
-    function saveConfig() {
+    function saveConfig(): void {
         config.save();
     }
 
@@ -112,180 +113,285 @@ FormCard.FormCardPage {
         title: i18nc("@title:group", "Events")
     }
 
+    component EventControl: FormCard.AbstractFormDelegate {
+        id: eventDelegate
+
+        required property string description
+        required property bool shouldDisplay // Called this to not interfere with the AbstractButton property
+        required property bool notify
+
+        signal toggledDisplay(display: bool)
+        signal toggledNotify(notify: bool)
+
+        contentItem: RowLayout {
+            spacing: Kirigami.Units.largeSpacing
+
+            ColumnLayout {
+                spacing: 0
+
+                QQC2.Label {
+                    Layout.fillWidth: true
+                    Layout.alignment: Qt.AlignVCenter
+
+                    text: eventDelegate.text
+                    elide: Text.ElideRight
+                    wrapMode: Text.NoWrap
+                    maximumLineCount: 1
+                }
+                QQC2.Label {
+                    Layout.fillWidth: true
+                    Layout.alignment: Qt.AlignVCenter
+
+                    text: eventDelegate.description
+                    wrapMode: Text.WordWrap
+                    color: Kirigami.Theme.disabledTextColor
+                }
+            }
+            RowLayout {
+                Layout.alignment: Qt.AlignRight
+
+                QQC2.Button {
+                    text: checked ? i18nc("@action:button", "Hide in All") : i18nc("@action:button", "Show in All")
+                    icon.name: checked ? "view-visible-symbolic" : "view-visible-off-symbolic"
+                    display: QQC2.AbstractButton.IconOnly
+
+                    checkable: true
+                    checked: eventDelegate.shouldDisplay
+                    down: checked
+                    onToggled: {
+                        eventDelegate.toggledDisplay(checked);
+                        root.saveConfig();
+                    }
+
+                    Accessible.name: text
+
+                    QQC2.ToolTip.text: text
+                    QQC2.ToolTip.visible: hovered
+                    QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+                }
+                QQC2.Button {
+                    text: checked ? i18nc("@action:button", "Disable notifications") : i18nc("@action:button", "Enable notifications")
+                    icon.name: checked ? "notifications" : "notifications-disabled"
+                    display: QQC2.AbstractButton.IconOnly
+
+                    checkable: true
+                    checked: eventDelegate.notify
+                    down: checked
+                    onToggled: {
+                        eventDelegate.toggledNotify(checked);
+                        root.saveConfig();
+                    }
+
+                    Accessible.name: text
+
+                    QQC2.ToolTip.text: text
+                    QQC2.ToolTip.visible: hovered
+                    QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+                }
+            }
+        }
+    }
+
     FormCard.FormCard {
         enabled: root.config.enableNotifications
 
-        FormCard.FormSwitchDelegate {
+        EventControl {
             id: mentionsDelegate
+
             text: i18n("Mentions")
             description: i18n("When someone mentions you in a new post, or replies to one of your threads.")
-            checked: root.config.notifyMention
-            onToggled: {
-                root.config.notifyMention = checked;
-                root.saveConfig();
-            }
+
+            shouldDisplay: root.config.displayMention
+            onToggledDisplay: display => root.config.displayMention = display
+
+            notify: root.config.notifyMention
+            onToggledNotify: notify => root.config.notifyMention = notify
         }
 
         FormCard.FormDelegateSeparator {}
 
-        FormCard.FormSwitchDelegate {
+        EventControl {
             id: quotesDelegate
+
             text: i18n("Quotes")
             description: i18n("When someone quotes you in a new post")
-            checked: root.config.notifyQuote
-            onToggled: {
-                root.config.notifyQuote = checked;
-                root.saveConfig();
-            }
+
+            shouldDisplay: root.config.displayQuote
+            onToggledDisplay: display => root.config.displayQuote = display
+
+            notify: root.config.notifyQuote
+            onToggledNotify: notify => root.config.notifyQuote = notify
         }
 
         FormCard.FormDelegateSeparator {}
 
-        FormCard.FormSwitchDelegate {
+        EventControl {
             id: statusesDelegate
+
             text: i18n("Statuses")
             description: i18n("When a user you have notifications turned on for makes a new post.")
-            checked: root.config.notifyStatus
-            onToggled: {
-                root.config.notifyStatus = checked;
-                root.saveConfig();
-            }
+
+            shouldDisplay: root.config.displayStatus
+            onToggledDisplay: display => root.config.displayStatus = display
+
+            notify: root.config.notifyStatus
+            onToggledNotify: notify => root.config.notifyStatus = notify
         }
 
         FormCard.FormDelegateSeparator {}
 
-        FormCard.FormSwitchDelegate {
+        EventControl {
             id: boostsDelegate
+
             text: i18n("Boosts")
             description: i18n("When someone boosted one of your posts.")
-            checked: root.config.notifyBoost
-            onToggled: {
-                root.config.notifyBoost = checked;
-                root.saveConfig();
-            }
+
+            shouldDisplay: root.config.displayBoost
+            onToggledDisplay: display => root.config.displayBoost = display
+
+            notify: root.config.notifyBoost
+            onToggledNotify: notify => root.config.notifyBoost = notify
         }
 
         FormCard.FormDelegateSeparator {}
 
-        FormCard.FormSwitchDelegate {
+        EventControl {
             id: followersDelegate
+
             text: i18n("New followers")
             description: i18n("When someone follows you.")
-            checked: root.config.notifyFollow
-            onToggled: {
-                root.config.notifyFollow = checked;
-                root.saveConfig();
-            }
+
+            shouldDisplay: root.config.displayFollow
+            onToggledDisplay: display => root.config.displayFollow = display
+
+            notify: root.config.notifyFollow
+            onToggledNotify: notify => root.config.notifyFollow = notify
         }
 
         FormCard.FormDelegateSeparator {}
 
-        FormCard.FormSwitchDelegate {
+        EventControl {
             id: requestsDelegate
+
             text: i18n("New follow requests")
             description: i18n("When an account who requires manual approval wants to follow you.")
-            checked: root.config.notifyFollowRequest
-            onToggled: {
-                root.config.notifyFollowRequest = checked;
-                root.saveConfig();
-            }
+
+            shouldDisplay: root.config.displayFollowRequest
+            onToggledDisplay: display => root.config.displayFollowRequest = display
+
+            notify: root.config.notifyFollowRequest
+            onToggledNotify: notify => root.config.notifyFollowRequest = notify
         }
 
         FormCard.FormDelegateSeparator {}
 
-        FormCard.FormSwitchDelegate {
+        EventControl {
             id: favoritesDelegate
+
             text: i18n("Favorites")
             description: i18n("When a post you made was favorited by another user.")
-            checked: root.config.notifyFavorite
-            onToggled: {
-                root.config.notifyFavorite = checked;
-                root.saveConfig();
-            }
+
+            shouldDisplay: root.config.displayFavorite
+            onToggledDisplay: display => root.config.displayFavorite = display
+
+            notify: root.config.notifyFavorite
+            onToggledNotify: notify => root.config.notifyFavorite = notify
         }
 
         FormCard.FormDelegateSeparator {}
 
-        FormCard.FormSwitchDelegate {
+        EventControl {
             id: pollsDelegate
+
             text: i18n("Polls")
             description: i18n("When a poll you voted in has ended.")
-            checked: root.config.notifyPoll
-            onToggled: {
-                root.config.notifyPoll = checked;
-                root.saveConfig();
-            }
+
+            shouldDisplay: root.config.displayPoll
+            onToggledDisplay: display => root.config.displayPoll = display
+
+            notify: root.config.notifyPoll
+            onToggledNotify: notify => root.config.notifyPoll = notify
         }
 
         FormCard.FormDelegateSeparator {}
 
-        FormCard.FormSwitchDelegate {
+        EventControl {
             id: editsDelegate
+
             text: i18n("Edits")
             description: i18n("When a post you interacted with was edited by the author.")
-            checked: root.config.notifyUpdate
-            onToggled: {
-                root.config.notifyUpdate = checked;
-                root.saveConfig();
-            }
+
+            shouldDisplay: root.config.displayUpdate
+            onToggledDisplay: display => root.config.displayUpdate = display
+
+            notify: root.config.notifyUpdate
+            onToggledNotify: notify => root.config.notifyUpdate = notify
         }
 
         FormCard.FormDelegateSeparator {}
 
-        FormCard.FormSwitchDelegate {
+        EventControl {
             id: adminSignUpDelegate
+
             text: i18n("Server Sign-ups")
             description: i18n("When someone signs up to your server.")
-            checked: root.config.notifySignup
             visible: root.account.identity.permission & AdminAccountInfo.ManageUsers
-            onToggled: {
-                root.config.notifySignup = checked;
-                root.saveConfig();
-            }
+
+            shouldDisplay: root.config.displaySignup
+            onToggledDisplay: display => root.config.displaySignup = display
+
+            notify: root.config.notifySignup
+            onToggledNotify: notify => root.config.notifySignup = notify
         }
 
         FormCard.FormDelegateSeparator {
             visible: adminSignUpDelegate.visible
         }
 
-        FormCard.FormSwitchDelegate {
+        EventControl {
             id: adminReportDelegate
+
             text: i18n("Server Reports")
             description: i18n("When someone files a report against a user on your server.")
-            checked: root.config.notifyReport
             visible: root.account.identity.permission & AdminAccountInfo.ManageUsers
-            onToggled: {
-                root.config.notifyReport = checked;
-                root.saveConfig();
-            }
+
+            shouldDisplay: root.config.displayReport
+            onToggledDisplay: display => root.config.displayReport = display
+
+            notify: root.config.notifyReport
+            onToggledNotify: notify => root.config.notifyReport = notify
         }
 
         FormCard.FormDelegateSeparator {
             visible: adminReportDelegate.visible
         }
 
-        FormCard.FormSwitchDelegate {
+        EventControl {
             id: relationshipsDelegate
+
             text: i18n("Severed Relationships")
             description: i18n("When you or your server moderates another server, which you are following users or have followers with.")
-            checked: root.config.notifyRelationships
-            onToggled: {
-                root.config.notifyRelationships = checked;
-                root.saveConfig();
-            }
+
+            shouldDisplay: root.config.displayRelationships
+            onToggledDisplay: display => root.config.displayRelationships = display
+
+            notify: root.config.notifyRelationships
+            onToggledNotify: notify => root.config.notifyRelationships = notify
         }
 
         FormCard.FormDelegateSeparator {}
 
-        FormCard.FormSwitchDelegate {
+        EventControl {
             id: annualReportDelegate
+
             text: i18nc("@option:check", "Annual Report")
             description: i18n("When you receive your #FediWrapped at the end of the year.")
-            checked: root.config.notifyAnnualReport
-            onToggled: {
-                root.config.notifyAnnualReport = checked;
-                root.saveConfig();
-            }
+
+            shouldDisplay: root.config.displayAnnualReport
+            onToggledDisplay: display => root.config.displayAnnualReport = display
+
+            notify: root.config.notifyAnnualReport
+            onToggledNotify: notify => root.config.notifyAnnualReport = notify
         }
     }
 }
