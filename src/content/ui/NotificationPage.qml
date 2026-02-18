@@ -20,7 +20,7 @@ Kirigami.ScrollablePage {
     property var dialog: null
 
     property alias listViewHeader: listview.header
-    readonly property bool typesAreGroupable: notificationModel.excludeTypes.length === 0
+    readonly property bool typesAreGroupable: showAllAction.checked
     property bool shouldGroupNotifications: typesAreGroupable
     readonly property var currentModel: shouldGroupNotifications ? groupedNotificationModel : notificationModel
 
