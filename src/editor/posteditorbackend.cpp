@@ -237,11 +237,14 @@ QJsonDocument PostEditorBackend::toJsonDocument() const
     }
 
     auto media_ids = QJsonArray();
+    auto media_attributes = QJsonArray();
     for (const auto &att : std::as_const(m_attachmentEditorModel->attachments())) {
         media_ids.append(att->m_id);
+        media_attributes.append(att->attributes());
     }
 
     obj["media_ids"_L1] = media_ids;
+    obj["media_attributes"_L1] = media_attributes;
     obj["language"_L1] = m_language;
 
     if (m_pollEnabled) {
@@ -264,7 +267,6 @@ void PostEditorBackend::save()
 
     QUrl post_status_url = m_account->apiUrl(QStringLiteral("/api/v1/statuses"));
     auto doc = toJsonDocument();
-
     QHash<QByteArray, QByteArray> headers;
     headers["Idempotency-Key"] = m_idenpotencyKey.toUtf8();
 
