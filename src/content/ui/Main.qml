@@ -76,7 +76,9 @@ StatefulApp.StatefulWindow {
         if (AccountManager.selectedAccountHasIssue) {
             root.pageStack.push(Qt.createComponent("org.kde.tokodon", "LoginIssuePage"));
         } else {
-            homeAction.trigger();
+            // HACK: We can't use trigger() here for some reason, but the action is super simple.
+            homeAction.checked = true;
+            root.application.openHomeTimeline();
         }
     }
 
@@ -262,6 +264,7 @@ StatefulApp.StatefulWindow {
 
         function onOpenHomeTimeline(): void {
             if (root.checkIfCurrentPage("home")) {
+                console.info("early exit");
                 return;
             }
 
