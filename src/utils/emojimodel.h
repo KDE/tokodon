@@ -94,7 +94,7 @@ public:
     /**
      * @brief Return a list of emoji tones for the given base emoji.
      */
-    Q_INVOKABLE [[nodiscard]] QVariantList tones(const QString &baseEmoji) const;
+    Q_INVOKABLE [[nodiscard]] QList<Emoji> tones(const QString &baseEmoji) const;
 
     /**
      * @brief Return a list of emoji that were recently used.

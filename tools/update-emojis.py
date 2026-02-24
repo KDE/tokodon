@@ -91,12 +91,11 @@ for line in response.text.split("\n"):
         if escaped_sequence in emoji_unicode_shortname_map:
             shortcode = emoji_unicode_shortname_map[escaped_sequence]
 
-        emoji_args = 'QString::fromUtf8("{0}"), QStringLiteral("{1}"), QStringLiteral("{2}")'.format(escaped_sequence, shortcode, description)
-        emoji_qvariant = 'QVariant::fromValue(Emoji{' + emoji_args + '})'
+        emoji_args = 'u8"{0}", u8"{1}", u8"{2}"'.format(escaped_sequence, shortcode, description)
 
         if is_skin_tone:
-            tones_file.write("{\"" + description.split(":")[0] + "\", " + emoji_qvariant + "},\n")
+            tones_file.write("{u8\"" + description.split(":")[0] + "\", " + emoji_args + "},\n")
             continue
-        file.write("_emojis[" + group + "].append(" + emoji_qvariant + ");\n")
+        file.write("{EmojiModel::" + group + ", " + emoji_args + "},\n")
 file.close()
 tones_file.close()

@@ -7,7 +7,16 @@
 #include <KLocalizedString>
 
 #include "account/abstractaccount.h"
-#include "utils/emojitones.h"
+#include "emojitones.h"
+
+struct {
+    EmojiModel::Category category;
+    const char8_t *escaped_sequence;
+    const char8_t *shortcode;
+    const char8_t *description;
+} constexpr const emoji_data[] = {
+#include "emojis.h"
+};
 
 using namespace Qt::Literals::StringLiterals;
 
@@ -17,7 +26,10 @@ EmojiModel::EmojiModel(QObject *parent)
     : QObject(parent)
 {
     if (_emojis.isEmpty()) {
-#include "utils/emojis.h"
+        for (const auto &emoji : emoji_data) {
+            _emojis[emoji.category].push_back(QVariant::fromValue(
+                Emoji(QString::fromUtf8(emoji.escaped_sequence), QString::fromUtf8(emoji.shortcode), QString::fromUtf8(emoji.description))));
+        }
     }
 }
 
@@ -54,13 +66,13 @@ QVariantList EmojiModel::emojis(AbstractAccount *account, Category category) con
     return _emojis[category];
 }
 
-QVariantList EmojiModel::tones(const QString &baseEmoji) const
+QList<Emoji> EmojiModel::tones(const QString &baseEmoji) const
 {
     if (baseEmoji.endsWith("tone"_L1)) {
-        return EmojiTones::_tones.values(baseEmoji.split(":"_L1)[0]);
+        return EmojiTones::tones().values(baseEmoji.split(":"_L1)[0]);
     }
 
-    return EmojiTones::_tones.values(baseEmoji);
+    return EmojiTones::tones().values(baseEmoji);
 }
 
 QStringList EmojiModel::history(AbstractAccount *account) const
