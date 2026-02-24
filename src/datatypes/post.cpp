@@ -520,7 +520,11 @@ void Post::processContent(const QJsonObject &obj)
             for (const auto &mention : mentions) {
                 // Replace if the mention URL matches with an internal Tokodon account URI
                 if (mention["url"_L1].toString() == match.captured(1)) {
-                    processedHtml.replace(match.capturedStart(1), match.capturedLength(1), QStringLiteral("account:/") + mention["id"_L1].toString());
+                    const auto newUrl = QStringLiteral("account:/") + mention["id"_L1].toString();
+                    processedHtml.replace(match.capturedStart(1), match.capturedLength(1), newUrl);
+                    const auto difference = newUrl.size() - match.capturedLength(1);
+                    // Update matchIterator because the underlying text was changed
+                    matchIterator = TextRegex::linkTags.globalMatch(processedHtml, match.capturedEnd(0) + difference);
                     break;
                 }
             }

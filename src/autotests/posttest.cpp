@@ -74,6 +74,27 @@ private Q_SLOTS:
         QCOMPARE(options[1]["votesCount"_L1], 4);
     }
 
+    void testFromJsonWithMentions()
+    {
+        MockAccount account;
+
+        QFile statusExampleApi;
+        statusExampleApi.setFileName(QLatin1String(DATA_DIR "/status-mentions.json"));
+        statusExampleApi.open(QIODevice::ReadOnly);
+
+        const auto doc = QJsonDocument::fromJson(statusExampleApi.readAll());
+        Post post(&account, doc.object());
+
+        const QStringList expectedMentions = {QStringLiteral("@mentionedAccount1@mstdn.social"), QStringLiteral("@mentionedAccount2@mastodon.social")};
+        QCOMPARE(post.mentions(), expectedMentions);
+
+        const QString expectedContent = QStringLiteral(
+            "<p><span class=\"h-card\"><a href=\"account:/01KF13YJWCN2H0N61X41NA43TW\" class=\"u-url mention\" rel=\"nofollow noopener noreferrer\" "
+            "target=\"_blank\">@<span>mentionedAccount1</span></a></span> <span class=\"h-card\"><a href=\"account:/01K5HF7TTN867VSPA9V8PT5AKC\" class=\"u-url "
+            "mention\" rel=\"nofollow noopener noreferrer\" target=\"_blank\">@<span>mentionedAccount2</span></a></span> Lorem ipsum dolor sit amet.</p>");
+        QCOMPARE(post.content(), expectedContent);
+    }
+
     // Normal case
     void testContentParsing()
     {
