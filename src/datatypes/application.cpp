@@ -18,3 +18,5 @@ QUrl Application::website() const
 {
     return QUrl::fromUserInput(m_application[QLatin1String("website")].toString());
 }
+
+#include "moc_application.cpp"

@@ -68,3 +68,5 @@ QList<AnnualReport> AnnualReports::annualReports() const
 {
     return m_annualReports;
 }
+
+#include "moc_annualreport.cpp"

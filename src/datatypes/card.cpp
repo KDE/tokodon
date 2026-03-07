@@ -112,3 +112,5 @@ std::optional<QJsonObject> Card::authorObject() const
     }
     return std::nullopt;
 }
+
+#include "moc_card.cpp"

@@ -73,3 +73,5 @@ void ServerInformation::fetch()
         Q_EMIT privacyPolicyChanged();
     });
 }
+
+#include "moc_serverinformation.cpp"
