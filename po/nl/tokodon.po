@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-25 00:46+0000\n"
+"POT-Creation-Date: 2026-03-19 00:46+0000\n"
 "PO-Revision-Date: 2026-02-17 12:37+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -142,13 +142,13 @@ msgstr "Kon aanbeveling van account niet opheffen"
 msgid "Could not edit note about an account"
 msgstr "Kon notitie over een account niet bewerken"
 
-#: account/account.cpp:300
+#: account/account.cpp:323
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Network request was interrupted"
 msgstr "Netwerkverzoek was onderbroken"
 
-#: account/account.cpp:309 account/account.cpp:316
+#: account/account.cpp:332 account/account.cpp:339
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Failed to parse credentials"
@@ -1686,19 +1686,27 @@ msgctxt "@action:button Use an existing Mastodon account"
 msgid "Login"
 msgstr "Aanmelden"
 
-#: content/ui/LoginFlow/WelcomePage.qml:105
+#: content/ui/LoginFlow/WelcomePage.qml:97
+#, fuzzy, kde-format
+#| msgctxt "@action:button Use an existing Mastodon account"
+#| msgid "Use an Existing Account"
+msgctxt "@action:button Use an existing Mastodon account"
+msgid "Use System Account"
+msgstr "Een bestaand account gebruiken"
+
+#: content/ui/LoginFlow/WelcomePage.qml:115
 #, kde-format
 msgctxt "@action:button Application settings"
 msgid "Settings"
 msgstr "Instellingen"
 
-#: content/ui/LoginFlow/WelcomePage.qml:116
+#: content/ui/LoginFlow/WelcomePage.qml:126
 #, kde-format
 msgctxt "@action:button"
 msgid "Compatible with Mastodon"
 msgstr "Compatibel met Mastodon"
 
-#: content/ui/LoginFlow/WelcomePage.qml:122
+#: content/ui/LoginFlow/WelcomePage.qml:132
 #, kde-format
 msgctxt "@info Compatible with Mastodon"
 msgid "Compatible with"
@@ -6157,10 +6165,6 @@ msgstr[1] "%1 jaren geleden"
 #~ msgctxt "@action:button Pick a Mastodon server"
 #~ msgid "Pick a Server"
 #~ msgstr "Kies een server"
-
-#~ msgctxt "@action:button Use an existing Mastodon account"
-#~ msgid "Use an Existing Account"
-#~ msgstr "Een bestaand account gebruiken"
 
 #~ msgid "%1 replied to your post"
 #~ msgstr "%1 heeft op uw bericht geantwoord"

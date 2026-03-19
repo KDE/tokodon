@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-25 00:46+0000\n"
+"POT-Creation-Date: 2026-03-19 00:46+0000\n"
 "PO-Revision-Date: 2026-02-17 20:36+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -144,13 +144,13 @@ msgstr "Не удалось убрать учётную запись из под
 msgid "Could not edit note about an account"
 msgstr "Не удалось отредактировать заметку об учётной записи"
 
-#: account/account.cpp:300
+#: account/account.cpp:323
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Network request was interrupted"
 msgstr "Сетевой запрос был прерван"
 
-#: account/account.cpp:309 account/account.cpp:316
+#: account/account.cpp:332 account/account.cpp:339
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Failed to parse credentials"
@@ -1702,19 +1702,27 @@ msgctxt "@action:button Use an existing Mastodon account"
 msgid "Login"
 msgstr "Войти"
 
-#: content/ui/LoginFlow/WelcomePage.qml:105
+#: content/ui/LoginFlow/WelcomePage.qml:97
+#, fuzzy, kde-format
+#| msgctxt "@action:button Use an existing Mastodon account"
+#| msgid "Use an Existing Account"
+msgctxt "@action:button Use an existing Mastodon account"
+msgid "Use System Account"
+msgstr "Войти в учётную запись"
+
+#: content/ui/LoginFlow/WelcomePage.qml:115
 #, kde-format
 msgctxt "@action:button Application settings"
 msgid "Settings"
 msgstr "Параметры"
 
-#: content/ui/LoginFlow/WelcomePage.qml:116
+#: content/ui/LoginFlow/WelcomePage.qml:126
 #, kde-format
 msgctxt "@action:button"
 msgid "Compatible with Mastodon"
 msgstr "Совместимо с"
 
-#: content/ui/LoginFlow/WelcomePage.qml:122
+#: content/ui/LoginFlow/WelcomePage.qml:132
 #, kde-format
 msgctxt "@info Compatible with Mastodon"
 msgid "Compatible with"
@@ -6197,10 +6205,6 @@ msgstr[3] "1 год назад"
 #~ msgctxt "@action:button Pick a Mastodon server"
 #~ msgid "Pick a Server"
 #~ msgstr "Выбрать сервер"
-
-#~ msgctxt "@action:button Use an existing Mastodon account"
-#~ msgid "Use an Existing Account"
-#~ msgstr "Войти в учётную запись"
 
 #~ msgid "%1 replied to your post"
 #~ msgstr "%1 ответил(а) на вашу публикацию"

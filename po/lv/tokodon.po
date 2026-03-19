@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-25 00:46+0000\n"
+"POT-Creation-Date: 2026-03-19 00:46+0000\n"
 "PO-Revision-Date: 2026-01-19 16:14+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -143,13 +143,13 @@ msgstr "Neizdevās atcelt konta izcelšanu"
 msgid "Could not edit note about an account"
 msgstr "Neizdevās rediģēt piezīmi par kontu"
 
-#: account/account.cpp:300
+#: account/account.cpp:323
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Network request was interrupted"
 msgstr "Tīkla pieprasījums ir pārtraukts"
 
-#: account/account.cpp:309 account/account.cpp:316
+#: account/account.cpp:332 account/account.cpp:339
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Failed to parse credentials"
@@ -1688,19 +1688,27 @@ msgctxt "@action:button Use an existing Mastodon account"
 msgid "Login"
 msgstr "Ierakstīties"
 
-#: content/ui/LoginFlow/WelcomePage.qml:105
+#: content/ui/LoginFlow/WelcomePage.qml:97
+#, fuzzy, kde-format
+#| msgctxt "@action:button Use an existing Mastodon account"
+#| msgid "Use an Existing Account"
+msgctxt "@action:button Use an existing Mastodon account"
+msgid "Use System Account"
+msgstr "Izmantot esošu kontu"
+
+#: content/ui/LoginFlow/WelcomePage.qml:115
 #, kde-format
 msgctxt "@action:button Application settings"
 msgid "Settings"
 msgstr "Iestatījumi"
 
-#: content/ui/LoginFlow/WelcomePage.qml:116
+#: content/ui/LoginFlow/WelcomePage.qml:126
 #, kde-format
 msgctxt "@action:button"
 msgid "Compatible with Mastodon"
 msgstr "Saderīgs ar „Mastodon“"
 
-#: content/ui/LoginFlow/WelcomePage.qml:122
+#: content/ui/LoginFlow/WelcomePage.qml:132
 #, kde-format
 msgctxt "@info Compatible with Mastodon"
 msgid "Compatible with"
@@ -6171,10 +6179,6 @@ msgstr[2] "Pirms %1 gadiem"
 #~ msgctxt "@action:button Pick a Mastodon server"
 #~ msgid "Pick a Server"
 #~ msgstr "Izvēlieties serveri"
-
-#~ msgctxt "@action:button Use an existing Mastodon account"
-#~ msgid "Use an Existing Account"
-#~ msgstr "Izmantot esošu kontu"
 
 #~ msgid "%1 replied to your post"
 #~ msgstr "%1 atbildēja uz jūsu ierakstu"

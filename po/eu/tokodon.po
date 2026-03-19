@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-25 00:46+0000\n"
+"POT-Creation-Date: 2026-03-19 00:46+0000\n"
 "PO-Revision-Date: 2025-12-07 18:46+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -144,13 +144,13 @@ msgstr "Ezin izan dio kontuari agertzeari utzi"
 msgid "Could not edit note about an account"
 msgstr "Ezin izan du kontu bati buruzko oharra editatu"
 
-#: account/account.cpp:300
+#: account/account.cpp:323
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Network request was interrupted"
 msgstr "Sareko eskaera eten egin da"
 
-#: account/account.cpp:309 account/account.cpp:316
+#: account/account.cpp:332 account/account.cpp:339
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Failed to parse credentials"
@@ -1698,19 +1698,27 @@ msgctxt "@action:button Use an existing Mastodon account"
 msgid "Login"
 msgstr "Saioa hasi"
 
-#: content/ui/LoginFlow/WelcomePage.qml:105
+#: content/ui/LoginFlow/WelcomePage.qml:97
+#, fuzzy, kde-format
+#| msgctxt "@action:button Use an existing Mastodon account"
+#| msgid "Use an Existing Account"
+msgctxt "@action:button Use an existing Mastodon account"
+msgid "Use System Account"
+msgstr "Erabili lehendik dagoen kontu bat"
+
+#: content/ui/LoginFlow/WelcomePage.qml:115
 #, kde-format
 msgctxt "@action:button Application settings"
 msgid "Settings"
 msgstr "Ezarpenak"
 
-#: content/ui/LoginFlow/WelcomePage.qml:116
+#: content/ui/LoginFlow/WelcomePage.qml:126
 #, kde-format
 msgctxt "@action:button"
 msgid "Compatible with Mastodon"
 msgstr "Mastodon-ekin bateragarria"
 
-#: content/ui/LoginFlow/WelcomePage.qml:122
+#: content/ui/LoginFlow/WelcomePage.qml:132
 #, kde-format
 msgctxt "@info Compatible with Mastodon"
 msgid "Compatible with"
@@ -6185,10 +6193,6 @@ msgstr[1] "Duela %1 urte"
 #~ msgctxt "@action:button Pick a Mastodon server"
 #~ msgid "Pick a Server"
 #~ msgstr "Aukeratu zerbitzari bat"
-
-#~ msgctxt "@action:button Use an existing Mastodon account"
-#~ msgid "Use an Existing Account"
-#~ msgstr "Erabili lehendik dagoen kontu bat"
 
 #~ msgid "%1 replied to your post"
 #~ msgstr "%1(e)k zure postari erantzun dio"

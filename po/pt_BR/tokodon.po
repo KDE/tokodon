@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-25 00:46+0000\n"
+"POT-Creation-Date: 2026-03-19 00:46+0000\n"
 "PO-Revision-Date: 2026-03-06 16:12-0300\n"
 "Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -143,13 +143,13 @@ msgstr "Não foi possível desmarcar a conta"
 msgid "Could not edit note about an account"
 msgstr "Não foi possível editar nota sobre uma conta"
 
-#: account/account.cpp:300
+#: account/account.cpp:323
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Network request was interrupted"
 msgstr "A solicitação de rede foi interrompida"
 
-#: account/account.cpp:309 account/account.cpp:316
+#: account/account.cpp:332 account/account.cpp:339
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Failed to parse credentials"
@@ -1689,19 +1689,26 @@ msgctxt "@action:button Use an existing Mastodon account"
 msgid "Login"
 msgstr "Entrar"
 
-#: content/ui/LoginFlow/WelcomePage.qml:105
+#: content/ui/LoginFlow/WelcomePage.qml:97
+#, fuzzy, kde-format
+#| msgid "Add Account"
+msgctxt "@action:button Use an existing Mastodon account"
+msgid "Use System Account"
+msgstr "Adicionar conta"
+
+#: content/ui/LoginFlow/WelcomePage.qml:115
 #, kde-format
 msgctxt "@action:button Application settings"
 msgid "Settings"
 msgstr "Configurações"
 
-#: content/ui/LoginFlow/WelcomePage.qml:116
+#: content/ui/LoginFlow/WelcomePage.qml:126
 #, kde-format
 msgctxt "@action:button"
 msgid "Compatible with Mastodon"
 msgstr "Compatível com o Mastodon"
 
-#: content/ui/LoginFlow/WelcomePage.qml:122
+#: content/ui/LoginFlow/WelcomePage.qml:132
 #, kde-format
 msgctxt "@info Compatible with Mastodon"
 msgid "Compatible with"
@@ -6129,12 +6136,6 @@ msgstr[1] "%1 anos atrás"
 #, fuzzy
 #~| msgid "Add Account"
 #~ msgid "Enable moderation tools"
-#~ msgstr "Adicionar conta"
-
-#, fuzzy
-#~| msgid "Add Account"
-#~ msgctxt "@action:button Use an existing Mastodon account"
-#~ msgid "Use an Existing Account"
 #~ msgstr "Adicionar conta"
 
 #, fuzzy
