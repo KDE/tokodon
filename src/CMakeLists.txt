@@ -497,7 +497,7 @@ else()
     endif()
 endif()
 
-install(TARGETS tokodon ${KF6_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS tokodon ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 if(BUILD_TESTING AND NOT ANDRIOID)
     add_definitions(-DDATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/autotests/data" )
