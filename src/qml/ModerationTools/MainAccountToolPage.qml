@@ -9,102 +9,108 @@ import org.kde.tokodon
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kirigamiaddons.components as KirigamiComponents
 
-Kirigami.ScrollablePage {
+FormCard.FormCardPage {
     id: root
+
     property var identity
     property int index
     property var model
     //moderation tool only visible if the position value of the account is greater or the account is not local
     readonly property bool displayModerationTool: (root.model.selectedAccountPosition > root.identity.position) || !root.identity.isLocal
-    readonly property string lastActive: !isNaN(root.identity.lastActive) ? root.identity.lastActive.toLocaleString() : i18n("Not Available")
-
+    readonly property string lastActive: if (!isNaN(root.identity.lastActive)) {
+        const today = new Date();
+        const lastActive = root.identity.lastActive;
+        if (lastActive.setHours(0,0,0,0) == today.setHours(0,0,0,0)) {
+            return root.identity.lastActive.toLocaleTimeString(Qt.locale(), Locale.ShortFormat);
+        } else {
+            return root.identity.lastActive.toLocaleDateString();
+        }
+    } else {
+        return i18n("Not Available");
+    }
+    readonly property bool largeScreen: width > Kirigami.Units.gridUnit * 25
 
     title: root.identity.userLevelIdentity.account
-    leftPadding: 0
-    rightPadding: 0
 
+    FormCard.FormCardDialog {
+        id: actionDialog
 
-    Kirigami.PromptDialog {
-        id: actionDailog
         title: i18n("Perform moderation action on %1", root.identity.userLevelIdentity.account)
-        parent: root.QQC2.ApplicationWindow.window.overlay
-        mainItem: ColumnLayout {
-            Layout.fillWidth: true
-            QQC2.RadioButton {
-                id: warning
-                visible: root.identity.isLocal
-                text: i18nc("@info: Use this to send a warning to the user, without triggering any other action.", "Warn")
-            }
-            QQC2.RadioButton {
-                id: freeze
-                text: i18nc("@info: Prevent the user from using their account, but do not delete or hide their contents.", "Freeze")
-                visible: !root.identity.disabled && root.identity.isLocal
-            }
-            QQC2.RadioButton {
-                id: sensitive
-                text: i18nc("@info: Force all this user's media attachments to be flagged as sensitive.", "Force-Sensitive")
-                visible: !root.identity.sensitized
-            }
-            QQC2.RadioButton {
-                id: limit
-                text: i18nc("@info: Prevent the user from being able to post with public visibility, hide their posts and notifications from people not following them.", "Limit")
-                visible: !root.identity.silenced
-            }
-            QQC2.RadioButton {
-                id: suspend
-                text: i18nc("@info: Prevent any interaction from or to this account and delete its contents. Revertible within 30 days.", "Suspend")
-                visible: !root.identity.suspended
-            }
-            QQC2.CheckBox {
-                id: emailWarning
-                text: i18nc("@info: The user will receive an explanation of what happened with their account", "Notify the user per e-mail")
-                checked: root.identity.isLocal
-                visible: root.identity.isLocal
-            }
-            QQC2.TextField {
-                id: message
-                placeholderText: i18nc("@info: Send a warning note to the user.", "Custom warning")
-                wrapMode: Text.Wrap
-                clip: true
-                visible: root.identity.isLocal
-                Layout.fillWidth: true
-            }
+        parent: root.QQC2.Overlay.overlay
+
+        FormCard.FormRadioDelegate {
+            id: warning
+            visible: root.identity.isLocal
+            text: i18nc("@info: Use this to send a warning to the user, without triggering any other action.", "Warn")
+        }
+        FormCard.FormRadioDelegate {
+            id: freeze
+            text: i18nc("@info: Prevent the user from using their account, but do not delete or hide their contents.", "Freeze")
+            visible: !root.identity.disabled && root.identity.isLocal
+        }
+        FormCard.FormRadioDelegate {
+            id: sensitive
+            text: i18nc("@info: Force all this user's media attachments to be flagged as sensitive.", "Force-Sensitive")
+            visible: !root.identity.sensitized
+        }
+        FormCard.FormRadioDelegate {
+            id: limit
+            text: i18nc("@info: Prevent the user from being able to post with public visibility, hide their posts and notifications from people not following them.", "Limit")
+            visible: !root.identity.silenced
+        }
+        FormCard.FormRadioDelegate {
+            id: suspend
+            text: i18nc("@info: Prevent any interaction from or to this account and delete its contents. Revertible within 30 days.", "Suspend")
+            visible: !root.identity.suspended
+        }
+        FormCard.FormRadioDelegate {
+            id: emailWarning
+            text: i18nc("@info: The user will receive an explanation of what happened with their account", "Notify the user per e-mail")
+            checked: root.identity.isLocal
+            visible: root.identity.isLocal
+        }
+        FormCard.FormTextFieldDelegate {
+            id: message
+            label: i18nc("@info: Send a warning note to the user.", "Custom warning")
+            clip: true
+            visible: root.identity.isLocal
         }
 
-        standardButtons: Kirigami.Dialog.NoButton
-        customFooterActions: [
-            Kirigami.Action {
-                text: i18nc("@info:Button to submit the action aginst the user.", "Submit")
-                icon.name: "answer"
-                onTriggered: {
-                    let action = ""
-                    if (warning.checked) {
-                        action = "none"
-                    } else if (freeze.checked) {
-                        action = "disable"
-                    } else if (sensitive.checked) {
-                        action = "sensitive"
-                    } else if (limit.checked) {
-                        action = "silence"
-                    } else if (suspend.checked) {
-                        action = "suspend"
-                    }
-                    root.model.actionAgainstAccount(root.index, action, emailWarning.checked, message.text)
-                    showPassiveNotification(i18n("Action taken successfully"))
-                    pageStack.layers.pop()
-                }
-            },
-            Kirigami.Action {
-                text: i18nc("@info:Cancel button to close the dailog.", "Cancel")
-                icon.name: "dialog-cancel"
-                onTriggered: actionDailog.close();
+        standardButtons: FormCard.FormCardDialog.Ok | FormCard.FormCardDialog.Cancel
+
+        Component.onCompleted: {
+            const submitButton = standardButton(FormCard.FormCardDialog.Ok);
+            submitButton.text = i18nc("@info:Button to submit the action aginst the user.", "Submit");
+            submitButton.icon.name = "answer-symbolic";
+        }
+
+        onAccepted: {
+            let action = ""
+            if (warning.checked) {
+                action = "none"
+            } else if (freeze.checked) {
+                action = "disable"
+            } else if (sensitive.checked) {
+                action = "sensitive"
+            } else if (limit.checked) {
+                action = "silence"
+            } else if (suspend.checked) {
+                action = "suspend"
             }
-        ]
+            root.model.actionAgainstAccount(root.index, action, emailWarning.checked, message.text)
+            showPassiveNotification(i18n("Action taken successfully"))
+            pageStack.layers.pop()
+        }
+
+        onRejected: actionDialog.close();
     }
 
-    Kirigami.PromptDialog {
+    KirigamiComponents.MessageDialog {
         id: promptDialog
+
         property var actionName
+
+        dialogType: KirigamiComponents.MessageDialog.Warning
         title: i18n("Are you sure?")
         subtitle: i18n("Action will be taken against the account.")
         standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
@@ -148,280 +154,103 @@ Kirigami.ScrollablePage {
         }
     }
 
-    ColumnLayout {
-        id: layout
+    AccountHeader {
+        id: header
 
-        FormCard.FormCard {
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
+        identity: root.identity.userLevelIdentity
+        isSelf: false
+        largeScreen: accountInfo.largeScreen
+        canExcludeBoosts: false
+        excludeBoosts: false
+        showTabs: false
+        Layout.fillWidth: true
+        Kirigami.Theme.colorSet: Kirigami.Theme.Window
+        Kirigami.Theme.inherit: false
 
-            Rectangle {
-                Layout.preferredHeight: Kirigami.Units.gridUnit * 9
-                Layout.fillWidth: true
-                clip: true
-                color: Kirigami.Theme.backgroundColor
-                Kirigami.Theme.colorSet: Kirigami.Theme.View
+        background: Rectangle {
+            id: view
 
-                ProfileHeader {
-                    backgroundUrl: root.identity.userLevelIdentity.backgroundUrl
-                    avatarUrl: root.identity.userLevelIdentity.avatarUrl
-                    displayName: root.identity.userLevelIdentity.displayName
-                    account: root.identity.userLevelIdentity.account
-                }
-            }
+            Kirigami.Theme.colorSet: Kirigami.Theme.View
+            Kirigami.Theme.inherit: false
 
-            Repeater {
-                model: root.identity.userLevelIdentity.fields
-                ColumnLayout {
-                    Layout.fillWidth: true
-                    spacing: 0
-                    Kirigami.Separator {
-                        Layout.fillWidth: true
-                    }
-                    RowLayout {
-                        spacing: 0
-                        QQC2.Pane {
-                            contentItem: QQC2.Label {
-                                text: modelData.name
-                                wrapMode: TextEdit.Wrap
-                            }
-                            Layout.minimumWidth: Kirigami.Units.gridUnit * 10
-                            Layout.maximumWidth: Kirigami.Units.gridUnit * 10
-                            Kirigami.Theme.colorSet: Kirigami.Theme.View
-                            leftPadding: Kirigami.Units.largeSpacing
-                            rightPadding: Kirigami.Units.largeSpacing
-                            bottomPadding: 0
-                            topPadding: 0
-                        }
-
-                        QQC2.TextArea {
-                            Layout.fillWidth: true
-                            Layout.fillHeight: true
-                            readOnly: true
-                            wrapMode: TextEdit.WordWrap
-                            background: Rectangle {
-                                color: modelData.verified_at !== null ? Kirigami.Theme.positiveBackgroundColor : Kirigami.Theme.backgroundColor
-                            }
-                            textFormat: TextEdit.RichText
-                            text: modelData.value
-                            onLinkActivated: Qt.openUrlExternally(link)
-                            MouseArea {
-                                anchors.fill: parent
-                                acceptedButtons: Qt.NoButton // don't eat clicks on the Text
-                                cursorShape: parent.hoveredLink ? Qt.PointingHandCursor : Qt.ArrowCursor
-                            }
-                        }
-                    }
-                }
-            }
-
-            Kirigami.Separator {
-                Layout.fillWidth: true
-            }
-            RowLayout {
-                visible: root.identity.userLevelIdentity.bio
-                spacing: 0
-                QQC2.Pane {
-                    contentItem: QQC2.Label {
-                        text: i18nc("@info Bio label of account.","Bio")
-                        wrapMode: Text.WordWrap
-                    }
-                    Layout.minimumWidth: Kirigami.Units.gridUnit * 10
-                    Layout.maximumWidth: Kirigami.Units.gridUnit * 10
-                    Kirigami.Theme.colorSet: Kirigami.Theme.View
-                    leftPadding: Kirigami.Units.largeSpacing
-                    rightPadding: Kirigami.Units.largeSpacing
-                    bottomPadding: 0
-                    topPadding: 0
-                }
-
-                QQC2.TextArea {
-                    text: root.identity.userLevelIdentity.bio
-                    textFormat: TextEdit.RichText
-                    readOnly: true
-                    Layout.fillWidth: true
-                    Layout.leftMargin: Kirigami.Units.largeSpacing
-                    Layout.rightMargin: Kirigami.Units.largeSpacing
-                    Layout.topMargin: Kirigami.Units.smallSpacing
-                    Layout.bottomMargin: Kirigami.Units.smallSpacing
-                    leftPadding: 0
-                    rightPadding: 0
-                    bottomPadding: 0
-                    topPadding: 0
-                    background: null
-                    wrapMode: Text.WordWrap
-                    onLinkActivated: Qt.openUrlExternally(link)
-                    MouseArea {
-                        anchors.fill: parent
-                        acceptedButtons: Qt.NoButton // don't eat clicks on the Text
-                        cursorShape: parent.hoveredLink ? Qt.PointingHandCursor : Qt.ArrowCursor
-                    }
-                }
-
-            }
-
-            Kirigami.Separator {
-                Layout.fillWidth: true
-            }
-            RowLayout {
-                visible: root.identity.inviteRequest
-                spacing: 0
-                QQC2.Pane {
-                    contentItem: QQC2.Label {
-                        text: i18n("Reasons for joining")
-                        wrapMode: Text.WordWrap
-                    }
-                    Layout.minimumWidth: Kirigami.Units.gridUnit * 10
-                    Layout.maximumWidth: Kirigami.Units.gridUnit * 10
-                    Kirigami.Theme.colorSet: Kirigami.Theme.View
-                    leftPadding: Kirigami.Units.largeSpacing
-                    rightPadding: Kirigami.Units.largeSpacing
-                    bottomPadding: 0
-                    topPadding: 0
-                }
-
-                QQC2.TextArea {
-                    text: root.identity.inviteRequest
-                    textFormat: TextEdit.RichText
-                    readOnly: true
-                    Layout.fillWidth: true
-                    Layout.leftMargin: Kirigami.Units.largeSpacing
-                    Layout.rightMargin: Kirigami.Units.largeSpacing
-                    Layout.topMargin: Kirigami.Units.smallSpacing
-                    Layout.bottomMargin: Kirigami.Units.smallSpacing
-                    leftPadding: 0
-                    rightPadding: 0
-                    bottomPadding: 0
-                    topPadding: 0
-                    background: null
-                    wrapMode: Text.WordWrap
-                    onLinkActivated: Qt.openUrlExternally(link)
-                    MouseArea {
-                        anchors.fill: parent
-                        acceptedButtons: Qt.NoButton // don't eat clicks on the Text
-                        cursorShape: parent.hoveredLink ? Qt.PointingHandCursor : Qt.ArrowCursor
-                    }
-                }
-            }
+            color: Kirigami.ColorUtils.linearInterpolation(header.Kirigami.Theme.backgroundColor, view.Kirigami.Theme.backgroundColor, 0.5);
         }
+    }
 
-        FormCard.FormGridContainer {
-            id: container
+    FormCard.FormCard {
+        Layout.topMargin: Kirigami.Units.largeSpacing * 2
+        visible: root.identity.inviteRequest
 
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
+        FormCard.FormTextDelegate {
+            text: i18n("Reasons for joining")
 
-            infoCards: [
-                FormCard.FormGridContainer.InfoCard {
-                    title: root.identity.userLevelIdentity.statusesCount
-                    subtitle: i18nc("@info:Number of Posts", "Posts")
-                },
-                FormCard.FormGridContainer.InfoCard {
-                    title: root.identity.userLevelIdentity.followersCount
-                    subtitle: i18nc("@info:Number of followers.", "Followers")
-                },
-                FormCard.FormGridContainer.InfoCard {
-                    title: root.identity.userLevelIdentity.followingCount
-                    subtitle: i18nc("@info:row Number of accounts followed by the account", "Following")
-                },
-                FormCard.FormGridContainer.InfoCard {
-                    title: root.identity.userLevelIdentity.role ? root.identity.userLevelIdentity.role : i18n("No role")
-                    subtitle: i18nc("@info Role of the account on this server.", "Role")
-                },
-                FormCard.FormGridContainer.InfoCard {
-                    title: root.lastActive
-                    subtitle: i18nc("@info The last time the account was active.", "Last Active")
-                },
-                FormCard.FormGridContainer.InfoCard {
-                    title: root.identity.loginStatus
-                    subtitle: i18nc("@info The current login status of the account.", "Login Status")
-                }
-            ]
+            description: root.identity.inviteRequest
+            descriptionItem.textFormat: TextEdit.RichText
+            onLinkActivated: (link) => Qt.openUrlExternally(link)
         }
+    }
 
-        FormCard.FormCard {
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
-            visible: root.identity.email
+    FormCard.FormGridContainer {
+        id: container
 
-            FormCard.FormTextDelegate {
-                visible: root.identity.role
-                text: i18nc("@info: Role of the user.", "Role")
-                description: root.identity.role
-            }
+        Layout.topMargin: Kirigami.Units.largeSpacing
+        Layout.fillWidth: true
 
-            FormCard.FormDelegateSeparator { visible: root.identity.email }
-
-            FormCard.FormTextDelegate {
-                visible: root.identity.email
-                text: i18nc("@info: Email of the user.", "Email")
-                description: root.identity.email
-            }
-
-            FormCard.FormDelegateSeparator {}
-
-            FormCard.FormTextDelegate {
-                text: i18nc("@info: Email confirmation status of the user.","Email Status")
-                description: root.identity.emailStatus ? i18n("Confirmed") : i18n("Not Confirmed")
-            }
-
-            FormCard.FormDelegateSeparator { visible: root.identity.locale }
-
-            FormCard.FormTextDelegate {
+        infoCards: [
+            FormCard.FormGridContainer.InfoCard {
+                title: i18nc("@info Role of the account on this server.", "Role")
+                subtitle: root.identity.userLevelIdentity.role ? root.identity.userLevelIdentity.role : i18n("No role")
+            },
+            FormCard.FormGridContainer.InfoCard {
+                title: i18nc("@info The last time the account was active.", "Last Active")
+                subtitle: root.lastActive
+            },
+            FormCard.FormGridContainer.InfoCard {
+                title: i18nc("@info The current login status of the account.", "Login Status")
+                subtitle: root.identity.loginStatus
+            },
+            FormCard.FormGridContainer.InfoCard {
                 visible: root.identity.locale
-                text: i18nc("@info: Locale of the user.", "Account Locale")
-                description: root.identity.locale
-            }
-
-            FormCard.FormDelegateSeparator { visible: root.identity.joined }
-
-            FormCard.FormTextDelegate {
+                title: i18nc("@info: Locale of the user.", "Account Locale")
+                subtitle: root.identity.locale
+            },
+            FormCard.FormGridContainer.InfoCard {
+                visible: root.identity.email
+                title: i18nc("@info: Email of the user.", "Email")
+                subtitle: root.identity.email
+            },
+            FormCard.FormGridContainer.InfoCard {
+                visible: root.identity.email
+                title: i18nc("@info: Email confirmation status of the user.","Email Status")
+                subtitle: root.identity.emailStatus ? i18n("Confirmed") : i18n("Not Confirmed")
+            },
+            FormCard.FormGridContainer.InfoCard {
                 visible: root.identity.joined
-                text: i18nc("@info: Joining date of the user","Joined")
-                description: root.identity.joined.toLocaleDateString()
+                title: i18nc("@info: Joining date of the user","Joined")
+                subtitle: root.identity.joined.toLocaleDateString()
+            },
+            FormCard.FormGridContainer.InfoCard {
+                visible: root.identity.invitedByIdentity
+                title: i18n("Invited By")
+                subtitle: root.identity.invitedByIdentity?.username ?? ""
             }
+        ]
+    }
 
-            FormCard.FormDelegateSeparator { visible: root.identity.ips.length > 0 }
+    FormCard.FormHeader {
+        visible: root.identity.ips.length > 0
+        title: i18n("Most recent IP")
+    }
 
-            FormCard.AbstractFormDelegate {
-                id: ipDelegate
-                text: i18n("Most recent IP")
+    FormCard.FormCard {
+        visible: root.identity.ips.length > 0
 
-                contentItem: ColumnLayout {
-                    QQC2.Label {
-                        text: ipDelegate.text
-                        elide: Text.ElideRight
-                        Accessible.ignored: true
-                        Layout.fillWidth: true
-                    }
-
-                    Repeater {
-                        model: root.identity.ips
-
-                        QQC2.Label {
-                            text: modelData.ip
-                            elide: Text.ElideRight
-                            color: Kirigami.Theme.disabledTextColor
-                            Accessible.ignored: true
-                            Layout.fillWidth: true
-                        }
-                    }
-                }
-            }
-
-            FormCard.FormDelegateSeparator { visible: root.identity.invitedByIdentity }
+        Repeater {
+            model: root.identity.ips
 
             FormCard.FormTextDelegate {
-                visible: root.identity.invitedByIdentity
-                text: i18n("Invited By")
-                description: root.identity.invitedByIdentity ? root.identity.invitedByIdentity.username : ""
-
-                leadingPadding: Kirigami.Units.largeSpacing
-                leading: KirigamiComponents.Avatar {
-                    source: root.identity.invitedByIdentity ? root.identity.invitedByIdentity.avatarUrl : ''
-                    implicitHeight: Kirigami.Units.gridUnit * 2
-                    implicitWidth: Kirigami.Units.gridUnit * 2
-                }
+                id: ipDelegate
+                text: modelData.ip
             }
         }
     }
@@ -516,7 +345,7 @@ Kirigami.ScrollablePage {
                 visible: (root.identity.approved || !root.identity.isLocal) && !root.identity.suspended
                 Layout.margins: Kirigami.Units.smallSpacing
                 onClicked: {
-                    actionDailog.open()
+                    actionDialog.open()
                 }
             }
         }
