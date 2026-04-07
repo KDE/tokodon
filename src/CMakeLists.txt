@@ -209,138 +209,138 @@ target_sources(tokodon_static
 qt_target_qml_sources(tokodon_static
     QML_FILES
         # Components
-        content/ui/Components/Emoji/EmojiDelegate.qml
-        content/ui/Components/Emoji/EmojiGrid.qml
-        content/ui/Components/Emoji/EmojiPicker.qml
-        content/ui/Components/Emoji/EmojiTonesPicker.qml
-        content/ui/Components/ClickableIdentityInfo.qml
-        content/ui/Components/FocusedImage.qml
-        content/ui/Components/InlineIdentityInfo.qml
-        content/ui/Components/PopupShadow.qml
-        content/ui/Components/ProfileHeader.qml
-        content/ui/Components/RoundedEffect.qml
-        content/ui/Components/Sidebar.qml
-        content/ui/Components/TimelineView.qml
-        content/ui/Components/UserCard.qml
-        content/ui/Components/QrCodeMaximizeComponent.qml
-        content/ui/Components/BoostConfirmationDialog.qml
-        content/ui/Components/VideoPlayer.qml
-        content/ui/Components/ServerInformationCard.qml
+        qml/Components/Emoji/EmojiDelegate.qml
+        qml/Components/Emoji/EmojiGrid.qml
+        qml/Components/Emoji/EmojiPicker.qml
+        qml/Components/Emoji/EmojiTonesPicker.qml
+        qml/Components/ClickableIdentityInfo.qml
+        qml/Components/FocusedImage.qml
+        qml/Components/InlineIdentityInfo.qml
+        qml/Components/PopupShadow.qml
+        qml/Components/ProfileHeader.qml
+        qml/Components/RoundedEffect.qml
+        qml/Components/Sidebar.qml
+        qml/Components/TimelineView.qml
+        qml/Components/UserCard.qml
+        qml/Components/QrCodeMaximizeComponent.qml
+        qml/Components/BoostConfirmationDialog.qml
+        qml/Components/VideoPlayer.qml
+        qml/Components/ServerInformationCard.qml
 
         # Initial Setup
-        content/ui/InitialSetup/SetupNotifications.qml
-        content/ui/InitialSetup/SetupPassword.qml
-        content/ui/InitialSetup/SetupWelcome.qml
+        qml/InitialSetup/SetupNotifications.qml
+        qml/InitialSetup/SetupPassword.qml
+        qml/InitialSetup/SetupWelcome.qml
 
         # Login Flow
-        content/ui/LoginFlow/BaseAuthorization.qml
-        content/ui/LoginFlow/BrowserAuthorization.qml
-        content/ui/LoginFlow/CodeAuthorization.qml
-        content/ui/LoginFlow/LoginIssuePage.qml
-        content/ui/LoginFlow/RegistrationPage.qml
-        content/ui/LoginFlow/RulesPage.qml
-        content/ui/LoginFlow/ServersPage.qml
-        content/ui/LoginFlow/WelcomePage.qml
+        qml/LoginFlow/BaseAuthorization.qml
+        qml/LoginFlow/BrowserAuthorization.qml
+        qml/LoginFlow/CodeAuthorization.qml
+        qml/LoginFlow/LoginIssuePage.qml
+        qml/LoginFlow/RegistrationPage.qml
+        qml/LoginFlow/RulesPage.qml
+        qml/LoginFlow/ServersPage.qml
+        qml/LoginFlow/WelcomePage.qml
 
         # Moderation Tools
-        content/ui/ModerationTools/AccountToolPage.qml
-        content/ui/ModerationTools/EmailBlockToolPage.qml
-        content/ui/ModerationTools/FederationToolPage.qml
-        content/ui/ModerationTools/IpRulePage.qml
-        content/ui/ModerationTools/MainAccountToolPage.qml
-        content/ui/ModerationTools/MainFederationToolPage.qml
-        content/ui/ModerationTools/MainIpRulePage.qml
-        content/ui/ModerationTools/MainReportToolPage.qml
-        content/ui/ModerationTools/ModerationToolsView.qml
-        content/ui/ModerationTools/ReportToolPage.qml
+        qml/ModerationTools/AccountToolPage.qml
+        qml/ModerationTools/EmailBlockToolPage.qml
+        qml/ModerationTools/FederationToolPage.qml
+        qml/ModerationTools/IpRulePage.qml
+        qml/ModerationTools/MainAccountToolPage.qml
+        qml/ModerationTools/MainFederationToolPage.qml
+        qml/ModerationTools/MainIpRulePage.qml
+        qml/ModerationTools/MainReportToolPage.qml
+        qml/ModerationTools/ModerationToolsView.qml
+        qml/ModerationTools/ReportToolPage.qml
 
         # Notifications
-        content/ui/Notifications/AccountWarningDelegate.qml
-        content/ui/Notifications/GroupInteractionLabel.qml
-        content/ui/Notifications/MinimalPostDelegate.qml
-        content/ui/Notifications/RelationshipSeveranceDelegate.qml
-        content/ui/Notifications/ReportDelegate.qml
-        content/ui/Notifications/UserInteractionLabel.qml
-        content/ui/Notifications/AnnualReportDelegate.qml
-        content/ui/Notifications/FollowDelegate.qml
-        content/ui/Notifications/UnknownNotificationDelegate.qml
+        qml/Notifications/AccountWarningDelegate.qml
+        qml/Notifications/GroupInteractionLabel.qml
+        qml/Notifications/MinimalPostDelegate.qml
+        qml/Notifications/RelationshipSeveranceDelegate.qml
+        qml/Notifications/ReportDelegate.qml
+        qml/Notifications/UserInteractionLabel.qml
+        qml/Notifications/AnnualReportDelegate.qml
+        qml/Notifications/FollowDelegate.qml
+        qml/Notifications/UnknownNotificationDelegate.qml
 
         # Settings
-        content/ui/Settings/AccountPage.qml
-        content/ui/Settings/AccountsPage.qml
-        content/ui/Settings/AppearancePage.qml
-        content/ui/Settings/EditProfilePage.qml
-        content/ui/Settings/ErrorLogPage.qml
-        content/ui/Settings/NetworkProxyPage.qml
-        content/ui/Settings/NotificationsPage.qml
-        content/ui/Settings/ProfileEditor.qml
-        content/ui/Settings/SafetyPage.qml
-        content/ui/Settings/TokodonConfigurationView.qml
-        content/ui/Settings/FiltersPage.qml
-        content/ui/Settings/EditFilterPage.qml
-        content/ui/Settings/BlockedDomainsPage.qml
+        qml/Settings/AccountPage.qml
+        qml/Settings/AccountsPage.qml
+        qml/Settings/AppearancePage.qml
+        qml/Settings/EditProfilePage.qml
+        qml/Settings/ErrorLogPage.qml
+        qml/Settings/NetworkProxyPage.qml
+        qml/Settings/NotificationsPage.qml
+        qml/Settings/ProfileEditor.qml
+        qml/Settings/SafetyPage.qml
+        qml/Settings/TokodonConfigurationView.qml
+        qml/Settings/FiltersPage.qml
+        qml/Settings/EditFilterPage.qml
+        qml/Settings/BlockedDomainsPage.qml
 
         # Composer
-        content/ui/StatusComposer/EditorAttachmentGrid.qml
-        content/ui/StatusComposer/AttachmentInfoDialog.qml
-        content/ui/StatusComposer/ComposerPoll.qml
-        content/ui/StatusComposer/EmojiDialog.qml
-        content/ui/StatusComposer/StatusComposer.qml
-        content/ui/StatusComposer/StatusPreview.qml
-        content/ui/StatusComposer/ScheduledPostsPage.qml
+        qml/StatusComposer/EditorAttachmentGrid.qml
+        qml/StatusComposer/AttachmentInfoDialog.qml
+        qml/StatusComposer/ComposerPoll.qml
+        qml/StatusComposer/EmojiDialog.qml
+        qml/StatusComposer/StatusComposer.qml
+        qml/StatusComposer/StatusPreview.qml
+        qml/StatusComposer/ScheduledPostsPage.qml
 
         # Delegate
-        content/ui/PostDelegate/AttachmentGrid.qml
-        content/ui/PostDelegate/AttachmentMenu.qml
-        content/ui/PostDelegate/InformationBar.qml
-        content/ui/PostDelegate/InteractionButton.qml
-        content/ui/PostDelegate/LinkMenu.qml
-        content/ui/PostDelegate/LinkPreview.qml
-        content/ui/PostDelegate/MediaContainer.qml
-        content/ui/PostDelegate/PostContent.qml
-        content/ui/PostDelegate/PostInfoBar.qml
-        content/ui/PostDelegate/PostDelegate.qml
-        content/ui/PostDelegate/PostLayout.qml
-        content/ui/PostDelegate/PostMenu.qml
-        content/ui/PostDelegate/PostPoll.qml
-        content/ui/PostDelegate/PostTags.qml
-        content/ui/PostDelegate/PostInteractionLabel.qml
-        content/ui/PostDelegate/VideoAttachment.qml
-        content/ui/PostDelegate/QuotePost.qml
-        content/ui/PostDelegate/AudioAttachment.qml
-        content/ui/PostDelegate/FilterNotice.qml
-        content/ui/PostDelegate/ContentNotice.qml
+        qml/PostDelegate/AttachmentGrid.qml
+        qml/PostDelegate/AttachmentMenu.qml
+        qml/PostDelegate/InformationBar.qml
+        qml/PostDelegate/InteractionButton.qml
+        qml/PostDelegate/LinkMenu.qml
+        qml/PostDelegate/LinkPreview.qml
+        qml/PostDelegate/MediaContainer.qml
+        qml/PostDelegate/PostContent.qml
+        qml/PostDelegate/PostInfoBar.qml
+        qml/PostDelegate/PostDelegate.qml
+        qml/PostDelegate/PostLayout.qml
+        qml/PostDelegate/PostMenu.qml
+        qml/PostDelegate/PostPoll.qml
+        qml/PostDelegate/PostTags.qml
+        qml/PostDelegate/PostInteractionLabel.qml
+        qml/PostDelegate/VideoAttachment.qml
+        qml/PostDelegate/QuotePost.qml
+        qml/PostDelegate/AudioAttachment.qml
+        qml/PostDelegate/FilterNotice.qml
+        qml/PostDelegate/ContentNotice.qml
 
         # Other
-        content/ui/AccountHeader.qml
-        content/ui/AccountInfo.qml
-        content/ui/AnnouncementsPage.qml
-        content/ui/ConversationDelegate.qml
-        content/ui/ConversationPage.qml
-        content/ui/EditListPage.qml
-        content/ui/ExplorePage.qml
-        content/ui/FollowingPage.qml
-        content/ui/FullScreenImage.qml
-        content/ui/LanguageSelector.qml
-        content/ui/ListsPage.qml
-        content/ui/Main.qml
-        content/ui/ListTimelinePage.qml
-        content/ui/MastoPage.qml
-        content/ui/NotificationPage.qml
-        content/ui/ReadMarker.qml
-        content/ui/ReportDialog.qml
-        content/ui/SearchField.qml
-        content/ui/SearchPage.qml
-        content/ui/SearchView.qml
-        content/ui/ShareDialog.qml
-        content/ui/SocialGraphPage.qml
-        content/ui/StandaloneComposer.qml
-        content/ui/ThreadPage.qml
-        content/ui/TimelinePage.qml
-        content/ui/UserInfo.qml
-        content/ui/ServerInformationPage.qml
-        content/ui/GenericServerInformationPage.qml
-        content/ui/AccountSwitchDialog.qml
+        qml/AccountHeader.qml
+        qml/AccountInfo.qml
+        qml/AnnouncementsPage.qml
+        qml/ConversationDelegate.qml
+        qml/ConversationPage.qml
+        qml/EditListPage.qml
+        qml/ExplorePage.qml
+        qml/FollowingPage.qml
+        qml/FullScreenImage.qml
+        qml/LanguageSelector.qml
+        qml/ListsPage.qml
+        qml/Main.qml
+        qml/ListTimelinePage.qml
+        qml/MastoPage.qml
+        qml/NotificationPage.qml
+        qml/ReadMarker.qml
+        qml/ReportDialog.qml
+        qml/SearchField.qml
+        qml/SearchPage.qml
+        qml/SearchView.qml
+        qml/ShareDialog.qml
+        qml/SocialGraphPage.qml
+        qml/StandaloneComposer.qml
+        qml/ThreadPage.qml
+        qml/TimelinePage.qml
+        qml/UserInfo.qml
+        qml/ServerInformationPage.qml
+        qml/GenericServerInformationPage.qml
+        qml/AccountSwitchDialog.qml
 )
 
 set_source_files_properties(../org.kde.tokodon.svg PROPERTIES
@@ -372,7 +372,7 @@ target_include_directories(tokodon_static PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dat
 if (BUILD_TESTING)
     qt_target_qml_sources(tokodon_static
             QML_FILES
-            content/ui/Debug/DebugPage.qml
+            qml/Debug/DebugPage.qml
     )
 endif()
 
@@ -384,22 +384,22 @@ if(ANDROID)
     )
     qt_target_qml_sources(tokodon_static
         QML_FILES
-        content/ui/Android/ShareAction.qml
+        qml/Android/ShareAction.qml
     )
-    set_source_files_properties(content/ui/Android/ShareAction.qml PROPERTIES
-        QT_RESOURCE_ALIAS content/ui/ShareAction.qml
+    set_source_files_properties(qml/Android/ShareAction.qml PROPERTIES
+        QT_RESOURCE_ALIAS qml/ShareAction.qml
     )
 else()
     qt_target_qml_sources(tokodon_static
         QML_FILES
-        content/ui/ShareAction.qml
+        qml/ShareAction.qml
     )
 endif()
 
 if (USE_QTWEBVIEW)
     qt_target_qml_sources(tokodon_static
-            QML_FILES
-            content/ui/LoginFlow/WebViewAuthorization.qml
+        QML_FILES
+        qml/LoginFlow/WebViewAuthorization.qml
     )
     target_link_libraries(tokodon_static PUBLIC Qt::WebView)
     target_compile_definitions(tokodon_static PUBLIC -DHAVE_WEBVIEW)
