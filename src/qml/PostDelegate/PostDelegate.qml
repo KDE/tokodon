@@ -226,10 +226,9 @@ QQC2.ItemDelegate {
             Layout.fillWidth: true
 
             onMoreOpened: parentItem => {
-                parentItem.down = true;
-                const item = flexColumn.postMenu.createObject(QQC2.ApplicationWindow.window);
-                item.closed.connect(() => parentItem.down = false);
-                item.popup();
+                const item = flexColumn.postMenu.createObject(parentItem);
+                parentItem.down = Qt.binding(() => parentItem.pressed || item.opened);
+                item.popup(parentItem, Qt.point(0, parentItem.height));
             }
 
             Loader {

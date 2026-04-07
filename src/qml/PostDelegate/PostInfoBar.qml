@@ -63,6 +63,7 @@ ClickableIdentityInfo {
 
         iconName: 'overflow-menu'
         tooltip: i18nc("Show more options", "More actions")
+        down: pressed
 
         Layout.alignment: Qt.AlignVCenter
         Layout.preferredWidth: implicitHeight
