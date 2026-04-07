@@ -23,6 +23,7 @@ QQC2.Pane {
     required property bool largeScreen
     required property bool canExcludeBoosts
     required property bool excludeBoosts
+    property bool showTabs: true
 
     signal excludeBoostsToggled(bool checked)
     signal selectedTagChanged(string selectedTag)
@@ -881,6 +882,8 @@ QQC2.Pane {
         QQC2.TabBar {
             id: bar
 
+            visible: root.showTabs
+
             Kirigami.Theme.inherit: false
             Kirigami.Theme.colorSet: Kirigami.Theme.View
 
@@ -913,6 +916,7 @@ QQC2.Pane {
             Kirigami.Theme.colorSet: Kirigami.Theme.View
 
             enabled: !root.loading
+            visible: root.showTabs
 
             implicitHeight: extraLayout.implicitHeight + Kirigami.Units.largeSpacing * 2
 
@@ -985,6 +989,7 @@ QQC2.Pane {
 
         Kirigami.Separator {
             Layout.fillWidth: true
+            visible: root.showTabs
         }
     }
 }
