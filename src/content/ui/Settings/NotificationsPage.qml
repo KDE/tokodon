@@ -208,7 +208,10 @@ FormCard.FormCardPage {
             onToggledNotify: notify => root.config.notifyMention = notify
         }
 
-        FormCard.FormDelegateSeparator {}
+        FormCard.FormDelegateSeparator {
+            below: mentionsDelegate
+            above: quotesDelegate
+        }
 
         EventControl {
             id: quotesDelegate
@@ -223,7 +226,10 @@ FormCard.FormCardPage {
             onToggledNotify: notify => root.config.notifyQuote = notify
         }
 
-        FormCard.FormDelegateSeparator {}
+        FormCard.FormDelegateSeparator {
+            below: quotesDelegate
+            above: statusesDelegate
+        }
 
         EventControl {
             id: statusesDelegate
@@ -238,7 +244,10 @@ FormCard.FormCardPage {
             onToggledNotify: notify => root.config.notifyStatus = notify
         }
 
-        FormCard.FormDelegateSeparator {}
+        FormCard.FormDelegateSeparator {
+            below: statusesDelegate
+            above: boostsDelegate
+        }
 
         EventControl {
             id: boostsDelegate
@@ -253,7 +262,10 @@ FormCard.FormCardPage {
             onToggledNotify: notify => root.config.notifyBoost = notify
         }
 
-        FormCard.FormDelegateSeparator {}
+        FormCard.FormDelegateSeparator {
+            below: boostsDelegate
+            above: followersDelegate
+        }
 
         EventControl {
             id: followersDelegate
@@ -268,7 +280,10 @@ FormCard.FormCardPage {
             onToggledNotify: notify => root.config.notifyFollow = notify
         }
 
-        FormCard.FormDelegateSeparator {}
+        FormCard.FormDelegateSeparator {
+            below: followersDelegate
+            above: requestsDelegate
+        }
 
         EventControl {
             id: requestsDelegate
@@ -283,7 +298,10 @@ FormCard.FormCardPage {
             onToggledNotify: notify => root.config.notifyFollowRequest = notify
         }
 
-        FormCard.FormDelegateSeparator {}
+        FormCard.FormDelegateSeparator {
+            below: requestsDelegate
+            above: favoritesDelegate
+        }
 
         EventControl {
             id: favoritesDelegate
@@ -298,7 +316,10 @@ FormCard.FormCardPage {
             onToggledNotify: notify => root.config.notifyFavorite = notify
         }
 
-        FormCard.FormDelegateSeparator {}
+        FormCard.FormDelegateSeparator {
+            below: favoritesDelegate
+            above: pollsDelegate
+        }
 
         EventControl {
             id: pollsDelegate
@@ -313,7 +334,10 @@ FormCard.FormCardPage {
             onToggledNotify: notify => root.config.notifyPoll = notify
         }
 
-        FormCard.FormDelegateSeparator {}
+        FormCard.FormDelegateSeparator {
+            below: quotesDelegate
+            above: editsDelegate
+        }
 
         EventControl {
             id: editsDelegate
@@ -328,7 +352,10 @@ FormCard.FormCardPage {
             onToggledNotify: notify => root.config.notifyUpdate = notify
         }
 
-        FormCard.FormDelegateSeparator {}
+        FormCard.FormDelegateSeparator {
+            below: editsDelegate
+            above: adminSignUpDelegate.visible ? adminSignUpDelegate : relationshipsDelegate
+        }
 
         EventControl {
             id: adminSignUpDelegate
@@ -345,6 +372,8 @@ FormCard.FormCardPage {
         }
 
         FormCard.FormDelegateSeparator {
+            below: adminSignUpDelegate
+            above: adminReportDelegate
             visible: adminSignUpDelegate.visible
         }
 
@@ -363,6 +392,8 @@ FormCard.FormCardPage {
         }
 
         FormCard.FormDelegateSeparator {
+            below: adminReportDelegate
+            above: relationshipsDelegate
             visible: adminReportDelegate.visible
         }
 
@@ -379,7 +410,10 @@ FormCard.FormCardPage {
             onToggledNotify: notify => root.config.notifyRelationships = notify
         }
 
-        FormCard.FormDelegateSeparator {}
+        FormCard.FormDelegateSeparator {
+            below: relationshipsDelegate 
+            above: annualReportDelegate
+        }
 
         EventControl {
             id: annualReportDelegate
