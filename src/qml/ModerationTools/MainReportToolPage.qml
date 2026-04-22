@@ -48,14 +48,14 @@ FormCard.FormCardPage {
 
     actions: Kirigami.Action {
         icon.name: root.reportInfo.actionTaken ? "edit-delete-remove" : "checkmark"
-        text: root.reportInfo.actionTaken ? i18n("Mark as unresolved") : i18n("Mark as resolved")
+        text: root.reportInfo.actionTaken ? i18nc("@action:intoolbar", "Mark as unresolved") : i18nc("@action:intoolbar", "Mark as resolved")
         onTriggered: {
             if (root.reportInfo.actionTaken) {
                 root.model.unresolveReport(root.index)
-                showPassiveNotification(i18n("Report Unresolved"))
+                showPassiveNotification(i18nc("@info", "Report Unresolved"))
             } else {
                 root.model.resolveReport(root.index)
-                showPassiveNotification(i18n("Report Resolved"))
+                showPassiveNotification(i18nc("@info", "Report Resolved"))
             }
         }
     }
@@ -116,7 +116,7 @@ FormCard.FormCardPage {
 
         FormCard.FormTextDelegate {
             visible: root.reportInfo.filedAccount
-            text: i18n("Reported By")
+            text: i18nc("@label", "Reported By")
             description: root.reportInfo.filedAccount.userLevelIdentity.account
 
             leadingPadding: Kirigami.Units.largeSpacing
@@ -131,8 +131,8 @@ FormCard.FormCardPage {
 
         FormCard.FormTextDelegate {
             visible: true
-            text: i18n("Report Status")
-            description: root.reportInfo.actionTaken ? i18n("Resolved") : i18n("Unresolved")
+            text: i18nc("@label", "Report Status")
+            description: root.reportInfo.actionTaken ? i18nc("@info", "Resolved") : i18nc("@info", "Unresolved")
         }
 
         FormCard.FormDelegateSeparator {
@@ -141,7 +141,7 @@ FormCard.FormCardPage {
 
         FormCard.FormTextDelegate {
             visible: root.reportInfo.actionTakenByAccount.userLevelIdentity.account
-            text: i18n("Action taken by")
+            text: i18nc("@label", "Action taken by")
             description: root.reportInfo.actionTakenByAccount.userLevelIdentity.account
             leadingPadding: Kirigami.Units.largeSpacing
             leading: KirigamiComponents.Avatar {
@@ -154,8 +154,8 @@ FormCard.FormCardPage {
         FormCard.FormDelegateSeparator {}
 
         FormCard.FormTextDelegate {
-            text: i18n("Assigned moderator")
-            description: root.reportInfo.assignedModerator ? root.reportInfo.assignedAccount.userLevelIdentity.account : i18n("No one")
+            text: i18nc("@label", "Assigned moderator")
+            description: root.reportInfo.assignedModerator ? root.reportInfo.assignedAccount.userLevelIdentity.account : i18nc("@info", "No one")
             leadingPadding: Kirigami.Units.largeSpacing
             leading: KirigamiComponents.Avatar {
                 source: root.reportInfo.assignedModerator ?  root.reportInfo.assignedAccount.userLevelIdentity.avatarUrl : ""
@@ -163,7 +163,7 @@ FormCard.FormCardPage {
                 implicitWidth: Kirigami.Units.gridUnit * 2
             }
             trailing: QQC2.Button {
-                text: assignedModerator ? (isAssignedModeratorSelectedAccount ? i18n("Unassign") : i18n("Assign to me")) : i18n("Assign to me")
+                text: assignedModerator ? (isAssignedModeratorSelectedAccount ? i18nc("@action:button", "Unassign") : i18nc("@action:button", "Assign to me")) : i18nc("@action:button", "Assign to me")
                 icon.name: "im-user"
                 onClicked: assignedModerator ? (isAssignedModeratorSelectedAccount ? root.model.unassignReport(root.index) : root.model.assignReport(root.index)) : root.model.assignReport(root.index)
             }
@@ -175,13 +175,13 @@ FormCard.FormCardPage {
 
         FormCard.FormTextDelegate {
             visible: !root.reportInfo.targetAccount.isLocal
-            text: i18n("Forwarded")
+            text: i18nc("@label", "Forwarded")
             description: root.reportInfo.forwarded ? i18nc("@info:The report is forwarded", "Yes") : i18nc("@info:The report is not forwarded", "No")
         }
     }
 
     FormCard.FormHeader {
-        title: i18n("Category")
+        title: i18nc("@title:group", "Category")
     }
 
     FormCard.FormCard {
@@ -270,7 +270,7 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormHeader {
-        title: i18n("To provide more information, %1 wrote:", root.reportInfo.filedAccount.userLevelIdentity.account)
+        title: i18nc("@title:group", "To provide more information, %1 wrote:", root.reportInfo.filedAccount.userLevelIdentity.account)
     }
 
     FormCard.FormCard {
@@ -291,7 +291,7 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormHeader {
-        title: i18n("Reported Content")
+        title: i18nc("@title:group", "Reported Content")
         visible: root.displayAttachmentPanel
     }
 
@@ -335,7 +335,7 @@ FormCard.FormCardPage {
 
                     }
                     QQC2.Button {
-                        text: postContent.visible ? i18n("Show Less") : i18n("Show More")
+                        text: postContent.visible ? i18nc("@action:button", "Show Less") : i18nc("@action:button", "Show More")
                         onClicked: postContent.visible = !postContent.visible
                     }
                 }
