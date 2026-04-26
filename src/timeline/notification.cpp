@@ -135,8 +135,9 @@ static QMap<QString, Notification::Type> str_to_not_type = {
     {QStringLiteral("quote"), Notification::Type::Quote},
 };
 
-Notification::Notification(AbstractAccount *account, const QJsonObject &obj, QObject *parent)
+Notification::Notification(AbstractAccount *account, const QJsonObject &obj, const bool unread, QObject *parent)
     : m_account(account)
+    , m_unread(unread)
 {
     const auto accountObj = obj["account"_L1].toObject();
     const auto status = obj["status"_L1].toObject();
@@ -150,7 +151,7 @@ Notification::Notification(AbstractAccount *account, const QJsonObject &obj, QOb
     } else {
         qCWarning(TOKODON_LOG) << "Unknown notification type:" << type;
     }
-    m_id = obj["id"_L1].toString().toInt();
+    m_id = obj["id"_L1].toString();
     m_createdAt = QDateTime::fromString(obj["created_at"_L1].toString(), Qt::ISODate).toLocalTime();
 
     if (m_type == ModerationWarning) {
@@ -165,7 +166,7 @@ Notification::Notification(AbstractAccount *account, const QJsonObject &obj, QOb
     }
 }
 
-int Notification::id() const
+QString Notification::id() const
 {
     return m_id;
 }
@@ -213,6 +214,16 @@ std::shared_ptr<Identity> Notification::identity() const
 QDateTime Notification::createdAt() const
 {
     return m_createdAt;
+}
+
+bool Notification::unread() const
+{
+    return m_unread;
+}
+
+void Notification::setUnread(const bool unread)
+{
+    m_unread = unread;
 }
 
 #include "moc_notification.cpp"

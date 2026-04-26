@@ -49,6 +49,11 @@ public:
 
     void setShouldLoadMore(bool shouldLoadMore);
 
+    /**
+     * @return Returns the newest/latest post ID from @p postIds.
+     */
+    [[nodiscard]] QString findLatestPostId(const QStringList &postIds) const;
+
 public Q_SLOTS:
     /**
      * @brief Reply to the post at @p index.

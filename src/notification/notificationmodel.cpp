@@ -77,7 +77,10 @@ void NotificationModel::markAllNotificationsAsRead()
         }
     }
 
-    m_lastReadId = QString::number(m_notifications.first()->id());
+    for (const auto &notification : m_notifications) {
+        notification->setUnread(false);
+    }
+    m_lastReadId = m_notifications.first()->id();
     Q_EMIT readMarkerChanged();
 
     // update all unread notifications so the section is reset in the UI
@@ -183,9 +186,14 @@ void NotificationModel::fillTimeline(const QUrl &next)
 
             QList<std::shared_ptr<Notification>> notifications;
             const auto values = doc.array();
+            bool foundLastReadId{};
             for (const auto &value : values) {
                 const QJsonObject obj = value.toObject();
-                const auto notification = std::make_shared<Notification>(m_account, obj, this);
+                const auto notification = std::make_shared<Notification>(m_account, obj, !foundLastReadId, this);
+                if (notification->id() == m_lastReadId) {
+                    foundLastReadId = true;
+                    notification->setUnread(false);
+                }
 
                 notifications.push_back(notification);
             }
@@ -280,7 +288,7 @@ QVariant NotificationModel::data(const QModelIndex &index, int role) const
     case ModerationWarningRole:
         return QVariant::fromValue<AccountWarning>(*notification->accountWarning());
     case UnreadRole:
-        return notification->id() > m_lastReadId.toLongLong();
+        return notification->unread();
     case RelativeTimeRole:
         return TextHandler::getRelativeDateTime(notification->createdAt());
     default:
