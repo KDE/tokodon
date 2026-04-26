@@ -97,7 +97,7 @@ class Notification
 
 public:
     Notification() = default;
-    explicit Notification(AbstractAccount *account, const QJsonObject &obj, QObject *parent = nullptr);
+    explicit Notification(AbstractAccount *account, const QJsonObject &obj, bool unread, QObject *parent = nullptr);
 
     enum Type {
         Unknown,
@@ -118,7 +118,7 @@ public:
     };
     Q_ENUM(Type);
 
-    [[nodiscard]] int id() const;
+    [[nodiscard]] QString id() const;
     [[nodiscard]] AbstractAccount *account() const;
     [[nodiscard]] Type type() const;
     [[nodiscard]] Post *post() const;
@@ -129,8 +129,11 @@ public:
     [[nodiscard]] std::shared_ptr<Identity> identity() const;
     [[nodiscard]] QDateTime createdAt() const;
 
+    [[nodiscard]] bool unread() const;
+    void setUnread(bool unread);
+
 private:
-    int m_id = 0;
+    QString m_id;
 
     AbstractAccount *m_account = nullptr;
     Post *m_post = nullptr;
@@ -141,6 +144,7 @@ private:
     Type m_type = Type::Unknown;
     std::shared_ptr<Identity> m_identity;
     QDateTime m_createdAt;
+    bool m_unread;
 
     Post *createPost(AbstractAccount *account, const QJsonObject &obj, QObject *parent);
 };

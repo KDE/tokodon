@@ -165,7 +165,8 @@ void MainTimelineModel::fillTimeline(const QString &fromId, bool backwards)
     if (isPublic) {
         query.addQueryItem(QStringLiteral("local"), QStringLiteral("true"));
     }
-    if (!fromId.isEmpty() && !query.hasQueryItem(QStringLiteral("max_id"))) {
+    const bool hasFromId = !fromId.isEmpty() && !query.hasQueryItem(QStringLiteral("max_id"));
+    if (hasFromId) {
         // TODO: this is an *upper bound* so it always is one less than the last post we read
         // is this really how it's supposed to work wrt read markers?
         query.addQueryItem(QStringLiteral("max_id"), fromId);
@@ -179,7 +180,7 @@ void MainTimelineModel::fillTimeline(const QString &fromId, bool backwards)
         url,
         true,
         this,
-        [this, currentTimelineName = m_timelineName, account = m_account, backwards](QNetworkReply *reply) {
+        [this, currentTimelineName = m_timelineName, account = m_account, backwards, hasFromId](QNetworkReply *reply) {
             // This weird m_account != account is to protect against account switches that might happen while loading
             // Ditto for timeline name
             if (m_account != account || m_timelineName != currentTimelineName) {
@@ -219,6 +220,10 @@ void MainTimelineModel::fillTimeline(const QString &fromId, bool backwards)
             Q_EMIT hasPreviousChanged();
 
             setLoading(false);
+
+            if (hasFromId) {
+                fillTimeline({}, true);
+            }
         },
         [this](const QNetworkReply *reply) {
             setLoading(false);
@@ -340,13 +345,15 @@ void MainTimelineModel::updateReadMarker(const QString &postId)
 {
     const bool isHome = m_timelineName == QStringLiteral("home");
 
-    // Only overwrite the read marker if they hit the button themselves
     if (isHome) {
-        const auto lastReadId = m_lastReadId.toULongLong();
-        if (postId.toULongLong() > lastReadId) {
-            // We want to force a refresh of the read marker in case we reached the top
-            m_account->saveTimelinePosition(QStringLiteral("home"), postId);
-            m_lastReadId = postId;
+        const auto latestPostId = findLatestPostId({postId, m_lastReadId});
+        if (latestPostId.isEmpty()) {
+            return;
+        }
+
+        if (latestPostId != m_lastReadId) {
+            m_account->saveTimelinePosition(QStringLiteral("home"), latestPostId);
+            m_lastReadId = latestPostId;
         }
     }
 }
@@ -384,8 +391,13 @@ QVariant MainTimelineModel::data(const QModelIndex &index, int role) const
         return false;
     }
 
-    const auto postId = data(index, OriginalIdRole).toLongLong();
-    return m_initialLastReadId.toLongLong() >= postId;
+    const auto postId = data(index, OriginalIdRole).toString();
+    const auto latestPostId = findLatestPostId({postId, m_initialLastReadId});
+    if (latestPostId == m_initialLastReadId) {
+        return true;
+    }
+
+    return false;
 }
 
 bool MainTimelineModel::hasPrevious() const

@@ -189,6 +189,25 @@ void TimelineModel::setShouldLoadMore(bool shouldLoadMore)
     m_shouldLoadMore = shouldLoadMore;
 }
 
+QString TimelineModel::findLatestPostId(const QStringList &postIds) const
+{
+    if (postIds.isEmpty()) {
+        return QString();
+    }
+
+    // Mastodon API documentation claims that a server is responsible for sorting IDs before generating the API
+    // response: https://docs.joinmastodon.org/api/guidelines/#id
+    // So, we just need to find a first post ID on m_timeline.
+    for (const auto post : std::as_const(m_timeline)) {
+        if (postIds.contains(post->originalPostId())) {
+            return post->originalPostId();
+        }
+    }
+
+    qWarning() << "None of postIds found. It shouldn't happen.";
+    return QString();
+}
+
 bool TimelineModel::canFetchMore(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);

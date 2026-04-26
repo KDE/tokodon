@@ -627,13 +627,14 @@ QUrl AbstractAccount::streamingUrl(const QString &stream)
 void AbstractAccount::handleNotification(const QJsonDocument &doc)
 {
     const auto obj = doc.object();
-    std::shared_ptr<Notification> n = std::make_shared<Notification>(this, obj);
+    std::shared_ptr<Notification> n = std::make_shared<Notification>(this, obj, false);
 
     if (n->type() == Notification::FollowRequest) {
         m_followRequestCount++;
         Q_EMIT followRequestCountChanged();
     } else {
         m_unreadNotificationsCount++;
+        n->setUnread(true);
         Q_EMIT unreadNotificationsCountChanged();
     }
 
