@@ -18,13 +18,7 @@ TimelinePage {
     placeholderText: i18n("No Posts")
     placeholderExplanation: i18n("There are no posts from the users in your list. Only new posts will appear in a list.")
     showPostAction: false
-
-    Component.onCompleted: {
-        // TODO: When we can require KF 6.8, set it as a normal property
-        if (root.verticalScrollBarInteractive !== undefined) {
-            root.verticalScrollBarInteractive = false;
-        }
-    }
+    verticalScrollBarInteractive: false
 
     actions: Kirigami.Action {
         text: i18nc("@action:button Edit current list", "Edit…")

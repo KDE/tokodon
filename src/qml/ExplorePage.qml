@@ -63,14 +63,7 @@ Kirigami.Page {
         Kirigami.Theme.inherit: false
     }
 
-    Component.onCompleted: {
-        trendingPostsAction.checked = true
-
-        // TODO: When we can require KF 6.8, set it as a normal property
-        if (timelinePage.verticalScrollBarInteractive !== undefined) {
-            timelinePage.verticalScrollBarInteractive = false;
-        }
-    }
+    Component.onCompleted: trendingPostsAction.checked = true
 
     Kirigami.Theme.colorSet: Kirigami.Theme.View
     Kirigami.Theme.inherit: false

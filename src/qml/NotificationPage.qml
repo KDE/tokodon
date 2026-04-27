@@ -180,14 +180,9 @@ Kirigami.ScrollablePage {
         sourceModel: notificationModel
     }
 
-    Component.onCompleted: {
-        showAllAction.checked = true
+    verticalScrollBarInteractive: false
 
-        // TODO: When we can require KF 6.8, set it as a normal property
-        if (timelinePage.verticalScrollBarInteractive !== undefined) {
-            timelinePage.verticalScrollBarInteractive = false;
-        }
-    }
+    Component.onCompleted: showAllAction.checked = true
 
     ListView {
         id: listview
