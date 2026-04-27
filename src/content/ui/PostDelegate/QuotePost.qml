@@ -134,7 +134,7 @@ QQC2.AbstractButton {
                 inViewPort: true
                 canHideMedia: false
                 identity: root.post.authorIdentity
-                viewportWidth: root.width
+                viewportWidth: root.availableWidth
                 forceCrop: true
             }
         }
