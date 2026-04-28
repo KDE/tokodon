@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-27 00:44+0000\n"
+"POT-Creation-Date: 2026-04-28 00:45+0000\n"
 "PO-Revision-Date: 2022-04-07 18:19+0200\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -1327,19 +1327,19 @@ msgstr "News"
 msgid "Users"
 msgstr "Používatelia"
 
-#: qml/ExplorePage.qml:110
+#: qml/ExplorePage.qml:103
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Posts"
 msgstr "No Posts"
 
-#: qml/ExplorePage.qml:137
+#: qml/ExplorePage.qml:130
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Tags"
 msgstr "No Tags"
 
-#: qml/ExplorePage.qml:169
+#: qml/ExplorePage.qml:162
 #, kde-format
 msgid "%1 person is talking"
 msgid_plural "%1 people are talking"
@@ -1347,13 +1347,13 @@ msgstr[0] "%1 person is talking"
 msgstr[1] "%1 people are talking"
 msgstr[2] "%1 people are talking"
 
-#: qml/ExplorePage.qml:262
+#: qml/ExplorePage.qml:255
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No News"
 msgstr "No News"
 
-#: qml/ExplorePage.qml:299
+#: qml/ExplorePage.qml:292
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Users"
@@ -1442,10 +1442,10 @@ msgid ""
 "\n"
 "The types of notifications shown can be fine tuned when logged in."
 msgstr ""
-"Tokodon can show notifications for activity ako napríklad users boosting or "
-"replying to your posts.\n"
+"Tokodon môže zobrazovať oznámenia o aktivite, napríklad keď používatelia "
+"zdieľajú alebo odpovedajú na vaše príspevky.\n"
 "\n"
-"The types of notifications shown can be fine tuned when logged in."
+"Typy zobrazovaných oznámení môžete doladiť po prihlásení."
 
 #: qml/InitialSetup/SetupNotifications.qml:35
 #, kde-format
@@ -1548,10 +1548,10 @@ msgid ""
 "There are no posts from the users in your list. Only new posts will appear "
 "in a list."
 msgstr ""
-"Existujú no posts from the users in your list. Only new posts will appear in "
-"a list."
+"V zozname nie sú žiadne príspevky od používateľov. V zozname sa budú "
+"zobrazovať iba nové príspevky."
 
-#: qml/ListTimelinePage.qml:30
+#: qml/ListTimelinePage.qml:24
 #, kde-format
 msgctxt "@action:button Edit current list"
 msgid "Edit…"
@@ -1617,10 +1617,10 @@ msgid ""
 "\n"
 "You can attempt to log in again with the button below, or restart Tokodon."
 msgstr ""
-"Please check if the password service is running. For other login issues, "
-"môžete try logging into the server's website.\n"
+"Prosím skontrolujte, či beží služba hesiel. V prípade iných problémov s "
+"prihlásením môžete skúsiť prihlásiť sa na webovej stránke servera.\n"
 "\n"
-"Môžete attempt to log in again with the button below, or restart Tokodon."
+"Môžete sa pokúsiť prihlásiť znova tlačidlom nižšie alebo reštartovať Tokodon."
 
 #: qml/LoginFlow/LoginIssuePage.qml:48
 #, kde-format
@@ -3456,24 +3456,24 @@ msgctxt "Show only quotes"
 msgid "Quotes"
 msgstr "Quotes"
 
-#: qml/NotificationPage.qml:209
+#: qml/NotificationPage.qml:204
 #, kde-format
 msgctxt "@info:label New notifications"
 msgid "New"
 msgstr "Nový"
 
-#: qml/NotificationPage.qml:209
+#: qml/NotificationPage.qml:204
 #, kde-format
 msgctxt "@info:label Previous notifications"
 msgid "Previous"
 msgstr "Predchádzajúci obrázok"
 
-#: qml/NotificationPage.qml:356
+#: qml/NotificationPage.qml:351
 #, kde-format
 msgid "No Notifications"
 msgstr "Zobraziť upozornenia"
 
-#: qml/NotificationPage.qml:357
+#: qml/NotificationPage.qml:352
 #, kde-format
 msgid ""
 "You have no notifications yet. When people reply, favorite or boost your "
@@ -4335,7 +4335,8 @@ msgstr "Is automated"
 msgid ""
 "Whether to publicly mark this account as doing any kind of automated actions."
 msgstr ""
-"Či sa má publicly mark this account as doing any kind of automated actions."
+"Či sa má tento účet verejne označiť ako vykonávajúci akékoľvek "
+"automatizované akcie."
 
 #: qml/Settings/AccountPage.qml:149
 #, kde-format
@@ -4437,8 +4438,8 @@ msgid ""
 "If checked, the Home timeline will begin where you last read. The position "
 "in the timeline is shared with other clients."
 msgstr ""
-"Ak je zaškrtnuté, the Home timeline will begin where you last read. The "
-"position in the timeline is shared with other clients."
+"Ak je zaškrtnuté, domovská časová os začne tam, kde ste naposledy čítali. "
+"Pozícia v časovej osi sa zdieľa s ostatnými klientmi."
 
 #: qml/Settings/AppearancePage.qml:72
 #, kde-format
@@ -4503,8 +4504,8 @@ msgid ""
 "If unchecked, posts with only one image attached will be uncropped and shown "
 "in full."
 msgstr ""
-"Ak nie je zaškrtnuté, posts with only one image attached will be uncropped "
-"and shown in full."
+"Ak nie je zaškrtnuté, príspevky s pripojeným iba jedným obrázkom sa zobrazia "
+"neorezan v plnom rozsahu."
 
 #: qml/Settings/AppearancePage.qml:171
 #, kde-format
@@ -5480,13 +5481,13 @@ msgstr "Pripojiť súbor"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You can't have attachments and a poll in the same post."
-msgstr "Môžete't have attachments and a poll in rovnaký post."
+msgstr "V rovnakom príspevku nemôžete mať prílohy a anketu."
 
 #: qml/StatusComposer/StatusComposer.qml:504
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You have the maximum allowed number of attachments."
-msgstr "You have the maximum allowed počet attachments."
+msgstr "Máte maximálny povolený počet príloh."
 
 #: qml/StatusComposer/StatusComposer.qml:507
 #, kde-format
@@ -5504,7 +5505,7 @@ msgstr "Pripojiť súbor"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You can't modify or add a poll to an existing post."
-msgstr "Môžete't modify or add a poll to an existing post."
+msgstr "Existujúci príspevok nemôžete upravovať ani k nemu pridávať anketu."
 
 #: qml/StatusComposer/StatusComposer.qml:533
 #, kde-format
@@ -5616,8 +5617,8 @@ msgid ""
 "Some of your media is missing alt text. Adding descriptions help everyone, "
 "especially the visually impaired."
 msgstr ""
-"Niektoré z your media is missing alt text. Adding descriptions help "
-"everyone, especially the visually impaired."
+"Niektorým vašim médiám chýba alternatívny text. Pridávanie popisov pomáha "
+"všetkým, najmä zrakovo postihnutým."
 
 #: qml/TimelinePage.qml:41 timeline/accountmodel.cpp:41
 #, kde-format
@@ -5644,13 +5645,13 @@ msgstr "Show Quotes"
 msgid "Show Replies"
 msgstr "Show Replies"
 
-#: qml/TimelinePage.qml:155
+#: qml/TimelinePage.qml:150
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
 msgstr "Nepodarilo sa contact server: %1. Please check your settings."
 
-#: qml/TimelinePage.qml:196
+#: qml/TimelinePage.qml:191
 #, kde-format
 msgctxt "@action:button Load more posts above this"
 msgid "Load More"
