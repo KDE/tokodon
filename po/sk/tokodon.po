@@ -92,12 +92,12 @@ msgstr "All supported formats (%1)"
 #: account/abstractaccount.cpp:672
 #, kde-format
 msgid "Could not follow account"
-msgstr "Could not follow account"
+msgstr "Nepodarilo sa sledovať účet"
 
 #: account/abstractaccount.cpp:673
 #, kde-format
 msgid "Could not unfollow account"
-msgstr "Could not unfollow account"
+msgstr "Nepodarilo sa prestať sledovať účet"
 
 #: account/abstractaccount.cpp:674
 #, kde-format
@@ -107,12 +107,12 @@ msgstr "Pridať účet"
 #: account/abstractaccount.cpp:675
 #, kde-format
 msgid "Could not block account"
-msgstr "Could not block account"
+msgstr "Nepodarilo sa zablokovať účet"
 
 #: account/abstractaccount.cpp:676
 #, kde-format
 msgid "Could not unblock account"
-msgstr "Could not unblock account"
+msgstr "Nepodarilo sa odblokovať účet"
 
 #: account/abstractaccount.cpp:677
 #, kde-format
@@ -122,28 +122,28 @@ msgstr "Pridať účet"
 #: account/abstractaccount.cpp:678
 #, kde-format
 msgid "Could not unmute account"
-msgstr "Could not unmute account"
+msgstr "Nepodarilo sa zrušiť stíšenie účtu"
 
 #: account/abstractaccount.cpp:679
 #, kde-format
 msgid "Could not feature account"
-msgstr "Could not feature account"
+msgstr "Nepodarilo sa odporučiť účet"
 
 #: account/abstractaccount.cpp:680
 #, kde-format
 msgid "Could not unfeature account"
-msgstr "Could not unfeature account"
+msgstr "Nepodarilo sa zrušiť odporúčanie účtu"
 
 #: account/abstractaccount.cpp:681
 #, kde-format
 msgid "Could not edit note about an account"
-msgstr "Could not edit note about an account"
+msgstr "Nepodarilo sa upraviť poznámku o účte"
 
 #: account/account.cpp:300
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Network request was interrupted"
-msgstr "Network request was interrupted"
+msgstr "Sieťová požiadavka bola prerušená"
 
 #: account/account.cpp:309 account/account.cpp:316
 #, kde-format
@@ -171,7 +171,7 @@ msgstr "%1 mentioned you"
 #: content/ui/Notifications/UserInteractionLabel.qml:92
 #, kde-format
 msgid "%1 wrote a new post"
-msgstr "%1 wrote a new post"
+msgstr "%1 napísal/a nový príspevok"
 
 #: account/notificationhandler.cpp:95
 #: content/ui/Notifications/UserInteractionLabel.qml:82
@@ -189,7 +189,7 @@ msgstr "%1 followed you"
 #: content/ui/Notifications/FollowDelegate.qml:80
 #, kde-format
 msgid "%1 requested to follow you"
-msgstr "%1 requested to follow you"
+msgstr "%1 požiadal/a o sledovanie vás"
 
 #: account/notificationhandler.cpp:119
 #: content/ui/Notifications/UserInteractionLabel.qml:86
@@ -200,12 +200,12 @@ msgstr "%1 favorited your post"
 #: account/notificationhandler.cpp:127
 #, kde-format
 msgid "Poll by %1 has ended"
-msgstr "Poll by %1 has ended"
+msgstr "Anketa používateľa %1 sa skončila"
 
 #: account/notificationhandler.cpp:135
 #, kde-format
 msgid "%1 edited a post"
-msgstr "%1 edited a post"
+msgstr "%1 upravil/a príspevok"
 
 #: account/notificationhandler.cpp:146
 #, kde-format
@@ -220,7 +220,7 @@ msgstr "Your %1 #FediWrapped awaits!"
 #: account/notificationhandler.cpp:148
 #, kde-format
 msgid "Unveil your year's highlights and memorable moments on Mastodon!"
-msgstr "Unveil your year's highlights and memorable moments on Mastodon!"
+msgstr "Odhaľte najlepšie okamihy a nezabudnuteľné momenty roka na Mastodone!"
 
 #: account/notificationhandler.cpp:155
 #: content/ui/Notifications/UserInteractionLabel.qml:94
@@ -237,7 +237,7 @@ msgstr "Upozornenia"
 #: account/notificationhandler.cpp:161
 #, kde-format
 msgid "You received a new notification."
-msgstr "You received a new notification."
+msgstr "Dostali ste nové upozornenie."
 
 #: account/notificationhandler.cpp:174
 #, kde-kuit-format
@@ -247,7 +247,7 @@ msgstr "<b>Content Notice</b>: %1"
 #: account/notificationhandler.cpp:178
 #, kde-format
 msgid "This post has no text."
-msgstr "This post has no text."
+msgstr "Tento príspevok nemá žiadny text."
 
 #: account/notificationhandler.cpp:185
 #, kde-format
@@ -255,23 +255,24 @@ msgid ""
 "The moderators of your server has limited this user, view this in Tokodon to "
 "see their profile."
 msgstr ""
-"The moderators of your server has limited this user, view this in Tokodon to "
-"see their profile."
+"Moderátori vášho servera obmedzili tohto používateľa, zobrazenie v Tokodone "
+"ukáže ich profil."
 
 #: account/notificationhandler.cpp:189
 #, kde-format
 msgid "This user doesn't have a description."
-msgstr "This user doesn't have a description."
+msgstr "Tento používateľ nemá popis."
 
 #: account/profileeditor.cpp:188
 #, kde-format
 msgid "Image is too big"
-msgstr "Image is too big"
+msgstr "Obrázok je príliš veľký"
 
 #: account/profileeditor.cpp:201
 #, kde-format
 msgid "Unsupported image file. Only jpeg, png and gif are supported."
-msgstr "Unsupported image file. Only jpeg, png and gif are supported."
+msgstr ""
+"Nepodporovaný súbor obrázka. Podporované sú len formáty jpeg, png a gif."
 
 #: account/profileeditor.cpp:345
 #, kde-format
@@ -283,7 +284,8 @@ msgstr "Account details saved"
 msgid ""
 "This server provided no rules. Please see their website for more information."
 msgstr ""
-"This server provided no rules. Please see their website for more information."
+"Tento server neposkytol žiadne pravidlá. Ďalšie informácie nájdete na ich "
+"webovej stránke."
 
 #: account/scheduledstatusesmodel.cpp:72
 #, kde-format
@@ -419,8 +421,8 @@ msgid ""
 "Some users need to be manually approved before they can follow you, and will "
 "show up here."
 msgstr ""
-"Some users need to be manually approved before they can follow you, and will "
-"show up here."
+"Niektorí používatelia musia byť ručne schválení predtým, ako vás môžu "
+"sledovať, a zobrazia sa tu."
 
 #: account/socialgraphmodel.cpp:86
 #, kde-format
@@ -428,7 +430,7 @@ msgctxt "@info:placeholder"
 msgid ""
 "No one is following this user, or they have chosen to hide this information."
 msgstr ""
-"No one is following this user, or they have chosen to hide this information."
+"Tohto používateľa nikto nesleduje alebo sa rozhodol skryť tieto informácie."
 
 #: account/socialgraphmodel.cpp:88
 #, kde-format
@@ -436,27 +438,29 @@ msgctxt "@info:placeholder"
 msgid ""
 "This user isn't following anyone, or has chosen to hide this information."
 msgstr ""
-"This user isn't following anyone, or has chosen to hide this information."
+"Tento používateľ nikoho nesleduje alebo sa rozhodol skryť tieto informácie."
 
 #: account/socialgraphmodel.cpp:90
 #, kde-format
 msgid "Mute users to stop them from showing up in your notifications."
-msgstr "Mute users to stop them from showing up in your notifications."
+msgstr "Stíšte používateľov, aby sa nezobrazovali vo vašich upozorneniach."
 
 #: account/socialgraphmodel.cpp:92
 #, kde-format
 msgid "Block users to hide the user from your timeline entirely."
-msgstr "Block users to hide the user from your timeline entirely."
+msgstr "Blokujte používateľov, aby ste ich úplne skryli zo svojej časovej osi."
 
 #: account/socialgraphmodel.cpp:94
 #, kde-format
 msgid "Users you like can be featured and shown on your profile."
-msgstr "Users you like can be featured and shown on your profile."
+msgstr ""
+"Používatelia, ktorých máte radi, môžu byť odporučení a zobrazení na vašom "
+"profile."
 
 #: account/socialgraphmodel.cpp:96
 #, kde-format
 msgid "No one has favorited this post yet. Maybe you'll be the first?"
-msgstr "No one has favorited this post yet. Maybe you'll be the first?"
+msgstr "Tento príspevok si zatiaľ nikto neobľúbil. Možno budete prvý/á?"
 
 #: account/socialgraphmodel.cpp:98
 #, kde-format
@@ -539,7 +543,7 @@ msgstr "Frozen"
 #, kde-format
 msgctxt "login status"
 msgid "Email Not confirmed"
-msgstr "Email Not confirmed"
+msgstr "E-mail nie je potvrdený"
 
 #: admin/adminaccountinfo.cpp:34
 #, kde-format
@@ -551,12 +555,14 @@ msgstr "Not Approved"
 #, kde-format
 msgctxt "login status"
 msgid "No Limits Imposed"
-msgstr "No Limits Imposed"
+msgstr "Žiadne obmedzenia"
 
 #: admin/federationtoolmodel.cpp:164 admin/iprulestoolmodel.cpp:127
 #, kde-format
 msgid "Error occurred when making a PUT request to update the domain block."
-msgstr "Error occurred when making a PUT request to update the domain block."
+msgstr ""
+"Pri odosielaní PUT požiadavky na aktualizáciu blokovania domény sa vyskytla "
+"chyba."
 
 #: admin/reporttoolmodel.cpp:198
 #, kde-format
@@ -582,13 +588,13 @@ msgstr "Pridať účet"
 #, kde-format
 msgctxt "@info %1 is a display name"
 msgid "%1 has moved to a new account:"
-msgstr "%1 has moved to a new account:"
+msgstr "%1 sa presunul/a na nový účet:"
 
 #: content/ui/AccountHeader.qml:90
 #, kde-format
 msgctxt "@action:button"
 msgid "Go to Profile"
-msgstr "Go to Profile"
+msgstr "Prejsť na profil"
 
 #: content/ui/AccountHeader.qml:158
 #, kde-format
@@ -638,7 +644,7 @@ msgstr "Notify me when %1 posts."
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show a QR code for this account"
-msgstr "Show a QR code for this account"
+msgstr "Zobraziť QR kód pre tento účet"
 
 #: content/ui/AccountHeader.qml:350
 #, kde-format
@@ -653,22 +659,22 @@ msgstr "Voľby:"
 #: content/ui/AccountHeader.qml:365
 #, kde-format
 msgid "Hide Boosts from %1"
-msgstr "Hide Boosts from %1"
+msgstr "Skryť zosilnenia od %1"
 
 #: content/ui/AccountHeader.qml:367
 #, kde-format
 msgid "Show Boosts from %1"
-msgstr "Show Boosts from %1"
+msgstr "Zobraziť zosilnenia od %1"
 
 #: content/ui/AccountHeader.qml:383
 #, kde-format
 msgid "Stop Featuring This Profile"
-msgstr "Stop Featuring This Profile"
+msgstr "Zastaviť odporúčanie tohto profilu"
 
 #: content/ui/AccountHeader.qml:385
 #, kde-format
 msgid "Feature This Profile"
-msgstr "Feature This Profile"
+msgstr "Odporučiť tento profil"
 
 #: content/ui/AccountHeader.qml:401
 #, kde-format
@@ -728,7 +734,7 @@ msgstr "Účty"
 #, kde-format
 msgctxt "@action:inmenu 'Browser' being a web browser"
 msgid "Open in Browser"
-msgstr "Open in Browser"
+msgstr "Otvoriť v prehliadači"
 
 #: content/ui/AccountHeader.qml:493
 #, kde-format
@@ -749,7 +755,7 @@ msgstr "Joined"
 #: content/ui/AccountHeader.qml:608
 #, kde-format
 msgid "Ownership of this link was checked on %1"
-msgstr "Ownership of this link was checked on %1"
+msgstr "Vlastníctvo tohto odkazu bolo overené dňa %1"
 
 #: content/ui/AccountHeader.qml:691
 #, kde-format
@@ -858,7 +864,7 @@ msgstr "No Posts"
 #: content/ui/AccountInfo.qml:131 content/ui/FollowingPage.qml:162
 #, kde-format
 msgid "This user hasn't posted anything yet."
-msgstr "This user hasn't posted anything yet."
+msgstr "Tento používateľ zatiaľ nič nezverejnil."
 
 #: content/ui/AccountInfo.qml:259
 #, kde-format
@@ -869,7 +875,7 @@ msgstr "No Media"
 #: content/ui/AccountInfo.qml:260
 #, kde-format
 msgid "This user hasn't posted any media yet."
-msgstr "This user hasn't posted any media yet."
+msgstr "Tento používateľ zatiaľ nezverejnil žiadne médiá."
 
 #: content/ui/AccountSwitchDialog.qml:29
 #, kde-format
@@ -886,7 +892,7 @@ msgstr "Pridať účet"
 #: content/ui/AccountSwitchDialog.qml:59
 #, kde-format
 msgid "Log in or create a new account"
-msgstr "Log in or create a new account"
+msgstr "Prihlásiť sa alebo vytvoriť nový účet"
 
 #: content/ui/AccountSwitchDialog.qml:157
 #: content/ui/Settings/AccountsPage.qml:81
@@ -895,7 +901,8 @@ msgctxt "@info:tooltip"
 msgid ""
 "This account has an issue and can't login, switch to it for more details."
 msgstr ""
-"This account has an issue and can't login, switch to it for more details."
+"Tento účet má problém a nemôže sa prihlásiť, prepnite naň pre viac "
+"podrobností."
 
 #: content/ui/Android/ShareAction.qml:15 content/ui/ShareAction.qml:20
 #, kde-format
@@ -917,7 +924,7 @@ msgstr "Announcements"
 #, kde-format
 msgctxt "@label An announcement was published on a date"
 msgid "Announcement on %1"
-msgstr "Announcement on %1"
+msgstr "Oznámenie dňa %1"
 
 #: content/ui/AnnouncementsPage.qml:137
 #, kde-format
@@ -928,7 +935,7 @@ msgstr "No Announcements"
 #: content/ui/AnnouncementsPage.qml:138
 #, kde-format
 msgid "Your server has not made any announcements yet."
-msgstr "Your server has not made any announcements yet."
+msgstr "Váš server zatiaľ neurobil žiadne oznámenia."
 
 #: content/ui/Components/BoostConfirmationDialog.qml:19
 #, kde-format
@@ -976,18 +983,19 @@ msgstr "Účty"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Return to Top"
-msgstr "Return to Top"
+msgstr "Vrátiť sa na začiatok"
 
 #: content/ui/Components/TimelineView.qml:176
 #, kde-format
 msgctxt "@info:status"
 msgid "Some replies are not available"
-msgstr "Some replies are not available"
+msgstr "Niektoré odpovede nie sú dostupné"
 
 #: content/ui/Components/TimelineView.qml:177
 #, kde-format
 msgid "To view all replies, open the post on the original server."
-msgstr "To view all replies, open the post on the original server."
+msgstr ""
+"Ak chcete zobraziť všetky odpovede, otvorte príspevok na pôvodnom serveri."
 
 #: content/ui/Components/TimelineView.qml:180
 #, kde-format
@@ -999,7 +1007,7 @@ msgstr "Open in Browser"
 #, kde-format
 msgctxt "@info:status"
 msgid "End of Timeline"
-msgstr "End of Timeline"
+msgstr "Koniec časovej osi"
 
 #: content/ui/ConversationPage.qml:15
 #, kde-format
@@ -1021,7 +1029,7 @@ msgstr "Účty"
 #: content/ui/ConversationPage.qml:103
 #, kde-format
 msgid "Search for user…"
-msgstr "Search for user…"
+msgstr "Vyhľadať používateľa…"
 
 #: content/ui/ConversationPage.qml:142
 #, kde-format
@@ -1034,8 +1042,8 @@ msgid ""
 "Direct messages to other users will show up here. Do not share any sensitive "
 "information over a conversation."
 msgstr ""
-"Direct messages to other users will show up here. Do not share any sensitive "
-"information over a conversation."
+"Priame správy iným používateľom sa zobrazia tu. Nezdieľajte žiadne citlivé "
+"informácie v rozhovore."
 
 #: content/ui/Debug/DebugPage.qml:19
 #, kde-format
@@ -1071,7 +1079,7 @@ msgstr "Názov"
 #, kde-format
 msgctxt "@label"
 msgid "Show replies for"
-msgstr "Show replies for"
+msgstr "Zobraziť odpovede pre"
 
 #: content/ui/EditListPage.qml:86
 #, kde-format
@@ -1082,7 +1090,7 @@ msgstr "Exclusive"
 #: content/ui/EditListPage.qml:87
 #, kde-format
 msgid "Posts in an exclusive list are excluded from the Home timeline."
-msgstr "Posts in an exclusive list are excluded from the Home timeline."
+msgstr "Príspevky vo výhradnom zozname sú vylúčené z domovskej časovej osi."
 
 #: content/ui/EditListPage.qml:97
 #, kde-format
@@ -1093,7 +1101,7 @@ msgstr "Favorite"
 #: content/ui/EditListPage.qml:98
 #, kde-format
 msgid "This list will show up in the sidebar."
-msgstr "This list will show up in the sidebar."
+msgstr "Tento zoznam sa zobrazí v bočnom paneli."
 
 #: content/ui/EditListPage.qml:106
 #, kde-format
@@ -1111,7 +1119,7 @@ msgstr "Užívateľské meno:"
 #, kde-format
 msgctxt "@title"
 msgid "Add Users to List…"
-msgstr "Add Users to List…"
+msgstr "Pridať používateľov do zoznamu…"
 
 #: content/ui/EditListPage.qml:172
 #, kde-format
@@ -1192,12 +1200,13 @@ msgid "No Tags"
 msgstr "No Tags"
 
 #: content/ui/ExplorePage.qml:169
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "%1 person is talking"
 msgid "%1 person is talking"
 msgid_plural "%1 people are talking"
-msgstr[0] "%1 person is talking"
-msgstr[1] "%1 people are talking"
-msgstr[2] "%1 people are talking"
+msgstr[0] "%1 osoba hovorí"
+msgstr[1] "%1 osoba hovorí"
+msgstr[2] "%1 osoba hovorí"
 
 #: content/ui/ExplorePage.qml:262
 #, kde-format
@@ -1251,7 +1260,7 @@ msgstr "Nasledovatelia"
 #: content/ui/FollowingPage.qml:155
 #, kde-format
 msgid "No User Selected"
-msgstr "No User Selected"
+msgstr "Žiadny používateľ nie je vybraný"
 
 #: content/ui/FollowingPage.qml:156
 #, kde-format
@@ -1259,8 +1268,8 @@ msgid ""
 "With the Following view, easily check on each user you're following and only "
 "their posts - sorted by recent activity."
 msgstr ""
-"With the Following view, easily check on each user you're following and only "
-"their posts - sorted by recent activity."
+"Zobrazenie Sledovaní umožňuje jednoducho sledovať každého používateľa, "
+"ktorého sledujete, a len ich príspevky – zoradené podľa nedávnej aktivity."
 
 #: content/ui/FullScreenImage.qml:33
 #, kde-format
@@ -1349,7 +1358,7 @@ msgstr "Welcome"
 #: content/ui/InitialSetup/SetupWelcome.qml:30
 #, kde-format
 msgid "Welcome to Tokodon"
-msgstr "Welcome to Tokodon"
+msgstr "Vitajte v Tokodone"
 
 #: content/ui/InitialSetup/SetupWelcome.qml:35
 #, kde-format
@@ -1388,7 +1397,7 @@ msgstr "No Lists"
 #: content/ui/ListsPage.qml:78
 #, kde-format
 msgid "Lists allow you to categorize who you're following."
-msgstr "Lists allow you to categorize who you're following."
+msgstr "Zoznamy umožňujú kategorizovať, koho sledujete."
 
 #: content/ui/ListTimelinePage.qml:18 content/ui/Main.qml:276
 #: content/ui/Main.qml:312 content/ui/Main.qml:327
@@ -1420,7 +1429,8 @@ msgstr "Voľby:"
 #: content/ui/LoginFlow/BaseAuthorization.qml:79
 #, kde-format
 msgid "To continue, you must authorize Tokodon to access your account."
-msgstr "To continue, you must authorize Tokodon to access your account."
+msgstr ""
+"Ak chcete pokračovať, musíte autorizovať Tokodon na prístup k vášmu účtu."
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:88
 #, kde-format
@@ -1484,7 +1494,7 @@ msgstr "View Website"
 #: content/ui/LoginFlow/LoginIssuePage.qml:57
 #, kde-format
 msgid "Re-Attempt Log In"
-msgstr "Re-Attempt Log In"
+msgstr "Skúsiť prihlásenie znova"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:69
 #: content/ui/Settings/AccountPage.qml:34
@@ -1553,7 +1563,7 @@ msgstr "Heslo"
 #: content/ui/LoginFlow/RegistrationPage.qml:128
 #, kde-format
 msgid "Date of Birth"
-msgstr "Date of Birth"
+msgstr "Dátum narodenia"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:136
 #, kde-format
@@ -1593,7 +1603,7 @@ msgstr "Disagree"
 #, kde-format
 msgctxt "@title:window"
 msgid "Pick a Server"
-msgstr "Pick a Server"
+msgstr "Vyberte server"
 
 #: content/ui/LoginFlow/ServersPage.qml:21
 #, kde-format
@@ -1604,17 +1614,17 @@ msgstr "Choose your Existing Server"
 #: content/ui/LoginFlow/ServersPage.qml:38
 #, kde-format
 msgid "This server is closed for registration: %1"
-msgstr "This server is closed for registration: %1"
+msgstr "Tento server je uzavretý pre registráciu: %1"
 
 #: content/ui/LoginFlow/ServersPage.qml:40
 #, kde-format
 msgid "This server is closed for registration, and did not provide a reason."
-msgstr "This server is closed for registration, and did not provide a reason."
+msgstr "Tento server je uzavretý pre registráciu a neposkytol dôvod."
 
 #: content/ui/LoginFlow/ServersPage.qml:178
 #, kde-format
 msgid "Search or enter URL…"
-msgstr "Search or enter URL…"
+msgstr "Vyhľadajte alebo zadajte URL…"
 
 #: content/ui/LoginFlow/ServersPage.qml:217
 #, kde-format
@@ -1629,12 +1639,12 @@ msgstr "Verejné"
 #: content/ui/LoginFlow/ServersPage.qml:256
 #, kde-format
 msgid "No Public Servers"
-msgstr "No Public Servers"
+msgstr "Žiadne verejné servery"
 
 #: content/ui/LoginFlow/ServersPage.qml:257
 #, kde-format
 msgid "Enter a server URL manually in the search field."
-msgstr "Enter a server URL manually in the search field."
+msgstr "Zadajte URL servera ručne do vyhľadávacieho poľa."
 
 #: content/ui/LoginFlow/WebViewAuthorization.qml:22
 #, kde-format
@@ -1655,8 +1665,8 @@ msgid ""
 "Browse the Fediverse and connect with people on Mastodon (and other "
 "compatible software)."
 msgstr ""
-"Browse the Fediverse and connect with people on Mastodon (and other "
-"compatible software)."
+"Prehliadajte Fediverse a spojte sa s ľuďmi na Mastodone (a inom "
+"kompatibilnom softvéri)."
 
 #: content/ui/LoginFlow/WelcomePage.qml:80
 #, kde-format
@@ -1680,7 +1690,7 @@ msgstr "Nastavenia"
 #, kde-format
 msgctxt "@action:button"
 msgid "Compatible with Mastodon"
-msgstr "Compatible with Mastodon"
+msgstr "Kompatibilné s Mastodonom"
 
 #: content/ui/LoginFlow/WelcomePage.qml:122
 #, kde-format
@@ -1727,7 +1737,7 @@ msgstr "Unknown Action"
 #: content/ui/Main.qml:277 content/ui/Main.qml:313 content/ui/Main.qml:328
 #, kde-format
 msgid "It seems pretty quiet right now, try posting something!"
-msgstr "It seems pretty quiet right now, try posting something!"
+msgstr "Zdá sa, že je tu teraz pomerne ticho, skúste niečo zverejniť!"
 
 #: content/ui/Main.qml:342
 #, kde-format
@@ -1754,8 +1764,8 @@ msgid ""
 "Bookmark posts and they will show up here. Bookmarks are always kept "
 "private, even to the post's author."
 msgstr ""
-"Bookmark posts and they will show up here. Bookmarks are always kept "
-"private, even to the post's author."
+"Pridajte príspevky do záložiek a zobrazia sa tu. Záložky sú vždy súkromné, "
+"dokonca aj pred autorom príspevku."
 
 #: content/ui/Main.qml:462
 #, kde-format
@@ -2042,7 +2052,7 @@ msgstr "Owner"
 #: content/ui/ModerationTools/AccountToolPage.qml:299
 #, kde-format
 msgid "No accounts found"
-msgstr "No accounts found"
+msgstr "Nenašli sa žiadne účty"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:17
 #, kde-format
@@ -2074,14 +2084,14 @@ msgctxt ""
 "@info The counted accounts signup attempts using that email domain within "
 "the last week."
 msgid "Account sign-up attempts in this week"
-msgstr "Account sign-up attempts in this week"
+msgstr "Pokusy o registráciu účtu tento týždeň"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:64
 #, kde-format
 msgctxt ""
 "@info The counted IP signup attempts of that email domain within that day."
 msgid "IP sign-up attempts in this week"
-msgstr "IP sign-up attempts in this week"
+msgstr "Pokusy o registráciu z IP adresy tento týždeň"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:73
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:111
@@ -2119,8 +2129,8 @@ msgid ""
 "This can be the domain name that shows up in the e-mail address or the MX "
 "record it uses. They will be checked upon sign-up."
 msgstr ""
-"This can be the domain name that shows up in the e-mail address or the MX "
-"record it uses. They will be checked upon sign-up."
+"Môže to byť názov domény zobrazený v e-mailovej adrese alebo záznam MX, "
+"ktorý používa. Budú skontrolované pri registrácii."
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:116
 #, kde-format
@@ -2137,7 +2147,7 @@ msgstr "New email block added"
 #, kde-format
 msgctxt "@info"
 msgid "%1 sign-up attempts over the last week"
-msgstr "%1 sign-up attempts over the last week"
+msgstr "%1 pokusov o registráciu za posledný týždeň"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:185
 #, kde-format
@@ -2153,7 +2163,7 @@ msgstr "Add New Domain Block"
 #: content/ui/ModerationTools/FederationToolPage.qml:159
 #, kde-format
 msgid "Allow Federation with Domain"
-msgstr "Allow Federation with Domain"
+msgstr "Povoliť federáciu s doménou"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:38
 #, kde-format
@@ -2175,12 +2185,12 @@ msgstr "Created at"
 #: content/ui/ModerationTools/FederationToolPage.qml:59
 #, kde-format
 msgid "Disallow Federation with Domain"
-msgstr "Disallow Federation with Domain"
+msgstr "Zakázať federáciu s doménou"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:63
 #, kde-format
 msgid "Disallowed federation with the domain"
-msgstr "Disallowed federation with the domain"
+msgstr "Federácia s doménou je zakázaná"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:73
 #, kde-format
@@ -2245,8 +2255,8 @@ msgid ""
 "Removes locally stored media files and refuses to download any in the "
 "future. Irrelevant for suspensions"
 msgstr ""
-"Removes locally stored media files and refuses to download any in the "
-"future. Irrelevant for suspensions"
+"Odstráni lokálne uložené mediálne súbory a odmietne sťahovať akékoľvek v "
+"budúcnosti. Nevzťahuje sa na pozastavenia"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:126
 #: content/ui/ModerationTools/MainFederationToolPage.qml:93
@@ -2258,7 +2268,9 @@ msgstr "Reject reports"
 #: content/ui/ModerationTools/MainFederationToolPage.qml:94
 #, kde-format
 msgid "Ignore all reports coming from this domain. Irrelevant for suspensions"
-msgstr "Ignore all reports coming from this domain. Irrelevant for suspensions"
+msgstr ""
+"Ignorovať všetky hlásenia prichádzajúce z tejto domény. Nevzťahuje sa na "
+"pozastavenia"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:132
 #: content/ui/ModerationTools/MainFederationToolPage.qml:101
@@ -2331,7 +2343,7 @@ msgstr "Allowed domains"
 #: content/ui/ModerationTools/FederationToolPage.qml:286
 #, kde-format
 msgid "Allowed for federation"
-msgstr "Allowed for federation"
+msgstr "Povolené pre federáciu"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:309
 #, kde-format
@@ -2407,7 +2419,7 @@ msgstr "Súkromné"
 #: content/ui/ModerationTools/MainIpRulePage.qml:110
 #, kde-format
 msgid "Optional. Remember why you added this rule."
-msgstr "Optional. Remember why you added this rule."
+msgstr "Voliteľné. Zaznamenajte, prečo ste pridali toto pravidlo."
 
 #: content/ui/ModerationTools/IpRulePage.qml:87
 #, kde-format
@@ -2419,7 +2431,7 @@ msgstr "Rule *"
 #: content/ui/ModerationTools/MainIpRulePage.qml:121
 #, kde-format
 msgid "Choose what will happen with requests from this IP"
-msgstr "Choose what will happen with requests from this IP"
+msgstr "Vyberte, čo sa stane s požiadavkami z tejto IP adresy"
 
 #: content/ui/ModerationTools/IpRulePage.qml:98
 #: content/ui/ModerationTools/MainIpRulePage.qml:129
@@ -2431,7 +2443,7 @@ msgstr "Limit sign-ups"
 #: content/ui/ModerationTools/MainIpRulePage.qml:130
 #, kde-format
 msgid "New sign-ups will require your approval"
-msgstr "New sign-ups will require your approval"
+msgstr "Nové registrácie budú vyžadovať vaše schválenie"
 
 #: content/ui/ModerationTools/IpRulePage.qml:105
 #: content/ui/ModerationTools/MainIpRulePage.qml:136
@@ -2443,7 +2455,7 @@ msgstr "Pridať účet"
 #: content/ui/ModerationTools/MainIpRulePage.qml:137
 #, kde-format
 msgid "New sign-ups will not be possible"
-msgstr "New sign-ups will not be possible"
+msgstr "Nové registrácie nebudú možné"
 
 #: content/ui/ModerationTools/IpRulePage.qml:111
 #: content/ui/ModerationTools/MainIpRulePage.qml:143
@@ -2455,7 +2467,7 @@ msgstr "Pridať účet"
 #: content/ui/ModerationTools/MainIpRulePage.qml:144
 #, kde-format
 msgid "Block access to all resources"
-msgstr "Block access to all resources"
+msgstr "Blokovať prístup ku všetkým zdrojom"
 
 #: content/ui/ModerationTools/IpRulePage.qml:126
 #, kde-format
@@ -2492,7 +2504,7 @@ msgstr "Pridať účet"
 #: content/ui/ModerationTools/IpRulePage.qml:207
 #, kde-format
 msgid "No IP rules found"
-msgstr "No IP rules found"
+msgstr "Nenašli sa žiadne pravidlá IP"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:19
 #, kde-format
@@ -2502,7 +2514,7 @@ msgstr "Not Available"
 #: content/ui/ModerationTools/MainAccountToolPage.qml:29
 #, kde-format
 msgid "Perform moderation action on %1"
-msgstr "Perform moderation action on %1"
+msgstr "Vykonať moderačnú akciu na %1"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:36
 #, kde-format
@@ -2549,7 +2561,7 @@ msgctxt ""
 "@info: The user will receive an explanation of what happened with their "
 "account"
 msgid "Notify the user per e-mail"
-msgstr "Notify the user per e-mail"
+msgstr "Upozorniť používateľa e-mailom"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:66
 #, kde-format
@@ -2577,12 +2589,12 @@ msgstr "Zrušiť"
 #: content/ui/ModerationTools/MainAccountToolPage.qml:108
 #, kde-format
 msgid "Are you sure?"
-msgstr "Are you sure?"
+msgstr "Ste si istý/á?"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:109
 #, kde-format
 msgid "Action will be taken against the account."
-msgstr "Action will be taken against the account."
+msgstr "Voči účtu bude prijatá akcia."
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:117
 #, kde-format
@@ -2629,7 +2641,7 @@ msgstr "Bio"
 #: content/ui/ModerationTools/MainAccountToolPage.qml:271
 #, kde-format
 msgid "Reasons for joining"
-msgstr "Reasons for joining"
+msgstr "Dôvody na vstup"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:317
 #, kde-format
@@ -2763,7 +2775,7 @@ msgstr "Undo force-sensitive"
 #: content/ui/ModerationTools/MainAccountToolPage.qml:514
 #, kde-format
 msgid "Take action against this account"
-msgstr "Take action against this account"
+msgstr "Prijať akciu voči tomuto účtu"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:29
 #, kde-format
@@ -3115,7 +3127,7 @@ msgstr "Iné"
 #: content/ui/ModerationTools/MainReportToolPage.qml:274
 #, kde-format
 msgid "Category changed to other"
-msgstr "Category changed to other"
+msgstr "Kategória zmenená na iné"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:285
 #, kde-format
@@ -3125,17 +3137,17 @@ msgstr "Spam"
 #: content/ui/ModerationTools/MainReportToolPage.qml:289
 #, kde-format
 msgid "Category changed to spam"
-msgstr "Category changed to spam"
+msgstr "Kategória zmenená na spam"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:300
 #, kde-format
 msgid "Content violates one or more server rules"
-msgstr "Content violates one or more server rules"
+msgstr "Obsah porušuje jedno alebo viacero pravidiel servera"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:304
 #, kde-format
 msgid "Category changed to rule violation"
-msgstr "Category changed to rule violation"
+msgstr "Kategória zmenená na porušenie pravidla"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:347
 #, kde-format
@@ -3157,8 +3169,7 @@ msgstr "Reported Content"
 #, kde-format
 msgid ""
 "Offending content will be cited in communication with the reported account"
-msgstr ""
-"Offending content will be cited in communication with the reported account"
+msgstr "Závadný obsah bude citovaný v komunikácii s nahlásením účtom"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:407
 #, kde-format
@@ -3289,7 +3300,7 @@ msgstr "Upozornenia"
 #, kde-format
 msgctxt "@action:intoolbar Mark all notifications as read"
 msgid "Mark All As Read"
-msgstr "Mark All As Read"
+msgstr "Označiť všetko ako prečítané"
 
 #: content/ui/NotificationPage.qml:48
 #, kde-format
@@ -3380,13 +3391,13 @@ msgid ""
 "You have no notifications yet. When people reply, favorite or boost your "
 "posts they will show up here."
 msgstr ""
-"You have no notifications yet. When people reply, favorite or boost your "
-"posts they will show up here."
+"Zatiaľ nemáte žiadne upozornenia. Keď ľudia odpovedajú, obľúbia si alebo "
+"zosilnia vaše príspevky, zobrazia sa tu."
 
 #: content/ui/Notifications/AccountWarningDelegate.qml:67
 #, kde-format
 msgid "%1 has issued a warning against your account"
-msgstr "%1 has issued a warning against your account"
+msgstr "%1 vydal/a varovanie voči vášmu účtu"
 
 #: content/ui/Notifications/AnnualReportDelegate.qml:64
 #, kde-kuit-format
@@ -3399,8 +3410,8 @@ msgid ""
 "Your %1 #FediWrapped awaits! Unveil your year's highlights and memorable "
 "moments on Mastodon!"
 msgstr ""
-"Your %1 #FediWrapped awaits! Unveil your year's highlights and memorable "
-"moments on Mastodon!"
+"Váš %1 #FediWrapped čaká! Odhaľte najlepšie okamihy a nezabudnuteľné momenty "
+"roka na Mastodone!"
 
 #: content/ui/Notifications/AnnualReportDelegate.qml:71
 #, kde-format
@@ -3460,7 +3471,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:label"
 msgid "A report has been filed against a user in your server."
-msgstr "A report has been filed against a user in your server."
+msgstr "Bolo podané hlásenie voči používateľovi na vašom serveri."
 
 #: content/ui/Notifications/UnknownNotificationDelegate.qml:48
 #, kde-format
@@ -3471,7 +3482,7 @@ msgstr "Upozornenia"
 #: content/ui/Notifications/UserInteractionLabel.qml:88
 #, kde-format
 msgid "A poll has ended"
-msgstr "A poll has ended"
+msgstr "Anketa sa skončila"
 
 #: content/ui/Notifications/UserInteractionLabel.qml:90
 #, kde-format
@@ -3481,22 +3492,22 @@ msgstr "%1 updated their post"
 #: content/ui/PostDelegate/AttachmentGrid.qml:97
 #, kde-format
 msgid "Status with image attachment"
-msgstr "Status with image attachment"
+msgstr "Stav s priloženým obrázkom"
 
 #: content/ui/PostDelegate/AttachmentGrid.qml:99
 #, kde-format
 msgid "Status with gif attachment"
-msgstr "Status with gif attachment"
+msgstr "Stav s priloženým GIF"
 
 #: content/ui/PostDelegate/AttachmentGrid.qml:101
 #, kde-format
 msgid "Status with video attachment"
-msgstr "Status with video attachment"
+msgstr "Stav s priloženým videom"
 
 #: content/ui/PostDelegate/AttachmentGrid.qml:103
 #, kde-format
 msgid "Status with audio attachment"
-msgstr "Status with audio attachment"
+msgstr "Stav s priloženým zvukom"
 
 #: content/ui/PostDelegate/AttachmentGrid.qml:148
 #: content/ui/PostDelegate/AttachmentGrid.qml:245
@@ -3532,22 +3543,22 @@ msgstr "Show Media"
 #: content/ui/PostDelegate/AttachmentMenu.qml:44
 #, kde-format
 msgid "Save Image As…"
-msgstr "Save Image As…"
+msgstr "Uložiť obrázok ako…"
 
 #: content/ui/PostDelegate/AttachmentMenu.qml:46
 #, kde-format
 msgid "Save Gif As…"
-msgstr "Save Gif As…"
+msgstr "Uložiť GIF ako…"
 
 #: content/ui/PostDelegate/AttachmentMenu.qml:48
 #, kde-format
 msgid "Save Video As…"
-msgstr "Save Video As…"
+msgstr "Uložiť video ako…"
 
 #: content/ui/PostDelegate/AttachmentMenu.qml:50
 #, kde-format
 msgid "Save Audio As…"
-msgstr "Save Audio As…"
+msgstr "Uložiť zvuk ako…"
 
 #: content/ui/PostDelegate/AttachmentMenu.qml:69
 #, kde-format
@@ -3600,7 +3611,7 @@ msgstr "Show Anyway"
 #, kde-format
 msgctxt "Posted on 26 March 2024 Tuesday 20:43:18 +03"
 msgid "Posted on %1"
-msgstr "Posted on %1"
+msgstr "Zverejnené dňa %1"
 
 #: content/ui/PostDelegate/InformationBar.qml:64
 #: content/ui/PostDelegate/InformationBar.qml:72
@@ -3848,7 +3859,7 @@ msgstr "Post Author"
 #, kde-format
 msgctxt "Edited on <datetime>"
 msgid "Edited on %1"
-msgstr "Edited on %1"
+msgstr "Upravené dňa %1"
 
 #: content/ui/PostDelegate/PostInfoBar.qml:65
 #, kde-format
@@ -3870,7 +3881,7 @@ msgstr "%1 boosted"
 #: content/ui/PostDelegate/PostInteractionLabel.qml:65
 #, kde-format
 msgid "In reply to %1"
-msgstr "In reply to %1"
+msgstr "V odpovedi na %1"
 
 #: content/ui/PostDelegate/PostMenu.qml:45
 #, kde-format
@@ -3929,13 +3940,13 @@ msgstr "Bookmark as…"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Unpin on Profile"
-msgstr "Unpin on Profile"
+msgstr "Odopnúť z profilu"
 
 #: content/ui/PostDelegate/PostMenu.qml:141
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Pin on Profile"
-msgstr "Pin on Profile"
+msgstr "Pripnúť na profil"
 
 #: content/ui/PostDelegate/PostMenu.qml:153
 #, kde-format
@@ -4019,7 +4030,7 @@ msgstr "Show Results"
 #: content/ui/PostDelegate/PostPoll.qml:156
 #, kde-format
 msgid "Poll has closed"
-msgstr "Poll has closed"
+msgstr "Anketa bola uzavretá"
 
 #: content/ui/PostDelegate/PostTags.qml:50
 #, kde-format
@@ -4031,12 +4042,12 @@ msgstr "Značka"
 #, kde-format
 msgctxt "@action:button expand the number of shown tags"
 msgid "…and %1 more"
-msgstr "…and %1 more"
+msgstr "…a ešte %1"
 
 #: content/ui/PostDelegate/QuotePost.qml:66
 #, kde-format
 msgid "Post from %1"
-msgstr "Post from %1"
+msgstr "Príspevok od %1"
 
 #: content/ui/PostDelegate/QuotePost.qml:85
 #, kde-format
@@ -4059,7 +4070,7 @@ msgstr "Hlasitosť"
 #, kde-format
 msgctxt "Last read on this date"
 msgid "Last read on %1"
-msgstr "Last read on %1"
+msgstr "Naposledy prečítané dňa %1"
 
 #: content/ui/ReportDialog.qml:22
 #, kde-format
@@ -4077,13 +4088,13 @@ msgstr "Report User"
 #, kde-format
 msgctxt "@title"
 msgid "Reason for reporting this post"
-msgstr "Reason for reporting this post"
+msgstr "Dôvod nahlásenia tohto príspevku"
 
 #: content/ui/ReportDialog.qml:45
 #, kde-format
 msgctxt "@title"
 msgid "Reason for reporting this user"
-msgstr "Reason for reporting this user"
+msgstr "Dôvod nahlásenia tohto používateľa"
 
 #: content/ui/ReportDialog.qml:65
 #, kde-format
@@ -4118,7 +4129,7 @@ msgstr "Pop Out"
 #, kde-format
 msgctxt "@info"
 msgid "Pop out search results to a full page"
-msgstr "Pop out search results to a full page"
+msgstr "Otvoriť výsledky vyhľadávania na celej stránke"
 
 #: content/ui/SearchView.qml:61
 #, kde-format
@@ -4133,7 +4144,7 @@ msgstr "No search results"
 #: content/ui/SearchView.qml:77
 #, kde-format
 msgid "Search for users, tags and posts"
-msgstr "Search for users, tags and posts"
+msgstr "Hľadať používateľov, hashtagy a príspevky"
 
 #: content/ui/ServerInformationPage.qml:25
 #, kde-format
@@ -4169,7 +4180,7 @@ msgstr "Privacy Policy"
 #, kde-format
 msgctxt "@action:button"
 msgid "Terms of Service"
-msgstr "Terms of Service"
+msgstr "Podmienky používania"
 
 #: content/ui/ServerInformationPage.qml:103
 #, kde-format
@@ -4236,17 +4247,17 @@ msgstr ""
 #: content/ui/Settings/AccountPage.qml:149
 #, kde-format
 msgid "Feature profile and posts"
-msgstr "Feature profile and posts"
+msgstr "Odporučiť profil a príspevky"
 
 #: content/ui/Settings/AccountPage.qml:150
 #, kde-format
 msgid "Your public profile and posts may be featured to other users."
-msgstr "Your public profile and posts may be featured to other users."
+msgstr "Váš verejný profil a príspevky môžu byť odporučené iným používateľom."
 
 #: content/ui/Settings/AccountPage.qml:159
 #, kde-format
 msgid "Publicly list follows and followers"
-msgstr "Publicly list follows and followers"
+msgstr "Verejne zobraziť sledovaných a sledovateľov"
 
 #: content/ui/Settings/AccountPage.qml:160
 #, kde-format
@@ -4263,7 +4274,7 @@ msgstr "Mark uploaded media as sensitive predvolene"
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Include public posts in search results"
-msgstr "Include public posts in search results"
+msgstr "Zahrnúť verejné príspevky do výsledkov vyhľadávania"
 
 #: content/ui/Settings/AccountPage.qml:187
 #, kde-format
@@ -4299,12 +4310,14 @@ msgstr "Súkromné"
 #, kde-format
 msgctxt "@abel Account preferences"
 msgid "Open Server in Browser"
-msgstr "Open Server in Browser"
+msgstr "Otvoriť server v prehliadači"
 
 #: content/ui/Settings/AccountPage.qml:231
 #, kde-format
 msgid "Some settings can only be configured on your server's website."
-msgstr "Some settings can only be configured on your server's website."
+msgstr ""
+"Niektoré nastavenia je možné konfigurovať iba na webovej stránke vášho "
+"servera."
 
 #: content/ui/Settings/AppearancePage.qml:18
 #, kde-format
@@ -4391,7 +4404,7 @@ msgstr "Media"
 #: content/ui/Settings/AppearancePage.qml:156
 #, kde-format
 msgid "Crop images on the timeline"
-msgstr "Crop images on the timeline"
+msgstr "Orezávať obrázky na časovej osi"
 
 #: content/ui/Settings/AppearancePage.qml:157
 #, kde-format
@@ -4453,13 +4466,13 @@ msgstr "Pokračovať"
 #, kde-format
 msgctxt "@info"
 msgid "Select one or more contexts where this filter should apply:"
-msgstr "Select one or more contexts where this filter should apply:"
+msgstr "Vyberte jeden alebo viacero kontextov, kde má tento filter platiť:"
 
 #: content/ui/Settings/EditFilterPage.qml:101
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Home and Lists"
-msgstr "Home and Lists"
+msgstr "Domov a zoznamy"
 
 #: content/ui/Settings/EditFilterPage.qml:106
 #, kde-format
@@ -4495,13 +4508,13 @@ msgstr "Upozornenia"
 #, kde-format
 msgctxt "@label:radiobutton"
 msgid "Hide with Content Notice"
-msgstr "Hide with Content Notice"
+msgstr "Skryť s upozornením na obsah"
 
 #: content/ui/Settings/EditFilterPage.qml:140
 #, kde-format
 msgctxt "@label:radiobutton"
 msgid "Hide Media with Content Notice"
-msgstr "Hide Media with Content Notice"
+msgstr "Skryť médiá s upozornením na obsah"
 
 #: content/ui/Settings/EditFilterPage.qml:147
 #, kde-format
@@ -4591,7 +4604,7 @@ msgstr "Clear All"
 #, kde-format
 msgctxt "@action:button"
 msgid "Copy To Clipboard"
-msgstr "Copy To Clipboard"
+msgstr "Kopírovať do schránky"
 
 #: content/ui/Settings/ErrorLogPage.qml:87
 #, kde-format
@@ -4667,12 +4680,12 @@ msgstr "Použiť"
 #: content/ui/Settings/NotificationsPage.qml:29
 #, kde-format
 msgid "Enable notifications for this account"
-msgstr "Enable notifications for this account"
+msgstr "Povoliť upozornenia pre tento účet"
 
 #: content/ui/Settings/NotificationsPage.qml:33
 #, kde-format
 msgid "Notifications can appear even when Tokodon isn't running."
-msgstr "Notifications can appear even when Tokodon isn't running."
+msgstr "Upozornenia sa môžu zobrazovať aj keď Tokodon nie je spustený."
 
 #: content/ui/Settings/NotificationsPage.qml:35
 #, kde-format
@@ -4680,13 +4693,13 @@ msgid ""
 "Push notifications are available but could not be enabled. Please log out "
 "and log back in."
 msgstr ""
-"Push notifications are available but could not be enabled. Please log out "
-"and log back in."
+"Push upozornenia sú dostupné, ale nedali sa zapnúť. Odhláste sa a prihláste "
+"sa znova."
 
 #: content/ui/Settings/NotificationsPage.qml:38
 #, kde-format
 msgid "Notifications will only appear when Tokodon is running."
-msgstr "Notifications will only appear when Tokodon is running."
+msgstr "Upozornenia sa budú zobrazovať len keď je Tokodon spustený."
 
 #: content/ui/Settings/NotificationsPage.qml:51
 #, kde-format
@@ -4734,7 +4747,7 @@ msgstr "Nasledovatelia"
 #, kde-format
 msgctxt "@label Notification preferences"
 msgid "Including people who have been following you fewer than 3 days."
-msgstr "Including people who have been following you fewer than 3 days."
+msgstr "Vrátane ľudí, ktorí vás sledujú menej ako 3 dni."
 
 #: content/ui/Settings/NotificationsPage.qml:91
 #, kde-format
@@ -4746,7 +4759,7 @@ msgstr "Účty"
 #, kde-format
 msgctxt "@label Notification preferences"
 msgid "Created within the past 30 days."
-msgstr "Created within the past 30 days."
+msgstr "Vytvorené v posledných 30 dňoch."
 
 #: content/ui/Settings/NotificationsPage.qml:98
 #, kde-format
@@ -4773,7 +4786,7 @@ msgstr "Účty"
 #, kde-format
 msgctxt "@label Notification preferences"
 msgid "Limited by server moderators."
-msgstr "Limited by server moderators."
+msgstr "Obmedzené moderátormi servera."
 
 #: content/ui/Settings/NotificationsPage.qml:113
 #, kde-format
@@ -4785,13 +4798,13 @@ msgstr "Udalosti"
 #, kde-format
 msgctxt "@action:button"
 msgid "Hide in All"
-msgstr "Hide in All"
+msgstr "Skryť vo všetkých"
 
 #: content/ui/Settings/NotificationsPage.qml:154
 #, kde-format
 msgctxt "@action:button"
 msgid "Show in All"
-msgstr "Show in All"
+msgstr "Zobraziť vo všetkých"
 
 #: content/ui/Settings/NotificationsPage.qml:173
 #, kde-format
@@ -4835,7 +4848,9 @@ msgstr "Statuses"
 #: content/ui/Settings/NotificationsPage.qml:232
 #, kde-format
 msgid "When a user you have notifications turned on for makes a new post."
-msgstr "When a user you have notifications turned on for makes a new post."
+msgstr ""
+"Keď používateľ, pre ktorého máte zapnuté upozornenia, zverejní nový "
+"príspevok."
 
 #: content/ui/Settings/NotificationsPage.qml:246
 #, kde-format
@@ -4865,7 +4880,7 @@ msgstr "Navštíviť"
 #: content/ui/Settings/NotificationsPage.qml:277
 #, kde-format
 msgid "When an account who requires manual approval wants to follow you."
-msgstr "When an account who requires manual approval wants to follow you."
+msgstr "Keď vás chce sledovať účet, ktorý vyžaduje ručné schválenie."
 
 #: content/ui/Settings/NotificationsPage.qml:291
 #, kde-format
@@ -4875,7 +4890,7 @@ msgstr "Favorites"
 #: content/ui/Settings/NotificationsPage.qml:292
 #, kde-format
 msgid "When a post you made was favorited by another user."
-msgstr "When a post you made was favorited by another user."
+msgstr "Keď si iný používateľ obľúbil váš príspevok."
 
 #: content/ui/Settings/NotificationsPage.qml:306
 #, kde-format
@@ -4885,7 +4900,7 @@ msgstr "Polls"
 #: content/ui/Settings/NotificationsPage.qml:307
 #, kde-format
 msgid "When a poll you voted in has ended."
-msgstr "When a poll you voted in has ended."
+msgstr "Keď sa anketa, v ktorej ste hlasovali, skončila."
 
 #: content/ui/Settings/NotificationsPage.qml:321
 #, kde-format
@@ -4895,7 +4910,7 @@ msgstr "Edits"
 #: content/ui/Settings/NotificationsPage.qml:322
 #, kde-format
 msgid "When a post you interacted with was edited by the author."
-msgstr "When a post you interacted with was edited by the author."
+msgstr "Keď autor upravil príspevok, s ktorým ste interagovali."
 
 #: content/ui/Settings/NotificationsPage.qml:336
 #, kde-format
@@ -4905,7 +4920,7 @@ msgstr "Server Sign-ups"
 #: content/ui/Settings/NotificationsPage.qml:337
 #, kde-format
 msgid "When someone signs up to your server."
-msgstr "When someone signs up to your server."
+msgstr "Keď sa niekto zaregistruje na váš server."
 
 #: content/ui/Settings/NotificationsPage.qml:354
 #, kde-format
@@ -4915,7 +4930,7 @@ msgstr "Server Reports"
 #: content/ui/Settings/NotificationsPage.qml:355
 #, kde-format
 msgid "When someone files a report against a user on your server."
-msgstr "When someone files a report against a user on your server."
+msgstr "Keď niekto podá hlásenie voči používateľovi na vašom serveri."
 
 #: content/ui/Settings/NotificationsPage.qml:372
 #, kde-format
@@ -4928,8 +4943,8 @@ msgid ""
 "When you or your server moderates another server, which you are following "
 "users or have followers with."
 msgstr ""
-"When you or your server moderates another server, which you are following "
-"users or have followers with."
+"Keď vy alebo váš server moderuje iný server, na ktorom sledujete "
+"používateľov alebo máte sledovateľov."
 
 #: content/ui/Settings/NotificationsPage.qml:387
 #, kde-format
@@ -4940,7 +4955,7 @@ msgstr "Annual Report"
 #: content/ui/Settings/NotificationsPage.qml:388
 #, kde-format
 msgid "When you receive your #FediWrapped at the end of the year."
-msgstr "When you receive your #FediWrapped at the end of the year."
+msgstr "Keď dostanete váš #FediWrapped na konci roka."
 
 #: content/ui/Settings/ProfileEditor.qml:60
 #, kde-format
@@ -5108,7 +5123,7 @@ msgstr "Unmute"
 #: content/ui/StandaloneComposer.qml:57
 #, kde-format
 msgid "No accounts available"
-msgstr "No accounts available"
+msgstr "Žiadne dostupné účty"
 
 #: content/ui/StatusComposer/AttachmentInfoDialog.qml:97
 #, kde-format
@@ -5138,13 +5153,13 @@ msgstr "Voľba"
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "Add a new poll choice"
-msgstr "Add a new poll choice"
+msgstr "Pridať novú možnosť ankety"
 
 #: content/ui/StatusComposer/ComposerPoll.qml:89
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "When the poll will expire"
-msgstr "When the poll will expire"
+msgstr "Kedy anketa vyprší"
 
 #: content/ui/StatusComposer/ComposerPoll.qml:98
 #, kde-format
@@ -5168,7 +5183,7 @@ msgstr "Hide totals"
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "Hide vote count until the poll ends"
-msgstr "Hide vote count until the poll ends"
+msgstr "Skryť počet hlasov do skončenia ankety"
 
 #: content/ui/StatusComposer/EditorAttachmentGrid.qml:96
 #, kde-format
@@ -5185,7 +5200,7 @@ msgstr "Created %1 ago"
 #, kde-format
 msgctxt "Scheduled for this date"
 msgid "Scheduled for %1"
-msgstr "Scheduled for %1"
+msgstr "Naplánované na %1"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:93
 #, kde-format
@@ -5293,7 +5308,7 @@ msgstr "Pop Out"
 #: content/ui/StatusComposer/StatusComposer.qml:148
 #, kde-format
 msgid "Saving an edited post that has a poll will clear existing results."
-msgstr "Saving an edited post that has a poll will clear existing results."
+msgstr "Uloženie upraveného príspevku s anketou vymaže existujúce výsledky."
 
 #: content/ui/StatusComposer/StatusComposer.qml:168
 #, kde-format
@@ -5575,12 +5590,13 @@ msgid "%1 and %2"
 msgstr "%1 and %2"
 
 #: conversation/conversationmodel.cpp:67
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "%2 and one other"
 msgid "%2 and one other"
 msgid_plural "%2 and %1 others"
-msgstr[0] "%2 and one other"
-msgstr[1] "%2 and %1 others"
-msgstr[2] "%2 and %1 others"
+msgstr[0] "%2 a ešte jeden"
+msgstr[1] "%2 a ešte jeden"
+msgstr[2] "%2 a ešte jeden"
 
 #: editor/languagemodel.cpp:37
 #, kde-format
@@ -5593,7 +5609,7 @@ msgstr "%1 (%2)"
 #: editor/listeditorbackend.cpp:121
 #, kde-format
 msgid "Members of the list"
-msgstr "Members of the list"
+msgstr "Členovia zoznamu"
 
 #: editor/listeditorbackend.cpp:121
 #, kde-format
@@ -5661,7 +5677,7 @@ msgstr "Tokodon"
 #: main.cpp:79 main.cpp:100
 #, kde-format
 msgid "Browse the Fediverse"
-msgstr "Browse the Fediverse"
+msgstr "Prehliadať Fediverse"
 
 #: main.cpp:81
 #, kde-format
@@ -5708,7 +5724,7 @@ msgstr "Receiving push notifications"
 #: notification/notificationmodel.cpp:180
 #, kde-format
 msgid "Error occurred when fetching the latest notification."
-msgstr "Error occurred when fetching the latest notification."
+msgstr "Pri načítavaní najnovšieho upozornenia sa vyskytla chyba."
 
 #: timeline/maintimelinemodel.cpp:29
 #, kde-format
@@ -5761,7 +5777,7 @@ msgstr "Načítavam"
 #, kde-format
 msgctxt "@title"
 msgid "Post by %1"
-msgstr "Post by %1"
+msgstr "Príspevok od %1"
 
 #: timeline/trendingnewsmodel.cpp:55
 #, kde-format
@@ -5779,7 +5795,7 @@ msgstr "Účty"
 #, kde-format
 msgctxt "@action:button"
 msgid "Switch to '%1'"
-msgstr "Switch to '%1'"
+msgstr "Prepnúť na „%1“"
 
 #: tokodonapplication.cpp:65 tokodonapplication.cpp:224
 #, kde-format
@@ -5967,12 +5983,12 @@ msgstr "Flags"
 #: utils/filetransferjob.cpp:36
 #, kde-format
 msgid "Could not open the temporary download file"
-msgstr "Could not open the temporary download file"
+msgstr "Nepodarilo sa otvoriť dočasný súbor na stiahnutie"
 
 #: utils/filetransferjob.cpp:78
 #, kde-format
 msgid "Could not reserve disk space for download"
-msgstr "Could not reserve disk space for download"
+msgstr "Nepodarilo sa vyhradiť diskový priestor na stiahnutie"
 
 #: utils/filetransferjob.cpp:86
 #, kde-format
@@ -5995,7 +6011,7 @@ msgstr "Voľby:"
 #: utils/texthandler.cpp:174
 #, kde-format
 msgid "in the future"
-msgstr "in the future"
+msgstr "v budúcnosti"
 
 #: utils/texthandler.cpp:176
 #, kde-format
