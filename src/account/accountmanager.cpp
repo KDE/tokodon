@@ -4,6 +4,7 @@
 
 #include "account/accountmanager.h"
 
+#include <QFile>
 #include <QJsonDocument>
 #include <QNetworkReply>
 #include <QSettings>
@@ -14,6 +15,7 @@
 #include <QDBusConnectionInterface>
 #include <QDBusMessage>
 #include <QDBusReply>
+#include <QDBusUnixFileDescriptor>
 
 #include <KWaylandExtras>
 #include <KWindowSystem>
@@ -92,11 +94,22 @@ void AccountManager::addFromDBus(const QDBusObjectPath &path)
 
     QDBusReply<QVariantMap> reply = QDBusConnection::sessionBus().call(propertiesRequest);
 
-    QString accessToken = reply.value()[u"accessToken"_s].toString();
     QString clientId = reply.value()[u"clientId"_s].toString();
     QString clientSecret = reply.value()[u"clientSecret"_s].toString();
     QString instanceUrl = reply.value()[u"instanceUrl"_s].toString();
     QString username = reply.value()[u"username"_s].toString();
+
+    QDBusUnixFileDescriptor fd = reply.value()[u"accessToken"_s].value<QDBusUnixFileDescriptor>();
+
+    QFile file;
+    const bool result = file.open(fd.fileDescriptor(), QFile::ReadOnly, QFile::AutoCloseHandle);
+
+    if (!result) {
+        qCWarning(TOKODON_LOG) << "Could not open password fd" << file.errorString();
+        return;
+    }
+
+    const QString accessToken = QString::fromUtf8(file.readAll());
 
     auto account = new Account(path.path(), instanceUrl, username, clientId, clientSecret, accessToken, m_qnam, this);
     addAccount(account);
