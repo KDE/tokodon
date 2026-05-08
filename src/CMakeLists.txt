@@ -12,7 +12,6 @@ ecm_qt_declare_logging_category(tokodon_static
     IDENTIFIER TOKODON_LOG
     CATEGORY_NAME org.kde.tokodon
     DESCRIPTION "tokodon"
-    DEFAULT_SEVERITY Warning
     EXPORT TOKODON
 )
 
