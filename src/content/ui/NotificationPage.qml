@@ -357,6 +357,7 @@ Kirigami.ScrollablePage {
             text: i18n("No Notifications")
             explanation: i18n("You have no notifications yet. When people reply, favorite or boost your posts they will show up here.")
             visible: listview.count === 0 && !root.loading
+            width: parent.width - Kirigami.Units.gridUnit * 4
         }
     }
 }
