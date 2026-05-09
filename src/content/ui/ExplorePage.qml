@@ -207,6 +207,47 @@ Kirigami.Page {
 
                             property alias url: timelineModel.url
 
+                            header: QQC2.Control {
+                                topPadding: Kirigami.Units.largeSpacing
+                                bottomPadding: Kirigami.Units.largeSpacing
+                                leftPadding: Kirigami.Units.largeSpacing
+                                rightPadding: Kirigami.Units.largeSpacing
+
+                                width: root.width
+
+                                background: Rectangle {
+                                    Kirigami.Theme.colorSet: Kirigami.Theme.Window
+                                    Kirigami.Theme.inherit: false
+                                    color: Kirigami.Theme.backgroundColor
+
+                                    Kirigami.Separator {
+                                        anchors {
+                                            left: parent.left
+                                            bottom: parent.bottom
+                                            right: parent.right
+                                        }
+                                    }
+                                }
+
+                                contentItem: ColumnLayout {
+                                    spacing: 0
+
+                                    Kirigami.Heading {
+                                        text: delegate.title
+                                        wrapMode: Text.WordWrap
+
+                                        Layout.fillWidth: true
+                                    }
+
+                                    QQC2.Label {
+                                        text: delegate.description
+                                        wrapMode: Text.WordWrap
+
+                                        Layout.fillWidth: true
+                                    }
+                                }
+                            }
+
                             model: MainTimelineModel {
                                 id: timelineModel
                                 name: "link"
@@ -222,6 +263,7 @@ Kirigami.Page {
 
                         Image {
                             source: delegate.image
+                            fillMode: Image.PreserveAspectCrop
 
                             layer.enabled: GraphicsInfo.api !== GraphicsInfo.Software
                             layer.effect: RoundedEffect {}

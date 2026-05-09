@@ -27,20 +27,24 @@ QString MainTimelineModel::displayName() const
 {
     if (m_timelineName == QStringLiteral("home")) {
         return i18nc("@title", "Home");
-    } else if (m_timelineName == QStringLiteral("public")) {
+    }
+    if (m_timelineName == QStringLiteral("public")) {
         return i18nc("@title", "Local");
-    } else if (m_timelineName == QStringLiteral("federated")) {
+    }
+    if (m_timelineName == QStringLiteral("federated")) {
         return i18nc("@title", "Global");
-    } else if (m_timelineName == QStringLiteral("bookmarks")) {
+    }
+    if (m_timelineName == QStringLiteral("bookmarks")) {
         return i18nc("@title", "Bookmarks");
-    } else if (m_timelineName == QStringLiteral("favourites")) {
+    }
+    if (m_timelineName == QStringLiteral("favourites")) {
         return i18nc("@title", "Favorites");
-    } else if (m_timelineName == QStringLiteral("trending")) {
+    }
+    if (m_timelineName == QStringLiteral("trending")) {
         return i18nc("@title", "Trending");
-    } else if (m_timelineName == QStringLiteral("list")) {
+    }
+    if (m_timelineName == QStringLiteral("list")) {
         return m_listId;
-    } else if (m_timelineName == QStringLiteral("link")) {
-        return m_url;
     }
 
     return {};
