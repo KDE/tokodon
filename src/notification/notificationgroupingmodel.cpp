@@ -476,6 +476,12 @@ bool NotificationGroupingModel::fullyRead() const
     return !model || model->fullyRead();
 }
 
+bool NotificationGroupingModel::fetchedLastReadId() const
+{
+    const auto model = qobject_cast<NotificationModel *>(sourceModel());
+    return !model || model->fetchedLastReadId();
+}
+
 void NotificationGroupingModel::actionReply(const QModelIndex &index)
 {
     if (auto model = qobject_cast<NotificationModel *>(sourceModel())) {

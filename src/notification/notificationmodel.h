@@ -17,6 +17,7 @@ class NotificationModel : public AbstractTimelineModel
 
     Q_PROPERTY(QStringList excludeTypes READ excludeTypes WRITE setExcludesTypes NOTIFY excludeTypesChanged)
     Q_PROPERTY(bool fullyRead READ fullyRead NOTIFY readMarkerChanged)
+    Q_PROPERTY(bool fetchedLastReadId READ fetchedLastReadId NOTIFY readMarkerChanged)
 
 public:
     enum NotificationRoles {
@@ -54,6 +55,7 @@ public:
     Q_INVOKABLE void markAllNotificationsAsRead();
 
     bool fullyRead() const;
+    bool fetchedLastReadId() const;
 
     /**
      * @return List of exclude types for the All filter, based on the user config.
