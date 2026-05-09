@@ -127,6 +127,7 @@ Kirigami.Page {
                         // Take into account the header item, which the center anchor doesn't do
                         topMargin: parent.headerItem.height + ((parent.height - parent.headerItem.height) / 2)
                     }
+                    icon.name: "view-list-text"
                     text: i18nc("@label", "No Posts")
                     explanation: i18n("This user hasn't posted anything yet.")
                     visible: timelineView.count === 0 && !timelineView.model.loading
@@ -256,6 +257,7 @@ Kirigami.Page {
                             // Take into account the header item, which the center anchor doesn't do
                             topMargin: parent.headerItem.height + ((parent.height - parent.headerItem.height) / 2)
                         }
+                        icon.name: "viewimage"
                         text: i18nc("@label", "No Media")
                         explanation: i18n("This user hasn't posted any media yet.")
                         visible: gridView.count === 0 && !gridView.model.loading
