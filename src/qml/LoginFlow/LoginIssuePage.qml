@@ -66,7 +66,7 @@ MastoPage {
 
         FormCard.FormButtonDelegate {
             id: logoutButton
-            text: i18n("Logout")
+            text: i18n("Logout…")
             icon.name: "im-kick-user"
             onClicked: logoutPrompt.open()
 

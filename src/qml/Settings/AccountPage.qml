@@ -37,7 +37,7 @@ Kirigami.Page {
             onTriggered: Qt.openUrlExternally(root.account.instanceUri)
         },
         Kirigami.Action {
-            text: i18n("Logout")
+            text: i18n("Logout…")
             icon.name: "im-kick-user"
 
             onTriggered: logoutPrompt.open()
