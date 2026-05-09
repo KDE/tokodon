@@ -76,15 +76,6 @@ Components.ConvergentContextMenu {
     }
 
     Kirigami.Action {
-        icon.name: "format-text-code-symbolic"
-        text: i18nc("@action Open embed into website dialog", "Embed")
-        visible: !root.isPrivate
-        enabled: visible
-
-        onTriggered: AccountManager.selectedAccount.fetchOEmbed(root.postId, root.authorIdentity)
-    }
-
-    Kirigami.Action {
         separator: true
         visible: root.hasMultipleAccounts
     }
