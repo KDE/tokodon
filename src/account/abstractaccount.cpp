@@ -127,6 +127,16 @@ bool AbstractAccount::hasName() const
     return !m_name.isEmpty();
 }
 
+bool AbstractAccount::indexable() const
+{
+    return m_indexable;
+}
+
+void AbstractAccount::setIndexable(bool indexable)
+{
+    m_indexable = indexable;
+}
+
 QUrl AbstractAccount::apiUrl(const QString &path) const
 {
     QUrl url = QUrl::fromUserInput(m_instance_uri);

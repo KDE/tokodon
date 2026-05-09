@@ -106,6 +106,16 @@ public:
     [[nodiscard]] bool hasName() const;
 
     /**
+     * @return If this account's posts should be included in public search results.
+     */
+    [[nodiscard]] bool indexable() const;
+
+    /**
+     * @brief Sets the internal indexable flag. This does NOT call the update_credentials API!
+     */
+    void setIndexable(bool indexable);
+
+    /**
      * @brief Verifies the token with the instance and if successful, loads identity information for the account.
      */
     Q_INVOKABLE virtual void validateToken() = 0;
@@ -769,6 +779,7 @@ protected:
     int m_maxCharactersPerOption;
     QString m_streamingUri;
     QHash<QString, int> m_supportedApiVersions;
+    bool m_indexable = false;
 
     // updates and notifications
     void handleNotification(const QJsonDocument &doc);

@@ -319,6 +319,7 @@ void Account::validateToken()
 
             m_identity = identityLookup(object["id"_L1].toString(), object);
             m_name = m_identity->username();
+            m_indexable = object["indexable"_L1].toBool();
             Q_EMIT identityChanged();
             m_authenticated = true;
             Q_EMIT authenticated(true, {});
