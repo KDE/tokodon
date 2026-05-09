@@ -186,7 +186,7 @@ ListView {
             id: endOfTimelineMessage
 
             visible: root.model.atEnd ?? false
-            text: i18nc("@info:status", "End of Timeline")
+            text: i18nc("@info:status No more posts to read", "No More Posts")
 
             Layout.topMargin: Kirigami.Units.largeSpacing
             Layout.bottomMargin: Kirigami.Units.largeSpacing * 2
