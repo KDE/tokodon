@@ -11,7 +11,7 @@ import org.kde.kirigami as Kirigami
 import "../Components"
 
 // Wrapper component used for the attachment grid
-Item {
+Rectangle {
     id: root
 
     required property string caption
@@ -26,6 +26,7 @@ Item {
     Keys.onSpacePressed: event => clicked()
 
     activeFocusOnTab: true
+    color: "black" // Show a black background in case media doesn't load, etc.
 
     layer.enabled: GraphicsInfo.api !== GraphicsInfo.Software
     layer.effect: RoundedEffect {}
