@@ -95,6 +95,11 @@ bool NotificationModel::fullyRead() const
     return !data(index(0, 0), UnreadRole).toBool();
 }
 
+bool NotificationModel::fetchedLastReadId() const
+{
+    return m_fetchedLastReadId;
+}
+
 QStringList NotificationModel::allExcludeTypes()
 {
     QStringList excludeTypes;

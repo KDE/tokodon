@@ -14,7 +14,7 @@ import "./PostDelegate"
 import "./StatusComposer"
 
 Kirigami.ScrollablePage {
-    id: timelinePage
+    id: root
     title: i18n("Notifications")
 
     property var dialog: null
@@ -23,6 +23,7 @@ Kirigami.ScrollablePage {
     readonly property bool typesAreGroupable: showAllAction.checked
     property bool shouldGroupNotifications: typesAreGroupable
     readonly property var currentModel: shouldGroupNotifications ? groupedNotificationModel : notificationModel
+    readonly property bool loading: listview.model.loading || !listview.model.fetchedLastReadId
 
     Connections {
         target: AccountManager.selectedAccount.config
@@ -40,8 +41,8 @@ Kirigami.ScrollablePage {
         Kirigami.Action {
             icon.name: "checkmark-symbolic"
             text: i18nc("@action:intoolbar Mark all notifications as read", "Mark All As Read")
-            enabled: AccountManager.selectedAccount.unreadNotificationsCount > 0 && !timelinePage.currentModel.loading
-            onTriggered: timelinePage.currentModel.markAllNotificationsAsRead()
+            enabled: AccountManager.selectedAccount.unreadNotificationsCount > 0 && !root.loading
+            onTriggered: root.currentModel.markAllNotificationsAsRead()
         },
         Kirigami.Action {
             icon.name: "configure-symbolic"
@@ -88,7 +89,7 @@ Kirigami.ScrollablePage {
         checkable: true
         onTriggered: {
             visibilityMenu.tookAction = false;
-            visibilityMenu.popup(timelinePage.QQC2.Overlay.overlay);
+            visibilityMenu.popup(root.QQC2.Overlay.overlay);
         }
     }
 
@@ -165,7 +166,7 @@ Kirigami.ScrollablePage {
         anchors.left: parent.left
         anchors.right: parent.right
         actions: [showAllAction, mentionOnlyAction, moreAction]
-        enabled: !listview.model.loading
+        enabled: !root.loading
 
         Kirigami.Theme.colorSet: Kirigami.Theme.Window
         Kirigami.Theme.inherit: false
@@ -186,14 +187,14 @@ Kirigami.ScrollablePage {
 
     ListView {
         id: listview
-        model: timelinePage.currentModel
+        model: root.currentModel
         section.property: "unread"
         section.criteria: ViewSection.FullString
         section.delegate: Kirigami.FlexColumn {
             id: sectionRoot
 
             required property string section
-            readonly property bool shouldBeVisible: !timelinePage.currentModel.fullyRead
+            readonly property bool shouldBeVisible: !root.currentModel.fullyRead
 
             maximumWidth: Kirigami.Units.gridUnit * 40
             spacing: 0
@@ -228,7 +229,7 @@ Kirigami.ScrollablePage {
                 MinimalPostDelegate {
                     width: ListView.view.width
                     timelineModel: groupedNotificationModel
-                    loading: listview.model.loading
+                    loading: root.loading
                     showSeparator: index !== ListView.view.count - 1
                 }
             }
@@ -238,7 +239,7 @@ Kirigami.ScrollablePage {
                 MinimalPostDelegate {
                     width: ListView.view.width
                     timelineModel: groupedNotificationModel
-                    loading: listview.model.loading
+                    loading: root.loading
                     showSeparator: index !== ListView.view.count - 1
                 }
             }
@@ -248,7 +249,7 @@ Kirigami.ScrollablePage {
                 PostDelegate {
                     width: ListView.view.width
                     timelineModel: groupedNotificationModel
-                    loading: listview.model.loading
+                    loading: root.loading
                     showSeparator: index !== ListView.view.count - 1
                 }
             }
@@ -269,7 +270,7 @@ Kirigami.ScrollablePage {
                     width: ListView.view.width
                     secondary: true
                     timelineModel: groupedNotificationModel
-                    loading: listview.model.loading
+                    loading: root.loading
                     showSeparator: index !== ListView.view.count - 1
                     showInteractionButton: false
                 }
@@ -281,7 +282,7 @@ Kirigami.ScrollablePage {
                     width: ListView.view.width
                     secondary: false
                     timelineModel: groupedNotificationModel
-                    loading: listview.model.loading
+                    loading: root.loading
                     showSeparator: index !== ListView.view.count - 1
                 }
             }
@@ -292,7 +293,7 @@ Kirigami.ScrollablePage {
                     width: ListView.view.width
                     secondary: true
                     timelineModel: groupedNotificationModel
-                    loading: listview.model.loading
+                    loading: root.loading
                     showSeparator: index !== ListView.view.count - 1
                     showInteractionButton: false
                 }
@@ -329,7 +330,7 @@ Kirigami.ScrollablePage {
                     width: ListView.view.width
                     secondary: true
                     timelineModel: groupedNotificationModel
-                    loading: listview.model.loading
+                    loading: root.loading
                     showSeparator: index !== ListView.view.count - 1
                 }
             }
@@ -341,7 +342,7 @@ Kirigami.ScrollablePage {
         }
 
         Kirigami.LoadingPlaceholder {
-            visible: listview.model.loading && listview.count === 0
+            visible: root.loading && listview.count === 0
             anchors.centerIn: parent
         }
 
@@ -350,7 +351,7 @@ Kirigami.ScrollablePage {
             icon.name: "notifications"
             text: i18n("No Notifications")
             explanation: i18n("You have no notifications yet. When people reply, favorite or boost your posts they will show up here.")
-            visible: listview.count === 0 && !timelinePage.currentModel.loading
+            visible: listview.count === 0 && !root.loading
         }
     }
 }
