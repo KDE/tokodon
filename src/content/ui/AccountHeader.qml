@@ -446,7 +446,8 @@ QQC2.Pane {
                             })
                         },
                         Kirigami.Action {
-                            visible: root.isSelf
+                            // Only show on your own profile when in mobile mode, otherwise it's one tap away
+                            visible: root.isSelf && !(root.QQC2.ApplicationWindow.window as Main)?.wideMode
                             fromQAction: (toolbar.QQC2.ApplicationWindow.window as StatefulApp.StatefulWindow)?.application.action('options_configure') ?? null
                         },
                         Kirigami.Action {
