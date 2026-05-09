@@ -549,11 +549,6 @@ public:
     Q_INVOKABLE void mutateRemotePost(const QString &url, const QString &verb);
 
     /**
-     * @brief Fetches OEmbed data for a post.
-     */
-    Q_INVOKABLE void fetchOEmbed(const QString &id, Identity *identity);
-
-    /**
      * @return The preferred settings group name for this Account which includes the username and the instance uri.
      */
     [[nodiscard]] QString settingsGroupName() const;
@@ -700,12 +695,6 @@ Q_SIGNALS:
      * @param json The JSON body for further processing.
      */
     void registrationError(const QString &json);
-
-    /**
-     * @brief Emitted when the oembed data is successfully returned.
-     * @see fetchOEmbed()
-     */
-    void fetchedOEmbed(const QString &html);
 
     /**
      * @brief Emitted when the list of favorite lists changed.

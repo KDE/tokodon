@@ -896,35 +896,4 @@ StatefulApp.StatefulWindow {
             asynchronous: true
         }
     }
-
-    Connections {
-        target: AccountManager.selectedAccount
-
-        function onFetchedOEmbed(html: string): void {
-            embedDialog.active = true;
-            embedDialog.item.html = html;
-            embedDialog.item.open()
-        }
-    }
-
-    Loader {
-        id: embedDialog
-
-        active: false
-        sourceComponent: Kirigami.PromptDialog {
-            property alias html: textArea.text
-
-            title: i18nc("@title", "Embed Information")
-            mainItem: QQC2.TextArea {
-                id: textArea
-
-                readOnly: true
-                wrapMode: TextEdit.Wrap
-
-                Kirigami.SpellCheck.enabled: false
-            }
-            standardButtons: Kirigami.Dialog.Ok
-            showCloseButton: false
-        }
-    }
 }
