@@ -12,6 +12,7 @@ import QtQuick.Templates as T
 import QtQuick.Layouts
 import QtQml.Models
 import org.kde.tokodon
+import org.kde.kitemmodels as KItemModels
 
 import org.kde.kirigamiaddons.delegates as Delegates
 import org.kde.kirigamiaddons.statefulapp as StatefulApp
@@ -167,7 +168,12 @@ StatefulApp.StatefulWindow {
                 Repeater {
                     id: accounts
 
-                    model: AccountManager
+                    // Only show accounts that don't have issues
+                    model: KItemModels.KSortFilterProxyModel {
+                        sourceModel: AccountManager
+                        filterRoleName: "hasIssue"
+                        filterString: "false"
+                    }
 
                     delegate: Delegates.RoundedItemDelegate {
                         id: delegate
