@@ -46,7 +46,7 @@ Kirigami.ScrollablePage {
         },
         Kirigami.Action {
             icon.name: "configure-symbolic"
-            text: i18nc("@action:intoolbar", "Configure Notifications…")
+            text: i18nc("@action:intoolbar Configure Notifications", "Configure…")
             onTriggered: pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "NotificationsPage"), { title: i18nc("@title:window", "Notification Settings"), globalToolBarStyle: Kirigami.ApplicationHeaderStyle.None }, { title: i18nc("@title:window", "Notification Settings") })
         }
     ]
