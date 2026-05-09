@@ -31,6 +31,12 @@ Kirigami.Page {
 
     actions: [
         Kirigami.Action {
+            icon.name: "globe-symbolic"
+            text: i18nc("@abel Account preferences", "Open In Browser")
+
+            onTriggered: Qt.openUrlExternally(root.account.instanceUri)
+        },
+        Kirigami.Action {
             text: i18n("Logout")
             icon.name: "im-kick-user"
 
@@ -218,18 +224,6 @@ Kirigami.Page {
                         ]
                         Component.onCompleted: currentIndex = root.account.preferences.defaultVisibility
                         onCurrentValueChanged: root.account.preferences.defaultVisibility = currentIndex
-                    }
-
-                    FormCard.FormDelegateSeparator {
-                    }
-
-                    FormCard.FormLinkDelegate {
-                        Layout.fillWidth: true
-                        id: websiteDelegate
-                        icon.name: "globe-symbolic"
-                        text: i18nc("@abel Account preferences", "Open Server in Browser")
-                        description: i18n("Some settings can only be configured on your server's website.")
-                        url: root.account.instanceUri
                     }
                 }
             }
