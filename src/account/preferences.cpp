@@ -28,7 +28,7 @@ Preferences::Preferences(AbstractAccount *account)
             m_defaultVisibility = Post::stringToVisibility(obj["posting:default:visibility"_L1].toString());
             m_extendSpoiler = obj["reading:expand:spoilers"_L1].toBool();
             m_extendMedia = obj["reading:expand:media"_L1].toString();
-            m_indexable = obj["indexable"_L1].toBool();
+            m_indexable = m_account->indexable();
             m_hideCollections = obj["hide_collections"_L1].toBool();
             Q_EMIT defaultVisibilityChanged();
             Q_EMIT defaultSensitiveChanged();
