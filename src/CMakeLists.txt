@@ -479,7 +479,7 @@ endif()
 if (TARGET KF6::DBusAddons AND NOT HAIKU)
     target_link_libraries(tokodon_static PRIVATE KF6::WindowSystem)
     target_compile_definitions(tokodon_static PUBLIC -DHAVE_DBUS)
-    target_link_libraries(tokodon PRIVATE KF6::DBusAddons KF6::WindowSystem)
+    target_link_libraries(tokodon PRIVATE KF6::DBusAddons KF6::WindowSystem QCoro::DBus)
     target_compile_definitions(tokodon PRIVATE -DHAVE_KDBUSADDONS)
 endif ()
 

@@ -228,7 +228,7 @@ public Q_SLOTS:
 
 private:
 #ifdef HAVE_DBUS
-    void addFromDBus(const QDBusObjectPath &path);
+    QCoro::Task<void> addFromDBus(const QDBusObjectPath &path);
     void initOnlineAccounts();
 #endif
 

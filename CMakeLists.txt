@@ -112,6 +112,9 @@ if (UNIX AND NOT APPLE AND NOT ANDROID AND NOT TOKODON_FLATPAK)
     )
 endif ()
 
+find_package(QCoro6 REQUIRED COMPONENTS Core Network)
+qcoro_enable_coroutines()
+
 if (NOT ANDROID AND NOT WIN32 AND NOT APPLE AND NOT HAIKU)
     find_package(KF6DBusAddons ${KF_MIN_VERSION})
     set_package_properties(KF6DBusAddons PROPERTIES
@@ -123,10 +126,8 @@ if (NOT ANDROID AND NOT WIN32 AND NOT APPLE AND NOT HAIKU)
             TYPE REQUIRED
             PURPOSE "Misc windowing operations"
     )
+    find_package(QCoro6 REQUIRED COMPONENTS DBus)
 endif ()
-
-find_package(QCoro6 REQUIRED COMPONENTS Core Network)
-qcoro_enable_coroutines()
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
 
