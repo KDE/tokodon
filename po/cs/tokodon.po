@@ -1,21 +1,22 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the tokodon package.
 # SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Vit Pelcak <vit@pelcak.org>
+# SPDX-FileCopyrightText: 2026 Libor Filípek <libor.filipek@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-10 00:43+0000\n"
-"PO-Revision-Date: 2024-10-01 16:39+0200\n"
-"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
+"PO-Revision-Date: 2026-05-23 23:47+0200\n"
+"Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 24.08.1\n"
+"X-Generator: Lokalize 26.04.1\n"
 
 #: account/abstractaccount.cpp:33
 #, kde-format
@@ -23,11 +24,13 @@ msgid ""
 "All supported formats (*.jpg *.jpeg *.png *.gif *.webp *.heic *.heif *.avif "
 "*.webm *.mp4 *.m4v *.mov)"
 msgstr ""
+"Všechny podporované formáty (*.jpg *.jpeg *.png *.gif *.webp *.heic *.heif *."
+"avif *.webm *.mp4 *.m4v *.mov)"
 
 #: account/abstractaccount.cpp:34
 #, kde-format
 msgid "JPEG image (*.jpg *.jpeg)"
-msgstr ""
+msgstr "Obrázek JPEG (*.jpg *.jpeg)"
 
 #: account/abstractaccount.cpp:35
 #, kde-format
@@ -47,7 +50,7 @@ msgstr "Obrázek WebP (*.webp)"
 #: account/abstractaccount.cpp:38
 #, kde-format
 msgid "HEIC image(*.heic)"
-msgstr ""
+msgstr "Obrázek HEIC (*.heic)"
 
 #: account/abstractaccount.cpp:39
 #, kde-format
@@ -62,7 +65,7 @@ msgstr "Obrázek AVIF (*.avif)"
 #: account/abstractaccount.cpp:41
 #, kde-format
 msgid "WebM video (*.webm)"
-msgstr ""
+msgstr "Video WebM (*.webm)"
 
 #: account/abstractaccount.cpp:42
 #, kde-format
@@ -72,12 +75,12 @@ msgstr "Video MPEG-4 (*.mp4)"
 #: account/abstractaccount.cpp:43
 #, kde-format
 msgid "M4V video (*.m4v)"
-msgstr ""
+msgstr "Video M4V (*.m4v)"
 
 #: account/abstractaccount.cpp:44
 #, kde-format
 msgid "QuickTime video (*.mov)"
-msgstr ""
+msgstr "Video QuickTime (*.mov)"
 
 #: account/abstractaccount.cpp:45 account/abstractaccount.cpp:527
 #, kde-format
@@ -87,7 +90,7 @@ msgstr "Všechny soubory (*)"
 #: account/abstractaccount.cpp:526
 #, kde-format
 msgid "All supported formats (%1)"
-msgstr ""
+msgstr "Všechny podporované formáty (%1)"
 
 #: account/abstractaccount.cpp:682
 #, kde-format
@@ -102,7 +105,7 @@ msgstr "Nelze přestat sledovat účet"
 #: account/abstractaccount.cpp:684
 #, kde-format
 msgid "Could not remove account as your follower"
-msgstr ""
+msgstr "Nelze odstranit účet ze sledovaných"
 
 #: account/abstractaccount.cpp:685
 #, kde-format
@@ -127,12 +130,12 @@ msgstr "Nelze zrušit ztlumení účtu"
 #: account/abstractaccount.cpp:689
 #, kde-format
 msgid "Could not feature account"
-msgstr ""
+msgstr "Nelze označit účet"
 
 #: account/abstractaccount.cpp:690
 #, kde-format
 msgid "Could not unfeature account"
-msgstr ""
+msgstr "Nelze zrušit označení účtu"
 
 #: account/abstractaccount.cpp:691
 #, kde-format
@@ -143,67 +146,67 @@ msgstr "Nelze upravit poznámku o účtu"
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Network request was interrupted"
-msgstr ""
+msgstr "Síťový požadavek byl přerušen"
 
 #: account/account.cpp:332 account/account.cpp:339
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Failed to parse credentials"
-msgstr ""
+msgstr "Nepodařilo se zpracovat přihlašovací údaje"
 
 #: account/notificationhandler.cpp:35 account/notificationhandler.cpp:36
 #, kde-format
 msgid "View Post"
-msgstr ""
+msgstr "Zobrazit příspěvek"
 
 #: account/notificationhandler.cpp:56 account/notificationhandler.cpp:57
 #, kde-format
 msgid "View Profile"
-msgstr ""
+msgstr "Zobrazit profil"
 
 #: account/notificationhandler.cpp:79
 #: qml/Notifications/UserInteractionLabel.qml:84
 #, kde-format
 msgid "%1 mentioned you"
-msgstr ""
+msgstr "%1 se o vás zmínil"
 
 #: account/notificationhandler.cpp:87
 #: qml/Notifications/UserInteractionLabel.qml:92
 #, kde-format
 msgid "%1 wrote a new post"
-msgstr ""
+msgstr "%1 napsal nový příspěvek"
 
 #: account/notificationhandler.cpp:95
 #: qml/Notifications/UserInteractionLabel.qml:82
 #, kde-format
 msgid "%1 boosted your post"
-msgstr ""
+msgstr "%1 boostnul váš příspěvek"
 
 #: account/notificationhandler.cpp:103 qml/Notifications/FollowDelegate.qml:82
 #, kde-format
 msgid "%1 followed you"
-msgstr ""
+msgstr "%1 vás začal sledovat"
 
 #: account/notificationhandler.cpp:111 qml/Notifications/FollowDelegate.qml:80
 #, kde-format
 msgid "%1 requested to follow you"
-msgstr ""
+msgstr "%1 vás požádal, zda vás může sledovat"
 
 #: account/notificationhandler.cpp:119
 #: qml/Notifications/UserInteractionLabel.qml:86
 #, kde-format
 msgid "%1 favorited your post"
-msgstr ""
+msgstr "%1 si váš příspěvek přidal do oblíbených"
 
 #: account/notificationhandler.cpp:127
 #, kde-format
 msgid "Poll by %1 has ended"
-msgstr ""
+msgstr "Anketa od %1 byla ukončena"
 
 #: account/notificationhandler.cpp:135
 #, kde-format
 msgid "%1 edited a post"
-msgstr ""
+msgstr "%1 upravil příspěvek"
 
 #: account/notificationhandler.cpp:146
 #, kde-format
@@ -213,39 +216,41 @@ msgctxt ""
 "the year. The variable is the current year e.g. 2024. Please don't translate "
 "the hashtag."
 msgid "Your %1 #FediWrapped awaits!"
-msgstr ""
+msgstr "Váš %1 #FediWrapped na vás čeká!"
 
 #: account/notificationhandler.cpp:148
 #, kde-format
 msgid "Unveil your year's highlights and memorable moments on Mastodon!"
 msgstr ""
+"Představte na Mastodonu to nejlepší z uplynulého roku a své nezapomenutelné "
+"okamžiky!"
 
 #: account/notificationhandler.cpp:155
 #: qml/Notifications/UserInteractionLabel.qml:94
 #, kde-format
 msgid "%1 quoted your post"
-msgstr ""
+msgstr "%1 citoval váš příspěvek"
 
 #: account/notificationhandler.cpp:160
 #, kde-format
 msgctxt "@title"
 msgid "New Notification"
-msgstr ""
+msgstr "Nové oznámení"
 
 #: account/notificationhandler.cpp:161
 #, kde-format
 msgid "You received a new notification."
-msgstr ""
+msgstr "Obdrželi jste nové oznámení."
 
 #: account/notificationhandler.cpp:174
 #, kde-kuit-format
 msgid "<b>Content Notice</b>: %1"
-msgstr ""
+msgstr "<b>Upozornění k obsahu</b>: %1"
 
 #: account/notificationhandler.cpp:178
 #, kde-format
 msgid "This post has no text."
-msgstr ""
+msgstr "Tento příspěvek neobsahuje žádný text."
 
 #: account/notificationhandler.cpp:185
 #, kde-format
@@ -253,50 +258,55 @@ msgid ""
 "The moderators of your server has limited this user, view this in Tokodon to "
 "see their profile."
 msgstr ""
+"Správci vašeho serveru tomuto uživateli omezili přístup; jeho profil si "
+"můžete prohlédnout v aplikaci Tokodon."
 
 #: account/notificationhandler.cpp:189
 #, kde-format
 msgid "This user doesn't have a description."
-msgstr ""
+msgstr "Tento uživatel nemá popis."
 
 #: account/profileeditor.cpp:188
 #, kde-format
 msgid "Image is too big"
-msgstr ""
+msgstr "Obrázek je příliš velký"
 
 #: account/profileeditor.cpp:201
 #, kde-format
 msgid "Unsupported image file. Only jpeg, png and gif are supported."
 msgstr ""
+"Nepodporovaný formát obrázku. Podporovány jsou pouze formáty JPEG, PNG a GIF."
 
 #: account/profileeditor.cpp:345
 #, kde-format
 msgid "Account details saved"
-msgstr ""
+msgstr "Údaje o účtu byly uloženy"
 
 #: account/rulesmodel.cpp:104 account/rulesmodel.cpp:119
 #, kde-format
 msgid ""
 "This server provided no rules. Please see their website for more information."
 msgstr ""
+"Tento server neposkytl žádná pravidla. Další informace naleznete na jeho "
+"webových stránkách."
 
 #: account/scheduledstatusesmodel.cpp:72
 #, kde-format
 msgctxt "@title:window"
 msgid "Draft Posts"
-msgstr ""
+msgstr "Koncepty příspěvků"
 
 #: account/scheduledstatusesmodel.cpp:72
 #, kde-format
 msgctxt "@title:window"
 msgid "Scheduled Posts"
-msgstr ""
+msgstr "Plánované příspěvky"
 
 #: account/socialgraphmodel.cpp:32
 #, kde-format
 msgctxt "@title"
 msgid "Follow Requests"
-msgstr ""
+msgstr "Požadavky na sledování"
 
 #: account/socialgraphmodel.cpp:34
 #, kde-format
@@ -314,7 +324,7 @@ msgstr "Sledujete"
 #, kde-format
 msgctxt "@title"
 msgid "Muted Users"
-msgstr ""
+msgstr "Ztlumení uživatelé"
 
 #: account/socialgraphmodel.cpp:40
 #, kde-format
@@ -326,7 +336,7 @@ msgstr "Blokovaní uživatelé"
 #, kde-format
 msgctxt "@title"
 msgid "Featured Users"
-msgstr ""
+msgstr "Zvýraznění uživatelé"
 
 #: account/socialgraphmodel.cpp:44
 #, kde-format
@@ -342,71 +352,71 @@ msgstr[2] "%1 oblíbených"
 msgctxt "@title"
 msgid "%1 boost"
 msgid_plural "%1 boosts"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%1 boost"
+msgstr[1] "%1 boosty"
+msgstr[2] "%1 boostů"
 
 #: account/socialgraphmodel.cpp:48
 #, kde-format
 msgctxt "@title"
 msgid "Familiar Followers"
-msgstr ""
+msgstr "Známí sledující"
 
 #: account/socialgraphmodel.cpp:50
 #, kde-format
 msgctxt "@title"
 msgid "Manage List Users"
-msgstr ""
+msgstr "Správa seznamu uživatelů"
 
 #: account/socialgraphmodel.cpp:58
 #, kde-format
 msgid "No Follow Requests"
-msgstr ""
+msgstr "Žádný požadavek na sledování"
 
 #: account/socialgraphmodel.cpp:60
 #, kde-format
 msgid "No Followers"
-msgstr ""
+msgstr "Žádní sledující"
 
 #: account/socialgraphmodel.cpp:62
 #, kde-format
 msgid "No Followed Users"
-msgstr ""
+msgstr "Žádní sledovaní uživatelé"
 
 #: account/socialgraphmodel.cpp:64
 #, kde-format
 msgid "No Muted Users"
-msgstr ""
+msgstr "Žádní ztlumení uživatelé"
 
 #: account/socialgraphmodel.cpp:66
 #, kde-format
 msgid "No Blocked Users"
-msgstr ""
+msgstr "Žádní blokovaní uživatelé"
 
 #: account/socialgraphmodel.cpp:68
 #, kde-format
 msgid "No Featured Users"
-msgstr ""
+msgstr "Žádní zvýraznění uživatelé"
 
 #: account/socialgraphmodel.cpp:70
 #, kde-format
 msgid "No Users Favorited This Post"
-msgstr ""
+msgstr "Tento příspěvek si zatím nikdo nepřidal do oblíbených"
 
 #: account/socialgraphmodel.cpp:72
 #, kde-format
 msgid "No Users Boosted This Post"
-msgstr ""
+msgstr "Tento příspěvek zatím nikdo neboostnul"
 
 #: account/socialgraphmodel.cpp:74
 #, kde-format
 msgid "No Familiar Followers"
-msgstr ""
+msgstr "Žádní známí sledující"
 
 #: account/socialgraphmodel.cpp:76
 #, kde-format
 msgid "No Users"
-msgstr ""
+msgstr "Žádní uživatelé"
 
 #: account/socialgraphmodel.cpp:84
 #, kde-format
@@ -414,6 +424,8 @@ msgid ""
 "Some users need to be manually approved before they can follow you, and will "
 "show up here."
 msgstr ""
+"Někteří uživatelé musí být nejprve ručně schváleni, než vás budou moci "
+"sledovat, a zobrazí se zde."
 
 #: account/socialgraphmodel.cpp:86
 #, kde-format
@@ -421,50 +433,56 @@ msgctxt "@info:placeholder"
 msgid ""
 "No one is following this user, or they have chosen to hide this information."
 msgstr ""
+"Tento uživatel nemá žádné sledující, nebo se rozhodl tuto informaci skrýt."
 
 #: account/socialgraphmodel.cpp:88
 #, kde-format
 msgctxt "@info:placeholder"
 msgid ""
 "This user isn't following anyone, or has chosen to hide this information."
-msgstr ""
+msgstr "Tento uživatel nikoho nesleduje, nebo se rozhodl tuto informaci skrýt."
 
 #: account/socialgraphmodel.cpp:90
 #, kde-format
 msgid "Mute users to stop them from showing up in your notifications."
-msgstr ""
+msgstr "Ztlumte uživatele, aby se vám nezobrazovali v oznámeních."
 
 #: account/socialgraphmodel.cpp:92
 #, kde-format
 msgid "Block users to hide the user from your timeline entirely."
-msgstr ""
+msgstr "Zablokujte uživatele, aby se na vaší časové ose vůbec nezobrazoval."
 
 #: account/socialgraphmodel.cpp:94
 #, kde-format
 msgid "Users you like can be featured and shown on your profile."
 msgstr ""
+"Uživatelé, kteří se vám líbí, mohou být zvýrazněni a zobrazeni na vašem "
+"profilu."
 
 #: account/socialgraphmodel.cpp:96
 #, kde-format
 msgid "No one has favorited this post yet. Maybe you'll be the first?"
 msgstr ""
+"Tento příspěvek si zatím nikdo nepřidal do oblíbených. Možná budete první?"
 
 #: account/socialgraphmodel.cpp:98
 #, kde-format
 msgid ""
 "No one has boosted this post yet. You should boost it to expand its reach!"
 msgstr ""
+"Tento příspěvek zatím nikdo neboostnul. Sdílejte ho, aby se dostal k více "
+"lidem!"
 
 #: account/socialgraphmodel.cpp:102
 #, kde-format
 msgid "There is no one in this list yet."
-msgstr ""
+msgstr "V tomto seznamu zatím nikdo není."
 
 #: account/suggestionsmodel.cpp:51
 #, kde-format
 msgctxt "@title:window"
 msgid "Suggested Users"
-msgstr ""
+msgstr "Doporučení uživatelé"
 
 #: admin/accounttoolmodel.cpp:298
 #, kde-format
@@ -479,45 +497,45 @@ msgstr "Účet nelze odmítnout"
 #: admin/accounttoolmodel.cpp:300
 #, kde-format
 msgid "Could not take action against the account"
-msgstr ""
+msgstr "Nepodařilo se provést akci s tímto účtem"
 
 #: admin/accounttoolmodel.cpp:301
 #, kde-format
 msgid "Could not enable the disabled account"
-msgstr ""
+msgstr "Nepodařilo se povolit deaktivovaný účet"
 
 #: admin/accounttoolmodel.cpp:302
 #, kde-format
 msgid "Could not unsilence the account"
-msgstr ""
+msgstr "Nepodařilo se zrušit zablokování účtu"
 
 #: admin/accounttoolmodel.cpp:303
 #, kde-format
 msgid "Could not unsuspend the account"
-msgstr ""
+msgstr "Nepodařilo se obnovit účet"
 
 #: admin/accounttoolmodel.cpp:304
 #, kde-format
 msgid "Could not mark the account as not sensitive"
-msgstr ""
+msgstr "Nepodařilo se označit účet jako nedůvěryhodný"
 
 #: admin/adminaccountinfo.cpp:24
 #, kde-format
 msgctxt "login status"
 msgid "Suspended"
-msgstr ""
+msgstr "Pozastavený"
 
 #: admin/adminaccountinfo.cpp:26
 #, kde-format
 msgctxt "login status"
 msgid "Limited"
-msgstr "Omezeno"
+msgstr "Omezený"
 
 #: admin/adminaccountinfo.cpp:28
 #, kde-format
 msgctxt "login status"
 msgid "Sensitized"
-msgstr ""
+msgstr "Citlivý"
 
 #: admin/adminaccountinfo.cpp:30
 #, kde-format
@@ -529,7 +547,7 @@ msgstr "Zmrazený"
 #, kde-format
 msgctxt "login status"
 msgid "Email Not confirmed"
-msgstr ""
+msgstr "E-mail nebyl ověřen"
 
 #: admin/adminaccountinfo.cpp:34
 #, kde-format
@@ -541,37 +559,39 @@ msgstr "Neodsouhlasený"
 #, kde-format
 msgctxt "login status"
 msgid "No Limits Imposed"
-msgstr ""
+msgstr "Bez omezení"
 
 #: admin/federationtoolmodel.cpp:164 admin/iprulestoolmodel.cpp:127
 #, kde-format
 msgid "Error occurred when making a PUT request to update the domain block."
 msgstr ""
+"Při odesílání požadavku PUT za účelem aktualizace blokování domény došlo k "
+"chybě."
 
 #: admin/reporttoolmodel.cpp:198
 #, kde-format
 msgid "Could not resolve report"
-msgstr ""
+msgstr "Nepodařilo se vyřešit hlášení"
 
 #: admin/reporttoolmodel.cpp:199
 #, kde-format
 msgid "Could not unresolve report"
-msgstr ""
+msgstr "Nepodařilo se zrušit vyřešení hlášení"
 
 #: admin/reporttoolmodel.cpp:200
 #, kde-format
 msgid "Could not assign report"
-msgstr ""
+msgstr "Nepodařilo se přiřadit hlášení"
 
 #: admin/reporttoolmodel.cpp:201
 #, kde-format
 msgid "Could not unassign report"
-msgstr ""
+msgstr "Nepodařilo se zrušit přiřazení hlášení"
 
 #: conversation/conversationmodel.cpp:61
 #, kde-format
 msgid "Empty conversation"
-msgstr ""
+msgstr "Prázdná konverzace"
 
 #: conversation/conversationmodel.cpp:65
 #, kde-format
@@ -592,22 +612,22 @@ msgctxt ""
 "@info:label %1 is the native language name, and %2 is the localized name. "
 "For example, 'dansk (Danish)'"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: editor/listeditorbackend.cpp:121
 #, kde-format
 msgid "No one"
-msgstr ""
+msgstr "Nikdo"
 
 #: editor/listeditorbackend.cpp:121
 #, kde-format
 msgid "Members of the list"
-msgstr ""
+msgstr "Členové seznamu"
 
 #: editor/listeditorbackend.cpp:121
 #, kde-format
 msgid "Any followed users"
-msgstr ""
+msgstr "Jakýkoliv sledovaní uživatelé"
 
 #: editor/polltimemodel.cpp:14
 #, kde-format
@@ -670,12 +690,12 @@ msgstr "Tokodon"
 #: main.cpp:79 main.cpp:100
 #, kde-format
 msgid "Browse the Fediverse"
-msgstr ""
+msgstr "Procházejte Fediversem"
 
 #: main.cpp:81
 #, kde-format
 msgid "© 2021-2025 KDE Community"
-msgstr ""
+msgstr "© 2021-2025 Komunita KDE"
 
 #: main.cpp:82
 #, kde-format
@@ -696,40 +716,40 @@ msgstr "Joshua Goins"
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Vít Pelčák"
+msgstr "Vít Pelčák,Libor Filípek"
 
 #: main.cpp:92
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "vit@pelcak.org"
+msgstr "vit@pelcak.org,libor.filipek@gmail.com"
 
 #: main.cpp:101
 #, kde-format
 msgid "Supports https, and web+ap url schemes."
-msgstr ""
+msgstr "Podporuje protokol https a schémata URL typu web+ap."
 
 #: network/networkcontroller.cpp:307
 #, kde-format
 msgid "Receiving push notifications"
-msgstr ""
+msgstr "Příjem push notifikací"
 
 #: notification/notificationmodel.cpp:185
 #, kde-format
 msgid "Error occurred when fetching the latest notification."
-msgstr ""
+msgstr "Při načítání nejnovějšího oznámení došlo k chybě."
 
 #: qml/AccountHeader.qml:55
 #, kde-format
 msgctxt "@info %1 is a display name"
 msgid "%1 has moved to a new account:"
-msgstr ""
+msgstr "%1 se přesunul na nový účet:"
 
 #: qml/AccountHeader.qml:91
 #, kde-format
 msgctxt "@action:button"
 msgid "Go to Profile"
-msgstr ""
+msgstr "Přejít na profil"
 
 #: qml/AccountHeader.qml:159
 #, kde-format
@@ -738,7 +758,7 @@ msgctxt ""
 "people who follow you back. This the same meaning as 'mutual friends', for "
 "example."
 msgid "Mutual"
-msgstr ""
+msgstr "Společní"
 
 #: qml/AccountHeader.qml:159
 #, kde-format
@@ -748,12 +768,12 @@ msgstr "Vás sleduje"
 #: qml/AccountHeader.qml:180
 #, kde-format
 msgid "Bot"
-msgstr ""
+msgstr "Bot"
 
 #: qml/AccountHeader.qml:291
 #, kde-format
 msgid "Follow Requested"
-msgstr ""
+msgstr "Žádost o sledování odeslána"
 
 #: qml/AccountHeader.qml:294
 #, kde-format
@@ -763,7 +783,7 @@ msgstr "Přestat sledovat"
 #: qml/AccountHeader.qml:296
 #, kde-format
 msgid "Follow"
-msgstr "Následovat"
+msgstr "Sledovat"
 
 #: qml/AccountHeader.qml:321
 #, kde-format
@@ -835,7 +855,7 @@ msgstr "Blokovat"
 #, kde-format
 msgctxt "@action:inmenu Report this post"
 msgid "Report…"
-msgstr "Nahlásit..."
+msgstr "Nahlásit…"
 
 #: qml/AccountHeader.qml:442
 #, kde-format
@@ -872,7 +892,8 @@ msgid "Open in Browser"
 msgstr ""
 
 #: qml/AccountHeader.qml:495
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Copy Link"
 msgid "Copy Link"
 msgstr "Kopírovat odkaz"
 
@@ -987,13 +1008,13 @@ msgstr "Vše"
 #, kde-format
 msgctxt "@title:window"
 msgid "Profile"
-msgstr ""
+msgstr "Profil"
 
 #: qml/AccountInfo.qml:131 qml/FollowingPage.qml:161
 #, kde-format
 msgctxt "@label"
 msgid "No Posts"
-msgstr ""
+msgstr "Žádné příspěvky"
 
 #: qml/AccountInfo.qml:132 qml/FollowingPage.qml:162
 #, kde-format
@@ -1224,7 +1245,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label If the list is favorited"
 msgid "Favorite"
-msgstr ""
+msgstr "Oblíbené"
 
 #: qml/EditListPage.qml:98
 #, kde-format
@@ -1253,7 +1274,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button Add user to this list"
 msgid "Add"
-msgstr ""
+msgstr "Přidat"
 
 #: qml/EditListPage.qml:219
 #, kde-format
@@ -1270,7 +1291,7 @@ msgstr "Vytvořit"
 #, kde-format
 msgctxt "@action:button Save the edited list"
 msgid "Save"
-msgstr ""
+msgstr "Uložit"
 
 #: qml/EditListPage.qml:268
 #, kde-format
@@ -1319,13 +1340,13 @@ msgstr "Uživatelé"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Posts"
-msgstr ""
+msgstr "Žádné příspěvky"
 
 #: qml/ExplorePage.qml:130
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Tags"
-msgstr ""
+msgstr "Žádné značky"
 
 #: qml/ExplorePage.qml:162
 #, kde-format
@@ -1345,19 +1366,19 @@ msgstr "Otevřít v prohlížeči"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No News"
-msgstr ""
+msgstr "Žádné novinky"
 
 #: qml/ExplorePage.qml:342
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Users"
-msgstr ""
+msgstr "Žádný uživatel"
 
 #: qml/FollowingPage.qml:20
 #, kde-format
 msgctxt "@title 'Following' as in the users you're following on Mastodon."
 msgid "Following"
-msgstr ""
+msgstr "Sledujete"
 
 #: qml/FollowingPage.qml:41 qml/Settings/SafetyPage.qml:26
 #: qml/TimelinePage.qml:110
@@ -1534,11 +1555,10 @@ msgid ""
 msgstr ""
 
 #: qml/ListTimelinePage.qml:24
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@action:button Edit current list"
 msgid "Edit…"
-msgstr "Upravit"
+msgstr "Upravit…"
 
 #: qml/LoginFlow/BaseAuthorization.qml:26
 #, kde-format
@@ -1671,7 +1691,7 @@ msgstr "Heslo"
 #: qml/LoginFlow/RegistrationPage.qml:128
 #, kde-format
 msgid "Date of Birth"
-msgstr "Datum narození:"
+msgstr "Datum narození"
 
 #: qml/LoginFlow/RegistrationPage.qml:136
 #, kde-format
@@ -1732,7 +1752,7 @@ msgstr ""
 #: qml/LoginFlow/ServersPage.qml:178
 #, kde-format
 msgid "Search or enter URL…"
-msgstr "Hledat nebo zadat URL..."
+msgstr "Hledat nebo zadat URL…"
 
 #: qml/LoginFlow/ServersPage.qml:217
 #, kde-format
@@ -1778,21 +1798,19 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button Pick a Mastodon server"
 msgid "Register"
-msgstr ""
+msgstr "Registrace"
 
 #: qml/LoginFlow/WelcomePage.qml:90
 #, kde-format
 msgctxt "@action:button Use an existing Mastodon account"
 msgid "Login"
-msgstr ""
+msgstr "Přihlášení"
 
 #: qml/LoginFlow/WelcomePage.qml:97
-#, fuzzy, kde-format
-#| msgctxt "@title: dialog to switch between logged in accounts"
-#| msgid "Switch Account"
+#, kde-format
 msgctxt "@action:button Use an existing Mastodon account"
 msgid "Use System Account"
-msgstr "Přepnout účet"
+msgstr "Použít systémový účet"
 
 #: qml/LoginFlow/WelcomePage.qml:115
 #, kde-format
@@ -1816,7 +1834,7 @@ msgstr "Kompatibilní s"
 #, kde-format
 msgctxt "@title"
 msgid "Open As…"
-msgstr "Otevřít jako..."
+msgstr "Otevřít jako…"
 
 #: qml/Main.qml:151
 #, kde-format
@@ -1896,13 +1914,13 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button Home Timeline"
 msgid "Home"
-msgstr ""
+msgstr "Domů"
 
 #: qml/Main.qml:634
 #, kde-format
 msgctxt "@action:button Account Notifications"
 msgid "Notifications"
-msgstr ""
+msgstr "Upozornění"
 
 #: qml/Main.qml:639
 #, kde-format
@@ -1914,50 +1932,50 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button Local timeline of posts from the account's own server"
 msgid "Local"
-msgstr ""
+msgstr "Místní"
 
 #: qml/Main.qml:648
 #, kde-format
 msgctxt ""
 "@action:button Global timeline of posts from the entire Fediverse network"
 msgid "Global"
-msgstr ""
+msgstr "Globální"
 
 #: qml/Main.qml:652
 #, kde-format
 msgctxt "@action:button Direct one-on-one messages between users"
 msgid "Conversations"
-msgstr ""
+msgstr "Konverzace"
 
 #: qml/Main.qml:656
 #, kde-format
 msgctxt "@action:button This account's favorited posts"
 msgid "Favorites"
-msgstr ""
+msgstr "Oblíbené"
 
 #: qml/Main.qml:660
 #, kde-format
 msgctxt "@action:button This account's bookmarked posts"
 msgid "Bookmarks"
-msgstr ""
+msgstr "Záložky"
 
 #: qml/Main.qml:664
 #, kde-format
 msgctxt "@action:button Explore this server's trending posts, news, and more"
 msgid "Explore"
-msgstr ""
+msgstr "Objevovat"
 
 #: qml/Main.qml:668
 #, kde-format
 msgctxt "@action:button A list of this account's followed accounts"
 msgid "Following"
-msgstr ""
+msgstr "Sledujete"
 
 #: qml/Main.qml:672
 #, kde-format
 msgctxt "@action:button Search for users, posts and tags"
 msgid "Search"
-msgstr ""
+msgstr "Hledat"
 
 #: qml/Main.qml:680
 #, kde-format
@@ -1965,13 +1983,13 @@ msgctxt ""
 "@action:button This account's lists, or timelines consisting of a groups of "
 "accounts"
 msgid "Lists"
-msgstr ""
+msgstr "Seznamy"
 
 #: qml/Main.qml:684
 #, kde-format
 msgctxt "@action:button This account's profile"
 msgid "Profile"
-msgstr ""
+msgstr "Profil"
 
 #: qml/Main.qml:691
 #, kde-format
@@ -1995,13 +2013,13 @@ msgstr "Nastavení"
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Unfollow"
-msgstr ""
+msgstr "Přestat sledovat"
 
 #: qml/Main.qml:874
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Follow"
-msgstr ""
+msgstr "Sledovat"
 
 #: qml/ModerationTools/AccountToolPage.qml:31
 #: qml/ModerationTools/AccountToolPage.qml:215
@@ -3170,8 +3188,7 @@ msgid "No"
 msgstr "Ne"
 
 #: qml/ModerationTools/MainReportToolPage.qml:184
-#, fuzzy, kde-format
-#| msgid "Category"
+#, kde-format
 msgctxt "@title:group"
 msgid "Category"
 msgstr "Kategorie"
@@ -3245,15 +3262,13 @@ msgid "<b>Content Warning</b><br /> %1"
 msgstr "<b>Varování o obsahu:</b><br />%1"
 
 #: qml/ModerationTools/MainReportToolPage.qml:338
-#, fuzzy, kde-format
-#| msgid "Show Less"
+#, kde-format
 msgctxt "@action:button"
 msgid "Show Less"
 msgstr "Zobrazit méně"
 
 #: qml/ModerationTools/MainReportToolPage.qml:338
-#, fuzzy, kde-format
-#| msgid "Show More"
+#, kde-format
 msgctxt "@action:button"
 msgid "Show More"
 msgstr "Zobrazit více"
@@ -3372,36 +3387,34 @@ msgid "Mark All As Read"
 msgstr ""
 
 #: qml/NotificationPage.qml:49
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Configure '%1'"
+#, kde-format
 msgctxt "@action:intoolbar Configure Notifications"
 msgid "Configure…"
-msgstr "Nastavit '%1'"
+msgstr "Nastavit…"
 
 #: qml/NotificationPage.qml:50
 #, kde-format
 msgctxt "@title:window"
 msgid "Notification Settings"
-msgstr ""
+msgstr "Nastavení upozornění"
 
 #: qml/NotificationPage.qml:62
 #, kde-format
 msgctxt "@action:intoolbar Show all notifications"
 msgid "All"
-msgstr ""
+msgstr "Vše"
 
 #: qml/NotificationPage.qml:75
 #, kde-format
 msgctxt "@action:intoolbar Show only mentions"
 msgid "Mentions"
-msgstr ""
+msgstr "Zmínky"
 
 #: qml/NotificationPage.qml:88
 #, kde-format
 msgctxt "@action:intoolbar More filter categories"
 msgid "More"
-msgstr ""
+msgstr "Více"
 
 #: qml/NotificationPage.qml:110
 #, kde-format
@@ -3434,23 +3447,22 @@ msgid "Follows"
 msgstr ""
 
 #: qml/NotificationPage.qml:155
-#, fuzzy, kde-format
-#| msgid "Quotes"
+#, kde-format
 msgctxt "Show only quotes"
 msgid "Quotes"
-msgstr "Uvozovky"
+msgstr "Citace"
 
 #: qml/NotificationPage.qml:205
 #, kde-format
 msgctxt "@info:label New notifications"
 msgid "New"
-msgstr ""
+msgstr "Nová"
 
 #: qml/NotificationPage.qml:205
 #, kde-format
 msgctxt "@info:label Previous notifications"
 msgid "Previous"
-msgstr ""
+msgstr "Předchozí"
 
 #: qml/NotificationPage.qml:352
 #, kde-format
@@ -3619,7 +3631,7 @@ msgstr ""
 #: qml/PostDelegate/AttachmentMenu.qml:48
 #, kde-format
 msgid "Save Video As…"
-msgstr "Uložit video jako..."
+msgstr "Uložit video jako…"
 
 #: qml/PostDelegate/AttachmentMenu.qml:50
 #, kde-format
@@ -3635,7 +3647,7 @@ msgstr "Kopírovat obrázek"
 #, kde-format
 msgctxt "@title"
 msgid "Post"
-msgstr ""
+msgstr "Příspěvek"
 
 #: qml/PostDelegate/AudioAttachment.qml:81
 #: qml/PostDelegate/VideoAttachment.qml:120
@@ -3669,7 +3681,7 @@ msgstr "Zobrazit více"
 #, kde-format
 msgctxt "@info"
 msgid "Filter"
-msgstr ""
+msgstr "Filtr"
 
 #: qml/PostDelegate/FilterNotice.qml:47
 #, kde-format
@@ -3974,7 +3986,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open as…"
-msgstr "Otevřít jako..."
+msgstr "Otevřít jako…"
 
 #: qml/PostDelegate/PostMenu.qml:95
 #, kde-format
@@ -4100,7 +4112,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "Tag"
-msgstr ""
+msgstr "Značka"
 
 #: qml/PostDelegate/PostTags.qml:56
 #, kde-format
@@ -4122,7 +4134,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:label"
 msgid "Poll"
-msgstr ""
+msgstr "Anketa"
 
 #: qml/PostDelegate/VideoAttachment.qml:201
 #, kde-format
@@ -4214,43 +4226,43 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window Server rules"
 msgid "Rules"
-msgstr ""
+msgstr "Pravidla"
 
 #: qml/ServerInformationPage.qml:66
 #, kde-format
 msgctxt "@action:button"
 msgid "Rules"
-msgstr ""
+msgstr "Pravidla"
 
 #: qml/ServerInformationPage.qml:78
 #, kde-format
 msgctxt "@action:button"
 msgid "Announcements"
-msgstr ""
+msgstr "Oznámení"
 
 #: qml/ServerInformationPage.qml:90
 #, kde-format
 msgctxt "@action:button"
 msgid "Privacy Policy"
-msgstr ""
+msgstr "Pravidla soukromí"
 
 #: qml/ServerInformationPage.qml:91
 #, kde-format
 msgctxt "@title:window"
 msgid "Privacy Policy"
-msgstr ""
+msgstr "Pravidla soukromí"
 
 #: qml/ServerInformationPage.qml:102
 #, kde-format
 msgctxt "@action:button"
 msgid "Terms of Service"
-msgstr ""
+msgstr "Podmínky užití"
 
 #: qml/ServerInformationPage.qml:103
 #, kde-format
 msgctxt "@title:window"
 msgid "Terms of Service"
-msgstr ""
+msgstr "Podmínky užití"
 
 #: qml/Settings/AccountPage.qml:26
 #, kde-format
@@ -4261,7 +4273,7 @@ msgstr "Upravit účet"
 #, kde-format
 msgctxt "@abel Account preferences"
 msgid "Open In Browser"
-msgstr ""
+msgstr "Otevřít v prohlížeči"
 
 #: qml/Settings/AccountPage.qml:52 qml/Settings/ProfileEditor.qml:31
 #, kde-format
@@ -4475,7 +4487,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Unblock"
-msgstr ""
+msgstr "Odblokovat"
 
 #: qml/Settings/BlockedDomainsPage.qml:65
 #, kde-format
@@ -4499,13 +4511,13 @@ msgstr "Upravit filtr"
 #, kde-format
 msgctxt "@label:textbox Filter title"
 msgid "Title"
-msgstr ""
+msgstr "Název"
 
 #: qml/Settings/EditFilterPage.qml:89
 #, kde-format
 msgctxt "@info:header"
 msgid "Contexts"
-msgstr ""
+msgstr "Kontexty"
 
 #: qml/Settings/EditFilterPage.qml:96
 #, kde-format
@@ -4535,13 +4547,13 @@ msgstr ""
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Conversations"
-msgstr ""
+msgstr "Konverzace"
 
 #: qml/Settings/EditFilterPage.qml:121
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Profiles"
-msgstr ""
+msgstr "Profily"
 
 #: qml/Settings/EditFilterPage.qml:126
 #, kde-format
@@ -4565,7 +4577,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label:radiobutton"
 msgid "Hide Completely"
-msgstr ""
+msgstr "Skrýt dokončené"
 
 #: qml/Settings/EditFilterPage.qml:153
 #, kde-format
@@ -4577,7 +4589,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button Add keyword"
 msgid "Add"
-msgstr ""
+msgstr "Přidat"
 
 #: qml/Settings/EditFilterPage.qml:166
 #, kde-format
@@ -4589,31 +4601,31 @@ msgstr ""
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Whole word"
-msgstr ""
+msgstr "Celé slovo"
 
 #: qml/Settings/EditFilterPage.qml:200
 #, kde-format
 msgctxt "@action:button Remove keyword"
 msgid "Remove"
-msgstr ""
+msgstr "Odstranit"
 
 #: qml/Settings/EditFilterPage.qml:227
 #, kde-format
 msgctxt "@action:button Create the filter"
 msgid "Create"
-msgstr ""
+msgstr "Vytvořit"
 
 #: qml/Settings/EditFilterPage.qml:229
 #, kde-format
 msgctxt "@action:button Save the edited filter"
 msgid "Save"
-msgstr ""
+msgstr "Uložit"
 
 #: qml/Settings/EditFilterPage.qml:242
 #, kde-format
 msgctxt "@action:button Delete the filter"
 msgid "Delete"
-msgstr ""
+msgstr "Smazat"
 
 #: qml/Settings/EditFilterPage.qml:249
 #, kde-format
@@ -4661,19 +4673,19 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Filters"
-msgstr ""
+msgstr "Filtry"
 
 #: qml/Settings/FiltersPage.qml:28
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Create Filter"
-msgstr ""
+msgstr "Vytvořit filtr"
 
 #: qml/Settings/FiltersPage.qml:79
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Filters"
-msgstr ""
+msgstr "Žádný filtr"
 
 #: qml/Settings/NetworkProxyPage.qml:15
 #, kde-format
@@ -4759,13 +4771,13 @@ msgstr ""
 #, kde-format
 msgctxt "@info:Option Filter and send to the filtered inbox"
 msgid "Filter"
-msgstr ""
+msgstr "Filtr"
 
 #: qml/Settings/NotificationsPage.qml:69
 #, kde-format
 msgctxt "@info:Option Ignore completely, do not show notification"
 msgid "Ignore"
-msgstr ""
+msgstr "Ignorovat"
 
 #: qml/Settings/NotificationsPage.qml:77
 #, kde-format
@@ -4935,7 +4947,7 @@ msgstr ""
 #: qml/Settings/NotificationsPage.qml:327
 #, kde-format
 msgid "Polls"
-msgstr "Hlasování"
+msgstr "Anketa"
 
 #: qml/Settings/NotificationsPage.qml:328
 #, kde-format
@@ -5034,7 +5046,7 @@ msgstr ""
 #, kde-format
 msgctxt "Profile fields"
 msgid "Fields"
-msgstr ""
+msgstr "Pole"
 
 #: qml/Settings/ProfileEditor.qml:270
 #, kde-format
@@ -5066,7 +5078,7 @@ msgstr "Blokovaní uživatelé"
 #: qml/Settings/SafetyPage.qml:50
 #, kde-format
 msgid "Blocked Domains"
-msgstr ""
+msgstr "Blokované domény"
 
 #: qml/Settings/TokodonConfigurationView.qml:17
 #, kde-format
@@ -5131,7 +5143,7 @@ msgstr "Zakázat"
 #, kde-format
 msgctxt "@action:button Deny follow request"
 msgid "Unfollow"
-msgstr ""
+msgstr "Přestat sledovat"
 
 #: qml/SocialGraphPage.qml:86
 #, kde-format
@@ -5143,13 +5155,13 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button Deny follow request"
 msgid "Remove"
-msgstr ""
+msgstr "Odstranit"
 
 #: qml/SocialGraphPage.qml:100
 #, kde-format
 msgctxt "@action:button Unblock this user"
 msgid "Unblock"
-msgstr ""
+msgstr "Odblokovat"
 
 #: qml/SocialGraphPage.qml:106
 #, kde-format
@@ -5340,7 +5352,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:intoolbar Draft or unfinished posts"
 msgid "Drafts"
-msgstr ""
+msgstr "Koncepty"
 
 #: qml/StatusComposer/StatusComposer.qml:82
 #, kde-format
@@ -5387,13 +5399,13 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button Keep this draft"
 msgid "Save"
-msgstr ""
+msgstr "Uložit"
 
 #: qml/StatusComposer/StatusComposer.qml:196
 #, kde-format
 msgctxt "@action:button Go back to editing"
 msgid "Cancel"
-msgstr ""
+msgstr "Zrušit"
 
 #: qml/StatusComposer/StatusComposer.qml:215
 #, kde-format
@@ -5538,7 +5550,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Emoji"
-msgstr ""
+msgstr "Přidat emotikon"
 
 #: qml/StatusComposer/StatusComposer.qml:671
 #, kde-format
@@ -5631,13 +5643,13 @@ msgstr "Domů"
 #, kde-format
 msgctxt "@title"
 msgid "Local"
-msgstr ""
+msgstr "Místní"
 
 #: timeline/maintimelinemodel.cpp:35
 #, kde-format
 msgctxt "@title"
 msgid "Global"
-msgstr ""
+msgstr "Globální"
 
 #: timeline/maintimelinemodel.cpp:38
 #, kde-format
@@ -5906,7 +5918,7 @@ msgstr "Cíl"
 #: utils/texthandler.cpp:174
 #, kde-format
 msgid "in the future"
-msgstr "V budoucnosti"
+msgstr "v budoucnosti"
 
 #: utils/texthandler.cpp:176
 #, kde-format
