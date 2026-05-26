@@ -153,6 +153,7 @@ QQC2.Pane {
                 spacing: Kirigami.Units.mediumSpacing
 
                 QQC2.Control {
+                    padding: Kirigami.Units.smallSpacing
                     visible: root.identity.relationship && root.identity.relationship.followedBy
 
                     contentItem: QQC2.Label {
@@ -234,8 +235,7 @@ QQC2.Pane {
                     ColumnLayout {
                         spacing: Kirigami.Units.smallSpacing
 
-                        Layout.leftMargin: Kirigami.Units.largeSpacing
-                        Layout.rightMargin: Kirigami.Units.largeSpacing
+                        Layout.margins: Kirigami.Units.largeSpacing
                         Layout.fillWidth: true
 
                         ColumnLayout {
@@ -253,19 +253,37 @@ QQC2.Pane {
                                 elide: Text.ElideRight
                             }
 
-                            QQC2.TextArea {
-                                text: "@" + root.identity.account
-                                textFormat: TextEdit.PlainText
-                                wrapMode: TextEdit.Wrap
-                                readOnly: true
-                                background: null
-                                font.pixelSize: 18
-
-                                leftPadding: 0
-                                rightPadding: 0
-                                topPadding: 0
+                            RowLayout {
+                                spacing: Kirigami.Units.smallSpacing
 
                                 Layout.fillWidth: true
+
+                                QQC2.Label {
+                                    id: accountHandleLabel
+
+                                    text: "@" + root.identity.account
+                                    textFormat: TextEdit.PlainText
+                                    wrapMode: TextEdit.Wrap
+                                    color: Kirigami.Theme.textColor
+                                    background: null
+                                    font.pixelSize: 18
+                                    verticalAlignment: Text.AlignVCenter
+
+                                    leftPadding: 0
+                                    rightPadding: 0
+                                    topPadding: 0
+                                }
+
+                                QQC2.Button {
+                                    icon.name: "edit-copy-symbolic"
+                                    text: i18nc("@action:inmenu Copy user handle such as @foo@bar.com", "Copy Handle")
+                                    display: QQC2.AbstractButton.IconOnly
+
+                                    onClicked: {
+                                        clipboard.content = accountHandleLabel.text;
+                                        applicationWindow().showPassiveNotification(i18n("Profile handle copied."));
+                                    }
+                                }
                             }
                         }
 
@@ -520,10 +538,9 @@ QQC2.Pane {
 
             FormCard.AbstractFormDelegate {
                 background: null
-                contentItem: QQC2.TextArea {
+                contentItem: QQC2.Label {
                     text: root.identity.bio
                     textFormat: TextEdit.RichText
-                    readOnly: true
                     Layout.fillWidth: true
                     Layout.leftMargin: Kirigami.Units.largeSpacing
                     Layout.rightMargin: Kirigami.Units.largeSpacing
