@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-10 00:43+0000\n"
-"PO-Revision-Date: 2026-05-24 11:54+0200\n"
+"PO-Revision-Date: 2026-05-25 20:51+0200\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -1356,9 +1356,9 @@ msgstr "Žádné značky"
 #, kde-format
 msgid "%1 person is talking"
 msgid_plural "%1 people are talking"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%1 člověk mluví"
+msgstr[1] "%1 lidé mluví"
+msgstr[2] "%1 lidí mluví"
 
 #: qml/ExplorePage.qml:247
 #, kde-format
@@ -1395,13 +1395,13 @@ msgstr "Filtry"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Show Boosts"
-msgstr ""
+msgstr "Zobrazit boosty"
 
 #: qml/FollowingPage.qml:54
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Show Replies"
-msgstr ""
+msgstr "Zobrazit odpovědi"
 
 #: qml/FollowingPage.qml:65 qml/TimelinePage.qml:139
 #, kde-format
@@ -1418,7 +1418,7 @@ msgstr "Filtry"
 #: qml/FollowingPage.qml:155
 #, kde-format
 msgid "No User Selected"
-msgstr ""
+msgstr "Není vybrán žádný uživatel"
 
 #: qml/FollowingPage.qml:156
 #, kde-format
@@ -1426,18 +1426,20 @@ msgid ""
 "With the Following view, easily check on each user you're following and only "
 "their posts - sorted by recent activity."
 msgstr ""
+"V přehledu Sledujete můžete snadno zkontrolovat všechny uživatele, které "
+"sledujete, a pouze jejich příspěvky – seřazené podle nejnovější aktivity."
 
 #: qml/FullScreenImage.qml:33
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Open Post"
-msgstr ""
+msgstr "Otevřít příspěvek"
 
 #: qml/GenericServerInformationPage.qml:17
 #, kde-format
 msgctxt "@title:window"
 msgid "About Server"
-msgstr ""
+msgstr "O serveru"
 
 #: qml/InitialSetup/SetupNotifications.qml:19
 #, kde-format
@@ -1449,7 +1451,7 @@ msgstr "Upozornění"
 #: qml/InitialSetup/SetupPassword.qml:20
 #, kde-format
 msgid "Setup Required"
-msgstr ""
+msgstr "Požadováno nastavení"
 
 #: qml/InitialSetup/SetupNotifications.qml:28
 #, kde-format
@@ -1459,11 +1461,15 @@ msgid ""
 "\n"
 "The types of notifications shown can be fine tuned when logged in."
 msgstr ""
+"Tokodon může zobrazovat oznámení o aktivitách, jako je lajkování nebo "
+"komentování vašich příspěvků uživateli.\n"
+"\n"
+"Typy zobrazovaných oznámení lze po přihlášení podrobně nastavit."
 
 #: qml/InitialSetup/SetupNotifications.qml:35
 #, kde-format
 msgid "Allow Notifications"
-msgstr ""
+msgstr "Povolit upozornění"
 
 #: qml/InitialSetup/SetupNotifications.qml:49
 #: qml/InitialSetup/SetupWelcome.qml:42 qml/LoginFlow/CodeAuthorization.qml:32
@@ -1475,7 +1481,7 @@ msgstr "Pokračovat"
 #, kde-format
 msgctxt "@title:window"
 msgid "Password Service"
-msgstr ""
+msgstr "Služba pro správu hesel"
 
 #: qml/InitialSetup/SetupPassword.qml:25
 #, kde-format
@@ -1487,11 +1493,18 @@ msgid ""
 "\n"
 "After you installed the service, make sure it's running and restart Tokodon."
 msgstr ""
+"Aby mohl Tokodon ukládat citlivé osobní údaje, musí být spuštěna služba pro "
+"správu hesel.\n"
+"\n"
+"Tokodon může využívat KWallet, GNOME Keyring nebo jakoukoli službu "
+"kompatibilní s knihovnou libsecret.\n"
+"\n"
+"Po instalaci služby se ujistěte, že je spuštěna, a restartujte Tokodon."
 
 #: qml/InitialSetup/SetupPassword.qml:32
 #, kde-format
 msgid "Quit Tokodon"
-msgstr ""
+msgstr "Ukončit Tokodon"
 
 #: qml/InitialSetup/SetupWelcome.qml:17 qml/LoginFlow/WelcomePage.qml:18
 #, kde-format
@@ -1507,7 +1520,7 @@ msgstr "Vítejte v Tokodonu"
 #: qml/InitialSetup/SetupWelcome.qml:35
 #, kde-format
 msgid "Some initial setup is required before you can use Tokodon."
-msgstr ""
+msgstr "Než budete moci Tokodon používat, je nutné provést základní nastavení."
 
 #: qml/LanguageSelector.qml:25
 #, kde-format
@@ -1536,12 +1549,12 @@ msgstr "Vytvořit novou…"
 #: qml/ListsPage.qml:77
 #, kde-format
 msgid "No Lists"
-msgstr ""
+msgstr "Žádný seznam"
 
 #: qml/ListsPage.qml:78
 #, kde-format
 msgid "Lists allow you to categorize who you're following."
-msgstr ""
+msgstr "Seznamy ti umožňují rozdělit lidi, které sleduješ, do kategorií."
 
 #: qml/ListTimelinePage.qml:18 qml/Main.qml:282 qml/Main.qml:318
 #: qml/Main.qml:333
@@ -1555,6 +1568,8 @@ msgid ""
 "There are no posts from the users in your list. Only new posts will appear "
 "in a list."
 msgstr ""
+"Ve vašem seznamu nejsou žádné příspěvky od uživatelů. V seznamu se zobrazují "
+"pouze nové příspěvky."
 
 #: qml/ListTimelinePage.qml:24
 #, kde-format
@@ -1571,17 +1586,17 @@ msgstr "Autorizace"
 #: qml/LoginFlow/BaseAuthorization.qml:79
 #, kde-format
 msgid "To continue, you must authorize Tokodon to access your account."
-msgstr ""
+msgstr "Chcete-li pokračovat, musíte Tokodonu povolit přístup k vašemu účtu."
 
 #: qml/LoginFlow/BaseAuthorization.qml:88
 #, kde-format
 msgid "Open Authorization Page"
-msgstr ""
+msgstr "Otevřít stránku s přihlášením"
 
 #: qml/LoginFlow/BaseAuthorization.qml:100
 #, kde-format
 msgid "Copy Link to Authorization Page"
-msgstr ""
+msgstr "Zkopírujte odkaz na stránku pro přihlášení"
 
 #: qml/LoginFlow/BaseAuthorization.qml:104
 #, kde-format
@@ -1591,28 +1606,28 @@ msgstr "Odkaz byl zkopírován."
 #: qml/LoginFlow/BrowserAuthorization.qml:25
 #, kde-format
 msgid "Use Authorization Code"
-msgstr ""
+msgstr "Použít autorizační kód"
 
 #: qml/LoginFlow/BrowserAuthorization.qml:26
 #, kde-format
 msgid "Use this login method if the above link does not work."
-msgstr ""
+msgstr "Tento způsob přihlášení použijte, pokud výše uvedený odkaz nefunguje."
 
 #: qml/LoginFlow/CodeAuthorization.qml:25
 #, kde-format
 msgid "Enter authorization token:"
-msgstr ""
+msgstr "Zadat autorizační token:"
 
 #: qml/LoginFlow/LoginIssuePage.qml:17
 #, kde-format
 msgctxt "@title:window"
 msgid "Login Issue"
-msgstr ""
+msgstr "Problém s přihlášením"
 
 #: qml/LoginFlow/LoginIssuePage.qml:27
 #, kde-format
 msgid "There was an issue logging into %1:<br><b>%2</b>"
-msgstr ""
+msgstr "Při přihlášení na %1 došlo k problému: <br><b>%2</b>"
 
 #: qml/LoginFlow/LoginIssuePage.qml:38
 #, kde-format
@@ -1622,16 +1637,21 @@ msgid ""
 "\n"
 "You can attempt to log in again with the button below, or restart Tokodon."
 msgstr ""
+"Zkontrolujte prosím, zda běží služba pro správu hesel. V případě dalších "
+"potíží s přihlášením můžete zkusit se přihlásit na webové stránky serveru.\n"
+"\n"
+"Můžete se pokusit přihlásit znovu pomocí tlačítka níže nebo restartovat "
+"Tokodon."
 
 #: qml/LoginFlow/LoginIssuePage.qml:48
 #, kde-format
 msgid "View Website"
-msgstr ""
+msgstr "Zobrazit webové stránky"
 
 #: qml/LoginFlow/LoginIssuePage.qml:57
 #, kde-format
 msgid "Re-Attempt Log In"
-msgstr ""
+msgstr "Zkusit přihlášení znovu"
 
 #: qml/LoginFlow/LoginIssuePage.qml:69 qml/Settings/AccountPage.qml:40
 #, kde-format
@@ -1740,17 +1760,18 @@ msgstr "Vyberte server"
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose your Existing Server"
-msgstr ""
+msgstr "Vyberte svůj stávající server"
 
 #: qml/LoginFlow/ServersPage.qml:38
 #, kde-format
 msgid "This server is closed for registration: %1"
-msgstr ""
+msgstr "Na tomto serveru se již není možné registrovat: %1"
 
 #: qml/LoginFlow/ServersPage.qml:40
 #, kde-format
 msgid "This server is closed for registration, and did not provide a reason."
 msgstr ""
+"Registrace na tomto serveru je uzavřena, přičemž nebyl uveden žádný důvod."
 
 #: qml/LoginFlow/ServersPage.qml:178
 #, kde-format
@@ -1796,6 +1817,8 @@ msgid ""
 "Browse the Fediverse and connect with people on Mastodon (and other "
 "compatible software)."
 msgstr ""
+"Procházejte Fediversem a spojte se s lidmi na Mastodonu (a v dalších "
+"kompatibilních aplikacích)."
 
 #: qml/LoginFlow/WelcomePage.qml:80
 #, kde-format
@@ -1849,19 +1872,19 @@ msgstr "Odpovědět jako…"
 #, kde-format
 msgctxt "@title"
 msgid "Favorite As…"
-msgstr ""
+msgstr "Do oblíbených…"
 
 #: qml/Main.qml:155
 #, kde-format
 msgctxt "@title"
 msgid "Boost As…"
-msgstr ""
+msgstr "Boostnout…"
 
 #: qml/Main.qml:157
 #, kde-format
 msgctxt "@title"
 msgid "Bookmark As…"
-msgstr ""
+msgstr "Do záložek…"
 
 #: qml/Main.qml:159
 #, kde-format
@@ -1872,7 +1895,7 @@ msgstr "Neznámá činnost"
 #: qml/Main.qml:283 qml/Main.qml:319 qml/Main.qml:334
 #, kde-format
 msgid "It seems pretty quiet right now, try posting something!"
-msgstr ""
+msgstr "Teď je tu docela ticho, zkuste něco napsat!"
 
 #: qml/Main.qml:348
 #, kde-format
@@ -1885,6 +1908,8 @@ msgid ""
 "Posts that you favorite will show up here. If you appreciate someone's post, "
 "favorite it!"
 msgstr ""
+"Zde se budou zobrazovat příspěvky, které jste si přidali do oblíbených. "
+"Pokud se vám něčí příspěvek líbí, přidejte si ho do oblíbených!"
 
 #: qml/Main.qml:363
 #, kde-format
@@ -1897,21 +1922,23 @@ msgid ""
 "Bookmark posts and they will show up here. Bookmarks are always kept "
 "private, even to the post's author."
 msgstr ""
+"Přidejte si příspěvky do záložek a zobrazí se vám zde. Záložky zůstávají "
+"vždy soukromé, a to i pro autora příspěvku."
 
 #: qml/Main.qml:468
 #, kde-format
 msgid "Write a New Post"
-msgstr ""
+msgstr "Napsat nový příspěvek"
 
 #: qml/Main.qml:495
 #, kde-format
 msgid "Write a new post"
-msgstr ""
+msgstr "Napsat nový příspěvek"
 
 #: qml/Main.qml:540
 #, kde-format
 msgid "Reply to post"
-msgstr ""
+msgstr "Odpovědět na příspěvek"
 
 #: qml/Main.qml:629
 #, kde-format
@@ -2106,7 +2133,7 @@ msgctxt ""
 "@info:Moderation Status combobox to choose between different moderation "
 "status filters"
 msgid "Moderation Status"
-msgstr ""
+msgstr "Stav moderování"
 
 #: qml/ModerationTools/AccountToolPage.qml:142
 #, kde-format
@@ -2136,7 +2163,7 @@ msgstr "Zakázáno"
 #, kde-format
 msgctxt "@info:Filter out accounts with silenced moderation status"
 msgid "Silenced"
-msgstr ""
+msgstr "Ztišeno"
 
 #: qml/ModerationTools/AccountToolPage.qml:162
 #, kde-format
@@ -2183,25 +2210,25 @@ msgstr "Účty nenalezeny"
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Email Block"
-msgstr ""
+msgstr "Vytvořit blokaci e-mailu"
 
 #: qml/ModerationTools/EmailBlockToolPage.qml:31
 #, kde-format
 msgctxt "@title"
 msgid "E-Mail Domain Info"
-msgstr ""
+msgstr "Informace o e-mailové doméně"
 
 #: qml/ModerationTools/EmailBlockToolPage.qml:40
 #, kde-format
 msgctxt "@info The domain on which the block is imposed"
 msgid "Email domain name"
-msgstr ""
+msgstr "Název e-mailové domény"
 
 #: qml/ModerationTools/EmailBlockToolPage.qml:48
 #, kde-format
 msgctxt "@info Time when the block was imposed."
 msgid "Block created at"
-msgstr ""
+msgstr "Blokace vytvořena v"
 
 #: qml/ModerationTools/EmailBlockToolPage.qml:56
 #, kde-format
@@ -2209,14 +2236,14 @@ msgctxt ""
 "@info The counted accounts signup attempts using that email domain within "
 "the last week."
 msgid "Account sign-up attempts in this week"
-msgstr ""
+msgstr "Pokusy o registraci účtu v tomto týdnu"
 
 #: qml/ModerationTools/EmailBlockToolPage.qml:64
 #, kde-format
 msgctxt ""
 "@info The counted IP signup attempts of that email domain within that day."
 msgid "IP sign-up attempts in this week"
-msgstr ""
+msgstr "Pokusy o registraci IP adres v tomto týdnu"
 
 #: qml/ModerationTools/EmailBlockToolPage.qml:73
 #: qml/ModerationTools/EmailBlockToolPage.qml:111
@@ -2229,18 +2256,18 @@ msgstr "Zrušit"
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete email block"
-msgstr ""
+msgstr "Smazat e-mailovou blokaci"
 
 #: qml/ModerationTools/EmailBlockToolPage.qml:82
 #, kde-format
 msgid "Email block deleted"
-msgstr ""
+msgstr "E-mailová blokace smazána"
 
 #: qml/ModerationTools/EmailBlockToolPage.qml:92
 #, kde-format
 msgctxt "@title"
 msgid "New E-Mail Domain Block"
-msgstr ""
+msgstr "Blokace nové e-mailové domény"
 
 #: qml/ModerationTools/EmailBlockToolPage.qml:102
 #, kde-format
@@ -2254,44 +2281,47 @@ msgid ""
 "This can be the domain name that shows up in the e-mail address or the MX "
 "record it uses. They will be checked upon sign-up."
 msgstr ""
+"Může se jednat o název domény, který se objevuje v e-mailové adrese, nebo o "
+"MX záznam, který tato adresa používá. Tyto údaje budou při registraci "
+"ověřeny."
 
 #: qml/ModerationTools/EmailBlockToolPage.qml:116
 #, kde-format
 msgctxt "@action:button"
 msgid "Resolve domain"
-msgstr ""
+msgstr "Vyhledat doménu"
 
 #: qml/ModerationTools/EmailBlockToolPage.qml:120
 #, kde-format
 msgid "New email block added"
-msgstr ""
+msgstr "Nová blokace e-mailu přidána"
 
 #: qml/ModerationTools/EmailBlockToolPage.qml:163
 #, kde-format
 msgctxt "@info"
 msgid "%1 sign-up attempts over the last week"
-msgstr ""
+msgstr "%1 pokusů o registraci za poslední týden"
 
 #: qml/ModerationTools/EmailBlockToolPage.qml:185
 #, kde-format
 msgid "No email blocks found"
-msgstr ""
+msgstr "Nenalezena žádná blokace e-mailu"
 
 #: qml/ModerationTools/FederationToolPage.qml:20
 #, kde-format
 msgid "Add New Domain Block"
-msgstr ""
+msgstr "Přidat novou blokaci domény"
 
 #: qml/ModerationTools/FederationToolPage.qml:26
 #: qml/ModerationTools/FederationToolPage.qml:159
 #, kde-format
 msgid "Allow Federation with Domain"
-msgstr ""
+msgstr "Povolit federaci s doménou"
 
 #: qml/ModerationTools/FederationToolPage.qml:38
 #, kde-format
 msgid "Allowed Domain Info"
-msgstr ""
+msgstr "Informace o povolených doménách"
 
 #: qml/ModerationTools/FederationToolPage.qml:44
 #, kde-format
@@ -2303,22 +2333,22 @@ msgstr "Doména"
 #, kde-format
 msgctxt "@info:Time when the domain was allowed to federate."
 msgid "Created at"
-msgstr "Vytvořen v"
+msgstr "Vytvořena v"
 
 #: qml/ModerationTools/FederationToolPage.qml:59
 #, kde-format
 msgid "Disallow Federation with Domain"
-msgstr ""
+msgstr "Zakázat federaci s doménou"
 
 #: qml/ModerationTools/FederationToolPage.qml:63
 #, kde-format
 msgid "Disallowed federation with the domain"
-msgstr ""
+msgstr "Zakázané federace s doménou"
 
 #: qml/ModerationTools/FederationToolPage.qml:73
 #, kde-format
 msgid "Add Domain Block"
-msgstr ""
+msgstr "Přidat blokaci domény"
 
 #: qml/ModerationTools/FederationToolPage.qml:83
 #, kde-format
@@ -2370,7 +2400,7 @@ msgstr "Nic"
 #: qml/ModerationTools/MainFederationToolPage.qml:85
 #, kde-format
 msgid "Reject media files"
-msgstr ""
+msgstr "Odmítnout mediální soubory"
 
 #: qml/ModerationTools/FederationToolPage.qml:121
 #: qml/ModerationTools/MainFederationToolPage.qml:86
@@ -2379,24 +2409,28 @@ msgid ""
 "Removes locally stored media files and refuses to download any in the "
 "future. Irrelevant for suspensions"
 msgstr ""
+"Odstraní lokálně uložené mediální soubory a v budoucnu odmítne stahovat "
+"jakékoli další. Nemá vliv na pozastavení účtu"
 
 #: qml/ModerationTools/FederationToolPage.qml:126
 #: qml/ModerationTools/MainFederationToolPage.qml:93
 #, kde-format
 msgid "Reject reports"
-msgstr ""
+msgstr "Odmítnout hlášení"
 
 #: qml/ModerationTools/FederationToolPage.qml:127
 #: qml/ModerationTools/MainFederationToolPage.qml:94
 #, kde-format
 msgid "Ignore all reports coming from this domain. Irrelevant for suspensions"
 msgstr ""
+"Ignorovat všechna hlášení pocházející z této domény. Nemá vliv na "
+"pozastavení účtu"
 
 #: qml/ModerationTools/FederationToolPage.qml:132
 #: qml/ModerationTools/MainFederationToolPage.qml:101
 #, kde-format
 msgid "Obfuscate domain name"
-msgstr ""
+msgstr "Zamaskovat název domény"
 
 #: qml/ModerationTools/FederationToolPage.qml:133
 #: qml/ModerationTools/MainFederationToolPage.qml:102
@@ -2405,18 +2439,20 @@ msgid ""
 "Partially obfuscate the domain name in the list if advertising the list of "
 "domain limitations is enabled"
 msgstr ""
+"Pokud je povoleno zobrazování seznamu omezených domén, částečně zamaskuje "
+"název domény v tomto seznamu"
 
 #: qml/ModerationTools/FederationToolPage.qml:145
 #: qml/ModerationTools/FederationToolPage.qml:176
 #, kde-format
 msgctxt "@info:Button to create a domain block"
 msgid "Create Block"
-msgstr ""
+msgstr "Vytvořit blokaci"
 
 #: qml/ModerationTools/FederationToolPage.qml:150
 #, kde-format
 msgid "New domain block added"
-msgstr ""
+msgstr "Blokace nové domény přidána"
 
 #: qml/ModerationTools/FederationToolPage.qml:165
 #, kde-format

@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-10 00:43+0000\n"
-"PO-Revision-Date: 2026-02-03 22:57+0100\n"
+"PO-Revision-Date: 2026-05-25 21:56+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: account/abstractaccount.cpp:33
 #, kde-format
@@ -1142,11 +1142,10 @@ msgid "Open in Browser"
 msgstr "브라우저로 열기"
 
 #: qml/Components/TimelineView.qml:189
-#, fuzzy, kde-format
-#| msgid "No Posts"
+#, kde-format
 msgctxt "@info:status No more posts to read"
 msgid "No More Posts"
-msgstr "게시물 없음"
+msgstr "더 이상 게시물 없음"
 
 #: qml/ConversationPage.qml:15
 #, kde-format
@@ -1345,9 +1344,7 @@ msgid_plural "%1 people are talking"
 msgstr[0] "%1명이 대화 중"
 
 #: qml/ExplorePage.qml:247
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu 'Browser' being a web browser"
-#| msgid "Open in Browser"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Open in Browser"
 msgstr "브라우저로 열기"
@@ -1639,10 +1636,9 @@ msgid "Re-Attempt Log In"
 msgstr "로그인 다시 시도"
 
 #: qml/LoginFlow/LoginIssuePage.qml:69 qml/Settings/AccountPage.qml:40
-#, fuzzy, kde-format
-#| msgid "Logout"
+#, kde-format
 msgid "Logout…"
-msgstr "로그아웃"
+msgstr "로그아웃…"
 
 #: qml/LoginFlow/LoginIssuePage.qml:76 qml/Settings/AccountPage.qml:60
 #, kde-format
@@ -1817,12 +1813,10 @@ msgid "Login"
 msgstr "로그인"
 
 #: qml/LoginFlow/WelcomePage.qml:97
-#, fuzzy, kde-format
-#| msgctxt "@action:button Use an existing Mastodon account"
-#| msgid "Use an Existing Account"
+#, kde-format
 msgctxt "@action:button Use an existing Mastodon account"
 msgid "Use System Account"
-msgstr "기존 계정 사용"
+msgstr "시스템 계정 사용"
 
 #: qml/LoginFlow/WelcomePage.qml:115
 #, kde-format
@@ -3077,29 +3071,25 @@ msgid "Report #%1"
 msgstr "신고 #%1"
 
 #: qml/ModerationTools/MainReportToolPage.qml:51
-#, fuzzy, kde-format
-#| msgid "Mark as unresolved"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Mark as unresolved"
 msgstr "해결되지 않음으로 표시"
 
 #: qml/ModerationTools/MainReportToolPage.qml:51
-#, fuzzy, kde-format
-#| msgid "Mark as resolved"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Mark as resolved"
 msgstr "해결됨으로 표시"
 
 #: qml/ModerationTools/MainReportToolPage.qml:55
-#, fuzzy, kde-format
-#| msgid "Report Unresolved"
+#, kde-format
 msgctxt "@info"
 msgid "Report Unresolved"
 msgstr "신고 해결되지 않음"
 
 #: qml/ModerationTools/MainReportToolPage.qml:58
-#, fuzzy, kde-format
-#| msgid "Report Resolved"
+#, kde-format
 msgctxt "@info"
 msgid "Report Resolved"
 msgstr "신고 해결됨"
@@ -3123,71 +3113,61 @@ msgid "Joined"
 msgstr "가입 시간"
 
 #: qml/ModerationTools/MainReportToolPage.qml:119
-#, fuzzy, kde-format
-#| msgid "Reported By"
+#, kde-format
 msgctxt "@label"
 msgid "Reported By"
 msgstr "신고자"
 
 #: qml/ModerationTools/MainReportToolPage.qml:134
-#, fuzzy, kde-format
-#| msgid "Report Status"
+#, kde-format
 msgctxt "@label"
 msgid "Report Status"
 msgstr "신고 상태"
 
 #: qml/ModerationTools/MainReportToolPage.qml:135
-#, fuzzy, kde-format
-#| msgid "Resolved"
+#, kde-format
 msgctxt "@info"
 msgid "Resolved"
 msgstr "해결됨"
 
 #: qml/ModerationTools/MainReportToolPage.qml:135
-#, fuzzy, kde-format
-#| msgid "Unresolved"
+#, kde-format
 msgctxt "@info"
 msgid "Unresolved"
 msgstr "해결되지 않음"
 
 #: qml/ModerationTools/MainReportToolPage.qml:144
-#, fuzzy, kde-format
-#| msgid "Action taken by"
+#, kde-format
 msgctxt "@label"
 msgid "Action taken by"
 msgstr "작업 수행자"
 
 #: qml/ModerationTools/MainReportToolPage.qml:157
-#, fuzzy, kde-format
-#| msgid "Assigned moderator"
+#, kde-format
 msgctxt "@label"
 msgid "Assigned moderator"
 msgstr "배당된 중재자"
 
 #: qml/ModerationTools/MainReportToolPage.qml:158
-#, fuzzy, kde-format
-#| msgid "No one"
+#, kde-format
 msgctxt "@info"
 msgid "No one"
 msgstr "없음"
 
 #: qml/ModerationTools/MainReportToolPage.qml:166
-#, fuzzy, kde-format
-#| msgid "Unassign"
+#, kde-format
 msgctxt "@action:button"
 msgid "Unassign"
 msgstr "배당 해제"
 
 #: qml/ModerationTools/MainReportToolPage.qml:166
-#, fuzzy, kde-format
-#| msgid "Assign to me"
+#, kde-format
 msgctxt "@action:button"
 msgid "Assign to me"
 msgstr "나에게 배당"
 
 #: qml/ModerationTools/MainReportToolPage.qml:178
-#, fuzzy, kde-format
-#| msgid "Forwarded"
+#, kde-format
 msgctxt "@label"
 msgid "Forwarded"
 msgstr "전달됨"
@@ -3205,8 +3185,7 @@ msgid "No"
 msgstr "아니요"
 
 #: qml/ModerationTools/MainReportToolPage.qml:184
-#, fuzzy, kde-format
-#| msgid "Category"
+#, kde-format
 msgctxt "@title:group"
 msgid "Category"
 msgstr "분류"
@@ -3249,11 +3228,10 @@ msgid "Category changed to rule violation"
 msgstr "분류가 규칙 위반으로 변경됨"
 
 #: qml/ModerationTools/MainReportToolPage.qml:273
-#, fuzzy, kde-format
-#| msgid "To provide more information, %1 wrote:"
+#, kde-format
 msgctxt "@title:group"
 msgid "To provide more information, %1 wrote:"
-msgstr "%1 님의 추가 정보:"
+msgstr "%1 님이 제공한 추가 정보:"
 
 #: qml/ModerationTools/MainReportToolPage.qml:283
 #, kde-format
@@ -3262,8 +3240,7 @@ msgid "N/A"
 msgstr "없음"
 
 #: qml/ModerationTools/MainReportToolPage.qml:294
-#, fuzzy, kde-format
-#| msgid "Reported Content"
+#, kde-format
 msgctxt "@title:group"
 msgid "Reported Content"
 msgstr "신고된 내용"
@@ -3280,15 +3257,13 @@ msgid "<b>Content Warning</b><br /> %1"
 msgstr "<b>열람 주의</b><br /> %1"
 
 #: qml/ModerationTools/MainReportToolPage.qml:338
-#, fuzzy, kde-format
-#| msgid "Show Less"
+#, kde-format
 msgctxt "@action:button"
 msgid "Show Less"
 msgstr "덜 보기"
 
 #: qml/ModerationTools/MainReportToolPage.qml:338
-#, fuzzy, kde-format
-#| msgid "Show More"
+#, kde-format
 msgctxt "@action:button"
 msgid "Show More"
 msgstr "더 보기"
@@ -3407,12 +3382,10 @@ msgid "Mark All As Read"
 msgstr "모두 읽은 것으로 표시"
 
 #: qml/NotificationPage.qml:49
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar"
-#| msgid "Configure Filters…"
+#, kde-format
 msgctxt "@action:intoolbar Configure Notifications"
 msgid "Configure…"
-msgstr "필터 설정…"
+msgstr "설정…"
 
 #: qml/NotificationPage.qml:50
 #, kde-format
@@ -3492,16 +3465,13 @@ msgid "No Notifications"
 msgstr "알림 없음"
 
 #: qml/NotificationPage.qml:353
-#, fuzzy, kde-format
-#| msgid ""
-#| "You have no notifications yet. When people reply, favorite or boost your "
-#| "posts they will show up here."
+#, kde-format
 msgid ""
 "You have no notifications yet. When people reply, favorite or boost your "
 "posts they will show up here!"
 msgstr ""
 "알림이 없습니다. 내 게시물에 답장을 쓰거나, 좋아요 표시하거나, 부스트하면 여"
-"기에 표시됩니다."
+"기에 표시됩니다!"
 
 #: qml/Notifications/AccountWarningDelegate.qml:67
 #, kde-format
@@ -3780,9 +3750,7 @@ msgid "No quotes"
 msgstr "인용 없음"
 
 #: qml/PostDelegate/InformationBar.qml:141
-#, fuzzy, kde-format
-#| msgid "%1 quotes"
-#| msgid_plural "%1 quotes"
+#, kde-format
 msgid "%1 quote"
 msgid_plural "%1 quotes"
 msgstr[0] "인용 %1개"
@@ -4225,9 +4193,7 @@ msgid "Search"
 msgstr "검색"
 
 #: qml/SearchView.qml:33
-#, fuzzy, kde-format
-#| msgctxt "@action Pop out the status composer"
-#| msgid "Pop Out"
+#, kde-format
 msgctxt "@action:button Pop out search results into its own page"
 msgid "Pop Out"
 msgstr "떼내기"
@@ -4236,7 +4202,7 @@ msgstr "떼내기"
 #, kde-format
 msgctxt "@info"
 msgid "Pop out search results to a full page"
-msgstr ""
+msgstr "검색 결과를 전체 페이지로 떼내기"
 
 #: qml/SearchView.qml:61
 #, kde-format
@@ -4301,9 +4267,7 @@ msgid "Edit Account"
 msgstr "계정 편집"
 
 #: qml/Settings/AccountPage.qml:35
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu 'Browser' being a web browser"
-#| msgid "Open in Browser"
+#, kde-format
 msgctxt "@abel Account preferences"
 msgid "Open In Browser"
 msgstr "브라우저로 열기"
@@ -4897,34 +4861,28 @@ msgid "Events"
 msgstr "이벤트"
 
 #: qml/Settings/NotificationsPage.qml:154
-#, fuzzy, kde-format
-#| msgctxt "@action:button See all familiar followers"
-#| msgid "View All"
+#, kde-format
 msgctxt "@action:button"
 msgid "Hide in All"
-msgstr "모두 보기"
+msgstr "모두에서 숨기기"
 
 #: qml/Settings/NotificationsPage.qml:154
 #, kde-format
 msgctxt "@action:button"
 msgid "Show in All"
-msgstr ""
+msgstr "모두에 표시"
 
 #: qml/Settings/NotificationsPage.qml:173
-#, fuzzy, kde-format
-#| msgctxt "@action:button Account Notifications"
-#| msgid "Open Notifications"
+#, kde-format
 msgctxt "@action:button"
 msgid "Disable notifications"
-msgstr "알림 열기"
+msgstr "알림 사용 안 함"
 
 #: qml/Settings/NotificationsPage.qml:173
-#, fuzzy, kde-format
-#| msgctxt "@action:button Account Notifications"
-#| msgid "Open Notifications"
+#, kde-format
 msgctxt "@action:button"
 msgid "Enable notifications"
-msgstr "알림 열기"
+msgstr "알림 사용"
 
 #: qml/Settings/NotificationsPage.qml:201
 #, kde-format
