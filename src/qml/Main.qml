@@ -468,7 +468,15 @@ StatefulApp.StatefulWindow {
                 initialSearchTerms: query
 
             }));
+        }
 
+        function onOpenCollections(): void {
+            if (root.checkIfCurrentPage("collections")) {
+                return;
+            }
+
+            root.pageStack.clear();
+            root.pageStack.push(collectionsPage.createObject(root, { pageId: "collections" }));
         }
     }
 
@@ -627,6 +635,13 @@ StatefulApp.StatefulWindow {
                 initialSearchTerms: query
             }));
         }
+
+        function onOpenCollection(collectionId: string, name: string): void {
+            root.pageStack.push(collectionPage.createObject(root, {
+                name,
+                collectionId
+            }));
+        }
     }
 
     globalDrawer: Sidebar {
@@ -636,8 +651,8 @@ StatefulApp.StatefulWindow {
         application: root.application
         shouldCollapse: !root.wideMode
         actions: !root.wideMode ?
-            [root.searchAction, root.followRequestAction, root.followingAction, root.localTimelineAction, root.globalTimelineAction, root.conversationAction, root.bookmarksAction, root.favouritesAction, root.listsAction] :
-            [root.homeAction, root.notificationAction, root.followRequestAction, root.followingAction, root.exploreAction, root.localTimelineAction, root.globalTimelineAction, root.conversationAction, root.bookmarksAction, root.favouritesAction, root.listsAction]
+            [root.searchAction, root.followRequestAction, root.followingAction, root.localTimelineAction, root.globalTimelineAction, root.conversationAction, root.bookmarksAction, root.collectionsAction, root.favouritesAction, root.listsAction] :
+            [root.homeAction, root.notificationAction, root.followRequestAction, root.followingAction, root.exploreAction, root.localTimelineAction, root.globalTimelineAction, root.conversationAction, root.bookmarksAction, root.collectionsAction, root.favouritesAction, root.listsAction]
         bottomActions: [root.serverInformationAction, root.debugAction, root.moderationToolsAction, root.configureAction]
     }
 
@@ -709,6 +724,10 @@ StatefulApp.StatefulWindow {
     readonly property Kirigami.Action accountSwitcherAction: Kirigami.Action {
         fromQAction: root.application.action('account_switcher')
     }
+    readonly property Kirigami.Action collectionsAction: Kirigami.Action {
+        text: i18nc("@action:button This account's collections (a group of accounts)", "Collections")
+        fromQAction: root.application.action('collections')
+    }
 
     property ModerationToolsView moderationToolsView: ModerationToolsView {
         id: moderationToolsView
@@ -733,6 +752,8 @@ StatefulApp.StatefulWindow {
     property Component searchPage: Qt.createComponent("org.kde.tokodon", "SearchPage", Qt.Asynchronous)
     property Component conversationPage: Qt.createComponent("org.kde.tokodon", "ConversationPage", Qt.Asynchronous)
     property Component listTimelinePage: Qt.createComponent("org.kde.tokodon", "ListTimelinePage", Qt.Asynchronous)
+    property Component collectionsPage: Qt.createComponent("org.kde.tokodon", "CollectionsPage", Qt.Asynchronous)
+    property Component collectionPage: Qt.createComponent("org.kde.tokodon", "CollectionPage", Qt.Asynchronous)
 
     property Kirigami.NavigationTabBar tabBar: Kirigami.NavigationTabBar {
         id: tabbar

@@ -170,6 +170,12 @@ void TokodonApplication::setupActions()
     listsAction->setText(i18nc("@action:button This account's lists, or timelines consisting of a groups of accounts", "Open Lists"));
     listsAction->setIcon(QIcon::fromTheme(QStringLiteral("view-list-text")));
 
+    auto collectionsAction = mainCollection()->addAction(u"collections"_s, this, &TokodonApplication::openCollections);
+    collectionsAction->setCheckable(true);
+    collectionsAction->setActionGroup(pagesGroup);
+    collectionsAction->setText(i18nc("@action:button This account's collections (a group of accounts)", "Open Collections"));
+    collectionsAction->setIcon(QIcon::fromTheme(QStringLiteral("view-group")));
+
     auto profileAction = mainCollection()->addAction(u"profile"_s, this, &TokodonApplication::openProfile);
     profileAction->setCheckable(true);
     profileAction->setActionGroup(pagesGroup);
@@ -255,6 +261,12 @@ void TokodonApplication::updateAccountActions()
     mainCollection()->action(u"bookmarks"_s)->setEnabled(accountAvailable);
     mainCollection()->action(u"favorites"_s)->setEnabled(accountAvailable);
     mainCollection()->action(u"conversations"_s)->setEnabled(accountAvailable);
+    mainCollection()->action(u"collections"_s)->setEnabled(accountAvailable);
+
+    if (const auto account = AccountManager::instance().selectedAccount(); account != nullptr) {
+        // Collections are only supported on Mastodon 4.6 and up!
+        mainCollection()->action(u"collections"_s)->setVisible(account->supportsApiVersion(QStringLiteral("mastodon"), 10));
+    }
 }
 
 QList<KirigamiActionCollection *> TokodonApplication::actionCollections() const

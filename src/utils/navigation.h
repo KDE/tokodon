@@ -99,6 +99,13 @@ Q_SIGNALS:
      */
     void searchFor(const QString &query);
 
+    /**
+     * @brief Opens the collection page.
+     * @param collectionId The collection id.
+     * @param collectionName The name assigned to the collection.
+     */
+    void openCollection(const QString &collectionId, const QString &collectionName);
+
 private:
     Navigation() = default;
 };

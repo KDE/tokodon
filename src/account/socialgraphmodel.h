@@ -25,6 +25,7 @@ class SocialGraphModel : public QAbstractListModel
     Q_PROPERTY(bool isList READ isList CONSTANT)
     Q_PROPERTY(bool isMuteList READ isMuteList CONSTANT)
     Q_PROPERTY(bool isBlockList READ isBlockList CONSTANT)
+    Q_PROPERTY(bool isCollection READ isCollection CONSTANT)
 
     /**
      * @brief The account id of the account we want to display
@@ -33,6 +34,7 @@ class SocialGraphModel : public QAbstractListModel
     Q_PROPERTY(QString statusId READ statusId WRITE setStatusId NOTIFY statusIdChanged)
     Q_PROPERTY(QString listId READ listId WRITE setListId NOTIFY listIdChanged)
     Q_PROPERTY(int count READ count WRITE setCount)
+    Q_PROPERTY(QString collectionId READ collectionId WRITE setCollectionId NOTIFY collectionIdChanged)
 
 public:
     enum CustomRoles { IdentityRole = Qt::UserRole + 1, LastStatusAtRole, RelativeTimeRole };
@@ -60,12 +62,15 @@ public:
     [[nodiscard]] bool isList() const;
     [[nodiscard]] bool isMuteList() const;
     [[nodiscard]] bool isBlockList() const;
+    [[nodiscard]] bool isCollection() const;
     [[nodiscard]] QString statusId() const;
     void setStatusId(const QString &statusId);
     [[nodiscard]] int count() const;
     void setCount(int count);
     [[nodiscard]] QString listId() const;
     void setListId(const QString &listId);
+    [[nodiscard]] QString collectionId() const;
+    void setCollectionId(const QString &collectionId);
 
 public Q_SLOTS:
     void actionAllow(const QModelIndex &index);
@@ -76,6 +81,7 @@ public Q_SLOTS:
     void actionAddToList(const QString &accountId);
     void actionUnblock(const QModelIndex &index);
     void actionUnmute(const QModelIndex &index);
+    void actionAddToCollection(const QString &accountId);
 
 Q_SIGNALS:
     void loadingChanged();
@@ -84,6 +90,7 @@ Q_SIGNALS:
     void statusIdChanged();
     void listIdChanged();
     void networkErrorOccurred(const QString &message);
+    void collectionIdChanged();
 
 protected:
     void fetchMore(const QModelIndex &parent) override;
@@ -102,4 +109,5 @@ private:
     QString m_statusId;
     QString m_listId;
     int m_count = 0;
+    QString m_collectionId;
 };

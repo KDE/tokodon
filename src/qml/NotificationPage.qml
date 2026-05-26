@@ -78,7 +78,7 @@ Kirigami.ScrollablePage {
         onCheckedChanged: (checked) => {
             if (checked) {
                 visibilityMenu.lastCheckedIndex = 1;
-                notificationModel.excludeTypes = ['status', 'reblog', 'follow', 'follow_request', 'favourite', 'poll', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning'];
+                notificationModel.excludeTypes = ['status', 'reblog', 'follow', 'follow_request', 'favourite', 'poll', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning', 'quote', 'added_to_collection', 'collection_update'];
             }
         }
     }
@@ -105,56 +105,66 @@ Kirigami.ScrollablePage {
             }
         }
 
-        QQC2.Action {
+        Kirigami.Action {
             icon.name: "boost"
             text: i18nc("Show only boosts", "Boosts")
             onTriggered: {
-                notificationModel.excludeTypes = ['mention', 'status', 'follow', 'follow_request', 'favourite', 'poll', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning', 'quote'];
+                notificationModel.excludeTypes = ['mention', 'status', 'follow', 'follow_request', 'favourite', 'poll', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning', 'quote', 'added_to_collection', 'collection_update'];
                 visibilityMenu.tookAction = true;
             }
         }
 
-        QQC2.Action {
+        Kirigami.Action {
             icon.name: "favorite"
             text: i18nc("Show only favorites", "Favorites")
             onTriggered: {
-                notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow', 'follow_request', 'poll', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning', 'quote'];
+                notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow', 'follow_request', 'poll', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning', 'quote', 'added_to_collection', 'collection_update'];
                 visibilityMenu.tookAction = true;
             }
         }
 
-        QQC2.Action {
+        Kirigami.Action {
             icon.name: "amarok_playcount"
             text: i18nc("Show only poll results", "Poll Results")
             onTriggered: {
-                notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow', 'follow_request', 'favourite', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning', 'quote'];
+                notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow', 'follow_request', 'favourite', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning', 'quote', 'added_to_collection', 'collection_update'];
                 visibilityMenu.tookAction = true;
             }
         }
 
-        QQC2.Action {
+        Kirigami.Action {
             icon.name: "user-home-symbolic"
             text: i18nc("Show only followed statuses", "Posts")
             onTriggered: {
-                notificationModel.excludeTypes = ['mention', 'reblog', 'follow', 'follow_request', 'favourite', 'poll', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning', 'quote'];
+                notificationModel.excludeTypes = ['mention', 'reblog', 'follow', 'follow_request', 'favourite', 'poll', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning', 'quote', 'added_to_collection', 'collection_update'];
                 visibilityMenu.tookAction = true;
             }
         }
 
-        QQC2.Action {
+        Kirigami.Action {
             icon.name: "list-add-user"
             text: i18nc("Show only follows", "Follows")
             onTriggered: {
-                notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow_request', 'favourite', 'poll', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning', 'quote'];
+                notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow_request', 'favourite', 'poll', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning', 'quote', 'added_to_collection', 'collection_update'];
                 visibilityMenu.tookAction = true;
             }
         }
 
-        QQC2.Action {
+        Kirigami.Action {
             icon.name: "format-text-blockquote-symbolic"
             text: i18nc("Show only quotes", "Quotes")
             onTriggered: {
-                notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow', 'follow_request', 'favourite', 'poll', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning'];
+                notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow', 'follow_request', 'favourite', 'poll', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning', 'added_to_collection', 'collection_update'];
+                visibilityMenu.tookAction = true;
+            }
+        }
+
+        Kirigami.Action {
+            icon.name: "view-group-symbolic"
+            text: i18nc("Show only quotes", "Collections")
+            visible: AccountManager.selectedAccount.supportsApiVersion("mastodon", 10)
+            onTriggered: {
+                notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow', 'follow_request', 'favourite', 'poll', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning', 'quote'];
                 visibilityMenu.tookAction = true;
             }
         }
@@ -332,6 +342,20 @@ Kirigami.ScrollablePage {
                     timelineModel: groupedNotificationModel
                     loading: root.loading
                     showSeparator: index !== ListView.view.count - 1
+                }
+            }
+
+            DelegateChoice {
+                roleValue: Notification.AddedToCollection
+                CollectionDelegate {
+                    width: ListView.view.width
+                }
+            }
+
+            DelegateChoice {
+                roleValue: Notification.CollectionUpdate
+                CollectionDelegate {
+                    width: ListView.view.width
                 }
             }
 

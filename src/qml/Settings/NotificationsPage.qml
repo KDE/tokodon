@@ -427,5 +427,24 @@ FormCard.FormCardPage {
             notify: root.config.notifyAnnualReport
             onToggledNotify: notify => root.config.notifyAnnualReport = notify
         }
+
+        FormCard.FormDelegateSeparator {
+            below: annualReportDelegate
+            above: collectionsDelegate
+        }
+
+        EventControl {
+            id: collectionsDelegate
+
+            text: i18nc("@option:check", "Collections")
+            description: i18n("When you're added to collections or collections were updated.")
+            visible: AccountManager.selectedAccount.supportsApiVersion("mastodon", 10)
+
+            shouldDisplay: root.config.displayCollections
+            onToggledDisplay: display => root.config.displayCollections = display
+
+            notify: root.config.notifyCollections
+            onToggledNotify: notify => root.config.notifyCollections = notify
+        }
     }
 }

@@ -141,6 +141,10 @@ QStringList NotificationModel::allExcludeTypes()
     if (!config->displayQuote()) {
         excludeTypes.push_back(QStringLiteral("quote"));
     }
+    if (!config->displayCollections()) {
+        excludeTypes.push_back(QStringLiteral("added_to_collection"));
+        excludeTypes.push_back(QStringLiteral("collection_update"));
+    }
 
     return excludeTypes;
 }
@@ -296,6 +300,10 @@ QVariant NotificationModel::data(const QModelIndex &index, int role) const
         return notification->unread();
     case RelativeTimeRole:
         return TextHandler::getRelativeDateTime(notification->createdAt());
+    case CollectionIdRole:
+        return notification->collectionId();
+    case CollectionNameRole:
+        return notification->collectionName();
     default:
         if (post != nullptr) {
             return postData(post, role);
@@ -312,6 +320,8 @@ QHash<int, QByteArray> NotificationModel::roleNames() const
     roles.insert(ModerationWarningRole, QByteArrayLiteral("moderationWarning"));
     roles.insert(AnnualReportEventRole, QByteArrayLiteral("annualReportEvent"));
     roles.insert(UnreadRole, QByteArrayLiteral("unread"));
+    roles.insert(CollectionIdRole, QByteArrayLiteral("collectionId"));
+    roles.insert(CollectionNameRole, QByteArrayLiteral("collectionName"));
     return roles;
 }
 

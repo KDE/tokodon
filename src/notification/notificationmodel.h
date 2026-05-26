@@ -26,6 +26,8 @@ public:
         ModerationWarningRole,
         AnnualReportEventRole,
         UnreadRole,
+        CollectionIdRole,
+        CollectionNameRole,
     };
 
     explicit NotificationModel(QObject *parent = nullptr);

@@ -50,6 +50,7 @@ Q_SIGNALS:
     void openAccountSwitcher();
     void searchFor(const QString &query);
     void reloadCurrentPage();
+    void openCollections();
 
 private:
     void setupActions() override;

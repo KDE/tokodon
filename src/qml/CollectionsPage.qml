@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2023 Joshua Goins <josh@redstrate.com>
+// SPDX-FileCopyrightText: 2026 Joshua Goins <josh@redstrate.com>
 // SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 
 import QtQuick
@@ -14,33 +14,23 @@ Kirigami.ScrollablePage {
     id: root
 
     property string pageId
-    property Component editListPage: Qt.createComponent("org.kde.tokodon", "EditListPage", Qt.Asynchronous)
+    property Component editCollectionPage: Qt.createComponent("org.kde.tokodon", "EditCollectionPage", Qt.Asynchronous)
 
     function reload(): void {
         model.fillTimeline();
     }
 
-    title: i18nc("@title", "Lists")
-    titleDelegate: Kirigami.Heading {
-        // identical to normal Kirigami headers
-        Layout.fillWidth: true
-        Layout.maximumWidth: implicitWidth + 1
-        Layout.minimumWidth: 0
-        maximumLineCount: 1
-        elide: Text.ElideRight
-        text: root.title
-        textFormat: Text.RichText
-    }
+    title: i18nc("@title", "Collections")
 
     actions: Kirigami.Action {
-        text: i18nc("@action:button Create new list", "Create New…")
+        text: i18nc("@action:button Create new collection", "Create New…")
         icon.name: "gtk-add"
         onTriggered: {
-            const page = pageStack.layers.push(editListPage.createObject(root), {
-                purpose: EditListPage.New
+            const page = pageStack.layers.push(editCollectionPage.createObject(root), {
+                purpose: EditCollectionPage.New
             });
             page.done.connect(function(deleted) {
-                // Reload the lists since we just added one
+                // Reload the collections since we just added one
                 model.fillTimeline();
                 pageStack.layers.pop();
             });
@@ -50,7 +40,7 @@ Kirigami.ScrollablePage {
     ListView {
         id: listview
 
-        model: ListsModel {
+        model: CollectionsModel {
             id: model
         }
         currentIndex: -1
@@ -59,11 +49,11 @@ Kirigami.ScrollablePage {
             id: delegate
 
             required property string id
-            required property string title
+            required property string name
 
-            text: title
+            text: name
 
-            onClicked: Navigation.openList(id, title)
+            onClicked: Navigation.openCollection(id, name)
         }
 
         Kirigami.LoadingPlaceholder {
@@ -73,9 +63,9 @@ Kirigami.ScrollablePage {
 
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
-            icon.name: "view-list-text"
-            text: i18n("No Lists")
-            explanation: i18n("Lists allow you to categorize who you're following.")
+            icon.name: "view-group"
+            text: i18n("No Collections")
+            explanation: i18n("Collections allow you to categorize accounts you want other people to follow.")
             visible: listview.count === 0 && !listview.model.loading
             width: parent.width - Kirigami.Units.gridUnit * 4
         }

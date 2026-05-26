@@ -73,6 +73,10 @@ target_sources(tokodon_static
     account/blockeddomainmodel.h
     account/serverinformation.cpp
     account/serverinformation.h
+    account/collectionsmodel.cpp
+    account/collectionsmodel.h
+    account/collectionmodel.cpp
+    account/collectionmodel.h
 
     # Editor
     editor/posteditorbackend.cpp
@@ -91,6 +95,8 @@ target_sources(tokodon_static
     editor/reporteditorbackend.h
     editor/filtereditorbackend.cpp
     editor/filtereditorbackend.h
+    editor/collectioneditorbackend.cpp
+    editor/collectioneditorbackend.h
 
     # Conversation view
     conversation/conversationmodel.cpp
@@ -263,6 +269,7 @@ qt_target_qml_sources(tokodon_static
         qml/Notifications/AnnualReportDelegate.qml
         qml/Notifications/FollowDelegate.qml
         qml/Notifications/UnknownNotificationDelegate.qml
+        qml/Notifications/CollectionDelegate.qml
 
         # Settings
         qml/Settings/AccountPage.qml
@@ -340,6 +347,9 @@ qt_target_qml_sources(tokodon_static
         qml/ServerInformationPage.qml
         qml/GenericServerInformationPage.qml
         qml/AccountSwitchDialog.qml
+        qml/CollectionsPage.qml
+        qml/EditCollectionPage.qml
+        qml/CollectionPage.qml
 )
 
 

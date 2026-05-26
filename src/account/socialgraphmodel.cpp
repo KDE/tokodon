@@ -30,24 +30,36 @@ QString SocialGraphModel::displayName() const
 {
     if (m_followListName == QStringLiteral("request")) {
         return i18nc("@title", "Follow Requests");
-    } else if (m_followListName == QStringLiteral("followers")) {
+    }
+    if (m_followListName == QStringLiteral("followers")) {
         return i18nc("@title", "Followers");
-    } else if (m_followListName == QStringLiteral("following")) {
+    }
+    if (m_followListName == QStringLiteral("following")) {
         return i18nc("@title", "Following");
-    } else if (m_followListName == QStringLiteral("mutes")) {
+    }
+    if (m_followListName == QStringLiteral("mutes")) {
         return i18nc("@title", "Muted Users");
-    } else if (m_followListName == QStringLiteral("blocks")) {
+    }
+    if (m_followListName == QStringLiteral("blocks")) {
         return i18nc("@title", "Blocked Users");
-    } else if (m_followListName == QStringLiteral("featured")) {
+    }
+    if (m_followListName == QStringLiteral("featured")) {
         return i18nc("@title", "Featured Users");
-    } else if (m_followListName == QStringLiteral("favourited_by")) {
+    }
+    if (m_followListName == QStringLiteral("favourited_by")) {
         return i18ncp("@title", "%1 favorite", "%1 favorites", m_count);
-    } else if (m_followListName == QStringLiteral("reblogged_by")) {
+    }
+    if (m_followListName == QStringLiteral("reblogged_by")) {
         return i18ncp("@title", "%1 boost", "%1 boosts", m_count);
-    } else if (m_followListName == QStringLiteral("familiar_followers")) {
+    }
+    if (m_followListName == QStringLiteral("familiar_followers")) {
         return i18nc("@title", "Familiar Followers");
-    } else if (m_followListName == QStringLiteral("list")) {
+    }
+    if (m_followListName == QStringLiteral("list")) {
         return i18nc("@title", "Manage List Users");
+    }
+    if (m_followListName == QStringLiteral("collection")) {
+        return i18nc("@title", "Manage Collection Users");
     }
     return {};
 }
@@ -56,23 +68,32 @@ QString SocialGraphModel::placeholderText() const
 {
     if (m_followListName == QStringLiteral("request")) {
         return i18n("No Follow Requests");
-    } else if (m_followListName == QStringLiteral("followers")) {
+    }
+    if (m_followListName == QStringLiteral("followers")) {
         return i18n("No Followers");
-    } else if (m_followListName == QStringLiteral("following")) {
+    }
+    if (m_followListName == QStringLiteral("following")) {
         return i18n("No Followed Users");
-    } else if (m_followListName == QStringLiteral("mutes")) {
+    }
+    if (m_followListName == QStringLiteral("mutes")) {
         return i18n("No Muted Users");
-    } else if (m_followListName == QStringLiteral("blocks")) {
+    }
+    if (m_followListName == QStringLiteral("blocks")) {
         return i18n("No Blocked Users");
-    } else if (m_followListName == QStringLiteral("featured")) {
+    }
+    if (m_followListName == QStringLiteral("featured")) {
         return i18n("No Featured Users");
-    } else if (m_followListName == QStringLiteral("favourited_by")) {
+    }
+    if (m_followListName == QStringLiteral("favourited_by")) {
         return i18n("No Users Favorited This Post");
-    } else if (m_followListName == QStringLiteral("reblogged_by")) {
+    }
+    if (m_followListName == QStringLiteral("reblogged_by")) {
         return i18n("No Users Boosted This Post");
-    } else if (m_followListName == QStringLiteral("familiar_followers")) {
+    }
+    if (m_followListName == QStringLiteral("familiar_followers")) {
         return i18n("No Familiar Followers");
-    } else if (m_followListName == QStringLiteral("list")) {
+    }
+    if (m_followListName == QStringLiteral("list") || m_followListName == QStringLiteral("collection")) {
         return i18n("No Users");
     }
     return {};
@@ -82,24 +103,36 @@ QString SocialGraphModel::placeholderExplanation() const
 {
     if (m_followListName == QStringLiteral("request")) {
         return i18n("Some users need to be manually approved before they can follow you, and will show up here.");
-    } else if (m_followListName == QStringLiteral("followers")) {
+    }
+    if (m_followListName == QStringLiteral("followers")) {
         return i18nc("@info:placeholder", "No one is following this user, or they have chosen to hide this information.");
-    } else if (m_followListName == QStringLiteral("following")) {
+    }
+    if (m_followListName == QStringLiteral("following")) {
         return i18nc("@info:placeholder", "This user isn't following anyone, or has chosen to hide this information.");
-    } else if (m_followListName == QStringLiteral("mutes")) {
+    }
+    if (m_followListName == QStringLiteral("mutes")) {
         return i18n("Mute users to stop them from showing up in your notifications.");
-    } else if (m_followListName == QStringLiteral("blocks")) {
+    }
+    if (m_followListName == QStringLiteral("blocks")) {
         return i18n("Block users to hide the user from your timeline entirely.");
-    } else if (m_followListName == QStringLiteral("featured")) {
+    }
+    if (m_followListName == QStringLiteral("featured")) {
         return i18n("Users you like can be featured and shown on your profile.");
-    } else if (m_followListName == QStringLiteral("favourited_by")) {
+    }
+    if (m_followListName == QStringLiteral("favourited_by")) {
         return i18n("No one has favorited this post yet. Maybe you'll be the first?");
-    } else if (m_followListName == QStringLiteral("reblogged_by")) {
+    }
+    if (m_followListName == QStringLiteral("reblogged_by")) {
         return i18n("No one has boosted this post yet. You should boost it to expand its reach!");
-    } else if (m_followListName == QStringLiteral("familiar_followers")) {
+    }
+    if (m_followListName == QStringLiteral("familiar_followers")) {
         return {};
-    } else if (m_followListName == QStringLiteral("list")) {
+    }
+    if (m_followListName == QStringLiteral("list")) {
         return i18n("There is no one in this list yet.");
+    }
+    if (m_followListName == QStringLiteral("collection")) {
+        return i18n("There is no one in this collection yet.");
     }
     return {};
 }
@@ -108,23 +141,27 @@ QString SocialGraphModel::placeholderIconName() const
 {
     if (m_followListName == QStringLiteral("request")) {
         return QStringLiteral("list-add-user");
-    } else if (m_followListName == QStringLiteral("followers")) {
+    }
+    if (m_followListName == QStringLiteral("followers")) {
         return QStringLiteral("list-add-user");
-    } else if (m_followListName == QStringLiteral("following")) {
+    }
+    if (m_followListName == QStringLiteral("following")) {
         return QStringLiteral("list-add-user");
-    } else if (m_followListName == QStringLiteral("mutes")) {
+    }
+    if (m_followListName == QStringLiteral("mutes")) {
         return QStringLiteral("microphone-sensitivity-muted");
-    } else if (m_followListName == QStringLiteral("blocks")) {
+    }
+    if (m_followListName == QStringLiteral("blocks")) {
         return QStringLiteral("cards-block");
-    } else if (m_followListName == QStringLiteral("featured")) {
+    }
+    if (m_followListName == QStringLiteral("featured") || m_followListName == QStringLiteral("favourited_by")) {
         return QStringLiteral("favorite");
-    } else if (m_followListName == QStringLiteral("favourited_by")) {
-        return QStringLiteral("favorite");
-    } else if (m_followListName == QStringLiteral("reblogged_by")) {
+    }
+    if (m_followListName == QStringLiteral("reblogged_by")) {
         return QStringLiteral("boost");
-    } else if (m_followListName == QStringLiteral("familiar_followers")) {
-        return QStringLiteral("list-add-user");
-    } else if (m_followListName == QStringLiteral("list")) {
+    }
+    if (m_followListName == QStringLiteral("familiar_followers") || m_followListName == QStringLiteral("list")
+        || m_followListName == QStringLiteral("collection")) {
         return QStringLiteral("list-add-user");
     }
     return {};
@@ -186,6 +223,19 @@ void SocialGraphModel::setListId(const QString &listId)
 {
     m_listId = listId;
     Q_EMIT listIdChanged();
+    reset();
+    fillTimeline();
+}
+
+QString SocialGraphModel::collectionId() const
+{
+    return m_collectionId;
+}
+
+void SocialGraphModel::setCollectionId(const QString &collectionId)
+{
+    m_collectionId = collectionId;
+    Q_EMIT collectionIdChanged();
     reset();
     fillTimeline();
 }
@@ -259,6 +309,11 @@ bool SocialGraphModel::isBlockList() const
 bool SocialGraphModel::isMuteList() const
 {
     return m_followListName == "mutes"_L1;
+}
+
+bool SocialGraphModel::isCollection() const
+{
+    return m_followListName == "collection"_L1;
 }
 
 void SocialGraphModel::actionAllow(const QModelIndex &index)
@@ -411,6 +466,26 @@ void SocialGraphModel::actionUnmute(const QModelIndex &index)
     endRemoveRows();
 }
 
+void SocialGraphModel::actionAddToCollection(const QString &accountId)
+{
+    auto account = AccountManager::instance().selectedAccount();
+
+    if (m_collectionId.isEmpty()) {
+        return;
+    }
+
+    const QUrlQuery query{{QStringLiteral("account_id"), accountId}};
+
+    const auto url = account->apiUrl(QStringLiteral("/api/v1/collections/%1/items").arg(m_collectionId));
+    account->post(url, query, true, this, [this, account, accountId](QNetworkReply *reply) {
+        Q_UNUSED(reply)
+
+        beginInsertRows(QModelIndex(), m_accounts.size(), m_accounts.size());
+        m_accounts.push_back(account->identityLookup(accountId, {}));
+        endInsertRows();
+    });
+}
+
 bool SocialGraphModel::canFetchMore(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
@@ -447,6 +522,10 @@ void SocialGraphModel::fillTimeline()
         return;
     }
 
+    if (m_followListName == QStringLiteral("collection") && (m_collectionId.isEmpty() || m_collectionId.isNull())) {
+        return;
+    }
+
     if (m_loading) {
         return;
     }
@@ -473,6 +552,8 @@ void SocialGraphModel::fillTimeline()
         uri = QStringLiteral("/api/v1/accounts/familiar_followers");
     } else if (m_followListName == QStringLiteral("list")) {
         uri = QStringLiteral("/api/v1/lists/%1/accounts").arg(m_listId);
+    } else if (m_followListName == QStringLiteral("collection")) {
+        uri = QStringLiteral("/api/v1/collections/%1").arg(m_collectionId);
     }
 
     QUrl url;
@@ -494,7 +575,12 @@ void SocialGraphModel::fillTimeline()
         this,
         [this, account](QNetworkReply *reply) {
             const auto followRequestResult = QJsonDocument::fromJson(reply->readAll());
-            const auto accounts = followRequestResult.array();
+            auto accounts = followRequestResult.array();
+
+            if (m_followListName == QStringLiteral("collection")) {
+                accounts = followRequestResult.object()["accounts"_L1].toArray();
+                accounts.pop_front(); // Remove first account which is the creator
+            }
 
             if (!accounts.isEmpty()) {
                 const auto linkHeader = QString::fromUtf8(reply->rawHeader(QByteArrayLiteral("Link")));

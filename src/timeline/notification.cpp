@@ -133,6 +133,8 @@ static QMap<QString, Notification::Type> str_to_not_type = {
     {QStringLiteral("moderation_warning"), Notification::Type::ModerationWarning},
     {QStringLiteral("annual_report"), Notification::Type::AnnualReport},
     {QStringLiteral("quote"), Notification::Type::Quote},
+    {QStringLiteral("added_to_collection"), Notification::Type::AddedToCollection},
+    {QStringLiteral("collection_update"), Notification::Type::CollectionUpdate},
 };
 
 Notification::Notification(AbstractAccount *account, const QJsonObject &obj, const bool unread, QObject *parent)
@@ -163,6 +165,11 @@ Notification::Notification(AbstractAccount *account, const QJsonObject &obj, con
         m_report->fromSourceData(obj["event"_L1].toObject());
     } else if (m_type == AnnualReport) {
         m_annualReportEvent = AnnualReportEvent(obj["annual_report"_L1].toObject());
+    }
+
+    if (obj.contains("collection"_L1)) {
+        m_collectionId = obj["collection"_L1].toObject()["id"_L1].toString();
+        m_collectionName = obj["collection"_L1].toObject()["name"_L1].toString();
     }
 }
 
@@ -214,6 +221,16 @@ std::shared_ptr<Identity> Notification::identity() const
 QDateTime Notification::createdAt() const
 {
     return m_createdAt;
+}
+
+QString Notification::collectionId() const
+{
+    return m_collectionId;
+}
+
+QString Notification::collectionName() const
+{
+    return m_collectionName;
 }
 
 bool Notification::unread() const

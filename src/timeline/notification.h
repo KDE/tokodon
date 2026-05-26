@@ -115,6 +115,8 @@ public:
         ModerationWarning,
         AnnualReport,
         Quote,
+        AddedToCollection,
+        CollectionUpdate,
     };
     Q_ENUM(Type);
 
@@ -128,6 +130,8 @@ public:
     [[nodiscard]] std::optional<AnnualReportEvent> annualReportEvent() const;
     [[nodiscard]] std::shared_ptr<Identity> identity() const;
     [[nodiscard]] QDateTime createdAt() const;
+    [[nodiscard]] QString collectionId() const;
+    [[nodiscard]] QString collectionName() const;
 
     [[nodiscard]] bool unread() const;
     void setUnread(bool unread);
@@ -145,6 +149,8 @@ private:
     std::shared_ptr<Identity> m_identity;
     QDateTime m_createdAt;
     bool m_unread;
+    QString m_collectionId;
+    QString m_collectionName;
 
     Post *createPost(AbstractAccount *account, const QJsonObject &obj, QObject *parent);
 };
