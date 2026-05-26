@@ -204,6 +204,13 @@ void Account::handleReply(QNetworkReply *reply, std::function<void(QNetworkReply
 {
     connect(reply, &QNetworkReply::finished, [reply, reply_cb, errorCallback]() {
         reply->deleteLater();
+
+        if (reply->hasRawHeader(QByteArrayLiteral("Mastodon-Async-Refresh"))) {
+            qCWarning(TOKODON_HTTP)
+                << "We got a Mastodon-Async-Refresh but we don't implement those yet! This is meant as a warning for the developers of Tokodon:"
+                << reply->rawHeader(QByteArrayLiteral("Mastodon-Async-Refresh"));
+        }
+
         // these are usually (sometimes meant to be) fallible and end up spamming user logs with these errors
         const auto fallible = reply->request().attribute(QNetworkRequest::Attribute::User).toBool();
         if (200 != reply->attribute(QNetworkRequest::HttpStatusCodeAttribute) && !fallible) {
