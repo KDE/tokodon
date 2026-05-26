@@ -19,6 +19,11 @@ class Preferences final : public QObject
     Q_PROPERTY(bool extendSpoiler READ extendSpoiler NOTIFY extendSpoilerChanged)
     Q_PROPERTY(bool indexable READ indexable WRITE setIndexable NOTIFY indexableChanged)
     Q_PROPERTY(bool hideCollections READ hideCollections WRITE setHideCollections NOTIFY hideCollectionsChanged)
+    Q_PROPERTY(bool showMedia READ showMedia WRITE setShowMedia NOTIFY showMediaChanged)
+    Q_PROPERTY(bool showMediaReplies READ showMediaReplies WRITE setShowMediaReplies NOTIFY showMediaRepliesChanged)
+    Q_PROPERTY(bool showFeatured READ showFeatured WRITE setShowFeatured NOTIFY showFeaturedChanged)
+    Q_PROPERTY(QString avatarDescription READ avatarDescription WRITE setAvatarDescription NOTIFY avatarDescriptionChanged)
+    Q_PROPERTY(QString headerDescription READ headerDescription WRITE setHeaderDescription NOTIFY headerDescriptionChanged)
 
 public:
     explicit Preferences(AbstractAccount *account);
