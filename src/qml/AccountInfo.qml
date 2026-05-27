@@ -89,6 +89,8 @@ Kirigami.Page {
             focus: true
             clip: true
 
+            QQC2.ScrollBar.vertical.interactive: false
+
             Keys.onPressed: event => timelineView.handleKeyEvent(event)
 
             TimelineView {
@@ -143,6 +145,8 @@ Kirigami.Page {
 
             sourceComponent: QQC2.ScrollView {
                 clip: true
+
+                QQC2.ScrollBar.vertical.interactive: false
 
                 GridView {
                     id: gridView
