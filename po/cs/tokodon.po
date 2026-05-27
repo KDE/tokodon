@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-10 00:43+0000\n"
-"PO-Revision-Date: 2026-05-25 20:51+0200\n"
+"POT-Creation-Date: 2026-05-27 00:45+0000\n"
+"PO-Revision-Date: 2026-05-26 23:53+0200\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -142,13 +142,13 @@ msgstr "Nelze zrušit označení účtu"
 msgid "Could not edit note about an account"
 msgstr "Nelze upravit poznámku o účtu"
 
-#: account/account.cpp:323
+#: account/account.cpp:330
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Network request was interrupted"
 msgstr "Síťový požadavek byl přerušen"
 
-#: account/account.cpp:332 account/account.cpp:339
+#: account/account.cpp:339 account/account.cpp:346
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Failed to parse credentials"
@@ -535,7 +535,7 @@ msgstr "Omezený"
 #, kde-format
 msgctxt "login status"
 msgid "Sensitized"
-msgstr "Citlivý"
+msgstr "Důvěryhodný"
 
 #: admin/adminaccountinfo.cpp:30
 #, kde-format
@@ -1171,7 +1171,7 @@ msgstr "Konverzace"
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "New Conversation…"
-msgstr "Nová konverzace"
+msgstr "Nová konverzace…"
 
 #: qml/ConversationPage.qml:31
 #, kde-format
@@ -2465,7 +2465,7 @@ msgstr "Doména*"
 #: qml/ModerationTools/FederationToolPage.qml:180
 #, kde-format
 msgid "New Allowed Domain Added"
-msgstr ""
+msgstr "Přidána nová povolená doména"
 
 #: qml/ModerationTools/FederationToolPage.qml:193
 #, kde-format
@@ -2473,6 +2473,8 @@ msgid ""
 "Allowed domain option is available for instances with limited federation "
 "mode enabled"
 msgstr ""
+"Možnost povolených domén je k dispozici u instancí, u nichž je zapnutý režim "
+"omezené federace"
 
 #: qml/ModerationTools/FederationToolPage.qml:201
 #, kde-format
@@ -2490,17 +2492,17 @@ msgstr "Blokované domény"
 #, kde-format
 msgctxt "@info:Filter out all the allowed domains in limited federation mode"
 msgid "Allowed domains"
-msgstr ""
+msgstr "Povolené domény"
 
 #: qml/ModerationTools/FederationToolPage.qml:286
 #, kde-format
 msgid "Allowed for federation"
-msgstr ""
+msgstr "Povoleno pro federaci"
 
 #: qml/ModerationTools/FederationToolPage.qml:309
 #, kde-format
 msgid "No federations found"
-msgstr ""
+msgstr "Nenalezena žádná federace"
 
 #: qml/ModerationTools/IpRulePage.qml:17
 #, kde-format
@@ -2511,7 +2513,7 @@ msgstr "Vytvořit pravidlo"
 #: qml/ModerationTools/IpRulePage.qml:25
 #, kde-format
 msgid "New IP Rule"
-msgstr ""
+msgstr "Nové IP pravidlo"
 
 #: qml/ModerationTools/IpRulePage.qml:37
 #, kde-format
@@ -2523,7 +2525,7 @@ msgstr "IP*"
 #, kde-format
 msgctxt "@info:Time after which the rule will be lifted"
 msgid "Expire After"
-msgstr ""
+msgstr "Expirace za"
 
 #: qml/ModerationTools/IpRulePage.qml:48
 #, kde-format
@@ -2571,7 +2573,7 @@ msgstr "Komentář"
 #: qml/ModerationTools/MainIpRulePage.qml:110
 #, kde-format
 msgid "Optional. Remember why you added this rule."
-msgstr ""
+msgstr "Volitelné. Nezapomeňte, proč jste toto pravidlo přidali."
 
 #: qml/ModerationTools/IpRulePage.qml:87
 #, kde-format
@@ -2583,80 +2585,80 @@ msgstr "Pravidlo *"
 #: qml/ModerationTools/MainIpRulePage.qml:121
 #, kde-format
 msgid "Choose what will happen with requests from this IP"
-msgstr ""
+msgstr "Vyberte, jak se bude postupovat v případě požadavků z této IP adresy"
 
 #: qml/ModerationTools/IpRulePage.qml:98
 #: qml/ModerationTools/MainIpRulePage.qml:129
 #, kde-format
 msgid "Limit sign-ups"
-msgstr ""
+msgstr "Omezit počet registrací"
 
 #: qml/ModerationTools/IpRulePage.qml:99
 #: qml/ModerationTools/MainIpRulePage.qml:130
 #, kde-format
 msgid "New sign-ups will require your approval"
-msgstr ""
+msgstr "Nové registrace budou vyžadovat vaše schválení"
 
 #: qml/ModerationTools/IpRulePage.qml:105
 #: qml/ModerationTools/MainIpRulePage.qml:136
 #, kde-format
 msgid "Block sign-ups"
-msgstr ""
+msgstr "Zablokovat registrace"
 
 #: qml/ModerationTools/IpRulePage.qml:106
 #: qml/ModerationTools/MainIpRulePage.qml:137
 #, kde-format
 msgid "New sign-ups will not be possible"
-msgstr ""
+msgstr "Nové registrace již nebudou možné"
 
 #: qml/ModerationTools/IpRulePage.qml:111
 #: qml/ModerationTools/MainIpRulePage.qml:143
 #, kde-format
 msgid "Block access"
-msgstr ""
+msgstr "Zablokovat přístup"
 
 #: qml/ModerationTools/IpRulePage.qml:112
 #: qml/ModerationTools/MainIpRulePage.qml:144
 #, kde-format
 msgid "Block access to all resources"
-msgstr ""
+msgstr "Zablokovat přístup ke všem zdrojům"
 
 #: qml/ModerationTools/IpRulePage.qml:126
 #, kde-format
 msgctxt "@info:Button to create a IP rule"
 msgid "Create IP rule"
-msgstr ""
+msgstr "Vytvořit IP pravidlo"
 
 #: qml/ModerationTools/IpRulePage.qml:130
 #, kde-format
 msgid "New IP rule added"
-msgstr ""
+msgstr "Nové IP pravidlo přidáno"
 
 #: qml/ModerationTools/IpRulePage.qml:156
 #: qml/ModerationTools/MainIpRulePage.qml:29
 #, kde-format
 msgctxt "@label"
 msgid "Limit sign-ups"
-msgstr ""
+msgstr "Omezit počet registrací"
 
 #: qml/ModerationTools/IpRulePage.qml:158
 #: qml/ModerationTools/MainIpRulePage.qml:31
 #, kde-format
 msgctxt "@label"
 msgid "Block sign-ups"
-msgstr ""
+msgstr "Zablokovat registrace"
 
 #: qml/ModerationTools/IpRulePage.qml:160
 #: qml/ModerationTools/MainIpRulePage.qml:33
 #, kde-format
 msgctxt "@label"
 msgid "Block access"
-msgstr ""
+msgstr "Zablokovat přístup"
 
 #: qml/ModerationTools/IpRulePage.qml:207
 #, kde-format
 msgid "No IP rules found"
-msgstr ""
+msgstr "Nenalezena žádná IP pravidla"
 
 #: qml/ModerationTools/MainAccountToolPage.qml:29
 #, kde-format
@@ -2666,7 +2668,7 @@ msgstr "Nedostupný"
 #: qml/ModerationTools/MainAccountToolPage.qml:38
 #, kde-format
 msgid "Perform moderation action on %1"
-msgstr ""
+msgstr "Provést moderátorský zásah u %1"
 
 #: qml/ModerationTools/MainAccountToolPage.qml:44
 #, kde-format
@@ -2689,7 +2691,7 @@ msgstr "Zmrazit"
 msgctxt ""
 "@info: Force all this user's media attachments to be flagged as sensitive."
 msgid "Force-Sensitive"
-msgstr ""
+msgstr "Vynuceně důvěryhodný"
 
 #: qml/ModerationTools/MainAccountToolPage.qml:58
 #, kde-format
@@ -2713,13 +2715,13 @@ msgctxt ""
 "@info: The user will receive an explanation of what happened with their "
 "account"
 msgid "Notify the user per e-mail"
-msgstr ""
+msgstr "Upozornit uživatele e-mailem"
 
 #: qml/ModerationTools/MainAccountToolPage.qml:74
 #, kde-format
 msgctxt "@info: Send a warning note to the user."
 msgid "Custom warning"
-msgstr ""
+msgstr "Vlastní varování"
 
 #: qml/ModerationTools/MainAccountToolPage.qml:83
 #, kde-format
@@ -2730,7 +2732,7 @@ msgstr "Odeslat"
 #: qml/ModerationTools/MainAccountToolPage.qml:101
 #, kde-format
 msgid "Action taken successfully"
-msgstr ""
+msgstr "Akce byla úspěšně provedena"
 
 #: qml/ModerationTools/MainAccountToolPage.qml:114
 #, kde-format
@@ -2740,47 +2742,47 @@ msgstr "Jste si jisti?"
 #: qml/ModerationTools/MainAccountToolPage.qml:115
 #, kde-format
 msgid "Action will be taken against the account."
-msgstr ""
+msgstr "Proti tomuto účtu bude proveden zásah."
 
 #: qml/ModerationTools/MainAccountToolPage.qml:123
 #, kde-format
 msgid "Successfully approved %1's sign-up application"
-msgstr ""
+msgstr "Žádost o registraci uživatele %1 byla úspěšně schválena"
 
 #: qml/ModerationTools/MainAccountToolPage.qml:127
 #, kde-format
 msgid "Successfully rejected %1's sign-up application"
-msgstr ""
+msgstr "Žádost o registraci uživatele %1 byla úspěšně zamítnuta"
 
 #: qml/ModerationTools/MainAccountToolPage.qml:131
 #, kde-format
 msgid "Successfully unfreezed %1's account"
-msgstr ""
+msgstr "Zmražení účtu %1 bylo úspěšně zrušeno"
 
 #: qml/ModerationTools/MainAccountToolPage.qml:135
 #, kde-format
 msgid "Successfully unsilenced %1's account"
-msgstr ""
+msgstr "Ztišení účtu %1 bylo úspěšně zrušeno"
 
 #: qml/ModerationTools/MainAccountToolPage.qml:139
 #, kde-format
 msgid "Successfully unsuspended %1's account"
-msgstr ""
+msgstr "Pozastavení účtu %1 bylo úspěšně zrušeno"
 
 #: qml/ModerationTools/MainAccountToolPage.qml:143
 #, kde-format
 msgid "Successfully undo force-sensitive %1's account"
-msgstr ""
+msgstr "Vynucená důvěryhodnost účtu %1 byla úspěšně zrušena"
 
 #: qml/ModerationTools/MainAccountToolPage.qml:147
 #, kde-format
 msgid "Successfully deleted %1's account data"
-msgstr ""
+msgstr "Data účtu %1 byla úspěšně smazána"
 
 #: qml/ModerationTools/MainAccountToolPage.qml:185
 #, kde-format
 msgid "Reasons for joining"
-msgstr ""
+msgstr "Důvody, proč se připojit"
 
 #: qml/ModerationTools/MainAccountToolPage.qml:201
 #, kde-format
@@ -2797,7 +2799,7 @@ msgstr "Žádná role"
 #, kde-format
 msgctxt "@info The last time the account was active."
 msgid "Last Active"
-msgstr ""
+msgstr "Poslední aktivita"
 
 #: qml/ModerationTools/MainAccountToolPage.qml:209
 #, kde-format
@@ -2809,7 +2811,7 @@ msgstr "Stav přihlášení"
 #, kde-format
 msgctxt "@info: Locale of the user."
 msgid "Account Locale"
-msgstr ""
+msgstr "Jazykové nastavení účtu"
 
 #: qml/ModerationTools/MainAccountToolPage.qml:219
 #, kde-format
@@ -2831,7 +2833,7 @@ msgstr "Potvrzeno"
 #: qml/ModerationTools/MainAccountToolPage.qml:225
 #, kde-format
 msgid "Not Confirmed"
-msgstr "Nepotvrzen"
+msgstr "Nepotvrzeno"
 
 #: qml/ModerationTools/MainAccountToolPage.qml:229
 #, kde-format
@@ -2842,12 +2844,12 @@ msgstr "Připojil(a) se"
 #: qml/ModerationTools/MainAccountToolPage.qml:234
 #, kde-format
 msgid "Invited By"
-msgstr ""
+msgstr "Pozvání od"
 
 #: qml/ModerationTools/MainAccountToolPage.qml:242
 #, kde-format
 msgid "Most recent IP"
-msgstr ""
+msgstr "Nejnovější IP"
 
 #: qml/ModerationTools/MainAccountToolPage.qml:267
 #, kde-format
@@ -2864,48 +2866,48 @@ msgstr "Odmítnout"
 #: qml/ModerationTools/MainAccountToolPage.qml:290
 #, kde-format
 msgid "Delete Account Data"
-msgstr ""
+msgstr "Smazat data účtu"
 
 #: qml/ModerationTools/MainAccountToolPage.qml:302
 #, kde-format
 msgctxt "@info: Unfreeze the user's account"
 msgid "Unfreeze"
-msgstr ""
+msgstr "Zrušit zmražení"
 
 #: qml/ModerationTools/MainAccountToolPage.qml:312
 #, kde-format
 msgid "Undo Limit"
-msgstr "Limit operací zpět:"
+msgstr "Limit operací zpět"
 
 #: qml/ModerationTools/MainAccountToolPage.qml:322
 #, kde-format
 msgid "Undo Suspension"
-msgstr ""
+msgstr "Zrušit pozastavení"
 
 #: qml/ModerationTools/MainAccountToolPage.qml:332
 #, kde-format
 msgid "Undo force-sensitive"
-msgstr ""
+msgstr "Zrušit vynucenou důvěryhodnost"
 
 #: qml/ModerationTools/MainAccountToolPage.qml:343
 #, kde-format
 msgid "Take action against this account"
-msgstr ""
+msgstr "Provést zásah proti tomuto účtu"
 
 #: qml/ModerationTools/MainFederationToolPage.qml:29
 #, kde-format
 msgid "Remove Domain Block"
-msgstr ""
+msgstr "Odstranit blokaci domény"
 
 #: qml/ModerationTools/MainFederationToolPage.qml:32
 #, kde-format
 msgid "Domain Block Removed"
-msgstr ""
+msgstr "Blokace domény odstraněna"
 
 #: qml/ModerationTools/MainFederationToolPage.qml:40
 #, kde-format
 msgid "Edit domain block"
-msgstr ""
+msgstr "Upravit blokaci domény"
 
 #: qml/ModerationTools/MainFederationToolPage.qml:80
 #: qml/ModerationTools/MainFederationToolPage.qml:146
@@ -2917,18 +2919,18 @@ msgstr "Soukromý komentář"
 #, kde-format
 msgctxt "@info:Button to update the domain block with new values"
 msgid "Update Block"
-msgstr ""
+msgstr "Aktualizovat blokaci"
 
 #: qml/ModerationTools/MainFederationToolPage.qml:122
 #, kde-format
 msgid "Domain block updated"
-msgstr ""
+msgstr "Blokace domény aktualizována"
 
 #: qml/ModerationTools/MainFederationToolPage.qml:132
 #: qml/ModerationTools/MainIpRulePage.qml:175
 #, kde-format
 msgid "Blocked at"
-msgstr ""
+msgstr "Blokováno na"
 
 # žádné parametry funkce v inspektoru funkcí
 #: qml/ModerationTools/MainFederationToolPage.qml:140
@@ -2954,41 +2956,41 @@ msgstr "Chování"
 #, kde-format
 msgctxt "@info:Whether to obfuscate public displays of this domain block"
 msgid "Obfuscate"
-msgstr ""
+msgstr "Zamaskovat"
 
 #: qml/ModerationTools/MainFederationToolPage.qml:167
 #, kde-format
 msgctxt "@info:Whether to reject incoming media from this domain"
 msgid "Reject media"
-msgstr ""
+msgstr "Odmítnout média"
 
 #: qml/ModerationTools/MainFederationToolPage.qml:174
 #, kde-format
 msgctxt "@info:Whether to reject incoming reports from this domain"
 msgid "Reject reports"
-msgstr ""
+msgstr "Odmítnout hlášení"
 
 #: qml/ModerationTools/MainFederationToolPage.qml:185
 #, kde-format
 msgid "Edit Domain Block"
-msgstr ""
+msgstr "Upravit blokaci domény"
 
 #: qml/ModerationTools/MainIpRulePage.qml:40
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove IP Rule"
-msgstr ""
+msgstr "Odstranit IP pravidlo"
 
 #: qml/ModerationTools/MainIpRulePage.qml:43
 #, kde-format
 msgid "IP Rule Removed"
-msgstr ""
+msgstr "IP pravidlo odstraněno"
 
 #: qml/ModerationTools/MainIpRulePage.qml:51
 #, kde-format
 msgctxt "@title:window"
 msgid "Update IP Rule"
-msgstr ""
+msgstr "Aktualizovat IP pravidlo"
 
 #: qml/ModerationTools/MainIpRulePage.qml:63
 #, kde-format
@@ -3000,7 +3002,7 @@ msgstr "IP"
 #, kde-format
 msgctxt "@info Time after which the rule will be lifted"
 msgid "Expire After"
-msgstr ""
+msgstr "Expirace za"
 
 #: qml/ModerationTools/MainIpRulePage.qml:77
 #, kde-format
@@ -3061,18 +3063,18 @@ msgstr "Zrušit"
 #, kde-format
 msgctxt "@info Button to update an IP rule"
 msgid "Update IP rule"
-msgstr ""
+msgstr "Aktualizovat IP pravidlo"
 
 #: qml/ModerationTools/MainIpRulePage.qml:164
 #, kde-format
 msgid "IP rule updated"
-msgstr ""
+msgstr "IP pravidlo aktualizováno"
 
 #: qml/ModerationTools/MainIpRulePage.qml:182
 #, kde-format
 msgctxt "@info Time after which the rule will be lifted"
 msgid "Expires at"
-msgstr ""
+msgstr "Expirace v"
 
 # žádné parametry funkce v inspektoru funkcí
 #: qml/ModerationTools/MainIpRulePage.qml:190
@@ -3091,55 +3093,48 @@ msgstr "Závažnost"
 #, kde-format
 msgctxt "@action:button"
 msgid "Update IP Rule"
-msgstr ""
+msgstr "Aktualizovat IP pravidlo"
 
 #: qml/ModerationTools/MainReportToolPage.qml:47
 #, kde-format
 msgid "Report #%1"
-msgstr "Nahlásit #%1"
+msgstr "Hlášení #%1"
 
 #: qml/ModerationTools/MainReportToolPage.qml:51
-#, fuzzy, kde-format
-#| msgctxt "@info:Filter out unresolved reports"
-#| msgid "Unresolved"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Mark as unresolved"
-msgstr "Nevyřešeno"
+msgstr "Označit jako nevyřešené"
 
 #: qml/ModerationTools/MainReportToolPage.qml:51
-#, fuzzy, kde-format
-#| msgctxt "@info:Filter out unresolved reports"
-#| msgid "Unresolved"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Mark as resolved"
-msgstr "Nevyřešeno"
+msgstr "Označit jako vyřešené"
 
 #: qml/ModerationTools/MainReportToolPage.qml:55
-#, fuzzy, kde-format
-#| msgctxt "@info:Filter out unresolved reports"
-#| msgid "Unresolved"
+#, kde-format
 msgctxt "@info"
 msgid "Report Unresolved"
-msgstr "Nevyřešeno"
+msgstr "Hlášení nevyřešeno"
 
 #: qml/ModerationTools/MainReportToolPage.qml:58
-#, fuzzy, kde-format
-#| msgid "Resolved"
+#, kde-format
 msgctxt "@info"
 msgid "Report Resolved"
-msgstr "Vyřešeno"
+msgstr "Hlášení vyřešeno"
 
 #: qml/ModerationTools/MainReportToolPage.qml:95
 #, kde-format
 msgctxt "@info Time at which the report was made"
 msgid "Reported"
-msgstr ""
+msgstr "Nahlášeno"
 
 #: qml/ModerationTools/MainReportToolPage.qml:102
 #, kde-format
 msgctxt "@info The last time the reported account was active."
 msgid "Last Active"
-msgstr ""
+msgstr "Poslední aktivita"
 
 #: qml/ModerationTools/MainReportToolPage.qml:109
 #, kde-format
@@ -3148,19 +3143,16 @@ msgid "Joined"
 msgstr "Připojil(a) se"
 
 #: qml/ModerationTools/MainReportToolPage.qml:119
-#, fuzzy, kde-format
-#| msgctxt "@action:button 'Report' as in 'Report this to moderators'"
-#| msgid "Report"
+#, kde-format
 msgctxt "@label"
 msgid "Reported By"
-msgstr "Nahlásit"
+msgstr "Hlášení od"
 
 #: qml/ModerationTools/MainReportToolPage.qml:134
-#, fuzzy, kde-format
-#| msgid "Reports"
+#, kde-format
 msgctxt "@label"
 msgid "Report Status"
-msgstr "Hlášení"
+msgstr "Stav hlášení"
 
 #: qml/ModerationTools/MainReportToolPage.qml:135
 #, kde-format
@@ -3178,13 +3170,13 @@ msgstr "Nevyřešeno"
 #, kde-format
 msgctxt "@label"
 msgid "Action taken by"
-msgstr ""
+msgstr "Zásah proveden"
 
 #: qml/ModerationTools/MainReportToolPage.qml:157
 #, kde-format
 msgctxt "@label"
 msgid "Assigned moderator"
-msgstr ""
+msgstr "Určený moderátor"
 
 #: qml/ModerationTools/MainReportToolPage.qml:158
 #, kde-format
@@ -3196,13 +3188,13 @@ msgstr "Nikdo"
 #, kde-format
 msgctxt "@action:button"
 msgid "Unassign"
-msgstr ""
+msgstr "Nepřiřazeno"
 
 #: qml/ModerationTools/MainReportToolPage.qml:166
 #, kde-format
 msgctxt "@action:button"
 msgid "Assign to me"
-msgstr ""
+msgstr "Přiřadit mě"
 
 #: qml/ModerationTools/MainReportToolPage.qml:178
 #, kde-format
@@ -3234,6 +3226,8 @@ msgid ""
 "The reason this account and/or content was reported will be cited in "
 "communication with the reported account"
 msgstr ""
+"Důvod, proč byl tento účet a/nebo obsah nahlášen, bude uveden v komunikaci s "
+"nahlášeným účtem"
 
 #: qml/ModerationTools/MainReportToolPage.qml:199
 #, kde-format
@@ -3243,7 +3237,7 @@ msgstr "Jiné"
 #: qml/ModerationTools/MainReportToolPage.qml:204
 #, kde-format
 msgid "Category changed to other"
-msgstr ""
+msgstr "Kategorie změněna na jiné"
 
 #: qml/ModerationTools/MainReportToolPage.qml:215
 #, kde-format
@@ -3253,23 +3247,23 @@ msgstr "Spam"
 #: qml/ModerationTools/MainReportToolPage.qml:219
 #, kde-format
 msgid "Category changed to spam"
-msgstr ""
+msgstr "Kategorie změněna na spam"
 
 #: qml/ModerationTools/MainReportToolPage.qml:230
 #, kde-format
 msgid "Content violates one or more server rules"
-msgstr ""
+msgstr "Obsah porušuje jedno nebo více pravidel serveru"
 
 #: qml/ModerationTools/MainReportToolPage.qml:234
 #, kde-format
 msgid "Category changed to rule violation"
-msgstr ""
+msgstr "Kategorie změněna na porušení pravidel"
 
 #: qml/ModerationTools/MainReportToolPage.qml:273
 #, kde-format
 msgctxt "@title:group"
 msgid "To provide more information, %1 wrote:"
-msgstr ""
+msgstr "Pro upřesnění %1 napsal(a):"
 
 #: qml/ModerationTools/MainReportToolPage.qml:283
 #, kde-format
@@ -3278,18 +3272,16 @@ msgid "N/A"
 msgstr "Nedostupné"
 
 #: qml/ModerationTools/MainReportToolPage.qml:294
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Report Post"
+#, kde-format
 msgctxt "@title:group"
 msgid "Reported Content"
-msgstr "Nahlásit příspěvek"
+msgstr "Nahlášený obsah"
 
 #: qml/ModerationTools/MainReportToolPage.qml:302
 #, kde-format
 msgid ""
 "Offending content will be cited in communication with the reported account"
-msgstr ""
+msgstr "Porušující obsah bude uveden v korespondenci s nahlášeným účtem"
 
 #: qml/ModerationTools/MainReportToolPage.qml:332
 #, kde-format
@@ -3323,30 +3315,30 @@ msgstr "Hlášení"
 #, kde-format
 msgctxt "@title"
 msgid "Federation"
-msgstr ""
+msgstr "Federace"
 
 #: qml/ModerationTools/ModerationToolsView.qml:32
 #, kde-format
 msgctxt "@title"
 msgid "IP Rules"
-msgstr ""
+msgstr "IP pravidla"
 
 #: qml/ModerationTools/ModerationToolsView.qml:38
 #, kde-format
 msgctxt "@title"
 msgid "Email Blocks"
-msgstr ""
+msgstr "Blokace e-mailu"
 
 #: qml/ModerationTools/ReportToolPage.qml:15
 #, kde-format
 msgid "Accounts Tool Page"
-msgstr ""
+msgstr "Stránka nástrojů pro účty"
 
 #: qml/ModerationTools/ReportToolPage.qml:33
 #, kde-format
 msgctxt "@info:Combobox to choose Report Status"
 msgid "Report Status"
-msgstr ""
+msgstr "Stav hlášení"
 
 #: qml/ModerationTools/ReportToolPage.qml:45
 #, kde-format
@@ -3364,7 +3356,7 @@ msgstr "Vyřešeno"
 #, kde-format
 msgctxt "@info:Combobox to choose the origin of report"
 msgid "Report Origin"
-msgstr ""
+msgstr "Zdroj zprávy"
 
 #: qml/ModerationTools/ReportToolPage.qml:76
 #, kde-format
@@ -3387,7 +3379,7 @@ msgstr "Vzdálené"
 #: qml/ModerationTools/ReportToolPage.qml:157
 #, kde-format
 msgid "Reported By:"
-msgstr ""
+msgstr "Hlášení od:"
 
 #: qml/ModerationTools/ReportToolPage.qml:200
 #, kde-format
@@ -3397,7 +3389,7 @@ msgstr "Komentář:"
 #: qml/ModerationTools/ReportToolPage.qml:223
 #, kde-format
 msgid "Assigned Account:"
-msgstr ""
+msgstr "Přiřazený účet:"
 
 #: qml/ModerationTools/ReportToolPage.qml:248
 #, kde-format
@@ -3408,7 +3400,7 @@ msgstr "Nedostupné"
 #: qml/ModerationTools/ReportToolPage.qml:286
 #, kde-format
 msgid "No reports found"
-msgstr ""
+msgstr "Žádné hlášení nenalezeno"
 
 #: qml/NotificationPage.qml:18 qml/Settings/TokodonConfigurationView.qml:23
 #, kde-format
@@ -3510,11 +3502,13 @@ msgid ""
 "You have no notifications yet. When people reply, favorite or boost your "
 "posts they will show up here!"
 msgstr ""
+"Zatím nemáte žádné upozornění. Jakmile vám někdo odpoví, označí váš "
+"příspěvek jako oblíbený nebo ho zviditelní, objeví se to právě tady!"
 
 #: qml/Notifications/AccountWarningDelegate.qml:67
 #, kde-format
 msgid "%1 has issued a warning against your account"
-msgstr ""
+msgstr "%1 vydal varování týkající se vašeho účtu"
 
 #: qml/Notifications/AnnualReportDelegate.qml:64
 #, kde-kuit-format
@@ -3527,50 +3521,52 @@ msgid ""
 "Your %1 #FediWrapped awaits! Unveil your year's highlights and memorable "
 "moments on Mastodon!"
 msgstr ""
+"Váš %1 #FediWrapped vás čeká! Podělte se o nejvýznamnější události a "
+"nezapomenutelné okamžiky uplynulého roku na Mastodonu!"
 
 #: qml/Notifications/AnnualReportDelegate.qml:71
 #, kde-format
 msgctxt "@action:button"
 msgid "View #FediWrapped"
-msgstr ""
+msgstr "Zobrazit #FediWrapped"
 
 #: qml/Notifications/FollowDelegate.qml:78
 #, kde-format
 msgid "%1 signed up"
-msgstr ""
+msgstr "%1 zaregistrován"
 
 #: qml/Notifications/FollowDelegate.qml:107
 #, kde-format
 msgctxt "@action:button"
 msgid "Manage Follow Requests"
-msgstr ""
+msgstr "Spravovat požadavky na sledování"
 
 #: qml/Notifications/GroupInteractionLabel.qml:64
 #, kde-format
 msgid "View %1's Profile"
-msgstr ""
+msgstr "Zobrazit profil %1"
 
 #: qml/Notifications/GroupInteractionLabel.qml:73
 #, kde-format
 msgid "%1 users favorited your post"
-msgstr ""
+msgstr "%1 uživatelů si váš příspěvek uložilo do oblíbených"
 
 #: qml/Notifications/GroupInteractionLabel.qml:75
 #, kde-format
 msgid "%1 users boosted your post"
-msgstr ""
+msgstr "%1 uživatelů boostnulo váš příspěvek"
 
 #: qml/Notifications/MinimalPostDelegate.qml:68
 #: qml/PostDelegate/PostDelegate.qml:105
 #, kde-format
 msgid "Normal Status"
-msgstr ""
+msgstr "Normální stav"
 
 #: qml/Notifications/MinimalPostDelegate.qml:68
 #: qml/PostDelegate/PostDelegate.qml:105
 #, kde-format
 msgid "Spoiler Status"
-msgstr ""
+msgstr "Spoiler stav"
 
 #: qml/Notifications/RelationshipSeveranceDelegate.qml:63
 #, kde-kuit-format
@@ -3579,48 +3575,50 @@ msgid ""
 "Moderation has blocked <b>%1</b>, including %2 of your followers and %3 "
 "account you follow."
 msgstr ""
+"Moderátoři zablokovali <b>%1</b>, včetně %2 vašich sledujících a %3 účtů, "
+"které sledujete."
 
 #: qml/Notifications/ReportDelegate.qml:62
 #, kde-format
 msgctxt "@info:label"
 msgid "A report has been filed against a user in your server."
-msgstr ""
+msgstr "Na uživatele na vašem serveru bylo podáno hlášení."
 
 #: qml/Notifications/UnknownNotificationDelegate.qml:48
 #, kde-format
 msgctxt "@info"
 msgid "Unknown notification"
-msgstr ""
+msgstr "Neznámé upozornění"
 
 #: qml/Notifications/UserInteractionLabel.qml:88
 #, kde-format
 msgid "A poll has ended"
-msgstr ""
+msgstr "Anketa byla ukončena"
 
 #: qml/Notifications/UserInteractionLabel.qml:90
 #, kde-format
 msgid "%1 updated their post"
-msgstr ""
+msgstr "%1 aktualizoval svůj příspěvek"
 
 #: qml/PostDelegate/AttachmentGrid.qml:97
 #, kde-format
 msgid "Status with image attachment"
-msgstr ""
+msgstr "Stav s přiloženým obrázkem"
 
 #: qml/PostDelegate/AttachmentGrid.qml:99
 #, kde-format
 msgid "Status with gif attachment"
-msgstr ""
+msgstr "Stav s přiloženým GIFem"
 
 #: qml/PostDelegate/AttachmentGrid.qml:101
 #, kde-format
 msgid "Status with video attachment"
-msgstr ""
+msgstr "Stav s přiloženým videem"
 
 #: qml/PostDelegate/AttachmentGrid.qml:103
 #, kde-format
 msgid "Status with audio attachment"
-msgstr ""
+msgstr "Stav s přiloženým zvukovým záznamem"
 
 #: qml/PostDelegate/AttachmentGrid.qml:148
 #: qml/PostDelegate/AttachmentGrid.qml:245
@@ -3629,7 +3627,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "Sensitive media"
-msgstr ""
+msgstr "Citlivá média"
 
 #: qml/PostDelegate/AttachmentGrid.qml:201
 #, kde-format
@@ -3640,18 +3638,18 @@ msgstr "Není k dispozici"
 #, kde-format
 msgctxt "@action:button"
 msgid "Hide Media"
-msgstr ""
+msgstr "Skrýt média"
 
 #: qml/PostDelegate/AttachmentGrid.qml:388
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Hide media"
-msgstr ""
+msgstr "Skrýt média"
 
 #: qml/PostDelegate/AttachmentGrid.qml:399
 #, kde-format
 msgid "Show Media"
-msgstr ""
+msgstr "Zobrazit média"
 
 #: qml/PostDelegate/AttachmentMenu.qml:44
 #, kde-format
@@ -3661,7 +3659,7 @@ msgstr "Uložit obrázek jako…"
 #: qml/PostDelegate/AttachmentMenu.qml:46
 #, kde-format
 msgid "Save Gif As…"
-msgstr ""
+msgstr "Uložit GIF jako…"
 
 #: qml/PostDelegate/AttachmentMenu.qml:48
 #, kde-format
@@ -3671,7 +3669,7 @@ msgstr "Uložit video jako…"
 #: qml/PostDelegate/AttachmentMenu.qml:50
 #, kde-format
 msgid "Save Audio As…"
-msgstr "Uložit audio jako..."
+msgstr "Uložit audio jako…"
 
 #: qml/PostDelegate/AttachmentMenu.qml:69
 #, kde-format
@@ -3721,19 +3719,19 @@ msgstr "Filtr"
 #: qml/PostDelegate/FilterNotice.qml:47
 #, kde-format
 msgid "<b>Filtered</b><br /> %1"
-msgstr ""
+msgstr "<b>Filtrováno</b><br /> %1"
 
 #: qml/PostDelegate/FilterNotice.qml:54
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Anyway"
-msgstr ""
+msgstr "Zobrazit i tak"
 
 #: qml/PostDelegate/InformationBar.qml:34
 #, kde-format
 msgctxt "Posted on 26 March 2024 Tuesday 20:43:18 +03"
 msgid "Posted on %1"
-msgstr ""
+msgstr "Publikováno na %1"
 
 #: qml/PostDelegate/InformationBar.qml:64
 #: qml/PostDelegate/InformationBar.qml:72
@@ -3772,7 +3770,7 @@ msgstr[2] "%1 oblíbených"
 #: qml/PostDelegate/InformationBar.qml:115
 #, kde-format
 msgid "No boosts"
-msgstr ""
+msgstr "Žádné boosty"
 
 #: qml/PostDelegate/InformationBar.qml:117
 #, kde-format
@@ -3785,15 +3783,15 @@ msgstr[2] "%1 boostů"
 #: qml/PostDelegate/InformationBar.qml:139
 #, kde-format
 msgid "No quotes"
-msgstr ""
+msgstr "Žádné citace"
 
 #: qml/PostDelegate/InformationBar.qml:141
 #, kde-format
 msgid "%1 quote"
 msgid_plural "%1 quotes"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%1 citace"
+msgstr[1] "%1 citace"
+msgstr[2] "%1 citací"
 
 #: qml/PostDelegate/LinkMenu.qml:33 qml/PostDelegate/PostMenu.qml:61
 #, kde-format
@@ -3804,7 +3802,7 @@ msgstr "Kopírovat odkaz"
 #: qml/PostDelegate/LinkMenu.qml:36 qml/PostDelegate/PostMenu.qml:64
 #, kde-format
 msgid "Post link copied."
-msgstr ""
+msgstr "Odkaz na příspěvek byl zkopírován."
 
 #: qml/PostDelegate/LinkPreview.qml:27
 #, kde-format
@@ -3817,7 +3815,7 @@ msgctxt ""
 "@info:label 'More from [this author]', where we put the user's avatar and "
 "name next to this label"
 msgid "More from"
-msgstr ""
+msgstr "Více od"
 
 #: qml/PostDelegate/LinkPreview.qml:241
 #, kde-format
@@ -3834,7 +3832,7 @@ msgstr "Alt"
 #: qml/PostDelegate/MediaContainer.qml:82
 #, kde-format
 msgid "Text description available"
-msgstr ""
+msgstr "Dostupný textový popis"
 
 #: qml/PostDelegate/MediaContainer.qml:90
 #, kde-format
@@ -3850,25 +3848,25 @@ msgstr "Video"
 #, kde-format
 msgctxt "@title"
 msgid "Media Description"
-msgstr ""
+msgstr "Popis média"
 
 #: qml/PostDelegate/PostContent.qml:29
 #, kde-format
 msgctxt "@info"
 msgid "Post content"
-msgstr ""
+msgstr "Obsah příspěvku"
 
 #: qml/PostDelegate/PostDelegate.qml:172
 #, kde-format
 msgctxt "@label"
 msgid "Pinned Post"
-msgstr ""
+msgstr "Připnuté příspěvky"
 
 #: qml/PostDelegate/PostDelegate.qml:241
 #, kde-format
 msgctxt "@title"
 msgid "Delete Post"
-msgstr ""
+msgstr "Smazat příspěvek"
 
 #: qml/PostDelegate/PostDelegate.qml:242
 #, kde-format
@@ -3880,7 +3878,7 @@ msgstr "Opravdu si přejete smazat tento příspěvek?"
 #, kde-format
 msgctxt "@title"
 msgid "Delete & Re-draft Post"
-msgstr ""
+msgstr "Smazat a znovu napsat příspěvek"
 
 #: qml/PostDelegate/PostDelegate.qml:258
 #, kde-format
@@ -3889,6 +3887,7 @@ msgid ""
 "Are you sure you want to redraft this post? This will delete the original "
 "post."
 msgstr ""
+"Opravdu chcete tento příspěvek znovu napsat? Tím se původní příspěvek smaže."
 
 #: qml/PostDelegate/PostDelegate.qml:412
 #, kde-format
@@ -3899,12 +3898,12 @@ msgstr "Odpovědět"
 #: qml/PostDelegate/PostDelegate.qml:439
 #, kde-format
 msgid "Cannot boost direct messages"
-msgstr ""
+msgstr "Přímou zprávu nelze boostnout"
 
 #: qml/PostDelegate/PostDelegate.qml:441
 #, kde-format
 msgid "Cannot boost private posts"
-msgstr ""
+msgstr "Soukromou zprávu nelze boostnout"
 
 #: qml/PostDelegate/PostDelegate.qml:443
 #, kde-format
@@ -3915,7 +3914,7 @@ msgstr "Boostnout"
 #: qml/PostDelegate/PostDelegate.qml:461
 #, kde-format
 msgid "Boosted"
-msgstr ""
+msgstr "Boostnuto"
 
 #: qml/PostDelegate/PostDelegate.qml:461
 #, kde-format
@@ -3931,7 +3930,7 @@ msgstr "Oblíbené"
 #: qml/PostDelegate/PostDelegate.qml:484
 #, kde-format
 msgid "Favorited"
-msgstr ""
+msgstr "Oblíbené"
 
 #: qml/PostDelegate/PostDelegate.qml:484
 #, kde-format
@@ -3965,18 +3964,20 @@ msgid ""
 "This post has been marked private. Some posts may be missing because its "
 "replies are marked as private by default."
 msgstr ""
+"Tento příspěvek byl označen jako soukromý. Některé příspěvky mohou chybět, "
+"protože jejich odpovědi jsou ve výchozím nastavení označeny jako soukromé."
 
 #: qml/PostDelegate/PostInfoBar.qml:26
 #, kde-format
 msgctxt "@info"
 msgid "Post Author"
-msgstr ""
+msgstr "Autor příspěvku"
 
 #: qml/PostDelegate/PostInfoBar.qml:55
 #, kde-format
 msgctxt "Edited on <datetime>"
 msgid "Edited on %1"
-msgstr ""
+msgstr "Upraveno %1"
 
 #: qml/PostDelegate/PostInfoBar.qml:65
 #, kde-format
@@ -3993,18 +3994,18 @@ msgstr "Probíhá načítání…"
 #: qml/PostDelegate/PostInteractionLabel.qml:63
 #, kde-format
 msgid "%1 boosted"
-msgstr ""
+msgstr "%1 boostnul"
 
 #: qml/PostDelegate/PostInteractionLabel.qml:65
 #, kde-format
 msgid "In reply to %1"
-msgstr ""
+msgstr "V odpovědi na %1"
 
 #: qml/PostDelegate/PostMenu.qml:45
 #, kde-format
 msgctxt "@action:inmenu 'Thread' is a series of posts."
 msgid "Open Thread"
-msgstr ""
+msgstr "Otevřít vlákno"
 
 #: qml/PostDelegate/PostMenu.qml:70
 #, kde-format
@@ -4015,7 +4016,7 @@ msgstr "Kopírovat text"
 #: qml/PostDelegate/PostMenu.qml:74
 #, kde-format
 msgid "Post text copied."
-msgstr ""
+msgstr "Text příspěvku zkopírován."
 
 #: qml/PostDelegate/PostMenu.qml:87
 #, kde-format
@@ -4033,19 +4034,19 @@ msgstr "Odpovědět jako…"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Favorite as…"
-msgstr ""
+msgstr "Do oblíbených…"
 
 #: qml/PostDelegate/PostMenu.qml:111
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Boost as…"
-msgstr ""
+msgstr "Boostnout…"
 
 #: qml/PostDelegate/PostMenu.qml:119
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Bookmark as…"
-msgstr ""
+msgstr "Do záložek…"
 
 #: qml/PostDelegate/PostMenu.qml:132
 #, kde-format
@@ -4063,19 +4064,19 @@ msgstr "Připnout na profilu"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Unmute Conversation"
-msgstr ""
+msgstr "Zrušit ztlumení konverzace"
 
 #: qml/PostDelegate/PostMenu.qml:144
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Mute Conversation"
-msgstr ""
+msgstr "Ztlumit konverzaci"
 
 #: qml/PostDelegate/PostMenu.qml:154
 #, kde-format
 msgctxt "@action:inmenu Unmute account"
 msgid "Unmute @%1"
-msgstr "Povolit zvuk @%1"
+msgstr "Zrušit ztlumení @%1"
 
 #: qml/PostDelegate/PostMenu.qml:156
 #, kde-format
@@ -4109,7 +4110,7 @@ msgstr "Smazat…"
 #: qml/PostDelegate/PostMenu.qml:220
 #, kde-format
 msgid "Delete & Re-draft…"
-msgstr ""
+msgstr "Smazat a znovu napsat…"
 
 #: qml/PostDelegate/PostPoll.qml:41
 #, kde-format
@@ -4120,12 +4121,12 @@ msgstr "%1%"
 #: qml/PostDelegate/PostPoll.qml:60
 #, kde-format
 msgid "You voted for this option"
-msgstr ""
+msgstr "Hlasovali jste pro tuto volbu"
 
 #: qml/PostDelegate/PostPoll.qml:83
 #, kde-format
 msgid "(No votes)"
-msgstr ""
+msgstr "(Žádné hlasy)"
 
 #: qml/PostDelegate/PostPoll.qml:128
 #, kde-format
@@ -4153,7 +4154,7 @@ msgstr "Značka"
 #, kde-format
 msgctxt "@action:button expand the number of shown tags"
 msgid "…and %1 more"
-msgstr "...a %1 další!"
+msgstr "...a %1 dalších"
 
 #: qml/PostDelegate/QuotePost.qml:66
 #, kde-format
@@ -4920,7 +4921,7 @@ msgstr ""
 #: qml/Settings/NotificationsPage.qml:219
 #, kde-format
 msgid "Quotes"
-msgstr "Uvozovky"
+msgstr "Citace"
 
 #: qml/Settings/NotificationsPage.qml:220
 #, kde-format
@@ -4960,7 +4961,7 @@ msgstr ""
 #: qml/Settings/NotificationsPage.qml:291
 #, kde-format
 msgid "New follow requests"
-msgstr ""
+msgstr "Nové požadavky na sledování"
 
 #: qml/Settings/NotificationsPage.qml:292
 #, kde-format
@@ -4980,7 +4981,7 @@ msgstr ""
 #: qml/Settings/NotificationsPage.qml:327
 #, kde-format
 msgid "Polls"
-msgstr "Anketa"
+msgstr "Ankety"
 
 #: qml/Settings/NotificationsPage.qml:328
 #, kde-format
@@ -5000,7 +5001,7 @@ msgstr ""
 #: qml/Settings/NotificationsPage.qml:363
 #, kde-format
 msgid "Server Sign-ups"
-msgstr ""
+msgstr "Registrace serveru"
 
 #: qml/Settings/NotificationsPage.qml:364
 #, kde-format
@@ -5010,7 +5011,7 @@ msgstr ""
 #: qml/Settings/NotificationsPage.qml:383
 #, kde-format
 msgid "Server Reports"
-msgstr ""
+msgstr "Hlášení serveru"
 
 #: qml/Settings/NotificationsPage.qml:384
 #, kde-format
@@ -5020,7 +5021,7 @@ msgstr ""
 #: qml/Settings/NotificationsPage.qml:403
 #, kde-format
 msgid "Severed Relationships"
-msgstr ""
+msgstr "Porušené vztahy"
 
 #: qml/Settings/NotificationsPage.qml:404
 #, kde-format
@@ -5048,7 +5049,7 @@ msgstr "Zobrazované jméno"
 #: qml/Settings/ProfileEditor.qml:78
 #, kde-format
 msgid "Bio"
-msgstr ""
+msgstr "Bio"
 
 #: qml/Settings/ProfileEditor.qml:104
 #, kde-format
@@ -5121,7 +5122,7 @@ msgstr "Vzhled"
 #: qml/Settings/TokodonConfigurationView.qml:30
 #, kde-format
 msgid "Safety"
-msgstr ""
+msgstr "Zabezpečení"
 
 #: qml/Settings/TokodonConfigurationView.qml:37
 #, kde-format
@@ -5182,7 +5183,7 @@ msgstr "Přestat sledovat"
 #, kde-format
 msgctxt "@action:button Deny follow request"
 msgid "Remove Follower"
-msgstr ""
+msgstr "Odstranit sledujícího"
 
 #: qml/SocialGraphPage.qml:93
 #, kde-format
@@ -5379,7 +5380,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Write a New Post"
-msgstr ""
+msgstr "Napsat nový příspěvek"
 
 #: qml/StatusComposer/StatusComposer.qml:74
 #, kde-format
@@ -5631,7 +5632,7 @@ msgstr "Domů (%1)"
 #: qml/TimelinePage.qml:115
 #, kde-format
 msgid "Show Boosts"
-msgstr ""
+msgstr "Zobrazit boosty"
 
 #: qml/TimelinePage.qml:122
 #, fuzzy, kde-format
@@ -5642,7 +5643,7 @@ msgstr "Uvozovky"
 #: qml/TimelinePage.qml:129
 #, kde-format
 msgid "Show Replies"
-msgstr ""
+msgstr "Zobrazit odpovědi"
 
 #: qml/TimelinePage.qml:150
 #, kde-format
@@ -5753,7 +5754,7 @@ msgstr "Přidat účet"
 #, kde-format
 msgctxt "@action:button"
 msgid "Write a New Post"
-msgstr ""
+msgstr "Napsat nový příspěvek"
 
 #: tokodonapplication.cpp:98
 #, kde-format
@@ -5870,7 +5871,7 @@ msgstr "Vlastní"
 #, kde-format
 msgctxt "'Smileys' is a category of emoji"
 msgid "Smileys"
-msgstr "Smajlíky"
+msgstr "Emotikony"
 
 #: utils/emojimodel.cpp:154
 #, kde-format
@@ -5918,7 +5919,7 @@ msgstr "Symboly"
 #, kde-format
 msgctxt "'Flags' is a category of emoji"
 msgid "Flags"
-msgstr "Příznaky"
+msgstr "Vlajky"
 
 #: utils/filetransferjob.cpp:36
 #, kde-format
