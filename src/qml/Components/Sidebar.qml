@@ -5,7 +5,6 @@
 
 import QtQuick
 import org.kde.kirigami as Kirigami
-import org.kde.kirigami.private.polyfill // remove once we depend on Qt 6.9
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import QtQml.Models
