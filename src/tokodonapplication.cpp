@@ -181,6 +181,11 @@ void TokodonApplication::setupActions()
     accountSwitcherAction->setIcon(QIcon::fromTheme(QStringLiteral("user")));
     mainCollection()->setDefaultShortcut(accountSwitcherAction, QKeySequence(Qt::CTRL | Qt::Key_U));
 
+    auto reloadAction = mainCollection()->addAction(u"reload_current_page"_s, this, &TokodonApplication::reloadCurrentPage);
+    reloadAction->setText(i18nc("@action:button", "Reload"));
+    reloadAction->setIcon(QIcon::fromTheme(QStringLiteral("view-refresh")));
+    mainCollection()->setDefaultShortcut(reloadAction, QKeySequence(Qt::CTRL | Qt::Key_R));
+
     m_dummyAction = new QAction();
     m_dummyAction->setCheckable(true);
     m_dummyAction->setActionGroup(pagesGroup);

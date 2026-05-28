@@ -133,6 +133,10 @@ StatefulApp.StatefulWindow {
         fromQAction: root.application.action('open_kcommand_bar')
     }
 
+    Kirigami.Action {
+        fromQAction: root.application.action('reload_current_page')
+    }
+
     Loader {
         id: crossActionDialogLoader
 
@@ -431,6 +435,18 @@ StatefulApp.StatefulWindow {
             root.pageStack.push(Qt.createComponent("org.kde.tokodon", "ConversationPage"), {
                 pageId: "conversations",
             });
+        }
+
+        function onReloadCurrentPage(): void {
+            const currentItem = root.pageStack.currentItem;
+            if (!currentItem) {
+                return;
+            }
+            if (typeof currentItem.reload === 'function') {
+                currentItem.reload();
+            } else if (currentItem.supportsRefreshing) {
+                currentItem.refreshing = true;
+            }
         }
 
         function onOpenAccountSwitcher(): void {

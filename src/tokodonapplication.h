@@ -49,6 +49,7 @@ Q_SIGNALS:
     void openProfile();
     void openAccountSwitcher();
     void searchFor(const QString &query);
+    void reloadCurrentPage();
 
 private:
     void setupActions() override;
