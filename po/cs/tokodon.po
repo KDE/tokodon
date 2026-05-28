@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-10 02:41+0000\n"
-"PO-Revision-Date: 2026-05-26 23:53+0200\n"
+"PO-Revision-Date: 2026-05-27 19:49+0200\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -4030,7 +4030,7 @@ msgstr "Zobrazit výsledky"
 #: content/ui/PostDelegate/PostPoll.qml:156
 #, kde-format
 msgid "Poll has closed"
-msgstr ""
+msgstr "Anketa byla ukončena"
 
 #: content/ui/PostDelegate/PostTags.qml:50
 #, kde-format
@@ -4052,7 +4052,7 @@ msgstr "Příspěvky od %1"
 #: content/ui/PostDelegate/QuotePost.qml:85
 #, kde-format
 msgid "Quoted post"
-msgstr ""
+msgstr "Citovaný příspěvek"
 
 #: content/ui/PostDelegate/QuotePost.qml:154
 #, kde-format
@@ -4070,7 +4070,7 @@ msgstr "Hlasitost"
 #, kde-format
 msgctxt "Last read on this date"
 msgid "Last read on %1"
-msgstr ""
+msgstr "Naposledy zobrazeno %1"
 
 #: content/ui/ReportDialog.qml:22
 #, kde-format
@@ -4088,13 +4088,13 @@ msgstr "Nahlásit uživatele"
 #, kde-format
 msgctxt "@title"
 msgid "Reason for reporting this post"
-msgstr ""
+msgstr "Důvod nahlášení tohoto příspěvku"
 
 #: content/ui/ReportDialog.qml:45
 #, kde-format
 msgctxt "@title"
 msgid "Reason for reporting this user"
-msgstr ""
+msgstr "Důvod nahlášení tohoto uživatele"
 
 #: content/ui/ReportDialog.qml:65
 #, kde-format
@@ -4111,7 +4111,7 @@ msgstr "Zrušit"
 #: content/ui/SearchDelegate.qml:102
 #, kde-format
 msgid "Hashtag"
-msgstr ""
+msgstr "Hashtag"
 
 #: content/ui/SearchPage.qml:18
 #, kde-format
@@ -4129,7 +4129,7 @@ msgstr "Vytáhnout"
 #, kde-format
 msgctxt "@info"
 msgid "Pop out search results to a full page"
-msgstr ""
+msgstr "Zobrazit výsledky vyhledávání na celé stránce"
 
 #: content/ui/SearchView.qml:61
 #, kde-format
@@ -4144,7 +4144,7 @@ msgstr "Žádné výsledky hledání"
 #: content/ui/SearchView.qml:77
 #, kde-format
 msgid "Search for users, tags and posts"
-msgstr ""
+msgstr "Vyhledávání uživatelů, značek a příspěvků"
 
 #: content/ui/ServerInformationPage.qml:25
 #, kde-format
@@ -4203,7 +4203,7 @@ msgstr "Prosím, vyberte soubor"
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to log out of %1?"
-msgstr ""
+msgstr "Opravdu se chcete odhlásit z %1?"
 
 #: content/ui/Settings/AccountPage.qml:70
 #, kde-format
@@ -4218,7 +4218,7 @@ msgstr "Účet"
 #: content/ui/Settings/AccountPage.qml:129
 #, kde-format
 msgid "Require approval for new followers"
-msgstr ""
+msgstr "Vyžadovat schválení nových sledujících"
 
 #: content/ui/Settings/AccountPage.qml:130
 #, kde-format
@@ -4227,37 +4227,44 @@ msgid ""
 "manually approve or deny new ones. You always have the option to force "
 "someone to unfollow you."
 msgstr ""
+"Ve výchozím nastavení jsou noví sledující automaticky přijímáni. Tuto "
+"možnost zrušte, pokud chcete nové sledující schvalovat nebo odmítat ručně. "
+"Vždy máte možnost někoho donutit, aby vás přestal sledovat."
 
 #: content/ui/Settings/AccountPage.qml:139
 #, kde-format
 msgid "Is automated"
-msgstr ""
+msgstr "Je automatizovaný"
 
 #: content/ui/Settings/AccountPage.qml:140
 #, kde-format
 msgid ""
 "Whether to publicly mark this account as doing any kind of automated actions."
 msgstr ""
+"Zda tento účet veřejně označit jako provádějící jakékoli automatizované akce."
 
 #: content/ui/Settings/AccountPage.qml:149
 #, kde-format
 msgid "Feature profile and posts"
-msgstr ""
+msgstr "Zvýrazňovat profil a příspěvky"
 
 #: content/ui/Settings/AccountPage.qml:150
 #, kde-format
 msgid "Your public profile and posts may be featured to other users."
 msgstr ""
+"Váš veřejný profil a vaše příspěvky mohou být zobrazeny ostatním uživatelům."
 
 #: content/ui/Settings/AccountPage.qml:159
 #, kde-format
 msgid "Publicly list follows and followers"
-msgstr ""
+msgstr "Zobrazit seznam sledovaných a sledujících"
 
 #: content/ui/Settings/AccountPage.qml:160
 #, kde-format
 msgid "By default everyone you follow and everyone who follows you is public."
 msgstr ""
+"Ve výchozím nastavení jsou všichni, koho sledujete, a všichni, kdo sledují "
+"vás, veřejně viditelní."
 
 #: content/ui/Settings/AccountPage.qml:169
 #, kde-format
@@ -4269,7 +4276,7 @@ msgstr "Automaticky označovat odeslané soubory jako citlivé"
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Include public posts in search results"
-msgstr ""
+msgstr "Zahrnout veřejné příspěvky do výsledků vyhledávání"
 
 #: content/ui/Settings/AccountPage.qml:187
 #, kde-format
@@ -4305,12 +4312,13 @@ msgstr "Soukromý"
 #, kde-format
 msgctxt "@abel Account preferences"
 msgid "Open Server in Browser"
-msgstr ""
+msgstr "Otevřít server v prohlížeči"
 
 #: content/ui/Settings/AccountPage.qml:231
 #, kde-format
 msgid "Some settings can only be configured on your server's website."
 msgstr ""
+"Některá nastavení lze provést pouze na webových stránkách vašeho serveru."
 
 #: content/ui/Settings/AppearancePage.qml:18
 #, kde-format
@@ -4326,12 +4334,12 @@ msgstr "Barevný motiv"
 #: content/ui/Settings/AppearancePage.qml:44
 #, kde-format
 msgid "Pop out the post composer by default"
-msgstr ""
+msgstr "Ve výchozím nastavení otevřít editor příspěvků"
 
 #: content/ui/Settings/AppearancePage.qml:58
 #, kde-format
 msgid "Continue reading where you last left off"
-msgstr ""
+msgstr "Pokračovat ve čtení tam, kde jste přestali"
 
 #: content/ui/Settings/AppearancePage.qml:59
 #, kde-format
@@ -4339,11 +4347,14 @@ msgid ""
 "If checked, the Home timeline will begin where you last read. The position "
 "in the timeline is shared with other clients."
 msgstr ""
+"Pokud je tato možnost zaškrtnuta, časová osa na úvodní stránce se načte od "
+"místa, kde jste naposledy přestali číst. Poloha na časové ose se sdílí s "
+"ostatními klienty."
 
 #: content/ui/Settings/AppearancePage.qml:72
 #, kde-format
 msgid "Auto-update timelines"
-msgstr ""
+msgstr "Automatická aktualizace časových os"
 
 #: content/ui/Settings/AppearancePage.qml:73
 #, kde-format
@@ -4351,12 +4362,14 @@ msgid ""
 "If checked, Tokodon will automatically update certain timelines as new posts "
 "come in."
 msgstr ""
+"Pokud je tato možnost zaškrtnuta, Tokodon bude automaticky aktualizovat "
+"určité časové osy, jakmile se objeví nové příspěvky."
 
 #: content/ui/Settings/AppearancePage.qml:86
 #, kde-format
 msgctxt "@option:check Boosting means to repost, or retweet"
 msgid "Ask before boosting"
-msgstr ""
+msgstr "Zeptat se před boostnutím"
 
 #: content/ui/Settings/AppearancePage.qml:97
 #, kde-format
@@ -4367,12 +4380,12 @@ msgstr "Příspěvky"
 #: content/ui/Settings/AppearancePage.qml:103
 #, kde-format
 msgid "Show number of favorites and boosts"
-msgstr ""
+msgstr "Zobrazit počet oblíbených a boostů"
 
 #: content/ui/Settings/AppearancePage.qml:118
 #, kde-format
 msgid "Show link previews"
-msgstr ""
+msgstr "Zobrazit náhledy odkazů"
 
 #: content/ui/Settings/AppearancePage.qml:133
 #, kde-format
@@ -4393,7 +4406,7 @@ msgstr "Média"
 #: content/ui/Settings/AppearancePage.qml:156
 #, kde-format
 msgid "Crop images on the timeline"
-msgstr ""
+msgstr "Oříznout obrázky na časové ose"
 
 #: content/ui/Settings/AppearancePage.qml:157
 #, kde-format
@@ -4401,6 +4414,8 @@ msgid ""
 "If unchecked, posts with only one image attached will be uncropped and shown "
 "in full."
 msgstr ""
+"Pokud tuto možnost nezaškrtnete, příspěvky s pouze jedním přiloženým "
+"obrázkem se nezkracují a zobrazují se v plné velikosti."
 
 #: content/ui/Settings/AppearancePage.qml:171
 #, kde-format
@@ -4423,7 +4438,7 @@ msgstr "Odblokovat"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Blocked Domains"
-msgstr ""
+msgstr "Žádné blokované domény"
 
 #: content/ui/Settings/EditFilterPage.qml:30
 #, kde-format
@@ -4454,12 +4469,13 @@ msgstr "Kontexty"
 msgctxt "@info"
 msgid "Select one or more contexts where this filter should apply:"
 msgstr ""
+"Vyberte jeden nebo více kontextů, na které se má tento filtr vztahovat:"
 
 #: content/ui/Settings/EditFilterPage.qml:101
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Home and Lists"
-msgstr ""
+msgstr "Domovská stránka a seznamy"
 
 #: content/ui/Settings/EditFilterPage.qml:106
 #, kde-format
@@ -4471,7 +4487,7 @@ msgstr "Upozornění"
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Public Timelines"
-msgstr ""
+msgstr "Veřejné časové osy"
 
 #: content/ui/Settings/EditFilterPage.qml:116
 #, kde-format
@@ -4495,13 +4511,13 @@ msgstr "Akce"
 #, kde-format
 msgctxt "@label:radiobutton"
 msgid "Hide with Content Notice"
-msgstr ""
+msgstr "Skrýt s upozorněním o obsahu"
 
 #: content/ui/Settings/EditFilterPage.qml:140
 #, kde-format
 msgctxt "@label:radiobutton"
 msgid "Hide Media with Content Notice"
-msgstr ""
+msgstr "Skrýt média s upozorněním o obsahu"
 
 #: content/ui/Settings/EditFilterPage.qml:147
 #, kde-format
@@ -4561,13 +4577,13 @@ msgstr "Smazat"
 #, kde-format
 msgctxt "@title"
 msgid "Deleting Filter"
-msgstr ""
+msgstr "Mazání filtru"
 
 #: content/ui/Settings/EditFilterPage.qml:250
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to delete this filter?"
-msgstr ""
+msgstr "Opravdu chcete tento filtr smazat?"
 
 #: content/ui/Settings/EditProfilePage.qml:21
 #, kde-format
@@ -4667,12 +4683,13 @@ msgstr "Použít"
 #: content/ui/Settings/NotificationsPage.qml:29
 #, kde-format
 msgid "Enable notifications for this account"
-msgstr ""
+msgstr "Zapnout upozornění pro tento účet"
 
 #: content/ui/Settings/NotificationsPage.qml:33
 #, kde-format
 msgid "Notifications can appear even when Tokodon isn't running."
 msgstr ""
+"Upozornění se mohou zobrazovat i tehdy, když aplikace Tokodon není spuštěna."
 
 #: content/ui/Settings/NotificationsPage.qml:35
 #, kde-format
@@ -4680,17 +4697,19 @@ msgid ""
 "Push notifications are available but could not be enabled. Please log out "
 "and log back in."
 msgstr ""
+"Push notifikace jsou k dispozici, ale nepodařilo se je aktivovat. Odhlaste "
+"se a znovu se přihlaste."
 
 #: content/ui/Settings/NotificationsPage.qml:38
 #, kde-format
 msgid "Notifications will only appear when Tokodon is running."
-msgstr ""
+msgstr "Upozornění se zobrazí pouze tehdy, když je spuštěna aplikace Tokodon."
 
 #: content/ui/Settings/NotificationsPage.qml:51
 #, kde-format
 msgctxt "@title:group"
 msgid "Filtering Policy"
-msgstr ""
+msgstr "Zásady filtrování"
 
 #: content/ui/Settings/NotificationsPage.qml:61
 #, kde-format
@@ -4714,43 +4733,43 @@ msgstr "Ignorovat"
 #, kde-format
 msgctxt "@label Notification preferences"
 msgid "People you don't follow"
-msgstr ""
+msgstr "Lidé, které nesledujete"
 
 #: content/ui/Settings/NotificationsPage.qml:78
 #, kde-format
 msgctxt "@label Notification preferences"
 msgid "Until you manually approve them."
-msgstr ""
+msgstr "Dokud je ručně neschválíte."
 
 #: content/ui/Settings/NotificationsPage.qml:84
 #, kde-format
 msgctxt "@label Notification preferences"
 msgid "People not following you"
-msgstr ""
+msgstr "Lidé, kteří vás nesledují"
 
 #: content/ui/Settings/NotificationsPage.qml:85
 #, kde-format
 msgctxt "@label Notification preferences"
 msgid "Including people who have been following you fewer than 3 days."
-msgstr ""
+msgstr "Včetně lidí, kteří vás sledují méně než 3 dny."
 
 #: content/ui/Settings/NotificationsPage.qml:91
 #, kde-format
 msgctxt "@label Notification preferences"
 msgid "New accounts"
-msgstr ""
+msgstr "Nové účty"
 
 #: content/ui/Settings/NotificationsPage.qml:92
 #, kde-format
 msgctxt "@label Notification preferences"
 msgid "Created within the past 30 days."
-msgstr ""
+msgstr "Vytvořeno během posledních 30 dnů."
 
 #: content/ui/Settings/NotificationsPage.qml:98
 #, kde-format
 msgctxt "@label Notification preferences"
 msgid "Unsolicited conversations"
-msgstr ""
+msgstr "Nevyžádané konverzace"
 
 #: content/ui/Settings/NotificationsPage.qml:99
 #, kde-format
@@ -4759,18 +4778,20 @@ msgid ""
 "Filtered unless it's in reply to your own mention or if you follow the "
 "sender."
 msgstr ""
+"Zprávy budou skryty, pokud se nejedná o odpověď na zmínku o vás nebo pokud "
+"odesílatele nesledujete."
 
 #: content/ui/Settings/NotificationsPage.qml:105
 #, kde-format
 msgctxt "@label Notification preferences"
 msgid "Moderated accounts"
-msgstr ""
+msgstr "Moderované účty"
 
 #: content/ui/Settings/NotificationsPage.qml:106
 #, kde-format
 msgctxt "@label Notification preferences"
 msgid "Limited by server moderators."
-msgstr ""
+msgstr "Omezeno moderátory serveru."
 
 #: content/ui/Settings/NotificationsPage.qml:113
 #, kde-format
@@ -4782,13 +4803,13 @@ msgstr "Události"
 #, kde-format
 msgctxt "@action:button"
 msgid "Hide in All"
-msgstr ""
+msgstr "Skrýt ve všech"
 
 #: content/ui/Settings/NotificationsPage.qml:154
 #, kde-format
 msgctxt "@action:button"
 msgid "Show in All"
-msgstr ""
+msgstr "Zobrazit ve všech"
 
 #: content/ui/Settings/NotificationsPage.qml:173
 #, kde-format
@@ -4812,6 +4833,7 @@ msgstr "Zmínky"
 msgid ""
 "When someone mentions you in a new post, or replies to one of your threads."
 msgstr ""
+"Když vás někdo zmíní v novém příspěvku nebo odpoví na jedno z vašich témat."
 
 #: content/ui/Settings/NotificationsPage.qml:216
 #, kde-format
@@ -4821,7 +4843,7 @@ msgstr "Citace"
 #: content/ui/Settings/NotificationsPage.qml:217
 #, kde-format
 msgid "When someone quotes you in a new post"
-msgstr ""
+msgstr "Když vás někdo cituje v novém příspěvku"
 
 #: content/ui/Settings/NotificationsPage.qml:231
 #, kde-format
@@ -4832,6 +4854,7 @@ msgstr "Stavy"
 #, kde-format
 msgid "When a user you have notifications turned on for makes a new post."
 msgstr ""
+"Když uživatel, u kterého máte zapnuté upozornění, zveřejní nový příspěvek."
 
 #: content/ui/Settings/NotificationsPage.qml:246
 #, kde-format
@@ -4841,7 +4864,7 @@ msgstr "Boosty"
 #: content/ui/Settings/NotificationsPage.qml:247
 #, kde-format
 msgid "When someone boosted one of your posts."
-msgstr ""
+msgstr "Když někdo boostne jeden z vašich příspěvků."
 
 #: content/ui/Settings/NotificationsPage.qml:261
 #, kde-format
@@ -4851,7 +4874,7 @@ msgstr "Noví sledující"
 #: content/ui/Settings/NotificationsPage.qml:262
 #, kde-format
 msgid "When someone follows you."
-msgstr ""
+msgstr "Když vás někdo sleduje."
 
 #: content/ui/Settings/NotificationsPage.qml:276
 #, kde-format
@@ -4861,7 +4884,7 @@ msgstr "Nové požadavky na sledování"
 #: content/ui/Settings/NotificationsPage.qml:277
 #, kde-format
 msgid "When an account who requires manual approval wants to follow you."
-msgstr ""
+msgstr "Když vás chce sledovat účet, který vyžaduje ruční schválení."
 
 #: content/ui/Settings/NotificationsPage.qml:291
 #, kde-format
