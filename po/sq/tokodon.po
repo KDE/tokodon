@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-28 00:43+0000\n"
+"POT-Creation-Date: 2026-05-29 00:43+0000\n"
 "PO-Revision-Date: 2026-01-14 19:44+0200\n"
 "Last-Translator: Besnik Bleta <besnik@programeshqip.org>\n"
 "Language-Team: Albanian <kde-i18n-sq@kde.org>\n"
@@ -744,7 +744,7 @@ msgctxt "@action:button"
 msgid "Go to Profile"
 msgstr "Kalo te Profili"
 
-#: qml/AccountHeader.qml:159
+#: qml/AccountHeader.qml:160
 #, kde-format
 msgctxt ""
 "'Mutual' is the common English word used in social media platforms describe "
@@ -753,170 +753,183 @@ msgctxt ""
 msgid "Mutual"
 msgstr "Reciprokë"
 
-#: qml/AccountHeader.qml:159
+#: qml/AccountHeader.qml:160
 #, kde-format
 msgid "Follows you"
 msgstr "Ju ndjek"
 
-#: qml/AccountHeader.qml:180
+#: qml/AccountHeader.qml:181
 #, kde-format
 msgid "Bot"
 msgstr "Robot"
 
-#: qml/AccountHeader.qml:291
+#: qml/AccountHeader.qml:279
+#, fuzzy, kde-format
+#| msgid "Copy Image"
+msgctxt "@action:inmenu Copy user handle such as @foo@bar.com"
+msgid "Copy Handle"
+msgstr "Kopjo Figurën"
+
+#: qml/AccountHeader.qml:284
+#, fuzzy, kde-format
+#| msgid "Profile link copied."
+msgid "Profile handle copied."
+msgstr "Lidhja e profilit u kopjua."
+
+#: qml/AccountHeader.qml:309
 #, kde-format
 msgid "Follow Requested"
 msgstr "U Kërkua Ndjekje"
 
-#: qml/AccountHeader.qml:294
+#: qml/AccountHeader.qml:312
 #, kde-format
 msgid "Unfollow"
 msgstr "Mos e ndiq"
 
-#: qml/AccountHeader.qml:296
+#: qml/AccountHeader.qml:314
 #, kde-format
 msgid "Follow"
 msgstr "Ndiqeni"
 
-#: qml/AccountHeader.qml:321
+#: qml/AccountHeader.qml:339
 #, kde-format
 msgid "Stop notifying me when %1 posts."
 msgstr "Resht së njoftuari mua, kur poston %1."
 
-#: qml/AccountHeader.qml:323
+#: qml/AccountHeader.qml:341
 #, kde-format
 msgid "Notify me when %1 posts."
 msgstr "Njoftomë, kur poston %1."
 
-#: qml/AccountHeader.qml:338
+#: qml/AccountHeader.qml:356
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show a QR code for this account"
 msgstr "Shfaq një kod QR për këtë llogari"
 
-#: qml/AccountHeader.qml:351
+#: qml/AccountHeader.qml:369
 #, kde-format
 msgid "Mention…"
 msgstr "Përmendje…"
 
-#: qml/AccountHeader.qml:357
+#: qml/AccountHeader.qml:375
 #, kde-format
 msgid "Start a Conversation…"
 msgstr "Nisni një Bisedë…"
 
-#: qml/AccountHeader.qml:366
+#: qml/AccountHeader.qml:384
 #, kde-format
 msgid "Hide Boosts from %1"
 msgstr "Fshih Përforcime nga %1"
 
-#: qml/AccountHeader.qml:368
+#: qml/AccountHeader.qml:386
 #, kde-format
 msgid "Show Boosts from %1"
 msgstr "Shfaq Përforcime nga %1"
 
-#: qml/AccountHeader.qml:384
+#: qml/AccountHeader.qml:402
 #, kde-format
 msgid "Stop Featuring This Profile"
 msgstr "Resht së Pasqyruari Këtë Profil te i Juaji"
 
-#: qml/AccountHeader.qml:386
+#: qml/AccountHeader.qml:404
 #, kde-format
 msgid "Feature This Profile"
 msgstr "Pasqyrojeni Këtë Profil Te i Juaji"
 
-#: qml/AccountHeader.qml:402
+#: qml/AccountHeader.qml:420
 #, kde-format
 msgid "Unmute"
 msgstr "Ktheji zërin"
 
-#: qml/AccountHeader.qml:404
+#: qml/AccountHeader.qml:422
 #, kde-format
 msgid "Mute"
 msgstr "Hiqi zërin"
 
-#: qml/AccountHeader.qml:420
+#: qml/AccountHeader.qml:438
 #, kde-format
 msgid "Unblock"
 msgstr "Zhbllokoje"
 
-#: qml/AccountHeader.qml:422
+#: qml/AccountHeader.qml:440
 #, kde-format
 msgid "Block"
 msgstr "Bllokoje"
 
-#: qml/AccountHeader.qml:436 qml/PostDelegate/PostMenu.qml:192
+#: qml/AccountHeader.qml:454 qml/PostDelegate/PostMenu.qml:192
 #, kde-format
 msgctxt "@action:inmenu Report this post"
 msgid "Report…"
 msgstr "Raportojeni…"
 
-#: qml/AccountHeader.qml:442
+#: qml/AccountHeader.qml:460
 #, kde-format
 msgid "Edit Profile"
 msgstr "Përpunoni Profil"
 
-#: qml/AccountHeader.qml:446
+#: qml/AccountHeader.qml:464
 #, kde-format
 msgid "Account editor"
 msgstr "Përpunues llogarish"
 
-#: qml/AccountHeader.qml:456
+#: qml/AccountHeader.qml:474
 #, kde-format
 msgid "Featured Users"
 msgstr "Përdorues të Zgjedhur"
 
-#: qml/AccountHeader.qml:463
+#: qml/AccountHeader.qml:481
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Scheduled Posts"
 msgstr "Postime të Planifikuara"
 
-#: qml/AccountHeader.qml:477
+#: qml/AccountHeader.qml:495
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Draft Posts"
 msgstr "Skica Postimesh"
 
-#: qml/AccountHeader.qml:490 qml/PostDelegate/LinkMenu.qml:25
+#: qml/AccountHeader.qml:508 qml/PostDelegate/LinkMenu.qml:25
 #: qml/PostDelegate/PostMenu.qml:53
 #, kde-format
 msgctxt "@action:inmenu 'Browser' being a web browser"
 msgid "Open in Browser"
 msgstr "Hape në Shfletues"
 
-#: qml/AccountHeader.qml:495
+#: qml/AccountHeader.qml:513
 #, kde-format
 msgid "Copy Link"
 msgstr "Kopjoji Lidhjen"
 
-#: qml/AccountHeader.qml:498
+#: qml/AccountHeader.qml:516
 #, kde-format
 msgid "Profile link copied."
 msgstr "Lidhja e profilit u kopjua."
 
-#: qml/AccountHeader.qml:570
+#: qml/AccountHeader.qml:587
 #, kde-format
 msgctxt "@info:label Joined at"
 msgid "Joined"
 msgstr "U bë pjesë më"
 
-#: qml/AccountHeader.qml:610
+#: qml/AccountHeader.qml:627
 #, kde-format
 msgid "Ownership of this link was checked on %1"
 msgstr "Pronësia e kësaj lidhjeje qe kontrolluar më %1"
 
-#: qml/AccountHeader.qml:693
+#: qml/AccountHeader.qml:710
 #, kde-format
 msgctxt "@label:textfield"
 msgid "Private Note:"
 msgstr "Shënim Privat:"
 
-#: qml/AccountHeader.qml:701
+#: qml/AccountHeader.qml:718
 #, kde-format
 msgid "Saved"
 msgstr "U ruajt"
 
-#: qml/AccountHeader.qml:716
+#: qml/AccountHeader.qml:733
 #, kde-format
 msgid ""
 "Write down something about this user, this isn't visible to anyone but you."
@@ -924,24 +937,24 @@ msgstr ""
 "Shkruani diçka rreth këtij përdoruesi, kjo s’është e dukshme për ndokënd "
 "tjetër veç jush."
 
-#: qml/AccountHeader.qml:778
+#: qml/AccountHeader.qml:795
 #, kde-format
 msgid "Also followed by:"
 msgstr "Ndjekur edhe nga:"
 
-#: qml/AccountHeader.qml:808
+#: qml/AccountHeader.qml:825
 #, kde-format
 msgctxt "@action:button See all familiar followers"
 msgid "View %1 More"
 msgstr "Shihni %1 Më Tepër"
 
-#: qml/AccountHeader.qml:808
+#: qml/AccountHeader.qml:825
 #, kde-format
 msgctxt "@action:button See all familiar followers"
 msgid "View All"
 msgstr "Shihini Krejt"
 
-#: qml/AccountHeader.qml:848
+#: qml/AccountHeader.qml:865
 #, kde-format
 msgctxt "@label User's number of statuses"
 msgid "<b>%1</b> post"
@@ -949,7 +962,7 @@ msgid_plural "<b>%1</b> posts"
 msgstr[0] "<b>%1</b> postim"
 msgstr[1] "<b>%1</b> postime"
 
-#: qml/AccountHeader.qml:861
+#: qml/AccountHeader.qml:878
 #, kde-format
 msgctxt "@label User's number of followed accounts"
 msgid "<b>%1</b> follows"
@@ -957,7 +970,7 @@ msgid_plural "<b>%1</b> following"
 msgstr[0] "<b>%1</b> ndjekje"
 msgstr[1] "<b>%1</b> ndjekje"
 
-#: qml/AccountHeader.qml:874
+#: qml/AccountHeader.qml:891
 #, kde-format
 msgctxt "@label User's number of followers"
 msgid "<b>%1</b> follower"
@@ -965,31 +978,31 @@ msgid_plural "<b>%1</b> followers"
 msgstr[0] "<b>%1</b> ndjekës"
 msgstr[1] "<b>%1</b> ndjekës"
 
-#: qml/AccountHeader.qml:901
+#: qml/AccountHeader.qml:918
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts"
 msgstr "Postime"
 
-#: qml/AccountHeader.qml:905
+#: qml/AccountHeader.qml:922
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts && Replies"
 msgstr "Postime && Përgjigje"
 
-#: qml/AccountHeader.qml:909
+#: qml/AccountHeader.qml:926
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Media"
 msgstr "Media"
 
-#: qml/AccountHeader.qml:941
+#: qml/AccountHeader.qml:958
 #, kde-format
 msgctxt "@option:check"
 msgid "Hide boosts"
 msgstr "Të fshehë përforcime"
 
-#: qml/AccountHeader.qml:961
+#: qml/AccountHeader.qml:978
 #, kde-format
 msgctxt "@action:button Show all of a profile's posts"
 msgid "All"
@@ -1553,8 +1566,8 @@ msgstr "S’ka Lista"
 msgid "Lists allow you to categorize who you're following."
 msgstr "Lista ju lejojnë të kategorizoni ata që ju ndjekin."
 
-#: qml/ListTimelinePage.qml:18 qml/Main.qml:282 qml/Main.qml:318
-#: qml/Main.qml:333
+#: qml/ListTimelinePage.qml:18 qml/Main.qml:286 qml/Main.qml:322
+#: qml/Main.qml:337
 #, kde-format
 msgid "No Posts"
 msgstr "S’ka Postime"
@@ -1858,53 +1871,53 @@ msgctxt "@info Compatible with Mastodon"
 msgid "Compatible with"
 msgstr "I përputhshëm me"
 
-#: qml/Main.qml:149
+#: qml/Main.qml:153
 #, kde-format
 msgctxt "@title"
 msgid "Open As…"
 msgstr "Hapeni Si…"
 
-#: qml/Main.qml:151
+#: qml/Main.qml:155
 #, kde-format
 msgctxt "@title"
 msgid "Reply As…"
 msgstr "Përgjigjuni Si…"
 
-#: qml/Main.qml:153
+#: qml/Main.qml:157
 #, kde-format
 msgctxt "@title"
 msgid "Favorite As…"
 msgstr "I Vini Shenjë Si të Parapëlqyer Si…"
 
-#: qml/Main.qml:155
+#: qml/Main.qml:159
 #, kde-format
 msgctxt "@title"
 msgid "Boost As…"
 msgstr "Përforcojeni Si…"
 
-#: qml/Main.qml:157
+#: qml/Main.qml:161
 #, kde-format
 msgctxt "@title"
 msgid "Bookmark As…"
 msgstr "Faqeruajeni Si…"
 
-#: qml/Main.qml:159
+#: qml/Main.qml:163
 #, kde-format
 msgctxt "@title"
 msgid "Unknown Action"
 msgstr "Veprim i Panjohur"
 
-#: qml/Main.qml:283 qml/Main.qml:319 qml/Main.qml:334
+#: qml/Main.qml:287 qml/Main.qml:323 qml/Main.qml:338
 #, kde-format
 msgid "It seems pretty quiet right now, try posting something!"
 msgstr "Duket shumë qetë tani për tani, provoni të postoni diçka!"
 
-#: qml/Main.qml:348
+#: qml/Main.qml:352
 #, kde-format
 msgid "No Favorites"
 msgstr "Pa të Parapëlqyer"
 
-#: qml/Main.qml:349
+#: qml/Main.qml:353
 #, kde-format
 msgid ""
 "Posts that you favorite will show up here. If you appreciate someone's post, "
@@ -1913,12 +1926,12 @@ msgstr ""
 "Postimet të cilëve u vini shenjë si të parapëlqyer, do të shfaqen këtu. Nëse "
 "e vlerësoni postimin e dikujt, vërini shenjë si të parapëlqyer!"
 
-#: qml/Main.qml:363
+#: qml/Main.qml:367
 #, kde-format
 msgid "No Bookmarks"
 msgstr "Pa Faqerojtës"
 
-#: qml/Main.qml:364
+#: qml/Main.qml:368
 #, kde-format
 msgid ""
 "Bookmark posts and they will show up here. Bookmarks are always kept "
@@ -1927,89 +1940,89 @@ msgstr ""
 "Faqeruani postime dhe do të shfaqen këtu. Faqerojtësi mbahen përherë "
 "privatë, edhe për autorin e postimit."
 
-#: qml/Main.qml:468
+#: qml/Main.qml:484
 #, kde-format
 msgid "Write a New Post"
 msgstr "Shkruani një Postim të Ri"
 
-#: qml/Main.qml:495
+#: qml/Main.qml:511
 #, kde-format
 msgid "Write a new post"
 msgstr "Shkruani një postim të ri"
 
-#: qml/Main.qml:540
+#: qml/Main.qml:556
 #, kde-format
 msgid "Reply to post"
 msgstr "Përgjigjuni postimit"
 
-#: qml/Main.qml:629
+#: qml/Main.qml:645
 #, kde-format
 msgctxt "@action:button Home Timeline"
 msgid "Home"
 msgstr "Kreu"
 
-#: qml/Main.qml:634
+#: qml/Main.qml:650
 #, kde-format
 msgctxt "@action:button Account Notifications"
 msgid "Notifications"
 msgstr "Njoftime"
 
-#: qml/Main.qml:639
+#: qml/Main.qml:655
 #, kde-format
 msgctxt "@action:button Follows that require explicit allow/deny"
 msgid "Follow Requests"
 msgstr "Kërkesa Për Ndjekje"
 
-#: qml/Main.qml:644
+#: qml/Main.qml:660
 #, kde-format
 msgctxt "@action:button Local timeline of posts from the account's own server"
 msgid "Local"
 msgstr "Vendore"
 
-#: qml/Main.qml:648
+#: qml/Main.qml:664
 #, kde-format
 msgctxt ""
 "@action:button Global timeline of posts from the entire Fediverse network"
 msgid "Global"
 msgstr "Globale"
 
-#: qml/Main.qml:652
+#: qml/Main.qml:668
 #, kde-format
 msgctxt "@action:button Direct one-on-one messages between users"
 msgid "Conversations"
 msgstr "Biseda"
 
-#: qml/Main.qml:656
+#: qml/Main.qml:672
 #, kde-format
 msgctxt "@action:button This account's favorited posts"
 msgid "Favorites"
 msgstr "Të parapëlqyer"
 
-#: qml/Main.qml:660
+#: qml/Main.qml:676
 #, kde-format
 msgctxt "@action:button This account's bookmarked posts"
 msgid "Bookmarks"
 msgstr "Faqerojtës"
 
-#: qml/Main.qml:664
+#: qml/Main.qml:680
 #, kde-format
 msgctxt "@action:button Explore this server's trending posts, news, and more"
 msgid "Explore"
 msgstr "Eksploroni"
 
-#: qml/Main.qml:668
+#: qml/Main.qml:684
 #, kde-format
 msgctxt "@action:button A list of this account's followed accounts"
 msgid "Following"
 msgstr "Të ndjekur"
 
-#: qml/Main.qml:672
+#: qml/Main.qml:688
 #, kde-format
 msgctxt "@action:button Search for users, posts and tags"
 msgid "Search"
 msgstr "Kërko"
 
-#: qml/Main.qml:680
+#: qml/Main.qml:696
 #, kde-format
 msgctxt ""
 "@action:button This account's lists, or timelines consisting of a groups of "
@@ -2017,37 +2030,37 @@ msgctxt ""
 msgid "Lists"
 msgstr "Lista"
 
-#: qml/Main.qml:684
+#: qml/Main.qml:700
 #, kde-format
 msgctxt "@action:button This account's profile"
 msgid "Profile"
 msgstr "Profil"
 
-#: qml/Main.qml:691
+#: qml/Main.qml:707
 #, kde-format
 msgctxt "@action:button Open debug page"
 msgid "Debug"
 msgstr "Diagnostikojeni"
 
-#: qml/Main.qml:704
+#: qml/Main.qml:720
 #, kde-format
 msgctxt "@action:button Open moderation tools"
 msgid "Moderation Tools"
 msgstr "Mjete Moderimi"
 
-#: qml/Main.qml:711
+#: qml/Main.qml:727
 #, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Rregullime"
 
-#: qml/Main.qml:874
+#: qml/Main.qml:890
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Unfollow"
 msgstr "Mos e ndiq"
 
-#: qml/Main.qml:874
+#: qml/Main.qml:890
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Follow"
@@ -5800,7 +5813,7 @@ msgctxt "@action:button"
 msgid "Switch to '%1'"
 msgstr "Kalo te “%1”"
 
-#: tokodonapplication.cpp:65 tokodonapplication.cpp:224
+#: tokodonapplication.cpp:65 tokodonapplication.cpp:229
 #, kde-format
 msgctxt "@action:button"
 msgid "Configure '%1'"
@@ -5911,7 +5924,13 @@ msgctxt "@action:button"
 msgid "Open Account Switcher"
 msgstr "Hap Ndërrues Llogarie"
 
-#: tokodonapplication.cpp:216
+#: tokodonapplication.cpp:185
+#, kde-format
+msgctxt "@action:button"
+msgid "Reload"
+msgstr ""
+
+#: tokodonapplication.cpp:221
 #, kde-format
 msgctxt "@action:button"
 msgid "Switch '%1'"

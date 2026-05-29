@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-28 00:43+0000\n"
+"POT-Creation-Date: 2026-05-29 00:43+0000\n"
 "PO-Revision-Date: 2026-05-10 18:23+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -750,7 +750,7 @@ msgctxt "@action:button"
 msgid "Go to Profile"
 msgstr "Ga naar Profiel"
 
-#: qml/AccountHeader.qml:159
+#: qml/AccountHeader.qml:160
 #, kde-format
 msgctxt ""
 "'Mutual' is the common English word used in social media platforms describe "
@@ -759,193 +759,206 @@ msgctxt ""
 msgid "Mutual"
 msgstr "Wederzijds"
 
-#: qml/AccountHeader.qml:159
+#: qml/AccountHeader.qml:160
 #, kde-format
 msgid "Follows you"
 msgstr "Volgt u"
 
-#: qml/AccountHeader.qml:180
+#: qml/AccountHeader.qml:181
 #, kde-format
 msgid "Bot"
 msgstr "Bot"
 
-#: qml/AccountHeader.qml:291
+#: qml/AccountHeader.qml:279
+#, fuzzy, kde-format
+#| msgid "Copy Image"
+msgctxt "@action:inmenu Copy user handle such as @foo@bar.com"
+msgid "Copy Handle"
+msgstr "Afbeelding kopiëren"
+
+#: qml/AccountHeader.qml:284
+#, fuzzy, kde-format
+#| msgid "Profile link copied."
+msgid "Profile handle copied."
+msgstr "Koppeling naar profiel gekopieerd."
+
+#: qml/AccountHeader.qml:309
 #, kde-format
 msgid "Follow Requested"
 msgstr "Verzoek om volgen"
 
-#: qml/AccountHeader.qml:294
+#: qml/AccountHeader.qml:312
 #, kde-format
 msgid "Unfollow"
 msgstr "Volgen uitschakelen"
 
-#: qml/AccountHeader.qml:296
+#: qml/AccountHeader.qml:314
 #, kde-format
 msgid "Follow"
 msgstr "Volgen"
 
-#: qml/AccountHeader.qml:321
+#: qml/AccountHeader.qml:339
 #, kde-format
 msgid "Stop notifying me when %1 posts."
 msgstr "Mij melden stoppen bij %1 berichten."
 
-#: qml/AccountHeader.qml:323
+#: qml/AccountHeader.qml:341
 #, kde-format
 msgid "Notify me when %1 posts."
 msgstr "Mij melden bij %1 berichten."
 
-#: qml/AccountHeader.qml:338
+#: qml/AccountHeader.qml:356
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show a QR code for this account"
 msgstr "Een QR-code voor dit account tonen"
 
-#: qml/AccountHeader.qml:351
+#: qml/AccountHeader.qml:369
 #, kde-format
 msgid "Mention…"
 msgstr "Vermelding…"
 
-#: qml/AccountHeader.qml:357
+#: qml/AccountHeader.qml:375
 #, kde-format
 msgid "Start a Conversation…"
 msgstr "Begin een conversatie…"
 
-#: qml/AccountHeader.qml:366
+#: qml/AccountHeader.qml:384
 #, kde-format
 msgid "Hide Boosts from %1"
 msgstr "Oppeppers van %1 verbergen"
 
-#: qml/AccountHeader.qml:368
+#: qml/AccountHeader.qml:386
 #, kde-format
 msgid "Show Boosts from %1"
 msgstr "Oppeppers van %1 tonen"
 
-#: qml/AccountHeader.qml:384
+#: qml/AccountHeader.qml:402
 #, kde-format
 msgid "Stop Featuring This Profile"
 msgstr "Dit profiel aanbevelen stoppen"
 
-#: qml/AccountHeader.qml:386
+#: qml/AccountHeader.qml:404
 #, kde-format
 msgid "Feature This Profile"
 msgstr "Dit profiel aanbevelen"
 
-#: qml/AccountHeader.qml:402
+#: qml/AccountHeader.qml:420
 #, kde-format
 msgid "Unmute"
 msgstr "Dempen opheffen"
 
-#: qml/AccountHeader.qml:404
+#: qml/AccountHeader.qml:422
 #, kde-format
 msgid "Mute"
 msgstr "Dempen"
 
-#: qml/AccountHeader.qml:420
+#: qml/AccountHeader.qml:438
 #, kde-format
 msgid "Unblock"
 msgstr "Deblokkeren"
 
-#: qml/AccountHeader.qml:422
+#: qml/AccountHeader.qml:440
 #, kde-format
 msgid "Block"
 msgstr "Blokkeren"
 
-#: qml/AccountHeader.qml:436 qml/PostDelegate/PostMenu.qml:192
+#: qml/AccountHeader.qml:454 qml/PostDelegate/PostMenu.qml:192
 #, kde-format
 msgctxt "@action:inmenu Report this post"
 msgid "Report…"
 msgstr "Rapporteren…"
 
-#: qml/AccountHeader.qml:442
+#: qml/AccountHeader.qml:460
 #, kde-format
 msgid "Edit Profile"
 msgstr "Profiel bewerken"
 
-#: qml/AccountHeader.qml:446
+#: qml/AccountHeader.qml:464
 #, kde-format
 msgid "Account editor"
 msgstr "Accountbewerker"
 
-#: qml/AccountHeader.qml:456
+#: qml/AccountHeader.qml:474
 #, kde-format
 msgid "Featured Users"
 msgstr "Aanbevolen gebruikers"
 
-#: qml/AccountHeader.qml:463
+#: qml/AccountHeader.qml:481
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Scheduled Posts"
 msgstr "Geplande berichten"
 
-#: qml/AccountHeader.qml:477
+#: qml/AccountHeader.qml:495
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Draft Posts"
 msgstr "Concept berichten"
 
-#: qml/AccountHeader.qml:490 qml/PostDelegate/LinkMenu.qml:25
+#: qml/AccountHeader.qml:508 qml/PostDelegate/LinkMenu.qml:25
 #: qml/PostDelegate/PostMenu.qml:53
 #, kde-format
 msgctxt "@action:inmenu 'Browser' being a web browser"
 msgid "Open in Browser"
 msgstr "In browser openen"
 
-#: qml/AccountHeader.qml:495
+#: qml/AccountHeader.qml:513
 #, kde-format
 msgid "Copy Link"
 msgstr "Koppeling kopiëren"
 
-#: qml/AccountHeader.qml:498
+#: qml/AccountHeader.qml:516
 #, kde-format
 msgid "Profile link copied."
 msgstr "Koppeling naar profiel gekopieerd."
 
-#: qml/AccountHeader.qml:570
+#: qml/AccountHeader.qml:587
 #, kde-format
 msgctxt "@info:label Joined at"
 msgid "Joined"
 msgstr "Neemt deel aan"
 
-#: qml/AccountHeader.qml:610
+#: qml/AccountHeader.qml:627
 #, kde-format
 msgid "Ownership of this link was checked on %1"
 msgstr "Eigenschap van deze koppeling is gecontroleerd op %1"
 
-#: qml/AccountHeader.qml:693
+#: qml/AccountHeader.qml:710
 #, kde-format
 msgctxt "@label:textfield"
 msgid "Private Note:"
 msgstr "Privé notitie:"
 
-#: qml/AccountHeader.qml:701
+#: qml/AccountHeader.qml:718
 #, kde-format
 msgid "Saved"
 msgstr "Opgeslagen"
 
-#: qml/AccountHeader.qml:716
+#: qml/AccountHeader.qml:733
 #, kde-format
 msgid ""
 "Write down something about this user, this isn't visible to anyone but you."
 msgstr "Schrijf iets neer over deze gebruiker, dit is alleen zichtbaar voor u."
 
-#: qml/AccountHeader.qml:778
+#: qml/AccountHeader.qml:795
 #, kde-format
 msgid "Also followed by:"
 msgstr "Ook gevolgd door:"
 
-#: qml/AccountHeader.qml:808
+#: qml/AccountHeader.qml:825
 #, kde-format
 msgctxt "@action:button See all familiar followers"
 msgid "View %1 More"
 msgstr "Bekijk %1 beter"
 
-#: qml/AccountHeader.qml:808
+#: qml/AccountHeader.qml:825
 #, kde-format
 msgctxt "@action:button See all familiar followers"
 msgid "View All"
 msgstr "Alles bekijken"
 
-#: qml/AccountHeader.qml:848
+#: qml/AccountHeader.qml:865
 #, kde-format
 msgctxt "@label User's number of statuses"
 msgid "<b>%1</b> post"
@@ -953,7 +966,7 @@ msgid_plural "<b>%1</b> posts"
 msgstr[0] "Bericht"
 msgstr[1] "<b>%1</b> berichten"
 
-#: qml/AccountHeader.qml:861
+#: qml/AccountHeader.qml:878
 #, kde-format
 msgctxt "@label User's number of followed accounts"
 msgid "<b>%1</b> follows"
@@ -961,7 +974,7 @@ msgid_plural "<b>%1</b> following"
 msgstr[0] "Er wordt <b>%1</b> gevolgd"
 msgstr[1] "Er worden <b>%1</b> gevolgd"
 
-#: qml/AccountHeader.qml:874
+#: qml/AccountHeader.qml:891
 #, kde-format
 msgctxt "@label User's number of followers"
 msgid "<b>%1</b> follower"
@@ -969,31 +982,31 @@ msgid_plural "<b>%1</b> followers"
 msgstr[0] "<b>%1</b> volgers"
 msgstr[1] "<b>%1</b> volgers"
 
-#: qml/AccountHeader.qml:901
+#: qml/AccountHeader.qml:918
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts"
 msgstr "Berichten"
 
-#: qml/AccountHeader.qml:905
+#: qml/AccountHeader.qml:922
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts && Replies"
 msgstr "Berichten && antwoorden"
 
-#: qml/AccountHeader.qml:909
+#: qml/AccountHeader.qml:926
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Media"
 msgstr "Media"
 
-#: qml/AccountHeader.qml:941
+#: qml/AccountHeader.qml:958
 #, kde-format
 msgctxt "@option:check"
 msgid "Hide boosts"
 msgstr "Oppeppers verbergen"
 
-#: qml/AccountHeader.qml:961
+#: qml/AccountHeader.qml:978
 #, kde-format
 msgctxt "@action:button Show all of a profile's posts"
 msgid "All"
@@ -1552,8 +1565,8 @@ msgstr "Geen lijsten"
 msgid "Lists allow you to categorize who you're following."
 msgstr "Lijsten bieden u het categoriseren van wie u volgen."
 
-#: qml/ListTimelinePage.qml:18 qml/Main.qml:282 qml/Main.qml:318
-#: qml/Main.qml:333
+#: qml/ListTimelinePage.qml:18 qml/Main.qml:286 qml/Main.qml:322
+#: qml/Main.qml:337
 #, kde-format
 msgid "No Posts"
 msgstr "Geen berichten"
@@ -1854,53 +1867,53 @@ msgctxt "@info Compatible with Mastodon"
 msgid "Compatible with"
 msgstr "Compatibel met"
 
-#: qml/Main.qml:149
+#: qml/Main.qml:153
 #, kde-format
 msgctxt "@title"
 msgid "Open As…"
 msgstr "Openen als…"
 
-#: qml/Main.qml:151
+#: qml/Main.qml:155
 #, kde-format
 msgctxt "@title"
 msgid "Reply As…"
 msgstr "Beantwoorden als…"
 
-#: qml/Main.qml:153
+#: qml/Main.qml:157
 #, kde-format
 msgctxt "@title"
 msgid "Favorite As…"
 msgstr "Favoriet als…"
 
-#: qml/Main.qml:155
+#: qml/Main.qml:159
 #, kde-format
 msgctxt "@title"
 msgid "Boost As…"
 msgstr "Oppeppen als…"
 
-#: qml/Main.qml:157
+#: qml/Main.qml:161
 #, kde-format
 msgctxt "@title"
 msgid "Bookmark As…"
 msgstr "Bladwijzer maken als…"
 
-#: qml/Main.qml:159
+#: qml/Main.qml:163
 #, kde-format
 msgctxt "@title"
 msgid "Unknown Action"
 msgstr "Onbekende actie"
 
-#: qml/Main.qml:283 qml/Main.qml:319 qml/Main.qml:334
+#: qml/Main.qml:287 qml/Main.qml:323 qml/Main.qml:338
 #, kde-format
 msgid "It seems pretty quiet right now, try posting something!"
 msgstr "Het lijkt nu tamelijk rustig te zijn, probeer iets te posten!"
 
-#: qml/Main.qml:348
+#: qml/Main.qml:352
 #, kde-format
 msgid "No Favorites"
 msgstr "Geen favorieten"
 
-#: qml/Main.qml:349
+#: qml/Main.qml:353
 #, kde-format
 msgid ""
 "Posts that you favorite will show up here. If you appreciate someone's post, "
@@ -1909,12 +1922,12 @@ msgstr ""
 "Posts die u markeert als favoriet zullen hier verschijnen. Als u iemands "
 "post waardeert, markeer het als favoriet!"
 
-#: qml/Main.qml:363
+#: qml/Main.qml:367
 #, kde-format
 msgid "No Bookmarks"
 msgstr "Geen bladwijzers"
 
-#: qml/Main.qml:364
+#: qml/Main.qml:368
 #, kde-format
 msgid ""
 "Bookmark posts and they will show up here. Bookmarks are always kept "
@@ -1923,89 +1936,89 @@ msgstr ""
 "Maak een bladwijzer van posts en ze zullen hier verschijnen. Bladwijzers "
 "worden altijd privé bewaard, zelfs naar de auteur van de post."
 
-#: qml/Main.qml:468
+#: qml/Main.qml:484
 #, kde-format
 msgid "Write a New Post"
 msgstr "Een nieuw bericht schrijven"
 
-#: qml/Main.qml:495
+#: qml/Main.qml:511
 #, kde-format
 msgid "Write a new post"
 msgstr "Een nieuw bericht schrijven"
 
-#: qml/Main.qml:540
+#: qml/Main.qml:556
 #, kde-format
 msgid "Reply to post"
 msgstr "Op dit bericht antwoorden"
 
-#: qml/Main.qml:629
+#: qml/Main.qml:645
 #, kde-format
 msgctxt "@action:button Home Timeline"
 msgid "Home"
 msgstr "Home"
 
-#: qml/Main.qml:634
+#: qml/Main.qml:650
 #, kde-format
 msgctxt "@action:button Account Notifications"
 msgid "Notifications"
 msgstr "Meldingen"
 
-#: qml/Main.qml:639
+#: qml/Main.qml:655
 #, kde-format
 msgctxt "@action:button Follows that require explicit allow/deny"
 msgid "Follow Requests"
 msgstr "Verzoeken volgen"
 
-#: qml/Main.qml:644
+#: qml/Main.qml:660
 #, kde-format
 msgctxt "@action:button Local timeline of posts from the account's own server"
 msgid "Local"
 msgstr "Lokaal"
 
-#: qml/Main.qml:648
+#: qml/Main.qml:664
 #, kde-format
 msgctxt ""
 "@action:button Global timeline of posts from the entire Fediverse network"
 msgid "Global"
 msgstr "Globaal"
 
-#: qml/Main.qml:652
+#: qml/Main.qml:668
 #, kde-format
 msgctxt "@action:button Direct one-on-one messages between users"
 msgid "Conversations"
 msgstr "Conversaties"
 
-#: qml/Main.qml:656
+#: qml/Main.qml:672
 #, kde-format
 msgctxt "@action:button This account's favorited posts"
 msgid "Favorites"
 msgstr "Favorieten"
 
-#: qml/Main.qml:660
+#: qml/Main.qml:676
 #, kde-format
 msgctxt "@action:button This account's bookmarked posts"
 msgid "Bookmarks"
 msgstr "Bladwijzers"
 
-#: qml/Main.qml:664
+#: qml/Main.qml:680
 #, kde-format
 msgctxt "@action:button Explore this server's trending posts, news, and more"
 msgid "Explore"
 msgstr "Verkennen"
 
-#: qml/Main.qml:668
+#: qml/Main.qml:684
 #, kde-format
 msgctxt "@action:button A list of this account's followed accounts"
 msgid "Following"
 msgstr "Volgt op"
 
-#: qml/Main.qml:672
+#: qml/Main.qml:688
 #, kde-format
 msgctxt "@action:button Search for users, posts and tags"
 msgid "Search"
 msgstr "Zoeken"
 
-#: qml/Main.qml:680
+#: qml/Main.qml:696
 #, kde-format
 msgctxt ""
 "@action:button This account's lists, or timelines consisting of a groups of "
@@ -2013,37 +2026,37 @@ msgctxt ""
 msgid "Lists"
 msgstr "Lijsten"
 
-#: qml/Main.qml:684
+#: qml/Main.qml:700
 #, kde-format
 msgctxt "@action:button This account's profile"
 msgid "Profile"
 msgstr "Profiel"
 
-#: qml/Main.qml:691
+#: qml/Main.qml:707
 #, kde-format
 msgctxt "@action:button Open debug page"
 msgid "Debug"
 msgstr "Debuggen"
 
-#: qml/Main.qml:704
+#: qml/Main.qml:720
 #, kde-format
 msgctxt "@action:button Open moderation tools"
 msgid "Moderation Tools"
 msgstr "Hulpmiddelen voor moderatie"
 
-#: qml/Main.qml:711
+#: qml/Main.qml:727
 #, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Instellingen"
 
-#: qml/Main.qml:874
+#: qml/Main.qml:890
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Unfollow"
 msgstr "Volgen uitschakelen"
 
-#: qml/Main.qml:874
+#: qml/Main.qml:890
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Follow"
@@ -5756,7 +5769,7 @@ msgctxt "@action:button"
 msgid "Switch to '%1'"
 msgstr "Omschakelen naar '%1'"
 
-#: tokodonapplication.cpp:65 tokodonapplication.cpp:224
+#: tokodonapplication.cpp:65 tokodonapplication.cpp:229
 #, kde-format
 msgctxt "@action:button"
 msgid "Configure '%1'"
@@ -5867,7 +5880,13 @@ msgctxt "@action:button"
 msgid "Open Account Switcher"
 msgstr "Wisselaar van account openen"
 
-#: tokodonapplication.cpp:216
+#: tokodonapplication.cpp:185
+#, kde-format
+msgctxt "@action:button"
+msgid "Reload"
+msgstr ""
+
+#: tokodonapplication.cpp:221
 #, kde-format
 msgctxt "@action:button"
 msgid "Switch '%1'"

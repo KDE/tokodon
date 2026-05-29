@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-28 00:43+0000\n"
+"POT-Creation-Date: 2026-05-29 00:43+0000\n"
 "PO-Revision-Date: 2026-05-12 03:34+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -731,7 +731,7 @@ msgctxt "@action:button"
 msgid "Go to Profile"
 msgstr "前往個人檔案"
 
-#: qml/AccountHeader.qml:159
+#: qml/AccountHeader.qml:160
 #, kde-format
 msgctxt ""
 "'Mutual' is the common English word used in social media platforms describe "
@@ -740,238 +740,251 @@ msgctxt ""
 msgid "Mutual"
 msgstr "互相跟隨"
 
-#: qml/AccountHeader.qml:159
+#: qml/AccountHeader.qml:160
 #, kde-format
 msgid "Follows you"
 msgstr "跟隨您"
 
-#: qml/AccountHeader.qml:180
+#: qml/AccountHeader.qml:181
 #, kde-format
 msgid "Bot"
 msgstr "機器人"
 
-#: qml/AccountHeader.qml:291
+#: qml/AccountHeader.qml:279
+#, fuzzy, kde-format
+#| msgid "Copy Image"
+msgctxt "@action:inmenu Copy user handle such as @foo@bar.com"
+msgid "Copy Handle"
+msgstr "複製影像"
+
+#: qml/AccountHeader.qml:284
+#, fuzzy, kde-format
+#| msgid "Profile link copied."
+msgid "Profile handle copied."
+msgstr "已複製個人檔案連結。"
+
+#: qml/AccountHeader.qml:309
 #, kde-format
 msgid "Follow Requested"
 msgstr "已請求跟隨"
 
-#: qml/AccountHeader.qml:294
+#: qml/AccountHeader.qml:312
 #, kde-format
 msgid "Unfollow"
 msgstr "取消跟隨"
 
-#: qml/AccountHeader.qml:296
+#: qml/AccountHeader.qml:314
 #, kde-format
 msgid "Follow"
 msgstr "跟隨"
 
-#: qml/AccountHeader.qml:321
+#: qml/AccountHeader.qml:339
 #, kde-format
 msgid "Stop notifying me when %1 posts."
 msgstr "%1 嘟文時不要再通知我。"
 
-#: qml/AccountHeader.qml:323
+#: qml/AccountHeader.qml:341
 #, kde-format
 msgid "Notify me when %1 posts."
 msgstr "%1 嘟文時通知我。"
 
-#: qml/AccountHeader.qml:338
+#: qml/AccountHeader.qml:356
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show a QR code for this account"
 msgstr "顯示這個帳號的 QR code"
 
-#: qml/AccountHeader.qml:351
+#: qml/AccountHeader.qml:369
 #, kde-format
 msgid "Mention…"
 msgstr "提及…"
 
-#: qml/AccountHeader.qml:357
+#: qml/AccountHeader.qml:375
 #, kde-format
 msgid "Start a Conversation…"
 msgstr "開始對話…"
 
-#: qml/AccountHeader.qml:366
+#: qml/AccountHeader.qml:384
 #, kde-format
 msgid "Hide Boosts from %1"
 msgstr "隱藏 %1 的轉嘟"
 
-#: qml/AccountHeader.qml:368
+#: qml/AccountHeader.qml:386
 #, kde-format
 msgid "Show Boosts from %1"
 msgstr "顯示 %1 的轉嘟"
 
-#: qml/AccountHeader.qml:384
+#: qml/AccountHeader.qml:402
 #, kde-format
 msgid "Stop Featuring This Profile"
 msgstr "取消推薦這個個人檔案"
 
-#: qml/AccountHeader.qml:386
+#: qml/AccountHeader.qml:404
 #, kde-format
 msgid "Feature This Profile"
 msgstr "推薦這個個人檔案"
 
-#: qml/AccountHeader.qml:402
+#: qml/AccountHeader.qml:420
 #, kde-format
 msgid "Unmute"
 msgstr "取消靜音"
 
-#: qml/AccountHeader.qml:404
+#: qml/AccountHeader.qml:422
 #, kde-format
 msgid "Mute"
 msgstr "靜音"
 
-#: qml/AccountHeader.qml:420
+#: qml/AccountHeader.qml:438
 #, kde-format
 msgid "Unblock"
 msgstr "解除封鎖"
 
-#: qml/AccountHeader.qml:422
+#: qml/AccountHeader.qml:440
 #, kde-format
 msgid "Block"
 msgstr "封鎖"
 
-#: qml/AccountHeader.qml:436 qml/PostDelegate/PostMenu.qml:192
+#: qml/AccountHeader.qml:454 qml/PostDelegate/PostMenu.qml:192
 #, kde-format
 msgctxt "@action:inmenu Report this post"
 msgid "Report…"
 msgstr "檢舉…"
 
-#: qml/AccountHeader.qml:442
+#: qml/AccountHeader.qml:460
 #, kde-format
 msgid "Edit Profile"
 msgstr "編輯個人檔案"
 
-#: qml/AccountHeader.qml:446
+#: qml/AccountHeader.qml:464
 #, kde-format
 msgid "Account editor"
 msgstr "帳號編輯器"
 
-#: qml/AccountHeader.qml:456
+#: qml/AccountHeader.qml:474
 #, kde-format
 msgid "Featured Users"
 msgstr "推薦使用者"
 
-#: qml/AccountHeader.qml:463
+#: qml/AccountHeader.qml:481
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Scheduled Posts"
 msgstr "已排程的嘟文"
 
-#: qml/AccountHeader.qml:477
+#: qml/AccountHeader.qml:495
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Draft Posts"
 msgstr "嘟文草稿"
 
-#: qml/AccountHeader.qml:490 qml/PostDelegate/LinkMenu.qml:25
+#: qml/AccountHeader.qml:508 qml/PostDelegate/LinkMenu.qml:25
 #: qml/PostDelegate/PostMenu.qml:53
 #, kde-format
 msgctxt "@action:inmenu 'Browser' being a web browser"
 msgid "Open in Browser"
 msgstr "在瀏覽器開啟"
 
-#: qml/AccountHeader.qml:495
+#: qml/AccountHeader.qml:513
 #, kde-format
 msgid "Copy Link"
 msgstr "複製連結"
 
-#: qml/AccountHeader.qml:498
+#: qml/AccountHeader.qml:516
 #, kde-format
 msgid "Profile link copied."
 msgstr "已複製個人檔案連結。"
 
-#: qml/AccountHeader.qml:570
+#: qml/AccountHeader.qml:587
 #, kde-format
 msgctxt "@info:label Joined at"
 msgid "Joined"
 msgstr "加入時間"
 
-#: qml/AccountHeader.qml:610
+#: qml/AccountHeader.qml:627
 #, kde-format
 msgid "Ownership of this link was checked on %1"
 msgstr "此連結的擁有權於 %1 檢查"
 
-#: qml/AccountHeader.qml:693
+#: qml/AccountHeader.qml:710
 #, kde-format
 msgctxt "@label:textfield"
 msgid "Private Note:"
 msgstr "私人備註："
 
-#: qml/AccountHeader.qml:701
+#: qml/AccountHeader.qml:718
 #, kde-format
 msgid "Saved"
 msgstr "已儲存"
 
-#: qml/AccountHeader.qml:716
+#: qml/AccountHeader.qml:733
 #, kde-format
 msgid ""
 "Write down something about this user, this isn't visible to anyone but you."
 msgstr "寫下關於此使用者的一點備註。這個備註不會被除了您以外的任何人看到。"
 
-#: qml/AccountHeader.qml:778
+#: qml/AccountHeader.qml:795
 #, kde-format
 msgid "Also followed by:"
 msgstr "也被這些人跟隨："
 
-#: qml/AccountHeader.qml:808
+#: qml/AccountHeader.qml:825
 #, kde-format
 msgctxt "@action:button See all familiar followers"
 msgid "View %1 More"
 msgstr "檢視其他 %1 個"
 
-#: qml/AccountHeader.qml:808
+#: qml/AccountHeader.qml:825
 #, kde-format
 msgctxt "@action:button See all familiar followers"
 msgid "View All"
 msgstr "檢視全部"
 
-#: qml/AccountHeader.qml:848
+#: qml/AccountHeader.qml:865
 #, kde-format
 msgctxt "@label User's number of statuses"
 msgid "<b>%1</b> post"
 msgid_plural "<b>%1</b> posts"
 msgstr[0] "<b>%1</b> 篇嘟文"
 
-#: qml/AccountHeader.qml:861
+#: qml/AccountHeader.qml:878
 #, kde-format
 msgctxt "@label User's number of followed accounts"
 msgid "<b>%1</b> follows"
 msgid_plural "<b>%1</b> following"
 msgstr[0] "正在跟隨 <b>%1</b> 人"
 
-#: qml/AccountHeader.qml:874
+#: qml/AccountHeader.qml:891
 #, kde-format
 msgctxt "@label User's number of followers"
 msgid "<b>%1</b> follower"
 msgid_plural "<b>%1</b> followers"
 msgstr[0] "<b>%1</b> 名跟隨者"
 
-#: qml/AccountHeader.qml:901
+#: qml/AccountHeader.qml:918
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts"
 msgstr "嘟文"
 
-#: qml/AccountHeader.qml:905
+#: qml/AccountHeader.qml:922
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts && Replies"
 msgstr "嘟文與回覆"
 
-#: qml/AccountHeader.qml:909
+#: qml/AccountHeader.qml:926
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Media"
 msgstr "媒體"
 
-#: qml/AccountHeader.qml:941
+#: qml/AccountHeader.qml:958
 #, kde-format
 msgctxt "@option:check"
 msgid "Hide boosts"
 msgstr "隱藏轉嘟"
 
-#: qml/AccountHeader.qml:961
+#: qml/AccountHeader.qml:978
 #, kde-format
 msgctxt "@action:button Show all of a profile's posts"
 msgid "All"
@@ -1520,8 +1533,8 @@ msgstr "沒有列表"
 msgid "Lists allow you to categorize who you're following."
 msgstr "列表讓您分類您跟隨的人。"
 
-#: qml/ListTimelinePage.qml:18 qml/Main.qml:282 qml/Main.qml:318
-#: qml/Main.qml:333
+#: qml/ListTimelinePage.qml:18 qml/Main.qml:286 qml/Main.qml:322
+#: qml/Main.qml:337
 #, kde-format
 msgid "No Posts"
 msgstr "沒有嘟文"
@@ -1813,65 +1826,65 @@ msgctxt "@info Compatible with Mastodon"
 msgid "Compatible with"
 msgstr "相容於"
 
-#: qml/Main.qml:149
+#: qml/Main.qml:153
 #, kde-format
 msgctxt "@title"
 msgid "Open As…"
 msgstr "以身份開啟…"
 
-#: qml/Main.qml:151
+#: qml/Main.qml:155
 #, kde-format
 msgctxt "@title"
 msgid "Reply As…"
 msgstr "以身份回覆…"
 
-#: qml/Main.qml:153
+#: qml/Main.qml:157
 #, kde-format
 msgctxt "@title"
 msgid "Favorite As…"
 msgstr "以身份加入最愛…"
 
-#: qml/Main.qml:155
+#: qml/Main.qml:159
 #, kde-format
 msgctxt "@title"
 msgid "Boost As…"
 msgstr "以身份轉嘟…"
 
-#: qml/Main.qml:157
+#: qml/Main.qml:161
 #, kde-format
 msgctxt "@title"
 msgid "Bookmark As…"
 msgstr "以身份加入書籤…"
 
-#: qml/Main.qml:159
+#: qml/Main.qml:163
 #, kde-format
 msgctxt "@title"
 msgid "Unknown Action"
 msgstr "未知動作"
 
-#: qml/Main.qml:283 qml/Main.qml:319 qml/Main.qml:334
+#: qml/Main.qml:287 qml/Main.qml:323 qml/Main.qml:338
 #, kde-format
 msgid "It seems pretty quiet right now, try posting something!"
 msgstr "這裡很安靜呢。試著張貼點什麼吧！"
 
-#: qml/Main.qml:348
+#: qml/Main.qml:352
 #, kde-format
 msgid "No Favorites"
 msgstr "沒有最愛"
 
-#: qml/Main.qml:349
+#: qml/Main.qml:353
 #, kde-format
 msgid ""
 "Posts that you favorite will show up here. If you appreciate someone's post, "
 "favorite it!"
 msgstr "您加入最愛的嘟文會出現在此。如果您喜歡某個嘟文，就將它加入最愛吧！"
 
-#: qml/Main.qml:363
+#: qml/Main.qml:367
 #, kde-format
 msgid "No Bookmarks"
 msgstr "沒有書籤"
 
-#: qml/Main.qml:364
+#: qml/Main.qml:368
 #, kde-format
 msgid ""
 "Bookmark posts and they will show up here. Bookmarks are always kept "
@@ -1880,89 +1893,89 @@ msgstr ""
 "將嘟文加入書籤，它們便會出現在此。書籤總是保持私人，連嘟文的作者都不會看得"
 "到。"
 
-#: qml/Main.qml:468
+#: qml/Main.qml:484
 #, kde-format
 msgid "Write a New Post"
 msgstr "撰寫新嘟文"
 
-#: qml/Main.qml:495
+#: qml/Main.qml:511
 #, kde-format
 msgid "Write a new post"
 msgstr "撰寫新嘟文"
 
-#: qml/Main.qml:540
+#: qml/Main.qml:556
 #, kde-format
 msgid "Reply to post"
 msgstr "回覆給嘟文"
 
-#: qml/Main.qml:629
+#: qml/Main.qml:645
 #, kde-format
 msgctxt "@action:button Home Timeline"
 msgid "Home"
 msgstr "首頁"
 
-#: qml/Main.qml:634
+#: qml/Main.qml:650
 #, kde-format
 msgctxt "@action:button Account Notifications"
 msgid "Notifications"
 msgstr "通知"
 
-#: qml/Main.qml:639
+#: qml/Main.qml:655
 #, kde-format
 msgctxt "@action:button Follows that require explicit allow/deny"
 msgid "Follow Requests"
 msgstr "跟隨請求"
 
-#: qml/Main.qml:644
+#: qml/Main.qml:660
 #, kde-format
 msgctxt "@action:button Local timeline of posts from the account's own server"
 msgid "Local"
 msgstr "本地"
 
-#: qml/Main.qml:648
+#: qml/Main.qml:664
 #, kde-format
 msgctxt ""
 "@action:button Global timeline of posts from the entire Fediverse network"
 msgid "Global"
 msgstr "全球"
 
-#: qml/Main.qml:652
+#: qml/Main.qml:668
 #, kde-format
 msgctxt "@action:button Direct one-on-one messages between users"
 msgid "Conversations"
 msgstr "對話"
 
-#: qml/Main.qml:656
+#: qml/Main.qml:672
 #, kde-format
 msgctxt "@action:button This account's favorited posts"
 msgid "Favorites"
 msgstr "最愛"
 
-#: qml/Main.qml:660
+#: qml/Main.qml:676
 #, kde-format
 msgctxt "@action:button This account's bookmarked posts"
 msgid "Bookmarks"
 msgstr "書籤"
 
-#: qml/Main.qml:664
+#: qml/Main.qml:680
 #, kde-format
 msgctxt "@action:button Explore this server's trending posts, news, and more"
 msgid "Explore"
 msgstr "探索"
 
-#: qml/Main.qml:668
+#: qml/Main.qml:684
 #, kde-format
 msgctxt "@action:button A list of this account's followed accounts"
 msgid "Following"
 msgstr "正在跟隨"
 
-#: qml/Main.qml:672
+#: qml/Main.qml:688
 #, kde-format
 msgctxt "@action:button Search for users, posts and tags"
 msgid "Search"
 msgstr "搜尋"
 
-#: qml/Main.qml:680
+#: qml/Main.qml:696
 #, kde-format
 msgctxt ""
 "@action:button This account's lists, or timelines consisting of a groups of "
@@ -1970,37 +1983,37 @@ msgctxt ""
 msgid "Lists"
 msgstr "列表"
 
-#: qml/Main.qml:684
+#: qml/Main.qml:700
 #, kde-format
 msgctxt "@action:button This account's profile"
 msgid "Profile"
 msgstr "個人檔案"
 
-#: qml/Main.qml:691
+#: qml/Main.qml:707
 #, kde-format
 msgctxt "@action:button Open debug page"
 msgid "Debug"
 msgstr "除錯"
 
-#: qml/Main.qml:704
+#: qml/Main.qml:720
 #, kde-format
 msgctxt "@action:button Open moderation tools"
 msgid "Moderation Tools"
 msgstr "站務工具"
 
-#: qml/Main.qml:711
+#: qml/Main.qml:727
 #, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "設定"
 
-#: qml/Main.qml:874
+#: qml/Main.qml:890
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Unfollow"
 msgstr "取消跟隨"
 
-#: qml/Main.qml:874
+#: qml/Main.qml:890
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Follow"
@@ -5667,7 +5680,7 @@ msgctxt "@action:button"
 msgid "Switch to '%1'"
 msgstr "切換到「%1」"
 
-#: tokodonapplication.cpp:65 tokodonapplication.cpp:224
+#: tokodonapplication.cpp:65 tokodonapplication.cpp:229
 #, kde-format
 msgctxt "@action:button"
 msgid "Configure '%1'"
@@ -5778,8 +5791,14 @@ msgctxt "@action:button"
 msgid "Open Account Switcher"
 msgstr "開啟帳號切換器"
 
+#: tokodonapplication.cpp:185
+#, kde-format
+msgctxt "@action:button"
+msgid "Reload"
+msgstr ""
+
 # %1 是帳號的 display name
-#: tokodonapplication.cpp:216
+#: tokodonapplication.cpp:221
 #, kde-format
 msgctxt "@action:button"
 msgid "Switch '%1'"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-28 00:43+0000\n"
+"POT-Creation-Date: 2026-05-29 00:43+0000\n"
 "PO-Revision-Date: 2026-05-12 08:24+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -741,7 +741,7 @@ msgctxt "@action:button"
 msgid "Go to Profile"
 msgstr "מעבר לפרופיל"
 
-#: qml/AccountHeader.qml:159
+#: qml/AccountHeader.qml:160
 #, kde-format
 msgctxt ""
 "'Mutual' is the common English word used in social media platforms describe "
@@ -750,170 +750,183 @@ msgctxt ""
 msgid "Mutual"
 msgstr "הדדי"
 
-#: qml/AccountHeader.qml:159
+#: qml/AccountHeader.qml:160
 #, kde-format
 msgid "Follows you"
 msgstr "במעקב אחריך"
 
-#: qml/AccountHeader.qml:180
+#: qml/AccountHeader.qml:181
 #, kde-format
 msgid "Bot"
 msgstr "בוט"
 
-#: qml/AccountHeader.qml:291
+#: qml/AccountHeader.qml:279
+#, fuzzy, kde-format
+#| msgid "Copy Image"
+msgctxt "@action:inmenu Copy user handle such as @foo@bar.com"
+msgid "Copy Handle"
+msgstr "העתקת תמונה"
+
+#: qml/AccountHeader.qml:284
+#, fuzzy, kde-format
+#| msgid "Profile link copied."
+msgid "Profile handle copied."
+msgstr "הקישור לפרופיל הועתק."
+
+#: qml/AccountHeader.qml:309
 #, kde-format
 msgid "Follow Requested"
 msgstr "נשלחה בקשת מעקב"
 
-#: qml/AccountHeader.qml:294
+#: qml/AccountHeader.qml:312
 #, kde-format
 msgid "Unfollow"
 msgstr "ביטול מעקב"
 
-#: qml/AccountHeader.qml:296
+#: qml/AccountHeader.qml:314
 #, kde-format
 msgid "Follow"
 msgstr "מעקב"
 
-#: qml/AccountHeader.qml:321
+#: qml/AccountHeader.qml:339
 #, kde-format
 msgid "Stop notifying me when %1 posts."
 msgstr "להפסיק להודיע לי על רשומות של %1."
 
-#: qml/AccountHeader.qml:323
+#: qml/AccountHeader.qml:341
 #, kde-format
 msgid "Notify me when %1 posts."
 msgstr "להודיע לי על רשומות של %1."
 
-#: qml/AccountHeader.qml:338
+#: qml/AccountHeader.qml:356
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show a QR code for this account"
 msgstr "הצגת קוד QR לחשבון הזה"
 
-#: qml/AccountHeader.qml:351
+#: qml/AccountHeader.qml:369
 #, kde-format
 msgid "Mention…"
 msgstr "אזכור…"
 
-#: qml/AccountHeader.qml:357
+#: qml/AccountHeader.qml:375
 #, kde-format
 msgid "Start a Conversation…"
 msgstr "התחלת שיחה…"
 
-#: qml/AccountHeader.qml:366
+#: qml/AccountHeader.qml:384
 #, kde-format
 msgid "Hide Boosts from %1"
 msgstr "הסתרת עידודים של %1"
 
-#: qml/AccountHeader.qml:368
+#: qml/AccountHeader.qml:386
 #, kde-format
 msgid "Show Boosts from %1"
 msgstr "הצגת עידודים של %1"
 
-#: qml/AccountHeader.qml:384
+#: qml/AccountHeader.qml:402
 #, kde-format
 msgid "Stop Featuring This Profile"
 msgstr "להפסיק להציב את הפרופיל הזה כמוביל"
 
-#: qml/AccountHeader.qml:386
+#: qml/AccountHeader.qml:404
 #, kde-format
 msgid "Feature This Profile"
 msgstr "הוספת הפרופיל הזה למובילים"
 
-#: qml/AccountHeader.qml:402
+#: qml/AccountHeader.qml:420
 #, kde-format
 msgid "Unmute"
 msgstr "ביטול השתקה"
 
-#: qml/AccountHeader.qml:404
+#: qml/AccountHeader.qml:422
 #, kde-format
 msgid "Mute"
 msgstr "השתקה"
 
-#: qml/AccountHeader.qml:420
+#: qml/AccountHeader.qml:438
 #, kde-format
 msgid "Unblock"
 msgstr "שחרור חסימה"
 
-#: qml/AccountHeader.qml:422
+#: qml/AccountHeader.qml:440
 #, kde-format
 msgid "Block"
 msgstr "חסימה"
 
-#: qml/AccountHeader.qml:436 qml/PostDelegate/PostMenu.qml:192
+#: qml/AccountHeader.qml:454 qml/PostDelegate/PostMenu.qml:192
 #, kde-format
 msgctxt "@action:inmenu Report this post"
 msgid "Report…"
 msgstr "דיווח…"
 
-#: qml/AccountHeader.qml:442
+#: qml/AccountHeader.qml:460
 #, kde-format
 msgid "Edit Profile"
 msgstr "עריכת פרופיל"
 
-#: qml/AccountHeader.qml:446
+#: qml/AccountHeader.qml:464
 #, kde-format
 msgid "Account editor"
 msgstr "עורך חשבונות"
 
-#: qml/AccountHeader.qml:456
+#: qml/AccountHeader.qml:474
 #, kde-format
 msgid "Featured Users"
 msgstr "משתמשים מובילים"
 
-#: qml/AccountHeader.qml:463
+#: qml/AccountHeader.qml:481
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Scheduled Posts"
 msgstr "רשומות מתוזמנות"
 
-#: qml/AccountHeader.qml:477
+#: qml/AccountHeader.qml:495
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Draft Posts"
 msgstr "רשומות כטיוטות"
 
-#: qml/AccountHeader.qml:490 qml/PostDelegate/LinkMenu.qml:25
+#: qml/AccountHeader.qml:508 qml/PostDelegate/LinkMenu.qml:25
 #: qml/PostDelegate/PostMenu.qml:53
 #, kde-format
 msgctxt "@action:inmenu 'Browser' being a web browser"
 msgid "Open in Browser"
 msgstr "פתיחה בדפדפן"
 
-#: qml/AccountHeader.qml:495
+#: qml/AccountHeader.qml:513
 #, kde-format
 msgid "Copy Link"
 msgstr "העתקת קישור"
 
-#: qml/AccountHeader.qml:498
+#: qml/AccountHeader.qml:516
 #, kde-format
 msgid "Profile link copied."
 msgstr "הקישור לפרופיל הועתק."
 
-#: qml/AccountHeader.qml:570
+#: qml/AccountHeader.qml:587
 #, kde-format
 msgctxt "@info:label Joined at"
 msgid "Joined"
 msgstr "הצטרפות"
 
-#: qml/AccountHeader.qml:610
+#: qml/AccountHeader.qml:627
 #, kde-format
 msgid "Ownership of this link was checked on %1"
 msgstr "הבעלות על הקישור הזה נבדקה ב־%1"
 
-#: qml/AccountHeader.qml:693
+#: qml/AccountHeader.qml:710
 #, kde-format
 msgctxt "@label:textfield"
 msgid "Private Note:"
 msgstr "הערה פרטית:"
 
-#: qml/AccountHeader.qml:701
+#: qml/AccountHeader.qml:718
 #, kde-format
 msgid "Saved"
 msgstr "נשמר"
 
-#: qml/AccountHeader.qml:716
+#: qml/AccountHeader.qml:733
 #, kde-format
 msgid ""
 "Write down something about this user, this isn't visible to anyone but you."
@@ -921,24 +934,24 @@ msgstr ""
 "אפשר לכתוב משהו על המשתמש או המשתמשת האלה, זה לא יהיה חשוף לאף אחד אחר חוץ "
 "ממך."
 
-#: qml/AccountHeader.qml:778
+#: qml/AccountHeader.qml:795
 #, kde-format
 msgid "Also followed by:"
 msgstr "גם במעקב של:"
 
-#: qml/AccountHeader.qml:808
+#: qml/AccountHeader.qml:825
 #, kde-format
 msgctxt "@action:button See all familiar followers"
 msgid "View %1 More"
 msgstr "להציג עוד %1"
 
-#: qml/AccountHeader.qml:808
+#: qml/AccountHeader.qml:825
 #, kde-format
 msgctxt "@action:button See all familiar followers"
 msgid "View All"
 msgstr "להציג הכול"
 
-#: qml/AccountHeader.qml:848
+#: qml/AccountHeader.qml:865
 #, kde-format
 msgctxt "@label User's number of statuses"
 msgid "<b>%1</b> post"
@@ -948,7 +961,7 @@ msgstr[1] "<b>שתי</b> רשומות"
 msgstr[2] "<b>%1</b> רשומות"
 msgstr[3] "<b>%1</b> רשומות"
 
-#: qml/AccountHeader.qml:861
+#: qml/AccountHeader.qml:878
 #, kde-format
 msgctxt "@label User's number of followed accounts"
 msgid "<b>%1</b> follows"
@@ -958,7 +971,7 @@ msgstr[1] "<b>שני</b> נעקבים"
 msgstr[2] "<b>%1</b> נעקבים"
 msgstr[3] "<b>%1</b> נעקבים"
 
-#: qml/AccountHeader.qml:874
+#: qml/AccountHeader.qml:891
 #, kde-format
 msgctxt "@label User's number of followers"
 msgid "<b>%1</b> follower"
@@ -968,31 +981,31 @@ msgstr[1] "<b>שניים</b> במעקב"
 msgstr[2] "<b>%1</b> במעקב"
 msgstr[3] "<b>%1</b> במעקב"
 
-#: qml/AccountHeader.qml:901
+#: qml/AccountHeader.qml:918
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts"
 msgstr "רשומות"
 
-#: qml/AccountHeader.qml:905
+#: qml/AccountHeader.qml:922
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts && Replies"
 msgstr "רשומות ותגובות"
 
-#: qml/AccountHeader.qml:909
+#: qml/AccountHeader.qml:926
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Media"
 msgstr "מדיה"
 
-#: qml/AccountHeader.qml:941
+#: qml/AccountHeader.qml:958
 #, kde-format
 msgctxt "@option:check"
 msgid "Hide boosts"
 msgstr "הסתרת עידודים"
 
-#: qml/AccountHeader.qml:961
+#: qml/AccountHeader.qml:978
 #, kde-format
 msgctxt "@action:button Show all of a profile's posts"
 msgid "All"
@@ -1546,8 +1559,8 @@ msgstr "אין רשימות"
 msgid "Lists allow you to categorize who you're following."
 msgstr "רשימות מאפשרות לך לסווג מי ברשימת המעקב שלך."
 
-#: qml/ListTimelinePage.qml:18 qml/Main.qml:282 qml/Main.qml:318
-#: qml/Main.qml:333
+#: qml/ListTimelinePage.qml:18 qml/Main.qml:286 qml/Main.qml:322
+#: qml/Main.qml:337
 #, kde-format
 msgid "No Posts"
 msgstr "אין רשומות"
@@ -1839,53 +1852,53 @@ msgctxt "@info Compatible with Mastodon"
 msgid "Compatible with"
 msgstr "תואם ל־"
 
-#: qml/Main.qml:149
+#: qml/Main.qml:153
 #, kde-format
 msgctxt "@title"
 msgid "Open As…"
 msgstr "פתיחה בתור…"
 
-#: qml/Main.qml:151
+#: qml/Main.qml:155
 #, kde-format
 msgctxt "@title"
 msgid "Reply As…"
 msgstr "תגובה בתור…"
 
-#: qml/Main.qml:153
+#: qml/Main.qml:157
 #, kde-format
 msgctxt "@title"
 msgid "Favorite As…"
 msgstr "הוספה למועדפים בתור…"
 
-#: qml/Main.qml:155
+#: qml/Main.qml:159
 #, kde-format
 msgctxt "@title"
 msgid "Boost As…"
 msgstr "עידוד בתור…"
 
-#: qml/Main.qml:157
+#: qml/Main.qml:161
 #, kde-format
 msgctxt "@title"
 msgid "Bookmark As…"
 msgstr "הוספה לסימניות בתור…"
 
-#: qml/Main.qml:159
+#: qml/Main.qml:163
 #, kde-format
 msgctxt "@title"
 msgid "Unknown Action"
 msgstr "פעולה לא ידועה"
 
-#: qml/Main.qml:283 qml/Main.qml:319 qml/Main.qml:334
+#: qml/Main.qml:287 qml/Main.qml:323 qml/Main.qml:338
 #, kde-format
 msgid "It seems pretty quiet right now, try posting something!"
 msgstr "מרגיש פה קצת שקט, כדאי לנסות לפרסם משהו!"
 
-#: qml/Main.qml:348
+#: qml/Main.qml:352
 #, kde-format
 msgid "No Favorites"
 msgstr "אין מועדפים"
 
-#: qml/Main.qml:349
+#: qml/Main.qml:353
 #, kde-format
 msgid ""
 "Posts that you favorite will show up here. If you appreciate someone's post, "
@@ -1894,12 +1907,12 @@ msgstr ""
 "רשומות שהוספת למועדפים תופענה כאן. אם רשומה כלשהי נושאת חן בעיניך כדאי "
 "להוסיף אותה למועדפים!"
 
-#: qml/Main.qml:363
+#: qml/Main.qml:367
 #, kde-format
 msgid "No Bookmarks"
 msgstr "אין סימניות"
 
-#: qml/Main.qml:364
+#: qml/Main.qml:368
 #, kde-format
 msgid ""
 "Bookmark posts and they will show up here. Bookmarks are always kept "
@@ -1908,89 +1921,89 @@ msgstr ""
 "לאחר הוספת רשומות למועדפים הן תופענה כאן. סימניות תמיד נשארות פרטיות, אפילו "
 "לעיני יוצרי הרשומה."
 
-#: qml/Main.qml:468
+#: qml/Main.qml:484
 #, kde-format
 msgid "Write a New Post"
 msgstr "כתיבת רשומה חדשה"
 
-#: qml/Main.qml:495
+#: qml/Main.qml:511
 #, kde-format
 msgid "Write a new post"
 msgstr "כתיבת רשומה חדשה"
 
-#: qml/Main.qml:540
+#: qml/Main.qml:556
 #, kde-format
 msgid "Reply to post"
 msgstr "תגובה לרשומה"
 
-#: qml/Main.qml:629
+#: qml/Main.qml:645
 #, kde-format
 msgctxt "@action:button Home Timeline"
 msgid "Home"
 msgstr "בית"
 
-#: qml/Main.qml:634
+#: qml/Main.qml:650
 #, kde-format
 msgctxt "@action:button Account Notifications"
 msgid "Notifications"
 msgstr "התראות"
 
-#: qml/Main.qml:639
+#: qml/Main.qml:655
 #, kde-format
 msgctxt "@action:button Follows that require explicit allow/deny"
 msgid "Follow Requests"
 msgstr "בקשות מעקב"
 
-#: qml/Main.qml:644
+#: qml/Main.qml:660
 #, kde-format
 msgctxt "@action:button Local timeline of posts from the account's own server"
 msgid "Local"
 msgstr "מקומי"
 
-#: qml/Main.qml:648
+#: qml/Main.qml:664
 #, kde-format
 msgctxt ""
 "@action:button Global timeline of posts from the entire Fediverse network"
 msgid "Global"
 msgstr "מקיף"
 
-#: qml/Main.qml:652
+#: qml/Main.qml:668
 #, kde-format
 msgctxt "@action:button Direct one-on-one messages between users"
 msgid "Conversations"
 msgstr "שיחות"
 
-#: qml/Main.qml:656
+#: qml/Main.qml:672
 #, kde-format
 msgctxt "@action:button This account's favorited posts"
 msgid "Favorites"
 msgstr "מועדפים"
 
-#: qml/Main.qml:660
+#: qml/Main.qml:676
 #, kde-format
 msgctxt "@action:button This account's bookmarked posts"
 msgid "Bookmarks"
 msgstr "סימניות"
 
-#: qml/Main.qml:664
+#: qml/Main.qml:680
 #, kde-format
 msgctxt "@action:button Explore this server's trending posts, news, and more"
 msgid "Explore"
 msgstr "סיור"
 
-#: qml/Main.qml:668
+#: qml/Main.qml:684
 #, kde-format
 msgctxt "@action:button A list of this account's followed accounts"
 msgid "Following"
 msgstr "נעקבים"
 
-#: qml/Main.qml:672
+#: qml/Main.qml:688
 #, kde-format
 msgctxt "@action:button Search for users, posts and tags"
 msgid "Search"
 msgstr "חיפוש"
 
-#: qml/Main.qml:680
+#: qml/Main.qml:696
 #, kde-format
 msgctxt ""
 "@action:button This account's lists, or timelines consisting of a groups of "
@@ -1998,37 +2011,37 @@ msgctxt ""
 msgid "Lists"
 msgstr "רשימות"
 
-#: qml/Main.qml:684
+#: qml/Main.qml:700
 #, kde-format
 msgctxt "@action:button This account's profile"
 msgid "Profile"
 msgstr "פרופיל"
 
-#: qml/Main.qml:691
+#: qml/Main.qml:707
 #, kde-format
 msgctxt "@action:button Open debug page"
 msgid "Debug"
 msgstr "ניפוי שגיאות"
 
-#: qml/Main.qml:704
+#: qml/Main.qml:720
 #, kde-format
 msgctxt "@action:button Open moderation tools"
 msgid "Moderation Tools"
 msgstr "כלי השגחה"
 
-#: qml/Main.qml:711
+#: qml/Main.qml:727
 #, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "הגדרות"
 
-#: qml/Main.qml:874
+#: qml/Main.qml:890
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Unfollow"
 msgstr "ביטול מעקב"
 
-#: qml/Main.qml:874
+#: qml/Main.qml:890
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Follow"
@@ -5718,7 +5731,7 @@ msgctxt "@action:button"
 msgid "Switch to '%1'"
 msgstr "מעבר אל ‚%1’"
 
-#: tokodonapplication.cpp:65 tokodonapplication.cpp:224
+#: tokodonapplication.cpp:65 tokodonapplication.cpp:229
 #, kde-format
 msgctxt "@action:button"
 msgid "Configure '%1'"
@@ -5829,7 +5842,13 @@ msgctxt "@action:button"
 msgid "Open Account Switcher"
 msgstr "פתיחת בורר החשבונות"
 
-#: tokodonapplication.cpp:216
+#: tokodonapplication.cpp:185
+#, kde-format
+msgctxt "@action:button"
+msgid "Reload"
+msgstr ""
+
+#: tokodonapplication.cpp:221
 #, kde-format
 msgctxt "@action:button"
 msgid "Switch '%1'"
