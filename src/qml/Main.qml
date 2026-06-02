@@ -78,7 +78,7 @@ StatefulApp.StatefulWindow {
             root.pageStack.push(Qt.createComponent("org.kde.tokodon", "LoginIssuePage"));
         } else {
             // HACK: We can't use trigger() here for some reason, but the action is super simple.
-            homeAction.checked = true;
+            homeAction.fromQAction.checked = true;
             root.application.openHomeTimeline();
         }
     }
