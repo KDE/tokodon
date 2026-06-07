@@ -1,23 +1,24 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the tokodon package.
 # SPDX-FileCopyrightText: 2021 Burkhard Lück <lueck@hube-lueck.de>
-# SPDX-FileCopyrightText: 2022, 2023 Frederik Schwarzer <schwarzer@kde.org>
-# SPDX-FileCopyrightText: 2022, 2024, 2025 Frank Steinmetzger <dev-kde@felsenfleischer.de>
+# SPDX-FileCopyrightText: 2022, 2024-2025 Frank Steinmetzger <dev-kde@felsenfleischer.de>
+# SPDX-FileCopyrightText: 2022-2023 Frederik Schwarzer <schwarzer@kde.org>
 # SPDX-FileCopyrightText: 2025 Alois Spitzbart <spitz234@hotmail.com>
+# SPDX-FileCopyrightText: 2026 Philipp Kiemle <l10n.daphipz@fastmail.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-10 02:41+0000\n"
-"PO-Revision-Date: 2025-05-18 19:45+0200\n"
-"Last-Translator: Frank Steinmetzger <dev-kde@felsenfleischer.de>\n"
+"PO-Revision-Date: 2026-06-06 00:05+0200\n"
+"Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.04.1\n"
+"X-Generator: Lokalize 26.04.1\n"
 
 #: account/abstractaccount.cpp:33
 #, kde-format
@@ -147,7 +148,7 @@ msgstr "Konnte die Notiz über das Konto nicht bearbeiten"
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Network request was interrupted"
-msgstr ""
+msgstr "Netzwerkanfrage wurde unterbrochen"
 
 #: account/account.cpp:309 account/account.cpp:316
 #, kde-format
@@ -230,10 +231,9 @@ msgstr ""
 
 #: account/notificationhandler.cpp:155
 #: content/ui/Notifications/UserInteractionLabel.qml:94
-#, fuzzy, kde-format
-#| msgid "%1 boosted your post"
+#, kde-format
 msgid "%1 quoted your post"
-msgstr "%1 teilte Ihren Beitrag"
+msgstr "%1 hat Ihren Beitrag zitiert"
 
 #: account/notificationhandler.cpp:160
 #, kde-format
@@ -424,7 +424,7 @@ msgid ""
 "Some users need to be manually approved before they can follow you, and will "
 "show up here."
 msgstr ""
-"Einige Benutzer müssen erst von Hand freigegeben werden bevor Sie Ihnen "
+"Einige Benutzer müssen erst von Hand freigegeben werden, bevor Sie Ihnen "
 "folgen dürfen. Diese werden hier aufgelistet."
 
 #: account/socialgraphmodel.cpp:86
@@ -655,12 +655,12 @@ msgstr "QR-Code für dieses Konto anzeigen"
 #: content/ui/AccountHeader.qml:350
 #, kde-format
 msgid "Mention…"
-msgstr "Erwähnen …"
+msgstr "Erwähnen …"
 
 #: content/ui/AccountHeader.qml:356
 #, kde-format
 msgid "Start a Conversation…"
-msgstr "Eine Unterhaltung beginnen …"
+msgstr "Eine Unterhaltung beginnen …"
 
 #: content/ui/AccountHeader.qml:365
 #, kde-format
@@ -706,7 +706,7 @@ msgstr "Blockieren"
 #, kde-format
 msgctxt "@action:inmenu Report this post"
 msgid "Report…"
-msgstr "Melden …"
+msgstr "Melden …"
 
 #: content/ui/AccountHeader.qml:441
 #, kde-format
@@ -882,19 +882,16 @@ msgid "This user hasn't posted any media yet."
 msgstr "Dieser Benutzer hat noch keine Medien gepostet."
 
 #: content/ui/AccountSwitchDialog.qml:29
-#, fuzzy, kde-format
-#| msgid "Switch Account"
+#, kde-format
 msgctxt "@title: dialog to switch between logged in accounts"
 msgid "Switch Account"
 msgstr "Konto wechseln"
 
 #: content/ui/AccountSwitchDialog.qml:56
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add Account"
+#, kde-format
 msgctxt "@button: login to or register a new account."
 msgid "Add Account"
-msgstr "Zugang hinzufügen"
+msgstr "Konto hinzufügen"
 
 #: content/ui/AccountSwitchDialog.qml:59
 #, kde-format
@@ -967,12 +964,10 @@ msgid "No emojis"
 msgstr "Keine Emoji"
 
 #: content/ui/Components/ServerInformationCard.qml:28
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Embed Information"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Information"
-msgstr "Informationen einbetten"
+msgstr "Keine Informationen"
 
 #: content/ui/Components/ServerInformationCard.qml:33
 #, kde-format
@@ -981,11 +976,10 @@ msgid "Last updated: %1"
 msgstr "Zuletzt aktualisiert: %1"
 
 #: content/ui/Components/TimelineView.qml:84
-#, fuzzy, kde-format
-#| msgid "Create List"
+#, kde-format
 msgctxt "@action:button"
 msgid "Create Post"
-msgstr "Liste erstellen"
+msgstr "Beitrag erstellen"
 
 #: content/ui/Components/TimelineView.qml:92
 #, kde-format
@@ -1027,7 +1021,7 @@ msgstr "Unterhaltungen"
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "New Conversation…"
-msgstr "Neue Unterhaltung …"
+msgstr "Neue Unterhaltung …"
 
 #: content/ui/ConversationPage.qml:31
 #, kde-format
@@ -1038,7 +1032,7 @@ msgstr "Benutzer suchen"
 #: content/ui/ConversationPage.qml:103
 #, kde-format
 msgid "Search for user…"
-msgstr "Nach Benutzer suchen …"
+msgstr "Nach Benutzer suchen …"
 
 #: content/ui/ConversationPage.qml:142
 #, kde-format
@@ -1130,7 +1124,7 @@ msgstr "Benutzer hinzufügen"
 #, kde-format
 msgctxt "@title"
 msgid "Add Users to List…"
-msgstr "Benutzer zur Liste hinzufügen …"
+msgstr "Benutzer zur Liste hinzufügen …"
 
 #: content/ui/EditListPage.qml:172
 #, kde-format
@@ -1141,7 +1135,7 @@ msgstr "Hinzufügen"
 #: content/ui/EditListPage.qml:219
 #, kde-format
 msgid "Search among users you follow…"
-msgstr "Unter von Ihnen gefolgten Benutzern suchen …"
+msgstr "Unter von Ihnen gefolgten Benutzern suchen …"
 
 #: content/ui/EditListPage.qml:253
 #, kde-format
@@ -1150,9 +1144,7 @@ msgid "Create"
 msgstr "Erstellen"
 
 #: content/ui/EditListPage.qml:255
-#, fuzzy, kde-format
-#| msgctxt "@action:Button Save an edited a post"
-#| msgid "Save"
+#, kde-format
 msgctxt "@action:button Save the edited list"
 msgid "Save"
 msgstr "Speichern"
@@ -1173,7 +1165,7 @@ msgstr "Liste löschen"
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to delete this list?"
-msgstr "Sind Sie sicher, dass Sie diese Liste löschen wollen?"
+msgstr "Sind Sie sicher, dass Sie diese Liste löschen möchten?"
 
 #: content/ui/ExplorePage.qml:18
 #, kde-format
@@ -1260,7 +1252,7 @@ msgstr "Antworten anzeigen"
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Configure Filters…"
-msgstr "Filter einrichten …"
+msgstr "Filter einrichten …"
 
 #: content/ui/FollowingPage.qml:66 content/ui/TimelinePage.qml:140
 #, kde-format
@@ -1289,11 +1281,10 @@ msgid "Open Post"
 msgstr "Beitrag öffnen"
 
 #: content/ui/GenericServerInformationPage.qml:17
-#, fuzzy, kde-format
-#| msgid "Custom Server"
+#, kde-format
 msgctxt "@title:window"
 msgid "About Server"
-msgstr "Benutzerdefinierter Server"
+msgstr "Über diesen Server"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:19
 #, kde-format
@@ -1400,12 +1391,10 @@ msgid "Lists"
 msgstr "Listen"
 
 #: content/ui/ListsPage.qml:36
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Create Rule"
+#, kde-format
 msgctxt "@action:button Create new list"
 msgid "Create New…"
-msgstr "Regel erstellen"
+msgstr "Neue erstellen …"
 
 #: content/ui/ListsPage.qml:77
 #, kde-format
@@ -1433,11 +1422,10 @@ msgstr ""
 "erscheinen nur neue Beiträge."
 
 #: content/ui/ListTimelinePage.qml:30
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@action:button Edit current list"
 msgid "Edit…"
-msgstr "Bearbeiten"
+msgstr "Bearbeiten …"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:26
 #, kde-format
@@ -1476,7 +1464,8 @@ msgstr "Autorisierungscode verwenden"
 #, kde-format
 msgid "Use this login method if the above link does not work."
 msgstr ""
-"Benutzen Sie diese Anmeldemethode, falls der obige Link nicht funktioniert."
+"Verwenden Sie diese Anmeldemethode, falls die obige Verknüpfung nicht "
+"funktioniert."
 
 #: content/ui/LoginFlow/CodeAuthorization.qml:25
 #, kde-format
@@ -1490,10 +1479,9 @@ msgid "Login Issue"
 msgstr "Problem mit Anmeldung"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:27
-#, fuzzy, kde-format
-#| msgid "There was an issue logging into the server:<br><b>%1</b>"
+#, kde-format
 msgid "There was an issue logging into %1:<br><b>%2</b>"
-msgstr "Es gab ein Problem bei der Anmeldungen am Server:<br><b>%1</b>"
+msgstr "Es gab ein Problem bei der Anmeldung bei %1:<br><b>%2</b>"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:38
 #, kde-format
@@ -1536,7 +1524,7 @@ msgstr "Abmeldung"
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to log out?"
-msgstr "Wollen Sie sich wirklich abmelden?"
+msgstr "Möchten Sie sich wirklich abmelden?"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:17
 #, kde-format
@@ -1588,7 +1576,7 @@ msgstr "Passwort"
 #: content/ui/LoginFlow/RegistrationPage.qml:128
 #, kde-format
 msgid "Date of Birth"
-msgstr ""
+msgstr "Geburtsdatum"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:136
 #, kde-format
@@ -1651,7 +1639,7 @@ msgstr ""
 #: content/ui/LoginFlow/ServersPage.qml:178
 #, kde-format
 msgid "Search or enter URL…"
-msgstr "Suchen oder eine URL eingeben …"
+msgstr "Suchen oder eine URL eingeben …"
 
 #: content/ui/LoginFlow/ServersPage.qml:217
 #, kde-format
@@ -1696,15 +1684,13 @@ msgstr ""
 "Mastodon (und anderer kompatibler Software)."
 
 #: content/ui/LoginFlow/WelcomePage.qml:80
-#, fuzzy, kde-format
-#| msgid "Register"
+#, kde-format
 msgctxt "@action:button Pick a Mastodon server"
 msgid "Register"
 msgstr "Registrieren"
 
 #: content/ui/LoginFlow/WelcomePage.qml:90
-#, fuzzy, kde-format
-#| msgid "Login"
+#, kde-format
 msgctxt "@action:button Use an existing Mastodon account"
 msgid "Login"
 msgstr "Anmelden"
@@ -1731,31 +1717,31 @@ msgstr "Kompatibel mit"
 #, kde-format
 msgctxt "@title"
 msgid "Open As…"
-msgstr "Öffnen als ..."
+msgstr "Öffnen als …"
 
 #: content/ui/Main.qml:151
 #, kde-format
 msgctxt "@title"
 msgid "Reply As…"
-msgstr "Antworten als …"
+msgstr "Antworten als …"
 
 #: content/ui/Main.qml:153
 #, kde-format
 msgctxt "@title"
 msgid "Favorite As…"
-msgstr "Favoriten als ..."
+msgstr "Favorisieren als …"
 
 #: content/ui/Main.qml:155
 #, kde-format
 msgctxt "@title"
 msgid "Boost As…"
-msgstr "Beitrag teilen als ..."
+msgstr "Beitrag teilen als …"
 
 #: content/ui/Main.qml:157
 #, kde-format
 msgctxt "@title"
 msgid "Bookmark As…"
-msgstr "Lesezeichen speichern als ..."
+msgstr "Lesezeichen speichern als …"
 
 #: content/ui/Main.qml:159
 #, kde-format
@@ -2152,8 +2138,8 @@ msgid ""
 "This can be the domain name that shows up in the e-mail address or the MX "
 "record it uses. They will be checked upon sign-up."
 msgstr ""
-"Dies kann die Domain der E-Mail-Adresse sein oder der MX-Record, den sie "
-"benutzt. Diese werden beim Registrieren geprüft."
+"Dies kann der Domainname der E-Mail-Adresse sein oder der MX-Record, den sie "
+"verwendet. Diese werden beim Registrieren geprüft."
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:116
 #, kde-format
@@ -3331,7 +3317,7 @@ msgstr "Alle als gelesen markieren"
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Configure Notifications…"
-msgstr "Benachrichtigungen einrichten …"
+msgstr "Benachrichtigungen einrichten …"
 
 #: content/ui/NotificationPage.qml:50
 #, kde-format
@@ -3388,25 +3374,22 @@ msgid "Follows"
 msgstr "Gefolgte"
 
 #: content/ui/NotificationPage.qml:155
-#, fuzzy, kde-format
-#| msgid "Show Boosts"
+#, kde-format
 msgctxt "Show only quotes"
 msgid "Quotes"
-msgstr "Geteilte Beiträge anzeigen"
+msgstr "Zitate"
 
 #: content/ui/NotificationPage.qml:210
-#, fuzzy, kde-format
-#| msgid "News"
+#, kde-format
 msgctxt "@info:label New notifications"
 msgid "New"
-msgstr "Neuigkeiten"
+msgstr "Neu"
 
 #: content/ui/NotificationPage.qml:210
-#, fuzzy, kde-format
-#| msgid "Previous image"
+#, kde-format
 msgctxt "@info:label Previous notifications"
 msgid "Previous"
-msgstr "Vorheriges Bild"
+msgstr "Vorherige"
 
 #: content/ui/NotificationPage.qml:357
 #, kde-format
@@ -3420,7 +3403,7 @@ msgid ""
 "posts they will show up here."
 msgstr ""
 "Sie haben noch keine Benachrichtigungen. Wenn andere Ihnen antworten, Ihre "
-"Beiträge favorisieren oder teilen, dann erscheint das hier."
+"Beiträge favorisieren oder teilen, werden Sie hier darüber informiert."
 
 #: content/ui/Notifications/AccountWarningDelegate.qml:67
 #, kde-format
@@ -3504,12 +3487,10 @@ msgid "A report has been filed against a user in your server."
 msgstr "Einer der Benutzer auf Ihrem Server wurde gemeldet."
 
 #: content/ui/Notifications/UnknownNotificationDelegate.qml:48
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Unknown Action"
+#, kde-format
 msgctxt "@info"
 msgid "Unknown notification"
-msgstr "Unbekannte Aktion"
+msgstr "Unbekannte Benachrichtigung"
 
 #: content/ui/Notifications/UserInteractionLabel.qml:88
 #, kde-format
@@ -3575,22 +3556,22 @@ msgstr "Medien anzeigen"
 #: content/ui/PostDelegate/AttachmentMenu.qml:44
 #, kde-format
 msgid "Save Image As…"
-msgstr "Bild speichern unter ..."
+msgstr "Bild speichern unter …"
 
 #: content/ui/PostDelegate/AttachmentMenu.qml:46
 #, kde-format
 msgid "Save Gif As…"
-msgstr "Gif speichern unter …"
+msgstr "Gif speichern unter …"
 
 #: content/ui/PostDelegate/AttachmentMenu.qml:48
 #, kde-format
 msgid "Save Video As…"
-msgstr "Video speichern unter …"
+msgstr "Video speichern unter …"
 
 #: content/ui/PostDelegate/AttachmentMenu.qml:50
 #, kde-format
 msgid "Save Audio As…"
-msgstr "Audio speichern unter …"
+msgstr "Audio speichern unter …"
 
 #: content/ui/PostDelegate/AttachmentMenu.qml:69
 #, kde-format
@@ -3635,8 +3616,7 @@ msgid "<b>Filtered</b><br /> %1"
 msgstr "<b>Inhaltswarnung</b><br /> %1"
 
 #: content/ui/PostDelegate/FilterNotice.qml:54
-#, fuzzy, kde-format
-#| msgid "Show anyway"
+#, kde-format
 msgctxt "@action:button"
 msgid "Show Anyway"
 msgstr "Trotzdem anzeigen"
@@ -3693,18 +3673,16 @@ msgstr[0] "%1 Mal geteilt"
 msgstr[1] "%1 Mal geteilt"
 
 #: content/ui/PostDelegate/InformationBar.qml:139
-#, fuzzy, kde-format
-#| msgid "(No votes)"
+#, kde-format
 msgid "No quotes"
-msgstr "(Keine Stimmen)"
+msgstr "Keine Zitate"
 
 #: content/ui/PostDelegate/InformationBar.qml:141
-#, fuzzy, kde-format
-#| msgid "(No votes)"
+#, kde-format
 msgid "%1 quote"
 msgid_plural "%1 quotes"
-msgstr[0] "(Keine Stimmen)"
-msgstr[1] "(Keine Stimmen)"
+msgstr[0] "%1 Zitat"
+msgstr[1] "%1 Zitate"
 
 #: content/ui/PostDelegate/LinkMenu.qml:33
 #: content/ui/PostDelegate/PostMenu.qml:61
@@ -3787,7 +3765,7 @@ msgstr "Beitrag löschen"
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to delete this post?"
-msgstr "Wollen Sie diesen Beitrag wirklich löschen?"
+msgstr "Möchten Sie diesen Beitrag wirklich löschen?"
 
 #: content/ui/PostDelegate/PostDelegate.qml:258
 #, kde-format
@@ -3802,7 +3780,7 @@ msgid ""
 "Are you sure you want to redraft this post? This will delete the original "
 "post."
 msgstr ""
-"Wollen Sie diesen Beitrag wirklich neu verfassen? Dies wird den "
+"Möchten Sie diesen Beitrag wirklich neu verfassen? Dies wird den "
 "ursprünglichen Beitrag löschen."
 
 #: content/ui/PostDelegate/PostDelegate.qml:413
@@ -3905,7 +3883,7 @@ msgstr "Weitere Aktionen"
 #, kde-format
 msgctxt "@info Loading user that started this interaction"
 msgid "Loading…"
-msgstr "Wird geladen …"
+msgstr "Wird geladen …"
 
 #: content/ui/PostDelegate/PostInteractionLabel.qml:63
 #, kde-format
@@ -3924,47 +3902,45 @@ msgid "Open Thread"
 msgstr "Diskussion öffnen"
 
 #: content/ui/PostDelegate/PostMenu.qml:70
-#, fuzzy, kde-format
-#| msgid "Copy Image"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy Text"
-msgstr "Bild kopieren"
+msgstr "Text kopieren"
 
 #: content/ui/PostDelegate/PostMenu.qml:74
-#, fuzzy, kde-format
-#| msgid "Post link copied."
+#, kde-format
 msgid "Post text copied."
-msgstr "Beitrag-Verknüpfung kopiert."
+msgstr "Beitragstext kopiert."
 
 #: content/ui/PostDelegate/PostMenu.qml:87
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open as…"
-msgstr "Öffnen als ..."
+msgstr "Öffnen als …"
 
 #: content/ui/PostDelegate/PostMenu.qml:95
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Reply as…"
-msgstr "Antworten als ..."
+msgstr "Antworten als …"
 
 #: content/ui/PostDelegate/PostMenu.qml:103
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Favorite as…"
-msgstr "Favorisieren als ..."
+msgstr "Favorisieren als …"
 
 #: content/ui/PostDelegate/PostMenu.qml:111
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Boost as…"
-msgstr "Teilen als ..."
+msgstr "Teilen als …"
 
 #: content/ui/PostDelegate/PostMenu.qml:119
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Bookmark as…"
-msgstr "Lesezeichen setzten als ..."
+msgstr "Lesezeichen setzten als …"
 
 #: content/ui/PostDelegate/PostMenu.qml:132
 #, kde-format
@@ -4021,10 +3997,9 @@ msgid "Edit"
 msgstr "Bearbeiten"
 
 #: content/ui/PostDelegate/PostMenu.qml:212
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgid "Delete…"
-msgstr "Löschen"
+msgstr "Löschen …"
 
 #: content/ui/PostDelegate/PostMenu.qml:220
 #, fuzzy, kde-format
@@ -4087,17 +4062,16 @@ msgid "Quoted post"
 msgstr "Zitierter Beitrag"
 
 #: content/ui/PostDelegate/QuotePost.qml:154
-#, fuzzy, kde-format
-#| msgid "Add Poll"
+#, kde-format
 msgctxt "@info:label"
 msgid "Poll"
-msgstr "Umfrage hinzufügen"
+msgstr "Umfrage"
 
 #: content/ui/PostDelegate/VideoAttachment.qml:201
 #, kde-format
 msgctxt "@action:button"
 msgid "Volume"
-msgstr ""
+msgstr "Lautstärke"
 
 #: content/ui/ReadMarker.qml:13
 #, kde-format
@@ -4153,9 +4127,7 @@ msgid "Search"
 msgstr "Suche"
 
 #: content/ui/SearchView.qml:33
-#, fuzzy, kde-format
-#| msgctxt "@action Pop out the status composer"
-#| msgid "Pop Out"
+#, kde-format
 msgctxt "@action:button Pop out search results into its own page"
 msgid "Pop Out"
 msgstr "Herauslösen"
@@ -4169,7 +4141,7 @@ msgstr ""
 #: content/ui/SearchView.qml:61
 #, kde-format
 msgid "Loading..."
-msgstr "Wird geladen ..."
+msgstr "Wird geladen …"
 
 #: content/ui/SearchView.qml:69
 #, kde-format
@@ -4182,17 +4154,13 @@ msgid "Search for users, tags and posts"
 msgstr "Nach Benutzern, Tags und Beiträgen suchen"
 
 #: content/ui/ServerInformationPage.qml:25
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Rules"
+#, kde-format
 msgctxt "@title:window Server rules"
 msgid "Rules"
 msgstr "Regeln"
 
 #: content/ui/ServerInformationPage.qml:66
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Rules"
+#, kde-format
 msgctxt "@action:button"
 msgid "Rules"
 msgstr "Regeln"
@@ -4216,20 +4184,16 @@ msgid "Privacy Policy"
 msgstr "Datenschutzrichtlinie"
 
 #: content/ui/ServerInformationPage.qml:102
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Password Service"
+#, kde-format
 msgctxt "@action:button"
 msgid "Terms of Service"
-msgstr "Passwortdienst"
+msgstr "Nutzungsbedingungen"
 
 #: content/ui/ServerInformationPage.qml:103
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Password Service"
+#, kde-format
 msgctxt "@title:window"
 msgid "Terms of Service"
-msgstr "Passwortdienst"
+msgstr "Nutzungsbedingungen"
 
 #: content/ui/Settings/AccountPage.qml:26
 #, kde-format
@@ -4246,7 +4210,7 @@ msgstr "Bitte wählen Sie eine Datei"
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to log out of %1?"
-msgstr "Wollen Sie sich wirklich von %1 abmelden?"
+msgstr "Möchten Sie sich wirklich von %1 abmelden?"
 
 #: content/ui/Settings/AccountPage.qml:70
 #, kde-format
@@ -4608,9 +4572,7 @@ msgid "Create"
 msgstr "Erstellen"
 
 #: content/ui/Settings/EditFilterPage.qml:229
-#, fuzzy, kde-format
-#| msgctxt "@action:Button Save an edited a post"
-#| msgid "Save"
+#, kde-format
 msgctxt "@action:button Save the edited filter"
 msgid "Save"
 msgstr "Speichern"
@@ -4631,7 +4593,7 @@ msgstr "Filter löschen"
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to delete this filter?"
-msgstr "Sind Sie sicher, dass Sie diesen Filter löschen wollen?"
+msgstr "Sind Sie sicher, dass Sie diesen Filter löschen möchten?"
 
 #: content/ui/Settings/EditProfilePage.qml:21
 #, kde-format
@@ -4862,18 +4824,16 @@ msgid "Show in All"
 msgstr ""
 
 #: content/ui/Settings/NotificationsPage.qml:173
-#, fuzzy, kde-format
-#| msgid "Notifications"
+#, kde-format
 msgctxt "@action:button"
 msgid "Disable notifications"
-msgstr "Benachrichtigungen"
+msgstr "Benachrichtigungen deaktivieren"
 
 #: content/ui/Settings/NotificationsPage.qml:173
-#, fuzzy, kde-format
-#| msgid "Notifications"
+#, kde-format
 msgctxt "@action:button"
 msgid "Enable notifications"
-msgstr "Benachrichtigungen"
+msgstr "Benachrichtigungen aktivieren"
 
 #: content/ui/Settings/NotificationsPage.qml:201
 #, kde-format
@@ -4889,16 +4849,14 @@ msgstr ""
 "Diskussionen antwortet."
 
 #: content/ui/Settings/NotificationsPage.qml:216
-#, fuzzy, kde-format
-#| msgid "Show Boosts"
+#, kde-format
 msgid "Quotes"
-msgstr "Geteilte Beiträge anzeigen"
+msgstr "Zitate"
 
 #: content/ui/Settings/NotificationsPage.qml:217
-#, fuzzy, kde-format
-#| msgid "When someone boosted one of your posts."
+#, kde-format
 msgid "When someone quotes you in a new post"
-msgstr "Wenn jemand einen Ihrer Beiträge teilt."
+msgstr "Wenn Sie jemand in einem Beitrag zitiert"
 
 #: content/ui/Settings/NotificationsPage.qml:231
 #, kde-format
@@ -5172,15 +5130,13 @@ msgid "Remove"
 msgstr "Entfernen"
 
 #: content/ui/SocialGraphPage.qml:100
-#, fuzzy, kde-format
-#| msgid "Unblock"
+#, kde-format
 msgctxt "@action:button Unblock this user"
 msgid "Unblock"
 msgstr "Blockierung aufheben"
 
 #: content/ui/SocialGraphPage.qml:106
-#, fuzzy, kde-format
-#| msgid "Unmute"
+#, kde-format
 msgctxt "@action:button Unmute this user"
 msgid "Unmute"
 msgstr "Stummschaltung aufheben"
@@ -5256,12 +5212,10 @@ msgid "Remove"
 msgstr "Entfernen"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:85
-#, fuzzy, kde-format
-#| msgctxt "@info:Time when the domain was allowed to federate."
-#| msgid "Created at"
+#, kde-format
 msgctxt "Draft, unfinished post"
 msgid "Created %1 ago"
-msgstr "Erstellt am"
+msgstr "Erstellt vor %1"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:85
 #, kde-format
@@ -5270,20 +5224,16 @@ msgid "Scheduled for %1"
 msgstr "Geplant für den %1"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:93
-#, fuzzy, kde-format
-#| msgctxt "@action:button Schedule something to be posted later"
-#| msgid "Schedule"
+#, kde-format
 msgctxt "@action:button Re-schedule this post"
 msgid "Re-schedule…"
-msgstr "Zeitplan"
+msgstr "Neu planen …"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:104
-#, fuzzy, kde-format
-#| msgctxt "@action:button Discard this post"
-#| msgid "Discard"
+#, kde-format
 msgctxt "@action:button Discard this post"
 msgid "Discard…"
-msgstr "Verwerfen"
+msgstr "Verwerfen …"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:116
 #, kde-format
@@ -5305,28 +5255,22 @@ msgid "Discard Draft"
 msgstr "Entwurf verwerfen"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:125
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Scheduled Posts"
+#, kde-format
 msgctxt "@title"
 msgid "Discard Scheduled Post"
-msgstr "Geplante Beiträge"
+msgstr "Geplanten Beitrag verwerfen"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:126
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Are you sure you want to discard your draft?"
+#, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to discard this draft?"
-msgstr "Wollen Sie Ihren Entwurf wirklich verwerfen?"
+msgstr "Möchten Sie diesen Entwurf wirklich verwerfen?"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:126
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Are you sure you want to delete this post?"
+#, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to discard this scheduled post?"
-msgstr "Wollen Sie diesen Beitrag wirklich löschen?"
+msgstr "Möchten Sie diesen geplanten Beitrag wirklich verwerfen?"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:132
 #, kde-format
@@ -5422,7 +5366,7 @@ msgstr "Speichern"
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to discard your draft?"
-msgstr "Wollen Sie Ihren Entwurf wirklich verwerfen?"
+msgstr "Möchten Sie Ihren Entwurf wirklich verwerfen?"
 
 #: content/ui/StatusComposer/StatusComposer.qml:188
 #, kde-format
@@ -5632,10 +5576,9 @@ msgid "Show Boosts"
 msgstr "Geteilte Beiträge anzeigen"
 
 #: content/ui/TimelinePage.qml:122
-#, fuzzy, kde-format
-#| msgid "Show Boosts"
+#, kde-format
 msgid "Show Quotes"
-msgstr "Geteilte Beiträge anzeigen"
+msgstr "Zitate anzeigen"
 
 #: content/ui/TimelinePage.qml:129
 #, kde-format
@@ -5689,7 +5632,7 @@ msgctxt ""
 "@info:label %1 is the native language name, and %2 is the localized name. "
 "For example, 'dansk (Danish)'"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: editor/listeditorbackend.cpp:121
 #, kde-format
@@ -5767,7 +5710,7 @@ msgstr "Im Fediverse browsen"
 #: main.cpp:81
 #, kde-format
 msgid "© 2021-2025 KDE Community"
-msgstr "© 2021-2024 KDE-Gemeinschaft"
+msgstr "© 2021–2025 KDE-Gemeinschaft"
 
 #: main.cpp:82
 #, kde-format
@@ -5797,10 +5740,9 @@ msgid "Your emails"
 msgstr "kde-i18n-de@kde.org"
 
 #: main.cpp:101
-#, fuzzy, kde-format
-#| msgid "Supports https, tokodon and web+ap url scheme"
+#, kde-format
 msgid "Supports https, and web+ap url schemes."
-msgstr "Unterstützt https-, Tokodon- und Web+ap-URL-Schemata"
+msgstr "Unterstützt https- und web+ap-URL-Schemata"
 
 #: network/networkcontroller.cpp:307
 #, kde-format
@@ -5857,7 +5799,7 @@ msgstr "Aktuelle Trends"
 #, kde-format
 msgctxt "@title:window"
 msgid "Loading…"
-msgstr "Wird geladen …"
+msgstr "Wird geladen …"
 
 #: timeline/threadmodel.cpp:50
 #, kde-format
@@ -5910,11 +5852,10 @@ msgid "Open Home Timeline"
 msgstr "Ende der Zeitleiste"
 
 #: tokodonapplication.cpp:104
-#, fuzzy, kde-format
-#| msgid "Notifications"
+#, kde-format
 msgctxt "@action:button Account Notifications"
 msgid "Open Notifications"
-msgstr "Benachrichtigungen"
+msgstr "Benachrichtigungen öffnen"
 
 #: tokodonapplication.cpp:110
 #, fuzzy, kde-format
@@ -5924,42 +5865,35 @@ msgid "Open Follow Requests"
 msgstr "Follower-Anfragen"
 
 #: tokodonapplication.cpp:116
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Local Timeline"
+#, kde-format
 msgctxt "@action:button Local timeline of posts from the account's own server"
 msgid "Open Local Timeline"
-msgstr "Lokale Zeitleiste"
+msgstr "Lokale Zeitleiste öffnen"
 
 #: tokodonapplication.cpp:122
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Global Timeline"
+#, kde-format
 msgctxt ""
 "@action:button Global timeline of posts from the entire Fediverse network"
 msgid "Open Global Timeline"
-msgstr "Globale Zeitleiste"
+msgstr "Globale Zeitleiste öffnen"
 
 #: tokodonapplication.cpp:128
-#, fuzzy, kde-format
-#| msgid "Conversations"
+#, kde-format
 msgctxt "@action:button Direct one-on-one messages between users"
 msgid "Open Conversations"
-msgstr "Unterhaltungen"
+msgstr "Unterhaltungen öffnen"
 
 #: tokodonapplication.cpp:134
-#, fuzzy, kde-format
-#| msgid "Favorites"
+#, kde-format
 msgctxt "@action:button This account's favorited posts"
 msgid "Open Favorites"
-msgstr "Favoriten"
+msgstr "Favoriten öffnen"
 
 #: tokodonapplication.cpp:140
-#, fuzzy, kde-format
-#| msgid "Bookmarks"
+#, kde-format
 msgctxt "@action:button This account's bookmarked posts"
 msgid "Open Bookmarks"
-msgstr "Lesezeichen"
+msgstr "Lesezeichen öffnen"
 
 #: tokodonapplication.cpp:146
 #, fuzzy, kde-format
@@ -5976,11 +5910,10 @@ msgid "Open Following"
 msgstr "Folge ich"
 
 #: tokodonapplication.cpp:158
-#, fuzzy, kde-format
-#| msgid "Search"
+#, kde-format
 msgctxt "@action:button Search for users, posts and tags"
 msgid "Open Search"
-msgstr "Suchen"
+msgstr "Suche öffnen"
 
 #: tokodonapplication.cpp:164
 #, fuzzy, kde-format
