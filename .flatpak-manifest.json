@@ -67,12 +67,15 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.qt.io/official_releases/qt/6.10/6.10.1/submodules/qtwebview-everywhere-src-6.10.1.tar.xz",
-                    "sha256": "421080583d7af564a855013dc336363a65303f31c9045a39963ae6b94ab26f6f",
+                    "url": "https://download.qt.io/official_releases/qt/6.10/6.10.3/submodules/qtwebview-everywhere-src-6.10.3.tar.xz",
+                    "sha256": "989aac9b42ec29df96c3a51bf99fce6021b25d861b698c34360cd1ce7826dc40",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 7927,
                         "stable-only": true,
+                        "versions": {
+                            "<": "6.11"
+                        },
                         "url-template": "https://download.qt.io/official_releases/qt/${major}.${minor}/$version/submodules/qtwebview-everywhere-src-$version.tar.xz"
                     }
                 }
