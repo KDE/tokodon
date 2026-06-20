@@ -16,11 +16,11 @@ MastoPage {
 
     title: i18nc("@title:window", "Welcome")
 
-    Image {
-        source: "qrc:/org.kde.tokodon.svg"
+    Kirigami.Icon {
+        source: "org.kde.tokodon"
 
-        fillMode: Image.PreserveAspectFit
-
+        Layout.preferredWidth: Math.round(Kirigami.Units.iconSizes.huge * 1.5)
+        Layout.preferredHeight: Math.round(Kirigami.Units.iconSizes.huge * 1.5)
         Layout.fillWidth: true
         Layout.fillHeight: true
         Layout.margins: Kirigami.Units.largeSpacing * 3

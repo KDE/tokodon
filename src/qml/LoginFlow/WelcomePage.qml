@@ -41,14 +41,14 @@ Kirigami.Page {
 
             spacing: Kirigami.Units.largeSpacing
 
-            Image {
-                source: "qrc:/org.kde.tokodon.svg"
-
-                fillMode: Image.PreserveAspectFit
+            Kirigami.Icon {
+                source: "org.kde.tokodon"
 
                 Layout.preferredWidth: Math.round(Kirigami.Units.iconSizes.huge * 1.5)
                 Layout.preferredHeight: Math.round(Kirigami.Units.iconSizes.huge * 1.5)
                 Layout.fillWidth: true
+                Layout.fillHeight: true
+                Layout.margins: Kirigami.Units.largeSpacing * 3
             }
 
             Kirigami.Heading {

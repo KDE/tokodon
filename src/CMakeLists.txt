@@ -342,16 +342,11 @@ qt_target_qml_sources(tokodon_static
         qml/AccountSwitchDialog.qml
 )
 
-set_source_files_properties(../org.kde.tokodon.svg PROPERTIES
-    QT_RESOURCE_ALIAS /org.kde.tokodon.svg
-)
 
 qt_target_qml_sources(tokodon_static
-    PREFIX /
     RESOURCES
         content/elephant.svg
         content/mastodon-logo.svg
-        ../org.kde.tokodon.svg
 )
 
 kconfig_target_kcfg_file(tokodon_static FILE config.kcfg CLASS_NAME Config MUTATORS GENERATE_PROPERTIES GENERATE_MOC DEFAULT_VALUE_GETTERS PARENT_IN_CONSTRUCTOR SINGLETON QML_REGISTRATION)
@@ -469,6 +464,7 @@ target_link_libraries(tokodon PRIVATE tokodon_static tokodon_staticplugin Kiriga
 if(ANDROID)
     target_link_libraries(tokodon PRIVATE Qt::Svg OpenSSL::SSL)
     install(FILES ../org.kde.tokodon.svg  DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/kirigami/breeze-internal/icons/ RENAME org.kde.tokodon.svg)
+    install(FILES ../org.kde.tokodon.tray.svg  DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/kirigami/breeze-internal/icons/ RENAME org.kde.tokodon.tray.svg)
     file(READ icon-list.txt TOKODON_ICONS)
     string(REPLACE "\n" ";" TOKODON_ICONS ${TOKODON_ICONS})
     kirigami_package_breeze_icons(ICONS ${TOKODON_ICONS} ${KIRIGAMI_ADDONS_ICONS})

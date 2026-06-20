@@ -176,6 +176,7 @@ ki18n_install(po)
 install(FILES org.kde.tokodon.desktop DESTINATION ${KDE_INSTALL_APPDIR})
 install(FILES org.kde.tokodon.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 install(FILES org.kde.tokodon.svg DESTINATION ${KDE_INSTALL_FULL_ICONDIR}/hicolor/scalable/apps)
+install(FILES org.kde.tokodon.tray.svg DESTINATION ${KDE_INSTALL_FULL_ICONDIR}/hicolor/scalable/apps)
 
 ecm_qt_install_logging_categories(
     EXPORT TOKODON
