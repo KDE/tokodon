@@ -25,6 +25,9 @@ ListView {
     // Shows the post action in the bottom-right
     property bool showPostAction: true
 
+    // Whether pinned posts should be indicated as such.
+    property bool indicatePins: false
+
     readonly property bool needsToShowBothActions: goToTopAction.visible && postAction.visible
     readonly property var singleActionToShow: {
         if (goToTopAction.visible) {
@@ -211,6 +214,7 @@ ListView {
         showSeparator: index !== ListView.view.count - 1
         loading: ListView.view.model.loading
         width: ListView.view.width
+        indicatePins: root.indicatePins
 
         Connections {
             target: status.ListView.view

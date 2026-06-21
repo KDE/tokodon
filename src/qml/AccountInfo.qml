@@ -96,6 +96,8 @@ Kirigami.Page {
             TimelineView {
                 id: timelineView
 
+                indicatePins: true
+
                 Kirigami.Theme.colorSet: Kirigami.Theme.View
 
                 header: Loader {

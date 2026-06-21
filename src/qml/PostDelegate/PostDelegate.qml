@@ -85,6 +85,9 @@ QQC2.ItemDelegate {
     property bool inViewPort: true
     property bool hasWebsite: root.application && root.application.website !== undefined && root.application.website.toString().trim().length > 0
 
+    // Whether pinned posts should be indicated as such.
+    property bool indicatePins: false
+
     readonly property bool isSelf: AccountManager.selectedAccount.identity === root.authorIdentity
     readonly property real threadMargin: Kirigami.Units.largeSpacing * 4
 
@@ -155,7 +158,7 @@ QQC2.ItemDelegate {
 
         RowLayout {
             spacing: Kirigami.Units.smallSpacing
-            visible: root.pinned && !root.notificationActorIdentity && !root.filtered
+            visible: root.indicatePins && root.pinned && !root.notificationActorIdentity && !root.filtered
 
             Layout.fillWidth: true
             Layout.bottomMargin: visible ? Kirigami.Units.smallSpacing : 0
