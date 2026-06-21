@@ -76,28 +76,15 @@ Kirigami.OverlayDrawer {
         }
 
         // Notification indicator
-        Rectangle {
+        Kirigami.Badge {
             anchors {
                 verticalCenter: parent.verticalCenter
                 right: parent.right
                 rightMargin: Kirigami.Units.largeSpacing
             }
-
-            color: Kirigami.Theme.highlightColor
-
-            width: 20
-            height: width
-            radius: width
+            type: Kirigami.Badge.Information
             visible: delegate.alertCount > 0
-
-            QQC2.Label {
-                anchors {
-                    centerIn: parent
-                }
-
-                text: delegate.alertCount
-                horizontalAlignment: Text.AlignHCenter
-            }
+            text: delegate.alertCount
         }
     }
 

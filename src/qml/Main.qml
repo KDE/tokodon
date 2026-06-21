@@ -759,29 +759,16 @@ StatefulApp.StatefulWindow {
                     Layout.fillHeight: true
 
                     // Notification indicator
-                    Rectangle {
+                    Kirigami.Badge {
                         anchors {
                             top: parent.top
                             topMargin: Kirigami.Units.mediumSpacing
                             right: parent.right
                             rightMargin: Kirigami.Units.mediumSpacing
                         }
-
-                        color: Kirigami.Theme.highlightColor
-
-                        width: 20
-                        height: width
-                        radius: width
+                        type: Kirigami.Badge.Information
                         visible: delegateButton.modelData.alertCount > 0
-
-                        QQC2.Label {
-                            anchors {
-                                centerIn: parent
-                            }
-
-                            text: delegateButton.modelData.alertCount ?? ""
-                            horizontalAlignment: Text.AlignHCenter
-                        }
+                        text: delegateButton.modelData.alertCount
                     }
                 }
             }

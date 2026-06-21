@@ -152,41 +152,19 @@ QQC2.Pane {
 
                 spacing: Kirigami.Units.mediumSpacing
 
-                QQC2.Control {
-                    padding: Kirigami.Units.smallSpacing
+                Kirigami.Badge {
                     visible: root.identity.relationship && root.identity.relationship.followedBy
-
-                    contentItem: QQC2.Label {
-                        text: root.identity.relationship && root.identity.relationship.following && root.identity.relationship.followedBy ? i18nc("'Mutual' is the common English word used in social media platforms describe people who follow you back. This the same meaning as 'mutual friends', for example.", "Mutual") : i18n("Follows you")
-                        color: '#fafafa'
-                    }
-
-                    background: Rectangle {
-                        radius: 3
-                        color: '#090b0d'
-                    }
+                    type: Kirigami.Badge.Information
+                    customColor: '#090b0d'
+                    text: root.identity.relationship && root.identity.relationship.following && root.identity.relationship.followedBy ? i18nc("'Mutual' is the common English word used in social media platforms describe people who follow you back. This the same meaning as 'mutual friends', for example.", "Mutual") : i18n("Follows you")
                 }
 
-                QQC2.Control {
+                Kirigami.Badge {
                     visible: root.identity.bot
-
-                    contentItem: RowLayout {
-                        spacing: Kirigami.Units.smallSpacing
-                        Kirigami.Icon {
-                            source: "automated-tasks"
-                            Layout.preferredWidth: Kirigami.Units.iconSizes.sizeForLabels
-                            Layout.preferredHeight: Kirigami.Units.iconSizes.sizeForLabels
-                        }
-                        QQC2.Label {
-                            text: i18n("Bot")
-                            color: '#fafafa'
-                        }
-                    }
-
-                    background: Rectangle {
-                        radius: 3
-                        color: '#090b0d'
-                    }
+                    icon.name: "automated-tasks-symbolic"
+                    text: i18nc("@info:label This account is a bot and automated", "Bot")
+                    type: Kirigami.Badge.Information
+                    customColor: '#090b0d'
                 }
             }
 
