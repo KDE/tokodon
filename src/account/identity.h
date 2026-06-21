@@ -41,6 +41,12 @@ class Identity : public QObject
     Q_PROPERTY(QString createdAt READ createdAt NOTIFY identityUpdated)
     Q_PROPERTY(bool limited READ limited NOTIFY identityUpdated)
     Q_PROPERTY(Identity *moved READ moved NOTIFY identityUpdated)
+    Q_PROPERTY(bool showMedia READ showMedia NOTIFY identityUpdated)
+    Q_PROPERTY(bool showMediaReplies READ showMediaReplies NOTIFY identityUpdated)
+    Q_PROPERTY(bool showFeatured READ showFeatured NOTIFY identityUpdated)
+    Q_PROPERTY(QString avatarDescription READ avatarDescription NOTIFY identityUpdated)
+    Q_PROPERTY(QString headerDescription READ headerDescription NOTIFY identityUpdated)
+    Q_PROPERTY(bool hideCollections READ hideCollections NOTIFY identityUpdated)
 
 public:
     /**
@@ -162,6 +168,36 @@ public:
      */
     Identity *moved() const;
 
+    /**
+     * @return Whether the account wishes to have a “Media” tab with media attachments on their profile.
+     */
+    bool showMedia() const;
+
+    /**
+     * @return Whether the account wishes to have replies in the “Media” tab on their profile.
+     */
+    bool showMediaReplies() const;
+
+    /**
+     * @return Whether the account wishes to have a “Featured” tab on their profile.
+     */
+    bool showFeatured() const;
+
+    /**
+     * @return A textual description of the avatar image.
+     */
+    QString avatarDescription() const;
+
+    /**
+     * @return A textual description of the header image.
+     */
+    QString headerDescription() const;
+
+    /**
+     * @return Whether the user hides the contents of their follows and followers collections.
+     */
+    bool hideCollections() const;
+
 Q_SIGNALS:
     void relationshipChanged();
     void identityUpdated();
@@ -190,4 +226,10 @@ private:
     QDate m_createdAt;
     bool m_limited;
     Identity *m_movedIdentity = nullptr;
+    bool m_showMedia = true;
+    bool m_showMediaReplies = true;
+    bool m_showFeatured = true;
+    QString m_avatarDescription;
+    QString m_headerDescription;
+    bool m_hideCollections;
 };

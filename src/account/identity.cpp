@@ -102,6 +102,36 @@ Identity *Identity::moved() const
     return m_movedIdentity;
 }
 
+bool Identity::showMedia() const
+{
+    return m_showMedia;
+}
+
+bool Identity::showMediaReplies() const
+{
+    return m_showMediaReplies;
+}
+
+bool Identity::showFeatured() const
+{
+    return m_showFeatured;
+}
+
+QString Identity::avatarDescription() const
+{
+    return m_avatarDescription;
+}
+
+QString Identity::headerDescription() const
+{
+    return m_headerDescription;
+}
+
+bool Identity::hideCollections() const
+{
+    return m_hideCollections;
+}
+
 void Identity::reparentIdentity(AbstractAccount *parent)
 {
     m_parent = parent;
@@ -139,6 +169,12 @@ void Identity::fromSourceData(const QJsonObject &doc)
 
     m_displayNameHtml = TextHandler::replaceCustomEmojis(emojis, m_displayNameHtml);
     m_bio = TextHandler::replaceCustomEmojis(emojis, m_bio);
+    for (int i = 0; i < m_fields.size(); i++) {
+        auto newField = m_fields[i].toObject();
+        newField["value"_L1] = TextHandler::replaceCustomEmojis(emojis, m_fields[i].toObject()["value"_L1].toString());
+
+        m_fields[i] = newField;
+    }
 
     const QString baseUrl = m_url.toDisplayString(QUrl::RemovePath);
 
@@ -169,6 +205,21 @@ void Identity::fromSourceData(const QJsonObject &doc)
         m_movedIdentity->setParent(m_parent);
         m_movedIdentity->fromSourceData(doc["moved"_L1].toObject());
     }
+
+    // Added in Mastodon 4.6, so it's possible they are missing
+    if (doc.contains("show_media"_L1)) {
+        m_showMedia = doc["show_media"_L1].toBool();
+    }
+    if (doc.contains("show_media_replies"_L1)) {
+        m_showMediaReplies = doc["show_media_replies"_L1].toBool();
+    }
+    if (doc.contains("show_featured"_L1)) {
+        m_showFeatured = doc["show_featured"_L1].toBool();
+    }
+    m_avatarDescription = doc["avatar_description"_L1].toString();
+    m_headerDescription = doc["header_description"_L1].toString();
+
+    m_hideCollections = doc["hide_collections"_L1].toBool();
 
     Q_EMIT identityUpdated();
 }

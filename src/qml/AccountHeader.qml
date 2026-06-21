@@ -207,6 +207,8 @@ QQC2.Pane {
                             }
 
                             onClicked: Navigation.openFullScreenImage([album], root.identity, 0);
+
+                            Accessible.description: root.identity.avatarDescription
                         }
                     }
 
@@ -846,6 +848,8 @@ QQC2.Pane {
                 Kirigami.Chip {
                     closable: false
                     checkable: false
+                    // TODO: explain to the user that this information is not available
+                    enabled: !root.identity.hideCollections
 
                     onClicked: {
                         pageStack.push(socialGraphComponent, {
@@ -859,6 +863,8 @@ QQC2.Pane {
                 Kirigami.Chip {
                     closable: false
                     checkable: false
+                    // TODO: ditto
+                    enabled: !root.identity.hideCollections
 
                     onClicked: {
                         pageStack.push(socialGraphComponent, {
@@ -892,17 +898,25 @@ QQC2.Pane {
             Layout.alignment: Qt.AlignHCenter
             Layout.fillWidth: true
 
+            readonly property int tabCount: {
+                if (root.identity.showMedia) {
+                    return 3;
+                }
+                return 2;
+            }
+
             QQC2.TabButton {
                 text: i18nc("@item:inmenu Profile Post Filter", "Posts")
-                implicitWidth: bar.parent.width / 3
+                implicitWidth: bar.parent.width / bar.tabCount
             }
             QQC2.TabButton {
                 text: i18nc("@item:inmenu Profile Post Filter", "Posts && Replies")
-                implicitWidth: bar.parent.width / 3
+                implicitWidth: bar.parent.width / bar.tabCount
             }
             QQC2.TabButton {
+                visible: root.identity.showMedia
                 text: i18nc("@item:inmenu Profile Post Filter", "Media")
-                implicitWidth: bar.parent.width / 3
+                implicitWidth: visible ? (bar.parent.width / bar.tabCount) : 0
             }
         }
         Rectangle {

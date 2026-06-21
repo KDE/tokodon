@@ -42,9 +42,9 @@ void AccountMediaTimelineModel::fillTimeline(const QString &fromId)
     if (!fromId.isNull()) {
         statusQuery.addQueryItem(QStringLiteral("max_id"), fromId);
     }
-    if (!statusQuery.isEmpty()) {
-        uriStatus.setQuery(statusQuery);
-    }
+    statusQuery.addQueryItem(QStringLiteral("exclude_replies"),
+                             account()->identityLookup(m_accountId, {})->showMediaReplies() ? QStringLiteral("false") : QStringLiteral("true"));
+    uriStatus.setQuery(statusQuery);
 
     auto uriPinned = account()->apiUrl(QStringLiteral("/api/v1/accounts/%1/statuses").arg(m_accountId));
     uriPinned.setQuery(QUrlQuery{{
