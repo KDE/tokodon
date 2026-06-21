@@ -47,6 +47,8 @@ class Identity : public QObject
     Q_PROPERTY(QString avatarDescription READ avatarDescription NOTIFY identityUpdated)
     Q_PROPERTY(QString headerDescription READ headerDescription NOTIFY identityUpdated)
     Q_PROPERTY(bool hideCollections READ hideCollections NOTIFY identityUpdated)
+    Q_PROPERTY(bool memorial READ memorial NOTIFY identityUpdated)
+    Q_PROPERTY(bool suspended READ suspended NOTIFY identityUpdated)
 
 public:
     /**
@@ -198,6 +200,16 @@ public:
      */
     bool hideCollections() const;
 
+    /**
+     * @return An extra attribute returned only when an account is memorialized.
+     */
+    bool memorial() const;
+
+    /**
+     * @return An extra attribute returned only when an account is suspended.
+     */
+    bool suspended() const;
+
 Q_SIGNALS:
     void relationshipChanged();
     void identityUpdated();
@@ -232,4 +244,6 @@ private:
     QString m_avatarDescription;
     QString m_headerDescription;
     bool m_hideCollections;
+    bool m_memorial;
+    bool m_suspended;
 };

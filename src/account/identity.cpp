@@ -132,6 +132,16 @@ bool Identity::hideCollections() const
     return m_hideCollections;
 }
 
+bool Identity::memorial() const
+{
+    return m_memorial;
+}
+
+bool Identity::suspended() const
+{
+    return m_suspended;
+}
+
 void Identity::reparentIdentity(AbstractAccount *parent)
 {
     m_parent = parent;
@@ -162,6 +172,8 @@ void Identity::fromSourceData(const QJsonObject &doc)
     m_lastStatusAt = QDate::fromString(doc["last_status_at"_L1].toString(), Qt::ISODate);
     m_createdAt = QDate::fromString(doc["created_at"_L1].toString(), Qt::ISODate);
     m_limited = doc["limited"_L1].toBool();
+    m_memorial = doc["memorial"_L1].toBool();
+    m_suspended = doc["suspended"_L1].toBool();
 
     m_displayNameHtml = m_displayName.replace(QLatin1Char('<'), QStringLiteral("&lt;")).replace(QLatin1Char('>'), QStringLiteral("&gt;"));
 

@@ -95,6 +95,30 @@ QQC2.Pane {
             }
         }
 
+        Kirigami.InlineMessage {
+            id: memoralizedMessage
+
+            type: Kirigami.MessageType.Information
+            position: Kirigami.InlineMessage.Position.Header
+            visible: root.identity.memorial
+            showCloseButton: false
+            text: i18nc("@info:label", "Account memorialized")
+
+            Layout.fillWidth: true
+        }
+
+        Kirigami.InlineMessage {
+            id: suspendedMessage
+
+            type: Kirigami.MessageType.Warning
+            position: Kirigami.InlineMessage.Position.Header
+            visible: root.identity.suspended
+            showCloseButton: false
+            text: i18nc("@info:label", "Account suspended")
+
+            Layout.fillWidth: true
+        }
+
         QQC2.Control {
             id: avatarControl
 
@@ -301,7 +325,7 @@ QQC2.Pane {
                                     AccountManager.selectedAccount.followAccount(root.identity);
                                 }
                             }
-                            visible: !root.isSelf
+                            visible: !root.isSelf && !root.identity.suspended
                         },
                         Kirigami.Action {
                             displayHint: Kirigami.DisplayHint.IconOnly
@@ -313,7 +337,7 @@ QQC2.Pane {
                                 }
                             }
 
-                            visible: root.identity.relationship && root.identity.relationship.following && !root.isSelf
+                            visible: root.identity.relationship && root.identity.relationship.following && !root.isSelf && !root.identity.suspended
                             tooltip: {
                                 if (root.identity.relationship && root.identity.relationship.notifying) {
                                     return i18n("Stop notifying me when %1 posts.", '@' + root.identity.account);
@@ -332,6 +356,7 @@ QQC2.Pane {
                         Kirigami.Action {
                             displayHint: Kirigami.DisplayHint.IconOnly
                             icon.name: "view-barcode-qr-symbolic"
+                            visible: !root.identity.suspended
 
                             tooltip: i18nc("@info:tooltip", "Show a QR code for this account")
                             onTriggered: {
@@ -345,20 +370,20 @@ QQC2.Pane {
                         },
                         Kirigami.Action {
                             icon.name: "list-add"
-                            visible: !root.isSelf
+                            visible: !root.isSelf && !root.identity.suspended
                             text: i18n("Mention…")
                             onTriggered: Navigation.openComposer("@" + root.identity.account + " ")
                         },
                         Kirigami.Action {
                             icon.name: "view-conversation-balloon-symbolic"
-                            visible: !root.isSelf
+                            visible: !root.isSelf && !root.identity.suspended
                             text: i18n("Start a Conversation…")
                             onTriggered: Navigation.openConversation(root.identity.account)
                         },
                         Kirigami.Action {
                             icon.name: "view-hidden"
                             displayHint: Kirigami.DisplayHint.IconOnly
-                            visible: root.identity.relationship && root.identity.relationship.following && !root.isSelf
+                            visible: root.identity.relationship && root.identity.relationship.following && !root.isSelf && !root.identity.suspended
                             text: {
                                 if (root.identity.relationship && root.identity.relationship.showingReblogs) {
                                     return i18n("Hide Boosts from %1", '@' + root.identity.account);
@@ -376,7 +401,7 @@ QQC2.Pane {
                         },
                         Kirigami.Action {
                             icon.name: "favorite"
-                            visible: root.identity.relationship && !root.isSelf
+                            visible: root.identity.relationship && !root.isSelf && !root.identity.suspended
                             text: {
                                 if (root.identity.relationship && root.identity.relationship.endorsed) {
                                     return i18n("Stop Featuring This Profile");
@@ -430,7 +455,7 @@ QQC2.Pane {
                         },
                         Kirigami.Action {
                             icon.name: "dialog-warning-symbolic"
-                            visible: !root.isSelf
+                            visible: !root.isSelf && !root.identity.suspended
                             text: i18nc("@action:inmenu Report this post", "Report…");
                             onTriggered: Navigation.reportUser(root.identity)
                         },
