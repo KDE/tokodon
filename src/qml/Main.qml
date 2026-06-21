@@ -900,7 +900,7 @@ StatefulApp.StatefulWindow {
         Image {
             anchors.left: parent.left
             anchors.bottom: parent.bottom
-            anchors.bottomMargin: parent.SafeArea.margins.bottom
+            anchors.bottomMargin: root.SafeArea.margins.bottom
             source: "qrc:/content/elephant.svg"
             LayoutMirroring.enabled: false
             asynchronous: true

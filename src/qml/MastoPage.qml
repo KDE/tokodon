@@ -6,6 +6,8 @@ import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
 
 FormCard.FormCardPage {
+    id: root
+
     leftPadding: 0
     rightPadding: 0
     topPadding: 0
@@ -17,7 +19,7 @@ FormCard.FormCardPage {
         Image {
             anchors.left: parent.left
             anchors.bottom: parent.bottom
-            anchors.bottomMargin: parent.SafeArea.margins.bottom
+            anchors.bottomMargin: root.SafeArea.margins.bottom
             source: "qrc:/content/elephant.svg"
             LayoutMirroring.enabled: false
             asynchronous: true
