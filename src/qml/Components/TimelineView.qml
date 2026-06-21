@@ -76,7 +76,7 @@ ListView {
 
         function onStreamedPostAdded(id: string): void {
             // Update the read marker if we're at the top and a post just came in
-            if (root.atYBeginning && root.model.updateReadMarker) {
+            if (root.atYBeginning && root.model.updateReadMarker && root.isCurrentPage) {
                 root.model.updateReadMarker(id);
             }
         }
