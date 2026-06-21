@@ -387,7 +387,8 @@ QQC2.ItemDelegate {
 
         PostTags {
             standaloneTags: root.standaloneTags
-            visible: !root.filtered && postContent.visible && root.standaloneTags.length !== 0
+            // We want to ensure standalone tags are still visible, unless the post is hidden, or it's empty (because it's only tags)
+            visible: !root.filtered && (postContent.visible || !root.hasContent) && root.standaloneTags.length !== 0
 
             Layout.fillWidth: true
         }
