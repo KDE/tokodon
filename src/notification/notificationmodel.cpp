@@ -369,13 +369,13 @@ void NotificationModel::actionDelete(const QModelIndex &index)
 
     AbstractTimelineModel::actionDelete(index, p);
 
-    // TODO: this sucks
     for (auto &notification : m_notifications) {
         if (notification->post() != nullptr && notification->post()->postId() == p->postId()) {
             int row = m_notifications.indexOf(notification);
             beginRemoveRows({}, row, row);
             m_notifications.removeOne(notification);
             endRemoveRows();
+            break;
         }
     }
 }
