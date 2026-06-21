@@ -58,7 +58,7 @@ Kirigami.ScrollablePage {
                     wrapMode: Text.Wrap
                     textFormat: Text.StyledText
 
-                    onLinkActivated: (link) => Qt.openUrlExternally(link)
+                    onLinkActivated: link => applicationWindow().navigateLink(link, true)
                 }
 
                 RowLayout {

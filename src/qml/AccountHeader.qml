@@ -685,7 +685,7 @@ QQC2.Pane {
                                 wrapMode: TextEdit.Wrap
                                 textFormat: TextEdit.RichText
                                 text: delegate.modelData.value
-                                onLinkActivated: link => Qt.openUrlExternally(link)
+                                onLinkActivated: link => applicationWindow().navigateLink(link, true)
                                 MouseArea {
                                     anchors.fill: parent
                                     acceptedButtons: Qt.NoButton // don't eat clicks on the Text

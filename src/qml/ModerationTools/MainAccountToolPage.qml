@@ -186,7 +186,7 @@ FormCard.FormCardPage {
 
             description: root.identity.inviteRequest
             descriptionItem.textFormat: TextEdit.RichText
-            onLinkActivated: (link) => Qt.openUrlExternally(link)
+            onLinkActivated: link => applicationWindow().navigateLink(link, true)
         }
     }
 
