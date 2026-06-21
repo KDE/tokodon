@@ -450,12 +450,6 @@ QQC2.Pane {
                             fromQAction: (toolbar.QQC2.ApplicationWindow.window as StatefulApp.StatefulWindow)?.application.action('options_configure') ?? null
                         },
                         Kirigami.Action {
-                            icon.name: "favorite"
-                            text: i18n("Featured Users")
-                            visible: AccountManager.selectedAccount.supportsApiVersion("mastodon", 5) // Featured Users became useful again in Mastodon 4.4.0
-                            onTriggered: pageStack.push(socialGraphComponent, { name: "featured", accountId: root.identity.id });
-                        },
-                        Kirigami.Action {
                             icon.name: "resource-calendar-insert"
                             visible: root.isSelf
                             text: i18nc("@action:inmenu", "Scheduled Posts")
@@ -752,6 +746,63 @@ QQC2.Pane {
                         Keys.onTabPressed: (event)=> {
                             nextItemInFocusChain(true).forceActiveFocus(Qt.TabFocusReason)
                             event.accepted = true
+                        }
+                    }
+                }
+            }
+        }
+
+        FormCard.FormCard {
+            id: featuredCard
+
+            visible: root.identity.showFeatured && featuredRepeater.count !== 0 && AccountManager.selectedAccount.supportsApiVersion("mastodon", 5) // Featured Users became useful again in Mastodon 4.4.0
+
+            Layout.topMargin: Kirigami.Units.largeSpacing
+
+            FormCard.AbstractFormDelegate {
+                background: null
+
+                contentItem: ColumnLayout {
+                    spacing: Kirigami.Units.smallSpacing
+
+                    QQC2.Label {
+                        text: i18nc("@info:label Featuring the following users:", "Featuring:")
+                    }
+                    RowLayout {
+                        spacing: Kirigami.Units.smallSpacing
+
+                        Repeater {
+                            id: featuredRepeater
+
+                            model: LimiterModel {
+                                id: featuredLimiterModel
+                                maximumCount: 5
+                                sourceModel: SocialGraphModel {
+                                    name: "featured"
+                                    accountId: root.identity.id
+                                }
+                            }
+
+                            delegate: Components.AvatarButton {
+                                required property var identity
+
+                                source: identity.avatarUrl
+                                cache: true
+                                name: identity.displayName
+                                Layout.preferredWidth: Kirigami.Units.iconSizes.medium
+                                Layout.preferredHeight: Kirigami.Units.iconSizes.medium
+
+                                onClicked: Navigation.openAccount(identity.id)
+                            }
+                        }
+                        QQC2.Button {
+                            text: featuredLimiterModel.extraCount > 0 ? i18nc("@action:button See all featured users", "View %1 More", featuredLimiterModel.extraCount) : i18nc("@action:button See all featured users", "View All")
+                            onClicked: {
+                                pageStack.push(socialGraphComponent, {
+                                    name: "featured",
+                                    accountId: root.identity.id
+                                });
+                            }
                         }
                     }
                 }
