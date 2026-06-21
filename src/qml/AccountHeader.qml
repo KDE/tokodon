@@ -666,10 +666,6 @@ QQC2.Pane {
                                 }
 
                                 Kirigami.Icon {
-                                    anchors {
-                                        verticalCenter: parent.verticalCenter
-                                    }
-
                                     source: "checkmark-symbolic"
                                     visible: delegate.modelData.verified_at !== null
 
