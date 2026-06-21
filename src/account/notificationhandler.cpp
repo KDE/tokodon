@@ -175,7 +175,7 @@ void NotificationHandler::handle(std::shared_ptr<Notification> notification, Abs
         knotification->setText(i18n("You received a new notification."));
         break;
     }
-    knotification->setHint(u"x-kde-symbolic-app-icon"_s, QIcon::fromTheme(u"org.kde.tokodon.tray"_s));
+    knotification->setHint(u"x-kde-symbolic-app-icon"_s, u"org.kde.tokodon.tray"_s);
 
     constexpr std::array notificationsWithPosts = {Notification::Mention,
                                                    Notification::Status,
