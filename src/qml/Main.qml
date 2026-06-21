@@ -420,10 +420,10 @@ StatefulApp.StatefulWindow {
             }
 
             root.pageStack.clear();
-            root.pageStack.push(Qt.createComponent("org.kde.tokodon", "AccountInfo"), {
+            root.pageStack.push(Qt.createComponent("org.kde.tokodon", "AccountInfo").createObject(root, {
                 pageId: "profile",
                 accountId: AccountManager.selectedAccountId,
-            });
+            }));
         }
 
         function onOpenConversations(): void {
@@ -585,17 +585,17 @@ StatefulApp.StatefulWindow {
 
         function onOpenPost(postId: string): void {
             if (!root.pageStack.currentItem.postId || root.pageStack.currentItem.postId !== postId) {
-                root.pageStack.push(Qt.createComponent("org.kde.tokodon", "ThreadPage"), {
+                root.pageStack.push(Qt.createComponent("org.kde.tokodon", "ThreadPage").createObject(root, {
                     postId: postId,
-                });
+                }));
             }
         }
 
         function onOpenAccount(accountId: string): void {
             if (!root.pageStack.currentItem.accountId || root.pageStack.currentItem.accountId !== accountId) {
-                root.pageStack.push(Qt.createComponent("org.kde.tokodon", "AccountInfo"), {
+                root.pageStack.push(Qt.createComponent("org.kde.tokodon", "AccountInfo").createObject(root, {
                     accountId: accountId,
-                });
+                }));
             }
         }
 
