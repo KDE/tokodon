@@ -49,6 +49,7 @@ class Identity : public QObject
     Q_PROPERTY(bool hideCollections READ hideCollections NOTIFY identityUpdated)
     Q_PROPERTY(bool memorial READ memorial NOTIFY identityUpdated)
     Q_PROPERTY(bool suspended READ suspended NOTIFY identityUpdated)
+    Q_PROPERTY(QJsonArray roles READ roles NOTIFY identityUpdated)
 
 public:
     /**
@@ -210,6 +211,11 @@ public:
      */
     bool suspended() const;
 
+    /**
+     * @return Roles for this identity.
+     */
+    [[nodiscard]] QJsonArray roles() const;
+
 Q_SIGNALS:
     void relationshipChanged();
     void identityUpdated();
@@ -246,4 +252,5 @@ private:
     bool m_hideCollections;
     bool m_memorial;
     bool m_suspended;
+    QJsonArray m_roles;
 };

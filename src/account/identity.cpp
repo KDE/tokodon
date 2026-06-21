@@ -142,6 +142,11 @@ bool Identity::suspended() const
     return m_suspended;
 }
 
+QJsonArray Identity::roles() const
+{
+    return m_roles;
+}
+
 void Identity::reparentIdentity(AbstractAccount *parent)
 {
     m_parent = parent;
@@ -174,6 +179,7 @@ void Identity::fromSourceData(const QJsonObject &doc)
     m_limited = doc["limited"_L1].toBool();
     m_memorial = doc["memorial"_L1].toBool();
     m_suspended = doc["suspended"_L1].toBool();
+    m_roles = doc["roles"_L1].toArray();
 
     m_displayNameHtml = m_displayName.replace(QLatin1Char('<'), QStringLiteral("&lt;")).replace(QLatin1Char('>'), QStringLiteral("&gt;"));
 

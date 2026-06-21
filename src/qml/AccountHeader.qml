@@ -176,6 +176,18 @@ QQC2.Pane {
 
                 spacing: Kirigami.Units.mediumSpacing
 
+                Repeater {
+                    model: root.identity.roles
+
+                    delegate: Kirigami.Badge {
+                        required property var modelData
+
+                        type: Kirigami.Badge.Information
+                        customColor: modelData.color
+                        text: modelData.name
+                    }
+                }
+
                 Kirigami.Badge {
                     visible: root.identity.relationship && root.identity.relationship.followedBy
                     type: Kirigami.Badge.Information
