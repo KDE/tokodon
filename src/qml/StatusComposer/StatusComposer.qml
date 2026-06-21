@@ -748,6 +748,7 @@ Kirigami.ScrollablePage {
         Image {
             anchors.left: parent.left
             anchors.bottom: parent.bottom
+            anchors.bottomMargin: parent.SafeArea.margins.bottom
             source: "qrc:/content/elephant.svg"
             asynchronous: true
         }
