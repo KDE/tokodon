@@ -44,6 +44,16 @@ AbstractAccount::AbstractAccount(const QString &instanceUri, QObject *parent)
                                  i18n("QuickTime video (*.mov)"),
                                  i18n("All files (*)")})
     , m_maxCharactersPerOption(50)
+    , m_mediaAttachmentDescriptionLimit(500)
+    , m_maxDisplayNameLength(500)
+    , m_maxNoteLength(500)
+    , m_maxAvatarDescriptionLength(500)
+    , m_maxHeaderDescriptionLength(500)
+    , m_maxFeaturedTags(4)
+    , m_maxPinnedStatuses(4)
+    , m_maxProfileFields(4)
+    , m_profileFieldNameLimit(500)
+    , m_profileFieldValueLimit(500)
 {
     // Test code uses a blank instance URI
     if (!AccountManager::instance().testMode()) {
@@ -509,12 +519,12 @@ void AbstractAccount::fetchInstanceMetadata()
                 }
 
                 if (configObj.contains("media_attachments"_L1)) {
-                    const auto statusConfigObj = configObj["media_attachments"_L1].toObject();
-                    if (statusConfigObj.contains("supported_mime_types"_L1)) {
+                    const auto mediaAttachmentsConfigObj = configObj["media_attachments"_L1].toObject();
+                    if (mediaAttachmentsConfigObj.contains("supported_mime_types"_L1)) {
                         m_attachmentFilterStrings.clear();
                         QStringList allGlobs;
                         QMimeDatabase db;
-                        for (const auto &mimeTypeName : statusConfigObj["supported_mime_types"_L1].toArray()) {
+                        for (const auto &mimeTypeName : mediaAttachmentsConfigObj["supported_mime_types"_L1].toArray()) {
                             // FIXME: Some mimetypes such as audio/webm do not have a filter string for some reason.
                             const auto mimeType = db.mimeTypeForName(mimeTypeName.toString());
                             if (mimeType.isValid() && !mimeType.filterString().isEmpty() && !m_attachmentFilterStrings.contains(mimeType.filterString())) {
@@ -526,27 +536,31 @@ void AbstractAccount::fetchInstanceMetadata()
                         m_attachmentFilterStrings.prepend(i18n("All supported formats (%1)", allGlobs.join(QLatin1Char(' '))));
                         m_attachmentFilterStrings.push_back(i18n("All files (*)"));
                     }
+                    m_mediaAttachmentDescriptionLimit = mediaAttachmentsConfigObj["description_limit"_L1].toInt();
                 }
 
                 if (configObj.contains("vapid"_L1)) {
                     m_instanceVapidPublicKey = configObj["vapid"_L1]["public_key"_L1].toString();
                 }
-            }
 
-            // Pleroma/Akkoma may report maximum post characters here, instead
-            if (obj.contains("max_toot_chars"_L1)) {
-                m_maxPostLength = obj["max_toot_chars"_L1].toInt();
-            }
+                if (configObj.contains("accounts"_L1)) {
+                    const auto accountsConfigObj = configObj["accounts"_L1].toObject();
+                    m_maxDisplayNameLength = accountsConfigObj["max_display_name_length"_L1].toInt();
+                    m_maxNoteLength = accountsConfigObj["max_note_length"_L1].toInt();
+                    m_maxAvatarDescriptionLength = accountsConfigObj["max_avatar_description_length"_L1].toInt();
+                    m_maxHeaderDescriptionLength = accountsConfigObj["max_header_description_length"_L1].toInt();
+                    m_maxFeaturedTags = accountsConfigObj["max_featured_tags"_L1].toInt();
+                    m_maxPinnedStatuses = accountsConfigObj["max_pinned_statuses"_L1].toInt();
+                    m_maxProfileFields = accountsConfigObj["max_profile_fields"_L1].toInt();
+                    m_profileFieldNameLimit = accountsConfigObj["profile_field_name_limit"_L1].toInt();
+                    m_profileFieldValueLimit = accountsConfigObj["profile_field_value_limit"_L1].toInt();
+                }
 
-            // Pleroma/Akkoma can report higher poll limits
-            if (obj.contains("poll_limits"_L1)) {
-                m_maxPollOptions = obj["poll_limits"_L1].toObject()["max_options"_L1].toInt();
-            }
-
-            // Other instance of poll options
-            if (obj.contains("polls"_L1)) {
-                m_maxPollOptions = obj["polls"_L1].toObject()["max_options"_L1].toInt();
-                m_maxCharactersPerOption = obj["polls"_L1].toObject()["max_characters_per_option"_L1].toInt();
+                if (configObj.contains("polls"_L1)) {
+                    const auto pollsConfigObj = configObj["polls"_L1].toObject();
+                    m_maxPollOptions = pollsConfigObj["max_options"_L1].toInt();
+                    m_maxCharactersPerOption = pollsConfigObj["max_characters_per_option"_L1].toInt();
+                }
             }
 
             if (obj.contains("registrations"_L1)) {
@@ -962,6 +976,56 @@ bool AbstractAccount::supportsApiVersion(const QString &api, int minimumVersion)
         return m_supportedApiVersions[api] >= minimumVersion;
     }
     return false;
+}
+
+int AbstractAccount::mediaAttachmentDescriptionLimit() const
+{
+    return m_mediaAttachmentDescriptionLimit;
+}
+
+int AbstractAccount::maxDisplayNameLength() const
+{
+    return m_maxDisplayNameLength;
+}
+
+int AbstractAccount::maxNoteLength() const
+{
+    return m_maxNoteLength;
+}
+
+int AbstractAccount::maxAvatarDescriptionLength() const
+{
+    return m_maxAvatarDescriptionLength;
+}
+
+int AbstractAccount::maxHeaderDescriptionLength() const
+{
+    return m_maxHeaderDescriptionLength;
+}
+
+int AbstractAccount::maxFeaturedTags() const
+{
+    return m_maxFeaturedTags;
+}
+
+int AbstractAccount::maxPinnedStatuses() const
+{
+    return m_maxPinnedStatuses;
+}
+
+int AbstractAccount::maxProfileFields() const
+{
+    return m_maxProfileFields;
+}
+
+int AbstractAccount::profileFieldNameLimit() const
+{
+    return m_profileFieldNameLimit;
+}
+
+int AbstractAccount::profileFieldValueLimit() const
+{
+    return m_profileFieldValueLimit;
 }
 
 #include "moc_abstractaccount.cpp"

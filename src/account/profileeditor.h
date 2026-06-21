@@ -28,7 +28,6 @@ class ProfileEditorBackend : public QObject
     Q_PROPERTY(bool locked READ locked WRITE setLocked NOTIFY lockedChanged)
     Q_PROPERTY(bool discoverable READ discoverable WRITE setDiscoverable NOTIFY discoverableChanged)
     Q_PROPERTY(QJsonArray fields READ fields WRITE setFields NOTIFY fieldsChanged)
-    Q_PROPERTY(int maxFields READ maxFields CONSTANT)
 
 public:
     explicit ProfileEditorBackend(QObject *parent = nullptr);
@@ -146,11 +145,6 @@ public:
      * @param locked If true, the account is locked.
      */
     void setLocked(bool locked);
-
-    /**
-     * @return The maximum number of supported profile fields.
-     */
-    int maxFields() const;
 
 public Q_SLOTS:
     void save();

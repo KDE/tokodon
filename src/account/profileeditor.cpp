@@ -347,12 +347,6 @@ void ProfileEditorBackend::save()
     });
 }
 
-int ProfileEditorBackend::maxFields() const
-{
-    // TODO: some instances support more fields
-    return 4;
-}
-
 void ProfileEditorBackend::addField()
 {
     m_fields.push_back({});

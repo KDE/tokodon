@@ -59,6 +59,8 @@ ColumnLayout {
         FormCard.FormTextFieldDelegate {
             label: i18n("Display Name")
             text: backend.displayName
+            maximumLength: root.account.maxDisplayNameLength
+
             onTextChanged: backend.displayName = text
         }
 
@@ -243,21 +245,27 @@ ColumnLayout {
                         spacing: Kirigami.Units.largeSpacing
 
                         QQC2.TextField {
-                            Layout.fillWidth: true
-                            Layout.preferredWidth: parent.width / 2
                             text: delegate.modelData.name
                             activeFocusOnTab: false
+                            maximumLength: root.account.profileFieldNameLimit
+
                             onTextEdited: backend.setFieldName(delegate.index, text)
+
+                            Layout.fillWidth: true
+                            Layout.preferredWidth: parent.width / 2
                         }
 
                         QQC2.TextField {
                             id: valueArea
 
-                            Layout.fillWidth: true
-                            Layout.preferredWidth: parent.width / 2
                             text: delegate.modelData.value
                             activeFocusOnTab: false
+                            maximumLength: root.account.profileFieldValueLimit
+
                             onEditingFinished: backend.setFieldValue(delegate.index, text)
+
+                            Layout.fillWidth: true
+                            Layout.preferredWidth: parent.width / 2
                         }
                     }
                 }
@@ -279,7 +287,7 @@ ColumnLayout {
                     QQC2.Button {
                         icon.name: "list-add-symbolic"
                         text: i18nc("@action:button", "Add")
-                        enabled: backend.fields.length < backend.maxFields
+                        enabled: backend.fields.length < root.account.maxProfileFields
                         onClicked: backend.addField()
                     }
                 }

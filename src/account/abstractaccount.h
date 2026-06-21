@@ -49,6 +49,16 @@ class AbstractAccount : public QObject
     Q_PROPERTY(NotificationFilteringPolicy *notificationFilteringPolicy READ notificationFilteringPolicy CONSTANT)
     Q_PROPERTY(int maxMediaAttachments READ maxMediaAttachments CONSTANT)
     Q_PROPERTY(QStringList attachmentFilterStrings READ attachmentFilterStrings CONSTANT)
+    Q_PROPERTY(int mediaAttachmentDescriptionLimit READ mediaAttachmentDescriptionLimit NOTIFY fetchedInstanceMetadata)
+    Q_PROPERTY(int maxDisplayNameLength READ maxDisplayNameLength NOTIFY fetchedInstanceMetadata)
+    Q_PROPERTY(int maxNoteLength READ maxNoteLength NOTIFY fetchedInstanceMetadata)
+    Q_PROPERTY(int maxAvatarDescriptionLength READ maxAvatarDescriptionLength NOTIFY fetchedInstanceMetadata)
+    Q_PROPERTY(int maxHeaderDescriptionLength READ maxHeaderDescriptionLength NOTIFY fetchedInstanceMetadata)
+    Q_PROPERTY(int maxFeaturedTags READ maxFeaturedTags NOTIFY fetchedInstanceMetadata)
+    Q_PROPERTY(int maxPinnedStatuses READ maxPinnedStatuses NOTIFY fetchedInstanceMetadata)
+    Q_PROPERTY(int maxProfileFields READ maxProfileFields NOTIFY fetchedInstanceMetadata)
+    Q_PROPERTY(int profileFieldNameLimit READ profileFieldNameLimit NOTIFY fetchedInstanceMetadata)
+    Q_PROPERTY(int profileFieldValueLimit READ profileFieldValueLimit NOTIFY fetchedInstanceMetadata)
 
 public:
     /**
@@ -626,6 +636,56 @@ public:
         EncryptedMessageChangedEvent, /**< An encrypted message has been received. */
     };
 
+    /**
+     * @return The maximum size of a description, in characters.
+     */
+    int mediaAttachmentDescriptionLimit() const;
+
+    /**
+     * @return The maximum length allowed for an account’s display name.
+     */
+    int maxDisplayNameLength() const;
+
+    /**
+     * @return The maximum length allowed for an account’s bio.
+     */
+    int maxNoteLength() const;
+
+    /**
+     * @return The maximum length allowed for an account’s avatar description.
+     */
+    int maxAvatarDescriptionLength() const;
+
+    /**
+     * @return The maximum length allowed for an account’s profile header description.
+     */
+    int maxHeaderDescriptionLength() const;
+
+    /**
+     * @return The maximum number of featured tags allowed for each account.
+     */
+    int maxFeaturedTags() const;
+
+    /**
+     * @return The maximum number of pinned statuses for each account.
+     */
+    int maxPinnedStatuses() const;
+
+    /**
+     * @return The maximum number of custom profile fields allowed to be set.
+     */
+    int maxProfileFields() const;
+
+    /**
+     * @return The maximum size of a profile field name, in characters.
+     */
+    int profileFieldNameLimit() const;
+
+    /**
+     * @return The maximum size of a profile field value, in characters.
+     */
+    int profileFieldValueLimit() const;
+
 Q_SIGNALS:
     /**
      * @brief Emitted when the account is authenticated.
@@ -780,6 +840,16 @@ protected:
     QString m_streamingUri;
     QHash<QString, int> m_supportedApiVersions;
     bool m_indexable = false;
+    int m_mediaAttachmentDescriptionLimit;
+    int m_maxDisplayNameLength;
+    int m_maxNoteLength;
+    int m_maxAvatarDescriptionLength;
+    int m_maxHeaderDescriptionLength;
+    int m_maxFeaturedTags;
+    int m_maxPinnedStatuses;
+    int m_maxProfileFields;
+    int m_profileFieldNameLimit;
+    int m_profileFieldValueLimit;
 
     // updates and notifications
     void handleNotification(const QJsonDocument &doc);
