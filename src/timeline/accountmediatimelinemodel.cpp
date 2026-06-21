@@ -44,13 +44,24 @@ void AccountMediaTimelineModel::fillTimeline(const QString &fromId)
     }
     statusQuery.addQueryItem(QStringLiteral("exclude_replies"),
                              account()->identityLookup(m_accountId, {})->showMediaReplies() ? QStringLiteral("false") : QStringLiteral("true"));
+    // We don't want direct messages to show up here!
+    statusQuery.addQueryItem(QStringLiteral("exclude_direct"), QStringLiteral("true"));
     uriStatus.setQuery(statusQuery);
 
     auto uriPinned = account()->apiUrl(QStringLiteral("/api/v1/accounts/%1/statuses").arg(m_accountId));
-    uriPinned.setQuery(QUrlQuery{{
-        QStringLiteral("pinned"),
-        QStringLiteral("true"),
-    }});
+    QUrlQuery pinnedQuery{{
+                              QStringLiteral("pinned"),
+                              QStringLiteral("true"),
+                          },
+                          {
+                              QStringLiteral("exclude_direct"),
+                              QStringLiteral("true"),
+                          }};
+
+    if (!m_tagged.isEmpty()) {
+        pinnedQuery.addQueryItem(QStringLiteral("tagged"), m_tagged);
+    }
+    uriPinned.setQuery(pinnedQuery);
 
     const auto id = m_accountId;
 

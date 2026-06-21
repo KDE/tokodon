@@ -74,15 +74,19 @@ void AccountModel::fillTimeline(const QString &fromId, bool backwards)
     if (!fromId.isNull()) {
         statusQuery.addQueryItem(QStringLiteral("max_id"), fromId);
     }
-    if (!statusQuery.isEmpty()) {
-        uriStatus.setQuery(statusQuery);
-    }
+    // We don't want direct messages to show up here!
+    statusQuery.addQueryItem(QStringLiteral("exclude_direct"), QStringLiteral("true"));
+    uriStatus.setQuery(statusQuery);
 
     auto uriPinned = m_account->apiUrl(QStringLiteral("/api/v1/accounts/%1/statuses").arg(m_accountId));
     QUrlQuery pinnedQuery{{
-        QStringLiteral("pinned"),
-        QStringLiteral("true"),
-    }};
+                              QStringLiteral("pinned"),
+                              QStringLiteral("true"),
+                          },
+                          {
+                              QStringLiteral("exclude_direct"),
+                              QStringLiteral("true"),
+                          }};
 
     if (!m_tagged.isEmpty()) {
         pinnedQuery.addQueryItem(QStringLiteral("tagged"), m_tagged);
