@@ -32,8 +32,19 @@ Account::Account(const QString &instanceUri, QNetworkAccessManager *nam, QObject
     : AbstractAccount(instanceUri, parent)
     , m_qnam(nam)
 {
-    connect(this, &Account::authenticated, this, &Account::checkForFollowRequests);
-    connect(this, &Account::authenticated, this, &Account::checkForUnreadNotifications);
+    connect(
+        this,
+        &Account::authenticated,
+        this,
+        [this](const bool successful) {
+            if (!successful) {
+                return;
+            }
+
+            checkForFollowRequests();
+            checkForUnreadNotifications();
+        },
+        Qt::SingleShotConnection);
 }
 
 Account::Account(const QString &onlineAccountId,
@@ -53,8 +64,19 @@ Account::Account(const QString &onlineAccountId,
     m_client_secret = clientSecret;
     m_token = accessToken;
 
-    connect(this, &Account::authenticated, this, &Account::checkForFollowRequests);
-    connect(this, &Account::authenticated, this, &Account::checkForUnreadNotifications);
+    connect(
+        this,
+        &Account::authenticated,
+        this,
+        [this](const bool successful) {
+            if (!successful) {
+                return;
+            }
+
+            checkForFollowRequests();
+            checkForUnreadNotifications();
+        },
+        Qt::SingleShotConnection);
 
     validateToken();
 }

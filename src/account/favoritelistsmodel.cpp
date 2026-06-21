@@ -72,7 +72,17 @@ void FavoriteListsModel::setAccount(AbstractAccount *account)
         if (m_account->successfullyAuthenticated()) {
             reloadLists();
         } else {
-            connect(m_account, &AbstractAccount::authenticated, this, &FavoriteListsModel::reloadLists, Qt::SingleShotConnection);
+            connect(
+                m_account,
+                &AbstractAccount::authenticated,
+                this,
+                [this](const bool successful) {
+                    if (!successful) {
+                        return;
+                    }
+                    reloadLists();
+                },
+                Qt::SingleShotConnection);
         }
     }
 }

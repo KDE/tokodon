@@ -16,29 +16,38 @@ Preferences::Preferences(AbstractAccount *account)
     : QObject(account)
     , m_account(account)
 {
-    connect(account, &AbstractAccount::authenticated, this, [this, account]() {
-        account->get(account->apiUrl(QStringLiteral("/api/v1/preferences")), true, this, [this](QNetworkReply *reply) {
-            const auto obj = QJsonDocument::fromJson(reply->readAll()).object();
-
-            if (const auto defaultLanguage = obj["posting:default:language"_L1]; !defaultLanguage.isNull()) {
-                m_defaultLanguage = defaultLanguage.toString();
+    connect(
+        account,
+        &AbstractAccount::authenticated,
+        this,
+        [this, account](const bool successful) {
+            if (!successful) {
+                return;
             }
 
-            m_defaultSensitive = obj["posting:default:sensitive"_L1].toBool();
-            m_defaultVisibility = Post::stringToVisibility(obj["posting:default:visibility"_L1].toString());
-            m_extendSpoiler = obj["reading:expand:spoilers"_L1].toBool();
-            m_extendMedia = obj["reading:expand:media"_L1].toString();
-            m_indexable = m_account->indexable();
-            m_hideCollections = obj["hide_collections"_L1].toBool();
-            Q_EMIT defaultVisibilityChanged();
-            Q_EMIT defaultSensitiveChanged();
-            Q_EMIT defaultLanguageChanged();
-            Q_EMIT extendMediaChanged();
-            Q_EMIT extendSpoilerChanged();
-            Q_EMIT indexableChanged();
-            Q_EMIT hideCollectionsChanged();
-        });
-    });
+            account->get(account->apiUrl(QStringLiteral("/api/v1/preferences")), true, this, [this](QNetworkReply *reply) {
+                const auto obj = QJsonDocument::fromJson(reply->readAll()).object();
+
+                if (const auto defaultLanguage = obj["posting:default:language"_L1]; !defaultLanguage.isNull()) {
+                    m_defaultLanguage = defaultLanguage.toString();
+                }
+
+                m_defaultSensitive = obj["posting:default:sensitive"_L1].toBool();
+                m_defaultVisibility = Post::stringToVisibility(obj["posting:default:visibility"_L1].toString());
+                m_extendSpoiler = obj["reading:expand:spoilers"_L1].toBool();
+                m_extendMedia = obj["reading:expand:media"_L1].toString();
+                m_indexable = m_account->indexable();
+                m_hideCollections = obj["hide_collections"_L1].toBool();
+                Q_EMIT defaultVisibilityChanged();
+                Q_EMIT defaultSensitiveChanged();
+                Q_EMIT defaultLanguageChanged();
+                Q_EMIT extendMediaChanged();
+                Q_EMIT extendSpoilerChanged();
+                Q_EMIT indexableChanged();
+                Q_EMIT hideCollectionsChanged();
+            });
+        },
+        Qt::SingleShotConnection);
 }
 
 Post::Visibility Preferences::defaultVisibility() const

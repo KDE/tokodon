@@ -14,22 +14,31 @@ NotificationFilteringPolicy::NotificationFilteringPolicy(AbstractAccount *accoun
     : QObject(account)
     , m_account(account)
 {
-    connect(account, &AbstractAccount::authenticated, this, [this, account]() {
-        account->get(account->apiUrl(QStringLiteral("/api/v2/notifications/policy")), true, this, [this](QNetworkReply *reply) {
-            const auto obj = QJsonDocument::fromJson(reply->readAll()).object();
+    connect(
+        account,
+        &AbstractAccount::authenticated,
+        this,
+        [this, account](const bool successful) {
+            if (!successful) {
+                return;
+            }
 
-            m_forNotFollowing = obj[QStringLiteral("for_not_following")].toString();
-            m_forNotFollowers = obj[QStringLiteral("for_not_followers")].toString();
-            m_forNewAccounts = obj[QStringLiteral("for_new_accounts")].toString();
-            m_forPrivateMentions = obj[QStringLiteral("for_private_mentions")].toString();
-            m_forLimitedAccounts = obj[QStringLiteral("for_limited_accounts")].toString();
-            Q_EMIT forNotFollowingChanged();
-            Q_EMIT forNotFollowersChanged();
-            Q_EMIT forNewAccountsChanged();
-            Q_EMIT forPrivateMentionsChanged();
-            Q_EMIT forLimitedAccountsChanged();
-        });
-    });
+            account->get(account->apiUrl(QStringLiteral("/api/v2/notifications/policy")), true, this, [this](QNetworkReply *reply) {
+                const auto obj = QJsonDocument::fromJson(reply->readAll()).object();
+
+                m_forNotFollowing = obj[QStringLiteral("for_not_following")].toString();
+                m_forNotFollowers = obj[QStringLiteral("for_not_followers")].toString();
+                m_forNewAccounts = obj[QStringLiteral("for_new_accounts")].toString();
+                m_forPrivateMentions = obj[QStringLiteral("for_private_mentions")].toString();
+                m_forLimitedAccounts = obj[QStringLiteral("for_limited_accounts")].toString();
+                Q_EMIT forNotFollowingChanged();
+                Q_EMIT forNotFollowersChanged();
+                Q_EMIT forNewAccountsChanged();
+                Q_EMIT forPrivateMentionsChanged();
+                Q_EMIT forLimitedAccountsChanged();
+            });
+        },
+        Qt::SingleShotConnection);
 }
 
 QString NotificationFilteringPolicy::forNotFollowing() const
