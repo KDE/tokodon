@@ -761,7 +761,6 @@ StatefulApp.StatefulWindow {
         // Make sure we take in count drawer width
         visible: root.pageStack.layers.depth <= 1 && AccountManager.hasAccounts && !root.wideMode && AccountManager.isReady
         enabled: !AccountManager.selectedAccountHasIssue
-        parent: root.pageStack
 
         contentItem: RowLayout {
             spacing: 0
