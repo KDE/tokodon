@@ -789,7 +789,7 @@ StatefulApp.StatefulWindow {
                         }
                         type: Kirigami.Badge.Information
                         visible: delegateButton.modelData.alertCount > 0
-                        text: delegateButton.modelData.alertCount
+                        text: delegateButton.modelData.alertCount ?? ""
                     }
                 }
             }
