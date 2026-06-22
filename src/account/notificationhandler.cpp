@@ -167,7 +167,7 @@ void NotificationHandler::handle(std::shared_ptr<Notification> notification, Abs
             return;
         }
         knotification = new KNotification(QStringLiteral("collection-update"));
-        knotification->setTitle(i18n("%1 updated thier collection", notification->identity()->displayName()));
+        knotification->setTitle(i18n("%1 updated their collection", notification->identity()->displayName()));
         break;
     default:
         knotification = new KNotification(QStringLiteral("other"));
