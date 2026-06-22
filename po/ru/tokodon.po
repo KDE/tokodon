@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-29 00:43+0000\n"
+"POT-Creation-Date: 2026-06-22 00:43+0000\n"
 "PO-Revision-Date: 2026-04-03 19:36+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -84,73 +84,73 @@ msgstr "Видео M4V (*.m4v)"
 msgid "QuickTime video (*.mov)"
 msgstr "Видео QuickTime (*.mov)"
 
-#: account/abstractaccount.cpp:45 account/abstractaccount.cpp:527
+#: account/abstractaccount.cpp:45 account/abstractaccount.cpp:537
 #, kde-format
 msgid "All files (*)"
 msgstr "Все файлы (*)"
 
-#: account/abstractaccount.cpp:526
+#: account/abstractaccount.cpp:536
 #, kde-format
 msgid "All supported formats (%1)"
 msgstr "Все поддерживаемые форматы (%1)"
 
-#: account/abstractaccount.cpp:682
+#: account/abstractaccount.cpp:696
 #, kde-format
 msgid "Could not follow account"
 msgstr "Не удалось подписаться на учётную запись"
 
-#: account/abstractaccount.cpp:683
+#: account/abstractaccount.cpp:697
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "Не удалось отписаться от учётной записи"
 
-#: account/abstractaccount.cpp:684
+#: account/abstractaccount.cpp:698
 #, kde-format
 msgid "Could not remove account as your follower"
 msgstr "Не удалось удалить учётную запись из списка ваших подписчиков"
 
-#: account/abstractaccount.cpp:685
+#: account/abstractaccount.cpp:699
 #, kde-format
 msgid "Could not block account"
 msgstr "Не удалось заблокировать учётную запись"
 
-#: account/abstractaccount.cpp:686
+#: account/abstractaccount.cpp:700
 #, kde-format
 msgid "Could not unblock account"
 msgstr "Не удалось разблокировать учётную запись"
 
-#: account/abstractaccount.cpp:687
+#: account/abstractaccount.cpp:701
 #, kde-format
 msgid "Could not mute account"
 msgstr "Не удалось добавить учётную запись в список игнорируемых"
 
-#: account/abstractaccount.cpp:688
+#: account/abstractaccount.cpp:702
 #, kde-format
 msgid "Could not unmute account"
 msgstr "Не удалось удалить учётную запись из списка игнорируемых"
 
-#: account/abstractaccount.cpp:689
+#: account/abstractaccount.cpp:703
 #, kde-format
 msgid "Could not feature account"
 msgstr "Не удалось добавить учётную запись в подборку"
 
-#: account/abstractaccount.cpp:690
+#: account/abstractaccount.cpp:704
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "Не удалось убрать учётную запись из подборки"
 
-#: account/abstractaccount.cpp:691
+#: account/abstractaccount.cpp:705
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "Не удалось отредактировать заметку об учётной записи"
 
-#: account/account.cpp:330
+#: account/account.cpp:352
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Network request was interrupted"
 msgstr "Сетевой запрос был прерван"
 
-#: account/account.cpp:339 account/account.cpp:346
+#: account/account.cpp:361 account/account.cpp:368
 #, kde-format
 msgctxt "@info:label Error message"
 msgid "Failed to parse credentials"
@@ -231,28 +231,39 @@ msgstr "Ваши самые яркие события и незабываемы�
 msgid "%1 quoted your post"
 msgstr "%1 процитировал(а) вашу публикацию"
 
-#: account/notificationhandler.cpp:160
+#: account/notificationhandler.cpp:163
+#, kde-format
+msgid "%1 added you to their collection"
+msgstr ""
+
+#: account/notificationhandler.cpp:170
+#, fuzzy, kde-format
+#| msgid "%1 updated their post"
+msgid "%1 updated thier collection"
+msgstr "%1 обновил(а) свою публикацию"
+
+#: account/notificationhandler.cpp:174
 #, kde-format
 msgctxt "@title"
 msgid "New Notification"
 msgstr "Уведомления"
 
-#: account/notificationhandler.cpp:161
+#: account/notificationhandler.cpp:175
 #, kde-format
 msgid "You received a new notification."
 msgstr "Вы получили новое уведомление."
 
-#: account/notificationhandler.cpp:174
+#: account/notificationhandler.cpp:189
 #, kde-kuit-format
 msgid "<b>Content Notice</b>: %1"
 msgstr "<b>Предупреждение о содержимом</b>: %1"
 
-#: account/notificationhandler.cpp:178
+#: account/notificationhandler.cpp:193
 #, kde-format
 msgid "This post has no text."
 msgstr "Публикация не содержит текста"
 
-#: account/notificationhandler.cpp:185
+#: account/notificationhandler.cpp:200
 #, kde-format
 msgid ""
 "The moderators of your server has limited this user, view this in Tokodon to "
@@ -261,7 +272,7 @@ msgstr ""
 "Модераторы вашего сервера ограничили учётную запись этого пользователя. "
 "Выполните просмотр в Tokodon, чтобы увидеть его профиль."
 
-#: account/notificationhandler.cpp:189
+#: account/notificationhandler.cpp:204
 #, kde-format
 msgid "This user doesn't have a description."
 msgstr "У этого пользователя нет описания."
@@ -309,37 +320,37 @@ msgctxt "@title"
 msgid "Follow Requests"
 msgstr "Запросы на подписку"
 
-#: account/socialgraphmodel.cpp:34
+#: account/socialgraphmodel.cpp:35
 #, kde-format
 msgctxt "@title"
 msgid "Followers"
 msgstr "Подписчики"
 
-#: account/socialgraphmodel.cpp:36
+#: account/socialgraphmodel.cpp:38
 #, kde-format
 msgctxt "@title"
 msgid "Following"
 msgstr "Подписки"
 
-#: account/socialgraphmodel.cpp:38
+#: account/socialgraphmodel.cpp:41
 #, kde-format
 msgctxt "@title"
 msgid "Muted Users"
 msgstr "Игнорируемые пользователи"
 
-#: account/socialgraphmodel.cpp:40
+#: account/socialgraphmodel.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "Blocked Users"
 msgstr "Заблокированные пользователи"
 
-#: account/socialgraphmodel.cpp:42
+#: account/socialgraphmodel.cpp:47
 #, kde-format
 msgctxt "@title"
 msgid "Featured Users"
 msgstr "Пользователи в подборке"
 
-#: account/socialgraphmodel.cpp:44
+#: account/socialgraphmodel.cpp:50
 #, kde-format
 msgctxt "@title"
 msgid "%1 favorite"
@@ -349,7 +360,7 @@ msgstr[1] "%1 записи в избранном"
 msgstr[2] "%1 записей в избранном"
 msgstr[3] "%1 запись в избранном"
 
-#: account/socialgraphmodel.cpp:46
+#: account/socialgraphmodel.cpp:53
 #, kde-format
 msgctxt "@title"
 msgid "%1 boost"
@@ -359,69 +370,77 @@ msgstr[1] "%1 републикации"
 msgstr[2] "%1 републикаций"
 msgstr[3] "%1 републикация"
 
-#: account/socialgraphmodel.cpp:48
+#: account/socialgraphmodel.cpp:56
 #, kde-format
 msgctxt "@title"
 msgid "Familiar Followers"
 msgstr "Знакомые подписчики"
 
-#: account/socialgraphmodel.cpp:50
+#: account/socialgraphmodel.cpp:59
 #, kde-format
 msgctxt "@title"
 msgid "Manage List Users"
 msgstr "Управление пользователями в списке"
 
-#: account/socialgraphmodel.cpp:58
+#: account/socialgraphmodel.cpp:62
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Manage List Users"
+msgctxt "@title"
+msgid "Manage Collection Users"
+msgstr "Управление пользователями в списке"
+
+#: account/socialgraphmodel.cpp:70
 #, kde-format
 msgid "No Follow Requests"
 msgstr "Нет ни одного запроса на подписку"
 
-#: account/socialgraphmodel.cpp:60
+#: account/socialgraphmodel.cpp:73
 #, kde-format
 msgid "No Followers"
 msgstr "Нет ни одного подписчика"
 
-#: account/socialgraphmodel.cpp:62
+#: account/socialgraphmodel.cpp:76
 #, kde-format
 msgid "No Followed Users"
 msgstr "Нет отслеживаемых пользователей"
 
-#: account/socialgraphmodel.cpp:64
+#: account/socialgraphmodel.cpp:79
 #, kde-format
 msgid "No Muted Users"
 msgstr "Нет ни одного игнорируемого пользователя"
 
-#: account/socialgraphmodel.cpp:66
+#: account/socialgraphmodel.cpp:82
 #, kde-format
 msgid "No Blocked Users"
 msgstr "Ни один пользователь не заблокирован"
 
-#: account/socialgraphmodel.cpp:68
+#: account/socialgraphmodel.cpp:85
 #, kde-format
 msgid "No Featured Users"
 msgstr "Нет пользователей в подборке"
 
-#: account/socialgraphmodel.cpp:70
+#: account/socialgraphmodel.cpp:88
 #, kde-format
 msgid "No Users Favorited This Post"
 msgstr "Никто из пользователей не добавил эту публикацию в избранное"
 
-#: account/socialgraphmodel.cpp:72
+#: account/socialgraphmodel.cpp:91
 #, kde-format
 msgid "No Users Boosted This Post"
 msgstr "Никто из пользователей не поделился этой публикацией"
 
-#: account/socialgraphmodel.cpp:74
+#: account/socialgraphmodel.cpp:94
 #, kde-format
 msgid "No Familiar Followers"
 msgstr "Нет ни одного знакомого подписчика"
 
-#: account/socialgraphmodel.cpp:76
+#: account/socialgraphmodel.cpp:97
 #, kde-format
 msgid "No Users"
 msgstr "Нет пользователей"
 
-#: account/socialgraphmodel.cpp:84
+#: account/socialgraphmodel.cpp:105
 #, kde-format
 msgid ""
 "Some users need to be manually approved before they can follow you, and will "
@@ -430,7 +449,7 @@ msgstr ""
 "Здесь будут показаны пользователи, запросы на подписку от которых требуется "
 "подтвердить вручную."
 
-#: account/socialgraphmodel.cpp:86
+#: account/socialgraphmodel.cpp:108
 #, kde-format
 msgctxt "@info:placeholder"
 msgid ""
@@ -439,7 +458,7 @@ msgstr ""
 "На этого пользователя никто не подписан, либо он предпочёл скрыть эту "
 "информацию."
 
-#: account/socialgraphmodel.cpp:88
+#: account/socialgraphmodel.cpp:111
 #, kde-format
 msgctxt "@info:placeholder"
 msgid ""
@@ -448,32 +467,32 @@ msgstr ""
 "Этот пользователь ни на кого не подписан либо предпочёл скрыть эту "
 "информацию."
 
-#: account/socialgraphmodel.cpp:90
+#: account/socialgraphmodel.cpp:114
 #, kde-format
 msgid "Mute users to stop them from showing up in your notifications."
 msgstr ""
 "Добавление пользователей в список игнорируемых позволяет скрыть уведомления "
 "от этих пользователей."
 
-#: account/socialgraphmodel.cpp:92
+#: account/socialgraphmodel.cpp:117
 #, kde-format
 msgid "Block users to hide the user from your timeline entirely."
 msgstr "Блокировка позволяет полностью скрыть пользователя в ленте новостей."
 
-#: account/socialgraphmodel.cpp:94
+#: account/socialgraphmodel.cpp:120
 #, kde-format
 msgid "Users you like can be featured and shown on your profile."
 msgstr ""
 "Интересных вам пользователей можно добавить в подборку, которая будет "
 "показана в вашем профиле."
 
-#: account/socialgraphmodel.cpp:96
+#: account/socialgraphmodel.cpp:123
 #, kde-format
 msgid "No one has favorited this post yet. Maybe you'll be the first?"
 msgstr ""
 "Эту публикацию ещё никто не добавил в избранное. Вы можете стать первым."
 
-#: account/socialgraphmodel.cpp:98
+#: account/socialgraphmodel.cpp:126
 #, kde-format
 msgid ""
 "No one has boosted this post yet. You should boost it to expand its reach!"
@@ -481,9 +500,15 @@ msgstr ""
 "Никто из пользователей ещё не поделился этой публикацией. Вы можете сделать "
 "это, чтобы увеличить её охват!"
 
-#: account/socialgraphmodel.cpp:102
+#: account/socialgraphmodel.cpp:132
 #, kde-format
 msgid "There is no one in this list yet."
+msgstr "Пока в этом списке никого нет."
+
+#: account/socialgraphmodel.cpp:135
+#, fuzzy, kde-format
+#| msgid "There is no one in this list yet."
+msgid "There is no one in this collection yet."
 msgstr "Пока в этом списке никого нет."
 
 #: account/suggestionsmodel.cpp:51
@@ -742,7 +767,7 @@ msgstr "Предусмотрена поддержка https и схемы URL-а
 msgid "Receiving push notifications"
 msgstr "Получение push-уведомлений"
 
-#: notification/notificationmodel.cpp:185
+#: notification/notificationmodel.cpp:189
 #, kde-format
 msgid "Error occurred when fetching the latest notification."
 msgstr "Ошибка при получении последнего уведомления."
@@ -759,7 +784,22 @@ msgctxt "@action:button"
 msgid "Go to Profile"
 msgstr "Перейти в профиль"
 
-#: qml/AccountHeader.qml:160
+#: qml/AccountHeader.qml:105
+#, fuzzy, kde-format
+#| msgctxt "@info: Locale of the user."
+#| msgid "Account Locale"
+msgctxt "@info:label"
+msgid "Account memorialized"
+msgstr "Локаль учётной записи"
+
+#: qml/AccountHeader.qml:117
+#, fuzzy, kde-format
+#| msgid "Account editor"
+msgctxt "@info:label"
+msgid "Account suspended"
+msgstr "Редактор учётной записи"
+
+#: qml/AccountHeader.qml:195
 #, kde-format
 msgctxt ""
 "'Mutual' is the common English word used in social media platforms describe "
@@ -768,206 +808,225 @@ msgctxt ""
 msgid "Mutual"
 msgstr "Взаимные подписчики"
 
-#: qml/AccountHeader.qml:160
+#: qml/AccountHeader.qml:195
 #, kde-format
 msgid "Follows you"
 msgstr "Подписан(а) на вас"
 
-#: qml/AccountHeader.qml:181
-#, kde-format
+#: qml/AccountHeader.qml:201
+#, fuzzy, kde-format
+#| msgid "Bot"
+msgctxt "@info:label This account is a bot and automated"
 msgid "Bot"
 msgstr "Бот"
 
-#: qml/AccountHeader.qml:279
+#: qml/AccountHeader.qml:295
 #, fuzzy, kde-format
 #| msgid "Copy Image"
 msgctxt "@action:inmenu Copy user handle such as @foo@bar.com"
 msgid "Copy Handle"
 msgstr "Скопировать изображение"
 
-#: qml/AccountHeader.qml:284
+#: qml/AccountHeader.qml:300
 #, fuzzy, kde-format
 #| msgid "Profile link copied."
 msgid "Profile handle copied."
 msgstr "Ссылка на профиль скопирована."
 
-#: qml/AccountHeader.qml:309
+#: qml/AccountHeader.qml:325
 #, kde-format
 msgid "Follow Requested"
 msgstr "Отправлен запрос на подписку"
 
-#: qml/AccountHeader.qml:312
+#: qml/AccountHeader.qml:328
 #, kde-format
 msgid "Unfollow"
 msgstr "Отменить подписку"
 
-#: qml/AccountHeader.qml:314
+#: qml/AccountHeader.qml:330
 #, kde-format
 msgid "Follow"
 msgstr "Подписаться"
 
-#: qml/AccountHeader.qml:339
+#: qml/AccountHeader.qml:355
 #, kde-format
 msgid "Stop notifying me when %1 posts."
 msgstr "Не уведомлять о публикациях %1."
 
-#: qml/AccountHeader.qml:341
+#: qml/AccountHeader.qml:357
 #, kde-format
 msgid "Notify me when %1 posts."
 msgstr "Уведомлять о публикациях %1."
 
-#: qml/AccountHeader.qml:356
+#: qml/AccountHeader.qml:373
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show a QR code for this account"
 msgstr "Включить уведомления для этой учётной записи"
 
-#: qml/AccountHeader.qml:369
+#: qml/AccountHeader.qml:386
 #, kde-format
 msgid "Mention…"
 msgstr "Упомянуть…"
 
-#: qml/AccountHeader.qml:375
+#: qml/AccountHeader.qml:392
 #, kde-format
 msgid "Start a Conversation…"
 msgstr "Начать чат…"
 
-#: qml/AccountHeader.qml:384
+#: qml/AccountHeader.qml:401
 #, kde-format
 msgid "Hide Boosts from %1"
 msgstr "Скрыть сделанные %1 републикации"
 
-#: qml/AccountHeader.qml:386
+#: qml/AccountHeader.qml:403
 #, kde-format
 msgid "Show Boosts from %1"
 msgstr "Показать сделанные %1 републикации"
 
-#: qml/AccountHeader.qml:402
+#: qml/AccountHeader.qml:419
 #, kde-format
 msgid "Stop Featuring This Profile"
 msgstr "Убрать этот профиль из подборки"
 
-#: qml/AccountHeader.qml:404
+#: qml/AccountHeader.qml:421
 #, kde-format
 msgid "Feature This Profile"
 msgstr "Добавить этот профиль в подборку"
 
-#: qml/AccountHeader.qml:420
+#: qml/AccountHeader.qml:437
 #, kde-format
 msgid "Unmute"
 msgstr "Перестать игнорировать"
 
-#: qml/AccountHeader.qml:422
+#: qml/AccountHeader.qml:439
 #, kde-format
 msgid "Mute"
 msgstr "Игнорировать"
 
-#: qml/AccountHeader.qml:438
+#: qml/AccountHeader.qml:455
 #, kde-format
 msgid "Unblock"
 msgstr "Разблокировать"
 
-#: qml/AccountHeader.qml:440
+#: qml/AccountHeader.qml:457
 #, kde-format
 msgid "Block"
 msgstr "Заблокировать"
 
-#: qml/AccountHeader.qml:454 qml/PostDelegate/PostMenu.qml:192
+#: qml/AccountHeader.qml:471 qml/PostDelegate/PostMenu.qml:192
 #, kde-format
 msgctxt "@action:inmenu Report this post"
 msgid "Report…"
 msgstr "Пожаловаться…"
 
-#: qml/AccountHeader.qml:460
+#: qml/AccountHeader.qml:477
 #, kde-format
 msgid "Edit Profile"
 msgstr "Изменить профиль"
 
-#: qml/AccountHeader.qml:464
+#: qml/AccountHeader.qml:481
 #, kde-format
 msgid "Account editor"
 msgstr "Редактор учётной записи"
 
-#: qml/AccountHeader.qml:474
-#, kde-format
-msgid "Featured Users"
-msgstr "Пользователи в подборке"
-
-#: qml/AccountHeader.qml:481
+#: qml/AccountHeader.qml:492
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Scheduled Posts"
 msgstr "Запланированные публикации"
 
-#: qml/AccountHeader.qml:495
+#: qml/AccountHeader.qml:506
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Draft Posts"
 msgstr "Черновики публикаций"
 
-#: qml/AccountHeader.qml:508 qml/PostDelegate/LinkMenu.qml:25
+#: qml/AccountHeader.qml:519 qml/PostDelegate/LinkMenu.qml:25
 #: qml/PostDelegate/PostMenu.qml:53
 #, kde-format
 msgctxt "@action:inmenu 'Browser' being a web browser"
 msgid "Open in Browser"
 msgstr "Открыть в браузере"
 
-#: qml/AccountHeader.qml:513
+#: qml/AccountHeader.qml:524
 #, kde-format
 msgid "Copy Link"
 msgstr "Скопировать ссылку"
 
-#: qml/AccountHeader.qml:516
+#: qml/AccountHeader.qml:527
 #, kde-format
 msgid "Profile link copied."
 msgstr "Ссылка на профиль скопирована."
 
-#: qml/AccountHeader.qml:587
+#: qml/AccountHeader.qml:598
 #, kde-format
 msgctxt "@info:label Joined at"
 msgid "Joined"
 msgstr "Время присоединения"
 
-#: qml/AccountHeader.qml:627
+#: qml/AccountHeader.qml:638
 #, kde-format
 msgid "Ownership of this link was checked on %1"
 msgstr "Владение ссылкой было проверено в %1."
 
-#: qml/AccountHeader.qml:710
+#: qml/AccountHeader.qml:717
 #, kde-format
 msgctxt "@label:textfield"
 msgid "Private Note:"
 msgstr "Примечание:"
 
-#: qml/AccountHeader.qml:718
+#: qml/AccountHeader.qml:725
 #, kde-format
 msgid "Saved"
 msgstr "Сохранено"
 
-#: qml/AccountHeader.qml:733
+#: qml/AccountHeader.qml:740
 #, kde-format
 msgid ""
 "Write down something about this user, this isn't visible to anyone but you."
 msgstr "Созданное примечание о пользователе доступно для просмотра только вам."
 
-#: qml/AccountHeader.qml:795
+#: qml/AccountHeader.qml:802
+#, kde-format
+msgctxt "@info:label Featuring the following users:"
+msgid "Featuring:"
+msgstr ""
+
+#: qml/AccountHeader.qml:832
+#, fuzzy, kde-format
+#| msgctxt "@action:button See all familiar followers"
+#| msgid "View %1 More"
+msgctxt "@action:button See all featured users"
+msgid "View %1 More"
+msgstr "Показать ещё %1"
+
+#: qml/AccountHeader.qml:832
+#, fuzzy, kde-format
+#| msgctxt "@action:button See all familiar followers"
+#| msgid "View All"
+msgctxt "@action:button See all featured users"
+msgid "View All"
+msgstr "Показать всех"
+
+#: qml/AccountHeader.qml:859
 #, kde-format
 msgid "Also followed by:"
 msgstr "Другие подписчики:"
 
-#: qml/AccountHeader.qml:825
+#: qml/AccountHeader.qml:889
 #, kde-format
 msgctxt "@action:button See all familiar followers"
 msgid "View %1 More"
 msgstr "Показать ещё %1"
 
-#: qml/AccountHeader.qml:825
+#: qml/AccountHeader.qml:889
 #, kde-format
 msgctxt "@action:button See all familiar followers"
 msgid "View All"
 msgstr "Показать всех"
 
-#: qml/AccountHeader.qml:865
+#: qml/AccountHeader.qml:929
 #, kde-format
 msgctxt "@label User's number of statuses"
 msgid "<b>%1</b> post"
@@ -977,7 +1036,7 @@ msgstr[1] "<b>%1</b> публикации"
 msgstr[2] "<b>%1</b> публикаций"
 msgstr[3] "<b>%1</b> публикация"
 
-#: qml/AccountHeader.qml:878
+#: qml/AccountHeader.qml:944
 #, kde-format
 msgctxt "@label User's number of followed accounts"
 msgid "<b>%1</b> follows"
@@ -987,7 +1046,7 @@ msgstr[1] "<b>%1</b> подписки"
 msgstr[2] "<b>%1</b> подписок"
 msgstr[3] "<b>%1</b> подписка"
 
-#: qml/AccountHeader.qml:891
+#: qml/AccountHeader.qml:959
 #, kde-format
 msgctxt "@label User's number of followers"
 msgid "<b>%1</b> follower"
@@ -997,31 +1056,31 @@ msgstr[1] "<b>%1</b> подписчика"
 msgstr[2] "<b>%1</b> подписчиков"
 msgstr[3] "<b>%1</b> подписчик"
 
-#: qml/AccountHeader.qml:918
+#: qml/AccountHeader.qml:993
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts"
 msgstr "Публикации"
 
-#: qml/AccountHeader.qml:922
+#: qml/AccountHeader.qml:997
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts && Replies"
 msgstr "Публикации и ответы"
 
-#: qml/AccountHeader.qml:926
+#: qml/AccountHeader.qml:1002
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Media"
 msgstr "Мультимедиа"
 
-#: qml/AccountHeader.qml:958
+#: qml/AccountHeader.qml:1034
 #, kde-format
 msgctxt "@option:check"
 msgid "Hide boosts"
 msgstr "Скрывать записи, которыми поделились"
 
-#: qml/AccountHeader.qml:978
+#: qml/AccountHeader.qml:1054
 #, kde-format
 msgctxt "@action:button Show all of a profile's posts"
 msgid "All"
@@ -1033,24 +1092,24 @@ msgctxt "@title:window"
 msgid "Profile"
 msgstr "Профиль"
 
-#: qml/AccountInfo.qml:133 qml/FollowingPage.qml:161
+#: qml/AccountInfo.qml:135 qml/FollowingPage.qml:161
 #, kde-format
 msgctxt "@label"
 msgid "No Posts"
 msgstr "Нет ни одной публикации"
 
-#: qml/AccountInfo.qml:134 qml/FollowingPage.qml:162
+#: qml/AccountInfo.qml:136 qml/FollowingPage.qml:162
 #, kde-format
 msgid "This user hasn't posted anything yet."
 msgstr "Этот пользователь ещё ничего не опубликовал."
 
-#: qml/AccountInfo.qml:265
+#: qml/AccountInfo.qml:267
 #, kde-format
 msgctxt "@label"
 msgid "No Media"
 msgstr "Нет медиафайлов"
 
-#: qml/AccountInfo.qml:266
+#: qml/AccountInfo.qml:268
 #, kde-format
 msgid "This user hasn't posted any media yet."
 msgstr "Этот пользователь ещё не опубликовал ни одного медиафайла."
@@ -1114,6 +1173,57 @@ msgstr "Нет ни одного объявления"
 msgid "Your server has not made any announcements yet."
 msgstr "Сервер ещё не отправил ни одного объявления."
 
+#: qml/CollectionPage.qml:64
+#, fuzzy, kde-format
+#| msgctxt "@action:button Edit current list"
+#| msgid "Edit…"
+msgctxt "@action:button Edit current collection"
+msgid "Edit…"
+msgstr "Изменить…"
+
+#: qml/CollectionPage.qml:129
+#, fuzzy, kde-format
+#| msgid "Remove"
+msgctxt "@action:button Remove from collection"
+msgid "Remove"
+msgstr "Удалить"
+
+#: qml/CollectionPage.qml:146
+#, fuzzy, kde-format
+#| msgid "Accounts"
+msgctxt "@info:placeholder No accounts in this collection"
+msgid "No Accounts"
+msgstr "Учётные записи"
+
+#: qml/CollectionsPage.qml:23
+#, fuzzy, kde-format
+#| msgctxt "Show more options"
+#| msgid "More actions"
+msgctxt "@title"
+msgid "Collections"
+msgstr "Дополнительные действия"
+
+#: qml/CollectionsPage.qml:26
+#, fuzzy, kde-format
+#| msgctxt "@action:button Create new list"
+#| msgid "Create New…"
+msgctxt "@action:button Create new collection"
+msgid "Create New…"
+msgstr "Создать список…"
+
+#: qml/CollectionsPage.qml:67
+#, fuzzy, kde-format
+#| msgid "No Conversations"
+msgid "No Collections"
+msgstr "Нет ни одного чата"
+
+#: qml/CollectionsPage.qml:68
+#, fuzzy, kde-format
+#| msgid "Lists allow you to categorize who you're following."
+msgid ""
+"Collections allow you to categorize accounts you want other people to follow."
+msgstr "Списки позволяют упорядочить свои подписки."
+
 #: qml/Components/BoostConfirmationDialog.qml:19
 #, kde-format
 msgctxt "@title"
@@ -1150,36 +1260,36 @@ msgctxt "@info Last updated: relative date and time (e.g. 2 years ago)"
 msgid "Last updated: %1"
 msgstr "Последнее обновление: %1"
 
-#: qml/Components/TimelineView.qml:84
+#: qml/Components/TimelineView.qml:87
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Post"
 msgstr "Создать публикацию"
 
-#: qml/Components/TimelineView.qml:92
+#: qml/Components/TimelineView.qml:95
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Return to Top"
 msgstr "Вернуться к началу"
 
-#: qml/Components/TimelineView.qml:176
+#: qml/Components/TimelineView.qml:179
 #, kde-format
 msgctxt "@info:status"
 msgid "Some replies are not available"
 msgstr "Некоторые ответы недоступны"
 
-#: qml/Components/TimelineView.qml:177
+#: qml/Components/TimelineView.qml:180
 #, kde-format
 msgid "To view all replies, open the post on the original server."
 msgstr "Для просмотра всех ответов откройте публикацию на исходном сервере."
 
-#: qml/Components/TimelineView.qml:180
+#: qml/Components/TimelineView.qml:183
 #, kde-format
 msgctxt "@action:button 'Browser' being a web browser"
 msgid "Open in Browser"
 msgstr "Открыть в браузере"
 
-#: qml/Components/TimelineView.qml:189
+#: qml/Components/TimelineView.qml:192
 #, fuzzy, kde-format
 #| msgid "No Posts"
 msgctxt "@info:status No more posts to read"
@@ -1233,6 +1343,119 @@ msgstr "Увеличить количество запросов на подпи
 msgctxt "@action:button"
 msgid "Decrease follow request count"
 msgstr "Уменьшить количество запросов на подписку"
+
+#: qml/EditCollectionPage.qml:30
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Create Post"
+msgctxt "@title:window"
+msgid "Create Collection"
+msgstr "Создать публикацию"
+
+#: qml/EditCollectionPage.qml:30
+#, kde-format
+msgctxt "@title:window"
+msgid "Edit Collection"
+msgstr ""
+
+#: qml/EditCollectionPage.qml:67
+#, kde-format
+msgctxt "@label:textbox Collection title"
+msgid "Name"
+msgstr ""
+
+#: qml/EditCollectionPage.qml:77
+#, fuzzy, kde-format
+#| msgctxt "@title:group Alternate text or description of the image"
+#| msgid "Description"
+msgctxt "@label:textbox Collection description"
+msgid "Description"
+msgstr "Описание"
+
+#: qml/EditCollectionPage.qml:87
+#, fuzzy, kde-format
+#| msgctxt "login status"
+#| msgid "Sensitized"
+msgctxt "@label:textbox Whether this collection should be marked sensitive"
+msgid "Sensitive"
+msgstr "Файлы от учётной записи помечены как конфиденциальные"
+
+#: qml/EditCollectionPage.qml:97
+#, fuzzy, kde-format
+#| msgctxt "@info:Filter out accounts with disabled moderation status"
+#| msgid "Disabled"
+msgctxt ""
+"@label:textbox Whether this collection should be discoverable by other users"
+msgid "Discoverable"
+msgstr "Отключённые"
+
+#: qml/EditCollectionPage.qml:108
+#, fuzzy, kde-format
+#| msgctxt "@action:intoolbar Add users to list"
+#| msgid "Add Users"
+msgctxt "@action:intoolbar Add users to collection"
+msgid "Add Users"
+msgstr "Добавить пользователей"
+
+#: qml/EditCollectionPage.qml:119
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Add Users to List…"
+msgctxt "@title"
+msgid "Add Users to Collection…"
+msgstr "Добавление пользователей в список…"
+
+#: qml/EditCollectionPage.qml:157
+#, fuzzy, kde-format
+#| msgctxt "@action:button Add user to this list"
+#| msgid "Add"
+msgctxt "@action:button Add user to this collection"
+msgid "Add"
+msgstr "Добавить"
+
+#: qml/EditCollectionPage.qml:204 qml/EditListPage.qml:219
+#, kde-format
+msgid "Search among users you follow…"
+msgstr "Поиск среди пользователей, на которых вы подписаны…"
+
+#: qml/EditCollectionPage.qml:236
+#, fuzzy, kde-format
+#| msgctxt "@action:button Create the list"
+#| msgid "Create"
+msgctxt "@action:button Create the collection"
+msgid "Create"
+msgstr "Создать"
+
+#: qml/EditCollectionPage.qml:238
+#, fuzzy, kde-format
+#| msgctxt "@action:button Save the edited list"
+#| msgid "Save"
+msgctxt "@action:button Save the edited collection"
+msgid "Save"
+msgstr "Сохранить"
+
+#: qml/EditCollectionPage.qml:251
+#, fuzzy, kde-format
+#| msgid "Delete"
+msgctxt "@action:button Delete the collection"
+msgid "Delete"
+msgstr "Удалить"
+
+#: qml/EditCollectionPage.qml:258
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Deleting Filter"
+msgctxt "@title"
+msgid "Deleting Collection"
+msgstr "Удаление фильтра"
+
+#: qml/EditCollectionPage.qml:259
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Are you sure you want to delete this list?"
+msgctxt "@label"
+msgid "Are you sure you want to delete this collection?"
+msgstr "Действительно удалить этот список?"
 
 #: qml/EditListPage.qml:30
 #, kde-format
@@ -1305,11 +1528,6 @@ msgstr "Добавление пользователей в список…"
 msgctxt "@action:button Add user to this list"
 msgid "Add"
 msgstr "Добавить"
-
-#: qml/EditListPage.qml:219
-#, kde-format
-msgid "Search among users you follow…"
-msgstr "Поиск среди пользователей, на которых вы подписаны…"
 
 #: qml/EditListPage.qml:253
 #, kde-format
@@ -1959,89 +2177,89 @@ msgstr ""
 "пользователи (включая автора публикации) не будут знать о добавлении "
 "публикации в закладки."
 
-#: qml/Main.qml:484
+#: qml/Main.qml:492
 #, kde-format
 msgid "Write a New Post"
 msgstr "Создание новой публикации"
 
-#: qml/Main.qml:511
+#: qml/Main.qml:519
 #, kde-format
 msgid "Write a new post"
 msgstr "Создать новую публикацию"
 
-#: qml/Main.qml:556
+#: qml/Main.qml:564
 #, kde-format
 msgid "Reply to post"
 msgstr "Ответ на публикацию"
 
-#: qml/Main.qml:645
+#: qml/Main.qml:660
 #, kde-format
 msgctxt "@action:button Home Timeline"
 msgid "Home"
 msgstr "Главная"
 
-#: qml/Main.qml:650
+#: qml/Main.qml:665
 #, kde-format
 msgctxt "@action:button Account Notifications"
 msgid "Notifications"
 msgstr "Уведомления"
 
-#: qml/Main.qml:655
+#: qml/Main.qml:670
 #, kde-format
 msgctxt "@action:button Follows that require explicit allow/deny"
 msgid "Follow Requests"
 msgstr "Запросы на подписку"
 
-#: qml/Main.qml:660
+#: qml/Main.qml:675
 #, kde-format
 msgctxt "@action:button Local timeline of posts from the account's own server"
 msgid "Local"
 msgstr "Локальная лента"
 
-#: qml/Main.qml:664
+#: qml/Main.qml:679
 #, kde-format
 msgctxt ""
 "@action:button Global timeline of posts from the entire Fediverse network"
 msgid "Global"
 msgstr "Глобальная лента"
 
-#: qml/Main.qml:668
+#: qml/Main.qml:683
 #, kde-format
 msgctxt "@action:button Direct one-on-one messages between users"
 msgid "Conversations"
 msgstr "Чаты"
 
-#: qml/Main.qml:672
+#: qml/Main.qml:687
 #, kde-format
 msgctxt "@action:button This account's favorited posts"
 msgid "Favorites"
 msgstr "Избранное"
 
-#: qml/Main.qml:676
+#: qml/Main.qml:691
 #, kde-format
 msgctxt "@action:button This account's bookmarked posts"
 msgid "Bookmarks"
 msgstr "Закладки"
 
-#: qml/Main.qml:680
+#: qml/Main.qml:695
 #, kde-format
 msgctxt "@action:button Explore this server's trending posts, news, and more"
 msgid "Explore"
 msgstr "Обзор"
 
-#: qml/Main.qml:684
+#: qml/Main.qml:699
 #, kde-format
 msgctxt "@action:button A list of this account's followed accounts"
 msgid "Following"
 msgstr "Подписки"
 
-#: qml/Main.qml:688
+#: qml/Main.qml:703
 #, kde-format
 msgctxt "@action:button Search for users, posts and tags"
 msgid "Search"
 msgstr "Поиск"
 
-#: qml/Main.qml:696
+#: qml/Main.qml:711
 #, kde-format
 msgctxt ""
 "@action:button This account's lists, or timelines consisting of a groups of "
@@ -2049,37 +2267,45 @@ msgctxt ""
 msgid "Lists"
 msgstr "Списки"
 
-#: qml/Main.qml:700
+#: qml/Main.qml:715
 #, kde-format
 msgctxt "@action:button This account's profile"
 msgid "Profile"
 msgstr "Профиль"
 
-#: qml/Main.qml:707
+#: qml/Main.qml:722
 #, kde-format
 msgctxt "@action:button Open debug page"
 msgid "Debug"
 msgstr "Отладка"
 
-#: qml/Main.qml:720
+#: qml/Main.qml:728
+#, fuzzy, kde-format
+#| msgctxt "Show more options"
+#| msgid "More actions"
+msgctxt "@action:button This account's collections (a group of accounts)"
+msgid "Collections"
+msgstr "Дополнительные действия"
+
+#: qml/Main.qml:739
 #, kde-format
 msgctxt "@action:button Open moderation tools"
 msgid "Moderation Tools"
 msgstr "Инструменты модерации"
 
-#: qml/Main.qml:727
+#: qml/Main.qml:746
 #, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Параметры"
 
-#: qml/Main.qml:890
+#: qml/Main.qml:898
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Unfollow"
 msgstr "Отменить подписку"
 
-#: qml/Main.qml:890
+#: qml/Main.qml:898
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Follow"
@@ -3533,24 +3759,32 @@ msgctxt "Show only quotes"
 msgid "Quotes"
 msgstr "Цитаты"
 
-#: qml/NotificationPage.qml:205
+#: qml/NotificationPage.qml:164
+#, fuzzy, kde-format
+#| msgctxt "Show more options"
+#| msgid "More actions"
+msgctxt "Show only quotes"
+msgid "Collections"
+msgstr "Дополнительные действия"
+
+#: qml/NotificationPage.qml:215
 #, kde-format
 msgctxt "@info:label New notifications"
 msgid "New"
 msgstr "Создать"
 
-#: qml/NotificationPage.qml:205
+#: qml/NotificationPage.qml:215
 #, kde-format
 msgctxt "@info:label Previous notifications"
 msgid "Previous"
 msgstr "Предыдущее"
 
-#: qml/NotificationPage.qml:352
+#: qml/NotificationPage.qml:376
 #, kde-format
 msgid "No Notifications"
 msgstr "Уведомлений нет"
 
-#: qml/NotificationPage.qml:353
+#: qml/NotificationPage.qml:377
 #, fuzzy, kde-format
 #| msgid ""
 #| "You have no notifications yet. When people reply, favorite or boost your "
@@ -3587,6 +3821,25 @@ msgctxt "@action:button"
 msgid "View #FediWrapped"
 msgstr "Открыть #FediWrapped"
 
+#: qml/Notifications/CollectionDelegate.qml:80
+#, kde-format
+msgid "%1 added you to a collection"
+msgstr ""
+
+#: qml/Notifications/CollectionDelegate.qml:82
+#, fuzzy, kde-format
+#| msgid "%1 updated their post"
+msgid "%1 updated a collection"
+msgstr "%1 обновил(а) свою публикацию"
+
+#: qml/Notifications/CollectionDelegate.qml:102
+#, fuzzy, kde-format
+#| msgctxt "@action:button See all familiar followers"
+#| msgid "View All"
+msgctxt "@action:button"
+msgid "View Collection"
+msgstr "Показать всех"
+
 #: qml/Notifications/FollowDelegate.qml:78
 #, kde-format
 msgid "%1 signed up"
@@ -3614,13 +3867,13 @@ msgid "%1 users boosted your post"
 msgstr "Пользователи (%1) поделились вашей публикацией"
 
 #: qml/Notifications/MinimalPostDelegate.qml:68
-#: qml/PostDelegate/PostDelegate.qml:105
+#: qml/PostDelegate/PostDelegate.qml:108
 #, kde-format
 msgid "Normal Status"
 msgstr "Обычный статус"
 
 #: qml/Notifications/MinimalPostDelegate.qml:68
-#: qml/PostDelegate/PostDelegate.qml:105
+#: qml/PostDelegate/PostDelegate.qml:108
 #, kde-format
 msgid "Spoiler Status"
 msgstr "Статус со спойлером"
@@ -3916,31 +4169,31 @@ msgctxt "@info"
 msgid "Post content"
 msgstr "Содержимое публикации"
 
-#: qml/PostDelegate/PostDelegate.qml:172
+#: qml/PostDelegate/PostDelegate.qml:175
 #, kde-format
 msgctxt "@label"
 msgid "Pinned Post"
 msgstr "Закреплённая публикация"
 
-#: qml/PostDelegate/PostDelegate.qml:241
+#: qml/PostDelegate/PostDelegate.qml:244
 #, kde-format
 msgctxt "@title"
 msgid "Delete Post"
 msgstr "Удаление публикации"
 
-#: qml/PostDelegate/PostDelegate.qml:242
+#: qml/PostDelegate/PostDelegate.qml:245
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to delete this post?"
 msgstr "Действительно удалить эту публикацию?"
 
-#: qml/PostDelegate/PostDelegate.qml:257
+#: qml/PostDelegate/PostDelegate.qml:260
 #, kde-format
 msgctxt "@title"
 msgid "Delete & Re-draft Post"
 msgstr "Удаление публикации и создание её заново"
 
-#: qml/PostDelegate/PostDelegate.qml:258
+#: qml/PostDelegate/PostDelegate.qml:261
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -3949,76 +4202,76 @@ msgid ""
 msgstr ""
 "Действительно переписать эту публикацию? Исходная публикация будет удалена."
 
-#: qml/PostDelegate/PostDelegate.qml:412
+#: qml/PostDelegate/PostDelegate.qml:416
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Ответить"
 
-#: qml/PostDelegate/PostDelegate.qml:439
+#: qml/PostDelegate/PostDelegate.qml:443
 #, kde-format
 msgid "Cannot boost direct messages"
 msgstr "Нельзя делиться личными сообщениями"
 
-#: qml/PostDelegate/PostDelegate.qml:441
+#: qml/PostDelegate/PostDelegate.qml:445
 #, kde-format
 msgid "Cannot boost private posts"
 msgstr "Закрытыми записями нельзя поделиться"
 
-#: qml/PostDelegate/PostDelegate.qml:443
+#: qml/PostDelegate/PostDelegate.qml:447
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Поделиться"
 
-#: qml/PostDelegate/PostDelegate.qml:461
+#: qml/PostDelegate/PostDelegate.qml:465
 #, kde-format
 msgid "Boosted"
 msgstr "Сделана републикация"
 
-#: qml/PostDelegate/PostDelegate.qml:461
+#: qml/PostDelegate/PostDelegate.qml:465
 #, kde-format
 msgid "Boost"
 msgstr "Поделиться"
 
-#: qml/PostDelegate/PostDelegate.qml:481
+#: qml/PostDelegate/PostDelegate.qml:485
 #, kde-format
 msgctxt "Favorite a post"
 msgid "Favorite"
 msgstr "Добавить в избранное"
 
-#: qml/PostDelegate/PostDelegate.qml:484
+#: qml/PostDelegate/PostDelegate.qml:488
 #, kde-format
 msgid "Favorited"
 msgstr "В избранном"
 
-#: qml/PostDelegate/PostDelegate.qml:484
+#: qml/PostDelegate/PostDelegate.qml:488
 #, kde-format
 msgid "Favorite"
 msgstr "Избранное"
 
-#: qml/PostDelegate/PostDelegate.qml:503
+#: qml/PostDelegate/PostDelegate.qml:507
 #, kde-format
 msgid "Remove bookmark"
 msgstr "Удалить закладку"
 
-#: qml/PostDelegate/PostDelegate.qml:503
+#: qml/PostDelegate/PostDelegate.qml:507
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "Добавить в закладки"
 
-#: qml/PostDelegate/PostDelegate.qml:506
+#: qml/PostDelegate/PostDelegate.qml:510
 #, kde-format
 msgid "Bookmarked"
 msgstr "В закладках"
 
-#: qml/PostDelegate/PostDelegate.qml:506
+#: qml/PostDelegate/PostDelegate.qml:510
 #, kde-format
 msgid "Bookmark"
 msgstr "Добавить в закладки"
 
-#: qml/PostDelegate/PostDelegate.qml:540
+#: qml/PostDelegate/PostDelegate.qml:544
 #, kde-format
 msgid ""
 "This post has been marked private. Some posts may be missing because its "
@@ -4843,7 +5096,7 @@ msgstr "Порт"
 msgid "User"
 msgstr "Пользователь"
 
-#: qml/Settings/NetworkProxyPage.qml:141 qml/Settings/ProfileEditor.qml:304
+#: qml/Settings/NetworkProxyPage.qml:141 qml/Settings/ProfileEditor.qml:312
 #, kde-format
 msgid "Apply"
 msgstr "Применить"
@@ -5136,60 +5389,73 @@ msgstr "Годовой отчёт"
 msgid "When you receive your #FediWrapped at the end of the year."
 msgstr "Когда вы получаете свой отчёт #FediWrapped в конце года."
 
+#: qml/Settings/NotificationsPage.qml:439
+#, fuzzy, kde-format
+#| msgctxt "Show more options"
+#| msgid "More actions"
+msgctxt "@option:check"
+msgid "Collections"
+msgstr "Дополнительные действия"
+
+#: qml/Settings/NotificationsPage.qml:440
+#, kde-format
+msgid "When you're added to collections or collections were updated."
+msgstr ""
+
 #: qml/Settings/ProfileEditor.qml:60
 #, kde-format
 msgid "Display Name"
 msgstr "Отображаемое имя"
 
-#: qml/Settings/ProfileEditor.qml:78
+#: qml/Settings/ProfileEditor.qml:80
 #, kde-format
 msgid "Bio"
 msgstr "О себе"
 
-#: qml/Settings/ProfileEditor.qml:104
+#: qml/Settings/ProfileEditor.qml:106
 #, kde-format
 msgid "Header"
 msgstr "Шапка"
 
-#: qml/Settings/ProfileEditor.qml:139
+#: qml/Settings/ProfileEditor.qml:141
 #, kde-format
 msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 1500x500px"
 msgstr "PNG, GIF или JPG. Не более 2 МБ. Будет уменьшено до 1500×500 пкс"
 
-#: qml/Settings/ProfileEditor.qml:152 qml/Settings/ProfileEditor.qml:214
+#: qml/Settings/ProfileEditor.qml:154 qml/Settings/ProfileEditor.qml:216
 #, kde-format
 msgid "Delete"
 msgstr "Удалить"
 
-#: qml/Settings/ProfileEditor.qml:167
+#: qml/Settings/ProfileEditor.qml:169
 #, kde-format
 msgid "Avatar"
 msgstr "Аватар"
 
-#: qml/Settings/ProfileEditor.qml:200
+#: qml/Settings/ProfileEditor.qml:202
 #, kde-format
 msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 400x400px"
 msgstr "PNG, GIF или JPG. Не более 2 МБ. Будет уменьшено до 400x400 пкс"
 
-#: qml/Settings/ProfileEditor.qml:231
+#: qml/Settings/ProfileEditor.qml:233
 #, kde-format
 msgctxt "Profile fields"
 msgid "Fields"
 msgstr "Поля"
 
-#: qml/Settings/ProfileEditor.qml:270
+#: qml/Settings/ProfileEditor.qml:278
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove"
 msgstr "Удалить"
 
-#: qml/Settings/ProfileEditor.qml:281
+#: qml/Settings/ProfileEditor.qml:289
 #, kde-format
 msgctxt "@action:button"
 msgid "Add"
 msgstr "Добавить"
 
-#: qml/Settings/ProfileEditor.qml:297
+#: qml/Settings/ProfileEditor.qml:305
 #, kde-format
 msgid "Reset"
 msgstr "Сбросить"
@@ -5692,19 +5958,19 @@ msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1/%2</b> симв."
 
 #: qml/StatusComposer/StatusComposer.qml:711
-#: qml/StatusComposer/StatusComposer.qml:788
+#: qml/StatusComposer/StatusComposer.qml:789
 #, kde-format
 msgctxt "@action:button Schedule something to be posted later"
 msgid "Schedule"
 msgstr "Запланировать"
 
-#: qml/StatusComposer/StatusComposer.qml:762
+#: qml/StatusComposer/StatusComposer.qml:763
 #, kde-format
 msgctxt "@title"
 msgid "Alt Text Reminder"
 msgstr "Напоминание об альтернативном тексте"
 
-#: qml/StatusComposer/StatusComposer.qml:766
+#: qml/StatusComposer/StatusComposer.qml:767
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -5834,7 +6100,7 @@ msgctxt "@action:button"
 msgid "Switch to '%1'"
 msgstr "Переключиться на «%1»"
 
-#: tokodonapplication.cpp:65 tokodonapplication.cpp:229
+#: tokodonapplication.cpp:65 tokodonapplication.cpp:235
 #, kde-format
 msgctxt "@action:button"
 msgid "Configure '%1'"
@@ -5934,24 +6200,32 @@ msgid "Open Lists"
 msgstr "Открыть списки"
 
 #: tokodonapplication.cpp:176
+#, fuzzy, kde-format
+#| msgctxt "@action:button Direct one-on-one messages between users"
+#| msgid "Open Conversations"
+msgctxt "@action:button This account's collections (a group of accounts)"
+msgid "Open Collections"
+msgstr "Открыть чаты"
+
+#: tokodonapplication.cpp:182
 #, kde-format
 msgctxt "@action:button This account's profile"
 msgid "Open Profile"
 msgstr "Открыть профиль"
 
-#: tokodonapplication.cpp:180
+#: tokodonapplication.cpp:186
 #, kde-format
 msgctxt "@action:button"
 msgid "Open Account Switcher"
 msgstr "Открыть окно выбора учётной записи"
 
-#: tokodonapplication.cpp:185
+#: tokodonapplication.cpp:191
 #, kde-format
 msgctxt "@action:button"
 msgid "Reload"
 msgstr ""
 
-#: tokodonapplication.cpp:221
+#: tokodonapplication.cpp:227
 #, kde-format
 msgctxt "@action:button"
 msgid "Switch '%1'"
@@ -6107,6 +6381,9 @@ msgstr[0] "%1 год назад"
 msgstr[1] "%1 года назад"
 msgstr[2] "%1 лет назад"
 msgstr[3] "1 год назад"
+
+#~ msgid "Featured Users"
+#~ msgstr "Пользователи в подборке"
 
 #~ msgctxt "@info:status"
 #~ msgid "End of Timeline"
