@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-22 00:43+0000\n"
-"PO-Revision-Date: 2026-05-29 14:50+0200\n"
+"POT-Creation-Date: 2026-06-23 00:45+0000\n"
+"PO-Revision-Date: 2026-06-22 10:49+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.04.1\n"
+"X-Generator: Lokalize 26.04.2\n"
 
 #: account/abstractaccount.cpp:33
 #, kde-format
@@ -232,13 +232,13 @@ msgstr "%1 heeft uw bericht geciteerd"
 #: account/notificationhandler.cpp:163
 #, kde-format
 msgid "%1 added you to their collection"
-msgstr ""
+msgstr "%1 heeft u aan zijn/haar verzameling toegevoegd"
 
 #: account/notificationhandler.cpp:170
 #, fuzzy, kde-format
-#| msgid "%1 updated their post"
-msgid "%1 updated thier collection"
-msgstr "%1 hebben hun bericht bijgewerkt"
+#| msgid "%1 updated thier collection"
+msgid "%1 updated their collection"
+msgstr "%1 heeft zijn/haar verzameling bijgewerkt"
 
 #: account/notificationhandler.cpp:174
 #, kde-format
@@ -376,12 +376,10 @@ msgid "Manage List Users"
 msgstr "Gebruikers van lijst beheren"
 
 #: account/socialgraphmodel.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Manage List Users"
+#, kde-format
 msgctxt "@title"
 msgid "Manage Collection Users"
-msgstr "Gebruikers van lijst beheren"
+msgstr "Gebruikers van verzameling beheren"
 
 #: account/socialgraphmodel.cpp:70
 #, kde-format
@@ -498,10 +496,9 @@ msgid "There is no one in this list yet."
 msgstr "Er is nog niemand in deze lijst."
 
 #: account/socialgraphmodel.cpp:135
-#, fuzzy, kde-format
-#| msgid "There is no one in this list yet."
+#, kde-format
 msgid "There is no one in this collection yet."
-msgstr "Er is nog niemand in deze lijst."
+msgstr "Er is nog niemand in deze verzameling."
 
 #: account/suggestionsmodel.cpp:51
 #, kde-format
@@ -776,19 +773,16 @@ msgid "Go to Profile"
 msgstr "Ga naar Profiel"
 
 #: qml/AccountHeader.qml:105
-#, fuzzy, kde-format
-#| msgctxt "@info: Locale of the user."
-#| msgid "Account Locale"
+#, kde-format
 msgctxt "@info:label"
 msgid "Account memorialized"
-msgstr "Locatiecode van account"
+msgstr "Account herdacht"
 
 #: qml/AccountHeader.qml:117
-#, fuzzy, kde-format
-#| msgid "Account editor"
+#, kde-format
 msgctxt "@info:label"
 msgid "Account suspended"
-msgstr "Accountbewerker"
+msgstr "Account opgeschort"
 
 #: qml/AccountHeader.qml:195
 #, kde-format
@@ -805,8 +799,7 @@ msgid "Follows you"
 msgstr "Volgt u"
 
 #: qml/AccountHeader.qml:201
-#, fuzzy, kde-format
-#| msgid "Bot"
+#, kde-format
 msgctxt "@info:label This account is a bot and automated"
 msgid "Bot"
 msgstr "Bot"
@@ -980,20 +973,16 @@ msgstr "Schrijf iets neer over deze gebruiker, dit is alleen zichtbaar voor u."
 #, kde-format
 msgctxt "@info:label Featuring the following users:"
 msgid "Featuring:"
-msgstr ""
+msgstr "Met:"
 
 #: qml/AccountHeader.qml:832
-#, fuzzy, kde-format
-#| msgctxt "@action:button See all familiar followers"
-#| msgid "View %1 More"
+#, kde-format
 msgctxt "@action:button See all featured users"
 msgid "View %1 More"
 msgstr "Bekijk %1 beter"
 
 #: qml/AccountHeader.qml:832
-#, fuzzy, kde-format
-#| msgctxt "@action:button See all familiar followers"
-#| msgid "View All"
+#, kde-format
 msgctxt "@action:button See all featured users"
 msgid "View All"
 msgstr "Alles bekijken"
@@ -1157,55 +1146,47 @@ msgid "Your server has not made any announcements yet."
 msgstr "Uw server heeft nog geen enkele aankondiging gedaan."
 
 #: qml/CollectionPage.qml:64
-#, fuzzy, kde-format
-#| msgctxt "@action:button Edit current list"
-#| msgid "Edit…"
+#, kde-format
 msgctxt "@action:button Edit current collection"
 msgid "Edit…"
 msgstr "Bewerken…"
 
 #: qml/CollectionPage.qml:129
-#, fuzzy, kde-format
-#| msgid "Remove"
+#, kde-format
 msgctxt "@action:button Remove from collection"
 msgid "Remove"
 msgstr "Verwijderen"
 
 #: qml/CollectionPage.qml:146
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgctxt "@info:placeholder No accounts in this collection"
 msgid "No Accounts"
-msgstr "Accounts"
+msgstr "Geen accounts"
 
 #: qml/CollectionsPage.qml:23
-#, fuzzy, kde-format
-#| msgctxt "Show more options"
-#| msgid "More actions"
+#, kde-format
 msgctxt "@title"
 msgid "Collections"
-msgstr "Meer acties"
+msgstr "Verzamelingen"
 
 #: qml/CollectionsPage.qml:26
-#, fuzzy, kde-format
-#| msgctxt "@action:button Create new list"
-#| msgid "Create New…"
+#, kde-format
 msgctxt "@action:button Create new collection"
 msgid "Create New…"
 msgstr "Nieuwe aanmaken…"
 
 #: qml/CollectionsPage.qml:67
-#, fuzzy, kde-format
-#| msgid "No Conversations"
+#, kde-format
 msgid "No Collections"
-msgstr "Geen conversaties"
+msgstr "Geen verzamelingen"
 
 #: qml/CollectionsPage.qml:68
-#, fuzzy, kde-format
-#| msgid "Lists allow you to categorize who you're following."
+#, kde-format
 msgid ""
 "Collections allow you to categorize accounts you want other people to follow."
-msgstr "Lijsten bieden u het categoriseren van wie u volgen."
+msgstr ""
+"Met verzamelen kunt u accounts categoriseren waarvan u wilt dat anderen deze "
+"volgen."
 
 #: qml/Components/BoostConfirmationDialog.qml:19
 #, kde-format
@@ -1327,70 +1308,56 @@ msgid "Decrease follow request count"
 msgstr "Telling van verzoek om te volgen verlagen"
 
 #: qml/EditCollectionPage.qml:30
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Create Post"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Collection"
-msgstr "Post aanmaken"
+msgstr "Verzameling aanmaken"
 
 #: qml/EditCollectionPage.qml:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Collection"
-msgstr ""
+msgstr "Verzameling bewerken"
 
 #: qml/EditCollectionPage.qml:67
 #, kde-format
 msgctxt "@label:textbox Collection title"
 msgid "Name"
-msgstr ""
+msgstr "Naam"
 
 #: qml/EditCollectionPage.qml:77
-#, fuzzy, kde-format
-#| msgctxt "@title:group Alternate text or description of the image"
-#| msgid "Description"
+#, kde-format
 msgctxt "@label:textbox Collection description"
 msgid "Description"
 msgstr "Beschrijving"
 
 #: qml/EditCollectionPage.qml:87
-#, fuzzy, kde-format
-#| msgctxt "login status"
-#| msgid "Sensitized"
+#, kde-format
 msgctxt "@label:textbox Whether this collection should be marked sensitive"
 msgid "Sensitive"
-msgstr "Gevoelig gemaakt"
+msgstr "Gevoelig"
 
 #: qml/EditCollectionPage.qml:97
-#, fuzzy, kde-format
-#| msgctxt "@info:Filter out accounts with disabled moderation status"
-#| msgid "Disabled"
+#, kde-format
 msgctxt ""
 "@label:textbox Whether this collection should be discoverable by other users"
 msgid "Discoverable"
-msgstr "Uitgeschakeld"
+msgstr "Te ontdekken"
 
 #: qml/EditCollectionPage.qml:108
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar Add users to list"
-#| msgid "Add Users"
+#, kde-format
 msgctxt "@action:intoolbar Add users to collection"
 msgid "Add Users"
 msgstr "Gebruikers toevoegen"
 
 #: qml/EditCollectionPage.qml:119
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Add Users to List…"
+#, kde-format
 msgctxt "@title"
 msgid "Add Users to Collection…"
-msgstr "Gebruikers aan lijst toevoegen…"
+msgstr "Gebruikers aan verzameling toevoegen…"
 
 #: qml/EditCollectionPage.qml:157
-#, fuzzy, kde-format
-#| msgctxt "@action:button Add user to this list"
-#| msgid "Add"
+#, kde-format
 msgctxt "@action:button Add user to this collection"
 msgid "Add"
 msgstr "Toevoegen"
@@ -1401,43 +1368,34 @@ msgid "Search among users you follow…"
 msgstr "In gebruikers die u volgen zoeken…"
 
 #: qml/EditCollectionPage.qml:236
-#, fuzzy, kde-format
-#| msgctxt "@action:button Create the list"
-#| msgid "Create"
+#, kde-format
 msgctxt "@action:button Create the collection"
 msgid "Create"
 msgstr "Aanmaken"
 
 #: qml/EditCollectionPage.qml:238
-#, fuzzy, kde-format
-#| msgctxt "@action:button Save the edited list"
-#| msgid "Save"
+#, kde-format
 msgctxt "@action:button Save the edited collection"
 msgid "Save"
 msgstr "Opslaan"
 
 #: qml/EditCollectionPage.qml:251
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgctxt "@action:button Delete the collection"
 msgid "Delete"
 msgstr "Verwijderen"
 
 #: qml/EditCollectionPage.qml:258
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Deleting Filter"
+#, kde-format
 msgctxt "@title"
 msgid "Deleting Collection"
-msgstr "Filter wordt verwijderd"
+msgstr "Verzameling wordt verwijderd"
 
 #: qml/EditCollectionPage.qml:259
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Are you sure you want to delete this list?"
+#, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to delete this collection?"
-msgstr "Wilt u deze lijst echt verwijderen?"
+msgstr "Wilt u deze verzameling echt verwijderen?"
 
 #: qml/EditListPage.qml:30
 #, kde-format
@@ -2255,12 +2213,10 @@ msgid "Debug"
 msgstr "Debuggen"
 
 #: qml/Main.qml:728
-#, fuzzy, kde-format
-#| msgctxt "Show more options"
-#| msgid "More actions"
+#, kde-format
 msgctxt "@action:button This account's collections (a group of accounts)"
 msgid "Collections"
-msgstr "Meer acties"
+msgstr "Verzamelingen"
 
 #: qml/Main.qml:739
 #, kde-format
@@ -3711,12 +3667,10 @@ msgid "Quotes"
 msgstr "Citaten"
 
 #: qml/NotificationPage.qml:164
-#, fuzzy, kde-format
-#| msgctxt "Show more options"
-#| msgid "More actions"
+#, kde-format
 msgctxt "Show only quotes"
 msgid "Collections"
-msgstr "Meer acties"
+msgstr "Verzamelingen"
 
 #: qml/NotificationPage.qml:215
 #, kde-format
@@ -3772,21 +3726,18 @@ msgstr "Bekijk #FediWrapped"
 #: qml/Notifications/CollectionDelegate.qml:80
 #, kde-format
 msgid "%1 added you to a collection"
-msgstr ""
+msgstr "%1 heeft u aan een verzameling toegevoegd"
 
 #: qml/Notifications/CollectionDelegate.qml:82
-#, fuzzy, kde-format
-#| msgid "%1 updated their post"
+#, kde-format
 msgid "%1 updated a collection"
-msgstr "%1 hebben hun bericht bijgewerkt"
+msgstr "%1 heeft een verzameling bijgewerkt"
 
 #: qml/Notifications/CollectionDelegate.qml:102
-#, fuzzy, kde-format
-#| msgctxt "@action:button See all familiar followers"
-#| msgid "View All"
+#, kde-format
 msgctxt "@action:button"
 msgid "View Collection"
-msgstr "Alles bekijken"
+msgstr "Verzameling bekijken"
 
 #: qml/Notifications/FollowDelegate.qml:78
 #, kde-format
@@ -5323,17 +5274,16 @@ msgid "When you receive your #FediWrapped at the end of the year."
 msgstr "Wanneer u uw #FediWrapped ontvangt aan het eind van het jaar."
 
 #: qml/Settings/NotificationsPage.qml:439
-#, fuzzy, kde-format
-#| msgctxt "Show more options"
-#| msgid "More actions"
+#, kde-format
 msgctxt "@option:check"
 msgid "Collections"
-msgstr "Meer acties"
+msgstr "Verzamelingen"
 
 #: qml/Settings/NotificationsPage.qml:440
 #, kde-format
 msgid "When you're added to collections or collections were updated."
 msgstr ""
+"Wanneer u bent toegevoegd aan verzamelingen of verzamelingen zijn bijgewerkt."
 
 #: qml/Settings/ProfileEditor.qml:60
 #, kde-format
@@ -6133,12 +6083,10 @@ msgid "Open Lists"
 msgstr "Lijsten openen"
 
 #: tokodonapplication.cpp:176
-#, fuzzy, kde-format
-#| msgctxt "@action:button Direct one-on-one messages between users"
-#| msgid "Open Conversations"
+#, kde-format
 msgctxt "@action:button This account's collections (a group of accounts)"
 msgid "Open Collections"
-msgstr "Conversaties openen"
+msgstr "Verzamelingen openen"
 
 #: tokodonapplication.cpp:182
 #, kde-format
