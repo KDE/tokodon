@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-10 02:41+0000\n"
-"PO-Revision-Date: 2026-04-23 11:17+0100\n"
+"PO-Revision-Date: 2026-06-23 00:49+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.04.0\n"
+"X-Generator: Lokalize 26.04.2\n"
 
 #: account/abstractaccount.cpp:33
 #, kde-format
@@ -515,7 +515,7 @@ msgstr "No se ha podido dejar de suspender la cuenta"
 #: admin/accounttoolmodel.cpp:304
 #, kde-format
 msgid "Could not mark the account as not sensitive"
-msgstr "No se ha podido marcar la cuenta como no sensible"
+msgstr "No se ha podido marcar la cuenta como no confidencial"
 
 #: admin/adminaccountinfo.cpp:24
 #, kde-format
@@ -533,7 +533,7 @@ msgstr "Limitado"
 #, kde-format
 msgctxt "login status"
 msgid "Sensitized"
-msgstr "Sensibilizada"
+msgstr "Confidencial"
 
 #: admin/adminaccountinfo.cpp:30
 #, kde-format
@@ -1041,7 +1041,7 @@ msgid ""
 "information over a conversation."
 msgstr ""
 "Aquí se mostrarán los mensajes directos a otros usuarios. No comparta "
-"información sensible en las conversaciones."
+"información confidencial en las conversaciones."
 
 #: content/ui/Debug/DebugPage.qml:19
 #, kde-format
@@ -1154,7 +1154,7 @@ msgstr "Borrar"
 #, kde-format
 msgctxt "@title"
 msgid "Deleting List"
-msgstr "Borrando lista"
+msgstr "Borrado de lista"
 
 #: content/ui/EditListPage.qml:276
 #, kde-format
@@ -2538,7 +2538,7 @@ msgstr "Congelar"
 msgctxt ""
 "@info: Force all this user's media attachments to be flagged as sensitive."
 msgid "Force-Sensitive"
-msgstr "Forzar a sensible"
+msgstr "Forzar confidencialidad"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:50
 #, kde-format
@@ -2625,7 +2625,8 @@ msgstr "Se ha dejado de suspender correctamente la cuenta de %1"
 #: content/ui/ModerationTools/MainAccountToolPage.qml:137
 #, kde-format
 msgid "Successfully undo force-sensitive %1's account"
-msgstr "Se ha deshecho correctamente el forzado a sensible de la cuenta de %1"
+msgstr ""
+"Se ha deshecho correctamente el forzado a confidencial de la cuenta de %1"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:141
 #, kde-format
@@ -2771,7 +2772,7 @@ msgstr "Deshacer suspensión"
 #: content/ui/ModerationTools/MainAccountToolPage.qml:503
 #, kde-format
 msgid "Undo force-sensitive"
-msgstr "Deshacer el forzado a sensible"
+msgstr "Deshacer el forzado a confidencial"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:514
 #, kde-format
@@ -3518,7 +3519,7 @@ msgstr "Estado con adjunto de sonido"
 #, kde-format
 msgctxt "@info"
 msgid "Sensitive media"
-msgstr "Medios sensibles"
+msgstr "Medios confidenciales"
 
 #: content/ui/PostDelegate/AttachmentGrid.qml:201
 #, kde-format
@@ -4266,7 +4267,7 @@ msgstr "De forma predeterminada, todo lo que siga y sus seguidores es público."
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Mark uploaded media as sensitive by default"
-msgstr "Marcar los medios enviados como sensibles de forma predeterminada"
+msgstr "Marcar los medios enviados como confidenciales de forma predeterminada"
 
 #: content/ui/Settings/AccountPage.qml:178
 #, kde-format
@@ -4572,7 +4573,7 @@ msgstr "Borrar"
 #, kde-format
 msgctxt "@title"
 msgid "Deleting Filter"
-msgstr "Borrando filtro"
+msgstr "Borrado de filtro"
 
 #: content/ui/Settings/EditFilterPage.qml:250
 #, kde-format
@@ -6065,11 +6066,3 @@ msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "hace 1 año"
 msgstr[1] "hace %1 años"
-
-#~ msgctxt "@title"
-#~ msgid "Embed Information"
-#~ msgstr "Incrustar información"
-
-#~ msgctxt "@action Open embed into website dialog"
-#~ msgid "Embed"
-#~ msgstr "Incrustar"
