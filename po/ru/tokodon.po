@@ -1,7 +1,7 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the tokodon package.
 #
-# SPDX-FileCopyrightText: 2023, 2024, 2025, 2026 Alexander Yavorsky <kekcuha@gmail.com>
+# SPDX-FileCopyrightText: 2023-2026 Alexander Yavorsky <kekcuha@gmail.com>
 # SPDX-FileCopyrightText: 2024, 2025 Olesya Gerasimenko <translation-team@basealt.ru>
 # Alexander Yavorsky <kekcuha@gmail.com>, 2024.
 msgid ""
@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-23 00:45+0000\n"
-"PO-Revision-Date: 2026-04-03 19:36+0200\n"
+"PO-Revision-Date: 2026-06-25 15:09+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.04.2\n"
 
 #: account/abstractaccount.cpp:33
 #, kde-format
@@ -234,13 +234,12 @@ msgstr "%1 процитировал(а) вашу публикацию"
 #: account/notificationhandler.cpp:163
 #, kde-format
 msgid "%1 added you to their collection"
-msgstr ""
+msgstr "Вы добавлены в список пользователя %1"
 
 #: account/notificationhandler.cpp:170
-#, fuzzy, kde-format
-#| msgid "%1 updated their post"
+#, kde-format
 msgid "%1 updated their collection"
-msgstr "%1 обновил(а) свою публикацию"
+msgstr "%1 обновил(а) свой список"
 
 #: account/notificationhandler.cpp:174
 #, kde-format
@@ -383,9 +382,7 @@ msgid "Manage List Users"
 msgstr "Управление пользователями в списке"
 
 #: account/socialgraphmodel.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Manage List Users"
+#, kde-format
 msgctxt "@title"
 msgid "Manage Collection Users"
 msgstr "Управление пользователями в списке"
@@ -506,8 +503,7 @@ msgid "There is no one in this list yet."
 msgstr "Пока в этом списке никого нет."
 
 #: account/socialgraphmodel.cpp:135
-#, fuzzy, kde-format
-#| msgid "There is no one in this list yet."
+#, kde-format
 msgid "There is no one in this collection yet."
 msgstr "Пока в этом списке никого нет."
 
@@ -821,17 +817,15 @@ msgid "Bot"
 msgstr "Бот"
 
 #: qml/AccountHeader.qml:295
-#, fuzzy, kde-format
-#| msgid "Copy Image"
+#, kde-format
 msgctxt "@action:inmenu Copy user handle such as @foo@bar.com"
 msgid "Copy Handle"
-msgstr "Скопировать изображение"
+msgstr "Скопировать идентификатор"
 
 #: qml/AccountHeader.qml:300
-#, fuzzy, kde-format
-#| msgid "Profile link copied."
+#, kde-format
 msgid "Profile handle copied."
-msgstr "Ссылка на профиль скопирована."
+msgstr "Идентификатор профиля скопирован."
 
 #: qml/AccountHeader.qml:325
 #, kde-format
@@ -991,20 +985,16 @@ msgstr "Созданное примечание о пользователе до
 #, kde-format
 msgctxt "@info:label Featuring the following users:"
 msgid "Featuring:"
-msgstr ""
+msgstr "В подборке:"
 
 #: qml/AccountHeader.qml:832
-#, fuzzy, kde-format
-#| msgctxt "@action:button See all familiar followers"
-#| msgid "View %1 More"
+#, kde-format
 msgctxt "@action:button See all featured users"
 msgid "View %1 More"
 msgstr "Показать ещё %1"
 
 #: qml/AccountHeader.qml:832
-#, fuzzy, kde-format
-#| msgctxt "@action:button See all familiar followers"
-#| msgid "View All"
+#, kde-format
 msgctxt "@action:button See all featured users"
 msgid "View All"
 msgstr "Показать всех"
@@ -1174,55 +1164,47 @@ msgid "Your server has not made any announcements yet."
 msgstr "Сервер ещё не отправил ни одного объявления."
 
 #: qml/CollectionPage.qml:64
-#, fuzzy, kde-format
-#| msgctxt "@action:button Edit current list"
-#| msgid "Edit…"
+#, kde-format
 msgctxt "@action:button Edit current collection"
 msgid "Edit…"
 msgstr "Изменить…"
 
 #: qml/CollectionPage.qml:129
-#, fuzzy, kde-format
-#| msgid "Remove"
+#, kde-format
 msgctxt "@action:button Remove from collection"
 msgid "Remove"
 msgstr "Удалить"
 
 #: qml/CollectionPage.qml:146
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgctxt "@info:placeholder No accounts in this collection"
 msgid "No Accounts"
-msgstr "Учётные записи"
+msgstr "Учётная запись отсутствует"
 
 #: qml/CollectionsPage.qml:23
-#, fuzzy, kde-format
-#| msgctxt "Show more options"
-#| msgid "More actions"
+#, kde-format
 msgctxt "@title"
 msgid "Collections"
-msgstr "Дополнительные действия"
+msgstr "Списки"
 
 #: qml/CollectionsPage.qml:26
-#, fuzzy, kde-format
-#| msgctxt "@action:button Create new list"
-#| msgid "Create New…"
+#, kde-format
 msgctxt "@action:button Create new collection"
 msgid "Create New…"
 msgstr "Создать список…"
 
 #: qml/CollectionsPage.qml:67
-#, fuzzy, kde-format
-#| msgid "No Conversations"
+#, kde-format
 msgid "No Collections"
-msgstr "Нет ни одного чата"
+msgstr "Нет ни одного списка"
 
 #: qml/CollectionsPage.qml:68
-#, fuzzy, kde-format
-#| msgid "Lists allow you to categorize who you're following."
+#, kde-format
 msgid ""
 "Collections allow you to categorize accounts you want other people to follow."
-msgstr "Списки позволяют упорядочить свои подписки."
+msgstr ""
+"Списки позволяют упорядочить учётные записи, на которые вы хотите, чтобы "
+"подписались другие."
 
 #: qml/Components/BoostConfirmationDialog.qml:19
 #, kde-format
@@ -1345,29 +1327,25 @@ msgid "Decrease follow request count"
 msgstr "Уменьшить количество запросов на подписку"
 
 #: qml/EditCollectionPage.qml:30
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Create Post"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Collection"
-msgstr "Создать публикацию"
+msgstr "Создание списка"
 
 #: qml/EditCollectionPage.qml:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Collection"
-msgstr ""
+msgstr "Изменение списка"
 
 #: qml/EditCollectionPage.qml:67
 #, kde-format
 msgctxt "@label:textbox Collection title"
 msgid "Name"
-msgstr ""
+msgstr "Название"
 
 #: qml/EditCollectionPage.qml:77
-#, fuzzy, kde-format
-#| msgctxt "@title:group Alternate text or description of the image"
-#| msgid "Description"
+#, kde-format
 msgctxt "@label:textbox Collection description"
 msgid "Description"
 msgstr "Описание"
@@ -1419,35 +1397,28 @@ msgid "Search among users you follow…"
 msgstr "Поиск среди пользователей, на которых вы подписаны…"
 
 #: qml/EditCollectionPage.qml:236
-#, fuzzy, kde-format
-#| msgctxt "@action:button Create the list"
-#| msgid "Create"
+#, kde-format
 msgctxt "@action:button Create the collection"
 msgid "Create"
 msgstr "Создать"
 
 #: qml/EditCollectionPage.qml:238
-#, fuzzy, kde-format
-#| msgctxt "@action:button Save the edited list"
-#| msgid "Save"
+#, kde-format
 msgctxt "@action:button Save the edited collection"
 msgid "Save"
 msgstr "Сохранить"
 
 #: qml/EditCollectionPage.qml:251
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgctxt "@action:button Delete the collection"
 msgid "Delete"
 msgstr "Удалить"
 
 #: qml/EditCollectionPage.qml:258
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Deleting Filter"
+#, kde-format
 msgctxt "@title"
 msgid "Deleting Collection"
-msgstr "Удаление фильтра"
+msgstr "Удаление списка"
 
 #: qml/EditCollectionPage.qml:259
 #, fuzzy, kde-format
