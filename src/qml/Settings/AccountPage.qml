@@ -61,6 +61,7 @@ Kirigami.Page {
             subtitle: i18nc("@label", "Are you sure you want to log out of %1?", account.identity.displayName)
             standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
             showCloseButton: false
+            parent: null // Don't open it in the main window on desktop
 
             onAccepted: {
                 AccountManager.removeAccount(root.account);
