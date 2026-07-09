@@ -231,6 +231,7 @@ qt_target_qml_sources(tokodon_static
         qml/Components/BoostConfirmationDialog.qml
         qml/Components/VideoPlayer.qml
         qml/Components/ServerInformationCard.qml
+        qml/Components/BoostAltTextReminderDialog.qml
 
         # Initial Setup
         qml/InitialSetup/SetupNotifications.qml

@@ -783,7 +783,7 @@ Kirigami.ScrollablePage {
         standardButtons: QQC2.Dialog.Cancel | QQC2.Dialog.Ok
         dontShowAgainName: 'missingAltText'
 
-        onOpened: {
+        Component.onCompleted: {
             const button = altTextPrompt.standardButton(QQC2.Dialog.Ok);
             button.icon.name = altTextPrompt.scheduled ? "resource-calendar-insert" : root.purposeIconName();
             button.text = altTextPrompt.scheduled ? i18nc("@action:button Schedule something to be posted later", "Schedule") : root.purposeString();
