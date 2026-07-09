@@ -33,20 +33,15 @@ Kirigami.ScrollablePage {
     data: Connections {
         target: Controller
 
-        function onReceivedAuthCode(authCode) {
+        function onReceivedAuthCode(authCode: string): void {
             root.setAuthCode(authCode);
         }
     }
 
-    function setAuthCode(authCode) {
-        // We need to call this before setToken, so when the identity is loaded the manager can write it to the settings.
+    function setAuthCode(authCode: string): void {
         AccountManager.addAccount(root.account);
         account.authenticated.connect(() => {
             AccountManager.selectedAccount = root.account;
-            root.Window.window.pageStack.layers.clear();
-            root.Window.window.pageStack.replace(mainTimeline, {
-                name: "home"
-            });
             if (root.Window.window !== applicationWindow()) {
                 root.Window.window.close();
             }
