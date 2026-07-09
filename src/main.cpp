@@ -114,12 +114,11 @@ int main(int argc, char *argv[])
 
 #ifdef HAVE_KUNIFIEDPUSH
     if (parser.isSet(notifyOption)) {
-        qInfo(TOKODON_LOG) << "Beginning to check for notifications...";
+        qCInfo(TOKODON_LOG) << "Beginning to check for notifications...";
 
 #ifdef HAVE_KDBUSADDONS
         // We *don't* want to use KDBusService here. I don't know why, but it makes activation super unreliable. We don't really need it anyway.
-        const auto serviceName = QStringLiteral("org.kde.tokodon");
-        if (!QDBusConnection::sessionBus().registerService(serviceName)) {
+        if (!QDBusConnection::sessionBus().registerService(QGuiApplication::desktopFileName())) {
             // Gracefully fail if Tokodon is already running
             qWarning() << "Tokodon already running, not sending push notifications.";
             return 0;
