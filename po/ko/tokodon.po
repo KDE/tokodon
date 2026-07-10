@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-23 00:45+0000\n"
+"POT-Creation-Date: 2026-07-10 02:38+0000\n"
 "PO-Revision-Date: 2026-06-06 14:12+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -1197,6 +1197,35 @@ msgid ""
 "Collections allow you to categorize accounts you want other people to follow."
 msgstr "리스트를 사용해서 팔로우하는 사용자를 분류할 수 있습니다."
 
+#: qml/Components/BoostAltTextReminderDialog.qml:19
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Alt Text Reminder"
+msgctxt "@title"
+msgid "Boost Alt Text Reminder"
+msgstr "대체 텍스트 알림"
+
+#: qml/Components/BoostAltTextReminderDialog.qml:23
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid ""
+#| "Some of your media is missing alt text. Adding descriptions help "
+#| "everyone, especially the visually impaired."
+msgctxt "@label"
+msgid ""
+"Some media in this post is missing alt text, which hinders those who are "
+"visually impaired."
+msgstr ""
+"일부 미디어에 대체 텍스트가 없습니다. 대체 텍스트를 추가하면 시각 장애가 있"
+"는 사용자를 포함한 모두를 도울 수 있습니다."
+
+#: qml/Components/BoostAltTextReminderDialog.qml:34
+#, fuzzy, kde-format
+#| msgid "Boost"
+msgctxt "@action:button Boost/Reblog this post anyway"
+msgid "Boost"
+msgstr "부스트"
+
 #: qml/Components/BoostConfirmationDialog.qml:19
 #, kde-format
 msgctxt "@title"
@@ -1794,22 +1823,22 @@ msgctxt "@title:window"
 msgid "Authorization"
 msgstr "인증"
 
-#: qml/LoginFlow/BaseAuthorization.qml:79
+#: qml/LoginFlow/BaseAuthorization.qml:74
 #, kde-format
 msgid "To continue, you must authorize Tokodon to access your account."
 msgstr "계속 진행하려면 Tokodon이 계정에 접근할 수 있도록 허용해야 합니다."
 
-#: qml/LoginFlow/BaseAuthorization.qml:88
+#: qml/LoginFlow/BaseAuthorization.qml:83
 #, kde-format
 msgid "Open Authorization Page"
 msgstr "인증 페이지 열기"
 
-#: qml/LoginFlow/BaseAuthorization.qml:100
+#: qml/LoginFlow/BaseAuthorization.qml:95
 #, kde-format
 msgid "Copy Link to Authorization Page"
 msgstr "인증 페이지 링크 복사"
 
-#: qml/LoginFlow/BaseAuthorization.qml:104
+#: qml/LoginFlow/BaseAuthorization.qml:99
 #, kde-format
 msgid "Link copied."
 msgstr "링크가 복사되었습니다."
@@ -4136,54 +4165,54 @@ msgctxt "Share a post"
 msgid "Boost"
 msgstr "부스트"
 
-#: qml/PostDelegate/PostDelegate.qml:465
+#: qml/PostDelegate/PostDelegate.qml:489
 #, kde-format
 msgid "Boosted"
 msgstr "부스트됨"
 
-#: qml/PostDelegate/PostDelegate.qml:465
+#: qml/PostDelegate/PostDelegate.qml:489
 #, kde-format
 msgid "Boost"
 msgstr "부스트"
 
-#: qml/PostDelegate/PostDelegate.qml:485
+#: qml/PostDelegate/PostDelegate.qml:509
 #, kde-format
 msgctxt "Favorite a post"
 msgid "Favorite"
 msgstr "좋아요"
 
-#: qml/PostDelegate/PostDelegate.qml:488
+#: qml/PostDelegate/PostDelegate.qml:512
 #, kde-format
 msgid "Favorited"
 msgstr "좋아요 표시됨"
 
-#: qml/PostDelegate/PostDelegate.qml:488
+#: qml/PostDelegate/PostDelegate.qml:512
 #, kde-format
 msgid "Favorite"
 msgstr "좋아요"
 
-#: qml/PostDelegate/PostDelegate.qml:507
+#: qml/PostDelegate/PostDelegate.qml:531
 #, kde-format
 msgid "Remove bookmark"
 msgstr "북마크 삭제"
 
-#: qml/PostDelegate/PostDelegate.qml:507
+#: qml/PostDelegate/PostDelegate.qml:531
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "북마크"
 
-#: qml/PostDelegate/PostDelegate.qml:510
+#: qml/PostDelegate/PostDelegate.qml:534
 #, kde-format
 msgid "Bookmarked"
 msgstr "북마크에 추가됨"
 
-#: qml/PostDelegate/PostDelegate.qml:510
+#: qml/PostDelegate/PostDelegate.qml:534
 #, kde-format
 msgid "Bookmark"
 msgstr "북마크"
 
-#: qml/PostDelegate/PostDelegate.qml:544
+#: qml/PostDelegate/PostDelegate.qml:568
 #, kde-format
 msgid ""
 "This post has been marked private. Some posts may be missing because its "
@@ -4547,22 +4576,22 @@ msgctxt "@label"
 msgid "Are you sure you want to log out of %1?"
 msgstr "%1에서 로그아웃하시겠습니까?"
 
-#: qml/Settings/AccountPage.qml:76
+#: qml/Settings/AccountPage.qml:77
 #, kde-format
 msgid "Profile"
 msgstr "프로필"
 
-#: qml/Settings/AccountPage.qml:83
+#: qml/Settings/AccountPage.qml:84
 #, kde-format
 msgid "Account"
 msgstr "계정"
 
-#: qml/Settings/AccountPage.qml:135
+#: qml/Settings/AccountPage.qml:136
 #, kde-format
 msgid "Require approval for new followers"
 msgstr "새로 팔로우하려면 승인이 필요함"
 
-#: qml/Settings/AccountPage.qml:136
+#: qml/Settings/AccountPage.qml:137
 #, kde-format
 msgid ""
 "By default new followers are automatically accepted. Uncheck if you want to "
@@ -4573,77 +4602,77 @@ msgstr ""
 "나 거절하려면 이 옵션의 선택을 해제하십시오. 누군가의 팔로우를 강제적으로 해"
 "제할 수 있습니다."
 
-#: qml/Settings/AccountPage.qml:145
+#: qml/Settings/AccountPage.qml:146
 #, kde-format
 msgid "Is automated"
 msgstr "자동화됨"
 
-#: qml/Settings/AccountPage.qml:146
+#: qml/Settings/AccountPage.qml:147
 #, kde-format
 msgid ""
 "Whether to publicly mark this account as doing any kind of automated actions."
 msgstr ""
 "이 계정이 자동화된 동작을 취하고 있음을 공개적으로 표시할지 여부입니다."
 
-#: qml/Settings/AccountPage.qml:155
+#: qml/Settings/AccountPage.qml:156
 #, kde-format
 msgid "Feature profile and posts"
 msgstr "추천하는 프로필과 게시물"
 
-#: qml/Settings/AccountPage.qml:156
+#: qml/Settings/AccountPage.qml:157
 #, kde-format
 msgid "Your public profile and posts may be featured to other users."
 msgstr ""
 "내 공개 프로필과 게시물이 다른 사용자의 추천 목록에 표시될 수 있습니다."
 
-#: qml/Settings/AccountPage.qml:165
+#: qml/Settings/AccountPage.qml:166
 #, kde-format
 msgid "Publicly list follows and followers"
 msgstr "팔로우와 팔로워 목록 공개"
 
-#: qml/Settings/AccountPage.qml:166
+#: qml/Settings/AccountPage.qml:167
 #, kde-format
 msgid "By default everyone you follow and everyone who follows you is public."
 msgstr ""
 "기본값으로 내가 팔로우하는 사람과 나를 팔로우하는 사람의 목록은 공개됩니다."
 
-#: qml/Settings/AccountPage.qml:175
+#: qml/Settings/AccountPage.qml:176
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Mark uploaded media as sensitive by default"
 msgstr "업로드된 파일을 기본값으로 민감함으로 표시"
 
-#: qml/Settings/AccountPage.qml:184
+#: qml/Settings/AccountPage.qml:185
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Include public posts in search results"
 msgstr "검색 결과에 공개 게시물 포함"
 
-#: qml/Settings/AccountPage.qml:193
+#: qml/Settings/AccountPage.qml:194
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post language"
 msgstr "기본 게시물 언어"
 
-#: qml/Settings/AccountPage.qml:219
+#: qml/Settings/AccountPage.qml:220
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post visibility"
 msgstr "기본 게시물 공개 설정"
 
-#: qml/Settings/AccountPage.qml:221
+#: qml/Settings/AccountPage.qml:222
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Public"
 msgstr "공개"
 
-#: qml/Settings/AccountPage.qml:222
+#: qml/Settings/AccountPage.qml:223
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Unlisted"
 msgstr "미등재"
 
-#: qml/Settings/AccountPage.qml:223
+#: qml/Settings/AccountPage.qml:224
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Private"
