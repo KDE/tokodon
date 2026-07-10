@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-23 00:45+0000\n"
+"POT-Creation-Date: 2026-07-10 00:44+0000\n"
 "PO-Revision-Date: 2024-12-15 19:31+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Hindi <kde-i18n-doc@kde.org>\n"
@@ -1213,6 +1213,27 @@ msgid ""
 "Collections allow you to categorize accounts you want other people to follow."
 msgstr "सूचियाँ आपको यह वर्गीकृत करने की सुविधा देती हैं कि आप किसे फ़ॉलो कर रहे हैं."
 
+#: qml/Components/BoostAltTextReminderDialog.qml:19
+#, kde-format
+msgctxt "@title"
+msgid "Boost Alt Text Reminder"
+msgstr ""
+
+#: qml/Components/BoostAltTextReminderDialog.qml:23
+#, kde-format
+msgctxt "@label"
+msgid ""
+"Some media in this post is missing alt text, which hinders those who are "
+"visually impaired."
+msgstr ""
+
+#: qml/Components/BoostAltTextReminderDialog.qml:34
+#, fuzzy, kde-format
+#| msgid "Boost"
+msgctxt "@action:button Boost/Reblog this post anyway"
+msgid "Boost"
+msgstr "बढ़ाना"
+
 #: qml/Components/BoostConfirmationDialog.qml:19
 #, fuzzy, kde-format
 #| msgid "Confirmed"
@@ -1836,24 +1857,24 @@ msgctxt "@title:window"
 msgid "Authorization"
 msgstr "प्राधिकार"
 
-#: qml/LoginFlow/BaseAuthorization.qml:79
+#: qml/LoginFlow/BaseAuthorization.qml:74
 #, kde-format
 msgid "To continue, you must authorize Tokodon to access your account."
 msgstr ""
 
-#: qml/LoginFlow/BaseAuthorization.qml:88
+#: qml/LoginFlow/BaseAuthorization.qml:83
 #, fuzzy, kde-format
 #| msgid "Open Authorization Link"
 msgid "Open Authorization Page"
 msgstr "प्राधिकरण लिंक खोलें"
 
-#: qml/LoginFlow/BaseAuthorization.qml:100
+#: qml/LoginFlow/BaseAuthorization.qml:95
 #, fuzzy, kde-format
 #| msgid "Copy Authorization Link"
 msgid "Copy Link to Authorization Page"
 msgstr "प्राधिकरण लिंक कॉपी करें"
 
-#: qml/LoginFlow/BaseAuthorization.qml:104
+#: qml/LoginFlow/BaseAuthorization.qml:99
 #, kde-format
 msgid "Link copied."
 msgstr "लिंक कॉपी किया गया."
@@ -4253,54 +4274,54 @@ msgctxt "Share a post"
 msgid "Boost"
 msgstr "बढ़ाना"
 
-#: qml/PostDelegate/PostDelegate.qml:465
+#: qml/PostDelegate/PostDelegate.qml:489
 #, kde-format
 msgid "Boosted"
 msgstr "बढ़ाया"
 
-#: qml/PostDelegate/PostDelegate.qml:465
+#: qml/PostDelegate/PostDelegate.qml:489
 #, kde-format
 msgid "Boost"
 msgstr "बढ़ाना"
 
-#: qml/PostDelegate/PostDelegate.qml:485
+#: qml/PostDelegate/PostDelegate.qml:509
 #, kde-format
 msgctxt "Favorite a post"
 msgid "Favorite"
 msgstr "पसंदीदा"
 
-#: qml/PostDelegate/PostDelegate.qml:488
+#: qml/PostDelegate/PostDelegate.qml:512
 #, kde-format
 msgid "Favorited"
 msgstr "पसंदीदा"
 
-#: qml/PostDelegate/PostDelegate.qml:488
+#: qml/PostDelegate/PostDelegate.qml:512
 #, kde-format
 msgid "Favorite"
 msgstr "पसंदीदा"
 
-#: qml/PostDelegate/PostDelegate.qml:507
+#: qml/PostDelegate/PostDelegate.qml:531
 #, kde-format
 msgid "Remove bookmark"
 msgstr "बुकमार्क हटाएँ"
 
-#: qml/PostDelegate/PostDelegate.qml:507
+#: qml/PostDelegate/PostDelegate.qml:531
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "बुकमार्क"
 
-#: qml/PostDelegate/PostDelegate.qml:510
+#: qml/PostDelegate/PostDelegate.qml:534
 #, kde-format
 msgid "Bookmarked"
 msgstr "बुकमार्क"
 
-#: qml/PostDelegate/PostDelegate.qml:510
+#: qml/PostDelegate/PostDelegate.qml:534
 #, kde-format
 msgid "Bookmark"
 msgstr "बुकमार्क"
 
-#: qml/PostDelegate/PostDelegate.qml:544
+#: qml/PostDelegate/PostDelegate.qml:568
 #, kde-format
 msgid ""
 "This post has been marked private. Some posts may be missing because its "
@@ -4685,22 +4706,22 @@ msgctxt "@label"
 msgid "Are you sure you want to log out of %1?"
 msgstr "क्या आप वाकई %1 से लॉग आउट करना चाहते हैं?"
 
-#: qml/Settings/AccountPage.qml:76
+#: qml/Settings/AccountPage.qml:77
 #, kde-format
 msgid "Profile"
 msgstr "प्रोफ़ाइल"
 
-#: qml/Settings/AccountPage.qml:83
+#: qml/Settings/AccountPage.qml:84
 #, kde-format
 msgid "Account"
 msgstr "खाता"
 
-#: qml/Settings/AccountPage.qml:135
+#: qml/Settings/AccountPage.qml:136
 #, kde-format
 msgid "Require approval for new followers"
 msgstr "नए फ़ॉलोअर्स के लिए स्वीकृति आवश्यक है"
 
-#: qml/Settings/AccountPage.qml:136
+#: qml/Settings/AccountPage.qml:137
 #, kde-format
 msgid ""
 "By default new followers are automatically accepted. Uncheck if you want to "
@@ -4711,12 +4732,12 @@ msgstr ""
 "रूप से स्वीकार या अस्वीकार करना चाहते हैं, तो अनचेक करें। आपके पास हमेशा किसी को आपको "
 "अनफ़ॉलो करने के लिए बाध्य करने का विकल्प होता है।"
 
-#: qml/Settings/AccountPage.qml:145
+#: qml/Settings/AccountPage.qml:146
 #, kde-format
 msgid "Is automated"
 msgstr "स्वचालित है"
 
-#: qml/Settings/AccountPage.qml:146
+#: qml/Settings/AccountPage.qml:147
 #, kde-format
 msgid ""
 "Whether to publicly mark this account as doing any kind of automated actions."
@@ -4724,65 +4745,65 @@ msgstr ""
 "क्या इस खाते को किसी भी प्रकार की स्वचालित क्रिया करने वाले के रूप में सार्वजनिक रूप से "
 "चिह्नित किया जाना चाहिए।"
 
-#: qml/Settings/AccountPage.qml:155
+#: qml/Settings/AccountPage.qml:156
 #, kde-format
 msgid "Feature profile and posts"
 msgstr "फ़ीचर प्रोफ़ाइल और पोस्ट"
 
-#: qml/Settings/AccountPage.qml:156
+#: qml/Settings/AccountPage.qml:157
 #, kde-format
 msgid "Your public profile and posts may be featured to other users."
 msgstr "आपकी सार्वजनिक प्रोफ़ाइल और पोस्ट अन्य उपयोगकर्ताओं को दिखाई जा सकती हैं."
 
-#: qml/Settings/AccountPage.qml:165
+#: qml/Settings/AccountPage.qml:166
 #, kde-format
 msgid "Publicly list follows and followers"
 msgstr "अनुसरणकर्ताओं और अनुयायियों की सूची सार्वजनिक रूप से बनाएं"
 
-#: qml/Settings/AccountPage.qml:166
+#: qml/Settings/AccountPage.qml:167
 #, kde-format
 msgid "By default everyone you follow and everyone who follows you is public."
 msgstr ""
 "डिफ़ॉल्ट रूप से, आपके द्वारा अनुसरण किए जाने वाले सभी लोग और आपको अनुसरण करने वाले सभी "
 "लोग सार्वजनिक होते हैं।"
 
-#: qml/Settings/AccountPage.qml:175
+#: qml/Settings/AccountPage.qml:176
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Mark uploaded media as sensitive by default"
 msgstr "अपलोड किए गए मीडिया को डिफ़ॉल्ट रूप से संवेदनशील के रूप में चिह्नित करें"
 
-#: qml/Settings/AccountPage.qml:184
+#: qml/Settings/AccountPage.qml:185
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Include public posts in search results"
 msgstr ""
 
-#: qml/Settings/AccountPage.qml:193
+#: qml/Settings/AccountPage.qml:194
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post language"
 msgstr "डिफ़ॉल्ट पोस्ट भाषा"
 
-#: qml/Settings/AccountPage.qml:219
+#: qml/Settings/AccountPage.qml:220
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post visibility"
 msgstr "डिफ़ॉल्ट पोस्ट दृश्यता"
 
-#: qml/Settings/AccountPage.qml:221
+#: qml/Settings/AccountPage.qml:222
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Public"
 msgstr "जनता"
 
-#: qml/Settings/AccountPage.qml:222
+#: qml/Settings/AccountPage.qml:223
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Unlisted"
 msgstr "गैर-सूचीबद्ध"
 
-#: qml/Settings/AccountPage.qml:223
+#: qml/Settings/AccountPage.qml:224
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Private"

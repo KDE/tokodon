@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-23 00:45+0000\n"
+"POT-Creation-Date: 2026-07-10 00:44+0000\n"
 "PO-Revision-Date: 2026-01-14 19:44+0200\n"
 "Last-Translator: Besnik Bleta <besnik@programeshqip.org>\n"
 "Language-Team: Albanian <kde-i18n-sq@kde.org>\n"
@@ -1205,6 +1205,35 @@ msgid ""
 "Collections allow you to categorize accounts you want other people to follow."
 msgstr "Lista ju lejojnë të kategorizoni ata që ju ndjekin."
 
+#: qml/Components/BoostAltTextReminderDialog.qml:19
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Alt Text Reminder"
+msgctxt "@title"
+msgid "Boost Alt Text Reminder"
+msgstr "Kujtues për Tekst Alternativ"
+
+#: qml/Components/BoostAltTextReminderDialog.qml:23
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid ""
+#| "Some of your media is missing alt text. Adding descriptions help "
+#| "everyone, especially the visually impaired."
+msgctxt "@label"
+msgid ""
+"Some media in this post is missing alt text, which hinders those who are "
+"visually impaired."
+msgstr ""
+"Disave prej mediave tuaja u mungon tekst alternativ. Shtimi i përshkrimeve "
+"ndihmon gjithkënd, veçanërisht ata me probleme të pari."
+
+#: qml/Components/BoostAltTextReminderDialog.qml:34
+#, fuzzy, kde-format
+#| msgid "Boost"
+msgctxt "@action:button Boost/Reblog this post anyway"
+msgid "Boost"
+msgstr "Përforcojeni"
+
 #: qml/Components/BoostConfirmationDialog.qml:19
 #, kde-format
 msgctxt "@title"
@@ -1812,23 +1841,23 @@ msgctxt "@title:window"
 msgid "Authorization"
 msgstr "Autorizim"
 
-#: qml/LoginFlow/BaseAuthorization.qml:79
+#: qml/LoginFlow/BaseAuthorization.qml:74
 #, kde-format
 msgid "To continue, you must authorize Tokodon to access your account."
 msgstr ""
 "Që të vazhdohet, duhet të autorizoni Tokodon-in të hyjë në llogarinë tuaj."
 
-#: qml/LoginFlow/BaseAuthorization.qml:88
+#: qml/LoginFlow/BaseAuthorization.qml:83
 #, kde-format
 msgid "Open Authorization Page"
 msgstr "Hap Faqe Autorizimi"
 
-#: qml/LoginFlow/BaseAuthorization.qml:100
+#: qml/LoginFlow/BaseAuthorization.qml:95
 #, kde-format
 msgid "Copy Link to Authorization Page"
 msgstr "Kopjo Lidhjen Për te Faqja e Autorizimit"
 
-#: qml/LoginFlow/BaseAuthorization.qml:104
+#: qml/LoginFlow/BaseAuthorization.qml:99
 #, kde-format
 msgid "Link copied."
 msgstr "Lidhja u kopjua."
@@ -4202,54 +4231,54 @@ msgctxt "Share a post"
 msgid "Boost"
 msgstr "Përforcojeni"
 
-#: qml/PostDelegate/PostDelegate.qml:465
+#: qml/PostDelegate/PostDelegate.qml:489
 #, kde-format
 msgid "Boosted"
 msgstr "U përforcua"
 
-#: qml/PostDelegate/PostDelegate.qml:465
+#: qml/PostDelegate/PostDelegate.qml:489
 #, kde-format
 msgid "Boost"
 msgstr "Përforcojeni"
 
-#: qml/PostDelegate/PostDelegate.qml:485
+#: qml/PostDelegate/PostDelegate.qml:509
 #, kde-format
 msgctxt "Favorite a post"
 msgid "Favorite"
 msgstr "I vini shenjë si të parapëlqyer"
 
-#: qml/PostDelegate/PostDelegate.qml:488
+#: qml/PostDelegate/PostDelegate.qml:512
 #, kde-format
 msgid "Favorited"
 msgstr "U vu si i parapëlqyer"
 
-#: qml/PostDelegate/PostDelegate.qml:488
+#: qml/PostDelegate/PostDelegate.qml:512
 #, kde-format
 msgid "Favorite"
 msgstr "Vëreni si të parapëlqyer"
 
-#: qml/PostDelegate/PostDelegate.qml:507
+#: qml/PostDelegate/PostDelegate.qml:531
 #, kde-format
 msgid "Remove bookmark"
 msgstr "Hiqe faqerojtësin"
 
-#: qml/PostDelegate/PostDelegate.qml:507
+#: qml/PostDelegate/PostDelegate.qml:531
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "Faqeruaje"
 
-#: qml/PostDelegate/PostDelegate.qml:510
+#: qml/PostDelegate/PostDelegate.qml:534
 #, kde-format
 msgid "Bookmarked"
 msgstr "U faqeruajt"
 
-#: qml/PostDelegate/PostDelegate.qml:510
+#: qml/PostDelegate/PostDelegate.qml:534
 #, kde-format
 msgid "Bookmark"
 msgstr "Faqeruaje"
 
-#: qml/PostDelegate/PostDelegate.qml:544
+#: qml/PostDelegate/PostDelegate.qml:568
 #, kde-format
 msgid ""
 "This post has been marked private. Some posts may be missing because its "
@@ -4617,22 +4646,22 @@ msgctxt "@label"
 msgid "Are you sure you want to log out of %1?"
 msgstr "Jeni i sigurt se doni të dilet nga %1?"
 
-#: qml/Settings/AccountPage.qml:76
+#: qml/Settings/AccountPage.qml:77
 #, kde-format
 msgid "Profile"
 msgstr "Profil"
 
-#: qml/Settings/AccountPage.qml:83
+#: qml/Settings/AccountPage.qml:84
 #, kde-format
 msgid "Account"
 msgstr "Llogari"
 
-#: qml/Settings/AccountPage.qml:135
+#: qml/Settings/AccountPage.qml:136
 #, kde-format
 msgid "Require approval for new followers"
 msgstr "Kërko miratim për ndjekës të rinj"
 
-#: qml/Settings/AccountPage.qml:136
+#: qml/Settings/AccountPage.qml:137
 #, kde-format
 msgid ""
 "By default new followers are automatically accepted. Uncheck if you want to "
@@ -4643,12 +4672,12 @@ msgstr ""
 "nëse doni të miratoni apo mohoni dorazi të rinj. Keni përherë mundësi ta "
 "detyroni dikë të heqë ndjekjen për ju."
 
-#: qml/Settings/AccountPage.qml:145
+#: qml/Settings/AccountPage.qml:146
 #, kde-format
 msgid "Is automated"
 msgstr "Është e automatizuar"
 
-#: qml/Settings/AccountPage.qml:146
+#: qml/Settings/AccountPage.qml:147
 #, kde-format
 msgid ""
 "Whether to publicly mark this account as doing any kind of automated actions."
@@ -4656,64 +4685,64 @@ msgstr ""
 "T’i vihet ose jo shenjë publikisht kësaj llogarie si një që bën çfarëdo lloj "
 "veprimesh të automatizuara."
 
-#: qml/Settings/AccountPage.qml:155
+#: qml/Settings/AccountPage.qml:156
 #, kde-format
 msgid "Feature profile and posts"
 msgstr "Pasqyroni në profilin tuaj profil dhe postime"
 
-#: qml/Settings/AccountPage.qml:156
+#: qml/Settings/AccountPage.qml:157
 #, kde-format
 msgid "Your public profile and posts may be featured to other users."
 msgstr ""
 "Profili dhe postimet tuaja publike mund të pasqyrohen nga përdorues të tjerë."
 
-#: qml/Settings/AccountPage.qml:165
+#: qml/Settings/AccountPage.qml:166
 #, kde-format
 msgid "Publicly list follows and followers"
 msgstr "Shfaq publikisht ndjekje dhe ndjekës"
 
-#: qml/Settings/AccountPage.qml:166
+#: qml/Settings/AccountPage.qml:167
 #, kde-format
 msgid "By default everyone you follow and everyone who follows you is public."
 msgstr "Si parazgjedhje, cilido që ndiqni dhe cilido që ju ndjek është publik."
 
-#: qml/Settings/AccountPage.qml:175
+#: qml/Settings/AccountPage.qml:176
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Mark uploaded media as sensitive by default"
 msgstr "Si parazgjedhje, mediave të ngarkuara vëru shenjë si me spec"
 
-#: qml/Settings/AccountPage.qml:184
+#: qml/Settings/AccountPage.qml:185
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Include public posts in search results"
 msgstr "Përfshi postime publike në përfundime kërkimi"
 
-#: qml/Settings/AccountPage.qml:193
+#: qml/Settings/AccountPage.qml:194
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post language"
 msgstr "Gjuhë parazgjedhje postimesh"
 
-#: qml/Settings/AccountPage.qml:219
+#: qml/Settings/AccountPage.qml:220
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post visibility"
 msgstr "Dukshmëri parazgjedhje postimesh"
 
-#: qml/Settings/AccountPage.qml:221
+#: qml/Settings/AccountPage.qml:222
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Public"
 msgstr "Publik"
 
-#: qml/Settings/AccountPage.qml:222
+#: qml/Settings/AccountPage.qml:223
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Unlisted"
 msgstr "I pashfaqur"
 
-#: qml/Settings/AccountPage.qml:223
+#: qml/Settings/AccountPage.qml:224
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Private"

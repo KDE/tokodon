@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-23 00:45+0000\n"
+"POT-Creation-Date: 2026-07-10 00:44+0000\n"
 "PO-Revision-Date: 2026-07-08 09:09+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -1182,6 +1182,35 @@ msgstr ""
 "Samlingar låter dig kategorisera konton som du vill att andra personer ska "
 "följa."
 
+#: qml/Components/BoostAltTextReminderDialog.qml:19
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Alt Text Reminder"
+msgctxt "@title"
+msgid "Boost Alt Text Reminder"
+msgstr "Alternativ textpåminnelse"
+
+#: qml/Components/BoostAltTextReminderDialog.qml:23
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid ""
+#| "Some of your media is missing alt text. Adding descriptions help "
+#| "everyone, especially the visually impaired."
+msgctxt "@label"
+msgid ""
+"Some media in this post is missing alt text, which hinders those who are "
+"visually impaired."
+msgstr ""
+"Vissa av dina media saknar alternativ text. Att lägga till beskrivningar "
+"hjälper alla, särskild de med synproblem."
+
+#: qml/Components/BoostAltTextReminderDialog.qml:34
+#, fuzzy, kde-format
+#| msgid "Boost"
+msgctxt "@action:button Boost/Reblog this post anyway"
+msgid "Boost"
+msgstr "Förstärk"
+
 #: qml/Components/BoostConfirmationDialog.qml:19
 #, kde-format
 msgctxt "@title"
@@ -1758,23 +1787,23 @@ msgctxt "@title:window"
 msgid "Authorization"
 msgstr "Behörighet"
 
-#: qml/LoginFlow/BaseAuthorization.qml:79
+#: qml/LoginFlow/BaseAuthorization.qml:74
 #, kde-format
 msgid "To continue, you must authorize Tokodon to access your account."
 msgstr ""
 "För att fortsätta måste du ge Tokodon behörighet att komma åt ditt konto."
 
-#: qml/LoginFlow/BaseAuthorization.qml:88
+#: qml/LoginFlow/BaseAuthorization.qml:83
 #, kde-format
 msgid "Open Authorization Page"
 msgstr "Öppna behörighetssida"
 
-#: qml/LoginFlow/BaseAuthorization.qml:100
+#: qml/LoginFlow/BaseAuthorization.qml:95
 #, kde-format
 msgid "Copy Link to Authorization Page"
 msgstr "Kopiera länk till behörighetssida"
 
-#: qml/LoginFlow/BaseAuthorization.qml:104
+#: qml/LoginFlow/BaseAuthorization.qml:99
 #, kde-format
 msgid "Link copied."
 msgstr "Länk kopierad."
@@ -4105,54 +4134,54 @@ msgctxt "Share a post"
 msgid "Boost"
 msgstr "Förstärk"
 
-#: qml/PostDelegate/PostDelegate.qml:465
+#: qml/PostDelegate/PostDelegate.qml:489
 #, kde-format
 msgid "Boosted"
 msgstr "Förstärkt"
 
-#: qml/PostDelegate/PostDelegate.qml:465
+#: qml/PostDelegate/PostDelegate.qml:489
 #, kde-format
 msgid "Boost"
 msgstr "Förstärk"
 
-#: qml/PostDelegate/PostDelegate.qml:485
+#: qml/PostDelegate/PostDelegate.qml:509
 #, kde-format
 msgctxt "Favorite a post"
 msgid "Favorite"
 msgstr "Favorit"
 
-#: qml/PostDelegate/PostDelegate.qml:488
+#: qml/PostDelegate/PostDelegate.qml:512
 #, kde-format
 msgid "Favorited"
 msgstr "Favorit"
 
-#: qml/PostDelegate/PostDelegate.qml:488
+#: qml/PostDelegate/PostDelegate.qml:512
 #, kde-format
 msgid "Favorite"
 msgstr "Favorit"
 
-#: qml/PostDelegate/PostDelegate.qml:507
+#: qml/PostDelegate/PostDelegate.qml:531
 #, kde-format
 msgid "Remove bookmark"
 msgstr "Ta bort bokmärke"
 
-#: qml/PostDelegate/PostDelegate.qml:507
+#: qml/PostDelegate/PostDelegate.qml:531
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "Bokmärk"
 
-#: qml/PostDelegate/PostDelegate.qml:510
+#: qml/PostDelegate/PostDelegate.qml:534
 #, kde-format
 msgid "Bookmarked"
 msgstr "Bokmärkt"
 
-#: qml/PostDelegate/PostDelegate.qml:510
+#: qml/PostDelegate/PostDelegate.qml:534
 #, kde-format
 msgid "Bookmark"
 msgstr "Bokmärke"
 
-#: qml/PostDelegate/PostDelegate.qml:544
+#: qml/PostDelegate/PostDelegate.qml:568
 #, kde-format
 msgid ""
 "This post has been marked private. Some posts may be missing because its "
@@ -4516,22 +4545,22 @@ msgctxt "@label"
 msgid "Are you sure you want to log out of %1?"
 msgstr "Är du säker på att du vill logga ut från %1?"
 
-#: qml/Settings/AccountPage.qml:76
+#: qml/Settings/AccountPage.qml:77
 #, kde-format
 msgid "Profile"
 msgstr "Profil"
 
-#: qml/Settings/AccountPage.qml:83
+#: qml/Settings/AccountPage.qml:84
 #, kde-format
 msgid "Account"
 msgstr "Konto"
 
-#: qml/Settings/AccountPage.qml:135
+#: qml/Settings/AccountPage.qml:136
 #, kde-format
 msgid "Require approval for new followers"
 msgstr "Kräv godkännande för nya följare"
 
-#: qml/Settings/AccountPage.qml:136
+#: qml/Settings/AccountPage.qml:137
 #, kde-format
 msgid ""
 "By default new followers are automatically accepted. Uncheck if you want to "
@@ -4542,12 +4571,12 @@ msgstr ""
 "eller neka nya manuellt. Du har alltid möjlighet att tvinga någon att sluta "
 "följa dig."
 
-#: qml/Settings/AccountPage.qml:145
+#: qml/Settings/AccountPage.qml:146
 #, kde-format
 msgid "Is automated"
 msgstr "är automatiserat"
 
-#: qml/Settings/AccountPage.qml:146
+#: qml/Settings/AccountPage.qml:147
 #, kde-format
 msgid ""
 "Whether to publicly mark this account as doing any kind of automated actions."
@@ -4555,63 +4584,63 @@ msgstr ""
 "Om det här kontot ska öppet markeras att det utför någon form av automatiska "
 "åtgärder."
 
-#: qml/Settings/AccountPage.qml:155
+#: qml/Settings/AccountPage.qml:156
 #, kde-format
 msgid "Feature profile and posts"
 msgstr "Utvald profil och inlägg"
 
-#: qml/Settings/AccountPage.qml:156
+#: qml/Settings/AccountPage.qml:157
 #, kde-format
 msgid "Your public profile and posts may be featured to other users."
 msgstr "Din öppna profil och inlägg kan utväljas för andra användare."
 
-#: qml/Settings/AccountPage.qml:165
+#: qml/Settings/AccountPage.qml:166
 #, kde-format
 msgid "Publicly list follows and followers"
 msgstr "Lista öppet följer och följare"
 
-#: qml/Settings/AccountPage.qml:166
+#: qml/Settings/AccountPage.qml:167
 #, kde-format
 msgid "By default everyone you follow and everyone who follows you is public."
 msgstr "Normalt är alla du följer och alla som följer dig öppna."
 
-#: qml/Settings/AccountPage.qml:175
+#: qml/Settings/AccountPage.qml:176
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Mark uploaded media as sensitive by default"
 msgstr "Markera normalt uppladdad media som känsligt"
 
-#: qml/Settings/AccountPage.qml:184
+#: qml/Settings/AccountPage.qml:185
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Include public posts in search results"
 msgstr "Inkludera öppna inlägg i sökresultat"
 
-#: qml/Settings/AccountPage.qml:193
+#: qml/Settings/AccountPage.qml:194
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post language"
 msgstr "Standardspråk för inlägg"
 
-#: qml/Settings/AccountPage.qml:219
+#: qml/Settings/AccountPage.qml:220
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post visibility"
 msgstr "Standardsynlighet för inlägg"
 
-#: qml/Settings/AccountPage.qml:221
+#: qml/Settings/AccountPage.qml:222
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Public"
 msgstr "Öppet"
 
-#: qml/Settings/AccountPage.qml:222
+#: qml/Settings/AccountPage.qml:223
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Unlisted"
 msgstr "Olistat"
 
-#: qml/Settings/AccountPage.qml:223
+#: qml/Settings/AccountPage.qml:224
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Private"
