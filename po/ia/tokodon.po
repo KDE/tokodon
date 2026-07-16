@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-10 02:38+0000\n"
-"PO-Revision-Date: 2026-05-12 12:35+0200\n"
+"PO-Revision-Date: 2026-07-15 17:40+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -235,10 +235,9 @@ msgid "%1 added you to their collection"
 msgstr ""
 
 #: account/notificationhandler.cpp:170
-#, fuzzy, kde-format
-#| msgid "%1 edited a post"
+#, kde-format
 msgid "%1 updated their collection"
-msgstr "%1 modificava un post"
+msgstr "%1 actualisava lor collection"
 
 #: account/notificationhandler.cpp:174
 #, kde-format
@@ -372,12 +371,10 @@ msgid "Manage List Users"
 msgstr ""
 
 #: account/socialgraphmodel.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "@action:button Delete the list"
-#| msgid "Manage Users"
+#, kde-format
 msgctxt "@title"
 msgid "Manage Collection Users"
-msgstr "Gere usatores"
+msgstr "Gere usatores de Collection"
 
 #: account/socialgraphmodel.cpp:70
 #, kde-format
@@ -757,18 +754,16 @@ msgid "Go to Profile"
 msgstr "Vade a  Profilo"
 
 #: qml/AccountHeader.qml:105
-#, fuzzy, kde-format
-#| msgid "Account editor"
+#, kde-format
 msgctxt "@info:label"
 msgid "Account memorialized"
-msgstr "Editor de conto"
+msgstr "Conto commemorate"
 
 #: qml/AccountHeader.qml:117
-#, fuzzy, kde-format
-#| msgid "Account editor"
+#, kde-format
 msgctxt "@info:label"
 msgid "Account suspended"
-msgstr "Editor de conto"
+msgstr "Conto suspendite"
 
 #: qml/AccountHeader.qml:195
 #, kde-format
@@ -785,24 +780,21 @@ msgid "Follows you"
 msgstr ""
 
 #: qml/AccountHeader.qml:201
-#, fuzzy, kde-format
-#| msgid "Bot"
+#, kde-format
 msgctxt "@info:label This account is a bot and automated"
 msgid "Bot"
 msgstr "Bot(Robot)"
 
 #: qml/AccountHeader.qml:295
-#, fuzzy, kde-format
-#| msgid "Copy Image"
+#, kde-format
 msgctxt "@action:inmenu Copy user handle such as @foo@bar.com"
 msgid "Copy Handle"
-msgstr "Copia imagine"
+msgstr "Copia ansa (handle)"
 
 #: qml/AccountHeader.qml:300
-#, fuzzy, kde-format
-#| msgid "Profile link copied."
+#, kde-format
 msgid "Profile handle copied."
-msgstr "Ligamine de profilo  copiate."
+msgstr "Profilode ansa (handle) copiate."
 
 #: qml/AccountHeader.qml:325
 #, kde-format
@@ -965,16 +957,13 @@ msgid "Featuring:"
 msgstr ""
 
 #: qml/AccountHeader.qml:832
-#, fuzzy, kde-format
-#| msgid "View %1's Profile"
+#, kde-format
 msgctxt "@action:button See all featured users"
 msgid "View %1 More"
-msgstr "Vide Profilo de %1"
+msgstr "Vide %1 plus"
 
 #: qml/AccountHeader.qml:832
-#, fuzzy, kde-format
-#| msgctxt "@action:button See all familiar followers"
-#| msgid "View All"
+#, kde-format
 msgctxt "@action:button See all featured users"
 msgid "View All"
 msgstr "Vide toto"
@@ -1136,48 +1125,39 @@ msgid "Your server has not made any announcements yet."
 msgstr ""
 
 #: qml/CollectionPage.qml:64
-#, fuzzy, kde-format
-#| msgctxt "@action:button Edit current list"
-#| msgid "Edit…"
+#, kde-format
 msgctxt "@action:button Edit current collection"
 msgid "Edit…"
 msgstr "Modifica…"
 
 #: qml/CollectionPage.qml:129
-#, fuzzy, kde-format
-#| msgid "Remove"
+#, kde-format
 msgctxt "@action:button Remove from collection"
 msgid "Remove"
 msgstr "Remove"
 
 #: qml/CollectionPage.qml:146
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgctxt "@info:placeholder No accounts in this collection"
 msgid "No Accounts"
-msgstr "Contos"
+msgstr "Nulle Contos"
 
 #: qml/CollectionsPage.qml:23
-#, fuzzy, kde-format
-#| msgctxt "Show more options"
-#| msgid "More actions"
+#, kde-format
 msgctxt "@title"
 msgid "Collections"
-msgstr "Altere actiones"
+msgstr "Collectiones"
 
 #: qml/CollectionsPage.qml:26
-#, fuzzy, kde-format
-#| msgctxt "@action:button Create new list"
-#| msgid "Create New…"
+#, kde-format
 msgctxt "@action:button Create new collection"
 msgid "Create New…"
 msgstr "Crea nove..."
 
 #: qml/CollectionsPage.qml:67
-#, fuzzy, kde-format
-#| msgid "No Conversations"
+#, kde-format
 msgid "No Collections"
-msgstr "Nulle conversationes"
+msgstr "Nulle collectiones"
 
 #: qml/CollectionsPage.qml:68
 #, kde-format
@@ -1200,8 +1180,7 @@ msgid ""
 msgstr ""
 
 #: qml/Components/BoostAltTextReminderDialog.qml:34
-#, fuzzy, kde-format
-#| msgid "Boost"
+#, kde-format
 msgctxt "@action:button Boost/Reblog this post anyway"
 msgid "Boost"
 msgstr "Boost"
@@ -1324,12 +1303,10 @@ msgid "Decrease follow request count"
 msgstr "Diminue computo de requestas de sequer"
 
 #: qml/EditCollectionPage.qml:30
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Create Post"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Collection"
-msgstr "Crea Post"
+msgstr "Crea Collection"
 
 #: qml/EditCollectionPage.qml:30
 #, kde-format
@@ -1341,37 +1318,29 @@ msgstr ""
 #, kde-format
 msgctxt "@label:textbox Collection title"
 msgid "Name"
-msgstr ""
+msgstr "Nomine"
 
 #: qml/EditCollectionPage.qml:77
-#, fuzzy, kde-format
-#| msgctxt "@title:group Alternate text or description of the image"
-#| msgid "Description"
+#, kde-format
 msgctxt "@label:textbox Collection description"
 msgid "Description"
 msgstr "Description"
 
 #: qml/EditCollectionPage.qml:87
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Sensitive media"
+#, kde-format
 msgctxt "@label:textbox Whether this collection should be marked sensitive"
 msgid "Sensitive"
-msgstr "Medios sensibile"
+msgstr "Sensibile"
 
 #: qml/EditCollectionPage.qml:97
-#, fuzzy, kde-format
-#| msgctxt "@info:Filter out accounts with disabled moderation status"
-#| msgid "Disabled"
+#, kde-format
 msgctxt ""
 "@label:textbox Whether this collection should be discoverable by other users"
 msgid "Discoverable"
-msgstr "Dishabilitate"
+msgstr "Discoperibile"
 
 #: qml/EditCollectionPage.qml:108
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar Add users to list"
-#| msgid "Add Users"
+#, kde-format
 msgctxt "@action:intoolbar Add users to collection"
 msgid "Add Users"
 msgstr "Adde Usatores"
@@ -1383,9 +1352,7 @@ msgid "Add Users to Collection…"
 msgstr ""
 
 #: qml/EditCollectionPage.qml:157
-#, fuzzy, kde-format
-#| msgctxt "@action:button Add user to this list"
-#| msgid "Add"
+#, kde-format
 msgctxt "@action:button Add user to this collection"
 msgid "Add"
 msgstr "Adde"
@@ -1396,35 +1363,28 @@ msgid "Search among users you follow…"
 msgstr ""
 
 #: qml/EditCollectionPage.qml:236
-#, fuzzy, kde-format
-#| msgctxt "@action:button Create the list"
-#| msgid "Create"
+#, kde-format
 msgctxt "@action:button Create the collection"
 msgid "Create"
-msgstr "Create"
+msgstr "Crea"
 
 #: qml/EditCollectionPage.qml:238
-#, fuzzy, kde-format
-#| msgctxt "@action:button Save the edited list"
-#| msgid "Save"
+#, kde-format
 msgctxt "@action:button Save the edited collection"
 msgid "Save"
 msgstr "Salveguarda"
 
 #: qml/EditCollectionPage.qml:251
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgctxt "@action:button Delete the collection"
 msgid "Delete"
 msgstr "Dele"
 
 #: qml/EditCollectionPage.qml:258
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Deleting Filter"
+#, kde-format
 msgctxt "@title"
 msgid "Deleting Collection"
-msgstr "Delente filtros"
+msgstr "Delente  Collection"
 
 #: qml/EditCollectionPage.qml:259
 #, kde-format
@@ -2218,12 +2178,10 @@ msgid "Debug"
 msgstr "Cribra (debug)"
 
 #: qml/Main.qml:728
-#, fuzzy, kde-format
-#| msgctxt "Show more options"
-#| msgid "More actions"
+#, kde-format
 msgctxt "@action:button This account's collections (a group of accounts)"
 msgid "Collections"
-msgstr "Altere actiones"
+msgstr "Collectiones"
 
 #: qml/Main.qml:739
 #, kde-format
@@ -3661,12 +3619,10 @@ msgid "Quotes"
 msgstr "Citationes"
 
 #: qml/NotificationPage.qml:164
-#, fuzzy, kde-format
-#| msgctxt "Show more options"
-#| msgid "More actions"
+#, kde-format
 msgctxt "Show only quotes"
 msgid "Collections"
-msgstr "Altere actiones"
+msgstr "Collectiones"
 
 #: qml/NotificationPage.qml:215
 #, kde-format
@@ -3721,18 +3677,15 @@ msgid "%1 added you to a collection"
 msgstr ""
 
 #: qml/Notifications/CollectionDelegate.qml:82
-#, fuzzy, kde-format
-#| msgid "%1 edited a post"
+#, kde-format
 msgid "%1 updated a collection"
-msgstr "%1 modificava un post"
+msgstr "%1 actualisava unn collection"
 
 #: qml/Notifications/CollectionDelegate.qml:102
-#, fuzzy, kde-format
-#| msgctxt "@action:button See all familiar followers"
-#| msgid "View All"
+#, kde-format
 msgctxt "@action:button"
 msgid "View Collection"
-msgstr "Vide toto"
+msgstr "Vide Collection"
 
 #: qml/Notifications/FollowDelegate.qml:78
 #, kde-format
@@ -5238,12 +5191,10 @@ msgid "When you receive your #FediWrapped at the end of the year."
 msgstr ""
 
 #: qml/Settings/NotificationsPage.qml:439
-#, fuzzy, kde-format
-#| msgctxt "Show more options"
-#| msgid "More actions"
+#, kde-format
 msgctxt "@option:check"
 msgid "Collections"
-msgstr "Altere actiones"
+msgstr "Collectiones"
 
 #: qml/Settings/NotificationsPage.qml:440
 #, kde-format
@@ -5654,7 +5605,7 @@ msgstr "Planifica Post"
 #, kde-format
 msgctxt "@action:button Set this post's schedule to when it should be posted"
 msgid "Set Schedule"
-msgstr ""
+msgstr "Assigna planification"
 
 #: qml/StatusComposer/StatusComposer.qml:337
 #, kde-format
@@ -6040,12 +5991,10 @@ msgid "Open Lists"
 msgstr "Aperi Listas"
 
 #: tokodonapplication.cpp:176
-#, fuzzy, kde-format
-#| msgctxt "@action:button Direct one-on-one messages between users"
-#| msgid "Open Conversations"
+#, kde-format
 msgctxt "@action:button This account's collections (a group of accounts)"
 msgid "Open Collections"
-msgstr "Aperi Conversationes"
+msgstr "Aperi Collectiones"
 
 #: tokodonapplication.cpp:182
 #, kde-format
@@ -6063,7 +6012,7 @@ msgstr "Aperi Commutator rapide "
 #, kde-format
 msgctxt "@action:button"
 msgid "Reload"
-msgstr ""
+msgstr "Recarga"
 
 #: tokodonapplication.cpp:227
 #, kde-format
