@@ -1,7 +1,7 @@
 # Translation for tokodon.po to Euskara/Basque (eu).
 # Copyright (C) 2023-2026 This file is copyright:
 # This file is distributed under the same license as the tokodon package.
-# SPDX-FileCopyrightText: 2023, 2024, 2025, 2026 KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2023-2026 KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
 #
 # Translators:
 # Iñigo Salvador Azurmendi <xalba@ni.eus>, 2003, 2024, 2025, 2026.
@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-10 02:38+0000\n"
-"PO-Revision-Date: 2025-12-07 18:46+0100\n"
+"PO-Revision-Date: 2026-07-23 01:44+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 26.04.3\n"
 
 #: account/abstractaccount.cpp:33
 #, kde-format
@@ -182,7 +182,7 @@ msgstr "%1(e)k posta berri bat Idatzi du"
 #: qml/Notifications/UserInteractionLabel.qml:82
 #, kde-format
 msgid "%1 boosted your post"
-msgstr "%1(e)k zure posta goratu du"
+msgstr "%1(e)k zure posta berrargitaratu du"
 
 #: account/notificationhandler.cpp:103 qml/Notifications/FollowDelegate.qml:82
 #, kde-format
@@ -366,8 +366,8 @@ msgstr[1] "%1 gogoko"
 msgctxt "@title"
 msgid "%1 boost"
 msgid_plural "%1 boosts"
-msgstr[0] "Goratze %1"
-msgstr[1] "%1 goratze"
+msgstr[0] "Berrargitalpen %1"
+msgstr[1] "%1 berrargitalpen"
 
 #: account/socialgraphmodel.cpp:56
 #, kde-format
@@ -428,7 +428,7 @@ msgstr "Ez dago posta hori gogoko egin duen erabiltzailerik"
 #: account/socialgraphmodel.cpp:91
 #, kde-format
 msgid "No Users Boosted This Post"
-msgstr "Ez dago posta hori gogoko goratu duen erabiltzailerik"
+msgstr "Posta hori ez du inork berrargitaratu"
 
 #: account/socialgraphmodel.cpp:94
 #, kde-format
@@ -497,8 +497,8 @@ msgstr ""
 msgid ""
 "No one has boosted this post yet. You should boost it to expand its reach!"
 msgstr ""
-"Posta hau ez du oraindik inork goratu. Hura goratu behar zenuke bere "
-"hedapena zabaltzeko!"
+"Posta hau ez du oraindik inork berrargitaratu. Hedapen handiagoa izan dezan, "
+"berrargitaratu ezazu!"
 
 #: account/socialgraphmodel.cpp:132
 #, kde-format
@@ -875,12 +875,12 @@ msgstr "Elkarrizketa bat abiatu…"
 #: qml/AccountHeader.qml:401
 #, kde-format
 msgid "Hide Boosts from %1"
-msgstr "Ezkutatu %1(e)ren goratzeak"
+msgstr "%1(e)ren berrargitalpenak ezkutatu"
 
 #: qml/AccountHeader.qml:403
 #, kde-format
 msgid "Show Boosts from %1"
-msgstr "Erakutsi %1(e)ren goratzeak"
+msgstr "%1(e)ren berrargitalpenak erakutsi"
 
 #: qml/AccountHeader.qml:419
 #, kde-format
@@ -945,7 +945,7 @@ msgstr "Posta-zirriborroak"
 #, kde-format
 msgctxt "@action:inmenu 'Browser' being a web browser"
 msgid "Open in Browser"
-msgstr "Ireki arakatzailean"
+msgstr "Arakatzailean ireki"
 
 #: qml/AccountHeader.qml:524
 #, kde-format
@@ -994,31 +994,27 @@ msgid "Featuring:"
 msgstr ""
 
 #: qml/AccountHeader.qml:832
-#, fuzzy, kde-format
-#| msgctxt "@action:button See all familiar followers"
-#| msgid "View %1 More"
+#, kde-format
 msgctxt "@action:button See all featured users"
 msgid "View %1 More"
-msgstr "Ikusi %1 gehiago"
+msgstr "Ikusi beste %1"
 
 #: qml/AccountHeader.qml:832
-#, fuzzy, kde-format
-#| msgctxt "@action:button See all familiar followers"
-#| msgid "View All"
+#, kde-format
 msgctxt "@action:button See all featured users"
 msgid "View All"
-msgstr "Ikusi dena"
+msgstr "Ikusi guztiak"
 
 #: qml/AccountHeader.qml:859
 #, kde-format
 msgid "Also followed by:"
-msgstr "Ondokoek ere jarraitua:"
+msgstr "Hauek ere jarraitzen diote:"
 
 #: qml/AccountHeader.qml:889
 #, kde-format
 msgctxt "@action:button See all familiar followers"
 msgid "View %1 More"
-msgstr "Ikusi %1 gehiago"
+msgstr "Ikusi beste %1"
 
 #: qml/AccountHeader.qml:889
 #, kde-format
@@ -1072,7 +1068,7 @@ msgstr "Hedabideak"
 #, kde-format
 msgctxt "@option:check"
 msgid "Hide boosts"
-msgstr "Ezkutatu goratzeak"
+msgstr "Berrargitalpenak ezkutatu"
 
 #: qml/AccountHeader.qml:1054
 #, kde-format
@@ -1118,12 +1114,12 @@ msgstr "Aldatu kontua"
 #, kde-format
 msgctxt "@button: login to or register a new account."
 msgid "Add Account"
-msgstr "Gehitu kontua"
+msgstr "Kontua gehitu"
 
 #: qml/AccountSwitchDialog.qml:59
 #, kde-format
 msgid "Log in or create a new account"
-msgstr "Saioa hasi edo sortu kontu berri bat"
+msgstr "Saioa hasi edo kontu berri bat sortu"
 
 #: qml/AccountSwitchDialog.qml:157 qml/Settings/AccountsPage.qml:81
 #, kde-format
@@ -1168,97 +1164,81 @@ msgid "Your server has not made any announcements yet."
 msgstr "Zure zerbitzariak ez du oraindik iragarpenik egin."
 
 #: qml/CollectionPage.qml:64
-#, fuzzy, kde-format
-#| msgctxt "@action:button Edit current list"
-#| msgid "Edit…"
+#, kde-format
 msgctxt "@action:button Edit current collection"
 msgid "Edit…"
 msgstr "Editatu…"
 
 #: qml/CollectionPage.qml:129
-#, fuzzy, kde-format
-#| msgid "Remove"
+#, kde-format
 msgctxt "@action:button Remove from collection"
 msgid "Remove"
 msgstr "Kendu"
 
 #: qml/CollectionPage.qml:146
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgctxt "@info:placeholder No accounts in this collection"
 msgid "No Accounts"
-msgstr "Kontuak"
+msgstr "Konturik ez"
 
 #: qml/CollectionsPage.qml:23
-#, fuzzy, kde-format
-#| msgctxt "Show more options"
-#| msgid "More actions"
+#, kde-format
 msgctxt "@title"
 msgid "Collections"
-msgstr "Ekintza gehiago"
+msgstr "Bildumak"
 
 #: qml/CollectionsPage.qml:26
-#, fuzzy, kde-format
-#| msgctxt "@action:button Create new list"
-#| msgid "Create New…"
+#, kde-format
 msgctxt "@action:button Create new collection"
 msgid "Create New…"
-msgstr "Sortu … berria"
+msgstr "… berria sortu"
 
 #: qml/CollectionsPage.qml:67
-#, fuzzy, kde-format
-#| msgid "No Conversations"
+#, kde-format
 msgid "No Collections"
-msgstr "Elkarrizketarik ez"
+msgstr "Bildumarik ez"
 
 #: qml/CollectionsPage.qml:68
-#, fuzzy, kde-format
-#| msgid "Lists allow you to categorize who you're following."
+#, kde-format
 msgid ""
 "Collections allow you to categorize accounts you want other people to follow."
 msgstr ""
-"Zerrendek jarraitzen dituzun haiek kategorizatzeko aukera ematen dizute."
+"Bildumei esker, beste erabiltzaileek jarrai ditzaten nahi duzun kontuak "
+"kategoriatan antola ditzakezu."
 
 #: qml/Components/BoostAltTextReminderDialog.qml:19
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Alt Text Reminder"
+#, kde-format
 msgctxt "@title"
 msgid "Boost Alt Text Reminder"
-msgstr "Ordezko testuaren oroigarria"
+msgstr "Berrargitaratzeko ordezko testuaren oroigarria"
 
 #: qml/Components/BoostAltTextReminderDialog.qml:23
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "Some of your media is missing alt text. Adding descriptions help "
-#| "everyone, especially the visually impaired."
+#, kde-format
 msgctxt "@label"
 msgid ""
 "Some media in this post is missing alt text, which hinders those who are "
 "visually impaired."
 msgstr ""
-"Zure hedabideetako batzuk ordezko testua falta dute. Deskribapenak gehitzea "
-"guztiontzako lagungarria da, bereziki ikusmen urritasuna dutenentzat."
+"Posta honetako media-elementu batzuek ez dute ordezko testurik; horrek "
+"ikusmen -urritasuna duten pertsonen irisgarritasuna oztopatzen du."
 
 #: qml/Components/BoostAltTextReminderDialog.qml:34
-#, fuzzy, kde-format
-#| msgid "Boost"
+#, kde-format
 msgctxt "@action:button Boost/Reblog this post anyway"
 msgid "Boost"
-msgstr "Goratu"
+msgstr "Berrargitaratu"
 
 #: qml/Components/BoostConfirmationDialog.qml:19
 #, kde-format
 msgctxt "@title"
 msgid "Confirm Boost"
-msgstr "Goratzea baieztatu"
+msgstr "Berrargitaratze baieztatu"
 
 #: qml/Components/BoostConfirmationDialog.qml:23
 #, kde-format
 msgctxt "@action:button Boost this post"
 msgid "Boost"
-msgstr "Goratu"
+msgstr "Berrargitaratu"
 
 #: qml/Components/ClickableIdentityInfo.qml:43
 #: qml/Notifications/UserInteractionLabel.qml:71
@@ -1288,7 +1268,7 @@ msgstr "Azken eguneratzea: %1"
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Post"
-msgstr "Sortu posta"
+msgstr "Posta sortu"
 
 #: qml/Components/TimelineView.qml:95
 #, kde-format
@@ -1311,7 +1291,7 @@ msgstr "Erantzun guztiak ikusteko, ireki jatorrizko zerbitzariko posta."
 #, kde-format
 msgctxt "@action:button 'Browser' being a web browser"
 msgid "Open in Browser"
-msgstr "Ireki arakatzailean"
+msgstr "Arakatzailean ireki"
 
 #: qml/Components/TimelineView.qml:192
 #, fuzzy, kde-format
@@ -1369,12 +1349,10 @@ msgid "Decrease follow request count"
 msgstr "Gutxitu jarraipen eskaera kopurua"
 
 #: qml/EditCollectionPage.qml:30
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Create Post"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Collection"
-msgstr "Sortu posta"
+msgstr "Bilduma sortu"
 
 #: qml/EditCollectionPage.qml:30
 #, kde-format
@@ -1389,9 +1367,7 @@ msgid "Name"
 msgstr ""
 
 #: qml/EditCollectionPage.qml:77
-#, fuzzy, kde-format
-#| msgctxt "@title:group Alternate text or description of the image"
-#| msgid "Description"
+#, kde-format
 msgctxt "@label:textbox Collection description"
 msgid "Description"
 msgstr "Deskribapena"
@@ -1414,25 +1390,19 @@ msgid "Discoverable"
 msgstr "Ezgaituta"
 
 #: qml/EditCollectionPage.qml:108
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar Add users to list"
-#| msgid "Add Users"
+#, kde-format
 msgctxt "@action:intoolbar Add users to collection"
 msgid "Add Users"
-msgstr "Gehitu erabiltzaileak"
+msgstr "Erabiltzaileak gehitu"
 
 #: qml/EditCollectionPage.qml:119
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Add Users to List…"
+#, kde-format
 msgctxt "@title"
 msgid "Add Users to Collection…"
-msgstr "Gehitu erabiltzaileak zerrendara…"
+msgstr "Erabiltzaileak zerrendara gehitu…"
 
 #: qml/EditCollectionPage.qml:157
-#, fuzzy, kde-format
-#| msgctxt "@action:button Add user to this list"
-#| msgid "Add"
+#, kde-format
 msgctxt "@action:button Add user to this collection"
 msgid "Add"
 msgstr "Gehitu"
@@ -1443,24 +1413,19 @@ msgid "Search among users you follow…"
 msgstr "Bilatu jarraitzen dituzun erabiltzaileen artean…"
 
 #: qml/EditCollectionPage.qml:236
-#, fuzzy, kde-format
-#| msgctxt "@action:button Create the list"
-#| msgid "Create"
+#, kde-format
 msgctxt "@action:button Create the collection"
 msgid "Create"
 msgstr "Sortu"
 
 #: qml/EditCollectionPage.qml:238
-#, fuzzy, kde-format
-#| msgctxt "@action:button Save the edited list"
-#| msgid "Save"
+#, kde-format
 msgctxt "@action:button Save the edited collection"
 msgid "Save"
 msgstr "Gorde"
 
 #: qml/EditCollectionPage.qml:251
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgctxt "@action:button Delete the collection"
 msgid "Delete"
 msgstr "Ezabatu"
@@ -1474,18 +1439,16 @@ msgid "Deleting Collection"
 msgstr "Iragazkia ezabatzea"
 
 #: qml/EditCollectionPage.qml:259
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Are you sure you want to delete this list?"
+#, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to delete this collection?"
-msgstr "Ziur zaude zerrenda ezabatu nahi duzula?"
+msgstr "Ziur zaude bilduma hau ezabatu nahi duzula?"
 
 #: qml/EditListPage.qml:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Create List"
-msgstr "Sortu zerrenda"
+msgstr "Zerrenda sortu"
 
 #: qml/EditListPage.qml:30
 #, kde-format
@@ -1532,19 +1495,19 @@ msgstr "Zerrenda hau alboko-barran azalduko da."
 #, kde-format
 msgctxt "@action:button Delete the list"
 msgid "Manage Users"
-msgstr "Kudeatu erabiltzaileak"
+msgstr "Erabiltzaileak kudeatu"
 
 #: qml/EditListPage.qml:123
 #, kde-format
 msgctxt "@action:intoolbar Add users to list"
 msgid "Add Users"
-msgstr "Gehitu erabiltzaileak"
+msgstr "Erabiltzaileak gehitu"
 
 #: qml/EditListPage.qml:134
 #, kde-format
 msgctxt "@title"
 msgid "Add Users to List…"
-msgstr "Gehitu erabiltzaileak zerrendara…"
+msgstr "Erabiltzaileak zerrendara gehitu…"
 
 #: qml/EditListPage.qml:172
 #, kde-format
@@ -1580,7 +1543,7 @@ msgstr "Zerrenda ezabatzea"
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to delete this list?"
-msgstr "Ziur zaude zerrenda ezabatu nahi duzula?"
+msgstr "Ziur zaude zerrenda hau ezabatu nahi duzula?"
 
 #: qml/ExplorePage.qml:18
 #, kde-format
@@ -1627,12 +1590,10 @@ msgstr[0] "Pertsona %1 hitz egiten ari da"
 msgstr[1] "%1 pertsona hitz egiten ari dira"
 
 #: qml/ExplorePage.qml:247
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu 'Browser' being a web browser"
-#| msgid "Open in Browser"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Open in Browser"
-msgstr "Ireki arakatzailean"
+msgstr "Arakatzailean ireki"
 
 #: qml/ExplorePage.qml:305
 #, kde-format
@@ -1663,7 +1624,7 @@ msgstr "Iragazkiak"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Show Boosts"
-msgstr "Erakutsi goratzeak"
+msgstr "Berrargitalpenak erakutsi"
 
 #: qml/FollowingPage.qml:54
 #, kde-format
@@ -1729,16 +1690,16 @@ msgid ""
 "\n"
 "The types of notifications shown can be fine tuned when logged in."
 msgstr ""
-"Tokodon-ek, erabiltzaileek zure postak goratzea edo haiei erantzutea gisako "
+"Tokodonek zure postei egiten zaizkien berrargitalpenen eta erantzunen gisako "
 "jardueren jakinarazpenak erakuts ditzake.\n"
 "\n"
-"Erakutsitako jakinarazpen motak, saio-hasita izanik xehetasun handiarekin "
-"doi daitezke."
+"Saioa hasi ondoren, erakusten diren jakinarazpen motak zehaztasunez doitu "
+"ditzakezu."
 
 #: qml/InitialSetup/SetupNotifications.qml:35
 #, kde-format
 msgid "Allow Notifications"
-msgstr "Baimendu jakinarazpenak"
+msgstr "Jakinarazpenak baimendu"
 
 #: qml/InitialSetup/SetupNotifications.qml:49
 #: qml/InitialSetup/SetupWelcome.qml:42 qml/LoginFlow/CodeAuthorization.qml:32
@@ -1762,8 +1723,8 @@ msgid ""
 "\n"
 "After you installed the service, make sure it's running and restart Tokodon."
 msgstr ""
-"«Tokodon»ek, norbanakoen isilpeko informazioa gordetzeko pasahitz zerbitzu "
-"bat martxan egotea behar du.\n"
+"Tokodonek, norbanakoen isilpeko informazioa gordetzeko pasahitz zerbitzu bat "
+"martxan egotea behar du.\n"
 "\n"
 "«Tokodon»ek KWallet, «GNOME Keyring» edo «libsecret»ekin bateragarria den "
 "edozein zerbitzu erabil dezake.\n"
@@ -1815,24 +1776,23 @@ msgstr "Zerrendak"
 #, kde-format
 msgctxt "@action:button Create new list"
 msgid "Create New…"
-msgstr "Sortu … berria"
+msgstr "… berria sortu"
 
 #: qml/ListsPage.qml:77
 #, kde-format
 msgid "No Lists"
-msgstr "Zerrendarik gabe"
+msgstr "Zerrendarik ez"
 
 #: qml/ListsPage.qml:78
 #, kde-format
 msgid "Lists allow you to categorize who you're following."
-msgstr ""
-"Zerrendek jarraitzen dituzun haiek kategorizatzeko aukera ematen dizute."
+msgstr "Zerrendei esker, jarraitzen dituzunak kategoriatan antola ditzakezu."
 
 #: qml/ListTimelinePage.qml:18 qml/Main.qml:286 qml/Main.qml:322
 #: qml/Main.qml:337
 #, kde-format
 msgid "No Posts"
-msgstr "Postarik gabe"
+msgstr "Postarik ez"
 
 #: qml/ListTimelinePage.qml:19
 #, kde-format
@@ -2137,7 +2097,7 @@ msgstr "Honekin bateragarria"
 #, kde-format
 msgctxt "@title"
 msgid "Open As…"
-msgstr "Ireki honela…"
+msgstr "Ireki … gisa"
 
 #: qml/Main.qml:155
 #, kde-format
@@ -2149,19 +2109,19 @@ msgstr "Erantzun … gisa"
 #, kde-format
 msgctxt "@title"
 msgid "Favorite As…"
-msgstr "Gogokoa … gisa"
+msgstr "Gogoko egin … gisa"
 
 #: qml/Main.qml:159
 #, kde-format
 msgctxt "@title"
 msgid "Boost As…"
-msgstr "Goratu … gisa"
+msgstr "Berrargitaratu … gisa"
 
 #: qml/Main.qml:161
 #, kde-format
 msgctxt "@title"
 msgid "Bookmark As…"
-msgstr "Laster-marka … gisa"
+msgstr "Laster-marka egin … gisa"
 
 #: qml/Main.qml:163
 #, kde-format
@@ -2494,10 +2454,10 @@ msgid "No accounts found"
 msgstr "Ez da konturik aurkitu"
 
 #: qml/ModerationTools/EmailBlockToolPage.qml:17
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Create Email Block"
-msgstr "Sortu e-posta oztopoa"
+msgstr "E-posta oztopoa sortu"
 
 #: qml/ModerationTools/EmailBlockToolPage.qml:31
 #, kde-format
@@ -2512,7 +2472,7 @@ msgid "Email domain name"
 msgstr "E-posta domeinuaren izena"
 
 #: qml/ModerationTools/EmailBlockToolPage.qml:48
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@info Time when the block was imposed."
 msgid "Block created at"
 msgstr "Oztopoaren sorrera,"
@@ -2540,10 +2500,10 @@ msgid "Cancel"
 msgstr "Utzi"
 
 #: qml/ModerationTools/EmailBlockToolPage.qml:78
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Delete email block"
-msgstr "Ezabatu e-postaren oztopoa"
+msgstr "E-postaren oztopoa ezabatu"
 
 #: qml/ModerationTools/EmailBlockToolPage.qml:82
 #, kde-format
@@ -2563,7 +2523,7 @@ msgid "Domain *"
 msgstr "Domeinua *"
 
 #: qml/ModerationTools/EmailBlockToolPage.qml:103
-#, kde-format
+#, fuzzy, kde-format
 msgid ""
 "This can be the domain name that shows up in the e-mail address or the MX "
 "record it uses. They will be checked upon sign-up."
@@ -2578,7 +2538,7 @@ msgid "Resolve domain"
 msgstr "Ebatzi domeinua"
 
 #: qml/ModerationTools/EmailBlockToolPage.qml:120
-#, kde-format
+#, fuzzy, kde-format
 msgid "New email block added"
 msgstr "E-posta oztopo berria gehitu da"
 
@@ -2594,9 +2554,9 @@ msgid "No email blocks found"
 msgstr "Ez da e-posta oztoporik aurkitu"
 
 #: qml/ModerationTools/FederationToolPage.qml:20
-#, kde-format
+#, fuzzy, kde-format
 msgid "Add New Domain Block"
-msgstr "Gehitu domeinu oztopo berriak"
+msgstr "Domeinu-oztopo berria gehitu"
 
 #: qml/ModerationTools/FederationToolPage.qml:26
 #: qml/ModerationTools/FederationToolPage.qml:159
@@ -2616,7 +2576,7 @@ msgid "Domain"
 msgstr "Domeinua"
 
 #: qml/ModerationTools/FederationToolPage.qml:50
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@info:Time when the domain was allowed to federate."
 msgid "Created at"
 msgstr "Sorrera"
@@ -2632,9 +2592,9 @@ msgid "Disallowed federation with the domain"
 msgstr "Onartu gabeko federazioa domeinuarekin"
 
 #: qml/ModerationTools/FederationToolPage.qml:73
-#, kde-format
+#, fuzzy, kde-format
 msgid "Add Domain Block"
-msgstr "Gehitu domeinu oztopoa"
+msgstr "Domeinu-oztopoa gehitu"
 
 #: qml/ModerationTools/FederationToolPage.qml:83
 #, kde-format
@@ -2732,10 +2692,10 @@ msgstr ""
 #, kde-format
 msgctxt "@info:Button to create a domain block"
 msgid "Create Block"
-msgstr "Sortu oztopoa"
+msgstr "Oztopoa sortu"
 
 #: qml/ModerationTools/FederationToolPage.qml:150
-#, kde-format
+#, fuzzy, kde-format
 msgid "New domain block added"
 msgstr "Domeinu oztopo berria gehitu da"
 
@@ -2793,7 +2753,7 @@ msgstr "Ez da federaziorik aurkitu"
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Rule"
-msgstr "Sortu araua"
+msgstr "Araua sortu"
 
 #: qml/ModerationTools/IpRulePage.qml:25
 #, kde-format
@@ -2912,7 +2872,7 @@ msgstr "Oztopatu sarrera baliabide guztietara"
 #, kde-format
 msgctxt "@info:Button to create a IP rule"
 msgid "Create IP rule"
-msgstr "Sortu IP araua"
+msgstr "IP araua sortu"
 
 #: qml/ModerationTools/IpRulePage.qml:130
 #, kde-format
@@ -3151,7 +3111,7 @@ msgstr "Errefusatu"
 #: qml/ModerationTools/MainAccountToolPage.qml:290
 #, kde-format
 msgid "Delete Account Data"
-msgstr "Ezabatu kontuaren datuak"
+msgstr "Kontuaren datuak ezabatu"
 
 #: qml/ModerationTools/MainAccountToolPage.qml:302
 #, kde-format
@@ -3384,18 +3344,16 @@ msgid "Report #%1"
 msgstr "Salaketa zk %1"
 
 #: qml/ModerationTools/MainReportToolPage.qml:51
-#, fuzzy, kde-format
-#| msgid "Mark as unresolved"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Mark as unresolved"
-msgstr "Markatu ebatzi gabe gisa"
+msgstr "Ebatzi gabeko gisa markatu"
 
 #: qml/ModerationTools/MainReportToolPage.qml:51
-#, fuzzy, kde-format
-#| msgid "Mark as resolved"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Mark as resolved"
-msgstr "Markatu ebatzitako gisa"
+msgstr "Ebatzitako gisa markatu"
 
 #: qml/ModerationTools/MainReportToolPage.qml:55
 #, fuzzy, kde-format
@@ -3444,15 +3402,13 @@ msgid "Report Status"
 msgstr "Salaketaren egoera"
 
 #: qml/ModerationTools/MainReportToolPage.qml:135
-#, fuzzy, kde-format
-#| msgid "Resolved"
+#, kde-format
 msgctxt "@info"
 msgid "Resolved"
 msgstr "Ebatzita"
 
 #: qml/ModerationTools/MainReportToolPage.qml:135
-#, fuzzy, kde-format
-#| msgid "Unresolved"
+#, kde-format
 msgctxt "@info"
 msgid "Unresolved"
 msgstr "Ebazteke"
@@ -3752,7 +3708,7 @@ msgstr "Gehiago"
 #, kde-format
 msgctxt "Show only boosts"
 msgid "Boosts"
-msgstr "Goratzeak"
+msgstr "Berrargitalpenak"
 
 #: qml/NotificationPage.qml:119
 #, kde-format
@@ -3811,16 +3767,13 @@ msgid "No Notifications"
 msgstr "Jakinarazpenik ez"
 
 #: qml/NotificationPage.qml:377
-#, fuzzy, kde-format
-#| msgid ""
-#| "You have no notifications yet. When people reply, favorite or boost your "
-#| "posts they will show up here."
+#, kde-format
 msgid ""
 "You have no notifications yet. When people reply, favorite or boost your "
 "posts they will show up here!"
 msgstr ""
 "Oraindik ez duzu jakinarazpenik. Jendeak zure postei erantzun, haiek gogoko "
-"egin edo goratzen dituztenean, hemen azalduko dira."
+"egin edo berrargitaratzen dituztenean, hemen azalduko dira!"
 
 #: qml/Notifications/AccountWarningDelegate.qml:67
 #, kde-format
@@ -3850,7 +3803,7 @@ msgstr "Ikusi #FediWrapped"
 #: qml/Notifications/CollectionDelegate.qml:80
 #, kde-format
 msgid "%1 added you to a collection"
-msgstr ""
+msgstr "%1(e)k bilduma batera gehitu zaitu"
 
 #: qml/Notifications/CollectionDelegate.qml:82
 #, fuzzy, kde-format
@@ -3890,7 +3843,7 @@ msgstr "%1 erabiltzailek zure posta gogoko dute"
 #: qml/Notifications/GroupInteractionLabel.qml:75
 #, kde-format
 msgid "%1 users boosted your post"
-msgstr "%1 erabiltzailek zure posta goratu dute"
+msgstr "%1 erabiltzailek zure posta berrargitaratu dute"
 
 #: qml/Notifications/MinimalPostDelegate.qml:68
 #: qml/PostDelegate/PostDelegate.qml:108
@@ -4105,14 +4058,14 @@ msgstr[1] "%1 gogoko"
 #: qml/PostDelegate/InformationBar.qml:115
 #, kde-format
 msgid "No boosts"
-msgstr "Goratzerik gabe"
+msgstr "Berrargitalpenik ez"
 
 #: qml/PostDelegate/InformationBar.qml:117
 #, kde-format
 msgid "%1 boost"
 msgid_plural "%1 boosts"
-msgstr[0] "Goratze %1"
-msgstr[1] "%1 goratze"
+msgstr[0] "Berrargitalpen %1"
+msgstr[1] "%1 berrargitalpen"
 
 #: qml/PostDelegate/InformationBar.qml:139
 #, kde-format
@@ -4201,19 +4154,19 @@ msgstr "Iltzatutako posta"
 #, kde-format
 msgctxt "@title"
 msgid "Delete Post"
-msgstr "Ezabatu posta"
+msgstr "Posta ezabatu"
 
 #: qml/PostDelegate/PostDelegate.qml:245
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to delete this post?"
-msgstr "Ziur zaude posta hori ezabatu nahi duzula?"
+msgstr "Ziur zaude posta hau ezabatu nahi duzula?"
 
 #: qml/PostDelegate/PostDelegate.qml:260
 #, kde-format
 msgctxt "@title"
 msgid "Delete & Re-draft Post"
-msgstr "Posta ezabatu eta berriz zirriborro egin"
+msgstr "Posta ezabatu eta zirriborro bihurtu"
 
 #: qml/PostDelegate/PostDelegate.qml:261
 #, kde-format
@@ -4222,8 +4175,8 @@ msgid ""
 "Are you sure you want to redraft this post? This will delete the original "
 "post."
 msgstr ""
-"Ziur zaude posta hori berriz zirriborro egin nahi duzula? Horrek jatorrizko "
-"posta ezabatuko du."
+"Ziur zaude posta hau zirriborro bihurtu nahi duzula? Horrek jatorrizko posta "
+"ezabatuko du."
 
 #: qml/PostDelegate/PostDelegate.qml:416
 #, kde-format
@@ -4234,28 +4187,28 @@ msgstr "Erantzun"
 #: qml/PostDelegate/PostDelegate.qml:443
 #, kde-format
 msgid "Cannot boost direct messages"
-msgstr "Zuzeneko mezuak ezin dira goratu"
+msgstr "Zuzeneko mezuak ezin dira berrargitaratu"
 
 #: qml/PostDelegate/PostDelegate.qml:445
 #, kde-format
 msgid "Cannot boost private posts"
-msgstr "Posta pribatuak ezin dira goratu"
+msgstr "Posta pribatuak ezin dira berrargitaratu"
 
 #: qml/PostDelegate/PostDelegate.qml:447
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
-msgstr "Goratu"
+msgstr "Berrargitaratu"
 
 #: qml/PostDelegate/PostDelegate.qml:489
 #, kde-format
 msgid "Boosted"
-msgstr "Goratuta"
+msgstr "Berrargitaratuta"
 
 #: qml/PostDelegate/PostDelegate.qml:489
 #, kde-format
 msgid "Boost"
-msgstr "Goratu"
+msgstr "Berrargitaratu"
 
 #: qml/PostDelegate/PostDelegate.qml:509
 #, kde-format
@@ -4330,7 +4283,7 @@ msgstr "Zamatzen…"
 #: qml/PostDelegate/PostInteractionLabel.qml:63
 #, kde-format
 msgid "%1 boosted"
-msgstr "%1(e)k goratu du"
+msgstr "%1(e)k berrargitaratu du"
 
 #: qml/PostDelegate/PostInteractionLabel.qml:65
 #, kde-format
@@ -4358,7 +4311,7 @@ msgstr "Postako testua kopiatu da."
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open as…"
-msgstr "Ireki honela…"
+msgstr "Ireki … gisa"
 
 #: qml/PostDelegate/PostMenu.qml:95
 #, kde-format
@@ -4370,19 +4323,19 @@ msgstr "Erantzun … gisa"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Favorite as…"
-msgstr "Gogokoa … gisa"
+msgstr "Gogoko egin … gisa"
 
 #: qml/PostDelegate/PostMenu.qml:111
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Boost as…"
-msgstr "Goratu … gisa"
+msgstr "Berrargitaratu … gisa"
 
 #: qml/PostDelegate/PostMenu.qml:119
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Bookmark as…"
-msgstr "Laster-marka … gisa"
+msgstr "Laster-marka egin … gisa"
 
 #: qml/PostDelegate/PostMenu.qml:132
 #, kde-format
@@ -4446,7 +4399,7 @@ msgstr "Ezabatu…"
 #: qml/PostDelegate/PostMenu.qml:220
 #, kde-format
 msgid "Delete & Re-draft…"
-msgstr "Ezabatu eta zirriborroa egin…"
+msgstr "Ezabatu eta zirriborro bihurtu…"
 
 #: qml/PostDelegate/PostPoll.qml:41
 #, kde-format
@@ -4644,12 +4597,10 @@ msgid "Edit Account"
 msgstr "Editatu kontua"
 
 #: qml/Settings/AccountPage.qml:35
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu 'Browser' being a web browser"
-#| msgid "Open in Browser"
+#, kde-format
 msgctxt "@abel Account preferences"
 msgid "Open In Browser"
-msgstr "Ireki arakatzailean"
+msgstr "Arakatzailean ireki"
 
 #: qml/Settings/AccountPage.qml:52 qml/Settings/ProfileEditor.qml:31
 #, kde-format
@@ -4814,7 +4765,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check Boosting means to repost, or retweet"
 msgid "Ask before boosting"
-msgstr "Galdetu goratu aurretik"
+msgstr "Galdetu berrargitaratu aurretik"
 
 #: qml/Settings/AppearancePage.qml:97
 #, kde-format
@@ -4825,7 +4776,7 @@ msgstr "Postak"
 #: qml/Settings/AppearancePage.qml:103
 #, kde-format
 msgid "Show number of favorites and boosts"
-msgstr "Erakutsi gogokoen eta goratutakoen kopuru"
+msgstr "Gogokoen eta berrargitalpenen kopurua erakutsi"
 
 #: qml/Settings/AppearancePage.qml:118
 #, kde-format
@@ -4889,7 +4840,7 @@ msgstr "Oztopatu gabeko domeinuak"
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Filter"
-msgstr "Sortu iragazkia"
+msgstr "Iragazkia sortu"
 
 #: qml/Settings/EditFilterPage.qml:30
 #, kde-format
@@ -5069,7 +5020,7 @@ msgstr "Iragazkiak"
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Create Filter"
-msgstr "Sortu iragazkia"
+msgstr "Iragazkia sortu"
 
 #: qml/Settings/FiltersPage.qml:79
 #, kde-format
@@ -5311,12 +5262,12 @@ msgstr ""
 #: qml/Settings/NotificationsPage.qml:255
 #, kde-format
 msgid "Boosts"
-msgstr "Goratzeak"
+msgstr "Berrargitalpenak"
 
 #: qml/Settings/NotificationsPage.qml:256
 #, kde-format
 msgid "When someone boosted one of your posts."
-msgstr "Norbaitek zure postetako bat goratu duenean."
+msgstr "Norbaitek zure postetako bat berrargitaratu duenean."
 
 #: qml/Settings/NotificationsPage.qml:273
 #, kde-format
@@ -5618,13 +5569,13 @@ msgstr "%1 aukera"
 #, kde-format
 msgctxt "@action:intoolbar Poll toolbar"
 msgid "Add Choice"
-msgstr "Gehitu aukera"
+msgstr "Aukera gehitu"
 
 #: qml/StatusComposer/ComposerPoll.qml:70
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "Add a new poll choice"
-msgstr "Gehitu galdeketa aukera berri bat"
+msgstr "Galdeketa aukera berri bat gehitu"
 
 #: qml/StatusComposer/ComposerPoll.qml:89
 #, kde-format
@@ -5896,7 +5847,7 @@ msgstr "Dagoen posta bat ezin duzu aldatu ez eta galdeketa bat gehitu ere."
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add poll"
-msgstr "Gehitu galdeketa"
+msgstr "Galdeketa gehitu"
 
 #: qml/StatusComposer/StatusComposer.qml:543
 #, kde-format
@@ -5968,13 +5919,13 @@ msgstr "Postaren hizkuntza"
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Emoji"
-msgstr "Gehitu emojia"
+msgstr "Emojia gehitu"
 
 #: qml/StatusComposer/StatusComposer.qml:671
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add emoji"
-msgstr "Gehitu emojia"
+msgstr "Emojia gehitu"
 
 #: qml/StatusComposer/StatusComposer.qml:701
 #, kde-format
@@ -6002,8 +5953,8 @@ msgid ""
 "Some of your media is missing alt text. Adding descriptions help everyone, "
 "especially the visually impaired."
 msgstr ""
-"Zure hedabideetako batzuk ordezko testua falta dute. Deskribapenak gehitzea "
-"guztiontzako lagungarria da, bereziki ikusmen urritasuna dutenentzat."
+"Zure media-elementu batzuk ez dute ordezko testurik. Deskribapenak gehitzea "
+"guztiontzat lagungarria da, ikusmen urritasuna dutenentzat bereziki."
 
 #: qml/TimelinePage.qml:41 timeline/accountmodel.cpp:41
 #, kde-format
@@ -6018,7 +5969,7 @@ msgstr "Etxea (%1)"
 #: qml/TimelinePage.qml:115
 #, kde-format
 msgid "Show Boosts"
-msgstr "Erakutsi goratzeak"
+msgstr "Berrargitalpenak erakutsi"
 
 #: qml/TimelinePage.qml:122
 #, kde-format
@@ -6135,7 +6086,7 @@ msgstr "Konfiguratu '%1'"
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Account"
-msgstr "Gehitu kontua"
+msgstr "Kontua gehitu"
 
 #: tokodonapplication.cpp:91
 #, kde-format
