@@ -1,11 +1,12 @@
 # SPDX-FileCopyrightText: 2021-2026 Xavier Besnard <xavier.besnard@kde.org>
 # Xavier Besnard <xavier.besnard@kde.org>, 2022, 2023.
+# SPDX-FileCopyrightText: 2026 Côme Allart <come.allart@netc.fr>
 msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-10 00:44+0000\n"
-"PO-Revision-Date: 2026-07-11 09:29+0200\n"
+"PO-Revision-Date: 2026-08-20 10:42+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -13,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 26.04.3\n"
+"X-Generator: Lokalize 26.07.90\n"
 
 #: account/abstractaccount.cpp:33
 #, kde-format
@@ -325,7 +326,7 @@ msgstr "Abonné(e)s"
 #, kde-format
 msgctxt "@title"
 msgid "Following"
-msgstr "Suivant"
+msgstr "Abonnements"
 
 #: account/socialgraphmodel.cpp:41
 #, kde-format
@@ -644,12 +645,12 @@ msgstr "Personne"
 #: editor/listeditorbackend.cpp:121
 #, kde-format
 msgid "Members of the list"
-msgstr "Membres de la liste"
+msgstr "Les membres de la liste"
 
 #: editor/listeditorbackend.cpp:121
 #, kde-format
 msgid "Any followed users"
-msgstr "Aucun utilisateur suiveur"
+msgstr "Les personnes que vous suivez"
 
 #: editor/polltimemodel.cpp:14
 #, kde-format
@@ -760,7 +761,7 @@ msgstr "Recevoir des notifications automatiques"
 #, kde-format
 msgid "Error occurred when fetching the latest notification."
 msgstr ""
-"Une erreur est survenue durant la rechercher de la dernière notification."
+"Une erreur est survenue durant la recherche de la dernière notification."
 
 #: qml/AccountHeader.qml:55
 #, kde-format
@@ -1021,8 +1022,8 @@ msgstr[1] "<b>%1</b> messages"
 msgctxt "@label User's number of followed accounts"
 msgid "<b>%1</b> follows"
 msgid_plural "<b>%1</b> following"
-msgstr[0] "<b>%1</b> suit"
-msgstr[1] "<b>%1</b> suiveurs"
+msgstr[0] "<b>%1</b> abonnement"
+msgstr[1] "<b>%1</b> abonnements"
 
 #: qml/AccountHeader.qml:959
 #, kde-format
@@ -1190,7 +1191,7 @@ msgid ""
 "Collections allow you to categorize accounts you want other people to follow."
 msgstr ""
 "Les collections vous permettent de catégoriser les comptes que vous "
-"souhaitez le suivi par d'autres personnes."
+"souhaitez que d'autres personnes suivent."
 
 #: qml/Components/BoostAltTextReminderDialog.qml:19
 #, kde-format
@@ -1206,7 +1207,7 @@ msgid ""
 "visually impaired."
 msgstr ""
 "Certains média dans ce message ne possèdent aucun texte alternatif, ce qui "
-"est génant pour les personnes malvoyantes."
+"est gênant pour les personnes malvoyantes."
 
 #: qml/Components/BoostAltTextReminderDialog.qml:34
 #, kde-format
@@ -1593,7 +1594,7 @@ msgstr "Aucun utilisateur"
 #, kde-format
 msgctxt "@title 'Following' as in the users you're following on Mastodon."
 msgid "Following"
-msgstr "Suivant"
+msgstr "Abonnements"
 
 #: qml/FollowingPage.qml:41 qml/Settings/SafetyPage.qml:26
 #: qml/TimelinePage.qml:110
@@ -1637,7 +1638,7 @@ msgid ""
 "With the Following view, easily check on each user you're following and only "
 "their posts - sorted by recent activity."
 msgstr ""
-"Avec la vue « Suivante », vérifier facilement chaque utilisateur que vous "
+"Avec la vue Abonnements, vérifiez facilement chaque utilisateur que vous "
 "suivez et uniquement ses messages - triés par activité récente."
 
 #: qml/FullScreenImage.qml:33
@@ -2218,7 +2219,7 @@ msgstr "Explorer"
 #, kde-format
 msgctxt "@action:button A list of this account's followed accounts"
 msgid "Following"
-msgstr "Suivant"
+msgstr "Abonnements"
 
 #: qml/Main.qml:703
 #, kde-format
@@ -3693,7 +3694,7 @@ msgstr "Messages"
 #, kde-format
 msgctxt "Show only follows"
 msgid "Follows"
-msgstr "Suivis"
+msgstr "Abonnements"
 
 #: qml/NotificationPage.qml:155
 #, kde-format
@@ -4619,7 +4620,7 @@ msgstr ""
 #: qml/Settings/AccountPage.qml:166
 #, kde-format
 msgid "Publicly list follows and followers"
-msgstr "Lister publiquement les suiveurs et les abonnés"
+msgstr "Lister publiquement les personnes que vous suivez et les abonnés"
 
 #: qml/Settings/AccountPage.qml:167
 #, kde-format
@@ -5085,7 +5086,7 @@ msgstr "Ignorer"
 #, kde-format
 msgctxt "@label Notification preferences"
 msgid "People you don't follow"
-msgstr "Les personnes que vous ne suivez pas"
+msgstr "Personnes que vous ne suivez pas"
 
 #: qml/Settings/NotificationsPage.qml:78
 #, kde-format
@@ -5097,7 +5098,7 @@ msgstr "Jusqu'à ce que vous les approuviez manuellement."
 #, kde-format
 msgctxt "@label Notification preferences"
 msgid "People not following you"
-msgstr "Personne ne vous suivant pas"
+msgstr "Personnes ne vous suivant pas"
 
 #: qml/Settings/NotificationsPage.qml:85
 #, kde-format
@@ -5223,7 +5224,7 @@ msgstr "Quand une personne a donné un coup de pouce à l'un de vos messages."
 #: qml/Settings/NotificationsPage.qml:273
 #, kde-format
 msgid "New followers"
-msgstr "Nouveaux suiveurs"
+msgstr "Nouveaux abonnés"
 
 #: qml/Settings/NotificationsPage.qml:274
 #, kde-format
@@ -5233,7 +5234,7 @@ msgstr "Quand quelqu'un vous suit."
 #: qml/Settings/NotificationsPage.qml:291
 #, kde-format
 msgid "New follow requests"
-msgstr "Nouvelles requêtes de suivi"
+msgstr "Nouvelles demandes de suivi"
 
 #: qml/Settings/NotificationsPage.qml:292
 #, kde-format
@@ -6113,7 +6114,7 @@ msgstr "Ouvrir le menu « Explorer »"
 #, kde-format
 msgctxt "@action:button A list of this account's followed accounts"
 msgid "Open Following"
-msgstr "Ouvrir le suivant"
+msgstr "Ouvrir les abonnements"
 
 #: tokodonapplication.cpp:158
 #, kde-format
