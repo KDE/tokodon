@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-10 02:38+0000\n"
-"PO-Revision-Date: 2026-02-04 10:42+0200\n"
+"PO-Revision-Date: 2026-02-25 19:23+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -228,10 +228,9 @@ msgstr ""
 
 #: account/notificationhandler.cpp:155
 #: qml/Notifications/UserInteractionLabel.qml:94
-#, fuzzy, kde-format
-#| msgid "%1 boosted your post"
+#, kde-format
 msgid "%1 quoted your post"
-msgstr "%1 tehosti julkaisusi"
+msgstr "%1 lainasi julkaisuasi"
 
 #: account/notificationhandler.cpp:163
 #, kde-format
@@ -3753,11 +3752,10 @@ msgid "Follows"
 msgstr "Seuraamiset"
 
 #: qml/NotificationPage.qml:155
-#, fuzzy, kde-format
-#| msgid "Show Boosts"
+#, kde-format
 msgctxt "Show only quotes"
 msgid "Quotes"
-msgstr "Piilota tehostukset"
+msgstr "Lainaukset"
 
 #: qml/NotificationPage.qml:164
 #, fuzzy, kde-format
@@ -4095,9 +4093,7 @@ msgid "No quotes"
 msgstr "Ei lainauksia"
 
 #: qml/PostDelegate/InformationBar.qml:141
-#, fuzzy, kde-format
-#| msgid "%1 quotes"
-#| msgid_plural "%1 quotes"
+#, kde-format
 msgid "%1 quote"
 msgid_plural "%1 quotes"
 msgstr[0] "%1 lainaus"
@@ -4542,18 +4538,16 @@ msgid "Search"
 msgstr "Etsi"
 
 #: qml/SearchView.qml:33
-#, fuzzy, kde-format
-#| msgctxt "@action Pop out the status composer"
-#| msgid "Pop Out"
+#, kde-format
 msgctxt "@action:button Pop out search results into its own page"
 msgid "Pop Out"
-msgstr "Ponnahtaa esiin"
+msgstr "Ponnauta esiin"
 
 #: qml/SearchView.qml:35
 #, kde-format
 msgctxt "@info"
 msgid "Pop out search results to a full page"
-msgstr ""
+msgstr "Ponnauta hakutulokset täydelle sivulle"
 
 #: qml/SearchView.qml:61
 #, kde-format
@@ -5213,34 +5207,28 @@ msgid "Events"
 msgstr "Tapahtumat"
 
 #: qml/Settings/NotificationsPage.qml:154
-#, fuzzy, kde-format
-#| msgctxt "@action:button See all familiar followers"
-#| msgid "View All"
+#, kde-format
 msgctxt "@action:button"
 msgid "Hide in All"
-msgstr "Näytä"
+msgstr "Piilota kaikista"
 
 #: qml/Settings/NotificationsPage.qml:154
 #, kde-format
 msgctxt "@action:button"
 msgid "Show in All"
-msgstr ""
+msgstr "Näytä kaikissa"
 
 #: qml/Settings/NotificationsPage.qml:173
-#, fuzzy, kde-format
-#| msgctxt "@action:button Account Notifications"
-#| msgid "Open Notifications"
+#, kde-format
 msgctxt "@action:button"
 msgid "Disable notifications"
-msgstr "Avaa ilmoitukset"
+msgstr "Poista ilmoitukset käytöstä"
 
 #: qml/Settings/NotificationsPage.qml:173
-#, fuzzy, kde-format
-#| msgctxt "@action:button Account Notifications"
-#| msgid "Open Notifications"
+#, kde-format
 msgctxt "@action:button"
 msgid "Enable notifications"
-msgstr "Avaa ilmoitukset"
+msgstr "Käytä ilmoituksia"
 
 #: qml/Settings/NotificationsPage.qml:201
 #, kde-format
@@ -5255,16 +5243,14 @@ msgstr ""
 "Kun joku mainitsee sinut uudessa julkaisussa tai vastaa johonkin säikeeseesi."
 
 #: qml/Settings/NotificationsPage.qml:219
-#, fuzzy, kde-format
-#| msgid "Show Boosts"
+#, kde-format
 msgid "Quotes"
-msgstr "Piilota tehostukset"
+msgstr "Lainaukset"
 
 #: qml/Settings/NotificationsPage.qml:220
-#, fuzzy, kde-format
-#| msgid "When someone boosted one of your posts."
+#, kde-format
 msgid "When someone quotes you in a new post"
-msgstr "Kun joku tehostaa jonkin julkaisusi."
+msgstr "Kun joku lainaa sinua uudessa julkaisussa"
 
 #: qml/Settings/NotificationsPage.qml:237
 #, kde-format
