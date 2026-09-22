@@ -5,11 +5,11 @@ pragma ComponentBehavior: Bound
 
 import QtQuick
 
-import org.kde.kirigamiaddons.labs.components as KirigamiComponents
+import org.kde.kirigamiaddons.labs.components as Labs
 import org.kde.kirigami as Kirigami
 import org.kde.prison as Prison
 
-KirigamiComponents.AbstractMaximizeComponent {
+Labs.AbstractMaximizeComponent {
     id: root
 
     required property string url
