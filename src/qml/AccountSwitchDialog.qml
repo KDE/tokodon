@@ -10,7 +10,6 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 
 import org.kde.kirigamiaddons.components as KirigamiComponents
-import org.kde.kirigamiaddons.delegates as Delegates
 
 import org.kde.tokodon
 
@@ -43,9 +42,9 @@ Kirigami.Dialog {
 
         currentIndex: AccountManager.selectedIndex
 
-        footer: Delegates.RoundedItemDelegate {
+        footer: QQC2.ItemDelegate {
             id: addDelegate
-            width: parent.width
+            width: ListView.view.width
             highlighted: focus && !accountView.addAccount.pressed
             Component.onCompleted: accountView.addAccount = this
             icon {
@@ -54,11 +53,19 @@ Kirigami.Dialog {
                 height: Kirigami.Units.iconSizes.smallMedium
             }
             text: i18nc("@button: login to or register a new account.", "Add Account")
-            contentItem: Delegates.SubtitleContentItem {
-                itemDelegate: addDelegate
+            contentItem: Kirigami.IconTitleSubtitle {
+                title: addDelegate.text
                 subtitle: i18n("Log in or create a new account")
-                labelItem.textFormat: Text.PlainText
-                subtitleItem.textFormat: Text.PlainText
+                icon: icon.fromControlsIcon(addDelegate.icon)
+                selected: addDelegate.highlighted || addDelegate.down
+                font: addDelegate.font
+
+                // TODO: Remove when we can depend on Kirigami 6.31
+                Component.onCompleted: {
+                    if (textFormat !== undefined) {
+                        textFormat = Text.PlainText;
+                    }
+                }
             }
 
             action: Kirigami.Action {
@@ -108,7 +115,7 @@ Kirigami.Dialog {
             }
         }
 
-        delegate: Delegates.RoundedItemDelegate {
+        delegate: QQC2.ItemDelegate {
             id: userDelegate
 
             required property int index
@@ -117,8 +124,9 @@ Kirigami.Dialog {
             required property var account
             required property bool hasIssue
 
-            width: parent.width
+            width: ListView.view.width
             text: displayName
+            highlighted: focus && !accountView.addAccount.pressed
 
             contentItem: RowLayout {
                 KirigamiComponents.Avatar {
@@ -132,11 +140,13 @@ Kirigami.Dialog {
                     name: userDelegate.displayName
                 }
 
-                Delegates.SubtitleContentItem {
-                    itemDelegate: userDelegate
+                Kirigami.TitleSubtitle {
+                    title: userDelegate.text
                     subtitle: userDelegate.instance
-                    labelItem.textFormat: Text.PlainText
-                    subtitleItem.textFormat: Text.PlainText
+                    textFormat: Text.PlainText
+                    selected: userDelegate.highlighted || userDelegate.down
+                    font: userDelegate.font
+                    Layout.fillWidth: true
                 }
 
                 QQC2.Control {

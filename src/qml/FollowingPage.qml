@@ -6,7 +6,6 @@ import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 
 import org.kde.kirigami as Kirigami
-import org.kde.kirigamiaddons.delegates as Delegates
 import org.kde.kitemmodels as KItemModels
 import org.kde.kirigamiaddons.components as KirigamiComponents
 
@@ -90,7 +89,7 @@ Kirigami.Page {
                 currentIndex: -1
                 clip: true
 
-                delegate: Delegates.RoundedItemDelegate {
+                delegate: QQC2.ItemDelegate {
                     id: delegate
 
                     required property var identity
@@ -98,6 +97,7 @@ Kirigami.Page {
 
                     text: identity.username
                     highlighted: root.currentAccountId === identity.id
+                    width: ListView.view.width
 
                     contentItem: InlineIdentityInfo {
                         spacing: Kirigami.Units.mediumSpacing

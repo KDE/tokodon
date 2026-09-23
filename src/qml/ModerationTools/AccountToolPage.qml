@@ -7,7 +7,6 @@ import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import org.kde.tokodon
 import org.kde.kirigamiaddons.formcard as FormCard
-import org.kde.kirigamiaddons.delegates as Delegates
 
 import "../PostDelegate"
 
@@ -225,14 +224,13 @@ Kirigami.ScrollablePage {
         id: accountView
         model: AccountsToolModel{}
 
-        delegate: Delegates.RoundedItemDelegate {
+        delegate: QQC2.ItemDelegate {
             id: delegate
 
             required property int index
             required property var identity
 
-            implicitWidth: ListView.view.width
-            Layout.fillWidth: true
+            width: ListView.view.width
 
             onClicked: root.QQC2.ApplicationWindow.window.pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "MainAccountToolPage"), {
                 identity: delegate.identity,

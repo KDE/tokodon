@@ -7,7 +7,6 @@ import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import org.kde.tokodon
 import org.kde.kirigamiaddons.formcard as FormCard
-import org.kde.kirigamiaddons.delegates as Delegates
 
 Kirigami.ScrollablePage {
     id: root
@@ -241,7 +240,7 @@ Kirigami.ScrollablePage {
         model: FederationToolModel {}
         currentIndex: -1
 
-        delegate: Delegates.RoundedItemDelegate {
+        delegate: QQC2.ItemDelegate {
             id: delegate
 
             required property int index
@@ -281,9 +280,11 @@ Kirigami.ScrollablePage {
             text: delegate.domain
 
             contentItem: RowLayout {
-                Delegates.SubtitleContentItem {
-                    itemDelegate: delegate
+                Kirigami.TitleSubtitle {
+                    title: delegate.text
                     subtitle: root.isDomainBlock ? delegate.severity : i18n("Allowed for federation")
+                    selected: delegate.highlighted || delegate.down
+                    font: delegate.font
                 }
 
                 Item {

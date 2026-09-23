@@ -9,7 +9,6 @@ import QtQuick.Window
 import QtQuick.Controls as QQC2
 
 import org.kde.kirigami as Kirigami
-import org.kde.kirigamiaddons.delegates as Delegates
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kitemmodels as KItemModels
 
@@ -202,7 +201,7 @@ Kirigami.ScrollablePage {
             filterRoleName: "domain"
         }
 
-        header: Delegates.RoundedItemDelegate {
+        header: QQC2.ItemDelegate {
             onClicked: root.tappedDomain(root.filterString)
 
             property int index: 0
@@ -211,10 +210,14 @@ Kirigami.ScrollablePage {
 
             text: root.filterString
             icon.name: "compass-symbolic"
+            width: ListView.view.width
 
-            contentItem: Delegates.SubtitleContentItem {
-                itemDelegate: parent
+             contentItem: Kirigami.IconTitleSubtitle {
+                title: parent.text
                 subtitle: i18n("Custom Server")
+                icon: icon.fromControlsIcon(parent.icon)
+                selected: parent.highlighted || parent.down
+                font: parent.font
             }
 
             height: visible ? implicitHeight : 0
@@ -227,7 +230,7 @@ Kirigami.ScrollablePage {
         }
         section.property: "isPublic"
 
-        delegate: Delegates.RoundedItemDelegate {
+        delegate: QQC2.ItemDelegate {
             id: delegate
 
             required property int index
@@ -237,10 +240,14 @@ Kirigami.ScrollablePage {
 
             text: domain
             icon.source: iconSource
+            width: ListView.view.width
 
-            contentItem: Delegates.SubtitleContentItem {
-                itemDelegate: delegate
-                subtitle: delegate.description
+            contentItem: Kirigami.IconTitleSubtitle {
+                title: delegate.text
+                subtitle:delegate.description
+                icon: icon.fromControlsIcon(delegate.icon)
+                selected: delegate.highlighted || delegate.down
+                font: delegate.font
             }
 
             onClicked: root.tappedDomain(delegate.domain)

@@ -7,7 +7,6 @@ import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
 import org.kde.tokodon
 import QtQuick.Templates as T
-import org.kde.kirigamiaddons.delegates as Delegates
 import org.kde.kirigamiaddons.components as Components
 import org.kde.kitemmodels
 
@@ -76,7 +75,7 @@ Components.MessageDialog {
                 sortOrder: Qt.DescendingOrder
             }
 
-            delegate: Delegates.RoundedItemDelegate {
+            delegate: QQC2.ItemDelegate {
                 id: delegate
 
                 required property int index
@@ -87,6 +86,7 @@ Components.MessageDialog {
                 highlighted: ListView.isCurrentItem
                 text: name
                 icon.source: preferred ? "favorite" : undefined
+                width: ListView.view.width
 
                 onClicked: {
                     controlRoot.codeSelected(code);

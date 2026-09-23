@@ -3,10 +3,9 @@
 
 import QtQuick
 import QtQuick.Controls as QQC2
-import org.kde.kirigamiaddons.delegates as Delegates
 import org.kde.kirigami as Kirigami
 
-Delegates.RoundedItemDelegate {
+QQC2.ItemDelegate {
     id: emojiDelegate
 
     property string name

@@ -8,7 +8,6 @@ import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 
 import org.kde.kirigami as Kirigami
-import org.kde.kirigamiaddons.delegates as Delegates
 
 import org.kde.tokodon
 
@@ -27,7 +26,7 @@ Kirigami.ScrollablePage {
         }
         currentIndex: -1
 
-        delegate: Delegates.RoundedItemDelegate {
+        delegate: QQC2.ItemDelegate {
             id: delegate
 
             required property var index
@@ -35,6 +34,8 @@ Kirigami.ScrollablePage {
             required property string content
             required property date publishedAt
             required property var reactions
+
+            width: ListView.view.width
 
             contentItem: ColumnLayout {
                 id: layout

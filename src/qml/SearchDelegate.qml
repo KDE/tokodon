@@ -6,7 +6,6 @@ import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import Qt.labs.qmlmodels
 import org.kde.kirigami as Kirigami
-import org.kde.kirigamiaddons.delegates as Delegates
 import org.kde.kirigamiaddons.components as KirigamiComponents
 import org.kde.tokodon
 import './PostDelegate'
@@ -16,7 +15,7 @@ DelegateChooser {
     DelegateChoice {
         roleValue: SearchModel.Account
 
-        Delegates.RoundedItemDelegate {
+        QQC2.ItemDelegate {
             id: accountDelegate
 
             required property var authorIdentity
@@ -93,7 +92,7 @@ DelegateChooser {
     DelegateChoice {
         roleValue: SearchModel.Hashtag
 
-        Delegates.RoundedItemDelegate {
+        QQC2.ItemDelegate {
             id: delegate
 
             required property string id

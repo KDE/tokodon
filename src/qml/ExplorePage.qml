@@ -8,7 +8,6 @@ import Qt.labs.qmlmodels
 import org.kde.kirigami as Kirigami
 import org.kde.tokodon
 
-import org.kde.kirigamiaddons.delegates as Delegates
 import QtQml.Models
 import "./PostDelegate"
 import "./StatusComposer"
@@ -132,7 +131,7 @@ Kirigami.Page {
                     width: parent.width - (Kirigami.Units.largeSpacing * 4)
                 }
 
-                delegate: Delegates.RoundedItemDelegate {
+                delegate: QQC2.ItemDelegate {
                     id: delegate
 
                     required property string name
@@ -177,7 +176,7 @@ Kirigami.Page {
                     shouldLoadMore: trendingNewsAction.checked
                 }
 
-                delegate: Delegates.RoundedItemDelegate {
+                delegate: QQC2.ItemDelegate {
                     id: delegate
 
                     required property string title
@@ -320,7 +319,7 @@ Kirigami.Page {
                     shouldLoadMore: suggestedUsersAction.checked
                 }
 
-                delegate: Delegates.RoundedItemDelegate {
+                delegate: QQC2.ItemDelegate {
                     id: delegate
 
                     required property var identity

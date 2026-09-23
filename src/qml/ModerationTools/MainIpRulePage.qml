@@ -7,7 +7,6 @@ import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import org.kde.tokodon
 import org.kde.kirigamiaddons.formcard as FormCard
-import org.kde.kirigamiaddons.delegates as Delegates
 
 FormCard.FormCardPage {
     id: root

@@ -14,7 +14,6 @@ import QtQml.Models
 import org.kde.tokodon
 import org.kde.kitemmodels as KItemModels
 
-import org.kde.kirigamiaddons.delegates as Delegates
 import org.kde.kirigamiaddons.statefulapp as StatefulApp
 
 import "./StatusComposer"
@@ -179,7 +178,7 @@ StatefulApp.StatefulWindow {
                         filterString: "false"
                     }
 
-                    delegate: Delegates.RoundedItemDelegate {
+                    delegate: QQC2.ItemDelegate {
                         id: delegate
 
                         required property int index

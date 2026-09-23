@@ -5,11 +5,10 @@ import QtQuick
 import org.kde.kirigami as Kirigami
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
-import org.kde.kirigamiaddons.delegates as Delegates
 import org.kde.kirigamiaddons.components as KirigamiComponents
 import org.kde.tokodon
 
-Delegates.IndicatorItemDelegate {
+QQC2.ItemDelegate {
     id: root
 
     required property string id
@@ -18,6 +17,7 @@ Delegates.IndicatorItemDelegate {
     required property string relativeTime
     required property int conversationsCount
     required property string conversationId
+    required property bool unread
 
     readonly property bool showSeparator: root.index !== conversationsCount - 1
 
@@ -34,6 +34,14 @@ Delegates.IndicatorItemDelegate {
         id: rowLayout
 
         spacing: Kirigami.Units.smallSpacing
+
+        // TODO: Improve the look of this, maybe it should be a dot?
+        Rectangle {
+            color: root.unread ? Kirigami.Theme.highlightColor : "transparent"
+            width: Kirigami.Units.smallSpacing
+
+            Layout.fillHeight: true
+        }
 
         KirigamiComponents.Avatar {
             name: root.authorIdentity.displayName

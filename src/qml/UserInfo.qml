@@ -5,7 +5,6 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
-import org.kde.kirigamiaddons.delegates as Delegates
 import org.kde.kirigamiaddons.components as KirigamiComponents
 import org.kde.kirigamiaddons.statefulapp as StatefulApp
 
@@ -39,7 +38,7 @@ QQC2.Pane {
 
         spacing: 0
 
-        Delegates.RoundedItemDelegate {
+        QQC2.ItemDelegate {
             id: currentAccountDelegate
 
             readonly property string name: {
@@ -81,10 +80,11 @@ QQC2.Pane {
                     onClicked: root.openAccountPage()
                 }
 
-                Delegates.SubtitleContentItem {
+                Kirigami.TitleSubtitle {
+                    title: currentAccountDelegate.text
                     subtitle: AccountManager.selectedAccount ? '@' + AccountManager.selectedAccount.username : ''
-                    subtitleItem.textFormat: Text.PlainText
-                    itemDelegate: currentAccountDelegate
+                    selected: currentAccountDelegate.highlighted || currentAccountDelegate.down
+                    font: currentAccountDelegate.font
                     Layout.fillWidth: true
                 }
 

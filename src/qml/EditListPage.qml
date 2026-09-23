@@ -7,7 +7,6 @@ import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import QtQml.Models
 
-import org.kde.kirigamiaddons.delegates as Delegates
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kirigamiaddons.components as Components
 
@@ -142,13 +141,14 @@ FormCard.FormCardPage {
                             id: searchModel
                         }
 
-                        delegate: Delegates.RoundedItemDelegate {
+                        delegate: QQC2.ItemDelegate {
                             id: delegate
 
                             required property var index
                             required property var authorIdentity
 
                             text: authorIdentity.displayName
+                            width: ListView.view.width
 
                             onClicked: Navigation.openAccount(delegate.authorIdentity.id)
 

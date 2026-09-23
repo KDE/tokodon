@@ -6,7 +6,6 @@ import org.kde.kirigami as Kirigami
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import org.kde.tokodon
-import org.kde.kirigamiaddons.delegates as Delegates
 import org.kde.kirigamiaddons.components as KirigamiComponents
 
 import "../PostDelegate"
@@ -103,12 +102,14 @@ Kirigami.ScrollablePage {
         currentIndex: -1
         model: ReportToolModel{}
 
-        delegate: Delegates.RoundedItemDelegate {
+        delegate: QQC2.ItemDelegate {
             id: delegate
 
             required property int index
             required property var reportInfo
+
             visible: delegate.reportInfo !== null
+            width: ListView.view.width
 
             //hide the report if we get a {} response
             Component.onCompleted: if (!delegate.reportInfo) {

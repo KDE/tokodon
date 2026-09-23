@@ -7,7 +7,6 @@ import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import org.kde.tokodon
 import org.kde.kirigamiaddons.formcard as FormCard
-import org.kde.kirigamiaddons.delegates as Delegates
 
 Kirigami.ScrollablePage {
     id: root
@@ -130,7 +129,7 @@ Kirigami.ScrollablePage {
         model: EmailBlockToolModel {}
         currentIndex: -1
 
-        delegate: Delegates.RoundedItemDelegate {
+        delegate: QQC2.ItemDelegate {
             id: delegate
 
             required property int index
@@ -145,6 +144,7 @@ Kirigami.ScrollablePage {
             width: ListView.view.width
 
             text: delegate.domain
+            font.bold: true
 
             onClicked: {
                 emailInfoDialog.index = delegate.index
@@ -156,10 +156,11 @@ Kirigami.ScrollablePage {
             }
 
             contentItem: RowLayout {
-                Delegates.SubtitleContentItem {
-                    itemDelegate: delegate
-                    bold: true
+                Kirigami.TitleSubtitle {
+                    title: delegate.text
                     subtitle: i18nc("@info", "%1 sign-up attempts over the last week", delegate.totalCount)
+                    selected: delegate.highlighted || delegate.down
+                    font: delegate.font
                 }
 
                 Item {

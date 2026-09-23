@@ -6,7 +6,6 @@ import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import Qt.labs.qmlmodels
 import org.kde.kirigami as Kirigami
-import org.kde.kirigamiaddons.delegates as Delegates
 import org.kde.kirigamiaddons.components as KirigamiComponents
 import org.kde.tokodon
 import './PostDelegate'
@@ -86,13 +85,14 @@ ListView {
         DelegateChoice {
             roleValue: SearchModel.Account
 
-            Delegates.RoundedItemDelegate {
+            QQC2.ItemDelegate {
                 id: accountDelegate
                 clip: true
 
                 required property var authorIdentity
 
                 text: accountDelegate.authorIdentity.displayName
+                width: ListView.view.width
 
                 onClicked: {
                     Navigation.openAccount(accountDelegate.authorIdentity.id);
@@ -107,7 +107,7 @@ ListView {
 
         DelegateChoice {
             roleValue: SearchModel.Status
-            Delegates.RoundedItemDelegate {
+            QQC2.ItemDelegate {
                 id: accountDelegate
 
                 required property var post
@@ -170,11 +170,12 @@ ListView {
         DelegateChoice {
             roleValue: SearchModel.Hashtag
 
-            Delegates.RoundedItemDelegate {
+            QQC2.ItemDelegate {
                 id: delegate
                 required property string id
 
                 text: "#" + delegate.id
+                width: ListView.view.width
                 onClicked: {
                     Navigation.openTag(id);
                     root.itemSelected();

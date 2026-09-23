@@ -8,7 +8,6 @@ import org.kde.kirigami as Kirigami
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import QtQuick.Window
-import org.kde.kirigamiaddons.delegates as Delegates
 import org.kde.tokodon
 
 Kirigami.ScrollablePage {
@@ -37,13 +36,14 @@ Kirigami.ScrollablePage {
                     id: searchModel
                 }
 
-                delegate: Delegates.RoundedItemDelegate {
+                delegate: QQC2.ItemDelegate {
                     id: delegate
 
                     required property var index
                     required property var authorIdentity
 
                     text: authorIdentity.displayName
+                    width: ListView.view.width
 
                     onClicked: {
                         delegate.Window.window.pageStack.layers.pop();
@@ -125,6 +125,7 @@ Kirigami.ScrollablePage {
             id: conversationModel
         }
         delegate: ConversationDelegate {
+            width: ListView.view.width
             conversationsCount: conversationView.count
             onMarkAsRead: (conversationId) => {
                 conversationModel.markAsRead(conversationId)

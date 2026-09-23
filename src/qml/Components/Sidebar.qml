@@ -10,8 +10,6 @@ import QtQuick.Layouts
 import QtQml.Models
 import org.kde.tokodon
 
-import org.kde.kirigamiaddons.delegates as Delegates
-
 Kirigami.OverlayDrawer {
     id: drawer
 
@@ -56,7 +54,7 @@ Kirigami.OverlayDrawer {
         }
     }
 
-    component ActionDelegate: Delegates.RoundedItemDelegate {
+    component ActionDelegate: QQC2.ItemDelegate {
         id: delegate
 
         property int alertCount
@@ -64,6 +62,7 @@ Kirigami.OverlayDrawer {
         padding: Kirigami.Units.largeSpacing
         Layout.fillWidth: true
         activeFocusOnTab: true
+        highlighted: checked
 
         onClicked: {
             if (delegate.checkable) {

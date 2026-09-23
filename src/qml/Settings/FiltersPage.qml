@@ -9,7 +9,6 @@ import QtQuick.Layouts
 import QtQuick.Window
 
 import org.kde.kirigami as Kirigami
-import org.kde.kirigamiaddons.delegates as Delegates
 
 import org.kde.tokodon
 
@@ -47,13 +46,14 @@ Kirigami.ScrollablePage {
         }
         currentIndex: -1
 
-        delegate: Delegates.RoundedItemDelegate {
+        delegate: QQC2.ItemDelegate {
             id: delegate
 
             required property string id
             required property string title
 
             text: title
+            width: ListView.view.width
 
             onClicked: {
                 const page = root.Window.window.pageStack.layers.push(editFilterPage.createObject(root), {

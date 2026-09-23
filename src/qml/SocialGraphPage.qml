@@ -9,7 +9,6 @@ import org.kde.kirigami as Kirigami
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import org.kde.tokodon
-import org.kde.kirigamiaddons.delegates as Delegates
 
 import "./PostDelegate"
 
@@ -35,13 +34,14 @@ Kirigami.ScrollablePage {
 
         currentIndex: -1
 
-        delegate: Delegates.RoundedItemDelegate {
+        delegate: QQC2.ItemDelegate {
             id: delegate
 
             required property var index
             required property var identity
 
             text: identity.displayName
+            width: ListView.view.width
 
             onClicked: Navigation.openAccount(delegate.identity.id)
 
