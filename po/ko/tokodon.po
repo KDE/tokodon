@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-10 00:44+0000\n"
+"POT-Creation-Date: 2026-09-23 00:52+0000\n"
 "PO-Revision-Date: 2026-06-06 14:12+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -2342,7 +2342,7 @@ msgstr "초기화"
 #: qml/ModerationTools/AccountToolPage.qml:79
 #: qml/ModerationTools/FederationToolPage.qml:140
 #: qml/ModerationTools/FederationToolPage.qml:171
-#: qml/ModerationTools/IpRulePage.qml:121
+#: qml/ModerationTools/IpRulePage.qml:120
 #: qml/ModerationTools/MainFederationToolPage.qml:110
 #, kde-format
 msgctxt "@info:Cancel button to close the dailog"
@@ -2452,31 +2452,31 @@ msgstr "소유자"
 msgid "No accounts found"
 msgstr "계정을 찾을 수 없음"
 
-#: qml/ModerationTools/EmailBlockToolPage.qml:17
+#: qml/ModerationTools/EmailBlockToolPage.qml:16
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Email Block"
 msgstr "이메일 차단 만들기"
 
-#: qml/ModerationTools/EmailBlockToolPage.qml:31
+#: qml/ModerationTools/EmailBlockToolPage.qml:30
 #, kde-format
 msgctxt "@title"
 msgid "E-Mail Domain Info"
 msgstr "이메일 도메인 정보"
 
-#: qml/ModerationTools/EmailBlockToolPage.qml:40
+#: qml/ModerationTools/EmailBlockToolPage.qml:39
 #, kde-format
 msgctxt "@info The domain on which the block is imposed"
 msgid "Email domain name"
 msgstr "이메일 도메인 이름"
 
-#: qml/ModerationTools/EmailBlockToolPage.qml:48
+#: qml/ModerationTools/EmailBlockToolPage.qml:47
 #, kde-format
 msgctxt "@info Time when the block was imposed."
 msgid "Block created at"
 msgstr "차단 생성 시간"
 
-#: qml/ModerationTools/EmailBlockToolPage.qml:56
+#: qml/ModerationTools/EmailBlockToolPage.qml:55
 #, kde-format
 msgctxt ""
 "@info The counted accounts signup attempts using that email domain within "
@@ -2484,44 +2484,44 @@ msgctxt ""
 msgid "Account sign-up attempts in this week"
 msgstr "이번 주의 계정 등록 시도 횟수"
 
-#: qml/ModerationTools/EmailBlockToolPage.qml:64
+#: qml/ModerationTools/EmailBlockToolPage.qml:63
 #, kde-format
 msgctxt ""
 "@info The counted IP signup attempts of that email domain within that day."
 msgid "IP sign-up attempts in this week"
 msgstr "이번 주의 IP 등록 시도 횟수"
 
-#: qml/ModerationTools/EmailBlockToolPage.qml:73
-#: qml/ModerationTools/EmailBlockToolPage.qml:111
+#: qml/ModerationTools/EmailBlockToolPage.qml:72
+#: qml/ModerationTools/EmailBlockToolPage.qml:110
 #, kde-format
 msgctxt "@action:button"
 msgid "Cancel"
 msgstr "취소"
 
-#: qml/ModerationTools/EmailBlockToolPage.qml:78
+#: qml/ModerationTools/EmailBlockToolPage.qml:77
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete email block"
 msgstr "이메일 차단 삭제"
 
-#: qml/ModerationTools/EmailBlockToolPage.qml:82
+#: qml/ModerationTools/EmailBlockToolPage.qml:81
 #, kde-format
 msgid "Email block deleted"
 msgstr "이메일 차단 삭제됨"
 
-#: qml/ModerationTools/EmailBlockToolPage.qml:92
+#: qml/ModerationTools/EmailBlockToolPage.qml:91
 #, kde-format
 msgctxt "@title"
 msgid "New E-Mail Domain Block"
 msgstr "새 이메일 도메인 차단"
 
-#: qml/ModerationTools/EmailBlockToolPage.qml:102
+#: qml/ModerationTools/EmailBlockToolPage.qml:101
 #, kde-format
 msgctxt "@info The domain on which the block will be imposed"
 msgid "Domain *"
 msgstr "도메인 *"
 
-#: qml/ModerationTools/EmailBlockToolPage.qml:103
+#: qml/ModerationTools/EmailBlockToolPage.qml:102
 #, kde-format
 msgid ""
 "This can be the domain name that shows up in the e-mail address or the MX "
@@ -2529,24 +2529,24 @@ msgid ""
 msgstr ""
 "이메일 주소나 MX 레코드에 사용되는 도메인입니다. 계정을 등록할 때 대조합니다."
 
-#: qml/ModerationTools/EmailBlockToolPage.qml:116
+#: qml/ModerationTools/EmailBlockToolPage.qml:115
 #, kde-format
 msgctxt "@action:button"
 msgid "Resolve domain"
 msgstr "도메인 해결"
 
-#: qml/ModerationTools/EmailBlockToolPage.qml:120
+#: qml/ModerationTools/EmailBlockToolPage.qml:119
 #, kde-format
 msgid "New email block added"
 msgstr "새 이메일 차단 추가됨"
 
-#: qml/ModerationTools/EmailBlockToolPage.qml:163
+#: qml/ModerationTools/EmailBlockToolPage.qml:162
 #, kde-format
 msgctxt "@info"
 msgid "%1 sign-up attempts over the last week"
 msgstr "지난 주에 계정 등록이 %1회 시도됨"
 
-#: qml/ModerationTools/EmailBlockToolPage.qml:185
+#: qml/ModerationTools/EmailBlockToolPage.qml:184
 #, kde-format
 msgid "No email blocks found"
 msgstr "이메일 차단을 찾을 수 없음"
@@ -2743,158 +2743,158 @@ msgstr "연합 허용됨"
 msgid "No federations found"
 msgstr "연합을 찾을 수 없음"
 
-#: qml/ModerationTools/IpRulePage.qml:17
+#: qml/ModerationTools/IpRulePage.qml:16
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Rule"
 msgstr "규칙 만들기"
 
-#: qml/ModerationTools/IpRulePage.qml:25
+#: qml/ModerationTools/IpRulePage.qml:24
 #, kde-format
 msgid "New IP Rule"
 msgstr "새 IP 규칙"
 
-#: qml/ModerationTools/IpRulePage.qml:37
+#: qml/ModerationTools/IpRulePage.qml:36
 #, kde-format
 msgctxt "@info:Enter the domain address of the domain block"
 msgid "IP*"
 msgstr "IP*"
 
-#: qml/ModerationTools/IpRulePage.qml:43
+#: qml/ModerationTools/IpRulePage.qml:42
 #, kde-format
 msgctxt "@info:Time after which the rule will be lifted"
 msgid "Expire After"
 msgstr "만료 기간"
 
-#: qml/ModerationTools/IpRulePage.qml:48
+#: qml/ModerationTools/IpRulePage.qml:47
 #, kde-format
 msgctxt "@info:Option to block out the IP for 1 day"
 msgid "1 day"
 msgstr "1일"
 
-#: qml/ModerationTools/IpRulePage.qml:52
+#: qml/ModerationTools/IpRulePage.qml:51
 #, kde-format
 msgctxt "@info:Option to block out the IP for 2 weeks"
 msgid "2 weeks"
 msgstr "2주"
 
-#: qml/ModerationTools/IpRulePage.qml:56
+#: qml/ModerationTools/IpRulePage.qml:55
 #, kde-format
 msgctxt "@info:Option to block out the IP for 1 month"
 msgid "1 month"
 msgstr "1개월"
 
-#: qml/ModerationTools/IpRulePage.qml:60
+#: qml/ModerationTools/IpRulePage.qml:59
 #, kde-format
 msgctxt "@info:Option to block out the IP for 6 months"
 msgid "6 month"
 msgstr "6개월"
 
-#: qml/ModerationTools/IpRulePage.qml:64
+#: qml/ModerationTools/IpRulePage.qml:63
 #, kde-format
 msgctxt "@info:Option to block out the IP for 1 year"
 msgid "1 year"
 msgstr "1년"
 
-#: qml/ModerationTools/IpRulePage.qml:68
+#: qml/ModerationTools/IpRulePage.qml:67
 #, kde-format
 msgctxt "@info:Option to block out the IP for 3 years"
 msgid "3 year"
 msgstr "3년"
 
-#: qml/ModerationTools/IpRulePage.qml:79
+#: qml/ModerationTools/IpRulePage.qml:78
 #, kde-format
 msgctxt "@info: The comment attached with the ip rule"
 msgid "Comment"
 msgstr "설명"
 
-#: qml/ModerationTools/IpRulePage.qml:80
-#: qml/ModerationTools/MainIpRulePage.qml:110
+#: qml/ModerationTools/IpRulePage.qml:79
+#: qml/ModerationTools/MainIpRulePage.qml:109
 #, kde-format
 msgid "Optional. Remember why you added this rule."
 msgstr "선택 사항입니다. 왜 이 규칙을 추가했는지에 대한 정보입니다."
 
-#: qml/ModerationTools/IpRulePage.qml:87
+#: qml/ModerationTools/IpRulePage.qml:86
 #, kde-format
 msgctxt "@info:The rule attached with the ip rule"
 msgid "Rule *"
 msgstr "규칙 *"
 
-#: qml/ModerationTools/IpRulePage.qml:91
-#: qml/ModerationTools/MainIpRulePage.qml:121
+#: qml/ModerationTools/IpRulePage.qml:90
+#: qml/ModerationTools/MainIpRulePage.qml:120
 #, kde-format
 msgid "Choose what will happen with requests from this IP"
 msgstr "이 IP에서 들어온 요청을 어떻게 할 지 선택"
 
-#: qml/ModerationTools/IpRulePage.qml:98
-#: qml/ModerationTools/MainIpRulePage.qml:129
+#: qml/ModerationTools/IpRulePage.qml:97
+#: qml/ModerationTools/MainIpRulePage.qml:128
 #, kde-format
 msgid "Limit sign-ups"
 msgstr "계정 등록 제한"
 
-#: qml/ModerationTools/IpRulePage.qml:99
-#: qml/ModerationTools/MainIpRulePage.qml:130
+#: qml/ModerationTools/IpRulePage.qml:98
+#: qml/ModerationTools/MainIpRulePage.qml:129
 #, kde-format
 msgid "New sign-ups will require your approval"
 msgstr "새 계정 등록은 승인을 받아야 함"
 
-#: qml/ModerationTools/IpRulePage.qml:105
-#: qml/ModerationTools/MainIpRulePage.qml:136
+#: qml/ModerationTools/IpRulePage.qml:104
+#: qml/ModerationTools/MainIpRulePage.qml:135
 #, kde-format
 msgid "Block sign-ups"
 msgstr "계정 등록 차단"
 
-#: qml/ModerationTools/IpRulePage.qml:106
-#: qml/ModerationTools/MainIpRulePage.qml:137
+#: qml/ModerationTools/IpRulePage.qml:105
+#: qml/ModerationTools/MainIpRulePage.qml:136
 #, kde-format
 msgid "New sign-ups will not be possible"
 msgstr "새 계정 등록을 차단함"
 
-#: qml/ModerationTools/IpRulePage.qml:111
-#: qml/ModerationTools/MainIpRulePage.qml:143
+#: qml/ModerationTools/IpRulePage.qml:110
+#: qml/ModerationTools/MainIpRulePage.qml:142
 #, kde-format
 msgid "Block access"
 msgstr "접근 거부"
 
-#: qml/ModerationTools/IpRulePage.qml:112
-#: qml/ModerationTools/MainIpRulePage.qml:144
+#: qml/ModerationTools/IpRulePage.qml:111
+#: qml/ModerationTools/MainIpRulePage.qml:143
 #, kde-format
 msgid "Block access to all resources"
 msgstr "모든 자원에 대한 접근 거부"
 
-#: qml/ModerationTools/IpRulePage.qml:126
+#: qml/ModerationTools/IpRulePage.qml:125
 #, kde-format
 msgctxt "@info:Button to create a IP rule"
 msgid "Create IP rule"
 msgstr "IP 규칙 만들기"
 
-#: qml/ModerationTools/IpRulePage.qml:130
+#: qml/ModerationTools/IpRulePage.qml:129
 #, kde-format
 msgid "New IP rule added"
 msgstr "새 IP 규칙이 추가됨"
 
-#: qml/ModerationTools/IpRulePage.qml:156
-#: qml/ModerationTools/MainIpRulePage.qml:29
+#: qml/ModerationTools/IpRulePage.qml:155
+#: qml/ModerationTools/MainIpRulePage.qml:28
 #, kde-format
 msgctxt "@label"
 msgid "Limit sign-ups"
 msgstr "계정 등록 제한"
 
-#: qml/ModerationTools/IpRulePage.qml:158
-#: qml/ModerationTools/MainIpRulePage.qml:31
+#: qml/ModerationTools/IpRulePage.qml:157
+#: qml/ModerationTools/MainIpRulePage.qml:30
 #, kde-format
 msgctxt "@label"
 msgid "Block sign-ups"
 msgstr "계정 등록 차단"
 
-#: qml/ModerationTools/IpRulePage.qml:160
-#: qml/ModerationTools/MainIpRulePage.qml:33
+#: qml/ModerationTools/IpRulePage.qml:159
+#: qml/ModerationTools/MainIpRulePage.qml:32
 #, kde-format
 msgctxt "@label"
 msgid "Block access"
 msgstr "접근 거부"
 
-#: qml/ModerationTools/IpRulePage.qml:207
+#: qml/ModerationTools/IpRulePage.qml:206
 #, kde-format
 msgid "No IP rules found"
 msgstr "IP 규칙이 없습니다"
@@ -3166,7 +3166,7 @@ msgid "Domain block updated"
 msgstr "도메인 차단 업데이트됨"
 
 #: qml/ModerationTools/MainFederationToolPage.qml:132
-#: qml/ModerationTools/MainIpRulePage.qml:175
+#: qml/ModerationTools/MainIpRulePage.qml:174
 #, kde-format
 msgid "Blocked at"
 msgstr "차단 시기"
@@ -3212,120 +3212,120 @@ msgstr "신고 거절"
 msgid "Edit Domain Block"
 msgstr "도메인 차단 편집"
 
-#: qml/ModerationTools/MainIpRulePage.qml:40
+#: qml/ModerationTools/MainIpRulePage.qml:39
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove IP Rule"
 msgstr "IP 규칙 삭제"
 
-#: qml/ModerationTools/MainIpRulePage.qml:43
+#: qml/ModerationTools/MainIpRulePage.qml:42
 #, kde-format
 msgid "IP Rule Removed"
 msgstr "IP 규칙 삭제됨"
 
-#: qml/ModerationTools/MainIpRulePage.qml:51
+#: qml/ModerationTools/MainIpRulePage.qml:50
 #, kde-format
 msgctxt "@title:window"
 msgid "Update IP Rule"
 msgstr "IP 규칙 업데이트"
 
-#: qml/ModerationTools/MainIpRulePage.qml:63
+#: qml/ModerationTools/MainIpRulePage.qml:62
 #, kde-format
 msgctxt "@info IP address of the ip block"
 msgid "IP"
 msgstr "IP"
 
-#: qml/ModerationTools/MainIpRulePage.qml:72
+#: qml/ModerationTools/MainIpRulePage.qml:71
 #, kde-format
 msgctxt "@info Time after which the rule will be lifted"
 msgid "Expire After"
 msgstr "만료 기간"
 
-#: qml/ModerationTools/MainIpRulePage.qml:77
+#: qml/ModerationTools/MainIpRulePage.qml:76
 #, kde-format
 msgctxt "@info Option to block out the IP for 1 day"
 msgid "1 day"
 msgstr "1일"
 
-#: qml/ModerationTools/MainIpRulePage.qml:81
+#: qml/ModerationTools/MainIpRulePage.qml:80
 #, kde-format
 msgctxt "@info Option to block out the IP for 2 weeks"
 msgid "2 weeks"
 msgstr "2주"
 
-#: qml/ModerationTools/MainIpRulePage.qml:85
+#: qml/ModerationTools/MainIpRulePage.qml:84
 #, kde-format
 msgctxt "@info Option to block out the IP for 1 month"
 msgid "1 month"
 msgstr "1개월"
 
-#: qml/ModerationTools/MainIpRulePage.qml:89
+#: qml/ModerationTools/MainIpRulePage.qml:88
 #, kde-format
 msgctxt "@info Option to block out the IP for 6 months"
 msgid "6 month"
 msgstr "6개월"
 
-#: qml/ModerationTools/MainIpRulePage.qml:93
+#: qml/ModerationTools/MainIpRulePage.qml:92
 #, kde-format
 msgctxt "@info Option to block out the IP for 1 year"
 msgid "1 year"
 msgstr "1년"
 
-#: qml/ModerationTools/MainIpRulePage.qml:97
+#: qml/ModerationTools/MainIpRulePage.qml:96
 #, kde-format
 msgctxt "@info Option to block out the IP for 3 years"
 msgid "3 year"
 msgstr "3년"
 
-#: qml/ModerationTools/MainIpRulePage.qml:108
-#: qml/ModerationTools/MainIpRulePage.qml:189
+#: qml/ModerationTools/MainIpRulePage.qml:107
+#: qml/ModerationTools/MainIpRulePage.qml:188
 #, kde-format
 msgctxt "@info The comment attached with the ip rule"
 msgid "Comment"
 msgstr "설명"
 
-#: qml/ModerationTools/MainIpRulePage.qml:117
+#: qml/ModerationTools/MainIpRulePage.qml:116
 #, kde-format
 msgctxt "@info The rule attached with the ip rule"
 msgid "Rule *"
 msgstr "규칙 *"
 
-#: qml/ModerationTools/MainIpRulePage.qml:154
+#: qml/ModerationTools/MainIpRulePage.qml:153
 #, kde-format
 msgctxt "@info Cancel button to close the dailog"
 msgid "Cancel"
 msgstr "취소"
 
-#: qml/ModerationTools/MainIpRulePage.qml:159
+#: qml/ModerationTools/MainIpRulePage.qml:158
 #, kde-format
 msgctxt "@info Button to update an IP rule"
 msgid "Update IP rule"
 msgstr "IP 규칙 업데이트"
 
-#: qml/ModerationTools/MainIpRulePage.qml:164
+#: qml/ModerationTools/MainIpRulePage.qml:163
 #, kde-format
 msgid "IP rule updated"
 msgstr "IP 규칙 업데이트됨"
 
-#: qml/ModerationTools/MainIpRulePage.qml:182
+#: qml/ModerationTools/MainIpRulePage.qml:181
 #, kde-format
 msgctxt "@info Time after which the rule will be lifted"
 msgid "Expires at"
 msgstr "만료 시간"
 
-#: qml/ModerationTools/MainIpRulePage.qml:190
+#: qml/ModerationTools/MainIpRulePage.qml:189
 #, kde-format
 msgctxt "@info No public comment provided"
 msgid "None"
 msgstr "없음"
 
-#: qml/ModerationTools/MainIpRulePage.qml:196
+#: qml/ModerationTools/MainIpRulePage.qml:195
 #, kde-format
 msgctxt "@info The severity to be applied by this IP rule"
 msgid "Severity"
 msgstr "심각도"
 
-#: qml/ModerationTools/MainIpRulePage.qml:207
+#: qml/ModerationTools/MainIpRulePage.qml:206
 #, kde-format
 msgctxt "@action:button"
 msgid "Update IP Rule"
