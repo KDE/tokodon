@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-23 00:52+0000\n"
-"PO-Revision-Date: 2026-06-06 14:12+0200\n"
+"PO-Revision-Date: 2026-10-01 23:03+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -235,13 +235,12 @@ msgstr "%1 님이 내 글을 인용함"
 #: account/notificationhandler.cpp:163
 #, kde-format
 msgid "%1 added you to their collection"
-msgstr ""
+msgstr "%1 님이 나를 컬렉션에 추가함"
 
 #: account/notificationhandler.cpp:170
-#, fuzzy, kde-format
-#| msgid "%1 updated their post"
+#, kde-format
 msgid "%1 updated their collection"
-msgstr "%1 님이 게시물을 업데이트함"
+msgstr "%1 님이 컬렉션을 업데이트함"
 
 #: account/notificationhandler.cpp:174
 #, kde-format
@@ -376,12 +375,10 @@ msgid "Manage List Users"
 msgstr "목록 사용자 관리"
 
 #: account/socialgraphmodel.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Manage List Users"
+#, kde-format
 msgctxt "@title"
 msgid "Manage Collection Users"
-msgstr "목록 사용자 관리"
+msgstr "컬렉션 사용자 관리"
 
 #: account/socialgraphmodel.cpp:70
 #, kde-format
@@ -492,10 +489,9 @@ msgid "There is no one in this list yet."
 msgstr "이 리스트에 사용자가 없습니다."
 
 #: account/socialgraphmodel.cpp:135
-#, fuzzy, kde-format
-#| msgid "There is no one in this list yet."
+#, kde-format
 msgid "There is no one in this collection yet."
-msgstr "이 리스트에 사용자가 없습니다."
+msgstr "이 컬렉션에 사용자가 없습니다."
 
 #: account/suggestionsmodel.cpp:51
 #, kde-format
@@ -768,19 +764,16 @@ msgid "Go to Profile"
 msgstr "프로필로 이동"
 
 #: qml/AccountHeader.qml:105
-#, fuzzy, kde-format
-#| msgctxt "@info: Locale of the user."
-#| msgid "Account Locale"
+#, kde-format
 msgctxt "@info:label"
 msgid "Account memorialized"
-msgstr "계정 로캘"
+msgstr "고인의 계정으로 전환됨"
 
 #: qml/AccountHeader.qml:117
-#, fuzzy, kde-format
-#| msgid "Account editor"
+#, kde-format
 msgctxt "@info:label"
 msgid "Account suspended"
-msgstr "계정 편집기"
+msgstr "계정이 정지됨"
 
 #: qml/AccountHeader.qml:195
 #, kde-format
@@ -797,8 +790,7 @@ msgid "Follows you"
 msgstr "나를 팔로우함"
 
 #: qml/AccountHeader.qml:201
-#, fuzzy, kde-format
-#| msgid "Bot"
+#, kde-format
 msgctxt "@info:label This account is a bot and automated"
 msgid "Bot"
 msgstr "봇"
@@ -973,20 +965,16 @@ msgstr ""
 #, kde-format
 msgctxt "@info:label Featuring the following users:"
 msgid "Featuring:"
-msgstr ""
+msgstr "추천 사용자:"
 
 #: qml/AccountHeader.qml:832
-#, fuzzy, kde-format
-#| msgctxt "@action:button See all familiar followers"
-#| msgid "View %1 More"
+#, kde-format
 msgctxt "@action:button See all featured users"
 msgid "View %1 More"
 msgstr "%1명 더 보기"
 
 #: qml/AccountHeader.qml:832
-#, fuzzy, kde-format
-#| msgctxt "@action:button See all familiar followers"
-#| msgid "View All"
+#, kde-format
 msgctxt "@action:button See all featured users"
 msgid "View All"
 msgstr "모두 보기"
@@ -1147,81 +1135,66 @@ msgid "Your server has not made any announcements yet."
 msgstr "이 서버의 공지 사항이 없습니다."
 
 #: qml/CollectionPage.qml:64
-#, fuzzy, kde-format
-#| msgctxt "@action:button Edit current list"
-#| msgid "Edit…"
+#, kde-format
 msgctxt "@action:button Edit current collection"
 msgid "Edit…"
 msgstr "편집…"
 
 #: qml/CollectionPage.qml:129
-#, fuzzy, kde-format
-#| msgid "Remove"
+#, kde-format
 msgctxt "@action:button Remove from collection"
 msgid "Remove"
 msgstr "삭제"
 
 #: qml/CollectionPage.qml:146
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgctxt "@info:placeholder No accounts in this collection"
 msgid "No Accounts"
-msgstr "계정"
+msgstr "계정 없음"
 
 #: qml/CollectionsPage.qml:23
-#, fuzzy, kde-format
-#| msgctxt "Show more options"
-#| msgid "More actions"
+#, kde-format
 msgctxt "@title"
 msgid "Collections"
-msgstr "더 많은 동작"
+msgstr "컬렉션"
 
 #: qml/CollectionsPage.qml:26
-#, fuzzy, kde-format
-#| msgctxt "@action:button Create new list"
-#| msgid "Create New…"
+#, kde-format
 msgctxt "@action:button Create new collection"
 msgid "Create New…"
 msgstr "새로 만들기…"
 
 #: qml/CollectionsPage.qml:67
-#, fuzzy, kde-format
-#| msgid "No Conversations"
+#, kde-format
 msgid "No Collections"
-msgstr "대화 없음"
+msgstr "컬렉션 없음"
 
 #: qml/CollectionsPage.qml:68
-#, fuzzy, kde-format
-#| msgid "Lists allow you to categorize who you're following."
+#, kde-format
 msgid ""
 "Collections allow you to categorize accounts you want other people to follow."
-msgstr "리스트를 사용해서 팔로우하는 사용자를 분류할 수 있습니다."
+msgstr ""
+"컬렉션을 사용해서 다른 사용자가 팔로우하기를 추천하는 사용자를 분류할 수 있습"
+"니다."
 
 #: qml/Components/BoostAltTextReminderDialog.qml:19
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Alt Text Reminder"
+#, kde-format
 msgctxt "@title"
 msgid "Boost Alt Text Reminder"
-msgstr "대체 텍스트 알림"
+msgstr "부스트 대체 텍스트 알림"
 
 #: qml/Components/BoostAltTextReminderDialog.qml:23
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "Some of your media is missing alt text. Adding descriptions help "
-#| "everyone, especially the visually impaired."
+#, kde-format
 msgctxt "@label"
 msgid ""
 "Some media in this post is missing alt text, which hinders those who are "
 "visually impaired."
 msgstr ""
-"일부 미디어에 대체 텍스트가 없습니다. 대체 텍스트를 추가하면 시각 장애가 있"
-"는 사용자를 포함한 모두를 도울 수 있습니다."
+"이 게시물의 일부 미디어에 대체 텍스트가 없습니다. 시각 장애가 있는 사용자가 "
+"이해하기 어려울 수도 있습니다."
 
 #: qml/Components/BoostAltTextReminderDialog.qml:34
-#, fuzzy, kde-format
-#| msgid "Boost"
+#, kde-format
 msgctxt "@action:button Boost/Reblog this post anyway"
 msgid "Boost"
 msgstr "부스트"
@@ -1346,70 +1319,56 @@ msgid "Decrease follow request count"
 msgstr "팔로우 요청 개수 감소"
 
 #: qml/EditCollectionPage.qml:30
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Create Post"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Collection"
-msgstr "글 만들기"
+msgstr "컬렉션 만들기"
 
 #: qml/EditCollectionPage.qml:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Collection"
-msgstr ""
+msgstr "컬렉션 편집"
 
 #: qml/EditCollectionPage.qml:67
 #, kde-format
 msgctxt "@label:textbox Collection title"
 msgid "Name"
-msgstr ""
+msgstr "이름"
 
 #: qml/EditCollectionPage.qml:77
-#, fuzzy, kde-format
-#| msgctxt "@title:group Alternate text or description of the image"
-#| msgid "Description"
+#, kde-format
 msgctxt "@label:textbox Collection description"
 msgid "Description"
 msgstr "설명"
 
 #: qml/EditCollectionPage.qml:87
-#, fuzzy, kde-format
-#| msgctxt "login status"
-#| msgid "Sensitized"
+#, kde-format
 msgctxt "@label:textbox Whether this collection should be marked sensitive"
 msgid "Sensitive"
-msgstr "민감함으로 설정됨"
+msgstr "민감함으로 표시"
 
 #: qml/EditCollectionPage.qml:97
-#, fuzzy, kde-format
-#| msgctxt "@info:Filter out accounts with disabled moderation status"
-#| msgid "Disabled"
+#, kde-format
 msgctxt ""
 "@label:textbox Whether this collection should be discoverable by other users"
 msgid "Discoverable"
-msgstr "비활성화됨"
+msgstr "발견 가능"
 
 #: qml/EditCollectionPage.qml:108
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar Add users to list"
-#| msgid "Add Users"
+#, kde-format
 msgctxt "@action:intoolbar Add users to collection"
 msgid "Add Users"
 msgstr "사용자 추가"
 
 #: qml/EditCollectionPage.qml:119
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Add Users to List…"
+#, kde-format
 msgctxt "@title"
 msgid "Add Users to Collection…"
-msgstr "리스트에 사용자 추가…"
+msgstr "컬렉션에 사용자 추가…"
 
 #: qml/EditCollectionPage.qml:157
-#, fuzzy, kde-format
-#| msgctxt "@action:button Add user to this list"
-#| msgid "Add"
+#, kde-format
 msgctxt "@action:button Add user to this collection"
 msgid "Add"
 msgstr "추가"
@@ -1420,43 +1379,34 @@ msgid "Search among users you follow…"
 msgstr "팔로우하는 사용자에서 검색…"
 
 #: qml/EditCollectionPage.qml:236
-#, fuzzy, kde-format
-#| msgctxt "@action:button Create the list"
-#| msgid "Create"
+#, kde-format
 msgctxt "@action:button Create the collection"
 msgid "Create"
 msgstr "만들기"
 
 #: qml/EditCollectionPage.qml:238
-#, fuzzy, kde-format
-#| msgctxt "@action:button Save the edited list"
-#| msgid "Save"
+#, kde-format
 msgctxt "@action:button Save the edited collection"
 msgid "Save"
 msgstr "저장"
 
 #: qml/EditCollectionPage.qml:251
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgctxt "@action:button Delete the collection"
 msgid "Delete"
 msgstr "삭제"
 
 #: qml/EditCollectionPage.qml:258
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Deleting Filter"
+#, kde-format
 msgctxt "@title"
 msgid "Deleting Collection"
-msgstr "필터 삭제"
+msgstr "컬렉션 삭제"
 
 #: qml/EditCollectionPage.qml:259
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Are you sure you want to delete this list?"
+#, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to delete this collection?"
-msgstr "이 리스트를 삭제하시겠습니까?"
+msgstr "이 컬렉션을 삭제하시겠습니까?"
 
 #: qml/EditListPage.qml:30
 #, kde-format
@@ -2266,12 +2216,10 @@ msgid "Debug"
 msgstr "디버그"
 
 #: qml/Main.qml:728
-#, fuzzy, kde-format
-#| msgctxt "Show more options"
-#| msgid "More actions"
+#, kde-format
 msgctxt "@action:button This account's collections (a group of accounts)"
 msgid "Collections"
-msgstr "더 많은 동작"
+msgstr "컬렉션"
 
 #: qml/Main.qml:739
 #, kde-format
@@ -3714,12 +3662,10 @@ msgid "Quotes"
 msgstr "인용"
 
 #: qml/NotificationPage.qml:164
-#, fuzzy, kde-format
-#| msgctxt "Show more options"
-#| msgid "More actions"
+#, kde-format
 msgctxt "Show only quotes"
 msgid "Collections"
-msgstr "더 많은 동작"
+msgstr "컬렉션"
 
 #: qml/NotificationPage.qml:215
 #, kde-format
@@ -3775,21 +3721,18 @@ msgstr "#FediWrapped 보기"
 #: qml/Notifications/CollectionDelegate.qml:80
 #, kde-format
 msgid "%1 added you to a collection"
-msgstr ""
+msgstr "%1 님이 나를 컬렉션에 추가함"
 
 #: qml/Notifications/CollectionDelegate.qml:82
-#, fuzzy, kde-format
-#| msgid "%1 updated their post"
+#, kde-format
 msgid "%1 updated a collection"
-msgstr "%1 님이 게시물을 업데이트함"
+msgstr "%1 님이 컬렉션을 업데이트함"
 
 #: qml/Notifications/CollectionDelegate.qml:102
-#, fuzzy, kde-format
-#| msgctxt "@action:button See all familiar followers"
-#| msgid "View All"
+#, kde-format
 msgctxt "@action:button"
 msgid "View Collection"
-msgstr "모두 보기"
+msgstr "컬렉션 보기"
 
 #: qml/Notifications/FollowDelegate.qml:78
 #, kde-format
@@ -5314,17 +5257,15 @@ msgid "When you receive your #FediWrapped at the end of the year."
 msgstr "연말에 #FediWrapped 보고서를 받을 때입니다."
 
 #: qml/Settings/NotificationsPage.qml:439
-#, fuzzy, kde-format
-#| msgctxt "Show more options"
-#| msgid "More actions"
+#, kde-format
 msgctxt "@option:check"
 msgid "Collections"
-msgstr "더 많은 동작"
+msgstr "컬렉션"
 
 #: qml/Settings/NotificationsPage.qml:440
 #, kde-format
 msgid "When you're added to collections or collections were updated."
-msgstr ""
+msgstr "내가 컬렉션에 추가되었거나 컬렉션이 업데이트되었을 때입니다."
 
 #: qml/Settings/ProfileEditor.qml:60
 #, kde-format
@@ -6122,12 +6063,10 @@ msgid "Open Lists"
 msgstr "리스트 열기"
 
 #: tokodonapplication.cpp:176
-#, fuzzy, kde-format
-#| msgctxt "@action:button Direct one-on-one messages between users"
-#| msgid "Open Conversations"
+#, kde-format
 msgctxt "@action:button This account's collections (a group of accounts)"
 msgid "Open Collections"
-msgstr "대화 열기"
+msgstr "컬렉션 열기"
 
 #: tokodonapplication.cpp:182
 #, kde-format
