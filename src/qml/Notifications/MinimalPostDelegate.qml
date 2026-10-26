@@ -4,6 +4,7 @@
 pragma ComponentBehavior: Bound
 
 import QtQuick
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
@@ -65,7 +66,7 @@ QQC2.ItemDelegate {
     highlighted: false
     hoverEnabled: false
 
-    Accessible.description: root.spoilerText.length === 0 ? i18n("Normal Status") : i18n("Spoiler Status")
+    Accessible.description: root.spoilerText.length === 0 ? KI18n.i18n("Normal Status") : KI18n.i18n("Spoiler Status")
 
     function openPost(): void {
         if (root.clicked()) {

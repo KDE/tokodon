@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
 import QtQuick
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import QtQuick.Controls as QQC2
 
@@ -10,7 +11,7 @@ QQC2.Label {
 
     required property var date
 
-    text: i18nc("Last read on this date", "Last read on %1", Qt.formatDate(root.date))
+    text: KI18n.i18nc("Last read on this date", "Last read on %1", Qt.formatDate(root.date))
     color: Kirigami.Theme.disabledTextColor
     verticalAlignment: Qt.AlignVCenter
     horizontalAlignment: Qt.AlignHCenter

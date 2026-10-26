@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 
 import QtQuick
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
@@ -12,7 +13,7 @@ import org.kde.kirigamiaddons.components as KirigamiComponents
 import "../PostDelegate"
 
 Kirigami.ScrollablePage {
-    title: i18n("Accounts Tool Page")
+    title: KI18n.i18n("Accounts Tool Page")
     id: root
 
     header: ColumnLayout {
@@ -30,7 +31,7 @@ Kirigami.ScrollablePage {
             ColumnLayout {
                 Kirigami.Heading {
                     level: 4
-                    text: i18nc("@info:Combobox to choose Report Status", "Report Status")
+                    text: KI18n.i18nc("@info:Combobox to choose Report Status", "Report Status")
                     type: Kirigami.Heading.Type.Primary
                     horizontalAlignment: Text.AlignHCenter
                     Layout.fillWidth: true
@@ -42,11 +43,11 @@ Kirigami.ScrollablePage {
                     Layout.rightMargin: Kirigami.Units.largeSpacing
                     model: [
                         {
-                            display: i18nc("@info:Filter out unresolved reports", "Unresolved"),
+                            display: KI18n.i18nc("@info:Filter out unresolved reports", "Unresolved"),
                             value: ""
                         },
                         {
-                            display: i18nc("@info:Filter out resolved reports", "Resolved"),
+                            display: KI18n.i18nc("@info:Filter out resolved reports", "Resolved"),
                             value: "resolved"
                         },
                     ]
@@ -60,7 +61,7 @@ Kirigami.ScrollablePage {
             ColumnLayout {
                 Kirigami.Heading {
                     level: 4
-                    text: i18nc("@info:Combobox to choose the origin of report", "Report Origin")
+                    text: KI18n.i18nc("@info:Combobox to choose the origin of report", "Report Origin")
                     type: Kirigami.Heading.Type.Primary
                     horizontalAlignment: Text.AlignHCenter
 
@@ -73,15 +74,15 @@ Kirigami.ScrollablePage {
                     Layout.rightMargin: Kirigami.Units.largeSpacing
                     model: [
                         {
-                            display: i18nc("@info:Filter out accounts with any origin", "All"),
+                            display: KI18n.i18nc("@info:Filter out accounts with any origin", "All"),
                             value: ""
                         },
                         {
-                            display: i18nc("@info:Filter out accounts with local origin", "Local"),
+                            display: KI18n.i18nc("@info:Filter out accounts with local origin", "Local"),
                             value: "local"
                         },
                         {
-                            display: i18nc("@info:Filter out accounts with remote origin", "Remote"),
+                            display: KI18n.i18nc("@info:Filter out accounts with remote origin", "Remote"),
                             value: "remote"
                         },
                     ]
@@ -154,7 +155,7 @@ Kirigami.ScrollablePage {
 
                         Kirigami.Heading {
                             level: 5
-                            text: i18n("Reported By:")
+                            text: KI18n.i18n("Reported By:")
                             type: Kirigami.Heading.Type.Primary
                             elide: Text.ElideRight
 
@@ -197,7 +198,7 @@ Kirigami.ScrollablePage {
 
                         Kirigami.Heading {
                             level: 5
-                            text: i18n("Comment:")
+                            text: KI18n.i18n("Comment:")
                             type: Kirigami.Heading.Type.Primary
                             elide: Text.ElideRight
 
@@ -220,7 +221,7 @@ Kirigami.ScrollablePage {
 
                         Kirigami.Heading {
                             level: 5
-                            text: i18n("Assigned Account:")
+                            text: KI18n.i18n("Assigned Account:")
                             type: Kirigami.Heading.Type.Primary
                             elide: Text.ElideRight
 
@@ -245,7 +246,7 @@ Kirigami.ScrollablePage {
 
                             Kirigami.Heading {
                                 level: 4
-                                text: delegate.reportInfo.assignedModerator ? `@${delegate.reportInfo.assignedAccount.userLevelIdentity.account}` : i18nc("@info: No account assigned to the report","N/A")
+                                text: delegate.reportInfo.assignedModerator ? `@${delegate.reportInfo.assignedAccount.userLevelIdentity.account}` : KI18n.i18nc("@info: No account assigned to the report","N/A")
                                 elide: Text.ElideRight
                                 type: Kirigami.Heading.Type.Secondary
 
@@ -283,7 +284,7 @@ Kirigami.ScrollablePage {
 
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
-            text: i18n("No reports found")
+            text: KI18n.i18n("No reports found")
             visible: reportView.count === 0 && !reportView.model.loading
             width: parent.width - Kirigami.Units.gridUnit * 4
         }

@@ -4,6 +4,7 @@
 import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.components as Components
 
@@ -94,7 +95,7 @@ QQC2.Dialog {
             Layout.fillHeight: true
 
             Kirigami.Heading {
-                text: i18nc("@title:group Alternate text or description of the image", "Description")
+                text: KI18n.i18nc("@title:group Alternate text or description of the image", "Description")
                 level: 2
                 Layout.fillWidth: true
             }
@@ -112,7 +113,7 @@ QQC2.Dialog {
             Layout.fillHeight: true
 
             Kirigami.Heading {
-                text: i18nc("@title:group", "Focal point")
+                text: KI18n.i18nc("@title:group", "Focal point")
                 level: 2
                 Layout.fillWidth: true
             }

@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 
 import QtQuick
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
@@ -28,7 +29,7 @@ Kirigami.ScrollablePage {
     data: Kirigami.PromptDialog {
         id: textPromptDialog
 
-        title: i18n("Advanced Search")
+        title: KI18n.i18n("Advanced Search")
 
         leftPadding: 0
         rightPadding: 0
@@ -38,29 +39,29 @@ Kirigami.ScrollablePage {
         contentItem: ColumnLayout {
             FormCard.FormTextFieldDelegate {
                 id: username
-                label: i18nc("@info:placeholder Username for searching accounts", "Username:")
+                label: KI18n.i18nc("@info:placeholder Username for searching accounts", "Username:")
             }
             FormCard.FormDelegateSeparator {}
             FormCard.FormTextFieldDelegate {
                 id: displayName
-                label: i18nc("@info:placeholder display name for searching accounts", "Display Name:")
+                label: KI18n.i18nc("@info:placeholder display name for searching accounts", "Display Name:")
             }
             FormCard.FormDelegateSeparator {}
             FormCard.FormTextFieldDelegate {
                 id: email
-                label: i18nc("@info:placeholder email for searching accounts", "Email:")
+                label: KI18n.i18nc("@info:placeholder email for searching accounts", "Email:")
             }
             FormCard.FormDelegateSeparator {}
             FormCard.FormTextFieldDelegate {
                 id: ip
-                label: i18nc("@info:placeholder ip for searching accounts", "IP:")
+                label: KI18n.i18nc("@info:placeholder ip for searching accounts", "IP:")
             }
         }
 
         standardButtons: Kirigami.Dialog.NoButton
         customFooterActions: [
             Kirigami.Action {
-                text: i18nc("@info:Search button to initiate searching accounts", "Search")
+                text: KI18n.i18nc("@info:Search button to initiate searching accounts", "Search")
                 icon.name: "search"
                 onTriggered: {
                     accountView.model.username = username.text
@@ -71,12 +72,12 @@ Kirigami.ScrollablePage {
                 }
             },
             Kirigami.Action {
-                text: i18nc("@info:Reset button to reset all the text fields", "Reset")
+                text: KI18n.i18nc("@info:Reset button to reset all the text fields", "Reset")
                 icon.name: "edit-clear"
                 onTriggered: reset()
             },
             Kirigami.Action {
-                text: i18nc("@info:Cancel button to close the dailog", "Cancel")
+                text: KI18n.i18nc("@info:Cancel button to close the dailog", "Cancel")
                 icon.name: "dialog-cancel"
                 onTriggered: textPromptDialog.close();
 
@@ -93,7 +94,7 @@ Kirigami.ScrollablePage {
             ColumnLayout {
                 Kirigami.Heading {
                     level: 4
-                    text: i18nc("@info:Location combobox to choose location filters", "Location")
+                    text: KI18n.i18nc("@info:Location combobox to choose location filters", "Location")
                     type: Kirigami.Heading.Type.Primary
                     elide: Text.ElideRight
                     horizontalAlignment: Text.AlignHCenter
@@ -106,15 +107,15 @@ Kirigami.ScrollablePage {
                     Layout.rightMargin: Kirigami.Units.largeSpacing
                     model: [
                         {
-                            display: i18nc("@info:Filter out accounts from any location", "All"),
+                            display: KI18n.i18nc("@info:Filter out accounts from any location", "All"),
                             value: ""
                         },
                         {
-                            display: i18nc("@info:Filter out local accounts", "Local"),
+                            display: KI18n.i18nc("@info:Filter out local accounts", "Local"),
                             value: "local"
                         },
                         {
-                            display: i18nc("@info:Filter out remote accounts", "Remote"),
+                            display: KI18n.i18nc("@info:Filter out remote accounts", "Remote"),
                             value: "remote"
                         },
                     ]
@@ -128,7 +129,7 @@ Kirigami.ScrollablePage {
             ColumnLayout {
                 Kirigami.Heading {
                     level: 4
-                    text: i18nc("@info:Moderation Status combobox to choose between different moderation status filters", "Moderation Status")
+                    text: KI18n.i18nc("@info:Moderation Status combobox to choose between different moderation status filters", "Moderation Status")
                     type: Kirigami.Heading.Type.Primary
                     horizontalAlignment: Text.AlignHCenter
                     elide: Text.ElideRight
@@ -139,27 +140,27 @@ Kirigami.ScrollablePage {
                     id: moderationStatusCombobox
                     model: [
                         {
-                            display: i18nc("@info:Filter out accounts with any moderation status", "All"),
+                            display: KI18n.i18nc("@info:Filter out accounts with any moderation status", "All"),
                             value: ""
                         },
                         {
-                            display: i18nc("@info:Filter out accounts with active moderation status", "Active"),
+                            display: KI18n.i18nc("@info:Filter out accounts with active moderation status", "Active"),
                             value: "active"
                         },
                         {
-                            display: i18nc("@info:Filter out accounts with pending moderation status", "Pending"),
+                            display: KI18n.i18nc("@info:Filter out accounts with pending moderation status", "Pending"),
                             value: "pending"
                         },
                         {
-                            display: i18nc("@info:Filter out accounts with disabled moderation status", "Disabled"),
+                            display: KI18n.i18nc("@info:Filter out accounts with disabled moderation status", "Disabled"),
                             value: "disabled"
                         },
                         {
-                            display: i18nc("@info:Filter out accounts with silenced moderation status", "Silenced"),
+                            display: KI18n.i18nc("@info:Filter out accounts with silenced moderation status", "Silenced"),
                             value: "silenced"
                         },
                         {
-                            display: i18nc("@info:Filter out accounts with suspended moderation status", "Suspended"),
+                            display: KI18n.i18nc("@info:Filter out accounts with suspended moderation status", "Suspended"),
                             value: "suspended"
                         }
                     ]
@@ -172,7 +173,7 @@ Kirigami.ScrollablePage {
             ColumnLayout {
                 Kirigami.Heading {
                     level: 4
-                    text: i18nc("@info:Role combobox to choose between different role filters", "Role")
+                    text: KI18n.i18nc("@info:Role combobox to choose between different role filters", "Role")
                     type: Kirigami.Heading.Type.Primary
                     horizontalAlignment: Text.AlignHCenter
                     elide: Text.ElideRight
@@ -186,19 +187,19 @@ Kirigami.ScrollablePage {
                     model: [
                         ///todo: Dynamically fetch the roles
                         {
-                            display: i18nc("@info:Filter out accounts with any role", "All"),
+                            display: KI18n.i18nc("@info:Filter out accounts with any role", "All"),
                             value: ""
                         },
                         {
-                            display: i18nc("@info:Filter out accounts with moderator role", "Moderator"),
+                            display: KI18n.i18nc("@info:Filter out accounts with moderator role", "Moderator"),
                             value: "1"
                         },
                         {
-                            display: i18nc("@info:Filter out accounts with admin role", "Admin"),
+                            display: KI18n.i18nc("@info:Filter out accounts with admin role", "Admin"),
                             value: "2"
                         },
                         {
-                            display: i18nc("@info:Filter out accounts with owner role", "Owner"),
+                            display: KI18n.i18nc("@info:Filter out accounts with owner role", "Owner"),
                             value: "3"
                         },
                     ]
@@ -212,7 +213,7 @@ Kirigami.ScrollablePage {
         QQC2.Button {
             icon.name: "search"
             Layout.bottomMargin: Kirigami.Units.largeSpacing
-            text: i18n("Advanced Search")
+            text: KI18n.i18n("Advanced Search")
             Layout.alignment: Qt.AlignHCenter
             onClicked: textPromptDialog.open()
         }
@@ -296,7 +297,7 @@ Kirigami.ScrollablePage {
         }
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
-            text: i18n("No accounts found")
+            text: KI18n.i18n("No accounts found")
             visible: accountView.count === 0 && !accountView.model.loading
             width: parent.width - Kirigami.Units.gridUnit * 4
         }

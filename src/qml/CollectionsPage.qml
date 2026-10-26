@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 
 import QtQuick
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
@@ -20,10 +21,10 @@ Kirigami.ScrollablePage {
         model.fillTimeline();
     }
 
-    title: i18nc("@title", "Collections")
+    title: KI18n.i18nc("@title", "Collections")
 
     actions: Kirigami.Action {
-        text: i18nc("@action:button Create new collection", "Create New…")
+        text: KI18n.i18nc("@action:button Create new collection", "Create New…")
         icon.name: "gtk-add"
         onTriggered: {
             const page = pageStack.layers.push(editCollectionPage.createObject(root), {
@@ -64,8 +65,8 @@ Kirigami.ScrollablePage {
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
             icon.name: "view-group"
-            text: i18n("No Collections")
-            explanation: i18n("Collections allow you to categorize accounts you want other people to follow.")
+            text: KI18n.i18n("No Collections")
+            explanation: KI18n.i18n("Collections allow you to categorize accounts you want other people to follow.")
             visible: listview.count === 0 && !listview.model.loading
             width: parent.width - Kirigami.Units.gridUnit * 4
         }

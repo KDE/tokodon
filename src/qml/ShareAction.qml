@@ -4,6 +4,7 @@
 pragma ComponentBehavior: Bound
 
 import QtQuick
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 
 /**
@@ -17,8 +18,8 @@ Kirigami.Action {
     id: root
 
     icon.name: "emblem-shared-symbolic"
-    text: i18n("Share")
-    tooltip: i18n("Share the selected media")
+    text: KI18n.i18n("Share")
+    tooltip: KI18n.i18n("Share the selected media")
 
     visible: false
 

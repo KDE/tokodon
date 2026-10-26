@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 import QtQuick
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
@@ -26,7 +27,7 @@ QQC2.Label {
     bottomPadding: 0
     property string clickedUrl: ""
 
-    Accessible.name: i18nc("@info", "Post content")
+    Accessible.name: KI18n.i18nc("@info", "Post content")
     Accessible.description: TextHandler.stripHtml(root.content)
 
     activeFocusOnTab: true

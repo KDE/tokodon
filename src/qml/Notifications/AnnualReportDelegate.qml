@@ -6,6 +6,7 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import Qt.labs.qmlmodels
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.tokodon as Tokodon
 
@@ -61,14 +62,14 @@ QQC2.ItemDelegate {
                 spacing: Kirigami.Units.smallSpacing
 
                 QQC2.Label {
-                    text: xi18nc("@info:label this is used for notifications, when an annual report is available. It's similar to spotify wrapped, it shows profile stats / it's a recap of the year. The variable is the current year e.g. 2024. Please don't translate the hashtag.", "Your %1 #FediWrapped awaits! Unveil your year's highlights and memorable moments on Mastodon!", root.annualReportEvent.year)
+                    text: KI18n.xi18nc("@info:label this is used for notifications, when an annual report is available. It's similar to spotify wrapped, it shows profile stats / it's a recap of the year. The variable is the current year e.g. 2024. Please don't translate the hashtag.", "Your %1 #FediWrapped awaits! Unveil your year's highlights and memorable moments on Mastodon!", root.annualReportEvent.year)
                     wrapMode: Text.WordWrap
 
                     Layout.fillWidth: true
                 }
 
                 QQC2.Button {
-                    text: i18nc("@action:button", "View #FediWrapped")
+                    text: KI18n.i18nc("@action:button", "View #FediWrapped")
                     visible: false // TODO implement me
                 }
             }

@@ -4,6 +4,7 @@
 pragma ComponentBehavior: Bound
 
 import QtQuick
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
@@ -16,11 +17,11 @@ Components.MessageDialog {
     id: root
 
     implicitWidth: Math.min(parent.width - Kirigami.Units.gridUnit * 2, Kirigami.Units.gridUnit * 25)
-    title: i18nc("@title", "Boost Alt Text Reminder")
+    title: KI18n.i18nc("@title", "Boost Alt Text Reminder")
     dialogType: Components.MessageDialog.Warning
 
     QQC2.Label {
-        text: i18nc("@label", "Some media in this post is missing alt text, which hinders those who are visually impaired.")
+        text: KI18n.i18nc("@label", "Some media in this post is missing alt text, which hinders those who are visually impaired.")
         wrapMode: Text.WordWrap
         Layout.fillWidth: true
     }
@@ -31,6 +32,6 @@ Components.MessageDialog {
     Component.onCompleted: {
         const button = standardButton(QQC2.Dialog.Ok);
         button.icon.name = "boost";
-        button.text = i18nc("@action:button Boost/Reblog this post anyway", "Boost");
+        button.text = KI18n.i18nc("@action:button Boost/Reblog this post anyway", "Boost");
     }
 }

@@ -4,6 +4,7 @@
 pragma ComponentBehavior: Bound
 
 import QtQuick
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.tokodon
 
@@ -54,7 +55,7 @@ Kirigami.ApplicationWindow {
         anchors.centerIn: parent
         width: parent.width - Kirigami.Units.gridUnit * 4
 
-        text: i18n("No accounts available")
+        text: KI18n.i18n("No accounts available")
         visible: false
     }
 }

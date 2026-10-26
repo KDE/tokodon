@@ -4,6 +4,7 @@
 import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.tokodon
 import QtQuick.Dialogs
@@ -23,7 +24,7 @@ Kirigami.Page {
 
     readonly property bool canEditProfile: !AccountManager.accountHasIssue(account)
 
-    title: i18n("Edit Account")
+    title: KI18n.i18n("Edit Account")
     topPadding: 0
     leftPadding: 0
     rightPadding: 0
@@ -32,12 +33,12 @@ Kirigami.Page {
     actions: [
         Kirigami.Action {
             icon.name: "globe-symbolic"
-            text: i18nc("@abel Account preferences", "Open In Browser")
+            text: KI18n.i18nc("@abel Account preferences", "Open In Browser")
 
             onTriggered: Qt.openUrlExternally(root.account.instanceUri)
         },
         Kirigami.Action {
-            text: i18n("Logout…")
+            text: KI18n.i18n("Logout…")
             icon.name: "im-kick-user"
 
             onTriggered: logoutPrompt.open()
@@ -49,7 +50,7 @@ Kirigami.Page {
             id: openFileDialog
             FileDialog {
                 signal chosen(string path)
-                title: i18n("Please choose a file")
+                title: KI18n.i18n("Please choose a file")
                 currentFolder: StandardPaths.writableLocation(StandardPaths.PicturesLocation)
                 onAccepted: chosen(selectedFile)
             }
@@ -57,8 +58,8 @@ Kirigami.Page {
         Kirigami.PromptDialog {
             id: logoutPrompt
 
-            title: i18nc("@title", "Logout")
-            subtitle: i18nc("@label", "Are you sure you want to log out of %1?", account.identity.displayName)
+            title: KI18n.i18nc("@title", "Logout")
+            subtitle: KI18n.i18nc("@label", "Are you sure you want to log out of %1?", account.identity.displayName)
             standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
             showCloseButton: false
             parent: null // Don't open it in the main window on desktop
@@ -74,14 +75,14 @@ Kirigami.Page {
     ]
 
     property Kirigami.Action profileAction: Kirigami.Action {
-        text: i18n("Profile")
+        text: KI18n.i18n("Profile")
         icon.name: "user-group-properties"
         checkable: true
         checked: true
     }
 
     property Kirigami.Action accountAction: Kirigami.Action {
-        text: i18n("Account")
+        text: KI18n.i18n("Account")
         icon.name: "configure-symbolic"
         checkable: true
     }
@@ -133,8 +134,8 @@ Kirigami.Page {
                     enabled: canEditProfile
 
                     FormCard.FormCheckDelegate {
-                        text: i18n("Require approval for new followers")
-                        description: i18n("By default new followers are automatically accepted. Uncheck if you want to manually approve or deny new ones. You always have the option to force someone to unfollow you.")
+                        text: KI18n.i18n("Require approval for new followers")
+                        description: KI18n.i18n("By default new followers are automatically accepted. Uncheck if you want to manually approve or deny new ones. You always have the option to force someone to unfollow you.")
                         checked: backend.locked
                         onCheckedChanged: backend.locked = checked
                     }
@@ -143,8 +144,8 @@ Kirigami.Page {
                     }
 
                     FormCard.FormCheckDelegate {
-                        text: i18n("Is automated")
-                        description: i18n("Whether to publicly mark this account as doing any kind of automated actions.")
+                        text: KI18n.i18n("Is automated")
+                        description: KI18n.i18n("Whether to publicly mark this account as doing any kind of automated actions.")
                         checked: backend.bot
                         onCheckedChanged: backend.bot = checked
                     }
@@ -153,8 +154,8 @@ Kirigami.Page {
                     }
 
                     FormCard.FormCheckDelegate {
-                        text: i18n("Feature profile and posts")
-                        description: i18n("Your public profile and posts may be featured to other users.")
+                        text: KI18n.i18n("Feature profile and posts")
+                        description: KI18n.i18n("Your public profile and posts may be featured to other users.")
                         checked: backend.discoverable
                         onCheckedChanged: backend.discoverable = checked
                     }
@@ -163,8 +164,8 @@ Kirigami.Page {
                     }
 
                     FormCard.FormSwitchDelegate {
-                        text: i18n("Publicly list follows and followers")
-                        description: i18n("By default everyone you follow and everyone who follows you is public.")
+                        text: KI18n.i18n("Publicly list follows and followers")
+                        description: KI18n.i18n("By default everyone you follow and everyone who follows you is public.")
                         checked: !root.account.preferences.hideCollections
                         onToggled: root.account.preferences.hideCollections = !checked
                     }
@@ -173,7 +174,7 @@ Kirigami.Page {
                     }
 
                     FormCard.FormSwitchDelegate {
-                        text: i18nc("@label Account preferences", "Mark uploaded media as sensitive by default")
+                        text: KI18n.i18nc("@label Account preferences", "Mark uploaded media as sensitive by default")
                         checked: root.account.preferences.defaultSensitive
                         onToggled: root.account.preferences.defaultSensitive = checked
                     }
@@ -182,7 +183,7 @@ Kirigami.Page {
                     }
 
                     FormCard.FormSwitchDelegate {
-                        text: i18nc("@label Account preferences", "Include public posts in search results")
+                        text: KI18n.i18nc("@label Account preferences", "Include public posts in search results")
                         checked: root.account.preferences.indexable
                         onToggled: root.account.preferences.indexable = checked
                     }
@@ -191,7 +192,7 @@ Kirigami.Page {
                     }
 
                     FormCard.FormButtonDelegate {
-                        text: i18nc("@label Account preferences", "Default post language")
+                        text: KI18n.i18nc("@label Account preferences", "Default post language")
                         description: Qt.locale(root.account.preferences.defaultLanguage).nativeLanguageName
 
                         onClicked: languageSelect.createObject().open()
@@ -217,11 +218,11 @@ Kirigami.Page {
                     FormCard.FormComboBoxDelegate {
                         Layout.fillWidth: true
                         id: postVisibility
-                        text: i18nc("@label Account preferences", "Default post visibility")
+                        text: KI18n.i18nc("@label Account preferences", "Default post visibility")
                         model: [
-                            i18nc("@item:inlistbox Default post visibility rule", "Public"),
-                            i18nc("@item:inlistbox Default post visibility rule", "Unlisted"),
-                            i18nc("@item:inlistbox Default post visibility rule", "Private")
+                            KI18n.i18nc("@item:inlistbox Default post visibility rule", "Public"),
+                            KI18n.i18nc("@item:inlistbox Default post visibility rule", "Unlisted"),
+                            KI18n.i18nc("@item:inlistbox Default post visibility rule", "Private")
                         ]
                         Component.onCompleted: currentIndex = root.account.preferences.defaultVisibility
                         onCurrentValueChanged: root.account.preferences.defaultVisibility = currentIndex

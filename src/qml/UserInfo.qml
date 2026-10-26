@@ -4,6 +4,7 @@
 import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.delegates as Delegates
 import org.kde.kirigamiaddons.components as KirigamiComponents
@@ -101,10 +102,10 @@ QQC2.Pane {
                         });
                         dialog.open();
                     }
-                    text: i18n("Switch Account")
+                    text: KI18n.i18n("Switch Account")
                     display: QQC2.AbstractButton.IconOnly
 
-                    QQC2.ToolTip.text: i18n("Switch account")
+                    QQC2.ToolTip.text: KI18n.i18n("Switch account")
                     QQC2.ToolTip.visible: hovered
                     QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
 

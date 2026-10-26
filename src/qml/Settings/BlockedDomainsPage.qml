@@ -8,6 +8,7 @@ import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import QtQuick.Window
 
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.delegates as Delegates
 
@@ -16,7 +17,7 @@ import org.kde.tokodon
 Kirigami.ScrollablePage {
     id: root
 
-    title: i18nc("@title", "Blocked Domains")
+    title: KI18n.i18nc("@title", "Blocked Domains")
 
     function reload(): void {
         model.loadDomains();
@@ -48,7 +49,7 @@ Kirigami.ScrollablePage {
                 }
 
                 QQC2.Button {
-                    text: i18nc("@action:button", "Unblock")
+                    text: KI18n.i18nc("@action:button", "Unblock")
                     onClicked: model.actionUnblock(model.index(delegate.index, 0))
                 }
             }
@@ -62,7 +63,7 @@ Kirigami.ScrollablePage {
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
             icon.name: "internet-services-symbolic"
-            text: i18nc("@info:placeholder", "No Blocked Domains")
+            text: KI18n.i18nc("@info:placeholder", "No Blocked Domains")
             visible: listview.count === 0 && !listview.model.loading
             width: parent.width - Kirigami.Units.gridUnit * 4
         }

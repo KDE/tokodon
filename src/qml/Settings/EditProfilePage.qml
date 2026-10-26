@@ -4,6 +4,7 @@
 import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.tokodon
 import QtQuick.Dialogs
@@ -18,7 +19,7 @@ Kirigami.Page {
 
     readonly property bool canEditProfile: !AccountManager.accountHasIssue(account)
 
-    title: i18nc("@title:window", "Edit Profile")
+    title: KI18n.i18nc("@title:window", "Edit Profile")
     spacing: 0
 
     ProfileEditor {

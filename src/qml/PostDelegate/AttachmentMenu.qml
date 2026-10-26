@@ -5,6 +5,7 @@ import QtCore
 import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Dialogs
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.tokodon
 import org.kde.kirigamiaddons.components as Components
@@ -41,13 +42,13 @@ Components.ConvergentContextMenu {
             }
 
             if (root.attachment.attachmentType === Attachment.Image) {
-                return i18n("Save Image As…");
+                return KI18n.i18n("Save Image As…");
             } else if (root.attachment.attachmentType === Attachment.GifV) {
-                return i18n("Save Gif As…");
+                return KI18n.i18n("Save Gif As…");
             } else if (root.attachment.attachmentType === Attachment.Video) {
-                return i18n("Save Video As…");
+                return KI18n.i18n("Save Video As…");
             } else if (root.attachment.attachmentType === Attachment.Audio) {
-                return i18n("Save Audio As…");
+                return KI18n.i18n("Save Audio As…");
             }
             return ''
         }
@@ -66,7 +67,7 @@ Components.ConvergentContextMenu {
         visible: root.attachment?.attachmentType === Attachment.Image
 
         icon.name: "edit-copy"
-        text: i18n("Copy Image")
+        text: KI18n.i18n("Copy Image")
         onTriggered: root.attachment.copyToClipboard()
     }
 
@@ -79,7 +80,7 @@ Components.ConvergentContextMenu {
 
         inputData: ({
             urls: [root.attachment?.source ?? ''],
-            title: i18nc("@title", "Post"),
+            title: KI18n.i18nc("@title", "Post"),
             mimeType: '*',
         })
     }

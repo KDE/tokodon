@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
 import QtQuick
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import QtQuick.Controls as QQC2
 import QtQml.Models
@@ -56,7 +57,7 @@ GridLayout {
             QQC2.RoundButton {
                 id: editButton
 
-                QQC2.ToolTip.text: i18n("Edit")
+                QQC2.ToolTip.text: KI18n.i18n("Edit")
                 QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                 QQC2.ToolTip.visible: hovered
 
@@ -93,7 +94,7 @@ GridLayout {
             QQC2.RoundButton {
                 id: removeButton
 
-                QQC2.ToolTip.text: i18n("Remove")
+                QQC2.ToolTip.text: KI18n.i18n("Remove")
                 QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                 QQC2.ToolTip.visible: hovered
 

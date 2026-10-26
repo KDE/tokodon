@@ -5,6 +5,7 @@ import QtQuick
 import QtQuick.Layouts
 import QtWebView
 
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 
 import org.kde.tokodon
@@ -19,7 +20,7 @@ BaseAuthorization {
 
     actions: [
         Kirigami.Action {
-            text: i18nc("@action:button Open in external web browser", "Open Externally")
+            text: KI18n.i18nc("@action:button Open in external web browser", "Open Externally")
             icon.name: "internet-services-symbolic"
             onTriggered: root.loginPage.openBrowserAuthPage()
         }

@@ -3,6 +3,7 @@
 
 import QtQuick
 
+import org.kde.ki18n
 import org.kde.kirigamiaddons.formcard as FormCard
 
 import org.kde.tokodon
@@ -16,11 +17,11 @@ MastoPage {
 
     FormCard.FormCard {
         FormCard.FormButtonDelegate {
-            text: i18nc("@action:button", "Increase follow request count")
+            text: KI18n.i18nc("@action:button", "Increase follow request count")
             onClicked: AccountManager.selectedAccount.increaseFollowRequests()
         }
         FormCard.FormButtonDelegate {
-            text: i18nc("@action:button", "Decrease follow request count")
+            text: KI18n.i18nc("@action:button", "Decrease follow request count")
             onClicked: AccountManager.selectedAccount.decreaseFollowRequests()
         }
     }

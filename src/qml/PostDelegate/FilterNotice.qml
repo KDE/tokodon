@@ -5,6 +5,7 @@ import QtCore
 import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.tokodon
 import org.kde.kirigamiaddons.components as Components
@@ -26,7 +27,7 @@ QQC2.Control {
     activeFocusOnTab: true
     visible: root.filtered
     Accessible.role: Accessible.Button
-    Accessible.name: i18nc("@info", "Filter")
+    Accessible.name: KI18n.i18nc("@info", "Filter")
     Accessible.description: matchedFilters
     Accessible.onPressAction: toggleFilter()
 
@@ -44,14 +45,14 @@ QQC2.Control {
         QQC2.Label {
             id: spoilerTextLabel
             Layout.fillWidth: true
-            text: i18n("<b>Filtered</b><br /> %1", root.matchedFilters)
+            text: KI18n.i18n("<b>Filtered</b><br /> %1", root.matchedFilters)
             wrapMode: Text.Wrap
             font: Config.defaultFont
         }
 
         QQC2.Button {
             activeFocusOnTab: false
-            text: i18nc("@action:button", "Show Anyway")
+            text: KI18n.i18nc("@action:button", "Show Anyway")
             icon.name: "view-visible-symbolic"
             onClicked: root.toggleFilter()
         }

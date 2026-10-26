@@ -6,6 +6,7 @@ pragma ComponentBehavior: Bound
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.components as Components
 import org.kde.tokodon
@@ -84,7 +85,7 @@ ListView {
 
     readonly property Kirigami.Action postAction: Kirigami.Action {
         icon.name: "document-edit-symbolic"
-        text: i18nc("@action:button", "Create Post")
+        text: KI18n.i18nc("@action:button", "Create Post")
         visible: root.showPostAction
 
         onTriggered: Navigation.openComposer("")
@@ -92,7 +93,7 @@ ListView {
 
     readonly property Kirigami.Action goToTopAction: Kirigami.Action {
         icon.name: "arrow-up-symbolic"
-        text: i18nc("@info:tooltip", "Return to Top")
+        text: KI18n.i18nc("@info:tooltip", "Return to Top")
         visible: !root.atYBeginning
 
         onTriggered: root.positionViewAtBeginning()
@@ -176,11 +177,11 @@ ListView {
             Layout.fillHeight: true
 
             visible: root.originalPostUrl.length !== 0
-            text: i18nc("@info:status", "Some replies are not available")
-            explanation: i18n("To view all replies, open the post on the original server.")
+            text: KI18n.i18nc("@info:status", "Some replies are not available")
+            explanation: KI18n.i18n("To view all replies, open the post on the original server.")
             helpfulAction: Kirigami.Action {
                 icon.name: "open-link-symbolic"
-                text: i18nc("@action:button 'Browser' being a web browser", "Open in Browser")
+                text: KI18n.i18nc("@action:button 'Browser' being a web browser", "Open in Browser")
                 onTriggered: Qt.openUrlExternally(root.originalPostUrl)
             }
         }
@@ -189,7 +190,7 @@ ListView {
             id: endOfTimelineMessage
 
             visible: root.model.atEnd ?? false
-            text: i18nc("@info:status No more posts to read", "No More Posts")
+            text: KI18n.i18nc("@info:status No more posts to read", "No More Posts")
 
             Layout.topMargin: Kirigami.Units.largeSpacing
             Layout.bottomMargin: Kirigami.Units.largeSpacing * 2

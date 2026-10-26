@@ -5,6 +5,7 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import Qt.labs.qmlmodels
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.delegates as Delegates
 import org.kde.kirigamiaddons.components as KirigamiComponents
@@ -30,9 +31,9 @@ ListView {
         background: null
         contentItem: QQC2.Button {
             icon.name: "open-link-symbolic"
-            text: i18nc("@action:button Pop out search results into its own page", "Pop Out")
+            text: KI18n.i18nc("@action:button Pop out search results into its own page", "Pop Out")
 
-            Accessible.description: i18nc("@info", "Pop out search results to a full page")
+            Accessible.description: KI18n.i18nc("@info", "Pop out search results to a full page")
 
             onClicked: Navigation.searchFor(root.text)
         }
@@ -58,7 +59,7 @@ ListView {
     }
 
     Kirigami.PlaceholderMessage {
-        text: i18n("Loading...")
+        text: KI18n.i18n("Loading...")
         visible: searchModel.loading
         icon.name: "system-search"
         anchors.centerIn: parent
@@ -66,7 +67,7 @@ ListView {
     }
 
     Kirigami.PlaceholderMessage {
-        text: i18n("No search results")
+        text: KI18n.i18n("No search results")
         visible: root.count === 0 && root.text.length > 2 && !searchModel.loading && searchModel.loaded
         icon.name: "system-search"
         anchors.centerIn: parent
@@ -74,7 +75,7 @@ ListView {
     }
 
     Kirigami.PlaceholderMessage {
-        text: i18n("Search for users, tags and posts")
+        text: KI18n.i18n("Search for users, tags and posts")
         visible: root.count === 0 && !searchModel.loading && !searchModel.loaded
         icon.name: "system-search"
         anchors.centerIn: parent

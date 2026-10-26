@@ -7,6 +7,7 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import Qt.labs.qmlmodels
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.tokodon
 import org.kde.kirigamiaddons.components as Components
@@ -15,7 +16,7 @@ import "./StatusComposer"
 
 Kirigami.ScrollablePage {
     id: root
-    title: i18n("Notifications")
+    title: KI18n.i18n("Notifications")
 
     property var dialog: null
 
@@ -40,14 +41,14 @@ Kirigami.ScrollablePage {
     actions: [
         Kirigami.Action {
             icon.name: "checkmark-symbolic"
-            text: i18nc("@action:intoolbar Mark all notifications as read", "Mark All As Read")
+            text: KI18n.i18nc("@action:intoolbar Mark all notifications as read", "Mark All As Read")
             enabled: AccountManager.selectedAccount.unreadNotificationsCount > 0 && !root.loading
             onTriggered: root.currentModel.markAllNotificationsAsRead()
         },
         Kirigami.Action {
             icon.name: "configure-symbolic"
-            text: i18nc("@action:intoolbar Configure Notifications", "Configure…")
-            onTriggered: pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "NotificationsPage"), { title: i18nc("@title:window", "Notification Settings"), globalToolBarStyle: Kirigami.ApplicationHeaderStyle.None }, { title: i18nc("@title:window", "Notification Settings") })
+            text: KI18n.i18nc("@action:intoolbar Configure Notifications", "Configure…")
+            onTriggered: pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "NotificationsPage"), { title: KI18n.i18nc("@title:window", "Notification Settings"), globalToolBarStyle: Kirigami.ApplicationHeaderStyle.None }, { title: KI18n.i18nc("@title:window", "Notification Settings") })
         }
     ]
 
@@ -59,7 +60,7 @@ Kirigami.ScrollablePage {
 
     property Kirigami.Action showAllAction: Kirigami.Action {
         id: showAllAction
-        text: i18nc("@action:intoolbar Show all notifications", "All")
+        text: KI18n.i18nc("@action:intoolbar Show all notifications", "All")
         icon.name: "notifications"
         checkable: true
         onCheckedChanged: (checked) => {
@@ -72,7 +73,7 @@ Kirigami.ScrollablePage {
 
     property Kirigami.Action mentionOnlyAction: Kirigami.Action {
         id: onlyMentionAction
-        text: i18nc("@action:intoolbar Show only mentions", "Mentions")
+        text: KI18n.i18nc("@action:intoolbar Show only mentions", "Mentions")
         icon.name: "view-conversation-balloon-symbolic"
         checkable: true
         onCheckedChanged: (checked) => {
@@ -85,7 +86,7 @@ Kirigami.ScrollablePage {
 
     property Kirigami.Action moreAction: Kirigami.Action {
         icon.name: "view-more-horizontal-symbolic"
-        text: i18nc("@action:intoolbar More filter categories", "More")
+        text: KI18n.i18nc("@action:intoolbar More filter categories", "More")
         checkable: true
         onTriggered: {
             visibilityMenu.tookAction = false;
@@ -107,7 +108,7 @@ Kirigami.ScrollablePage {
 
         Kirigami.Action {
             icon.name: "boost"
-            text: i18nc("Show only boosts", "Boosts")
+            text: KI18n.i18nc("Show only boosts", "Boosts")
             onTriggered: {
                 notificationModel.excludeTypes = ['mention', 'status', 'follow', 'follow_request', 'favourite', 'poll', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning', 'quote', 'added_to_collection', 'collection_update'];
                 visibilityMenu.tookAction = true;
@@ -116,7 +117,7 @@ Kirigami.ScrollablePage {
 
         Kirigami.Action {
             icon.name: "favorite"
-            text: i18nc("Show only favorites", "Favorites")
+            text: KI18n.i18nc("Show only favorites", "Favorites")
             onTriggered: {
                 notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow', 'follow_request', 'poll', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning', 'quote', 'added_to_collection', 'collection_update'];
                 visibilityMenu.tookAction = true;
@@ -125,7 +126,7 @@ Kirigami.ScrollablePage {
 
         Kirigami.Action {
             icon.name: "amarok_playcount"
-            text: i18nc("Show only poll results", "Poll Results")
+            text: KI18n.i18nc("Show only poll results", "Poll Results")
             onTriggered: {
                 notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow', 'follow_request', 'favourite', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning', 'quote', 'added_to_collection', 'collection_update'];
                 visibilityMenu.tookAction = true;
@@ -134,7 +135,7 @@ Kirigami.ScrollablePage {
 
         Kirigami.Action {
             icon.name: "user-home-symbolic"
-            text: i18nc("Show only followed statuses", "Posts")
+            text: KI18n.i18nc("Show only followed statuses", "Posts")
             onTriggered: {
                 notificationModel.excludeTypes = ['mention', 'reblog', 'follow', 'follow_request', 'favourite', 'poll', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning', 'quote', 'added_to_collection', 'collection_update'];
                 visibilityMenu.tookAction = true;
@@ -143,7 +144,7 @@ Kirigami.ScrollablePage {
 
         Kirigami.Action {
             icon.name: "list-add-user"
-            text: i18nc("Show only follows", "Follows")
+            text: KI18n.i18nc("Show only follows", "Follows")
             onTriggered: {
                 notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow_request', 'favourite', 'poll', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning', 'quote', 'added_to_collection', 'collection_update'];
                 visibilityMenu.tookAction = true;
@@ -152,7 +153,7 @@ Kirigami.ScrollablePage {
 
         Kirigami.Action {
             icon.name: "format-text-blockquote-symbolic"
-            text: i18nc("Show only quotes", "Quotes")
+            text: KI18n.i18nc("Show only quotes", "Quotes")
             onTriggered: {
                 notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow', 'follow_request', 'favourite', 'poll', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning', 'added_to_collection', 'collection_update'];
                 visibilityMenu.tookAction = true;
@@ -161,7 +162,7 @@ Kirigami.ScrollablePage {
 
         Kirigami.Action {
             icon.name: "view-group-symbolic"
-            text: i18nc("Show only quotes", "Collections")
+            text: KI18n.i18nc("Show only quotes", "Collections")
             visible: AccountManager.selectedAccount.supportsApiVersion("mastodon", 10)
             onTriggered: {
                 notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow', 'follow_request', 'favourite', 'poll', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning', 'quote'];
@@ -212,7 +213,7 @@ Kirigami.ScrollablePage {
             height: shouldBeVisible ? implicitHeight : 0
 
             Kirigami.Heading {
-                text: sectionRoot.section === "true" ? i18nc("@info:label New notifications", "New") : i18nc("@info:label Previous notifications", "Previous")
+                text: sectionRoot.section === "true" ? KI18n.i18nc("@info:label New notifications", "New") : KI18n.i18nc("@info:label Previous notifications", "Previous")
                 visible: sectionRoot.shouldBeVisible
                 type: Kirigami.Heading.Primary
                 level: 2
@@ -373,8 +374,8 @@ Kirigami.ScrollablePage {
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
             icon.name: "notifications"
-            text: i18n("No Notifications")
-            explanation: i18n("You have no notifications yet. When people reply, favorite or boost your posts they will show up here!")
+            text: KI18n.i18n("No Notifications")
+            explanation: KI18n.i18n("You have no notifications yet. When people reply, favorite or boost your posts they will show up here!")
             visible: listview.count === 0 && !root.loading
             width: parent.width - Kirigami.Units.gridUnit * 4
         }

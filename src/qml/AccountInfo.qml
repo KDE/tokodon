@@ -6,6 +6,7 @@ pragma ComponentBehavior: Bound
 import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.tokodon
 
@@ -28,7 +29,7 @@ Kirigami.Page {
 
     readonly property bool largeScreen: width > Kirigami.Units.gridUnit * 25
 
-    title: accountModel.identity ? accountModel.identity.displayName : i18nc("@title:window", "Profile")
+    title: accountModel.identity ? accountModel.identity.displayName : KI18n.i18nc("@title:window", "Profile")
     titleDelegate: Kirigami.Heading {
         // identical to normal Kirigami headers
         Layout.fillWidth: true
@@ -37,7 +38,7 @@ Kirigami.Page {
         maximumLineCount: 1
         elide: Text.ElideRight
 
-        text: accountModel.identity ? accountModel.identity.displayNameHtml : i18nc("@title:window", "Profile")
+        text: accountModel.identity ? accountModel.identity.displayNameHtml : KI18n.i18nc("@title:window", "Profile")
 
         textFormat: Text.RichText
     }
@@ -132,8 +133,8 @@ Kirigami.Page {
                         topMargin: parent.headerItem.height + ((parent.height - parent.headerItem.height) / 2)
                     }
                     icon.name: "view-list-text"
-                    text: i18nc("@label", "No Posts")
-                    explanation: i18n("This user hasn't posted anything yet.")
+                    text: KI18n.i18nc("@label", "No Posts")
+                    explanation: KI18n.i18n("This user hasn't posted anything yet.")
                     visible: timelineView.count === 0 && !timelineView.model.loading
                     width: parent.width - Kirigami.Units.gridUnit * 4
                 }
@@ -264,8 +265,8 @@ Kirigami.Page {
                             topMargin: parent.headerItem.height + ((parent.height - parent.headerItem.height) / 2)
                         }
                         icon.name: "viewimage"
-                        text: i18nc("@label", "No Media")
-                        explanation: i18n("This user hasn't posted any media yet.")
+                        text: KI18n.i18nc("@label", "No Media")
+                        explanation: KI18n.i18n("This user hasn't posted any media yet.")
                         visible: gridView.count === 0 && !gridView.model.loading
                         width: parent.width - Kirigami.Units.gridUnit * 4
                     }

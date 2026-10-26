@@ -5,6 +5,7 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import Qt.labs.qmlmodels
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.statefulapp as StatefulApp
 import org.kde.tokodon
@@ -75,11 +76,11 @@ QQC2.ItemDelegate {
             QQC2.Label {
                 font: Config.defaultFont
                 text: if (root.isAdminSignUp) {
-                    i18n("%1 signed up", root.notificationActorIdentity.displayNameHtml)
+                    KI18n.i18n("%1 signed up", root.notificationActorIdentity.displayNameHtml)
                 } else if(root.isFollowRequest) {
-                    i18n("%1 requested to follow you", root.notificationActorIdentity.displayNameHtml)
+                    KI18n.i18n("%1 requested to follow you", root.notificationActorIdentity.displayNameHtml)
                 } else {
-                    i18n("%1 followed you", root.notificationActorIdentity.displayNameHtml)
+                    KI18n.i18n("%1 followed you", root.notificationActorIdentity.displayNameHtml)
                 }
                 textFormat: Text.StyledText
                 Layout.fillWidth: true
@@ -104,7 +105,7 @@ QQC2.ItemDelegate {
         }
 
         QQC2.Button {
-            text: i18nc("@action:button", "Manage Follow Requests")
+            text: KI18n.i18nc("@action:button", "Manage Follow Requests")
             icon.name: "list-add-user"
             visible: root.isFollowRequest
 

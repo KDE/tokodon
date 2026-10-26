@@ -8,6 +8,7 @@ import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import QtQuick.Window
 
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.delegates as Delegates
 
@@ -18,14 +19,14 @@ Kirigami.ScrollablePage {
 
     property Component editFilterPage: Qt.createComponent("org.kde.tokodon", "EditFilterPage", Qt.Asynchronous)
 
-    title: i18nc("@title", "Filters")
+    title: KI18n.i18nc("@title", "Filters")
 
     function reload(): void {
         model.fillTimeline();
     }
 
     actions: Kirigami.Action {
-        text: i18nc("@action:intoolbar", "Create Filter")
+        text: KI18n.i18nc("@action:intoolbar", "Create Filter")
         icon.name: "list-add-symbolic"
         onTriggered: {
             const page = root.Window.window.pageStack.layers.push(editFilterPage.createObject(root), {
@@ -76,7 +77,7 @@ Kirigami.ScrollablePage {
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
             icon.name: "filter-symbolic"
-            text: i18nc("@info:placeholder", "No Filters")
+            text: KI18n.i18nc("@info:placeholder", "No Filters")
             visible: listview.count === 0 && !listview.model.loading
             width: parent.width - Kirigami.Units.gridUnit * 4
         }

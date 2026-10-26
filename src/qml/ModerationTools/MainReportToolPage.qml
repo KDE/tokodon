@@ -4,6 +4,7 @@
 import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.tokodon
 
@@ -44,18 +45,18 @@ FormCard.FormCardPage {
         }
     }
 
-    title: i18n("Report #%1", root.reportInfo.reportId)
+    title: KI18n.i18n("Report #%1", root.reportInfo.reportId)
 
     actions: Kirigami.Action {
         icon.name: root.reportInfo.actionTaken ? "edit-delete-remove" : "checkmark"
-        text: root.reportInfo.actionTaken ? i18nc("@action:intoolbar", "Mark as unresolved") : i18nc("@action:intoolbar", "Mark as resolved")
+        text: root.reportInfo.actionTaken ? KI18n.i18nc("@action:intoolbar", "Mark as unresolved") : KI18n.i18nc("@action:intoolbar", "Mark as resolved")
         onTriggered: {
             if (root.reportInfo.actionTaken) {
                 root.model.unresolveReport(root.index)
-                showPassiveNotification(i18nc("@info", "Report Unresolved"))
+                showPassiveNotification(KI18n.i18nc("@info", "Report Unresolved"))
             } else {
                 root.model.resolveReport(root.index)
-                showPassiveNotification(i18nc("@info", "Report Resolved"))
+                showPassiveNotification(KI18n.i18nc("@info", "Report Resolved"))
             }
         }
     }
@@ -92,21 +93,21 @@ FormCard.FormCardPage {
         Layout.topMargin: Kirigami.Units.largeSpacing * 2
 
         FormCard.FormTextDelegate {
-            text: i18nc("@info Time at which the report was made", "Reported")
+            text: KI18n.i18nc("@info Time at which the report was made", "Reported")
             description: root.reportInfo.createdAt.toLocaleString()
         }
 
         FormCard.FormDelegateSeparator {}
 
         FormCard.FormTextDelegate {
-            text: i18nc("@info The last time the reported account was active.", "Last Active")
+            text: KI18n.i18nc("@info The last time the reported account was active.", "Last Active")
             description: root.reportInfo.targetAccount.lastActive.toLocaleString()
         }
 
         FormCard.FormDelegateSeparator {}
 
         FormCard.FormTextDelegate {
-            text: i18nc("@info Time at which the reported account joined.", "Joined")
+            text: KI18n.i18nc("@info Time at which the reported account joined.", "Joined")
             description: root.reportInfo.targetAccount.joined.toLocaleString()
         }
 
@@ -116,7 +117,7 @@ FormCard.FormCardPage {
 
         FormCard.FormTextDelegate {
             visible: root.reportInfo.filedAccount
-            text: i18nc("@label", "Reported By")
+            text: KI18n.i18nc("@label", "Reported By")
             description: root.reportInfo.filedAccount.userLevelIdentity.account
 
             leadingPadding: Kirigami.Units.largeSpacing
@@ -131,8 +132,8 @@ FormCard.FormCardPage {
 
         FormCard.FormTextDelegate {
             visible: true
-            text: i18nc("@label", "Report Status")
-            description: root.reportInfo.actionTaken ? i18nc("@info", "Resolved") : i18nc("@info", "Unresolved")
+            text: KI18n.i18nc("@label", "Report Status")
+            description: root.reportInfo.actionTaken ? KI18n.i18nc("@info", "Resolved") : KI18n.i18nc("@info", "Unresolved")
         }
 
         FormCard.FormDelegateSeparator {
@@ -141,7 +142,7 @@ FormCard.FormCardPage {
 
         FormCard.FormTextDelegate {
             visible: root.reportInfo.actionTakenByAccount.userLevelIdentity.account
-            text: i18nc("@label", "Action taken by")
+            text: KI18n.i18nc("@label", "Action taken by")
             description: root.reportInfo.actionTakenByAccount.userLevelIdentity.account
             leadingPadding: Kirigami.Units.largeSpacing
             leading: KirigamiComponents.Avatar {
@@ -154,8 +155,8 @@ FormCard.FormCardPage {
         FormCard.FormDelegateSeparator {}
 
         FormCard.FormTextDelegate {
-            text: i18nc("@label", "Assigned moderator")
-            description: root.reportInfo.assignedModerator ? root.reportInfo.assignedAccount.userLevelIdentity.account : i18nc("@info", "No one")
+            text: KI18n.i18nc("@label", "Assigned moderator")
+            description: root.reportInfo.assignedModerator ? root.reportInfo.assignedAccount.userLevelIdentity.account : KI18n.i18nc("@info", "No one")
             leadingPadding: Kirigami.Units.largeSpacing
             leading: KirigamiComponents.Avatar {
                 source: root.reportInfo.assignedModerator ?  root.reportInfo.assignedAccount.userLevelIdentity.avatarUrl : ""
@@ -163,7 +164,7 @@ FormCard.FormCardPage {
                 implicitWidth: Kirigami.Units.gridUnit * 2
             }
             trailing: QQC2.Button {
-                text: assignedModerator ? (isAssignedModeratorSelectedAccount ? i18nc("@action:button", "Unassign") : i18nc("@action:button", "Assign to me")) : i18nc("@action:button", "Assign to me")
+                text: assignedModerator ? (isAssignedModeratorSelectedAccount ? KI18n.i18nc("@action:button", "Unassign") : KI18n.i18nc("@action:button", "Assign to me")) : KI18n.i18nc("@action:button", "Assign to me")
                 icon.name: "im-user"
                 onClicked: assignedModerator ? (isAssignedModeratorSelectedAccount ? root.model.unassignReport(root.index) : root.model.assignReport(root.index)) : root.model.assignReport(root.index)
             }
@@ -175,18 +176,18 @@ FormCard.FormCardPage {
 
         FormCard.FormTextDelegate {
             visible: !root.reportInfo.targetAccount.isLocal
-            text: i18nc("@label", "Forwarded")
-            description: root.reportInfo.forwarded ? i18nc("@info:The report is forwarded", "Yes") : i18nc("@info:The report is not forwarded", "No")
+            text: KI18n.i18nc("@label", "Forwarded")
+            description: root.reportInfo.forwarded ? KI18n.i18nc("@info:The report is forwarded", "Yes") : KI18n.i18nc("@info:The report is not forwarded", "No")
         }
     }
 
     FormCard.FormHeader {
-        title: i18nc("@title:group", "Category")
+        title: KI18n.i18nc("@title:group", "Category")
     }
 
     FormCard.FormCard {
         QQC2.Label {
-            text: i18n("The reason this account and/or content was reported will be cited in communication with the reported account")
+            text: KI18n.i18n("The reason this account and/or content was reported will be cited in communication with the reported account")
             wrapMode: Text.WordWrap
             Layout.fillWidth: true
             Layout.margins: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
@@ -196,12 +197,12 @@ FormCard.FormCardPage {
 
         FormCard.FormRadioDelegate {
             id: other
-            text: i18n("Other")
+            text: KI18n.i18n("Other")
             checked: root.reportInfo.category === "other"
             onCheckedChanged: if (checked && !isInitial) {
                 arr = []
                 root.model.updateReport(index, "other", arr)
-                showPassiveNotification(i18n("Category changed to other"))
+                showPassiveNotification(KI18n.i18n("Category changed to other"))
             } else {
                 isInitial = false
             }
@@ -212,11 +213,11 @@ FormCard.FormCardPage {
         FormCard.FormRadioDelegate {
             id: spam
             checked: root.reportInfo.category === "spam"
-            text: i18n("Spam")
+            text: KI18n.i18n("Spam")
             onCheckedChanged: if (checked && !isInitial) {
                 arr = []
                 root.model.updateReport(index, "spam", arr)
-                showPassiveNotification(i18n("Category changed to spam"))
+                showPassiveNotification(KI18n.i18n("Category changed to spam"))
             } else {
                 isInitial = false
             }
@@ -227,11 +228,11 @@ FormCard.FormCardPage {
         FormCard.FormRadioDelegate {
             id: serverRules
             checked: root.reportInfo.category === "violation"
-            text: i18n("Content violates one or more server rules")
+            text: KI18n.i18n("Content violates one or more server rules")
             onCheckedChanged: if (checked && !isInitial) {
                 arr = []
                 root.model.updateReport(index, "violation", arr)
-                showPassiveNotification(i18n("Category changed to rule violation"))
+                showPassiveNotification(KI18n.i18n("Category changed to rule violation"))
             } else {
                 isInitial = false
             }
@@ -270,7 +271,7 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormHeader {
-        title: i18nc("@title:group", "To provide more information, %1 wrote:", root.reportInfo.filedAccount.userLevelIdentity.account)
+        title: KI18n.i18nc("@title:group", "To provide more information, %1 wrote:", root.reportInfo.filedAccount.userLevelIdentity.account)
     }
 
     FormCard.FormCard {
@@ -280,7 +281,7 @@ FormCard.FormCardPage {
             trailing: QQC2.Label {
                 text: root.reportInfo.createdAt.toLocaleDateString()
             }
-            description: root.reportInfo.comment ? root.reportInfo.comment : i18nc("@info:Account didn't provide any comment on the report ","N/A")
+            description: root.reportInfo.comment ? root.reportInfo.comment : KI18n.i18nc("@info:Account didn't provide any comment on the report ","N/A")
             leadingPadding: Kirigami.Units.largeSpacing
             leading: KirigamiComponents.Avatar {
                 source: root.reportInfo.filedAccount.userLevelIdentity.avatarUrl
@@ -291,7 +292,7 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormHeader {
-        title: i18nc("@title:group", "Reported Content")
+        title: KI18n.i18nc("@title:group", "Reported Content")
         visible: root.displayAttachmentPanel
     }
 
@@ -299,7 +300,7 @@ FormCard.FormCardPage {
         visible: root.displayAttachmentPanel
 
         QQC2.Label {
-            text: i18n("Offending content will be cited in communication with the reported account")
+            text: KI18n.i18n("Offending content will be cited in communication with the reported account")
             wrapMode: Text.WordWrap
             Layout.margins: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
         }
@@ -329,13 +330,13 @@ FormCard.FormCardPage {
                     QQC2.Label {
                         id: spoilerTextLabel
                         Layout.fillWidth: true
-                        text: i18n("<b>Content Warning</b><br /> %1", modelData.spoilerText)
+                        text: KI18n.i18n("<b>Content Warning</b><br /> %1", modelData.spoilerText)
                         wrapMode: Text.Wrap
                         font: Config.defaultFont
 
                     }
                     QQC2.Button {
-                        text: postContent.visible ? i18nc("@action:button", "Show Less") : i18nc("@action:button", "Show More")
+                        text: postContent.visible ? KI18n.i18nc("@action:button", "Show Less") : KI18n.i18nc("@action:button", "Show More")
                         onClicked: postContent.visible = !postContent.visible
                     }
                 }

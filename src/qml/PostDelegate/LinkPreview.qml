@@ -5,6 +5,7 @@
 pragma ComponentBehavior: Bound
 
 import QtQuick
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
@@ -24,7 +25,7 @@ Item {
     implicitWidth: mainLayout.implicitWidth
     implicitHeight: mainLayout.implicitHeight
 
-    Accessible.name: i18n("Link preview: %1", root.card ? root.card.title : '')
+    Accessible.name: KI18n.i18n("Link preview: %1", root.card ? root.card.title : '')
     Accessible.description: root.card ? root.card.providerName : ''
 
     ColumnLayout {
@@ -201,7 +202,7 @@ Item {
                             spacing: Kirigami.Units.mediumSpacing
 
                             QQC2.Label {
-                                text: root.card ? i18nc("@info:label 'More from [this author]', where we put the user's avatar and name next to this label", "More from") : ''
+                                text: root.card ? KI18n.i18nc("@info:label 'More from [this author]', where we put the user's avatar and name next to this label", "More from") : ''
                                 elide: Text.ElideRight
                                 verticalAlignment: Qt.AlignVCenter
                                 visible: text
@@ -238,7 +239,7 @@ Item {
                             spacing: 0
 
                             QQC2.Label {
-                                text: root.card ? i18nc("@info:label 'This is written by %1'", "By %1", root.card.authorName) : ''
+                                text: root.card ? KI18n.i18nc("@info:label 'This is written by %1'", "By %1", root.card.authorName) : ''
                                 elide: Text.ElideRight
                                 verticalAlignment: Qt.AlignVCenter
                                 visible: text

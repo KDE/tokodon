@@ -4,6 +4,7 @@
 pragma ComponentBehavior: Bound
 
 import QtQuick
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
@@ -57,13 +58,13 @@ QQC2.AbstractButton {
                 Layout.preferredHeight: Kirigami.Units.iconSizes.smallMedium
                 Layout.alignment: Qt.AlignLeft | Qt.AlignVCenter
 
-                QQC2.ToolTip.text: i18n("View profile")
+                QQC2.ToolTip.text: KI18n.i18n("View profile")
                 QQC2.ToolTip.visible: hovered
                 QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
             }
 
             QQC2.Label {
-                text: i18n("Post from %1", root.post.authorIdentity.displayName)
+                text: KI18n.i18n("Post from %1", root.post.authorIdentity.displayName)
 
                 Layout.alignment: Qt.AlignLeft | Qt.AlignVCenter
             }
@@ -82,7 +83,7 @@ QQC2.AbstractButton {
                     id: iconHoverer
                 }
 
-                QQC2.ToolTip.text: i18n("Quoted post")
+                QQC2.ToolTip.text: KI18n.i18n("Quoted post")
                 QQC2.ToolTip.visible: iconHoverer.hovered
                 QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
             }
@@ -151,7 +152,7 @@ QQC2.AbstractButton {
             }
 
             QQC2.Label {
-                text: i18nc("@info:label", "Poll")
+                text: KI18n.i18nc("@info:label", "Poll")
                 color: Kirigami.Theme.disabledTextColor
             }
         }

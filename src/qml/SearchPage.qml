@@ -3,6 +3,7 @@
 
 import QtQuick
 import QtQuick.Layouts
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import QtQuick.Controls as QQC2
 import org.kde.tokodon
@@ -15,7 +16,7 @@ Kirigami.ScrollablePage {
     property alias searchModel: searchView.model
     property string initialSearchTerms
 
-    title: i18nc("@title", "Search")
+    title: KI18n.i18nc("@title", "Search")
 
     header: QQC2.Control {
         topPadding: 0

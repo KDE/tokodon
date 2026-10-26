@@ -6,6 +6,7 @@ pragma ComponentBehavior: Bound
 import QtQuick
 import QtQuick.Layouts
 
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
 
@@ -14,7 +15,7 @@ import org.kde.tokodon
 FormCard.FormCardPage {
     id: root
 
-    title: i18nc("@title:window", "About Server")
+    title: KI18n.i18nc("@title:window", "About Server")
 
     required property string kind
 

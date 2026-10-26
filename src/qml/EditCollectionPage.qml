@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 
 import QtQuick
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
@@ -27,7 +28,7 @@ FormCard.FormCardPage {
 
     readonly property bool isValid: nameField.text.length > 0
 
-    title: purpose === EditListPage.New ? i18nc("@title:window", "Create Collection") : i18nc("@title:window", "Edit Collection")
+    title: purpose === EditListPage.New ? KI18n.i18nc("@title:window", "Create Collection") : KI18n.i18nc("@title:window", "Edit Collection")
 
     property CollectionEditorBackend backend: CollectionEditorBackend {
         collectionId: root.collectionId
@@ -64,7 +65,7 @@ FormCard.FormCardPage {
 
         FormCard.FormTextFieldDelegate {
             id: nameField
-            label: i18nc("@label:textbox Collection title", "Name")
+            label: KI18n.i18nc("@label:textbox Collection title", "Name")
         }
 
         FormCard.FormDelegateSeparator {
@@ -74,7 +75,7 @@ FormCard.FormCardPage {
 
         FormCard.FormTextFieldDelegate {
             id: descriptionField
-            label: i18nc("@label:textbox Collection description", "Description")
+            label: KI18n.i18nc("@label:textbox Collection description", "Description")
         }
 
         FormCard.FormDelegateSeparator {
@@ -84,7 +85,7 @@ FormCard.FormCardPage {
 
         FormCard.FormCheckDelegate {
             id: sensitiveField
-            text: i18nc("@label:textbox Whether this collection should be marked sensitive", "Sensitive")
+            text: KI18n.i18nc("@label:textbox Whether this collection should be marked sensitive", "Sensitive")
         }
 
         FormCard.FormDelegateSeparator {
@@ -94,7 +95,7 @@ FormCard.FormCardPage {
 
         FormCard.FormCheckDelegate {
             id: discoverableField
-            text: i18nc("@label:textbox Whether this collection should be discoverable by other users", "Discoverable")
+            text: KI18n.i18nc("@label:textbox Whether this collection should be discoverable by other users", "Discoverable")
         }
 
         FormCard.FormDelegateSeparator {
@@ -105,7 +106,7 @@ FormCard.FormCardPage {
         FormCard.FormButtonDelegate {
             id: manageUsersButton
             visible: root.purpose === EditCollectionPage.Edit
-            text: i18nc("@action:intoolbar Add users to collection", "Add Users")
+            text: KI18n.i18nc("@action:intoolbar Add users to collection", "Add Users")
             icon.name: "list-add-user"
             onClicked: pageStack.layers.push(addUserComponent, { socialGraphModel })
         }
@@ -116,7 +117,7 @@ FormCard.FormCardPage {
         Kirigami.ScrollablePage {
             id: addUserPage
 
-            title: i18nc("@title", "Add Users to Collection…")
+            title: KI18n.i18nc("@title", "Add Users to Collection…")
 
             required property SocialGraphModel socialGraphModel
 
@@ -154,7 +155,7 @@ FormCard.FormCardPage {
                             }
 
                             QQC2.Button {
-                                text: i18nc("@action:button Add user to this collection", "Add")
+                                text: KI18n.i18nc("@action:button Add user to this collection", "Add")
                                 icon.name: "checkmark"
                                 onClicked: socialGraphModel.actionAddToCollection(delegate.authorIdentity.id)
                             }
@@ -201,7 +202,7 @@ FormCard.FormCardPage {
 
                         Kirigami.SearchField {
                             id: searchField
-                            placeholderText: i18n("Search among users you follow…")
+                            placeholderText: KI18n.i18n("Search among users you follow…")
 
                             Layout.fillWidth: true
                             Layout.margins: Kirigami.Units.largeSpacing
@@ -233,9 +234,9 @@ FormCard.FormCardPage {
             }
             text: {
                 if (root.purpose === EditCollectionPage.New) {
-                    return i18nc("@action:button Create the collection", "Create");
+                    return KI18n.i18nc("@action:button Create the collection", "Create");
                 } else {
-                    return i18nc("@action:button Save the edited collection", "Save");
+                    return KI18n.i18nc("@action:button Save the edited collection", "Save");
                 }
             }
             onClicked: backend.submit()
@@ -248,15 +249,15 @@ FormCard.FormCardPage {
         FormCard.FormButtonDelegate {
             id: deleteButton
             visible: root.purpose === EditCollectionPage.Edit
-            text: i18nc("@action:button Delete the collection", "Delete")
+            text: KI18n.i18nc("@action:button Delete the collection", "Delete")
             icon.name: "edit-delete"
             onClicked: removeCollectionPrompt.open()
 
             Kirigami.PromptDialog {
                 id: removeCollectionPrompt
 
-                title: i18nc("@title", "Deleting Collection")
-                subtitle: i18nc("@label", "Are you sure you want to delete this collection?")
+                title: KI18n.i18nc("@title", "Deleting Collection")
+                subtitle: KI18n.i18nc("@label", "Are you sure you want to delete this collection?")
                 standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
                 showCloseButton: false
 

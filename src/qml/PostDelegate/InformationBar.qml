@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 import QtQuick
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
@@ -31,7 +32,7 @@ ColumnLayout {
     }
 
     QQC2.Label {
-        text: i18nc("Posted on 26 March 2024 Tuesday 20:43:18 +03", "Posted on %1", root.absoluteTime)
+        text: KI18n.i18nc("Posted on 26 March 2024 Tuesday 20:43:18 +03", "Posted on %1", root.absoluteTime)
         elide: Text.ElideRight
         color: Kirigami.Theme.disabledTextColor
     }
@@ -61,15 +62,15 @@ ColumnLayout {
             text:
             switch (root.visibility) {
                 case Post.Public:
-                    return i18n("Public");
+                    return KI18n.i18n("Public");
                 case Post.Unlisted:
-                    return i18n("Unlisted");
+                    return KI18n.i18n("Unlisted");
                 case Post.Private:
-                    return i18n("Private");
+                    return KI18n.i18n("Private");
                 case Post.Direct:
-                    return i18n("Direct Message");
+                    return KI18n.i18n("Direct Message");
                 default:
-                    return i18n("Public");
+                    return KI18n.i18n("Public");
             }
         }
 
@@ -89,9 +90,9 @@ ColumnLayout {
             visible: root.favouritesCount > 0
             text: {
                 if (root.favouritesCount === 0) {
-                    return i18n("No favorites");
+                    return KI18n.i18n("No favorites");
                 } else {
-                    return i18np("%1 favorite", "%1 favorites", root.favouritesCount);
+                    return KI18n.i18np("%1 favorite", "%1 favorites", root.favouritesCount);
                 }
             }
             closable: false
@@ -112,9 +113,9 @@ ColumnLayout {
             iconMask: true
             text: {
                 if (root.reblogsCount === 0) {
-                    return i18n("No boosts");
+                    return KI18n.i18n("No boosts");
                 } else {
-                    return i18np("%1 boost", "%1 boosts", root.reblogsCount);
+                    return KI18n.i18np("%1 boost", "%1 boosts", root.reblogsCount);
                 }
             }
             closable: false
@@ -136,9 +137,9 @@ ColumnLayout {
             iconMask: true
             text: {
                 if (root.quotesCount === 0) {
-                    return i18n("No quotes");
+                    return KI18n.i18n("No quotes");
                 } else {
-                    return i18np("%1 quote", "%1 quotes", root.quotesCount);
+                    return KI18n.i18np("%1 quote", "%1 quotes", root.quotesCount);
                 }
             }
             closable: false

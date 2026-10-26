@@ -4,6 +4,7 @@
 import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.tokodon
 import QtQuick.Dialogs
@@ -28,7 +29,7 @@ ColumnLayout {
             id: openFileDialog
             FileDialog {
                 signal chosen(string path)
-                title: i18n("Please choose a file")
+                title: KI18n.i18n("Please choose a file")
                 currentFolder: StandardPaths.writableLocation(StandardPaths.PicturesLocation)
                 onAccepted: chosen(selectedFile)
             }
@@ -57,7 +58,7 @@ ColumnLayout {
         }
 
         FormCard.FormTextFieldDelegate {
-            label: i18n("Display Name")
+            label: KI18n.i18n("Display Name")
             text: backend.displayName
             maximumLength: root.account.maxDisplayNameLength
 
@@ -77,7 +78,7 @@ ColumnLayout {
 
             contentItem: ColumnLayout {
                 QQC2.Label {
-                    text: i18n("Bio")
+                    text: KI18n.i18n("Bio")
                     Layout.fillWidth: true
                 }
                 QQC2.TextArea {
@@ -103,7 +104,7 @@ ColumnLayout {
             Layout.fillWidth: true
             contentItem: ColumnLayout {
                 QQC2.Label {
-                    text: i18n("Header")
+                    text: KI18n.i18n("Header")
                     Layout.fillWidth: true
                 }
 
@@ -138,7 +139,7 @@ ColumnLayout {
                     QQC2.Label {
                         Layout.alignment: Qt.AlignHCenter
                         Layout.fillWidth: true
-                        text: i18n("PNG, GIF or JPG. At most 2 MB. Will be downscaled to 1500x500px")
+                        text: KI18n.i18n("PNG, GIF or JPG. At most 2 MB. Will be downscaled to 1500x500px")
                         wrapMode: Text.WordWrap
                     }
                 }
@@ -151,7 +152,7 @@ ColumnLayout {
                 }
 
                 Kirigami.LinkButton {
-                    text: i18n("Delete")
+                    text: KI18n.i18n("Delete")
                     color: Kirigami.Theme.negativeTextColor
                     Layout.bottomMargin: Kirigami.Units.largeSpacing
                     onClicked: backend.backgroundUrl = ''
@@ -166,7 +167,7 @@ ColumnLayout {
             Layout.fillWidth: true
             contentItem: ColumnLayout {
                 QQC2.Label {
-                    text: i18n("Avatar")
+                    text: KI18n.i18n("Avatar")
                     Layout.fillWidth: true
                 }
 
@@ -199,7 +200,7 @@ ColumnLayout {
                     QQC2.Label {
                         Layout.alignment: Qt.AlignHCenter
                         Layout.fillWidth: true
-                        text: i18n("PNG, GIF or JPG. At most 2 MB. Will be downscaled to 400x400px")
+                        text: KI18n.i18n("PNG, GIF or JPG. At most 2 MB. Will be downscaled to 400x400px")
                         wrapMode: Text.WordWrap
                     }
                 }
@@ -213,7 +214,7 @@ ColumnLayout {
                 }
 
                 Kirigami.LinkButton {
-                    text: i18n("Delete")
+                    text: KI18n.i18n("Delete")
                     Layout.bottomMargin: Kirigami.Units.largeSpacing
                     color: Kirigami.Theme.negativeTextColor
                     onClicked: backend.avatarUrl = ''
@@ -230,7 +231,7 @@ ColumnLayout {
                 spacing: Kirigami.Units.largeSpacing
 
                 QQC2.Label {
-                    text: i18nc("Profile fields", "Fields")
+                    text: KI18n.i18nc("Profile fields", "Fields")
                 }
 
                 Repeater {
@@ -275,7 +276,7 @@ ColumnLayout {
 
                     QQC2.Button {
                         icon.name: "list-remove-symbolic"
-                        text: i18nc("@action:button", "Remove")
+                        text: KI18n.i18nc("@action:button", "Remove")
                         enabled: backend.fields.length > 0
                         onClicked: backend.removeField()
                     }
@@ -286,7 +287,7 @@ ColumnLayout {
 
                     QQC2.Button {
                         icon.name: "list-add-symbolic"
-                        text: i18nc("@action:button", "Add")
+                        text: KI18n.i18nc("@action:button", "Add")
                         enabled: backend.fields.length < root.account.maxProfileFields
                         onClicked: backend.addField()
                     }
@@ -302,14 +303,14 @@ ColumnLayout {
             }
 
             QQC2.Button {
-                text: i18n("Reset")
+                text: KI18n.i18n("Reset")
                 icon.name: 'edit-reset'
                 Layout.margins: Kirigami.Units.smallSpacing
                 onClicked: backend.fetchAccountInfo()
             }
 
             QQC2.Button {
-                text: i18n("Apply")
+                text: KI18n.i18n("Apply")
                 icon.name: 'dialog-ok'
                 enabled: backend.backgroundUrlError.length === 0 && backend.avatarUrlError.length === 0
                 Layout.margins: Kirigami.Units.smallSpacing

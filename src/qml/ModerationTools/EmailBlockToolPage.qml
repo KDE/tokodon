@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 
 import QtQuick
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
@@ -13,7 +14,7 @@ Kirigami.ScrollablePage {
     id: root
 
     actions: Kirigami.Action {
-        text: i18nc("@action:button", "Create Email Block")
+        text: KI18n.i18nc("@action:button", "Create Email Block")
         icon.name: 'list-add'
         onTriggered: newEmailBlockDialog.open()
     }
@@ -27,7 +28,7 @@ Kirigami.ScrollablePage {
         property date createdAt
         property int ipCount
 
-        title: i18nc("@title", "E-Mail Domain Info")
+        title: KI18n.i18nc("@title", "E-Mail Domain Info")
 
         contentPadding: 0
         implicitWidth: Kirigami.Units.gridUnit * 20
@@ -36,7 +37,7 @@ Kirigami.ScrollablePage {
             spacing: 0
 
             FormCard.FormTextDelegate {
-                text: i18nc("@info The domain on which the block is imposed", "Email domain name")
+                text: KI18n.i18nc("@info The domain on which the block is imposed", "Email domain name")
                 description: emailInfoDialog.domain
                 Layout.fillWidth: true
             }
@@ -44,7 +45,7 @@ Kirigami.ScrollablePage {
             FormCard.FormDelegateSeparator {}
 
             FormCard.FormTextDelegate {
-                text: i18nc("@info Time when the block was imposed.", "Block created at")
+                text: KI18n.i18nc("@info Time when the block was imposed.", "Block created at")
                 description: emailInfoDialog.createdAt.toDateString()
                 Layout.fillWidth: true
             }
@@ -52,7 +53,7 @@ Kirigami.ScrollablePage {
             FormCard.FormDelegateSeparator {}
 
             FormCard.FormTextDelegate {
-                text: i18nc("@info The counted accounts signup attempts using that email domain within the last week.", "Account sign-up attempts in this week")
+                text: KI18n.i18nc("@info The counted accounts signup attempts using that email domain within the last week.", "Account sign-up attempts in this week")
                 description: emailInfoDialog.accountCount
                 Layout.fillWidth: true
             }
@@ -60,7 +61,7 @@ Kirigami.ScrollablePage {
             FormCard.FormDelegateSeparator {}
 
             FormCard.FormTextDelegate {
-                text: i18nc("@info The counted IP signup attempts of that email domain within that day.", "IP sign-up attempts in this week")
+                text: KI18n.i18nc("@info The counted IP signup attempts of that email domain within that day.", "IP sign-up attempts in this week")
                 description: emailInfoDialog.ipCount
                 Layout.fillWidth: true
             }
@@ -69,16 +70,16 @@ Kirigami.ScrollablePage {
         standardButtons: Kirigami.Dialog.NoButton
         customFooterActions: [
             Kirigami.Action {
-                text: i18nc("@action:button", "Cancel")
+                text: KI18n.i18nc("@action:button", "Cancel")
                 icon.name: "dialog-cancel"
                 onTriggered: emailInfoDialog.close();
             },
             Kirigami.Action {
-                text: i18nc("@action:button", "Delete email block")
+                text: KI18n.i18nc("@action:button", "Delete email block")
                 icon.name: "delete"
                 onTriggered: {
                     emailBlockView.model.deleteEmailBlock(emailInfoDialog.index)
-                    showPassiveNotification(i18n("Email block deleted"))
+                    showPassiveNotification(KI18n.i18n("Email block deleted"))
                     emailInfoDialog.close();
                 }
             }
@@ -88,7 +89,7 @@ Kirigami.ScrollablePage {
     Kirigami.PromptDialog {
         id: newEmailBlockDialog
 
-        title: i18nc("@title", "New E-Mail Domain Block")
+        title: KI18n.i18nc("@title", "New E-Mail Domain Block")
 
         contentPadding: 0
         implicitWidth: Kirigami.Units.gridUnit * 20
@@ -98,8 +99,8 @@ Kirigami.ScrollablePage {
 
             FormCard.FormTextFieldDelegate {
                 id: email
-                label: i18nc("@info The domain on which the block will be imposed", "Domain *")
-                statusMessage: i18n("This can be the domain name that shows up in the e-mail address or the MX record it uses. They will be checked upon sign-up.")
+                label: KI18n.i18nc("@info The domain on which the block will be imposed", "Domain *")
+                statusMessage: KI18n.i18n("This can be the domain name that shows up in the e-mail address or the MX record it uses. They will be checked upon sign-up.")
                 status: Kirigami.MessageType.Information
             }
         }
@@ -107,16 +108,16 @@ Kirigami.ScrollablePage {
         standardButtons: Kirigami.Dialog.NoButton
         customFooterActions: [
             Kirigami.Action {
-                text: i18nc("@action:button", "Cancel")
+                text: KI18n.i18nc("@action:button", "Cancel")
                 icon.name: "dialog-cancel"
                 onTriggered: newEmailBlockDialog.close();
             },
             Kirigami.Action {
-                text: i18nc("@action:button", "Resolve domain")
+                text: KI18n.i18nc("@action:button", "Resolve domain")
                 icon.name: "checkbox"
                 onTriggered: {
                     emailBlockView.model.newEmailBlock(email.text)
-                    showPassiveNotification(i18n("New email block added"))
+                    showPassiveNotification(KI18n.i18n("New email block added"))
                     email.clear()
                     newEmailBlockDialog.close();
                 }
@@ -159,7 +160,7 @@ Kirigami.ScrollablePage {
                 Delegates.SubtitleContentItem {
                     itemDelegate: delegate
                     bold: true
-                    subtitle: i18nc("@info", "%1 sign-up attempts over the last week", delegate.totalCount)
+                    subtitle: KI18n.i18nc("@info", "%1 sign-up attempts over the last week", delegate.totalCount)
                 }
 
                 Item {
@@ -181,7 +182,7 @@ Kirigami.ScrollablePage {
             }
             Kirigami.PlaceholderMessage {
                 anchors.centerIn: parent
-                text: i18n("No email blocks found")
+                text: KI18n.i18n("No email blocks found")
                 visible: emailBlockView.count === 0 && !emailBlockView.model.loading
                 width: parent.width - Kirigami.Units.gridUnit * 4
             }

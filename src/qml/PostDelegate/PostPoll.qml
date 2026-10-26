@@ -4,6 +4,7 @@
 pragma ComponentBehavior: Bound
 
 import QtQuick
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
@@ -38,7 +39,7 @@ ColumnLayout {
                     } else if (root.poll.votesCount === 0) {
                         return ''
                     } else {
-                        return i18nc("Votes percentage", "%1%", Math.round(votedPollDelegate.modelData.votesCount / root.poll.votesCount * 100))
+                        return KI18n.i18nc("Votes percentage", "%1%", Math.round(votedPollDelegate.modelData.votesCount / root.poll.votesCount * 100))
                     }
                     Layout.alignment: Qt.AlignVCenter
                     Layout.minimumWidth: root.poll.votesCount !== 0 ? Kirigami.Units.gridUnit * 2 : 0
@@ -57,7 +58,7 @@ ColumnLayout {
                     Layout.preferredHeight: Kirigami.Units.iconSizes.sizeForLabels
                     Layout.alignment: Qt.AlignVCenter
 
-                    QQC2.ToolTip.text: i18n("You voted for this option")
+                    QQC2.ToolTip.text: KI18n.i18n("You voted for this option")
                     QQC2.ToolTip.visible: optionHover.hovered
                     QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
 
@@ -80,7 +81,7 @@ ColumnLayout {
                 }
 
                 QQC2.Label {
-                    text: i18n("(No votes)")
+                    text: KI18n.i18n("(No votes)")
                     visible: root.poll.votesCount === 0
                 }
             }
@@ -125,7 +126,7 @@ ColumnLayout {
 
         QQC2.Button {
             enabled: !root.showResults && pollGroup.checkState !== Qt.Unchecked
-            text: i18n("Vote")
+            text: KI18n.i18n("Vote")
             icon.name: "checkbox-symbolic"
             onClicked: {
                 let choices = [];
@@ -147,13 +148,13 @@ ColumnLayout {
         QQC2.Switch {
             id: showVotesSwitch
 
-            text: i18nc("@option:check Show poll results", "Show Results")
+            text: KI18n.i18nc("@option:check Show poll results", "Show Results")
         }
     }
 
     QQC2.Label {
         visible: root.poll.expired
-        text: i18n("Poll has closed")
+        text: KI18n.i18n("Poll has closed")
         color: Kirigami.Theme.disabledTextColor
     }
 }

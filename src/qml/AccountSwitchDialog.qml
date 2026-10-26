@@ -7,6 +7,7 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 
 import org.kde.kirigamiaddons.components as KirigamiComponents
@@ -26,7 +27,7 @@ Kirigami.Dialog {
     bottomPadding: 0
     standardButtons: Kirigami.Dialog.NoButton
     width: Math.min(applicationWindow().width, Kirigami.Units.gridUnit * 24)
-    title: i18nc("@title: dialog to switch between logged in accounts", "Switch Account")
+    title: KI18n.i18nc("@title: dialog to switch between logged in accounts", "Switch Account")
 
     onVisibleChanged: if (visible) {
         accountView.forceActiveFocus()
@@ -53,10 +54,10 @@ Kirigami.Dialog {
                 width: Kirigami.Units.iconSizes.smallMedium
                 height: Kirigami.Units.iconSizes.smallMedium
             }
-            text: i18nc("@button: login to or register a new account.", "Add Account")
+            text: KI18n.i18nc("@button: login to or register a new account.", "Add Account")
             contentItem: Delegates.SubtitleContentItem {
                 itemDelegate: addDelegate
-                subtitle: i18n("Log in or create a new account")
+                subtitle: KI18n.i18n("Log in or create a new account")
                 labelItem.textFormat: Text.PlainText
                 subtitleItem.textFormat: Text.PlainText
             }
@@ -154,7 +155,7 @@ Kirigami.Dialog {
                         source: "data-warning"
                         visible: userDelegate.hasIssue
 
-                        QQC2.ToolTip.text: i18nc("@info:tooltip", "This account has an issue and can't login, switch to it for more details.")
+                        QQC2.ToolTip.text: KI18n.i18nc("@info:tooltip", "This account has an issue and can't login, switch to it for more details.")
                         QQC2.ToolTip.visible: iconContainer.hovered
                         QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                     }

@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 
 import QtQuick
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
@@ -14,7 +15,7 @@ import org.kde.tokodon
 MastoPage {
     id: root
 
-    title: i18nc("@title:window", "Registration")
+    title: KI18n.i18nc("@title:window", "Registration")
 
     required property var account
 
@@ -22,7 +23,7 @@ MastoPage {
         Connections {
             target: Controller
             function onNetworkErrorOccurred(error) {
-                message.text = i18nc("@info:status Network status", "Failed to contact server: %1. Please check your proxy settings.", error)
+                message.text = KI18n.i18nc("@info:status Network status", "Failed to contact server: %1. Please check your proxy settings.", error)
                 message.visible = true;
             }
         },
@@ -33,7 +34,7 @@ MastoPage {
                 const obj = JSON.parse(json);
 
                 if (obj.error) {
-                    message.text = i18nc("@info:status Network status", "Failed to contact server: %1. Please check your proxy settings.", obj.error)
+                    message.text = KI18n.i18nc("@info:status Network status", "Failed to contact server: %1. Please check your proxy settings.", obj.error)
                     message.visible = true;
                     return;
                 }
@@ -82,7 +83,7 @@ MastoPage {
         showCloseButton: true
 
         actions: Kirigami.Action {
-            text: i18n("Proxy Settings")
+            text: KI18n.i18n("Proxy Settings")
             icon.name: "settings-configure"
             onTriggered: pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "NetworkProxyPage"))
         }
@@ -91,13 +92,13 @@ MastoPage {
     Component.onCompleted: usernameField.forceActiveFocus()
 
     FormCard.FormHeader {
-        title: i18nc("@title:group", "Register")
+        title: KI18n.i18nc("@title:group", "Register")
     }
 
     FormCard.FormCard {
         FormCard.FormTextFieldDelegate {
             id: usernameField
-            label: i18n("Username")
+            label: KI18n.i18n("Username")
             inputMethodHints: Qt.ImhNoPredictiveText | Qt.ImhNoAutoUppercase
             onAccepted: emailField.forceActiveFocus()
         }
@@ -106,7 +107,7 @@ MastoPage {
 
         FormCard.FormTextFieldDelegate {
             id: emailField
-            label: i18n("Email Address")
+            label: KI18n.i18n("Email Address")
             inputMethodHints: Qt.ImhNoPredictiveText | Qt.ImhNoAutoUppercase
             onAccepted: passwordField.forceActiveFocus()
         }
@@ -115,7 +116,7 @@ MastoPage {
 
         FormCard.FormTextFieldDelegate {
             id: passwordField
-            label: i18n("Password")
+            label: KI18n.i18n("Password")
             echoMode: TextInput.Password
             inputMethodHints: Qt.ImhHiddenText | Qt.ImhSensitiveData | Qt.ImhNoPredictiveText
             onAccepted: reasonField.forceActiveFocus()
@@ -125,7 +126,7 @@ MastoPage {
 
         FormCard.FormDateTimeDelegate {
             id: dateOfBirthField
-            text: i18n("Date of Birth")
+            text: KI18n.i18n("Date of Birth")
             dateTimeDisplay: FormCard.FormDateTimeDelegate.Date
         }
 
@@ -133,7 +134,7 @@ MastoPage {
 
         FormCard.FormTextFieldDelegate {
             id: reasonField
-            label: i18n("Reason")
+            label: KI18n.i18n("Reason")
         }
     }
 
@@ -142,7 +143,7 @@ MastoPage {
 
         FormCard.FormButtonDelegate {
             id: continueButton
-            text: i18n("Register")
+            text: KI18n.i18n("Register")
             onClicked: {
                 root.account.registerAccount(usernameField.text, emailField.text, passwordField.text, true, "en", dateOfBirthField.value, reasonField.text);
 

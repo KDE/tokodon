@@ -4,6 +4,7 @@
 pragma ComponentBehavior: Bound
 
 import QtQuick
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
@@ -38,9 +39,9 @@ Kirigami.ScrollablePage {
         if (model.name === "home" && !applicationWindow().globalDrawer.drawerOpen) {
             if (AccountManager.rowCount() > 1) {
                 if (AccountManager.selectedAccount === null) {
-                    return i18n("Loading");
+                    return KI18n.i18n("Loading");
                 }
-                return i18n("Home (%1)", AccountManager.selectedAccount.identity.displayNameHtml);
+                return KI18n.i18n("Home (%1)", AccountManager.selectedAccount.identity.displayNameHtml);
             }
         }
 
@@ -107,26 +108,26 @@ Kirigami.ScrollablePage {
     actions: [
         Kirigami.Action {
             id: filterAction
-            text: i18nc("@action:button", "Filters")
+            text: KI18n.i18nc("@action:button", "Filters")
             icon.name: "view-filter"
 
             Kirigami.Action {
                 id: showBoostsAction
-                text: i18n("Show Boosts")
+                text: KI18n.i18n("Show Boosts")
                 icon.name: "boost"
                 checkable: true
                 checked: true
             }
             Kirigami.Action {
                 id: showQuotesAction
-                text: i18n("Show Quotes")
+                text: KI18n.i18n("Show Quotes")
                 icon.name: "format-text-blockquote-symbolic"
                 checkable: true
                 checked: true
             }
             Kirigami.Action {
                 id: showRepliesAction
-                text: i18n("Show Replies")
+                text: KI18n.i18n("Show Replies")
                 icon.name: "view-conversation-balloon-symbolic"
                 checkable: true
                 checked: true
@@ -136,8 +137,8 @@ Kirigami.ScrollablePage {
             }
             Kirigami.Action {
                 icon.name: "configure-symbolic"
-                text: i18nc("@action:intoolbar", "Configure Filters…")
-                onTriggered: pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "FiltersPage"), { title: i18nc("@title:window", "Filters") }, { title: i18nc("@title:window", "Filters") })
+                text: KI18n.i18nc("@action:intoolbar", "Configure Filters…")
+                onTriggered: pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "FiltersPage"), { title: KI18n.i18nc("@title:window", "Filters") }, { title: KI18n.i18nc("@title:window", "Filters") })
             }
         }
     ]
@@ -147,7 +148,7 @@ Kirigami.ScrollablePage {
     Connections {
         target: root.model
         function onNetworkErrorOccurred(error: string): void {
-            message.text = i18nc("@info:status Network status", "Failed to contact server: %1. Please check your settings.", error)
+            message.text = KI18n.i18nc("@info:status Network status", "Failed to contact server: %1. Please check your settings.", error)
             message.visible = true
         }
         function onLoadingChanged(): void {
@@ -188,7 +189,7 @@ Kirigami.ScrollablePage {
             visible: root.model.hasPrevious ?? false
 
             QQC2.Button {
-                text: i18nc("@action:button Load more posts above this", "Load More")
+                text: KI18n.i18nc("@action:button Load more posts above this", "Load More")
                 icon.name: "content-loading-symbolic"
 
                 onClicked: timelineModel.fetchPrevious()

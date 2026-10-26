@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
 import QtQuick
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.tokodon
 
@@ -15,13 +16,13 @@ TimelinePage {
 
     title: name
     iconName: "view-list-text"
-    placeholderText: i18n("No Posts")
-    placeholderExplanation: i18n("There are no posts from the users in your list. Only new posts will appear in a list.")
+    placeholderText: KI18n.i18n("No Posts")
+    placeholderExplanation: KI18n.i18n("There are no posts from the users in your list. Only new posts will appear in a list.")
     showPostAction: false
     verticalScrollBarInteractive: false
 
     actions: Kirigami.Action {
-        text: i18nc("@action:button Edit current list", "Edit…")
+        text: KI18n.i18nc("@action:button Edit current list", "Edit…")
         icon.name: "edit-rename"
         onTriggered: {
             let page = pageStack.layers.push(editListPage.createObject(root), {

@@ -6,6 +6,7 @@ import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import QtQml.Models
 
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.notification
@@ -16,23 +17,23 @@ import org.kde.tokodon
 MastoPage {
     id: root
 
-    title: i18nc("@title:window", "Notifications")
+    title: KI18n.i18nc("@title:window", "Notifications")
 
     FormCard.FormHeader {
-        title: i18n("Setup Required")
+        title: KI18n.i18n("Setup Required")
     }
 
     FormCard.FormCard {
         FormCard.FormTextDelegate {
             textItem.wrapMode: Text.WordWrap
-            text: i18n("Tokodon can show notifications for activity such as users boosting or replying to your posts.\n\nThe types of notifications shown can be fine tuned when logged in.")
+            text: KI18n.i18n("Tokodon can show notifications for activity such as users boosting or replying to your posts.\n\nThe types of notifications shown can be fine tuned when logged in.")
         }
 
         FormCard.FormDelegateSeparator {}
 
         FormCard.FormButtonDelegate {
             id: learnMoreButton
-            text: i18n("Allow Notifications")
+            text: KI18n.i18n("Allow Notifications")
             icon.name: "checkmark-symbolic"
             onClicked: NotificationPermission.requestPermission(success => {
                 if (success) {
@@ -46,7 +47,7 @@ MastoPage {
         FormCard.FormButtonDelegate {
             id: continueButton
 
-            text: i18n("Continue")
+            text: KI18n.i18n("Continue")
             icon.name: "go-next-symbolic"
             onClicked: {
                 Config.promptedNotificationPermission = true;

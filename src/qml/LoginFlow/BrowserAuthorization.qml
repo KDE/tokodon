@@ -6,6 +6,7 @@ import QtQuick.Layouts
 import QtQuick.Window
 import QtQuick.Controls as QQC2
 
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
 
@@ -22,8 +23,8 @@ BaseAuthorization {
         Layout.alignment: Qt.AlignTop
 
         FormCard.FormButtonDelegate {
-            text: i18n("Use Authorization Code")
-            description: i18n("Use this login method if the above link does not work.")
+            text: KI18n.i18n("Use Authorization Code")
+            description: KI18n.i18n("Use this login method if the above link does not work.")
             icon.name: "lock-symbolic"
             onClicked: loginPage.openCodeAuthPage()
         }

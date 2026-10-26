@@ -5,6 +5,7 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import Qt.labs.qmlmodels
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.delegates as Delegates
 import org.kde.kirigamiaddons.components as KirigamiComponents
@@ -99,7 +100,7 @@ DelegateChooser {
             required property string id
 
             text: "#" + id
-            Accessible.description: i18n("Hashtag")
+            Accessible.description: KI18n.i18n("Hashtag")
 
             onClicked: {
                 Navigation.openTag(id);

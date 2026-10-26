@@ -5,6 +5,7 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import QtQml.Models
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.tokodon
 
@@ -41,7 +42,7 @@ ColumnLayout {
                 }
                 QQC2.TextField {
                     Layout.fillWidth: true
-                    placeholderText: i18nc("@label:textbox Poll choice", "Choice %1", index + 1)
+                    placeholderText: KI18n.i18nc("@label:textbox Poll choice", "Choice %1", index + 1)
                     maximumLength: root.maxCharactersPerOption
 
                     onEditingFinished: root.poll.setOption(index, text)
@@ -66,8 +67,8 @@ ColumnLayout {
             Kirigami.Action {
                 displayHint: Kirigami.DisplayHint.KeepVisible
 
-                text: i18nc("@action:intoolbar Poll toolbar", "Add Choice")
-                tooltip: i18nc("@info:tooltip Poll toolbar", "Add a new poll choice")
+                text: KI18n.i18nc("@action:intoolbar Poll toolbar", "Add Choice")
+                tooltip: KI18n.i18nc("@info:tooltip Poll toolbar", "Add a new poll choice")
                 icon.name: "list-add"
                 onTriggered: poll.addOption()
                 enabled: poll.options.length < root.maxPollOptions
@@ -86,7 +87,7 @@ ColumnLayout {
                     Component.onCompleted: currentIndex = indexOfValue(poll.expiresIn)
                     onActivated: poll.expiresIn = timeModel.getTime(currentIndex)
 
-                    QQC2.ToolTip.text: i18nc("@info:tooltip Poll toolbar", "When the poll will expire")
+                    QQC2.ToolTip.text: KI18n.i18nc("@info:tooltip Poll toolbar", "When the poll will expire")
                     QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                     QQC2.ToolTip.visible: hovered
                 }
@@ -95,13 +96,13 @@ ColumnLayout {
                 displayHint: Kirigami.DisplayHint.AlwaysHide
 
                 displayComponent: QQC2.CheckBox {
-                    text: i18nc("@option:check Poll toolbar", "Multiple choice")
+                    text: KI18n.i18nc("@option:check Poll toolbar", "Multiple choice")
 
                     onClicked: poll.multipleChoice = checked
 
                     Component.onCompleted: checked = poll.multipleChoice
 
-                    QQC2.ToolTip.text: i18nc("@info:tooltip Poll toolbar", "Allow multiple choices")
+                    QQC2.ToolTip.text: KI18n.i18nc("@info:tooltip Poll toolbar", "Allow multiple choices")
                     QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                     QQC2.ToolTip.visible: hovered
                 }
@@ -110,13 +111,13 @@ ColumnLayout {
                 displayHint: Kirigami.DisplayHint.AlwaysHide
 
                 displayComponent: QQC2.CheckBox {
-                    text: i18nc("@option:check Poll toolbar", "Hide totals")
+                    text: KI18n.i18nc("@option:check Poll toolbar", "Hide totals")
 
                     onClicked: poll.hideTotals = checked
 
                     Component.onCompleted: checked = poll.hideTotals
 
-                    QQC2.ToolTip.text: i18nc("@info:tooltip Poll toolbar", "Hide vote count until the poll ends")
+                    QQC2.ToolTip.text: KI18n.i18nc("@info:tooltip Poll toolbar", "Hide vote count until the poll ends")
                     QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                     QQC2.ToolTip.visible: hovered
                 }

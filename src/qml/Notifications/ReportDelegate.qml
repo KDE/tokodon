@@ -5,6 +5,7 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import Qt.labs.qmlmodels
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.tokodon
 
@@ -59,7 +60,7 @@ QQC2.ItemDelegate {
             }
 
             QQC2.Label {
-                text: i18nc("@info:label", "A report has been filed against a user in your server.")
+                text: KI18n.i18nc("@info:label", "A report has been filed against a user in your server.")
             }
         }
     }

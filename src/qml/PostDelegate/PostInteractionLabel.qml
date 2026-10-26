@@ -5,6 +5,7 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.components as KirigamiComponents
 
@@ -56,13 +57,13 @@ RowLayout {
 
         text: {
             if (!root.identity) {
-                return i18nc("@info Loading user that started this interaction", "Loading…");
+                return KI18n.i18nc("@info Loading user that started this interaction", "Loading…");
             }
 
             if (root.isBoosted) {
-                return root.identity ? i18n("%1 boosted", root.identity.displayNameHtml) : '';
+                return root.identity ? KI18n.i18n("%1 boosted", root.identity.displayNameHtml) : '';
             } else if (root.isReply) {
-                return root.identity ? i18n("In reply to %1", root.identity.displayNameHtml) : '';
+                return root.identity ? KI18n.i18n("In reply to %1", root.identity.displayNameHtml) : '';
             }
         }
         color: Kirigami.Theme.disabledTextColor

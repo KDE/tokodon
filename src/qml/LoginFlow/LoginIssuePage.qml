@@ -6,6 +6,7 @@ import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import QtQml.Models
 
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
 
@@ -14,7 +15,7 @@ import org.kde.tokodon
 MastoPage {
     id: root
 
-    title: i18nc("@title:window", "Login Issue")
+    title: KI18n.i18nc("@title:window", "Login Issue")
 
     FormCard.FormCard {
         Layout.topMargin: Kirigami.Units.largeSpacing
@@ -24,7 +25,7 @@ MastoPage {
                 source: "data-warning"
             }
 
-            text: i18n("There was an issue logging into %1:<br><b>%2</b>", AccountManager.selectedAccount.instanceUri, AccountManager.selectedAccountLoginIssue())
+            text: KI18n.i18n("There was an issue logging into %1:<br><b>%2</b>", AccountManager.selectedAccount.instanceUri, AccountManager.selectedAccountLoginIssue())
             textItem.textFormat: Text.StyledText
             textItem.wrapMode: Text.WordWrap
         }
@@ -35,7 +36,7 @@ MastoPage {
 
         FormCard.FormTextDelegate {
             id: helpLabel
-            text: i18n("Please check if the password service is running. For other login issues, you can try logging into the server's website.\n\nYou can attempt to log in again with the button below, or restart Tokodon.")
+            text: KI18n.i18n("Please check if the password service is running. For other login issues, you can try logging into the server's website.\n\nYou can attempt to log in again with the button below, or restart Tokodon.")
             textItem {
                 wrapMode: Text.WordWrap
             }
@@ -45,7 +46,7 @@ MastoPage {
 
         FormCard.FormButtonDelegate {
             id: continueButton
-            text: i18n("View Website")
+            text: KI18n.i18n("View Website")
             icon.name: "internet-services-symbolic"
             onClicked: Qt.openUrlExternally(AccountManager.selectedAccount.instanceUri)
         }
@@ -54,7 +55,7 @@ MastoPage {
 
         FormCard.FormButtonDelegate {
             id: attemptButton
-            text: i18n("Re-Attempt Log In")
+            text: KI18n.i18n("Re-Attempt Log In")
             icon.name: "edit-redo-symbolic"
             onClicked: {
                 AccountManager.selectedAccount.validateToken();
@@ -66,15 +67,15 @@ MastoPage {
 
         FormCard.FormButtonDelegate {
             id: logoutButton
-            text: i18n("Logout…")
+            text: KI18n.i18n("Logout…")
             icon.name: "im-kick-user"
             onClicked: logoutPrompt.open()
 
             Kirigami.PromptDialog {
                 id: logoutPrompt
 
-                title: i18nc("@title", "Logout")
-                subtitle: i18nc("@label", "Are you sure you want to log out?")
+                title: KI18n.i18nc("@title", "Logout")
+                subtitle: KI18n.i18nc("@label", "Are you sure you want to log out?")
                 standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
                 showCloseButton: false
 

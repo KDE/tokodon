@@ -5,6 +5,7 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.delegates as Delegates
 
@@ -61,7 +62,7 @@ Kirigami.ScrollablePage {
     }
 
     actions: Kirigami.Action {
-        text: i18nc("@action:button Edit current collection", "Edit…")
+        text: KI18n.i18nc("@action:button Edit current collection", "Edit…")
         icon.name: "edit-rename"
         visible: collectionModel.accountId === AccountManager.selectedAccount.identity.id
 
@@ -126,7 +127,7 @@ Kirigami.ScrollablePage {
                     }
 
                     QQC2.Button {
-                        text: i18nc("@action:button Remove from collection", "Remove")
+                        text: KI18n.i18nc("@action:button Remove from collection", "Remove")
                         icon.name: "list-remove-user"
                         visible: collectionModel.accountId === AccountManager.selectedAccount.identity.id
 
@@ -143,7 +144,7 @@ Kirigami.ScrollablePage {
 
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
-            text: i18nc("@info:placeholder No accounts in this collection", "No Accounts")
+            text: KI18n.i18nc("@info:placeholder No accounts in this collection", "No Accounts")
             visible: listview.count === 0 && !listview.model.loading
             width: parent.width - Kirigami.Units.gridUnit * 4
         }

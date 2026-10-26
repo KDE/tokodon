@@ -5,6 +5,7 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.components as KirigamiComponents
 
@@ -61,7 +62,7 @@ RowLayout {
 
                     onClicked: Navigation.openAccount(modelData.id)
 
-                    QQC2.ToolTip.text: i18n("View %1's Profile", modelData.displayName)
+                    QQC2.ToolTip.text: KI18n.i18n("View %1's Profile", modelData.displayName)
                     QQC2.ToolTip.visible: hovered
                     QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                 }
@@ -70,9 +71,9 @@ RowLayout {
             QQC2.Label {
                 text: {
                     if (root.isFavorite) {
-                        return i18n("%1 users favorited your post", root.numInGroup);
+                        return KI18n.i18n("%1 users favorited your post", root.numInGroup);
                     } else if (root.isBoost) {
-                        return i18n("%1 users boosted your post", root.numInGroup);
+                        return KI18n.i18n("%1 users boosted your post", root.numInGroup);
                     }
 
                     return '';

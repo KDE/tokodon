@@ -160,6 +160,7 @@ ecm_set_disabled_deprecation_versions(
         KF ${KF_MIN_VERSION}
 )
 
+ecm_find_qmlmodule(org.kde.ki18n REQUIRED)
 ecm_find_qmlmodule(org.kde.kitemmodels REQUIRED)
 ecm_find_qmlmodule(org.kde.notification REQUIRED)
 ecm_find_qmlmodule(org.kde.kquickcontrolsaddons REQUIRED)

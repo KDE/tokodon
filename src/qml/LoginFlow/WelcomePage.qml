@@ -7,6 +7,7 @@ import QtQuick.Layouts
 import QtQuick.Effects
 import QtQuick.Window
 
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
 
@@ -15,7 +16,7 @@ import org.kde.tokodon
 Kirigami.Page {
     id: root
 
-    title: i18nc("@title:window", "Welcome")
+    title: KI18n.i18nc("@title:window", "Welcome")
     globalToolBarStyle: Kirigami.ApplicationHeaderStyle.None
 
     required property TokodonApplication application
@@ -52,7 +53,7 @@ Kirigami.Page {
             }
 
             Kirigami.Heading {
-                text: i18nc("@info", "Tokodon")
+                text: KI18n.i18nc("@info", "Tokodon")
                 level: 1
                 horizontalAlignment: Text.AlignHCenter
                 font.bold: true
@@ -61,7 +62,7 @@ Kirigami.Page {
             }
 
             QQC2.Label {
-                text: i18nc("@info", "Browse the Fediverse and connect with people on Mastodon (and other compatible software).")
+                text: KI18n.i18nc("@info", "Browse the Fediverse and connect with people on Mastodon (and other compatible software).")
                 horizontalAlignment: Text.AlignHCenter
                 wrapMode: Text.WordWrap
 
@@ -77,7 +78,7 @@ Kirigami.Page {
 
                 FormCard.FormButtonDelegate {
                     id: registerButton
-                    text: i18nc("@action:button Pick a Mastodon server", "Register")
+                    text: KI18n.i18nc("@action:button Pick a Mastodon server", "Register")
                     icon.name: "network-server-symbolic"
                     onClicked: Window.window.pageStack.push(Qt.createComponent("org.kde.tokodon", "ServersPage"), { forRegistration: true })
                     focus: true
@@ -87,14 +88,14 @@ Kirigami.Page {
 
                 FormCard.FormButtonDelegate {
                     id: loginButton
-                    text: i18nc("@action:button Use an existing Mastodon account", "Login")
+                    text: KI18n.i18nc("@action:button Use an existing Mastodon account", "Login")
                     icon.name: "user-symbolic"
                     onClicked: Window.window.pageStack.push(Qt.createComponent("org.kde.tokodon", "ServersPage"), { forRegistration: false })
                 }
 
                 FormCard.FormButtonDelegate {
                     id: systemAccountButton
-                    text: i18nc("@action:button Use an existing Mastodon account", "Use System Account")
+                    text: KI18n.i18nc("@action:button Use an existing Mastodon account", "Use System Account")
                     icon.name: "user-symbolic"
                     visible: AccountManager.supportsSystemAccounts
                     onClicked: {
@@ -112,7 +113,7 @@ Kirigami.Page {
 
                 FormCard.FormButtonDelegate {
                     id: settingsButton
-                    text: i18nc("@action:button Application settings", "Settings")
+                    text: KI18n.i18nc("@action:button Application settings", "Settings")
                     icon.name: "settings-configure"
                     onClicked: settingsWindow.open()
                 }
@@ -123,13 +124,13 @@ Kirigami.Page {
                 Layout.topMargin: Kirigami.Units.largeSpacing
 
                 Accessible.role: Accessible.Button
-                Accessible.name: i18nc("@action:button", "Compatible with Mastodon")
+                Accessible.name: KI18n.i18nc("@action:button", "Compatible with Mastodon")
 
                 contentItem: ColumnLayout {
                     spacing: Kirigami.Units.smallSpacing
 
                     QQC2.Label {
-                        text: i18nc("@info Compatible with Mastodon", "Compatible with")
+                        text: KI18n.i18nc("@info Compatible with Mastodon", "Compatible with")
                     }
 
                     Image {

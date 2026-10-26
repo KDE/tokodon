@@ -5,6 +5,7 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.delegates as Delegates
 import org.kde.kitemmodels as KItemModels
@@ -17,7 +18,7 @@ import "./PostDelegate"
 Kirigami.Page {
     id: root
 
-    title: i18nc("@title 'Following' as in the users you're following on Mastodon.", "Following")
+    title: KI18n.i18nc("@title 'Following' as in the users you're following on Mastodon.", "Following")
 
     topPadding: 0
     bottomPadding: 0
@@ -38,12 +39,12 @@ Kirigami.Page {
     actions: [
         Kirigami.Action {
             id: filterAction
-            text: i18nc("@action:button", "Filters")
+            text: KI18n.i18nc("@action:button", "Filters")
             icon.name: "view-filter"
 
             Kirigami.Action {
                 id: showBoostsAction
-                text: i18nc("@action:inmenu", "Show Boosts")
+                text: KI18n.i18nc("@action:inmenu", "Show Boosts")
                 icon.name: "boost"
                 checkable: true
                 checked: true
@@ -51,7 +52,7 @@ Kirigami.Page {
             }
             Kirigami.Action {
                 id: showRepliesAction
-                text: i18nc("@action:inmenu", "Show Replies")
+                text: KI18n.i18nc("@action:inmenu", "Show Replies")
                 icon.name: "view-conversation-balloon-symbolic"
                 checkable: true
                 checked: true
@@ -62,8 +63,8 @@ Kirigami.Page {
             }
             Kirigami.Action {
                 icon.name: "configure-symbolic"
-                text: i18nc("@action:intoolbar", "Configure Filters…")
-                onTriggered: pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "FiltersPage"), { title: i18nc("@title:window", "Filters") }, { title: i18nc("@title:window", "Filters") })
+                text: KI18n.i18nc("@action:intoolbar", "Configure Filters…")
+                onTriggered: pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "FiltersPage"), { title: KI18n.i18nc("@title:window", "Filters") }, { title: KI18n.i18nc("@title:window", "Filters") })
             }
         }
     ]
@@ -152,14 +153,14 @@ Kirigami.Page {
                         visible: root.currentAccountId === ""
 
                         icon.name: "user-group-properties-symbolic"
-                        text: i18n("No User Selected")
-                        explanation: i18n("With the Following view, easily check on each user you're following and only their posts - sorted by recent activity.")
+                        text: KI18n.i18n("No User Selected")
+                        explanation: KI18n.i18n("With the Following view, easily check on each user you're following and only their posts - sorted by recent activity.")
                     }
 
                     Kirigami.PlaceholderMessage {
                         anchors.centerIn: parent
-                        text: i18nc("@label", "No Posts")
-                        explanation: i18n("This user hasn't posted anything yet.")
+                        text: KI18n.i18nc("@label", "No Posts")
+                        explanation: KI18n.i18n("This user hasn't posted anything yet.")
                         visible: timelineListView.count === 0 && !timelineListView.model.loading && !root.currentAccountId === ""
                         width: parent.width - Kirigami.Units.gridUnit * 4
                     }

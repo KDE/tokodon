@@ -5,6 +5,7 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import Qt.labs.qmlmodels
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 
 import org.kde.tokodon
@@ -77,9 +78,9 @@ QQC2.ItemDelegate {
             QQC2.Label {
                 font: Config.defaultFont
                 text: if (root.isAdd) {
-                    i18n("%1 added you to a collection", root.notificationActorIdentity.displayNameHtml)
+                    KI18n.i18n("%1 added you to a collection", root.notificationActorIdentity.displayNameHtml)
                 } else if(root.isUpdate) {
-                    i18n("%1 updated a collection", root.notificationActorIdentity.displayNameHtml)
+                    KI18n.i18n("%1 updated a collection", root.notificationActorIdentity.displayNameHtml)
                 }
                 textFormat: Text.StyledText
                 Layout.fillWidth: true
@@ -99,7 +100,7 @@ QQC2.ItemDelegate {
         // TODO: show a prettier collection display here
 
         QQC2.Button {
-            text: i18nc("@action:button", "View Collection")
+            text: KI18n.i18nc("@action:button", "View Collection")
 
             onClicked: Navigation.openCollection(root.collectionId, root.collectionName)
 

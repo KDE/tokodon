@@ -8,6 +8,7 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kirigamiaddons.components as KirigamiComponents
@@ -78,7 +79,7 @@ FormCard.FormCardPage {
                         Layout.preferredHeight: Kirigami.Units.iconSizes.smallMedium
                         Layout.preferredWidth: Kirigami.Units.iconSizes.smallMedium
 
-                        QQC2.ToolTip.text: i18nc("@info:tooltip", "This account has an issue and can't login, switch to it for more details.")
+                        QQC2.ToolTip.text: KI18n.i18nc("@info:tooltip", "This account has an issue and can't login, switch to it for more details.")
                         QQC2.ToolTip.visible: hovered
                         QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                     }

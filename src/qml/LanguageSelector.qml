@@ -4,6 +4,7 @@
 import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.tokodon
 import QtQuick.Templates as T
@@ -22,7 +23,7 @@ Components.MessageDialog {
 
     parent: applicationWindow().overlay
 
-    title: i18nc("@title", "Select Language")
+    title: KI18n.i18nc("@title", "Select Language")
 
     implicitWidth: Kirigami.Units.gridUnit * 30
     implicitHeight: Kirigami.Units.gridUnit * 30
@@ -47,7 +48,7 @@ Components.MessageDialog {
 
             QQC2.ToolButton {
                 icon.name: "dialog-close"
-                text: i18nc("@action:button", "Close")
+                text: KI18n.i18nc("@action:button", "Close")
                 display: QQC2.Button.IconOnly
             }
         }

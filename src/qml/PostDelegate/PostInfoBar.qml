@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 import QtQuick
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
@@ -23,7 +24,7 @@ ClickableIdentityInfo {
 
     onClicked: Navigation.openAccount(identity.id)
 
-    accessibleName: i18nc("@info", "Post Author")
+    accessibleName: KI18n.i18nc("@info", "Post Author")
     accessibleDescription: root.identity.displayName
 
     Item {
@@ -52,7 +53,7 @@ ClickableIdentityInfo {
 
     InteractionButton {
         iconName: "document-edit"
-        tooltip: i18nc("Edited on <datetime>", "Edited on %1", root.editedAt)
+        tooltip: KI18n.i18nc("Edited on <datetime>", "Edited on %1", root.editedAt)
         visible: !root.selected && root.wasEdited
 
         Layout.alignment: Qt.AlignVCenter
@@ -62,7 +63,7 @@ ClickableIdentityInfo {
         id: moreButton
 
         iconName: 'overflow-menu'
-        tooltip: i18nc("Show more options", "More actions")
+        tooltip: KI18n.i18nc("Show more options", "More actions")
         down: pressed
 
         Layout.alignment: Qt.AlignVCenter

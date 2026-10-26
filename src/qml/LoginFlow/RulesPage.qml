@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 
 import QtQuick
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
@@ -14,7 +15,7 @@ import org.kde.tokodon
 MastoPage {
     id: root
 
-    title: i18nc("@title:window", "Rules")
+    title: KI18n.i18nc("@title:window", "Rules")
 
     required property var account
 
@@ -22,7 +23,7 @@ MastoPage {
         Connections {
             target: Controller
             function onNetworkErrorOccurred(error) {
-                message.text = i18nc("@info:status Network status", "Failed to contact server: %1. Please check your proxy settings.", error)
+                message.text = KI18n.i18nc("@info:status Network status", "Failed to contact server: %1. Please check your proxy settings.", error)
                 message.visible = true;
             }
         }
@@ -37,14 +38,14 @@ MastoPage {
         showCloseButton: true
 
         actions: Kirigami.Action {
-            text: i18n("Proxy Settings")
+            text: KI18n.i18n("Proxy Settings")
             icon.name: "settings-configure"
             onTriggered: pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "NetworkProxyPage"))
         }
     }
 
     FormCard.FormHeader {
-        title: i18nc("@title:group", "Rules")
+        title: KI18n.i18nc("@title:group", "Rules")
     }
 
     FormCard.FormCard {
@@ -97,7 +98,7 @@ MastoPage {
         FormCard.FormButtonDelegate {
             id: agreeButton
 
-            text: i18nc("@action:button Agree to server rules", "Agree")
+            text: KI18n.i18nc("@action:button Agree to server rules", "Agree")
             icon.name: "dialog-ok"
 
             onClicked: {
@@ -115,7 +116,7 @@ MastoPage {
         FormCard.FormButtonDelegate {
             id: disagreeButton
 
-            text: i18nc("@action:button Disagree to server rules", "Disagree")
+            text: KI18n.i18nc("@action:button Disagree to server rules", "Disagree")
             icon.name: "dialog-cancel"
 
             onClicked: root.Window.window.pageStack.layers.pop()

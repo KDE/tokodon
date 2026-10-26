@@ -4,6 +4,7 @@
 
 import QtQuick
 import QtQuick.Controls as QQC2
+import org.kde.ki18n
 import org.kde.tokodon
 import org.kde.kquickcontrolsaddons as KQuickControlsAddons
 import org.kde.kirigami as Kirigami
@@ -42,7 +43,7 @@ Components.ConvergentContextMenu {
 
     Kirigami.Action {
         icon.name: "expand"
-        text: i18nc("@action:inmenu 'Thread' is a series of posts.", "Open Thread")
+        text: KI18n.i18nc("@action:inmenu 'Thread' is a series of posts.", "Open Thread")
         onTriggered: Navigation.openPost(root.postId)
         visible: !root.expandedPost
         enabled: visible
@@ -50,7 +51,7 @@ Components.ConvergentContextMenu {
 
     QQC2.Action {
         icon.name: "open-link-symbolic"
-        text: i18nc("@action:inmenu 'Browser' being a web browser", "Open in Browser")
+        text: KI18n.i18nc("@action:inmenu 'Browser' being a web browser", "Open in Browser")
         onTriggered: {
             Qt.openUrlExternally(root.url)
         }
@@ -58,20 +59,20 @@ Components.ConvergentContextMenu {
 
     QQC2.Action {
         icon.name: "edit-link-symbolic"
-        text: i18nc("@action:inmenu", "Copy Link")
+        text: KI18n.i18nc("@action:inmenu", "Copy Link")
         onTriggered: {
             clipboard.content = root.url;
-            applicationWindow().showPassiveNotification(i18n("Post link copied."));
+            applicationWindow().showPassiveNotification(KI18n.i18n("Post link copied."));
         }
     }
 
     Kirigami.Action {
         icon.name: "edit-copy-symbolic"
-        text: i18nc("@action:inmenu", "Copy Text")
+        text: KI18n.i18nc("@action:inmenu", "Copy Text")
         visible: root.hasContent
         onTriggered: {
             clipboard.content = TextHandler.stripHtml(root.content);
-            applicationWindow().showPassiveNotification(i18n("Post text copied."));
+            applicationWindow().showPassiveNotification(KI18n.i18n("Post text copied."));
         }
     }
 
@@ -84,7 +85,7 @@ Components.ConvergentContextMenu {
         visible: root.hasMultipleAccounts
         enabled: visible
         icon.name: "expand"
-        text: i18nc("@action:inmenu", "Open as…")
+        text: KI18n.i18nc("@action:inmenu", "Open as…")
         onTriggered: applicationWindow().requestCrossAction('open', url)
     }
 
@@ -92,7 +93,7 @@ Components.ConvergentContextMenu {
         visible: root.hasMultipleAccounts
         enabled: visible
         icon.name: "view-conversation-balloon-symbolic"
-        text: i18nc("@action:inmenu", "Reply as…")
+        text: KI18n.i18nc("@action:inmenu", "Reply as…")
         onTriggered: applicationWindow().requestCrossAction('reply', url)
     }
 
@@ -100,7 +101,7 @@ Components.ConvergentContextMenu {
         visible: root.hasMultipleAccounts
         enabled: visible
         icon.name: "favorite"
-        text: i18nc("@action:inmenu", "Favorite as…")
+        text: KI18n.i18nc("@action:inmenu", "Favorite as…")
         onTriggered: applicationWindow().requestCrossAction('favourite', url)
     }
 
@@ -108,7 +109,7 @@ Components.ConvergentContextMenu {
         visible: root.hasMultipleAccounts
         enabled: visible
         icon.name: "boost"
-        text: i18nc("@action:inmenu", "Boost as…")
+        text: KI18n.i18nc("@action:inmenu", "Boost as…")
         onTriggered: applicationWindow().requestCrossAction('reblog', url)
     }
 
@@ -116,7 +117,7 @@ Components.ConvergentContextMenu {
         visible: root.hasMultipleAccounts
         enabled: visible
         icon.name: "bookmark-new"
-        text: i18nc("@action:inmenu", "Bookmark as…")
+        text: KI18n.i18nc("@action:inmenu", "Bookmark as…")
         onTriggered: applicationWindow().requestCrossAction('bookmark', url)
     }
 
@@ -129,7 +130,7 @@ Components.ConvergentContextMenu {
         icon.name: root.pinned ? "window-unpin" : "pin"
         visible: root.isSelf
         enabled: visible
-        text: root.pinned ? i18nc("@action:inmenu", "Unpin on Profile") : i18nc("@action:inmenu", "Pin on Profile")
+        text: root.pinned ? KI18n.i18nc("@action:inmenu", "Unpin on Profile") : KI18n.i18nc("@action:inmenu", "Pin on Profile")
         onTriggered: timelineModel.actionPin(timelineModel.index(root.index, 0))
     }
 
@@ -141,7 +142,7 @@ Components.ConvergentContextMenu {
         icon.name: "dialog-cancel"
         visible: root.isSelf
         enabled: visible
-        text: root.muted ? i18nc("@action:inmenu", "Unmute Conversation") : i18nc("@action:inmenu", "Mute Conversation")
+        text: root.muted ? KI18n.i18nc("@action:inmenu", "Unmute Conversation") : KI18n.i18nc("@action:inmenu", "Mute Conversation")
         onTriggered: timelineModel.actionMute(timelineModel.index(root.index, 0))
     }
 
@@ -151,9 +152,9 @@ Components.ConvergentContextMenu {
         enabled: visible
         text: {
             if (root.authorIdentity.relationship && root.authorIdentity.relationship.muting) {
-                return i18nc("@action:inmenu Unmute account", "Unmute @%1", root.authorIdentity.username);
+                return KI18n.i18nc("@action:inmenu Unmute account", "Unmute @%1", root.authorIdentity.username);
             } else {
-                return i18nc("@action:inmenu Mute account", "Mute @%1", root.authorIdentity.username);
+                return KI18n.i18nc("@action:inmenu Mute account", "Mute @%1", root.authorIdentity.username);
             }
         }
         onTriggered: {
@@ -171,9 +172,9 @@ Components.ConvergentContextMenu {
         enabled: visible
         text: {
             if (root.authorIdentity.relationship && root.authorIdentity.relationship.blocking) {
-                return i18nc("@action:inmenu Unblock account", "Unblock @%1", root.authorIdentity.username);
+                return KI18n.i18nc("@action:inmenu Unblock account", "Unblock @%1", root.authorIdentity.username);
             } else {
-                return i18nc("@action:inmenu Block account", "Block @%1", root.authorIdentity.username);
+                return KI18n.i18nc("@action:inmenu Block account", "Block @%1", root.authorIdentity.username);
             }
         }
         onTriggered: {
@@ -189,7 +190,7 @@ Components.ConvergentContextMenu {
         icon.name: "dialog-warning-symbolic"
         visible: !root.isSelf
         enabled: visible
-        text: i18nc("@action:inmenu Report this post", "Report…");
+        text: KI18n.i18nc("@action:inmenu Report this post", "Report…");
         onTriggered: Navigation.reportPost(root.authorIdentity, root.postId)
     }
 
@@ -201,7 +202,7 @@ Components.ConvergentContextMenu {
         icon.name: "edit-entry"
         visible: root.isSelf
         enabled: visible
-        text: i18n("Edit")
+        text: KI18n.i18n("Edit")
         onTriggered: timelineModel.actionRedraft(timelineModel.index(root.index, 0), true)
     }
 
@@ -209,7 +210,7 @@ Components.ConvergentContextMenu {
         icon.name: "edit-delete"
         visible: root.isSelf
         enabled: visible
-        text: i18n("Delete…")
+        text: KI18n.i18n("Delete…")
         onTriggered: root.deletePost()
     }
 
@@ -217,7 +218,7 @@ Components.ConvergentContextMenu {
         icon.name: "edit-cut"
         visible: root.isSelf
         enabled: visible
-        text: i18n("Delete & Re-draft…")
+        text: KI18n.i18n("Delete & Re-draft…")
         onTriggered: root.redraftPost()
     }
 

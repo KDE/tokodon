@@ -4,6 +4,7 @@
 pragma ComponentBehavior: Bound
 
 import QtQuick
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
@@ -105,7 +106,7 @@ QQC2.ItemDelegate {
     highlighted: false
     hoverEnabled: false
 
-    Accessible.description: root.spoilerText.length === 0 ? i18n("Normal Status") : i18n("Spoiler Status")
+    Accessible.description: root.spoilerText.length === 0 ? KI18n.i18n("Normal Status") : KI18n.i18n("Spoiler Status")
 
     function openPost(): void {
         if (postContent.hoveredLink) {
@@ -172,7 +173,7 @@ QQC2.ItemDelegate {
 
             QQC2.Label {
                 font: Config.defaultFont
-                text: i18nc("@label", "Pinned Post")
+                text: KI18n.i18nc("@label", "Pinned Post")
                 color: Kirigami.Theme.disabledTextColor
                 Layout.alignment: Qt.AlignVCenter
                 Layout.fillWidth: true
@@ -241,8 +242,8 @@ QQC2.ItemDelegate {
                 visible: false // to prevent the menu from taking space in the layout
 
                 sourceComponent: Kirigami.PromptDialog {
-                    title: i18nc("@title", "Delete Post")
-                    subtitle: i18nc("@label", "Are you sure you want to delete this post?")
+                    title: KI18n.i18nc("@title", "Delete Post")
+                    subtitle: KI18n.i18nc("@label", "Are you sure you want to delete this post?")
                     standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
                     showCloseButton: false
 
@@ -257,8 +258,8 @@ QQC2.ItemDelegate {
                 visible: false
 
                 sourceComponent: Kirigami.PromptDialog {
-                    title: i18nc("@title", "Delete & Re-draft Post")
-                    subtitle: i18nc("@label", "Are you sure you want to redraft this post? This will delete the original post.")
+                    title: KI18n.i18nc("@title", "Delete & Re-draft Post")
+                    subtitle: KI18n.i18nc("@label", "Are you sure you want to redraft this post? This will delete the original post.")
                     standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
                     showCloseButton: false
 
@@ -413,7 +414,7 @@ QQC2.ItemDelegate {
                 iconName: "view-conversation-balloon-symbolic"
                 interactedIconName: "view-conversation-balloon-symbolic"
 
-                tooltip: i18nc("Reply to a post", "Reply")
+                tooltip: KI18n.i18nc("Reply to a post", "Reply")
                 text: root.repliesCount
 
                 onClicked: Navigation.replyTo(root.post)
@@ -440,11 +441,11 @@ QQC2.ItemDelegate {
                 text: Config.showPostStats && !root.selected ? root.reblogsCount : ''
                 tooltip: {
                     if (root.visibility === Post.Direct) {
-                        return i18n("Cannot boost direct messages");
+                        return KI18n.i18n("Cannot boost direct messages");
                     } else if (root.visibility === Post.Private && !root.isSelf) {
-                        return i18n("Cannot boost private posts");
+                        return KI18n.i18n("Cannot boost private posts");
                     } else {
-                        return i18nc("Share a post", "Boost");
+                        return KI18n.i18nc("Share a post", "Boost");
                     }
                 }
 
@@ -486,7 +487,7 @@ QQC2.ItemDelegate {
                         continueBoostChecks();
                     }
                 }
-                Accessible.description: root.reblogged ? i18n("Boosted") : i18n("Boost")
+                Accessible.description: root.reblogged ? KI18n.i18n("Boosted") : KI18n.i18n("Boost")
             }
 
             Item {
@@ -506,10 +507,10 @@ QQC2.ItemDelegate {
                 interactedIconName: 'favorite-favorited'
 
                 text: Config.showPostStats && !root.selected ? root.favouritesCount : ''
-                tooltip: i18nc("Favorite a post", "Favorite")
+                tooltip: KI18n.i18nc("Favorite a post", "Favorite")
 
                 onClicked: root.timelineModel.actionFavorite(timelineModel.index(root.index, 0))
-                Accessible.description: root.favourited ? i18n("Favorited") : i18n("Favorite")
+                Accessible.description: root.favourited ? KI18n.i18n("Favorited") : KI18n.i18n("Favorite")
             }
 
             Item {
@@ -528,10 +529,10 @@ QQC2.ItemDelegate {
                 iconName: 'bookmarks'
                 interactedIconName: 'bookmarks-bookmarked'
 
-                tooltip: root.bookmarked ? i18n("Remove bookmark") : i18nc("Bookmark a post", "Bookmark")
+                tooltip: root.bookmarked ? KI18n.i18n("Remove bookmark") : KI18n.i18nc("Bookmark a post", "Bookmark")
 
                 onClicked: root.timelineModel.actionBookmark(timelineModel.index(root.index, 0))
-                Accessible.description: root.bookmarked ? i18n("Bookmarked") : i18n("Bookmark")
+                Accessible.description: root.bookmarked ? KI18n.i18n("Bookmarked") : KI18n.i18n("Bookmark")
             }
         }
 
@@ -565,7 +566,7 @@ QQC2.ItemDelegate {
             sourceComponent: Kirigami.InlineMessage {
                 id: privacyWarning
 
-                text: i18n("This post has been marked private. Some posts may be missing because its replies are marked as private by default.")
+                text: KI18n.i18n("This post has been marked private. Some posts may be missing because its replies are marked as private by default.")
                 visible: true
             }
         }

@@ -6,6 +6,7 @@
 pragma ComponentBehavior: Bound
 
 import QtQuick
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import QtQuick.Controls as QQC2
 import QtQuick.Templates as T
@@ -150,17 +151,17 @@ StatefulApp.StatefulWindow {
 
             title: {
                 if (action === 'open') {
-                    return i18nc("@title", "Open As…")
+                    return KI18n.i18nc("@title", "Open As…")
                 } else if (action === 'reply') {
-                    return i18nc("@title", "Reply As…")
+                    return KI18n.i18nc("@title", "Reply As…")
                 } else if (action === 'favourite') {
-                    return i18nc("@title", "Favorite As…")
+                    return KI18n.i18nc("@title", "Favorite As…")
                 } else if (action === 'reblog') {
-                    return i18nc("@title", "Boost As…")
+                    return KI18n.i18nc("@title", "Boost As…")
                 } else if (action === 'bookmark') {
-                    return i18nc("@title", "Bookmark As…")
+                    return KI18n.i18nc("@title", "Bookmark As…")
                 } else {
-                    return i18nc("@title", "Unknown Action")
+                    return KI18n.i18nc("@title", "Unknown Action")
                 }
             }
 
@@ -283,8 +284,8 @@ StatefulApp.StatefulWindow {
                 pageId: "home",
                 name: "home",
                 iconName: "go-home-large",
-                placeholderText: i18n("No Posts"),
-                placeholderExplanation: i18n("It seems pretty quiet right now, try posting something!")
+                placeholderText: KI18n.i18n("No Posts"),
+                placeholderExplanation: KI18n.i18n("It seems pretty quiet right now, try posting something!")
             });
         }
 
@@ -319,8 +320,8 @@ StatefulApp.StatefulWindow {
                 pageId: "local",
                 name: "public",
                 iconName: "system-users",
-                placeholderText: i18n("No Posts"),
-                placeholderExplanation: i18n("It seems pretty quiet right now, try posting something!")
+                placeholderText: KI18n.i18n("No Posts"),
+                placeholderExplanation: KI18n.i18n("It seems pretty quiet right now, try posting something!")
             });
         }
 
@@ -334,8 +335,8 @@ StatefulApp.StatefulWindow {
                 pageId: "global",
                 name: "federated",
                 iconName: "kstars_xplanet",
-                placeholderText: i18n("No Posts"),
-                placeholderExplanation: i18n("It seems pretty quiet right now, try posting something!")
+                placeholderText: KI18n.i18n("No Posts"),
+                placeholderExplanation: KI18n.i18n("It seems pretty quiet right now, try posting something!")
             });
         }
 
@@ -349,8 +350,8 @@ StatefulApp.StatefulWindow {
                 pageId: "favorites",
                 name: "favourites",
                 iconName: "favorite",
-                placeholderText: i18n("No Favorites"),
-                placeholderExplanation: i18n("Posts that you favorite will show up here. If you appreciate someone's post, favorite it!")
+                placeholderText: KI18n.i18n("No Favorites"),
+                placeholderExplanation: KI18n.i18n("Posts that you favorite will show up here. If you appreciate someone's post, favorite it!")
             });
         }
 
@@ -364,8 +365,8 @@ StatefulApp.StatefulWindow {
                 pageId: "bookmarks",
                 name: "bookmarks",
                 iconName: "bookmarks",
-                placeholderText: i18n("No Bookmarks"),
-                placeholderExplanation: i18n("Bookmark posts and they will show up here. Bookmarks are always kept private, even to the post's author.")
+                placeholderText: KI18n.i18n("No Bookmarks"),
+                placeholderExplanation: KI18n.i18n("Bookmark posts and they will show up here. Bookmarks are always kept private, even to the post's author.")
             });
         }
 
@@ -489,7 +490,7 @@ StatefulApp.StatefulWindow {
             previewPost: originalEditor.previewPost,
             globalToolBarStyle: Kirigami.ApplicationHeaderStyle.None
         }, {
-            title: i18n("Write a New Post"),
+            title: KI18n.i18n("Write a New Post"),
             width: Kirigami.Units.gridUnit * 30,
             height: Kirigami.Units.gridUnit * 30,
             modality: Qt.NonModal
@@ -516,7 +517,7 @@ StatefulApp.StatefulWindow {
                 initialText,
                 visibility: visibility ?? AccountManager.selectedAccount.preferences.defaultVisibility
             }, {
-                title: i18n("Write a new post"),
+                title: KI18n.i18n("Write a new post"),
                 width: Kirigami.Units.gridUnit * 30,
                 height: Kirigami.Units.gridUnit * 30,
                 modality: Qt.NonModal
@@ -561,7 +562,7 @@ StatefulApp.StatefulWindow {
                     closeApplicationWhenFinished: true,
                     purpose: StatusComposer.Reply,
                 }, {
-                    title: i18n("Reply to post"),
+                    title: KI18n.i18n("Reply to post"),
                     width: Kirigami.Units.gridUnit * 30,
                     height: Kirigami.Units.gridUnit * 30,
                     modality: Qt.NonModal
@@ -657,50 +658,50 @@ StatefulApp.StatefulWindow {
     }
 
     readonly property Kirigami.Action homeAction: Kirigami.Action {
-        text: i18nc("@action:button Home Timeline", "Home")
+        text: KI18n.i18nc("@action:button Home Timeline", "Home")
         fromQAction: root.application.action('home_timeline')
     }
     readonly property Kirigami.Action notificationAction: Kirigami.Action {
         readonly property int alertCount: AccountManager.selectedAccount ? AccountManager.selectedAccount.unreadNotificationsCount : 0
-        text: i18nc("@action:button Account Notifications", "Notifications")
+        text: KI18n.i18nc("@action:button Account Notifications", "Notifications")
         fromQAction: root.application.action('notifications')
     }
     readonly property Kirigami.Action followRequestAction: Kirigami.Action {
         readonly property int alertCount: AccountManager.selectedAccount ? AccountManager.selectedAccount.followRequestCount : 0
-        text: i18nc("@action:button Follows that require explicit allow/deny", "Follow Requests")
+        text: KI18n.i18nc("@action:button Follows that require explicit allow/deny", "Follow Requests")
         fromQAction: root.application.action('follow_requests')
         visible: AccountManager.hasAccounts && AccountManager.selectedAccount && alertCount > 0
     }
     readonly property Kirigami.Action localTimelineAction: Kirigami.Action {
-        text: i18nc("@action:button Local timeline of posts from the account's own server", "Local")
+        text: KI18n.i18nc("@action:button Local timeline of posts from the account's own server", "Local")
         fromQAction: root.application.action('local_timeline')
     }
     readonly property Kirigami.Action globalTimelineAction: Kirigami.Action {
-        text: i18nc("@action:button Global timeline of posts from the entire Fediverse network", "Global")
+        text: KI18n.i18nc("@action:button Global timeline of posts from the entire Fediverse network", "Global")
         fromQAction: root.application.action('global_timeline')
     }
     readonly property Kirigami.Action conversationAction: Kirigami.Action {
-        text: i18nc("@action:button Direct one-on-one messages between users", "Conversations")
+        text: KI18n.i18nc("@action:button Direct one-on-one messages between users", "Conversations")
         fromQAction: root.application.action('conversations')
     }
     readonly property Kirigami.Action favouritesAction: Kirigami.Action {
-        text: i18nc("@action:button This account's favorited posts", "Favorites")
+        text: KI18n.i18nc("@action:button This account's favorited posts", "Favorites")
         fromQAction: root.application.action('favorites')
     }
     readonly property Kirigami.Action bookmarksAction: Kirigami.Action {
-        text: i18nc("@action:button This account's bookmarked posts", "Bookmarks")
+        text: KI18n.i18nc("@action:button This account's bookmarked posts", "Bookmarks")
         fromQAction: root.application.action('bookmarks')
     }
     readonly property Kirigami.Action exploreAction: Kirigami.Action {
-        text: i18nc("@action:button Explore this server's trending posts, news, and more", "Explore")
+        text: KI18n.i18nc("@action:button Explore this server's trending posts, news, and more", "Explore")
         fromQAction: root.application.action('explore')
     }
     readonly property Kirigami.Action followingAction: Kirigami.Action {
-        text: i18nc("@action:button A list of this account's followed accounts", "Following")
+        text: KI18n.i18nc("@action:button A list of this account's followed accounts", "Following")
         fromQAction: root.application.action('following')
     }
     readonly property Kirigami.Action searchAction: Kirigami.Action {
-        text: i18nc("@action:button Search for users, posts and tags", "Search")
+        text: KI18n.i18nc("@action:button Search for users, posts and tags", "Search")
         fromQAction: root.application.action('search')
     }
     readonly property Kirigami.Action serverInformationAction: Kirigami.Action {
@@ -708,24 +709,24 @@ StatefulApp.StatefulWindow {
         fromQAction: root.application.action('server_information')
     }
     readonly property Kirigami.Action listsAction: Kirigami.Action {
-        text: i18nc("@action:button This account's lists, or timelines consisting of a groups of accounts", "Lists")
+        text: KI18n.i18nc("@action:button This account's lists, or timelines consisting of a groups of accounts", "Lists")
         fromQAction: root.application.action('lists')
     }
     readonly property Kirigami.Action profileAction: Kirigami.Action {
-        text: i18nc("@action:button This account's profile", "Profile")
+        text: KI18n.i18nc("@action:button This account's profile", "Profile")
         fromQAction: root.application.action('profile')
     }
     readonly property Kirigami.Action debugAction: Kirigami.Action {
         icon.name: "debug-run"
         onTriggered: root.pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "DebugPage"))
         visible: AccountManager.testMode
-        text: i18nc("@action:button Open debug page", "Debug")
+        text: KI18n.i18nc("@action:button Open debug page", "Debug")
     }
     readonly property Kirigami.Action accountSwitcherAction: Kirigami.Action {
         fromQAction: root.application.action('account_switcher')
     }
     readonly property Kirigami.Action collectionsAction: Kirigami.Action {
-        text: i18nc("@action:button This account's collections (a group of accounts)", "Collections")
+        text: KI18n.i18nc("@action:button This account's collections (a group of accounts)", "Collections")
         fromQAction: root.application.action('collections')
     }
 
@@ -736,14 +737,14 @@ StatefulApp.StatefulWindow {
 
     property Kirigami.Action moderationToolsAction: Kirigami.Action {
         icon.name: "lock"
-        text: i18nc("@action:button Open moderation tools", "Moderation Tools")
+        text: KI18n.i18nc("@action:button Open moderation tools", "Moderation Tools")
         visible: AccountManager.selectedAccount && (AccountManager.selectedAccount.identity.permission & AdminAccountInfo.ManageUsers)
 
         onTriggered: moderationToolsView.open()
     }
 
     property Kirigami.Action configureAction: Kirigami.Action {
-        text: i18nc("@action:button Open settings dialog", "Settings")
+        text: KI18n.i18nc("@action:button Open settings dialog", "Settings")
         fromQAction: root.application.action('options_configure')
     }
 
@@ -895,7 +896,7 @@ StatefulApp.StatefulWindow {
             property string hashtag
             actions: Kirigami.Action {
                 icon.name: tagsModel.following ?  "list-remove-user" : "list-add-user"
-                text: tagsModel.following ? i18nc("@action:intoolbar", "Unfollow") : i18nc("@action:intoolbar", "Follow")
+                text: tagsModel.following ? KI18n.i18nc("@action:intoolbar", "Unfollow") : KI18n.i18nc("@action:intoolbar", "Follow")
                 onTriggered: tagsModel.following ? tagsModel.unfollow() : tagsModel.follow()
             }
             model: TagsTimelineModel {

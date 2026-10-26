@@ -10,6 +10,7 @@ import QtQuick.Layouts
 import QtQuick.Dialogs
 import QtQuick.Window
 import QtQuick.Effects
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.kquickcontrolsaddons as KQuickControlsAddons
 import org.kde.kirigamiaddons.formcard as FormCard
@@ -59,19 +60,19 @@ Kirigami.ScrollablePage {
     title: {
         switch (root.purpose) {
             case StatusComposer.Edit:
-                return i18nc("@title:window", "Edit This Post")
+                return KI18n.i18nc("@title:window", "Edit This Post")
             case StatusComposer.Reply:
-                return i18nc("@title:window", "Reply to This Post")
+                return KI18n.i18nc("@title:window", "Reply to This Post")
             case StatusComposer.Redraft:
-                return i18nc("@title:window", "Rewrite This Post")
+                return KI18n.i18nc("@title:window", "Rewrite This Post")
             case StatusComposer.New:
-                return i18nc("@title:window", "Write a New Post")
+                return KI18n.i18nc("@title:window", "Write a New Post")
         }
     }
 
     actions: [
         Kirigami.Action {
-            text: i18nc("@action:intoolbar Draft or unfinished posts", "Drafts")
+            text: KI18n.i18nc("@action:intoolbar Draft or unfinished posts", "Drafts")
             icon.name: "document-open-folder-symbolic"
             onTriggered: {
                 const page = pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "ScheduledPostsPage"), { drafts: true, backend: root.backend });
@@ -79,7 +80,7 @@ Kirigami.ScrollablePage {
             }
         },
         Kirigami.Action {
-            text: i18nc("@action Pop out the status composer", "Pop Out")
+            text: KI18n.i18nc("@action Pop out the status composer", "Pop Out")
             icon.name: "window-new-symbolic"
             visible: !Kirigami.Settings.isMobile && !root.closeApplicationWhenFinished
             onTriggered: {
@@ -145,7 +146,7 @@ Kirigami.ScrollablePage {
 
         if (root.purpose === StatusComposer.Edit && root.backend.pollEnabled) {
             banner.type = Kirigami.MessageType.Warning;
-            banner.text = i18n("Saving an edited post that has a poll will clear existing results.");
+            banner.text = KI18n.i18n("Saving an edited post that has a poll will clear existing results.");
         }
     }
 
@@ -165,27 +166,27 @@ Kirigami.ScrollablePage {
     function purposeString(): string {
         switch (root.purpose) {
             case StatusComposer.New:
-                return i18nc("@action:button Send a post", "Send");
+                return KI18n.i18nc("@action:button Send a post", "Send");
             case StatusComposer.Reply:
-                return i18nc("@action:button Reply to a post", "Reply");
+                return KI18n.i18nc("@action:button Reply to a post", "Reply");
             case StatusComposer.Redraft:
-                return i18nc("@action:button Send the same post again", "Repost");
+                return KI18n.i18nc("@action:button Send the same post again", "Repost");
             case StatusComposer.Edit:
-                return i18nc("@action:Button Save an edited a post", "Save");
+                return KI18n.i18nc("@action:Button Save an edited a post", "Save");
         }
     }
 
     Kirigami.PromptDialog {
         id: discardDraftPrompt
 
-        title: i18nc("@title", "Discard Draft")
-        subtitle: i18nc("@label", "Are you sure you want to discard your draft?")
+        title: KI18n.i18nc("@title", "Discard Draft")
+        subtitle: KI18n.i18nc("@label", "Are you sure you want to discard your draft?")
         standardButtons: Kirigami.Dialog.Discard
         showCloseButton: false
 
         customFooterActions: [
              Kirigami.Action {
-                 text: i18nc("@action:button Keep this draft", "Save")
+                 text: KI18n.i18nc("@action:button Keep this draft", "Save")
                  icon.name: "document-save-symbolic"
                  onTriggered: {
                      root.backend.saveDraft();
@@ -193,7 +194,7 @@ Kirigami.ScrollablePage {
                  }
              },
             Kirigami.Action {
-                text: i18nc("@action:button Go back to editing", "Cancel")
+                text: KI18n.i18nc("@action:button Go back to editing", "Cancel")
                 icon.name: "dialog-cancel-symbolic"
                 onTriggered: discardDraftPrompt.close()
             }
@@ -212,14 +213,14 @@ Kirigami.ScrollablePage {
     Kirigami.Dialog {
         id: schedulePostPrompt
 
-        title: i18nc("@title", "Schedule Post")
+        title: KI18n.i18nc("@title", "Schedule Post")
         standardButtons: Kirigami.Dialog.Cancel
         showCloseButton: false
         implicitWidth: 300
 
         customFooterActions: [
             Kirigami.Action {
-                text: i18nc("@action:button Set this post's schedule to when it should be posted", "Set Schedule")
+                text: KI18n.i18nc("@action:button Set this post's schedule to when it should be posted", "Set Schedule")
                 icon.name: "resource-calendar-insert"
                 onTriggered: {
                     root.backend.scheduledAt = scheduleDateTimeDelegate.value;
@@ -334,7 +335,7 @@ Kirigami.ScrollablePage {
         QQC2.TextField {
             id: contentWarningField
 
-            placeholderText: i18nc("@info:placeholder", "Content notice")
+            placeholderText: KI18n.i18nc("@info:placeholder", "Content notice")
             Layout.fillWidth: true
             visible: contentWarning.checked
             font.pixelSize: Config.defaultFont.pixelSize + 1
@@ -348,7 +349,7 @@ Kirigami.ScrollablePage {
 
         QQC2.TextArea {
             id: textArea
-            placeholderText: i18nc("@info:placeholder", "What's new?")
+            placeholderText: KI18n.i18nc("@info:placeholder", "What's new?")
             text: root.backend.status
             font.pixelSize: Config.defaultFont.pixelSize + 1
             wrapMode: TextEdit.Wrap
@@ -487,24 +488,24 @@ Kirigami.ScrollablePage {
                             FileDialog {
                                 id: fileDialog
                                 currentFolder: StandardPaths.standardLocations(StandardPaths.HomeLocation)[0]
-                                title: i18nc("@title:window", "Choose a File")
+                                title: KI18n.i18nc("@title:window", "Choose a File")
                                 onAccepted: root.uploadFile(fileDialog.selectedFile);
                                 selectedNameFilter.index: 0
                                 nameFilters: AccountManager.selectedAccount.attachmentFilterStrings
                             }
-                            text: i18nc("@action:button", "Attach File")
+                            text: KI18n.i18nc("@action:button", "Attach File")
                             display: QQC2.AbstractButton.IconOnly
 
                             QQC2.ToolTip.text: {
                                 if (addPool.checked) {
-                                    return i18nc("@info:tooltip", "You can't have attachments and a poll in the same post.")
+                                    return KI18n.i18nc("@info:tooltip", "You can't have attachments and a poll in the same post.")
                                 }
 
                                 if (backend.attachmentEditorModel.count >= AccountManager.selectedAccount.maxMediaAttachments) {
-                                    return i18nc("@info:tooltip", "You have the maximum allowed number of attachments.")
+                                    return KI18n.i18nc("@info:tooltip", "You have the maximum allowed number of attachments.")
                                 }
 
-                                return i18nc("@info:tooltip", "Attach file");
+                                return KI18n.i18nc("@info:tooltip", "Attach file");
                             }
                             QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                             QQC2.ToolTip.visible: hovered
@@ -516,21 +517,21 @@ Kirigami.ScrollablePage {
                             checkable: true
                             checked: backend.pollEnabled
                             enabled: backend.attachmentEditorModel.count === 0 && root.purpose !== StatusComposer.Edit
-                            text: i18nc("@action:button", "Attach Poll")
+                            text: KI18n.i18nc("@action:button", "Attach Poll")
                             display: QQC2.AbstractButton.IconOnly
 
                             onToggled: backend.pollEnabled = checked
 
                             QQC2.ToolTip.text: {
                                 if (root.purpose === StatusComposer.Edit) {
-                                    return i18nc("@info:tooltip", "You can't modify or add a poll to an existing post.")
+                                    return KI18n.i18nc("@info:tooltip", "You can't modify or add a poll to an existing post.")
                                 }
 
                                 if (backend.attachmentEditorModel.count !== 0) {
-                                    return i18nc("@info:tooltip", "You can't have attachments and a poll in the same post.")
+                                    return KI18n.i18nc("@info:tooltip", "You can't have attachments and a poll in the same post.")
                                 }
 
-                                return i18nc("@info:tooltip", "Add poll");
+                                return KI18n.i18nc("@info:tooltip", "Add poll");
                             }
                             QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                             QQC2.ToolTip.visible: hovered
@@ -540,7 +541,7 @@ Kirigami.ScrollablePage {
                             id: contentWarning
                             icon.name: "view-hidden-symbolic"
                             checkable: true
-                            text: i18nc("@action:button", "Content Notice")
+                            text: KI18n.i18nc("@action:button", "Content Notice")
                             display: QQC2.AbstractButton.IconOnly
 
                             onCheckedChanged: {
@@ -552,7 +553,7 @@ Kirigami.ScrollablePage {
                                 }
                             }
 
-                            QQC2.ToolTip.text: i18nc("@info:tooltip", "Content notice")
+                            QQC2.ToolTip.text: KI18n.i18nc("@info:tooltip", "Content notice")
                             QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                             QQC2.ToolTip.visible: hovered
                         }
@@ -578,7 +579,7 @@ Kirigami.ScrollablePage {
                             }
                             onClicked: visibilityMenu.popup(QQC2.Overlay.overlay)
                             enabled: root.purpose !== StatusComposer.Edit
-                            text: i18nc("@action:button", "Visibility")
+                            text: KI18n.i18nc("@action:button", "Visibility")
                             display: QQC2.AbstractButton.IconOnly
 
                             Components.ConvergentContextMenu {
@@ -586,37 +587,37 @@ Kirigami.ScrollablePage {
 
                                 headerContentItem: Kirigami.Heading {
                                     level: 2
-                                    text: i18nc("@title", "Visibility")
+                                    text: KI18n.i18nc("@title", "Visibility")
                                 }
                                 Kirigami.Action {
                                     icon.name: "group"
-                                    text: i18nc("@item:inmenu Local to this server", "Local")
+                                    text: KI18n.i18nc("@item:inmenu Local to this server", "Local")
                                     onTriggered: backend.visibility = Post.Local
                                     visible: AccountManager.selectedAccount.supportsLocalVisibility
                                 }
                                 QQC2.Action {
                                     icon.name: "kstars_xplanet"
-                                    text: i18nc("@item:inmenu Public to the world", "Public")
+                                    text: KI18n.i18nc("@item:inmenu Public to the world", "Public")
                                     onTriggered: backend.visibility = Post.Public
                                 }
                                 QQC2.Action {
                                     icon.name: "unlock"
-                                    text: i18nc("@item:inmenu Public but less so", "Unlisted")
+                                    text: KI18n.i18nc("@item:inmenu Public but less so", "Unlisted")
                                     onTriggered: backend.visibility = Post.Unlisted
                                 }
                                 QQC2.Action {
                                     icon.name: "lock"
-                                    text: i18nc("@item:inmenu Only to followers", "Private")
+                                    text: KI18n.i18nc("@item:inmenu Only to followers", "Private")
                                     onTriggered: backend.visibility = Post.Private
                                 }
                                 QQC2.Action {
                                     icon.name: "mail-message"
-                                    text: i18nc("@item:inmenu Only to who is explicitly mentioned", "Direct Message")
+                                    text: KI18n.i18nc("@item:inmenu Only to who is explicitly mentioned", "Direct Message")
                                     onTriggered: backend.visibility = Post.Direct
                                 }
                             }
 
-                            QQC2.ToolTip.text: i18nc("@info:tooltip Post visibility", "Visibility")
+                            QQC2.ToolTip.text: KI18n.i18nc("@info:tooltip Post visibility", "Visibility")
                             QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                             QQC2.ToolTip.visible: hovered
                         }
@@ -624,7 +625,7 @@ Kirigami.ScrollablePage {
                         QQC2.ToolButton {
                             id: languageButton
                             text: backend.language
-                            QQC2.ToolTip.text: i18nc("@info:tooltip", "Post language")
+                            QQC2.ToolTip.text: KI18n.i18nc("@info:tooltip", "Post language")
                             QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                             QQC2.ToolTip.visible: hovered
                             checkable: true
@@ -657,7 +658,7 @@ Kirigami.ScrollablePage {
                             Layout.alignment: Qt.AlignRight
 
                             icon.name: "smiley"
-                            text: i18nc("@action:button", "Add Emoji")
+                            text: KI18n.i18nc("@action:button", "Add Emoji")
                             display: QQC2.AbstractButton.IconOnly
                             onClicked: emojiDialog.open()
                             EmojiDialog {
@@ -668,7 +669,7 @@ Kirigami.ScrollablePage {
                                 onChosen: (emoji) => textArea.insert(textArea.cursorPosition, emoji)
                                 onClosed: if (emojiButton.checked) emojiButton.checked = false
                             }
-                            QQC2.ToolTip.text: i18nc("@info:tooltip", "Add emoji")
+                            QQC2.ToolTip.text: KI18n.i18nc("@info:tooltip", "Add emoji")
                             QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                             QQC2.ToolTip.visible: hovered
                         }
@@ -698,7 +699,7 @@ Kirigami.ScrollablePage {
 
                     verticalAlignment: Text.AlignVCenter
                     horizontalAlignment: Text.AlignHCenter
-                    text: i18nc("@label Character count in the status composer", "<b>%1/%2</b> characters", root.backend.charactersLeft, AccountManager.selectedAccount.maxPostLength)
+                    text: KI18n.i18nc("@label Character count in the status composer", "<b>%1/%2</b> characters", root.backend.charactersLeft, AccountManager.selectedAccount.maxPostLength)
                 }
             }
 
@@ -708,7 +709,7 @@ Kirigami.ScrollablePage {
 
             QQC2.Button {
                 icon.name: "resource-calendar-insert"
-                text: i18nc("@action:button Schedule something to be posted later", "Schedule")
+                text: KI18n.i18nc("@action:button Schedule something to be posted later", "Schedule")
                 enabled: postButton.enabled
                 visible: root.purpose === StatusComposer.New
                 Layout.alignment: Qt.AlignRight
@@ -760,11 +761,11 @@ Kirigami.ScrollablePage {
         property bool scheduled
 
         implicitWidth: Math.min(parent.width - Kirigami.Units.gridUnit * 2, Kirigami.Units.gridUnit * 25)
-        title: i18nc("@title", "Alt Text Reminder")
+        title: KI18n.i18nc("@title", "Alt Text Reminder")
         dialogType: Components.MessageDialog.Warning
 
         QQC2.Label {
-            text: i18nc("@label", "Some of your media is missing alt text. Adding descriptions help everyone, especially the visually impaired.")
+            text: KI18n.i18nc("@label", "Some of your media is missing alt text. Adding descriptions help everyone, especially the visually impaired.")
             wrapMode: Text.WordWrap
             Layout.fillWidth: true
         }
@@ -786,7 +787,7 @@ Kirigami.ScrollablePage {
         Component.onCompleted: {
             const button = altTextPrompt.standardButton(QQC2.Dialog.Ok);
             button.icon.name = altTextPrompt.scheduled ? "resource-calendar-insert" : root.purposeIconName();
-            button.text = altTextPrompt.scheduled ? i18nc("@action:button Schedule something to be posted later", "Schedule") : root.purposeString();
+            button.text = altTextPrompt.scheduled ? KI18n.i18nc("@action:button Schedule something to be posted later", "Schedule") : root.purposeString();
         }
     }
 }

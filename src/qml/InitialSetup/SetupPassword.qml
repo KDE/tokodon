@@ -6,6 +6,7 @@ import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import QtQml.Models
 
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
 
@@ -14,22 +15,22 @@ import org.kde.tokodon
 MastoPage {
     id: root
 
-    title: i18nc("@title:window", "Password Service")
+    title: KI18n.i18nc("@title:window", "Password Service")
 
     FormCard.FormHeader {
-        title: i18n("Setup Required")
+        title: KI18n.i18n("Setup Required")
     }
 
     FormCard.FormCard {
         FormCard.FormTextDelegate {
-            text: i18n("Tokodon requires a password service to be running to save personally sensitive information.\n\nTokodon can use KWallet, GNOME Keyring or any libsecret-compatible service.\n\nAfter you installed the service, make sure it's running and restart Tokodon.")
+            text: KI18n.i18n("Tokodon requires a password service to be running to save personally sensitive information.\n\nTokodon can use KWallet, GNOME Keyring or any libsecret-compatible service.\n\nAfter you installed the service, make sure it's running and restart Tokodon.")
         }
 
         FormCard.FormDelegateSeparator {}
 
         FormCard.FormButtonDelegate {
             id: learnMoreButton
-            text: i18n("Quit Tokodon")
+            text: KI18n.i18n("Quit Tokodon")
             icon.name: "application-exit-symbolic"
             onClicked: Qt.exit(0)
         }

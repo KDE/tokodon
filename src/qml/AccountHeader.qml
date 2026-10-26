@@ -5,6 +5,7 @@ pragma ComponentBehavior: Bound
 
 import QtQuick
 import QtQuick.Effects
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.components as Components
 import org.kde.kirigamiaddons.labs.components as Labs
@@ -52,7 +53,7 @@ QQC2.Pane {
             position: Kirigami.InlineMessage.Position.Header
             visible: root.identity.moved
             showCloseButton: false
-            text: i18nc("@info %1 is a display name", "%1 has moved to a new account:", root.identity.displayName)
+            text: KI18n.i18nc("@info %1 is a display name", "%1 has moved to a new account:", root.identity.displayName)
 
             Layout.preferredHeight: migrationLayout.implicitHeight + topPadding + bottomPadding
             Layout.fillWidth: true
@@ -88,7 +89,7 @@ QQC2.Pane {
                     }
 
                     QQC2.Button {
-                        text: i18nc("@action:button", "Go to Profile")
+                        text: KI18n.i18nc("@action:button", "Go to Profile")
                         onClicked: Navigation.openAccount(root.identity.moved.id)
                     }
                 }
@@ -102,7 +103,7 @@ QQC2.Pane {
             position: Kirigami.InlineMessage.Position.Header
             visible: root.identity.memorial
             showCloseButton: false
-            text: i18nc("@info:label", "Account memorialized")
+            text: KI18n.i18nc("@info:label", "Account memorialized")
 
             Layout.fillWidth: true
         }
@@ -114,7 +115,7 @@ QQC2.Pane {
             position: Kirigami.InlineMessage.Position.Header
             visible: root.identity.suspended
             showCloseButton: false
-            text: i18nc("@info:label", "Account suspended")
+            text: KI18n.i18nc("@info:label", "Account suspended")
 
             Layout.fillWidth: true
         }
@@ -192,13 +193,13 @@ QQC2.Pane {
                     visible: root.identity.relationship && root.identity.relationship.followedBy
                     type: Kirigami.Badge.Information
                     customColor: '#090b0d'
-                    text: root.identity.relationship && root.identity.relationship.following && root.identity.relationship.followedBy ? i18nc("'Mutual' is the common English word used in social media platforms describe people who follow you back. This the same meaning as 'mutual friends', for example.", "Mutual") : i18n("Follows you")
+                    text: root.identity.relationship && root.identity.relationship.following && root.identity.relationship.followedBy ? KI18n.i18nc("'Mutual' is the common English word used in social media platforms describe people who follow you back. This the same meaning as 'mutual friends', for example.", "Mutual") : KI18n.i18n("Follows you")
                 }
 
                 Kirigami.Badge {
                     visible: root.identity.bot
                     icon.name: "automated-tasks-symbolic"
-                    text: i18nc("@info:label This account is a bot and automated", "Bot")
+                    text: KI18n.i18nc("@info:label This account is a bot and automated", "Bot")
                     type: Kirigami.Badge.Information
                     customColor: '#090b0d'
                 }
@@ -292,12 +293,12 @@ QQC2.Pane {
 
                                 QQC2.Button {
                                     icon.name: "edit-copy-symbolic"
-                                    text: i18nc("@action:inmenu Copy user handle such as @foo@bar.com", "Copy Handle")
+                                    text: KI18n.i18nc("@action:inmenu Copy user handle such as @foo@bar.com", "Copy Handle")
                                     display: QQC2.AbstractButton.IconOnly
 
                                     onClicked: {
                                         clipboard.content = accountHandleLabel.text;
-                                        applicationWindow().showPassiveNotification(i18n("Profile handle copied."));
+                                        applicationWindow().showPassiveNotification(KI18n.i18n("Profile handle copied."));
                                     }
                                 }
                             }
@@ -322,12 +323,12 @@ QQC2.Pane {
 
                             text: {
                                 if (root.identity.relationship && root.identity.relationship.requested) {
-                                    return i18n("Follow Requested");
+                                    return KI18n.i18n("Follow Requested");
                                 }
                                 if (root.identity.relationship && root.identity.relationship.following) {
-                                    return i18n("Unfollow");
+                                    return KI18n.i18n("Unfollow");
                                 }
-                                return i18n("Follow");
+                                return KI18n.i18n("Follow");
                             }
                             onTriggered: {
                                 if (root.identity.relationship.requested
@@ -352,9 +353,9 @@ QQC2.Pane {
                             visible: root.identity.relationship && root.identity.relationship.following && !root.isSelf && !root.identity.suspended
                             tooltip: {
                                 if (root.identity.relationship && root.identity.relationship.notifying) {
-                                    return i18n("Stop notifying me when %1 posts.", '@' + root.identity.account);
+                                    return KI18n.i18n("Stop notifying me when %1 posts.", '@' + root.identity.account);
                                 } else {
-                                    return i18n("Notify me when %1 posts.", '@' + root.identity.account);
+                                    return KI18n.i18n("Notify me when %1 posts.", '@' + root.identity.account);
                                 }
                             }
                             onTriggered: {
@@ -370,7 +371,7 @@ QQC2.Pane {
                             icon.name: "view-barcode-qr-symbolic"
                             visible: !root.identity.suspended
 
-                            tooltip: i18nc("@info:tooltip", "Show a QR code for this account")
+                            tooltip: KI18n.i18nc("@info:tooltip", "Show a QR code for this account")
                             onTriggered: {
                                 const code = Qt.createComponent("org.kde.tokodon", "QrCodeMaximizeComponent").createObject(root.QQC2.Overlay.overlay, {
                                     url: root.identity.url,
@@ -383,13 +384,13 @@ QQC2.Pane {
                         Kirigami.Action {
                             icon.name: "list-add"
                             visible: !root.isSelf && !root.identity.suspended
-                            text: i18n("Mention…")
+                            text: KI18n.i18n("Mention…")
                             onTriggered: Navigation.openComposer("@" + root.identity.account + " ")
                         },
                         Kirigami.Action {
                             icon.name: "view-conversation-balloon-symbolic"
                             visible: !root.isSelf && !root.identity.suspended
-                            text: i18n("Start a Conversation…")
+                            text: KI18n.i18n("Start a Conversation…")
                             onTriggered: Navigation.openConversation(root.identity.account)
                         },
                         Kirigami.Action {
@@ -398,9 +399,9 @@ QQC2.Pane {
                             visible: root.identity.relationship && root.identity.relationship.following && !root.isSelf && !root.identity.suspended
                             text: {
                                 if (root.identity.relationship && root.identity.relationship.showingReblogs) {
-                                    return i18n("Hide Boosts from %1", '@' + root.identity.account);
+                                    return KI18n.i18n("Hide Boosts from %1", '@' + root.identity.account);
                                 } else {
-                                    return i18n("Show Boosts from %1", '@' + root.identity.account);
+                                    return KI18n.i18n("Show Boosts from %1", '@' + root.identity.account);
                                 }
                             }
                             onTriggered: {
@@ -416,9 +417,9 @@ QQC2.Pane {
                             visible: root.identity.relationship && !root.isSelf && !root.identity.suspended
                             text: {
                                 if (root.identity.relationship && root.identity.relationship.endorsed) {
-                                    return i18n("Stop Featuring This Profile");
+                                    return KI18n.i18n("Stop Featuring This Profile");
                                 } else {
-                                    return i18n("Feature This Profile");
+                                    return KI18n.i18n("Feature This Profile");
                                 }
                             }
                             onTriggered: {
@@ -434,9 +435,9 @@ QQC2.Pane {
                             visible: root.identity.relationship && !root.isSelf
                             text: {
                                 if (root.identity.relationship && root.identity.relationship.muting) {
-                                    return i18n("Unmute");
+                                    return KI18n.i18n("Unmute");
                                 } else {
-                                    return i18n("Mute");
+                                    return KI18n.i18n("Mute");
                                 }
                             }
                             onTriggered: {
@@ -452,9 +453,9 @@ QQC2.Pane {
                             visible: root.identity.relationship && !root.isSelf
                             text: {
                                 if (root.identity.relationship && root.identity.relationship.blocking) {
-                                    return i18n("Unblock");
+                                    return KI18n.i18n("Unblock");
                                 } else {
-                                    return i18n("Block");
+                                    return KI18n.i18n("Block");
                                 }
                             }
                             onTriggered: {
@@ -468,17 +469,17 @@ QQC2.Pane {
                         Kirigami.Action {
                             icon.name: "dialog-warning-symbolic"
                             visible: !root.isSelf && !root.identity.suspended
-                            text: i18nc("@action:inmenu Report this post", "Report…");
+                            text: KI18n.i18nc("@action:inmenu Report this post", "Report…");
                             onTriggered: Navigation.reportUser(root.identity)
                         },
                         Kirigami.Action {
                             icon.name: "user-group-properties"
                             visible: root.isSelf
-                            text: i18n("Edit Profile")
+                            text: KI18n.i18n("Edit Profile")
                             onTriggered: pageStack.push(Qt.createComponent("org.kde.tokodon", "EditProfilePage"), {
                                 account: AccountManager.selectedAccount
                             }, {
-                                title: i18n("Account editor")
+                                title: KI18n.i18n("Account editor")
                             })
                         },
                         Kirigami.Action {
@@ -489,7 +490,7 @@ QQC2.Pane {
                         Kirigami.Action {
                             icon.name: "resource-calendar-insert"
                             visible: root.isSelf
-                            text: i18nc("@action:inmenu", "Scheduled Posts")
+                            text: KI18n.i18nc("@action:inmenu", "Scheduled Posts")
                             onTriggered: {
                                 const page = pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "ScheduledPostsPage"), { drafts: false });
                                 page.opened.connect(function(id) {
@@ -503,7 +504,7 @@ QQC2.Pane {
                         Kirigami.Action {
                             icon.name: "document-open-folder-symbolic"
                             visible: root.isSelf
-                            text: i18nc("@action:inmenu", "Draft Posts")
+                            text: KI18n.i18nc("@action:inmenu", "Draft Posts")
                             onTriggered: {
                                 const page = pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "ScheduledPostsPage"), { drafts: true });
                                 page.opened.connect(function(id) {
@@ -516,15 +517,15 @@ QQC2.Pane {
                         },
                         Kirigami.Action {
                             icon.name: "open-link-symbolic"
-                            text: i18nc("@action:inmenu 'Browser' being a web browser", "Open in Browser")
+                            text: KI18n.i18nc("@action:inmenu 'Browser' being a web browser", "Open in Browser")
                             onTriggered: Qt.openUrlExternally(root.identity.url)
                         },
                         Kirigami.Action {
                             icon.name: "edit-copy"
-                            text: i18n("Copy Link")
+                            text: KI18n.i18n("Copy Link")
                             onTriggered: {
                                 clipboard.content = root.identity.url;
-                                applicationWindow().showPassiveNotification(i18n("Profile link copied."));
+                                applicationWindow().showPassiveNotification(KI18n.i18n("Profile link copied."));
                             }
                         },
                         ShareAction {
@@ -595,7 +596,7 @@ QQC2.Pane {
                     spacing: 0
 
                     QQC2.Label {
-                        text: i18nc("@info:label Joined at", "Joined")
+                        text: KI18n.i18nc("@info:label Joined at", "Joined")
                         wrapMode: Text.Wrap
 
                         topPadding: Kirigami.Units.smallSpacing
@@ -635,7 +636,7 @@ QQC2.Pane {
                         bottomPadding: 0
                         hoverEnabled: true
 
-                        QQC2.ToolTip.text: delegate.modelData.verified_at !== null ? i18n("Ownership of this link was checked on %1", Qt.formatDate(delegate.modelData.verified_at)) : ""
+                        QQC2.ToolTip.text: delegate.modelData.verified_at !== null ? KI18n.i18n("Ownership of this link was checked on %1", Qt.formatDate(delegate.modelData.verified_at)) : ""
                         QQC2.ToolTip.visible: hovered && delegate.modelData.verified_at !== null
                         QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
 
@@ -714,7 +715,7 @@ QQC2.Pane {
 
                         Kirigami.Heading {
                             Layout.fillWidth: true
-                            text: i18nc("@label:textfield", "Private Note:")
+                            text: KI18n.i18nc("@label:textfield", "Private Note:")
                             level: 5
                         }
 
@@ -722,7 +723,7 @@ QQC2.Pane {
                             id: savedNotification
                             visible: false
                             contentItem: QQC2.Label {
-                                text: i18n("Saved")
+                                text: KI18n.i18n("Saved")
                                 color: Kirigami.Theme.positiveTextColor
                             }
 
@@ -737,7 +738,7 @@ QQC2.Pane {
                         id: noteField
                         Layout.fillWidth: true
                         background: null
-                        placeholderText: i18n("Write down something about this user, this isn't visible to anyone but you.")
+                        placeholderText: KI18n.i18n("Write down something about this user, this isn't visible to anyone but you.")
                         textFormat: TextEdit.PlainText
                         wrapMode: TextEdit.Wrap
                         leftPadding: 0
@@ -799,7 +800,7 @@ QQC2.Pane {
                     spacing: Kirigami.Units.smallSpacing
 
                     QQC2.Label {
-                        text: i18nc("@info:label Featuring the following users:", "Featuring:")
+                        text: KI18n.i18nc("@info:label Featuring the following users:", "Featuring:")
                     }
                     RowLayout {
                         spacing: Kirigami.Units.smallSpacing
@@ -829,7 +830,7 @@ QQC2.Pane {
                             }
                         }
                         QQC2.Button {
-                            text: featuredLimiterModel.extraCount > 0 ? i18nc("@action:button See all featured users", "View %1 More", featuredLimiterModel.extraCount) : i18nc("@action:button See all featured users", "View All")
+                            text: featuredLimiterModel.extraCount > 0 ? KI18n.i18nc("@action:button See all featured users", "View %1 More", featuredLimiterModel.extraCount) : KI18n.i18nc("@action:button See all featured users", "View All")
                             onClicked: {
                                 pageStack.push(socialGraphComponent, {
                                     name: "featured",
@@ -856,7 +857,7 @@ QQC2.Pane {
                     spacing: Kirigami.Units.smallSpacing
 
                     QQC2.Label {
-                        text: i18n("Also followed by:")
+                        text: KI18n.i18n("Also followed by:")
                     }
                     RowLayout {
                         spacing: Kirigami.Units.smallSpacing
@@ -886,7 +887,7 @@ QQC2.Pane {
                             }
                         }
                         QQC2.Button {
-                            text: limiterModel.extraCount > 0 ? i18nc("@action:button See all familiar followers", "View %1 More", limiterModel.extraCount) : i18nc("@action:button See all familiar followers", "View All")
+                            text: limiterModel.extraCount > 0 ? KI18n.i18nc("@action:button See all familiar followers", "View %1 More", limiterModel.extraCount) : KI18n.i18nc("@action:button See all familiar followers", "View All")
                             onClicked: {
                                 pageStack.push(socialGraphComponent, {
                                     name: "familiar_followers",
@@ -926,7 +927,7 @@ QQC2.Pane {
                     closable: false
                     enabled: false
 
-                    text: i18ncp("@label User's number of statuses", "<b>%1</b> post", "<b>%1</b> posts", root.identity.statusesCount)
+                    text: KI18n.i18ncp("@label User's number of statuses", "<b>%1</b> post", "<b>%1</b> posts", root.identity.statusesCount)
                 }
 
                 Kirigami.Chip {
@@ -941,7 +942,7 @@ QQC2.Pane {
                             accountId: root.identity.id,
                         });
                     }
-                    text: i18ncp("@label User's number of followed accounts", "<b>%1</b> follows", "<b>%1</b> following", root.identity.followingCount)
+                    text: KI18n.i18ncp("@label User's number of followed accounts", "<b>%1</b> follows", "<b>%1</b> following", root.identity.followingCount)
                 }
 
                 Kirigami.Chip {
@@ -956,7 +957,7 @@ QQC2.Pane {
                             accountId: root.identity.id,
                         });
                     }
-                    text: i18ncp("@label User's number of followers", "<b>%1</b> follower", "<b>%1</b> followers", root.identity.followersCount)
+                    text: KI18n.i18ncp("@label User's number of followers", "<b>%1</b> follower", "<b>%1</b> followers", root.identity.followersCount)
                 }
 
                 Item {
@@ -990,16 +991,16 @@ QQC2.Pane {
             }
 
             QQC2.TabButton {
-                text: i18nc("@item:inmenu Profile Post Filter", "Posts")
+                text: KI18n.i18nc("@item:inmenu Profile Post Filter", "Posts")
                 implicitWidth: bar.parent.width / bar.tabCount
             }
             QQC2.TabButton {
-                text: i18nc("@item:inmenu Profile Post Filter", "Posts && Replies")
+                text: KI18n.i18nc("@item:inmenu Profile Post Filter", "Posts && Replies")
                 implicitWidth: bar.parent.width / bar.tabCount
             }
             QQC2.TabButton {
                 visible: root.identity.showMedia
-                text: i18nc("@item:inmenu Profile Post Filter", "Media")
+                text: KI18n.i18nc("@item:inmenu Profile Post Filter", "Media")
                 implicitWidth: visible ? (bar.parent.width / bar.tabCount) : 0
             }
         }
@@ -1031,7 +1032,7 @@ QQC2.Pane {
                 }
 
                 QQC2.Switch {
-                    text: i18nc("@option:check", "Hide boosts")
+                    text: KI18n.i18nc("@option:check", "Hide boosts")
 
                     checked: root.excludeBoosts
                     enabled: root.canExcludeBoosts && !root.loading
@@ -1051,7 +1052,7 @@ QQC2.Pane {
                         }
 
                         Kirigami.Chip {
-                            text: i18nc("@action:button Show all of a profile's posts", "All")
+                            text: KI18n.i18nc("@action:button Show all of a profile's posts", "All")
                             closable: false
                             checked: true
 

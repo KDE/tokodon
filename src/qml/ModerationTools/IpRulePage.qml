@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 
 import QtQuick
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
@@ -13,7 +14,7 @@ Kirigami.ScrollablePage {
     id: root
 
     actions: Kirigami.Action {
-        text: i18nc("@action:button", "Create Rule")
+        text: KI18n.i18nc("@action:button", "Create Rule")
         icon.name: 'list-add'
         onTriggered: newIpRuleDialog.open()
     }
@@ -21,7 +22,7 @@ Kirigami.ScrollablePage {
     Kirigami.PromptDialog {
         id: newIpRuleDialog
 
-        title: i18n("New IP Rule")
+        title: KI18n.i18n("New IP Rule")
 
         property string calculatedSeverity: signupLimit.checked ? "sign_up_requires_approval" : signupBlock.checked ? "sign_up_block" : "no_access"
 
@@ -33,38 +34,38 @@ Kirigami.ScrollablePage {
 
             FormCard.FormTextFieldDelegate {
                 id: ip
-                label: i18nc("@info:Enter the domain address of the domain block", "IP*")
+                label: KI18n.i18nc("@info:Enter the domain address of the domain block", "IP*")
                 placeholderText: "192.0.2.0/24"
             }
             FormCard.FormDelegateSeparator {above: expireAfter; below: ip}
             FormCard.FormComboBoxDelegate {
                 id: expireAfter
-                text: i18nc("@info:Time after which the rule will be lifted", "Expire After")
+                text: KI18n.i18nc("@info:Time after which the rule will be lifted", "Expire After")
                 textRole: "display"
                 valueRole: "value"
                 model: [
                     {
-                        display: i18nc("@info:Option to block out the IP for 1 day", "1 day"),
+                        display: KI18n.i18nc("@info:Option to block out the IP for 1 day", "1 day"),
                         value: IpRulesToolModel.Oneday
                     },
                     {
-                        display: i18nc("@info:Option to block out the IP for 2 weeks", "2 weeks"),
+                        display: KI18n.i18nc("@info:Option to block out the IP for 2 weeks", "2 weeks"),
                         value: IpRulesToolModel.Twoweeks
                     },
                     {
-                        display: i18nc("@info:Option to block out the IP for 1 month", "1 month"),
+                        display: KI18n.i18nc("@info:Option to block out the IP for 1 month", "1 month"),
                         value: IpRulesToolModel.Onemonth
                     },
                     {
-                        display: i18nc("@info:Option to block out the IP for 6 months", "6 month"),
+                        display: KI18n.i18nc("@info:Option to block out the IP for 6 months", "6 month"),
                         value: IpRulesToolModel.Sixmonths
                     },
                     {
-                        display: i18nc("@info:Option to block out the IP for 1 year", "1 year"),
+                        display: KI18n.i18nc("@info:Option to block out the IP for 1 year", "1 year"),
                         value: IpRulesToolModel.OneYear
                     },
                     {
-                        display: i18nc("@info:Option to block out the IP for 3 years", "3 year"),
+                        display: KI18n.i18nc("@info:Option to block out the IP for 3 years", "3 year"),
                         value: IpRulesToolModel.ThreeYears
                     },
                 ]
@@ -75,40 +76,40 @@ Kirigami.ScrollablePage {
             FormCard.FormDelegateSeparator {above: comment; below: expireAfter}
             FormCard.FormTextFieldDelegate {
                 id: comment
-                label: i18nc("@info: The comment attached with the ip rule", "Comment")
-                placeholderText: i18n("Optional. Remember why you added this rule.")
+                label: KI18n.i18nc("@info: The comment attached with the ip rule", "Comment")
+                placeholderText: KI18n.i18n("Optional. Remember why you added this rule.")
 
             }
             FormCard.FormDelegateSeparator { below: comment }
 
             FormCard.FormHeader {
                 id: rule
-                title: i18nc("@info:The rule attached with the ip rule", "Rule *")
+                title: KI18n.i18nc("@info:The rule attached with the ip rule", "Rule *")
             }
 
             QQC2.Label {
-                text: i18n("Choose what will happen with requests from this IP")
+                text: KI18n.i18n("Choose what will happen with requests from this IP")
                 Layout.leftMargin: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
                 Layout.rightMargin: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
             }
 
             FormCard.FormRadioDelegate {
                 id: signupLimit
-                text: i18n("Limit sign-ups")
-                description: i18n("New sign-ups will require your approval")
+                text: KI18n.i18n("Limit sign-ups")
+                description: KI18n.i18n("New sign-ups will require your approval")
                 checked: true
             }
 
             FormCard.FormRadioDelegate {
                 id: signupBlock
-                text: i18n("Block sign-ups")
-                description: i18n("New sign-ups will not be possible")
+                text: KI18n.i18n("Block sign-ups")
+                description: KI18n.i18n("New sign-ups will not be possible")
             }
 
             FormCard.FormRadioDelegate {
                 id: accessBlock
-                text: i18n("Block access")
-                description: i18n("Block access to all resources")
+                text: KI18n.i18n("Block access")
+                description: KI18n.i18n("Block access to all resources")
             }
 
             FormCard.FormDelegateSeparator { below: accessBlock }
@@ -117,16 +118,16 @@ Kirigami.ScrollablePage {
         standardButtons: Kirigami.Dialog.NoButton
         customFooterActions: [
             Kirigami.Action {
-                text: i18nc("@info:Cancel button to close the dailog", "Cancel")
+                text: KI18n.i18nc("@info:Cancel button to close the dailog", "Cancel")
                 icon.name: "dialog-cancel"
                 onTriggered: newIpRuleDialog.close();
             },
             Kirigami.Action {
-                text: i18nc("@info:Button to create a IP rule", "Create IP rule")
+                text: KI18n.i18nc("@info:Button to create a IP rule", "Create IP rule")
                 icon.name: "checkbox"
                 onTriggered: {
                     ipRuleView.model.newIpBlock(ip.text, expireAfter.currentValue, comment.text, newIpRuleDialog.calculatedSeverity)
-                    showPassiveNotification(i18n("New IP rule added"))
+                    showPassiveNotification(KI18n.i18n("New IP rule added"))
                     newIpRuleDialog.close();
                 }
             }
@@ -152,11 +153,11 @@ Kirigami.ScrollablePage {
 
             property string displaySeverity: {
                 if (delegate.severity === IpInfo.LimitSignUps) {
-                    return i18nc("@label", "Limit sign-ups");
+                    return KI18n.i18nc("@label", "Limit sign-ups");
                 } else if (delegate.severity === IpInfo.BlockSignUps) {
-                    return i18nc("@label", "Block sign-ups");
+                    return KI18n.i18nc("@label", "Block sign-ups");
                 } else {
-                    return i18nc("@label", "Block access");
+                    return KI18n.i18nc("@label", "Block access");
                 }
             }
 
@@ -203,7 +204,7 @@ Kirigami.ScrollablePage {
         }
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
-            text: i18n("No IP rules found")
+            text: KI18n.i18n("No IP rules found")
             visible: ipRuleView.count === 0 && !ipRuleView.model.loading
             width: parent.width - Kirigami.Units.gridUnit * 4
         }

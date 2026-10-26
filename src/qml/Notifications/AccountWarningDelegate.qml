@@ -5,6 +5,7 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import Qt.labs.qmlmodels
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.tokodon
 
@@ -64,7 +65,7 @@ QQC2.ItemDelegate {
 
             QQC2.Label {
                 font: Config.defaultFont
-                text: i18n("%1 has issued a warning against your account", root.notificationActorIdentity.displayNameHtml)
+                text: KI18n.i18n("%1 has issued a warning against your account", root.notificationActorIdentity.displayNameHtml)
                 textFormat: Text.StyledText
                 Layout.fillWidth: true
                 Layout.alignment: Qt.AlignVCenter

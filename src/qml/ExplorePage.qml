@@ -5,6 +5,7 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import Qt.labs.qmlmodels
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.tokodon
 
@@ -15,7 +16,7 @@ import "./StatusComposer"
 
 Kirigami.Page {
     id: timelinePage
-    title: i18n("Explore")
+    title: KI18n.i18n("Explore")
 
     property var dialog: null
 
@@ -31,25 +32,25 @@ Kirigami.Page {
     }
 
     property Kirigami.Action trendingPostsAction: Kirigami.Action {
-        text: i18n("Posts")
+        text: KI18n.i18n("Posts")
         icon.name: "view-conversation-balloon-symbolic"
         checkable: true
     }
 
     property Kirigami.Action trendingTagsAction: Kirigami.Action {
-        text: i18n("Hashtags")
+        text: KI18n.i18n("Hashtags")
         icon.name: "tag-symbolic"
         checkable: true
     }
 
     property Kirigami.Action trendingNewsAction: Kirigami.Action {
-        text: i18n("News")
+        text: KI18n.i18n("News")
         icon.name: "view-pim-news-symbolic"
         checkable: true
     }
 
     property Kirigami.Action suggestedUsersAction: Kirigami.Action {
-        text: i18n("Users")
+        text: KI18n.i18n("Users")
         icon.name: "system-users-symbolic"
         checkable: true
     }
@@ -100,7 +101,7 @@ Kirigami.Page {
 
                 Kirigami.PlaceholderMessage {
                     icon.name: "view-conversation-balloon-symbolic"
-                    text: i18nc("@info:placeholder", "No Posts")
+                    text: KI18n.i18nc("@info:placeholder", "No Posts")
                     visible: !trendingPostsModel.loading && timelineView.count === 0
                     anchors.centerIn: parent
                     width: parent.width - Kirigami.Units.gridUnit * 4
@@ -127,7 +128,7 @@ Kirigami.Page {
                 Kirigami.PlaceholderMessage {
                     anchors.centerIn: parent
                     icon.name: "tag-symbolic"
-                    text: i18nc("@info:placeholder", "No Tags")
+                    text: KI18n.i18nc("@info:placeholder", "No Tags")
                     visible: !tagsView.model.loading && tagsView.count === 0
                     width: parent.width - (Kirigami.Units.largeSpacing * 4)
                 }
@@ -159,7 +160,7 @@ Kirigami.Page {
                             Layout.fillWidth: true
                             elide: Text.ElideRight
                             color: Kirigami.Theme.disabledTextColor
-                            text: i18np("%1 person is talking", "%1 people are talking", delegate.history[0].accounts)
+                            text: KI18n.i18np("%1 person is talking", "%1 people are talking", delegate.history[0].accounts)
                             verticalAlignment: Text.AlignTop
                         }
                     }
@@ -244,7 +245,7 @@ Kirigami.Page {
                             actions: [
                                 Kirigami.Action {
                                     icon.name: "open-link-symbolic"
-                                    text: i18nc("@action:intoolbar", "Open in Browser")
+                                    text: KI18n.i18nc("@action:intoolbar", "Open in Browser")
                                     onTriggered: Qt.openUrlExternally(timelinePage.url)
                                 }
                             ]
@@ -302,7 +303,7 @@ Kirigami.Page {
 
                 Kirigami.PlaceholderMessage {
                     icon.name: "view-pim-news-symbolic"
-                    text: i18nc("@info:placeholder", "No News")
+                    text: KI18n.i18nc("@info:placeholder", "No News")
                     visible: !newsModel.loading && newsView.count === 0
                     anchors.centerIn: parent
                     width: parent.width - Kirigami.Units.gridUnit * 4
@@ -339,7 +340,7 @@ Kirigami.Page {
 
                 Kirigami.PlaceholderMessage {
                     icon.name: "system-users-symbolic"
-                    text: i18nc("@info:placeholder", "No Users")
+                    text: KI18n.i18nc("@info:placeholder", "No Users")
                     visible: !usersModel.loading && suggestionsView.count === 0
                     anchors.centerIn: parent
                     width: parent.width - Kirigami.Units.gridUnit * 4

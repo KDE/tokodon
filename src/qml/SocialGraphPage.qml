@@ -5,6 +5,7 @@
 pragma ComponentBehavior: Bound
 
 import QtQuick
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
@@ -62,48 +63,48 @@ Kirigami.ScrollablePage {
                     }
 
                     QQC2.Button {
-                        text: i18nc("@action:button Allow follow request", "Allow")
+                        text: KI18n.i18nc("@action:button Allow follow request", "Allow")
                         icon.name: "checkmark"
                         onClicked: root.model.actionAllow(root.model.index(delegate.index, 0))
                         visible: root.model.isFollowRequest
                     }
 
                     QQC2.Button {
-                        text: i18nc("@action:button Deny follow request", "Deny")
+                        text: KI18n.i18nc("@action:button Deny follow request", "Deny")
                         icon.name: "cards-block"
                         onClicked: root.model.actionDeny(root.model.index(delegate.index, 0))
                         visible: root.model.isFollowRequest
                     }
 
                     QQC2.Button {
-                        text: i18nc("@action:button Deny follow request", "Unfollow")
+                        text: KI18n.i18nc("@action:button Deny follow request", "Unfollow")
                         icon.name: "list-remove-user"
                         onClicked: root.model.actionUnfollow(root.model.index(delegate.index, 0))
                         visible: root.model.isFollowing && root.model.accountId === AccountManager.selectedAccount.identity.id
                     }
 
                     QQC2.Button {
-                        text: i18nc("@action:button Deny follow request", "Remove Follower")
+                        text: KI18n.i18nc("@action:button Deny follow request", "Remove Follower")
                         icon.name: "list-remove-user"
                         onClicked: root.model.actionRemoveFollower(root.model.index(delegate.index, 0))
                         visible: root.model.isFollower && root.model.accountId === AccountManager.selectedAccount.identity.id
                     }
 
                     QQC2.Button {
-                        text: i18nc("@action:button Deny follow request", "Remove")
+                        text: KI18n.i18nc("@action:button Deny follow request", "Remove")
                         icon.name: "list-remove-user"
                         onClicked: root.model.actionRemoveFromList(root.model.index(delegate.index, 0))
                         visible: root.model.isList && root.model.accountId === AccountManager.selectedAccount.identity.id
                     }
 
                     QQC2.Button {
-                        text: i18nc("@action:button Unblock this user", "Unblock")
+                        text: KI18n.i18nc("@action:button Unblock this user", "Unblock")
                         onClicked: root.model.actionUnblock(root.model.index(delegate.index, 0))
                         visible: root.model.isBlockList
                     }
 
                     QQC2.Button {
-                        text: i18nc("@action:button Unmute this user", "Unmute")
+                        text: KI18n.i18nc("@action:button Unmute this user", "Unmute")
                         onClicked: root.model.actionUnmute(root.model.index(delegate.index, 0))
                         visible: root.model.isMuteList
                     }

@@ -7,6 +7,7 @@ import QtQuick.Controls as QQC2
 import QtQuick.Dialogs
 import QtQuick.Layouts
 import QtQuick.Window
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.tokodon
@@ -23,7 +24,7 @@ FormCard.FormCardPage {
 
         FormCard.FormButtonDelegate {
             icon.name: "filter-symbolic"
-            text: i18nc("@action:button", "Filters")
+            text: KI18n.i18nc("@action:button", "Filters")
             onClicked: root.Window.window.pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "FiltersPage"))
         }
 
@@ -31,7 +32,7 @@ FormCard.FormCardPage {
 
         FormCard.FormButtonDelegate {
             icon.name: "microphone-sensitivity-muted"
-            text: i18n("Muted Users")
+            text: KI18n.i18n("Muted Users")
             onClicked: root.Window.window.pageStack.layers.push(socialGraphComponent, { name: "mutes" })
         }
 
@@ -39,7 +40,7 @@ FormCard.FormCardPage {
 
         FormCard.FormButtonDelegate {
             icon.name: "cards-block"
-            text: i18n("Blocked Users")
+            text: KI18n.i18n("Blocked Users")
             onClicked: root.Window.window.pageStack.layers.push(socialGraphComponent, { name: "blocks" })
         }
 
@@ -47,7 +48,7 @@ FormCard.FormCardPage {
 
         FormCard.FormButtonDelegate {
             icon.name: "internet-services-symbolic"
-            text: i18n("Blocked Domains")
+            text: KI18n.i18n("Blocked Domains")
             onClicked: root.Window.window.pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "BlockedDomainsPage"))
         }
     }

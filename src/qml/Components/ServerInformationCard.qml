@@ -7,6 +7,7 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kirigamiaddons.components as KirigamiComponents
@@ -25,12 +26,12 @@ FormCard.FormCard {
 
     FormCard.FormPlaceholderMessageDelegate {
         icon.name: "question-symbolic"
-        text: i18nc("@info:placeholder", "No Information")
+        text: KI18n.i18nc("@info:placeholder", "No Information")
         visible: backend.content.length === 0
     }
 
     FormCard.FormTextDelegate {
-        text: i18nc("@info Last updated: relative date and time (e.g. 2 years ago)", "Last updated: %1", backend.updatedAt)
+        text: KI18n.i18nc("@info Last updated: relative date and time (e.g. 2 years ago)", "Last updated: %1", backend.updatedAt)
         visible: backend.content.length > 0
     }
 

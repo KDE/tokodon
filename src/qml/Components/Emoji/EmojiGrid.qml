@@ -3,6 +3,7 @@
 
 import QtQuick
 import QtQuick.Controls as QQC2
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.tokodon
 
@@ -75,7 +76,7 @@ QQC2.ScrollView {
 
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
-            text: i18n("No emojis")
+            text: KI18n.i18n("No emojis")
             visible: emojis.count === 0
         }
     }

@@ -5,6 +5,7 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kquickcontrolsaddons as KQuickControlsAddons
@@ -23,7 +24,7 @@ Kirigami.ScrollablePage {
     required property var loginPage
     property bool needsAuthLink: true
 
-    title: i18nc("@title:window", "Authorization")
+    title: KI18n.i18nc("@title:window", "Authorization")
 
     leftPadding: 0
     rightPadding: 0
@@ -71,7 +72,7 @@ Kirigami.ScrollablePage {
             FormCard.FormTextDelegate {
                 Layout.fillWidth: true
 
-                text: i18n("To continue, you must authorize Tokodon to access your account.")
+                text: KI18n.i18n("To continue, you must authorize Tokodon to access your account.")
             }
 
             FormCard.FormDelegateSeparator {
@@ -80,7 +81,7 @@ Kirigami.ScrollablePage {
 
             FormCard.FormButtonDelegate {
                 id: openLink
-                text: i18n("Open Authorization Page")
+                text: KI18n.i18n("Open Authorization Page")
                 icon.name: "document-open"
                 onClicked: Qt.openUrlExternally(account.authorizeUrl)
             }
@@ -92,11 +93,11 @@ Kirigami.ScrollablePage {
 
             FormCard.FormButtonDelegate {
                 id: copyLink
-                text: i18n("Copy Link to Authorization Page")
+                text: KI18n.i18n("Copy Link to Authorization Page")
                 icon.name: "edit-copy"
                 onClicked: {
                     clipboard.content = account.authorizeUrl;
-                    applicationWindow().showPassiveNotification(i18n("Link copied."));
+                    applicationWindow().showPassiveNotification(KI18n.i18n("Link copied."));
                 }
             }
         }

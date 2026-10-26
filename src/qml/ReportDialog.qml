@@ -4,6 +4,7 @@
 import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.tokodon
 
@@ -19,7 +20,7 @@ Kirigami.Page {
     property var identity
     property string postId
 
-    title: type === ReportDialog.Post ? i18nc("@title", "Report Post") : i18nc("@title", "Report User")
+    title: type === ReportDialog.Post ? KI18n.i18nc("@title", "Report Post") : KI18n.i18nc("@title", "Report User")
 
     topPadding: 0
     bottomPadding: 0
@@ -42,7 +43,7 @@ Kirigami.Page {
 
     QQC2.TextArea {
         id: reason
-        placeholderText: type === ReportDialog.Post ? i18nc("@title", "Reason for reporting this post") : i18nc("@title", "Reason for reporting this user")
+        placeholderText: type === ReportDialog.Post ? KI18n.i18nc("@title", "Reason for reporting this post") : KI18n.i18nc("@title", "Reason for reporting this user")
         anchors.fill: parent
         wrapMode: TextEdit.Wrap
         enabled: !backend.loading
@@ -62,7 +63,7 @@ Kirigami.Page {
                 Layout.fillWidth: true
             }
             QQC2.Button {
-                text: i18nc("@action:button 'Report' as in 'Report this to moderators'", "Report")
+                text: KI18n.i18nc("@action:button 'Report' as in 'Report this to moderators'", "Report")
                 icon.name: "dialog-warning-symbolic"
                 QQC2.DialogButtonBox.buttonRole: QQC2.DialogButtonBox.AcceptRole
                 onClicked: {
@@ -72,7 +73,7 @@ Kirigami.Page {
             }
             QQC2.Button {
                 icon.name: "dialog-cancel-symbolic"
-                text: i18nc("@action", "Cancel")
+                text: KI18n.i18nc("@action", "Cancel")
                 QQC2.DialogButtonBox.buttonRole: QQC2.DialogButtonBox.RejectRole
                 onClicked: root.closeDialog()
             }

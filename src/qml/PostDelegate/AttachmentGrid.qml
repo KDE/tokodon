@@ -5,6 +5,7 @@
 pragma ComponentBehavior: Bound
 
 import QtQuick
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
@@ -94,13 +95,13 @@ Item {
 
         switch (root.attachments[0].attachmentType) {
             case Attachment.Image:
-                return i18n("Status with image attachment");
+                return KI18n.i18n("Status with image attachment");
             case Attachment.GifV:
-                return i18n("Status with gif attachment");
+                return KI18n.i18n("Status with gif attachment");
             case Attachment.Video:
-                return i18n("Status with video attachment");
+                return KI18n.i18n("Status with video attachment");
             case Attachment.Audio:
-                return i18n("Status with audio attachment");
+                return KI18n.i18n("Status with audio attachment");
         }
     }
 
@@ -145,7 +146,7 @@ Item {
                             }
                         }
 
-                        Accessible.description: root.isSensitive ? i18nc("@info", "Sensitive media") : modelData.caption
+                        Accessible.description: root.isSensitive ? KI18n.i18nc("@info", "Sensitive media") : modelData.caption
 
                         Layout.fillWidth: true
                         Layout.fillHeight: true
@@ -198,7 +199,7 @@ Item {
                                 anchors.centerIn: parent
 
                                 visible: imgContainer.modelData.attachmentType === Attachment.Unknown
-                                text: i18n("Not available")
+                                text: KI18n.i18n("Not available")
 
                                 onClicked: Qt.openUrlExternally(imgContainer.modelData.remoteUrl)
                             }
@@ -242,7 +243,7 @@ Item {
                             gif.videoUrl = gif.modelData.remoteUrl;
                         }
 
-                        Accessible.description: root.isSensitive ? i18nc("@info", "Sensitive media") : modelData.caption
+                        Accessible.description: root.isSensitive ? KI18n.i18nc("@info", "Sensitive media") : modelData.caption
 
                         Layout.fillWidth: true
                         Layout.fillHeight: true
@@ -284,7 +285,7 @@ Item {
                         looping: false
                         showVideoChip: true
 
-                        Accessible.description: root.isSensitive ? i18nc("@info", "Sensitive media") : modelData.caption
+                        Accessible.description: root.isSensitive ? KI18n.i18nc("@info", "Sensitive media") : modelData.caption
 
                         Layout.fillWidth: true
                         Layout.fillHeight: true
@@ -338,7 +339,7 @@ Item {
                         Layout.fillHeight: true
                         Layout.rowSpan: root.isSpecialAttachment(attachmentsRepeater.count, index) ? 2 : 1
 
-                        Accessible.description: root.isSensitive ? i18nc("@info", "Sensitive media") : modelData.caption
+                        Accessible.description: root.isSensitive ? KI18n.i18nc("@info", "Sensitive media") : modelData.caption
 
                         onClicked: {
                             if (root.isSensitive) {
@@ -381,11 +382,11 @@ Item {
 
         visible: !parent.isSensitive && parent.hasValidAttachment && root.canHideMedia
         icon.name: "view-hidden"
-        text: i18nc("@action:button", "Hide Media")
+        text: KI18n.i18nc("@action:button", "Hide Media")
         display: QQC2.Button.IconOnly
         activeFocusOnTab: false
 
-        QQC2.ToolTip.text: i18nc("@info:tooltip", "Hide media")
+        QQC2.ToolTip.text: KI18n.i18nc("@info:tooltip", "Hide media")
         QQC2.ToolTip.visible: hovered
         QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
 
@@ -396,7 +397,7 @@ Item {
         anchors.centerIn: parent
 
         visible: parent.isSensitive && parent.hasValidAttachment
-        text: i18n("Show Media")
+        text: KI18n.i18n("Show Media")
         icon.name: "view-visible-symbolic"
 
         onClicked: root.showMedia()

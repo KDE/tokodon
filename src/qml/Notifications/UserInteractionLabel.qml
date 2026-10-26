@@ -5,6 +5,7 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.components as KirigamiComponents
 
@@ -68,7 +69,7 @@ RowLayout {
 
                 onClicked: Navigation.openAccount(root.notificationActorIdentity.id)
 
-                QQC2.ToolTip.text: i18n("View profile")
+                QQC2.ToolTip.text: KI18n.i18n("View profile")
                 QQC2.ToolTip.visible: hovered
                 QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
             }
@@ -79,19 +80,19 @@ RowLayout {
                     }
 
                     if (root.isBoost) {
-                        return i18n("%1 boosted your post", root.notificationActorIdentity.displayNameHtml);
+                        return KI18n.i18n("%1 boosted your post", root.notificationActorIdentity.displayNameHtml);
                     } else if (root.isReply) {
-                        return i18n("%1 mentioned you", root.notificationActorIdentity.displayNameHtml);
+                        return KI18n.i18n("%1 mentioned you", root.notificationActorIdentity.displayNameHtml);
                     } else if (root.isFavorite) {
-                        return i18n("%1 favorited your post", root.notificationActorIdentity.displayNameHtml);
+                        return KI18n.i18n("%1 favorited your post", root.notificationActorIdentity.displayNameHtml);
                     } else if (root.isPoll) {
-                        return i18n("A poll has ended");
+                        return KI18n.i18n("A poll has ended");
                     } else if (root.isUpdate) {
-                        return i18n("%1 updated their post", root.notificationActorIdentity.displayNameHtml)
+                        return KI18n.i18n("%1 updated their post", root.notificationActorIdentity.displayNameHtml)
                     } else if (root.isStatus) {
-                        return i18n("%1 wrote a new post", root.notificationActorIdentity.displayNameHtml)
+                        return KI18n.i18n("%1 wrote a new post", root.notificationActorIdentity.displayNameHtml)
                     } else if (root.isQuote) {
-                        return i18n("%1 quoted your post", root.notificationActorIdentity.displayNameHtml)
+                        return KI18n.i18n("%1 quoted your post", root.notificationActorIdentity.displayNameHtml)
                     }
 
                     return '';

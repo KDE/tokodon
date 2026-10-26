@@ -8,6 +8,7 @@ import QtQuick.Layouts
 import QtQuick.Window
 import QtQuick.Controls as QQC2
 
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.delegates as Delegates
 import org.kde.kirigamiaddons.formcard as FormCard
@@ -18,7 +19,7 @@ import org.kde.tokodon
 Kirigami.ScrollablePage {
     id: root
 
-    title: forRegistration ? i18nc("@title:window", "Pick a Server") : i18nc("@title:window", "Choose your Existing Server")
+    title: forRegistration ? KI18n.i18nc("@title:window", "Pick a Server") : KI18n.i18nc("@title:window", "Choose your Existing Server")
 
     property alias filterString: searchField.text
     property var account
@@ -27,7 +28,7 @@ Kirigami.ScrollablePage {
     data: Connections {
         target: Controller
         function onNetworkErrorOccurred(error: string): void {
-            errorBanner.text = i18nc("@info:status Network status", "Failed to contact server: %1. Please check your proxy settings.", error)
+            errorBanner.text = KI18n.i18nc("@info:status Network status", "Failed to contact server: %1. Please check your proxy settings.", error)
             errorBanner.visible = true;
         }
     }
@@ -35,9 +36,9 @@ Kirigami.ScrollablePage {
     function handleRegistration(): void {
         if (!account.registrationsOpen) {
             if (account.registrationMessage.length > 0) {
-                errorBanner.text = i18n("This server is closed for registration: %1", account.registrationMessage);
+                errorBanner.text = KI18n.i18n("This server is closed for registration: %1", account.registrationMessage);
             } else {
-                errorBanner.text = i18n("This server is closed for registration, and did not provide a reason.");
+                errorBanner.text = KI18n.i18n("This server is closed for registration, and did not provide a reason.");
             }
             errorBanner.visible = true;
             return;
@@ -167,7 +168,7 @@ Kirigami.ScrollablePage {
                 Layout.fillWidth: true
 
                 actions: Kirigami.Action {
-                    text: i18n("Proxy Settings")
+                    text: KI18n.i18n("Proxy Settings")
                     icon.name: "settings-configure"
                     onTriggered: pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "NetworkProxySettings"))
                 }
@@ -175,7 +176,7 @@ Kirigami.ScrollablePage {
 
             Kirigami.SearchField {
                 id: searchField
-                placeholderText: i18n("Search or enter URL…")
+                placeholderText: KI18n.i18n("Search or enter URL…")
 
                 Layout.fillWidth: true
                 Layout.margins: Kirigami.Units.largeSpacing
@@ -214,7 +215,7 @@ Kirigami.ScrollablePage {
 
             contentItem: Delegates.SubtitleContentItem {
                 itemDelegate: parent
-                subtitle: i18n("Custom Server")
+                subtitle: KI18n.i18n("Custom Server")
             }
 
             height: visible ? implicitHeight : 0
@@ -223,7 +224,7 @@ Kirigami.ScrollablePage {
 
         section.delegate: Kirigami.ListSectionHeader {
             width: ListView.view.width
-            text: i18n("Public Servers")
+            text: KI18n.i18n("Public Servers")
         }
         section.property: "isPublic"
 
@@ -253,8 +254,8 @@ Kirigami.ScrollablePage {
 
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
-            text: i18n("No Public Servers")
-            explanation: i18n("Enter a server URL manually in the search field.")
+            text: KI18n.i18n("No Public Servers")
+            explanation: KI18n.i18n("Enter a server URL manually in the search field.")
             visible: !publicServersModel.loading && listView.count === 0 && root.filterString === ""
             width: parent.width - Kirigami.Units.gridUnit * 4
         }

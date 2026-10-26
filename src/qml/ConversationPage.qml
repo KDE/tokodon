@@ -4,6 +4,7 @@
 pragma ComponentBehavior: Bound
 
 import QtQuick
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
@@ -12,12 +13,12 @@ import org.kde.kirigamiaddons.delegates as Delegates
 import org.kde.tokodon
 
 Kirigami.ScrollablePage {
-    title: i18n("Conversations")
+    title: KI18n.i18n("Conversations")
 
     actions: [
         Kirigami.Action {
             icon.name: "view-conversation-balloon-symbolic"
-            text: i18nc("@action:intoolbar", "New Conversation…")
+            text: KI18n.i18nc("@action:intoolbar", "New Conversation…")
             onTriggered: pageStack.layers.push(addUserComponent)
         }
     ]
@@ -28,7 +29,7 @@ Kirigami.ScrollablePage {
         Kirigami.ScrollablePage {
             id: addUserPage
 
-            title: i18nc("@title", "Search Users")
+            title: KI18n.i18nc("@title", "Search Users")
 
             ListView {
                 id: listView
@@ -100,7 +101,7 @@ Kirigami.ScrollablePage {
 
                         Kirigami.SearchField {
                             id: searchField
-                            placeholderText: i18n("Search for user…")
+                            placeholderText: KI18n.i18n("Search for user…")
 
                             focus: true
 
@@ -139,8 +140,8 @@ Kirigami.ScrollablePage {
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
             icon.name: "view-conversation-balloon-symbolic"
-            text: i18n("No Conversations")
-            explanation: i18n("Direct messages to other users will show up here. Do not share any sensitive information over a conversation.")
+            text: KI18n.i18n("No Conversations")
+            explanation: KI18n.i18n("Direct messages to other users will show up here. Do not share any sensitive information over a conversation.")
             visible: conversationView.count === 0 && !conversationView.model.loading
             width: parent.width - Kirigami.Units.gridUnit * 4
         }

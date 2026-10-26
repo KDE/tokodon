@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 
 import QtQuick
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
@@ -20,7 +21,7 @@ Kirigami.ScrollablePage {
         model.fillTimeline();
     }
 
-    title: i18nc("@title", "Lists")
+    title: KI18n.i18nc("@title", "Lists")
     titleDelegate: Kirigami.Heading {
         // identical to normal Kirigami headers
         Layout.fillWidth: true
@@ -33,7 +34,7 @@ Kirigami.ScrollablePage {
     }
 
     actions: Kirigami.Action {
-        text: i18nc("@action:button Create new list", "Create New…")
+        text: KI18n.i18nc("@action:button Create new list", "Create New…")
         icon.name: "gtk-add"
         onTriggered: {
             const page = pageStack.layers.push(editListPage.createObject(root), {
@@ -74,8 +75,8 @@ Kirigami.ScrollablePage {
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
             icon.name: "view-list-text"
-            text: i18n("No Lists")
-            explanation: i18n("Lists allow you to categorize who you're following.")
+            text: KI18n.i18n("No Lists")
+            explanation: KI18n.i18n("Lists allow you to categorize who you're following.")
             visible: listview.count === 0 && !listview.model.loading
             width: parent.width - Kirigami.Units.gridUnit * 4
         }

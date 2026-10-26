@@ -4,6 +4,7 @@
 import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.tokodon
 import org.kde.kirigamiaddons.formcard as FormCard
@@ -26,7 +27,7 @@ FormCard.FormCardPage {
             return root.identity.lastActive.toLocaleDateString();
         }
     } else {
-        return i18n("Not Available");
+        return KI18n.i18n("Not Available");
     }
     readonly property bool largeScreen: width > Kirigami.Units.gridUnit * 25
 
@@ -35,43 +36,43 @@ FormCard.FormCardPage {
     FormCard.FormCardDialog {
         id: actionDialog
 
-        title: i18n("Perform moderation action on %1", root.identity.userLevelIdentity.account)
+        title: KI18n.i18n("Perform moderation action on %1", root.identity.userLevelIdentity.account)
         parent: root.QQC2.Overlay.overlay
 
         FormCard.FormRadioDelegate {
             id: warning
             visible: root.identity.isLocal
-            text: i18nc("@info: Use this to send a warning to the user, without triggering any other action.", "Warn")
+            text: KI18n.i18nc("@info: Use this to send a warning to the user, without triggering any other action.", "Warn")
         }
         FormCard.FormRadioDelegate {
             id: freeze
-            text: i18nc("@info: Prevent the user from using their account, but do not delete or hide their contents.", "Freeze")
+            text: KI18n.i18nc("@info: Prevent the user from using their account, but do not delete or hide their contents.", "Freeze")
             visible: !root.identity.disabled && root.identity.isLocal
         }
         FormCard.FormRadioDelegate {
             id: sensitive
-            text: i18nc("@info: Force all this user's media attachments to be flagged as sensitive.", "Force-Sensitive")
+            text: KI18n.i18nc("@info: Force all this user's media attachments to be flagged as sensitive.", "Force-Sensitive")
             visible: !root.identity.sensitized
         }
         FormCard.FormRadioDelegate {
             id: limit
-            text: i18nc("@info: Prevent the user from being able to post with public visibility, hide their posts and notifications from people not following them.", "Limit")
+            text: KI18n.i18nc("@info: Prevent the user from being able to post with public visibility, hide their posts and notifications from people not following them.", "Limit")
             visible: !root.identity.silenced
         }
         FormCard.FormRadioDelegate {
             id: suspend
-            text: i18nc("@info: Prevent any interaction from or to this account and delete its contents. Revertible within 30 days.", "Suspend")
+            text: KI18n.i18nc("@info: Prevent any interaction from or to this account and delete its contents. Revertible within 30 days.", "Suspend")
             visible: !root.identity.suspended
         }
         FormCard.FormRadioDelegate {
             id: emailWarning
-            text: i18nc("@info: The user will receive an explanation of what happened with their account", "Notify the user per e-mail")
+            text: KI18n.i18nc("@info: The user will receive an explanation of what happened with their account", "Notify the user per e-mail")
             checked: root.identity.isLocal
             visible: root.identity.isLocal
         }
         FormCard.FormTextFieldDelegate {
             id: message
-            label: i18nc("@info: Send a warning note to the user.", "Custom warning")
+            label: KI18n.i18nc("@info: Send a warning note to the user.", "Custom warning")
             clip: true
             visible: root.identity.isLocal
         }
@@ -80,7 +81,7 @@ FormCard.FormCardPage {
 
         Component.onCompleted: {
             const submitButton = standardButton(FormCard.FormCardDialog.Ok);
-            submitButton.text = i18nc("@info:Button to submit the action aginst the user.", "Submit");
+            submitButton.text = KI18n.i18nc("@info:Button to submit the action aginst the user.", "Submit");
             submitButton.icon.name = "answer-symbolic";
         }
 
@@ -98,7 +99,7 @@ FormCard.FormCardPage {
                 action = "suspend"
             }
             root.model.actionAgainstAccount(root.index, action, emailWarning.checked, message.text)
-            showPassiveNotification(i18n("Action taken successfully"))
+            showPassiveNotification(KI18n.i18n("Action taken successfully"))
             pageStack.layers.pop()
         }
 
@@ -111,8 +112,8 @@ FormCard.FormCardPage {
         property var actionName
 
         dialogType: KirigamiComponents.MessageDialog.Warning
-        title: i18n("Are you sure?")
-        subtitle: i18n("Action will be taken against the account.")
+        title: KI18n.i18n("Are you sure?")
+        subtitle: KI18n.i18n("Action will be taken against the account.")
         standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
 
         onAccepted: {
@@ -120,31 +121,31 @@ FormCard.FormCardPage {
             switch (actionName) {
                 case "approve":
                     root.model.approveAccount(root.index)
-                    successMessage = i18n("Successfully approved %1's sign-up application", root.identity.userLevelIdentity.username);
+                    successMessage = KI18n.i18n("Successfully approved %1's sign-up application", root.identity.userLevelIdentity.username);
                     break
                 case "reject":
                     root.model.rejectAccount(root.index)
-                    successMessage = i18n("Successfully rejected %1's sign-up application", root.identity.userLevelIdentity.username);
+                    successMessage = KI18n.i18n("Successfully rejected %1's sign-up application", root.identity.userLevelIdentity.username);
                     break
                 case "unfreeze":
                     root.model.enableAccount(root.index)
-                    successMessage = i18n("Successfully unfreezed %1's account", root.identity.userLevelIdentity.username);
+                    successMessage = KI18n.i18n("Successfully unfreezed %1's account", root.identity.userLevelIdentity.username);
                     break
                 case "unsilence":
                     root.model.unsilenceAccount(root.index)
-                    successMessage = i18n("Successfully unsilenced %1's account", root.identity.userLevelIdentity.username);
+                    successMessage = KI18n.i18n("Successfully unsilenced %1's account", root.identity.userLevelIdentity.username);
                     break
                 case "unsuspend":
                     root.model.unsuspendAccount(root.index)
-                    successMessage = i18n("Successfully unsuspended %1's account", root.identity.userLevelIdentity.username);
+                    successMessage = KI18n.i18n("Successfully unsuspended %1's account", root.identity.userLevelIdentity.username);
                     break
                 case "unsensitive":
                     root.model.unsensitiveAccount(root.index)
-                    successMessage = i18n("Successfully undo force-sensitive %1's account", root.identity.userLevelIdentity.username);
+                    successMessage = KI18n.i18n("Successfully undo force-sensitive %1's account", root.identity.userLevelIdentity.username);
                     break
                 case "deleteAccount":
                     root.model.deleteAccountData(root.index)
-                    successMessage = i18n("Successfully deleted %1's account data", root.identity.userLevelIdentity.username);
+                    successMessage = KI18n.i18n("Successfully deleted %1's account data", root.identity.userLevelIdentity.username);
                     break
                 default:
                     break
@@ -182,7 +183,7 @@ FormCard.FormCardPage {
         visible: root.identity.inviteRequest
 
         FormCard.FormTextDelegate {
-            text: i18n("Reasons for joining")
+            text: KI18n.i18n("Reasons for joining")
 
             description: root.identity.inviteRequest
             descriptionItem.textFormat: TextEdit.RichText
@@ -198,40 +199,40 @@ FormCard.FormCardPage {
 
         infoCards: [
             FormCard.FormGridContainer.InfoCard {
-                title: i18nc("@info Role of the account on this server.", "Role")
-                subtitle: root.identity.userLevelIdentity.role ? root.identity.userLevelIdentity.role : i18n("No role")
+                title: KI18n.i18nc("@info Role of the account on this server.", "Role")
+                subtitle: root.identity.userLevelIdentity.role ? root.identity.userLevelIdentity.role : KI18n.i18n("No role")
             },
             FormCard.FormGridContainer.InfoCard {
-                title: i18nc("@info The last time the account was active.", "Last Active")
+                title: KI18n.i18nc("@info The last time the account was active.", "Last Active")
                 subtitle: root.lastActive
             },
             FormCard.FormGridContainer.InfoCard {
-                title: i18nc("@info The current login status of the account.", "Login Status")
+                title: KI18n.i18nc("@info The current login status of the account.", "Login Status")
                 subtitle: root.identity.loginStatus
             },
             FormCard.FormGridContainer.InfoCard {
                 visible: root.identity.locale
-                title: i18nc("@info: Locale of the user.", "Account Locale")
+                title: KI18n.i18nc("@info: Locale of the user.", "Account Locale")
                 subtitle: root.identity.locale
             },
             FormCard.FormGridContainer.InfoCard {
                 visible: root.identity.email
-                title: i18nc("@info: Email of the user.", "Email")
+                title: KI18n.i18nc("@info: Email of the user.", "Email")
                 subtitle: root.identity.email
             },
             FormCard.FormGridContainer.InfoCard {
                 visible: root.identity.email
-                title: i18nc("@info: Email confirmation status of the user.","Email Status")
-                subtitle: root.identity.emailStatus ? i18n("Confirmed") : i18n("Not Confirmed")
+                title: KI18n.i18nc("@info: Email confirmation status of the user.","Email Status")
+                subtitle: root.identity.emailStatus ? KI18n.i18n("Confirmed") : KI18n.i18n("Not Confirmed")
             },
             FormCard.FormGridContainer.InfoCard {
                 visible: root.identity.joined
-                title: i18nc("@info: Joining date of the user","Joined")
+                title: KI18n.i18nc("@info: Joining date of the user","Joined")
                 subtitle: root.identity.joined.toLocaleDateString()
             },
             FormCard.FormGridContainer.InfoCard {
                 visible: root.identity.invitedByIdentity
-                title: i18n("Invited By")
+                title: KI18n.i18n("Invited By")
                 subtitle: root.identity.invitedByIdentity?.username ?? ""
             }
         ]
@@ -239,7 +240,7 @@ FormCard.FormCardPage {
 
     FormCard.FormHeader {
         visible: root.identity.ips.length > 0
-        title: i18n("Most recent IP")
+        title: KI18n.i18n("Most recent IP")
     }
 
     FormCard.FormCard {
@@ -264,7 +265,7 @@ FormCard.FormCardPage {
             }
 
             QQC2.Button {
-                text: i18nc("@info: Approve the user's request", "Approve")
+                text: KI18n.i18nc("@info: Approve the user's request", "Approve")
                 icon.name: 'approved'
                 visible: !root.identity.approved && root.identity.isLocal
                 Layout.margins: Kirigami.Units.smallSpacing
@@ -276,7 +277,7 @@ FormCard.FormCardPage {
             }
 
             QQC2.Button {
-                text: i18nc("@info: Reject the user's request", "Reject")
+                text: KI18n.i18nc("@info: Reject the user's request", "Reject")
                 icon.name: 'cards-block'
                 visible: !root.identity.approved && root.identity.isLocal
                 Layout.margins: Kirigami.Units.smallSpacing
@@ -287,7 +288,7 @@ FormCard.FormCardPage {
             }
 
             QQC2.Button {
-                text: i18n("Delete Account Data")
+                text: KI18n.i18n("Delete Account Data")
                 icon.name: 'delete'
                 visible: root.identity.suspended
                 Layout.margins: Kirigami.Units.smallSpacing
@@ -299,7 +300,7 @@ FormCard.FormCardPage {
 
             //enable a currently disabled account (freeze=disable)
             QQC2.Button {
-                text: i18nc("@info: Unfreeze the user's account", "Unfreeze")
+                text: KI18n.i18nc("@info: Unfreeze the user's account", "Unfreeze")
                 visible: root.identity.disabled && !root.identity.suspended
                 Layout.margins: Kirigami.Units.smallSpacing
                 onClicked: {
@@ -309,7 +310,7 @@ FormCard.FormCardPage {
             }
 
             QQC2.Button {
-                text: i18n("Undo Limit")
+                text: KI18n.i18n("Undo Limit")
                 visible: root.identity.silenced && !root.identity.suspended
                 Layout.margins: Kirigami.Units.smallSpacing
                 onClicked: {
@@ -319,7 +320,7 @@ FormCard.FormCardPage {
             }
 
             QQC2.Button {
-                text: i18n("Undo Suspension")
+                text: KI18n.i18n("Undo Suspension")
                 visible: root.identity.suspended
                 Layout.margins: Kirigami.Units.smallSpacing
                 onClicked: {
@@ -329,7 +330,7 @@ FormCard.FormCardPage {
             }
 
             QQC2.Button {
-                text: i18n("Undo force-sensitive")
+                text: KI18n.i18n("Undo force-sensitive")
                 visible: root.identity.sensitized && !root.identity.suspended
                 Layout.margins: Kirigami.Units.smallSpacing
                 onClicked: {
@@ -340,7 +341,7 @@ FormCard.FormCardPage {
 
             //take action against the account
             QQC2.Button {
-                text: i18n("Take action against this account")
+                text: KI18n.i18n("Take action against this account")
                 icon.name: 'cards-block'
                 visible: (root.identity.approved || !root.identity.isLocal) && !root.identity.suspended
                 Layout.margins: Kirigami.Units.smallSpacing

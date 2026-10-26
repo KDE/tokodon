@@ -7,6 +7,7 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.delegates as Delegates
 import org.kde.kirigamiaddons.formcard as FormCard
@@ -82,7 +83,7 @@ Kirigami.ScrollablePage {
 
             Kirigami.Heading {
                 level: 4
-                text: root.drafts ? i18nc("Draft, unfinished post", "Created %1 ago", delegate.scheduledAt) : i18nc("Scheduled for this date", "Scheduled for %1", delegate.scheduledAt)
+                text: root.drafts ? KI18n.i18nc("Draft, unfinished post", "Created %1 ago", delegate.scheduledAt) : KI18n.i18nc("Scheduled for this date", "Scheduled for %1", delegate.scheduledAt)
             }
 
             Item {
@@ -90,7 +91,7 @@ Kirigami.ScrollablePage {
             }
 
             QQC2.Button {
-                text: i18nc("@action:button Re-schedule this post", "Re-schedule…")
+                text: KI18n.i18nc("@action:button Re-schedule this post", "Re-schedule…")
                 icon.name: "resource-calendar-insert"
                 visible: !root.drafts
                 onClicked: {
@@ -101,7 +102,7 @@ Kirigami.ScrollablePage {
             }
 
             QQC2.Button {
-                text: i18nc("@action:button Discard this post", "Discard…")
+                text: KI18n.i18nc("@action:button Discard this post", "Discard…")
                 icon.name: "delete-symbolic"
                 onClicked: {
                     root.currentRow = delegate.index;
@@ -113,7 +114,7 @@ Kirigami.ScrollablePage {
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
             icon.name: "view-list-text"
-            text: root.drafts ? i18nc("@info:placeholder", "No Drafts") : i18nc("@info:placeholder", "No Scheduled Posts")
+            text: root.drafts ? KI18n.i18nc("@info:placeholder", "No Drafts") : KI18n.i18nc("@info:placeholder", "No Scheduled Posts")
             visible: listView.count === 0 && !listView.model.loading
             width: parent.width - Kirigami.Units.gridUnit * 4
         }
@@ -122,14 +123,14 @@ Kirigami.ScrollablePage {
     Kirigami.PromptDialog {
         id: discardDraftPrompt
 
-        title: root.drafts ? i18nc("@title", "Discard Draft") : i18nc("@title", "Discard Scheduled Post")
-        subtitle: root.drafts ? i18nc("@label", "Are you sure you want to discard this draft?") : i18nc("@label", "Are you sure you want to discard this scheduled post?")
+        title: root.drafts ? KI18n.i18nc("@title", "Discard Draft") : KI18n.i18nc("@title", "Discard Scheduled Post")
+        subtitle: root.drafts ? KI18n.i18nc("@label", "Are you sure you want to discard this draft?") : KI18n.i18nc("@label", "Are you sure you want to discard this scheduled post?")
         standardButtons: Kirigami.Dialog.Cancel
         showCloseButton: false
 
         customFooterActions: [
             Kirigami.Action {
-                text: i18nc("@action:button Discard this draft", "Discard")
+                text: KI18n.i18nc("@action:button Discard this draft", "Discard")
                 icon.name: "delete-symbolic"
                 onTriggered: {
                     model.deleteDraft(model.index(root.currentRow, 0));
@@ -145,14 +146,14 @@ Kirigami.ScrollablePage {
 
         property alias value: scheduleDateTimeDelegate.value
 
-        title: i18nc("@title", "Re-Schedule Post")
+        title: KI18n.i18nc("@title", "Re-Schedule Post")
         standardButtons: Kirigami.Dialog.Cancel
         showCloseButton: false
         implicitWidth: 300
 
         customFooterActions: [
             Kirigami.Action {
-                text: i18nc("@action:button Set this post's schedule to when it should be posted", "Set New Schedule")
+                text: KI18n.i18nc("@action:button Set this post's schedule to when it should be posted", "Set New Schedule")
                 icon.name: "resource-calendar-insert"
                 onTriggered: {
                     model.reschedule(model.index(root.currentRow, 0), schedulePostPrompt.value);

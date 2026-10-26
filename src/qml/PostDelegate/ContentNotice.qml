@@ -5,6 +5,7 @@ import QtCore
 import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.tokodon
 import org.kde.kirigamiaddons.components as Components
@@ -24,7 +25,7 @@ QQC2.Control {
     activeFocusOnTab: true
 
     Accessible.role: Accessible.Button
-    Accessible.name: i18nc("@info", "Content Notice")
+    Accessible.name: KI18n.i18nc("@info", "Content Notice")
     Accessible.description: root.spoilerText
     Accessible.onPressAction: toggleNotice()
 
@@ -42,14 +43,14 @@ QQC2.Control {
         QQC2.Label {
             id: spoilerTextLabel
             Layout.fillWidth: true
-            text: i18n("<b>Content Notice</b><br /> %1", root.spoilerText)
+            text: KI18n.i18n("<b>Content Notice</b><br /> %1", root.spoilerText)
             wrapMode: Text.Wrap
             font: Config.defaultFont
         }
 
         QQC2.Button {
             activeFocusOnTab: false
-            text: root.postContent.visible ? i18n("Show Less") : i18n("Show More")
+            text: root.postContent.visible ? KI18n.i18n("Show Less") : KI18n.i18n("Show More")
             icon.name: root.postContent.visible ? "view-hidden-symbolic" : "view-visible-symbolic"
             onClicked: root.toggleNotice()
         }

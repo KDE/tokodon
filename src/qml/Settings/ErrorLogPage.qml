@@ -5,6 +5,7 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kquickcontrolsaddons as KQuickControlsAddons
@@ -14,12 +15,12 @@ import org.kde.tokodon
 Kirigami.Page {
     id: root
 
-    title: i18nc("@title:window", "Error Log")
+    title: KI18n.i18nc("@title:window", "Error Log")
 
     actions: [
         Kirigami.Action {
             icon.name: "edit-clear-all"
-            text: i18nc("@action:intoolbar", "Clear All")
+            text: KI18n.i18nc("@action:intoolbar", "Clear All")
             onTriggered: Controller.clearErrorMessages()
         }
     ]
@@ -69,7 +70,7 @@ Kirigami.Page {
                     }
 
                     QQC2.ToolButton {
-                        text: i18nc("@action:button", "Copy To Clipboard")
+                        text: KI18n.i18nc("@action:button", "Copy To Clipboard")
                         icon.name: "edit-copy-symbolic"
                         display: QQC2.Button.IconOnly
 
@@ -84,7 +85,7 @@ Kirigami.Page {
         anchors.centerIn: parent
 
         icon.name: "error"
-        text: i18nc("@label", "No Errors")
+        text: KI18n.i18nc("@label", "No Errors")
         visible: Controller.errorMessages.length === 0
 
         width: parent.width - Kirigami.Units.gridUnit * 4

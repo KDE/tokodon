@@ -3,6 +3,7 @@
 
 import QtQuick
 import QtMultimedia
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
@@ -78,7 +79,7 @@ MediaContainer {
         anchors.centerIn: parent
         onClicked: player.play()
 
-        Accessible.name: i18nc("@action:button Start media playback", "Play")
+        Accessible.name: KI18n.i18nc("@action:button Start media playback", "Play")
 
         icon {
             name: "media-playback-start"

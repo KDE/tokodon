@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 
 import QtQuick
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
@@ -27,7 +28,7 @@ FormCard.FormCardPage {
 
     readonly property bool isValid: titleField.text.length > 0
 
-    title: purpose === EditListPage.New ? i18nc("@title:window", "Create List") : i18nc("@title:window", "Edit List")
+    title: purpose === EditListPage.New ? KI18n.i18nc("@title:window", "Create List") : KI18n.i18nc("@title:window", "Edit List")
 
     property ListEditorBackend backend: ListEditorBackend {
         listId: root.listId
@@ -63,7 +64,7 @@ FormCard.FormCardPage {
 
         FormCard.FormTextFieldDelegate {
             id: titleField
-            label: i18nc("@label:textbox List title", "Title")
+            label: KI18n.i18nc("@label:textbox List title", "Title")
             onAccepted: exclusiveField.forceActiveFocus()
         }
 
@@ -71,7 +72,7 @@ FormCard.FormCardPage {
 
         FormCard.FormComboBoxDelegate {
             id: repliesPolicyField
-            text: i18nc("@label", "Show replies for")
+            text: KI18n.i18nc("@label", "Show replies for")
             model: backend.replyPolicies()
             currentIndex: 0
             onCurrentIndexChanged: backend.setReplyPolicyIndex(currentIndex)
@@ -83,8 +84,8 @@ FormCard.FormCardPage {
 
         FormCard.FormCheckDelegate {
             id: exclusiveField
-            text: i18nc("@label If the list is exclusive", "Exclusive")
-            description: i18n("Posts in an exclusive list are excluded from the Home timeline.")
+            text: KI18n.i18nc("@label If the list is exclusive", "Exclusive")
+            description: KI18n.i18n("Posts in an exclusive list are excluded from the Home timeline.")
         }
 
         FormCard.FormDelegateSeparator {
@@ -94,8 +95,8 @@ FormCard.FormCardPage {
         FormCard.FormCheckDelegate {
             id: favoriteField
             visible: purpose !== EditListPage.New
-            text: i18nc("@label If the list is favorited", "Favorite")
-            description: i18n("This list will show up in the sidebar.")
+            text: KI18n.i18nc("@label If the list is favorited", "Favorite")
+            description: KI18n.i18n("This list will show up in the sidebar.")
         }
 
         FormCard.FormDelegateSeparator {}
@@ -103,7 +104,7 @@ FormCard.FormCardPage {
         FormCard.FormButtonDelegate {
             id: manageUsersButton
             visible: root.purpose === EditListPage.Edit
-            text: i18nc("@action:button Delete the list", "Manage Users")
+            text: KI18n.i18nc("@action:button Delete the list", "Manage Users")
             onClicked: pageStack.layers.push(socialGraphComponent, { name: "list", listId: root.listId })
         }
     }
@@ -120,7 +121,7 @@ FormCard.FormCardPage {
 
             actions: [
                 Kirigami.Action {
-                    text: i18nc("@action:intoolbar Add users to list", "Add Users")
+                    text: KI18n.i18nc("@action:intoolbar Add users to list", "Add Users")
                     icon.name: "list-add-user"
                     onTriggered: pageStack.layers.push(addUserComponent, { socialGraphModel })
                 }
@@ -131,7 +132,7 @@ FormCard.FormCardPage {
                 Kirigami.ScrollablePage {
                     id: addUserPage
 
-                    title: i18nc("@title", "Add Users to List…")
+                    title: KI18n.i18nc("@title", "Add Users to List…")
 
                     required property SocialGraphModel socialGraphModel
 
@@ -169,7 +170,7 @@ FormCard.FormCardPage {
                                     }
 
                                     QQC2.Button {
-                                        text: i18nc("@action:button Add user to this list", "Add")
+                                        text: KI18n.i18nc("@action:button Add user to this list", "Add")
                                         icon.name: "checkmark"
                                         onClicked: socialGraphModel.actionAddToList(delegate.authorIdentity.id)
                                     }
@@ -216,7 +217,7 @@ FormCard.FormCardPage {
 
                                 Kirigami.SearchField {
                                     id: searchField
-                                    placeholderText: i18n("Search among users you follow…")
+                                    placeholderText: KI18n.i18n("Search among users you follow…")
 
                                     Layout.fillWidth: true
                                     Layout.margins: Kirigami.Units.largeSpacing
@@ -250,9 +251,9 @@ FormCard.FormCardPage {
             }
             text: {
                 if (root.purpose === EditListPage.New) {
-                    return i18nc("@action:button Create the list", "Create");
+                    return KI18n.i18nc("@action:button Create the list", "Create");
                 } else {
-                    return i18nc("@action:button Save the edited list", "Save");
+                    return KI18n.i18nc("@action:button Save the edited list", "Save");
                 }
             }
             onClicked: backend.submit()
@@ -265,15 +266,15 @@ FormCard.FormCardPage {
         FormCard.FormButtonDelegate {
             id: deleteButton
             visible: root.purpose === EditListPage.Edit
-            text: i18nc("@action:button Delete the list", "Delete")
+            text: KI18n.i18nc("@action:button Delete the list", "Delete")
             icon.name: "edit-delete"
             onClicked: removeListPrompt.open()
 
             Kirigami.PromptDialog {
                 id: removeListPrompt
 
-                title: i18nc("@title", "Deleting List")
-                subtitle: i18nc("@label", "Are you sure you want to delete this list?")
+                title: KI18n.i18nc("@title", "Deleting List")
+                subtitle: KI18n.i18nc("@label", "Are you sure you want to delete this list?")
                 standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
                 showCloseButton: false
 

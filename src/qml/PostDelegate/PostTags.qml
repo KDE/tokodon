@@ -5,6 +5,7 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.tokodon
 
@@ -47,13 +48,13 @@ QQC2.Control {
 
                 onClicked: Navigation.openTag(modelData)
 
-                Accessible.name: i18nc("@info", "Tag")
+                Accessible.name: KI18n.i18nc("@info", "Tag")
                 Accessible.description: modelData
             }
         }
 
         Kirigami.Chip {
-            text: i18nc("@action:button expand the number of shown tags", "…and %1 more", root.hiddenTagCount)
+            text: KI18n.i18nc("@action:button expand the number of shown tags", "…and %1 more", root.hiddenTagCount)
             visible: !root.expanded && root.hiddenTagCount > 0
             closable: false
             checkable: false

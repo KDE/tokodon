@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 import QtQuick
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
@@ -117,7 +118,7 @@ MediaContainer {
         anchors.centerIn: parent
         onClicked: root.play()
 
-        Accessible.name: i18nc("@action:button Start media playback", "Play")
+        Accessible.name: KI18n.i18nc("@action:button Start media playback", "Play")
 
         icon {
             name: "media-playback-start"
@@ -198,7 +199,7 @@ MediaContainer {
                 QQC2.ToolTip.visible: hovered
                 QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                 QQC2.ToolTip.timeout: Kirigami.Units.toolTipDelay
-                QQC2.ToolTip.text: i18nc("@action:button", "Volume")
+                QQC2.ToolTip.text: KI18n.i18nc("@action:button", "Volume")
 
                 onClicked: {
                     if (root.volume > 0) {

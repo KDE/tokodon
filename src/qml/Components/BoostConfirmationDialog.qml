@@ -4,6 +4,7 @@
 import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 
 Kirigami.PromptDialog {
@@ -16,11 +17,11 @@ Kirigami.PromptDialog {
 
     padding: Kirigami.Units.largeSpacing
 
-    title: i18nc("@title", "Confirm Boost")
+    title: KI18n.i18nc("@title", "Confirm Boost")
     standardButtons: Kirigami.Dialog.Cancel
     customFooterActions: [
         Kirigami.Action {
-            text: i18nc("@action:button Boost this post", "Boost")
+            text: KI18n.i18nc("@action:button Boost this post", "Boost")
             icon.name: "boost"
             onTriggered: root.accept()
         }

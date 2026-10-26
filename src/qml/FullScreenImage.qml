@@ -8,6 +8,7 @@ import QtQuick.Layouts
 import QtQuick.Dialogs
 import Qt.labs.qmlmodels
 
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.labs.components as Components
 import org.kde.tokodon
@@ -30,7 +31,7 @@ Components.AlbumMaximizeComponent {
         },
         Kirigami.Action {
             icon.name: "view-conversation-balloon-symbolic"
-            text: i18nc("@action:intoolbar", "Open Post")
+            text: KI18n.i18nc("@action:intoolbar", "Open Post")
             visible: root.postId !== ""
             onTriggered: {
                 close();

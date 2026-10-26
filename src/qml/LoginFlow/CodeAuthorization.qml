@@ -5,6 +5,7 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
 
@@ -22,14 +23,14 @@ BaseAuthorization {
 
         FormCard.FormTextFieldDelegate {
             id: tokenField
-            label: i18n("Enter authorization token:")
+            label: KI18n.i18n("Enter authorization token:")
             onAccepted: continueButton.clicked()
         }
 
         FormCard.FormDelegateSeparator { above: tokenField }
 
         FormCard.FormButtonDelegate {
-            text: i18n("Continue")
+            text: KI18n.i18n("Continue")
             enabled: tokenField.text !== ""
             onClicked: {
                 root.setAuthCode(tokenField.text);

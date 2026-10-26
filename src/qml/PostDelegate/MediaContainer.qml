@@ -6,6 +6,7 @@ pragma ComponentBehavior: Bound
 import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 
 import "../Components"
@@ -65,7 +66,7 @@ Rectangle {
         Kirigami.Chip {
             checked: false
             checkable: false
-            text: i18nc("Attachment has alt-text, Short for alt-text", "Alt")
+            text: KI18n.i18nc("Attachment has alt-text, Short for alt-text", "Alt")
             closable: false
             visible: root.caption.length !== 0
             hoverEnabled: true
@@ -79,7 +80,7 @@ Rectangle {
                 altPopupLoader.item.open();
             }
 
-            QQC2.ToolTip.text: i18n("Text description available")
+            QQC2.ToolTip.text: KI18n.i18n("Text description available")
             QQC2.ToolTip.visible: hovered
             QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
         }
@@ -87,7 +88,7 @@ Rectangle {
         Kirigami.Chip {
             checked: false
             checkable: false
-            text: i18n("GIF")
+            text: KI18n.i18n("GIF")
             closable: false
             enabled: false
             visible: root.showGifChip
@@ -96,7 +97,7 @@ Rectangle {
         Kirigami.Chip {
             checked: false
             checkable: false
-            text: i18n("Video")
+            text: KI18n.i18n("Video")
             closable: false
             enabled: false
             visible: root.showVideoChip
@@ -126,7 +127,7 @@ Rectangle {
             width: 400
             height: 300
 
-            title: i18nc("@title", "Media Description")
+            title: KI18n.i18nc("@title", "Media Description")
 
             onClosed: altPopupLoader.active = false
         }

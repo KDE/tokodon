@@ -5,6 +5,7 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import Qt.labs.qmlmodels
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.tokodon
 
@@ -60,7 +61,7 @@ QQC2.ItemDelegate {
             }
 
             QQC2.Label {
-                text: xi18nc("@info:label", "Moderation has blocked <b>%1</b>, including %2 of your followers and %3 account you follow.", root.relationshipSeveranceEvent.targetName, root.relationshipSeveranceEvent.followingCount, root.relationshipSeveranceEvent.followersCount)
+                text: KI18n.xi18nc("@info:label", "Moderation has blocked <b>%1</b>, including %2 of your followers and %3 account you follow.", root.relationshipSeveranceEvent.targetName, root.relationshipSeveranceEvent.followingCount, root.relationshipSeveranceEvent.followersCount)
                 wrapMode: Text.WordWrap
 
                 Layout.fillWidth: true

@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 
 import QtQuick
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
@@ -27,7 +28,7 @@ FormCard.FormCardPage {
 
     readonly property bool isValid: titleField.text.length > 0
 
-    title: purpose === EditFilterPage.New ? i18nc("@title:window", "Create Filter") : i18nc("@title:window", "Edit Filter")
+    title: purpose === EditFilterPage.New ? KI18n.i18nc("@title:window", "Create Filter") : KI18n.i18nc("@title:window", "Edit Filter")
 
     property FilterEditorBackend backend: FilterEditorBackend {
         filterId: root.filterId
@@ -81,49 +82,49 @@ FormCard.FormCardPage {
 
         FormCard.FormTextFieldDelegate {
             id: titleField
-            label: i18nc("@label:textbox Filter title", "Title")
+            label: KI18n.i18nc("@label:textbox Filter title", "Title")
         }
     }
 
     FormCard.FormHeader {
-        title: i18nc("@info:header", "Contexts")
+        title: KI18n.i18nc("@info:header", "Contexts")
     }
 
     FormCard.FormCard {
         enabled: !backend.loading
 
         FormCard.FormTextDelegate {
-            text: i18nc("@info", "Select one or more contexts where this filter should apply:")
+            text: KI18n.i18nc("@info", "Select one or more contexts where this filter should apply:")
         }
 
         FormCard.FormCheckDelegate {
             id: homeAndListsDelegate
-            text: i18nc("@label:checkbox", "Home and Lists")
+            text: KI18n.i18nc("@label:checkbox", "Home and Lists")
         }
 
         FormCard.FormCheckDelegate {
             id: notificationsDelegate
-            text: i18nc("@label:checkbox", "Notifications")
+            text: KI18n.i18nc("@label:checkbox", "Notifications")
         }
 
         FormCard.FormCheckDelegate {
             id: publicTimelinesDelegate
-            text: i18nc("@label:checkbox", "Public Timelines")
+            text: KI18n.i18nc("@label:checkbox", "Public Timelines")
         }
 
         FormCard.FormCheckDelegate {
             id: conversationsDelegate
-            text: i18nc("@label:checkbox", "Conversations")
+            text: KI18n.i18nc("@label:checkbox", "Conversations")
         }
 
         FormCard.FormCheckDelegate {
             id: profilesDelegate
-            text: i18nc("@label:checkbox", "Profiles")
+            text: KI18n.i18nc("@label:checkbox", "Profiles")
         }
     }
 
     FormCard.FormHeader {
-        title: i18nc("@info:header", "Action")
+        title: KI18n.i18nc("@info:header", "Action")
     }
 
     FormCard.FormCard {
@@ -131,29 +132,29 @@ FormCard.FormCardPage {
 
         FormCard.FormRadioDelegate {
             id: hideWithNoticeDelegate
-            text: i18nc("@label:radiobutton", "Hide with Content Notice")
+            text: KI18n.i18nc("@label:radiobutton", "Hide with Content Notice")
             onToggled: backend.filterAction = "warn"
         }
 
         FormCard.FormRadioDelegate {
             id: hideMediaOnlyDelegate
-            text: i18nc("@label:radiobutton", "Hide Media with Content Notice")
+            text: KI18n.i18nc("@label:radiobutton", "Hide Media with Content Notice")
             visible: AccountManager.selectedAccount.supportsApiVersion("mastodon", 5)
             onToggled: backend.filterAction = "blur"
         }
 
         FormCard.FormRadioDelegate {
             id: hideCompletelyDelegate
-            text: i18nc("@label:radiobutton", "Hide Completely")
+            text: KI18n.i18nc("@label:radiobutton", "Hide Completely")
             onToggled: backend.filterAction = "hide"
         }
     }
 
     FormCard.FormHeader {
-        title: i18nc("@info:header", "Keywords")
+        title: KI18n.i18nc("@info:header", "Keywords")
 
         actions: QQC2.Action {
-            text: i18nc("@action:button Add keyword", "Add")
+            text: KI18n.i18nc("@action:button Add keyword", "Add")
             icon.name: "list-add-symbolic"
             onTriggered: backend.addKeyword()
         }
@@ -163,7 +164,7 @@ FormCard.FormCardPage {
         enabled: !backend.loading
 
         FormCard.FormPlaceholderMessageDelegate {
-            text: i18nc("@info:placeholder", "No keywords")
+            text: KI18n.i18nc("@info:placeholder", "No keywords")
             visible: keywordsRepeater.count === 0
         }
 
@@ -191,13 +192,13 @@ FormCard.FormCardPage {
                     }
 
                     QQC2.CheckBox {
-                        text: i18nc("@label:checkbox", "Whole word")
+                        text: KI18n.i18nc("@label:checkbox", "Whole word")
                         checked: delegate.whole_word
                         onToggled: backend.editWholeWord(delegate.index, checked)
                     }
 
                     QQC2.Button {
-                        text: i18nc("@action:button Remove keyword", "Remove")
+                        text: KI18n.i18nc("@action:button Remove keyword", "Remove")
                         icon.name: "list-remove-symbolic"
                         display: QQC2.AbstractButton.IconOnly
                         onClicked: backend.removeKeyword(delegate.index)
@@ -224,9 +225,9 @@ FormCard.FormCardPage {
             }
             text: {
                 if (root.purpose === EditFilterPage.New) {
-                    return i18nc("@action:button Create the filter", "Create");
+                    return KI18n.i18nc("@action:button Create the filter", "Create");
                 } else {
-                    return i18nc("@action:button Save the edited filter", "Save");
+                    return KI18n.i18nc("@action:button Save the edited filter", "Save");
                 }
             }
             onClicked: backend.submit()
@@ -239,15 +240,15 @@ FormCard.FormCardPage {
         FormCard.FormButtonDelegate {
             id: deleteButton
             visible: root.purpose === EditFilterPage.Edit
-            text: i18nc("@action:button Delete the filter", "Delete")
+            text: KI18n.i18nc("@action:button Delete the filter", "Delete")
             icon.name: "edit-delete"
             onClicked: removeFilterPrompt.open()
     
             Kirigami.PromptDialog {
                 id: removeFilterPrompt
     
-                title: i18nc("@title", "Deleting Filter")
-                subtitle: i18nc("@label", "Are you sure you want to delete this filter?")
+                title: KI18n.i18nc("@title", "Deleting Filter")
+                subtitle: KI18n.i18nc("@label", "Are you sure you want to delete this filter?")
                 standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
                 showCloseButton: false
 

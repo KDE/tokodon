@@ -6,6 +6,7 @@
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
+import org.kde.ki18n
 import org.kde.purpose as Purpose
 import org.kde.notification
 import org.kde.kirigami as Kirigami
@@ -31,7 +32,7 @@ Kirigami.Page {
     Notification {
         id: sharingFailed
         eventId: "sharingFailed"
-        text: i18n("Sharing failed")
+        text: KI18n.i18n("Sharing failed")
         urgency: Notification.NormalUrgency
     }
 

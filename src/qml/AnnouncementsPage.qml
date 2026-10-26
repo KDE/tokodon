@@ -7,6 +7,7 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.delegates as Delegates
 
@@ -17,7 +18,7 @@ import "./PostDelegate"
 Kirigami.ScrollablePage {
     id: root
 
-    title: i18nc("@title Server-wide announcements set by admins.", "Announcements")
+    title: KI18n.i18nc("@title Server-wide announcements set by admins.", "Announcements")
 
     ListView {
         id: listview
@@ -43,7 +44,7 @@ Kirigami.ScrollablePage {
                 clip: true
 
                 Kirigami.Heading {
-                    text: i18nc("@label An announcement was published on a date", "Announcement on %1", delegate.publishedAt.toLocaleDateString())
+                    text: KI18n.i18nc("@label An announcement was published on a date", "Announcement on %1", delegate.publishedAt.toLocaleDateString())
                     type: Kirigami.Heading.Type.Primary
                     level: 4
                     verticalAlignment: Text.AlignTop
@@ -134,8 +135,8 @@ Kirigami.ScrollablePage {
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
             icon.name: "note"
-            text: i18nc("@label", "No Announcements")
-            explanation: i18n("Your server has not made any announcements yet.")
+            text: KI18n.i18nc("@label", "No Announcements")
+            explanation: KI18n.i18n("Your server has not made any announcements yet.")
             visible: listview.count === 0 && !listview.model.loading
             width: parent.width - Kirigami.Units.gridUnit * 4
         }

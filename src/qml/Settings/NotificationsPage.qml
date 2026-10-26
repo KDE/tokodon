@@ -8,6 +8,7 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Dialogs
 import QtQuick.Layouts
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.tokodon
@@ -26,16 +27,16 @@ FormCard.FormCardPage {
         Layout.topMargin: Kirigami.Units.largeSpacing * 4
 
         FormCard.FormSwitchDelegate {
-            text: i18n("Enable notifications for this account")
+            text: KI18n.i18n("Enable notifications for this account")
             description: {
                 if (Controller.pushNotificationsAvailable) {
                     if (root.config.enablePushNotifications) {
-                        return i18n("Notifications can appear even when Tokodon isn't running.");
+                        return KI18n.i18n("Notifications can appear even when Tokodon isn't running.");
                     } else {
-                        return i18n("Push notifications are available but could not be enabled. Please log out and log back in.");
+                        return KI18n.i18n("Push notifications are available but could not be enabled. Please log out and log back in.");
                     }
                 } else {
-                    return i18n("Notifications will only appear when Tokodon is running.");
+                    return KI18n.i18n("Notifications will only appear when Tokodon is running.");
                 }
             }
             checked: root.config.enableNotifications
@@ -48,7 +49,7 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormHeader {
-        title: i18nc("@title:group", "Filtering Policy")
+        title: KI18n.i18nc("@title:group", "Filtering Policy")
     }
 
     component PolicyCombo: FormCard.FormComboBoxDelegate {
@@ -58,15 +59,15 @@ FormCard.FormCardPage {
         valueRole: "value"
         model: [
             {
-                display: i18nc("@info:Option Accept and show this in notifications", "Accept"),
+                display: KI18n.i18nc("@info:Option Accept and show this in notifications", "Accept"),
                 value: "accept"
             },
             {
-                display: i18nc("@info:Option Filter and send to the filtered inbox", "Filter"),
+                display: KI18n.i18nc("@info:Option Filter and send to the filtered inbox", "Filter"),
                 value: "filter"
             },
             {
-                display: i18nc("@info:Option Ignore completely, do not show notification", "Ignore"),
+                display: KI18n.i18nc("@info:Option Ignore completely, do not show notification", "Ignore"),
                 value: "drop"
             },
         ]
@@ -74,43 +75,43 @@ FormCard.FormCardPage {
 
     FormCard.FormCard {
         PolicyCombo {
-            text: i18nc("@label Notification preferences", "People you don't follow")
-            description: i18nc("@label Notification preferences", "Until you manually approve them.")
+            text: KI18n.i18nc("@label Notification preferences", "People you don't follow")
+            description: KI18n.i18nc("@label Notification preferences", "Until you manually approve them.")
             Component.onCompleted: currentIndex = indexOfValue(AccountManager.selectedAccount.notificationFilteringPolicy.forNotFollowing)
             onCurrentValueChanged: AccountManager.selectedAccount.notificationFilteringPolicy.forNotFollowing = currentValue
         }
         FormCard.FormDelegateSeparator {}
         PolicyCombo {
-            text: i18nc("@label Notification preferences", "People not following you")
-            description: i18nc("@label Notification preferences", "Including people who have been following you fewer than 3 days.")
+            text: KI18n.i18nc("@label Notification preferences", "People not following you")
+            description: KI18n.i18nc("@label Notification preferences", "Including people who have been following you fewer than 3 days.")
             Component.onCompleted: currentIndex = indexOfValue(AccountManager.selectedAccount.notificationFilteringPolicy.forNotFollowers)
             onCurrentValueChanged: AccountManager.selectedAccount.notificationFilteringPolicy.forNotFollowers = currentValue
         }
         FormCard.FormDelegateSeparator {}
         PolicyCombo {
-            text: i18nc("@label Notification preferences", "New accounts")
-            description: i18nc("@label Notification preferences", "Created within the past 30 days.")
+            text: KI18n.i18nc("@label Notification preferences", "New accounts")
+            description: KI18n.i18nc("@label Notification preferences", "Created within the past 30 days.")
             Component.onCompleted: currentIndex = indexOfValue(AccountManager.selectedAccount.notificationFilteringPolicy.forNewAccounts)
             onCurrentValueChanged: AccountManager.selectedAccount.notificationFilteringPolicy.forNewAccounts = currentValue
         }
         FormCard.FormDelegateSeparator {}
         PolicyCombo {
-            text: i18nc("@label Notification preferences", "Unsolicited conversations")
-            description: i18nc("@label Notification preferences", "Filtered unless it's in reply to your own mention or if you follow the sender.")
+            text: KI18n.i18nc("@label Notification preferences", "Unsolicited conversations")
+            description: KI18n.i18nc("@label Notification preferences", "Filtered unless it's in reply to your own mention or if you follow the sender.")
             Component.onCompleted: currentIndex = indexOfValue(AccountManager.selectedAccount.notificationFilteringPolicy.forPrivateMentions)
             onCurrentValueChanged: AccountManager.selectedAccount.notificationFilteringPolicy.forPrivateMentions = currentValue
         }
         FormCard.FormDelegateSeparator {}
         PolicyCombo {
-            text: i18nc("@label Notification preferences", "Moderated accounts")
-            description: i18nc("@label Notification preferences", "Limited by server moderators.")
+            text: KI18n.i18nc("@label Notification preferences", "Moderated accounts")
+            description: KI18n.i18nc("@label Notification preferences", "Limited by server moderators.")
             Component.onCompleted: currentIndex = indexOfValue(AccountManager.selectedAccount.notificationFilteringPolicy.forLimitedAccounts)
             onCurrentValueChanged: AccountManager.selectedAccount.notificationFilteringPolicy.forLimitedAccounts = currentValue
         }
     }
 
     FormCard.FormHeader {
-        title: i18nc("@title:group", "Events")
+        title: KI18n.i18nc("@title:group", "Events")
     }
 
     component EventControl: FormCard.AbstractFormDelegate {
@@ -151,7 +152,7 @@ FormCard.FormCardPage {
                 Layout.alignment: Qt.AlignRight
 
                 QQC2.Button {
-                    text: checked ? i18nc("@action:button", "Hide in All") : i18nc("@action:button", "Show in All")
+                    text: checked ? KI18n.i18nc("@action:button", "Hide in All") : KI18n.i18nc("@action:button", "Show in All")
                     icon.name: checked ? "view-visible-symbolic" : "view-visible-off-symbolic"
                     display: QQC2.AbstractButton.IconOnly
 
@@ -170,7 +171,7 @@ FormCard.FormCardPage {
                     QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                 }
                 QQC2.Button {
-                    text: checked ? i18nc("@action:button", "Disable notifications") : i18nc("@action:button", "Enable notifications")
+                    text: checked ? KI18n.i18nc("@action:button", "Disable notifications") : KI18n.i18nc("@action:button", "Enable notifications")
                     icon.name: checked ? "notifications" : "notifications-disabled"
                     display: QQC2.AbstractButton.IconOnly
 
@@ -198,8 +199,8 @@ FormCard.FormCardPage {
         EventControl {
             id: mentionsDelegate
 
-            text: i18n("Mentions")
-            description: i18n("When someone mentions you in a new post, or replies to one of your threads.")
+            text: KI18n.i18n("Mentions")
+            description: KI18n.i18n("When someone mentions you in a new post, or replies to one of your threads.")
 
             shouldDisplay: root.config.displayMention
             onToggledDisplay: display => root.config.displayMention = display
@@ -216,8 +217,8 @@ FormCard.FormCardPage {
         EventControl {
             id: quotesDelegate
 
-            text: i18n("Quotes")
-            description: i18n("When someone quotes you in a new post")
+            text: KI18n.i18n("Quotes")
+            description: KI18n.i18n("When someone quotes you in a new post")
 
             shouldDisplay: root.config.displayQuote
             onToggledDisplay: display => root.config.displayQuote = display
@@ -234,8 +235,8 @@ FormCard.FormCardPage {
         EventControl {
             id: statusesDelegate
 
-            text: i18n("Statuses")
-            description: i18n("When a user you have notifications turned on for makes a new post.")
+            text: KI18n.i18n("Statuses")
+            description: KI18n.i18n("When a user you have notifications turned on for makes a new post.")
 
             shouldDisplay: root.config.displayStatus
             onToggledDisplay: display => root.config.displayStatus = display
@@ -252,8 +253,8 @@ FormCard.FormCardPage {
         EventControl {
             id: boostsDelegate
 
-            text: i18n("Boosts")
-            description: i18n("When someone boosted one of your posts.")
+            text: KI18n.i18n("Boosts")
+            description: KI18n.i18n("When someone boosted one of your posts.")
 
             shouldDisplay: root.config.displayBoost
             onToggledDisplay: display => root.config.displayBoost = display
@@ -270,8 +271,8 @@ FormCard.FormCardPage {
         EventControl {
             id: followersDelegate
 
-            text: i18n("New followers")
-            description: i18n("When someone follows you.")
+            text: KI18n.i18n("New followers")
+            description: KI18n.i18n("When someone follows you.")
 
             shouldDisplay: root.config.displayFollow
             onToggledDisplay: display => root.config.displayFollow = display
@@ -288,8 +289,8 @@ FormCard.FormCardPage {
         EventControl {
             id: requestsDelegate
 
-            text: i18n("New follow requests")
-            description: i18n("When an account who requires manual approval wants to follow you.")
+            text: KI18n.i18n("New follow requests")
+            description: KI18n.i18n("When an account who requires manual approval wants to follow you.")
 
             shouldDisplay: root.config.displayFollowRequest
             onToggledDisplay: display => root.config.displayFollowRequest = display
@@ -306,8 +307,8 @@ FormCard.FormCardPage {
         EventControl {
             id: favoritesDelegate
 
-            text: i18n("Favorites")
-            description: i18n("When a post you made was favorited by another user.")
+            text: KI18n.i18n("Favorites")
+            description: KI18n.i18n("When a post you made was favorited by another user.")
 
             shouldDisplay: root.config.displayFavorite
             onToggledDisplay: display => root.config.displayFavorite = display
@@ -324,8 +325,8 @@ FormCard.FormCardPage {
         EventControl {
             id: pollsDelegate
 
-            text: i18n("Polls")
-            description: i18n("When a poll you voted in has ended.")
+            text: KI18n.i18n("Polls")
+            description: KI18n.i18n("When a poll you voted in has ended.")
 
             shouldDisplay: root.config.displayPoll
             onToggledDisplay: display => root.config.displayPoll = display
@@ -342,8 +343,8 @@ FormCard.FormCardPage {
         EventControl {
             id: editsDelegate
 
-            text: i18n("Edits")
-            description: i18n("When a post you interacted with was edited by the author.")
+            text: KI18n.i18n("Edits")
+            description: KI18n.i18n("When a post you interacted with was edited by the author.")
 
             shouldDisplay: root.config.displayUpdate
             onToggledDisplay: display => root.config.displayUpdate = display
@@ -360,8 +361,8 @@ FormCard.FormCardPage {
         EventControl {
             id: adminSignUpDelegate
 
-            text: i18n("Server Sign-ups")
-            description: i18n("When someone signs up to your server.")
+            text: KI18n.i18n("Server Sign-ups")
+            description: KI18n.i18n("When someone signs up to your server.")
             visible: root.account.identity.permission & AdminAccountInfo.ManageUsers
 
             shouldDisplay: root.config.displaySignup
@@ -380,8 +381,8 @@ FormCard.FormCardPage {
         EventControl {
             id: adminReportDelegate
 
-            text: i18n("Server Reports")
-            description: i18n("When someone files a report against a user on your server.")
+            text: KI18n.i18n("Server Reports")
+            description: KI18n.i18n("When someone files a report against a user on your server.")
             visible: root.account.identity.permission & AdminAccountInfo.ManageUsers
 
             shouldDisplay: root.config.displayReport
@@ -400,8 +401,8 @@ FormCard.FormCardPage {
         EventControl {
             id: relationshipsDelegate
 
-            text: i18n("Severed Relationships")
-            description: i18n("When you or your server moderates another server, which you are following users or have followers with.")
+            text: KI18n.i18n("Severed Relationships")
+            description: KI18n.i18n("When you or your server moderates another server, which you are following users or have followers with.")
 
             shouldDisplay: root.config.displayRelationships
             onToggledDisplay: display => root.config.displayRelationships = display
@@ -418,8 +419,8 @@ FormCard.FormCardPage {
         EventControl {
             id: annualReportDelegate
 
-            text: i18nc("@option:check", "Annual Report")
-            description: i18n("When you receive your #FediWrapped at the end of the year.")
+            text: KI18n.i18nc("@option:check", "Annual Report")
+            description: KI18n.i18n("When you receive your #FediWrapped at the end of the year.")
 
             shouldDisplay: root.config.displayAnnualReport
             onToggledDisplay: display => root.config.displayAnnualReport = display
@@ -436,8 +437,8 @@ FormCard.FormCardPage {
         EventControl {
             id: collectionsDelegate
 
-            text: i18nc("@option:check", "Collections")
-            description: i18n("When you're added to collections or collections were updated.")
+            text: KI18n.i18nc("@option:check", "Collections")
+            description: KI18n.i18n("When you're added to collections or collections were updated.")
             visible: AccountManager.selectedAccount.supportsApiVersion("mastodon", 10)
 
             shouldDisplay: root.config.displayCollections
