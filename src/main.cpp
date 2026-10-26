@@ -12,11 +12,13 @@
 #include <QtWebView>
 #endif
 
+#if !defined(Q_OS_ANDROID) && !defined(Q_OS_IOS)
+#include <QApplication>
+#else
 #ifdef Q_OS_ANDROID
 #include "utils/androidutils.h"
+#endif
 #include <QGuiApplication>
-#else
-#include <QApplication>
 #endif
 
 #ifdef HAVE_KDBUSADDONS
@@ -24,8 +26,9 @@
 #include <KWindowSystem>
 #include <QDBusConnection>
 #endif
+#include <KLocalizedQmlContext>
 #include <KLocalizedString>
-#include <KirigamiApp>
+#include <KirigamiAppDefaults>
 
 #include <QNetworkProxyFactory>
 
@@ -59,8 +62,13 @@ int main(int argc, char *argv[])
     QtWebView::initialize();
 #endif
 
-    KirigamiApp::App app(argc, argv);
-    KirigamiApp kapp;
+#if !defined(Q_OS_ANDROID) && !defined(Q_OS_IOS)
+    QApplication app(argc, argv);
+#else
+    QGuiApplication app(argc, argv);
+#endif
+
+    KirigamiAppDefaults::apply(&app);
 
 #ifdef Q_OS_ANDROID
     app.connect(&app, &QGuiApplication::applicationStateChanged, [](Qt::ApplicationState state) {
@@ -73,12 +81,9 @@ int main(int argc, char *argv[])
     KLocalizedString::setApplicationDomain(QByteArrayLiteral("tokodon"));
     QCoreApplication::setOrganizationName(QStringLiteral("KDE"));
 
-    KAboutData about(QStringLiteral("tokodon"),
-                     i18n("Tokodon"),
-                     QStringLiteral(TOKODON_VERSION_STRING),
-                     i18n("Browse the Fediverse"),
-                     KAboutLicense::GPL_V3,
-                     i18n("© 2021-2025 KDE Community"));
+    auto about = KAboutData::fromAppStreamId(u"org.kde.tokodon"_s);
+    about.setVersion(TOKODON_VERSION_STRING);
+
     about.addAuthor(i18n("Carl Schwan"),
                     i18n("Maintainer"),
                     QStringLiteral("carl@carlschwan.eu"),
@@ -140,6 +145,7 @@ int main(int argc, char *argv[])
     }
 
     QQmlApplicationEngine engine;
+    KLocalization::setupLocalizedContext(&engine);
 
 #ifdef HAVE_KDBUSADDONS
     KDBusService service(KDBusService::Unique);
@@ -212,11 +218,11 @@ int main(int argc, char *argv[])
 #endif
 
     if (parser.isSet(shareOption)) {
-        kapp.start("org.kde.tokodon", "StandaloneComposer", &engine);
+        KirigamiAppDefaults::load("org.kde.tokodon", "StandaloneComposer", &engine);
 
         NetworkController::instance().startComposing(parser.value(shareOption));
     } else {
-        kapp.start("org.kde.tokodon", "Main", &engine);
+        KirigamiAppDefaults::load("org.kde.tokodon", "Main", &engine);
 
         if (!parser.positionalArguments().empty()) {
             NetworkController::instance().openWebApLink(parser.positionalArguments()[0]);
