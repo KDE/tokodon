@@ -15,10 +15,8 @@ include:
       - /gitlab-templates/craft-windows-x86-64-qt6.yml
 
 qml-check-icons:
+  extends: .suse_tumbleweed_qt6stable_docker
   stage: validate
-  image: invent-registry.kde.org/sysadmin/ci-images/suse-qt611:latest
-  tags:
-    - Linux
   interruptible: true
   rules:
     - changes:
@@ -27,8 +25,6 @@ qml-check-icons:
     - when: manual
       # we don't want the manual job to block the pipeline
       allow_failure: true
-  tags:
-    - Linux
   script:
     - git config --global --add safe.directory $CI_PROJECT_DIR
     - bash scripts/generate-icon-list.sh --ci
