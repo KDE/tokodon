@@ -11,7 +11,7 @@ import org.kde.kirigamiaddons.components as Components
 import org.kde.kirigamiaddons.labs.components as Labs
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kquickcontrolsaddons as KQuickControlsAddons
-import org.kde.kirigamiaddons.statefulapp as StatefulApp
+import org.kde.kirigamiaddons.actions as Actions
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import org.kde.tokodon
@@ -485,7 +485,7 @@ QQC2.Pane {
                         Kirigami.Action {
                             // Only show on your own profile when in mobile mode, otherwise it's one tap away
                             visible: root.isSelf && !(root.QQC2.ApplicationWindow.window as Main)?.wideMode
-                            fromQAction: (toolbar.QQC2.ApplicationWindow.window as StatefulApp.StatefulWindow)?.application.action('options_configure') ?? null
+                            fromQAction: (toolbar.QQC2.ApplicationWindow.window as Actions.StatefulWindow)?.application.action('options_configure') ?? null
                         },
                         Kirigami.Action {
                             icon.name: "resource-calendar-insert"

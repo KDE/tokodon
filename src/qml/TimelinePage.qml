@@ -8,7 +8,7 @@ import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
-import org.kde.kirigamiaddons.statefulapp as StatefulApp
+import org.kde.kirigamiaddons.actions as Actions
 import org.kde.tokodon
 import './PostDelegate'
 import './StatusComposer'
@@ -69,7 +69,7 @@ Kirigami.ScrollablePage {
         showCloseButton: true
 
         actions: Kirigami.Action {
-            fromQAction: (root.QQC2.ApplicationWindow.window as StatefulApp.StatefulWindow)?.application.action('options_configure') ?? null
+            fromQAction: (root.QQC2.ApplicationWindow.window as Actions.StatefulWindow)?.application.action('options_configure') ?? null
         }
     }
 

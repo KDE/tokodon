@@ -14,20 +14,22 @@ import org.kde.tokodon
 import org.kde.kitemmodels as KItemModels
 
 import org.kde.kirigamiaddons.delegates as Delegates
-import org.kde.kirigamiaddons.statefulapp as StatefulApp
+import org.kde.kirigamiaddons.actions as Actions
 
 import "./StatusComposer"
 import "./PostDelegate"
 
-StatefulApp.StatefulWindow {
+Actions.StatefulWindow {
     id: root
 
     application: TokodonApplication {
+        id: tokodonApplication
+
         accountManager: AccountManager
 
         configurationView: TokodonConfigurationView {
             window: root
-            application: root.application
+            application: tokodonApplication
         }
     }
 
@@ -78,7 +80,7 @@ StatefulApp.StatefulWindow {
         } else {
             // HACK: We can't use trigger() here for some reason, but the action is super simple.
             homeAction.fromQAction.checked = true;
-            root.application.openHomeTimeline();
+            tokodonApplication.openHomeTimeline();
         }
     }
 
@@ -86,7 +88,7 @@ StatefulApp.StatefulWindow {
         if (AccountManager.hasAccounts) {
             decideDefaultPage();
         } else {
-            root.pageStack.push(Qt.createComponent("org.kde.tokodon", "WelcomePage"), { application: root.application });
+            root.pageStack.push(Qt.createComponent("org.kde.tokodon", "WelcomePage"), { application: tokodonApplication });
         }
     }
 
@@ -125,15 +127,15 @@ StatefulApp.StatefulWindow {
     }
 
     Kirigami.Action {
-        fromQAction: root.application.action('open_status_composer')
+        fromQAction: tokodonApplication.action('open_status_composer')
     }
 
     Kirigami.Action {
-        fromQAction: root.application.action('open_kcommand_bar')
+        fromQAction: tokodonApplication.action('open_kcommand_bar')
     }
 
     Kirigami.Action {
-        fromQAction: root.application.action('reload_current_page')
+        fromQAction: tokodonApplication.action('reload_current_page')
     }
 
     Loader {
@@ -235,7 +237,7 @@ StatefulApp.StatefulWindow {
         function onAccountRemoved(): void {
             if (!AccountManager.hasAccounts) {
                 root.pageStack.clear();
-                root.pageStack.push(Qt.createComponent("org.kde.tokodon", "WelcomePage"), { application: root.application });
+                root.pageStack.push(Qt.createComponent("org.kde.tokodon", "WelcomePage"), { application: tokodonApplication });
                 globalDrawer.drawerOpen = false;
             }
         }
@@ -252,7 +254,7 @@ StatefulApp.StatefulWindow {
     }
 
     Connections {
-        target: root.application
+        target: tokodonApplication
 
         function onConfigureAccount(account: AbstractAccount): void {
             root.pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "ProfileEditor"), {
@@ -264,9 +266,9 @@ StatefulApp.StatefulWindow {
             let page;
             // pushDialogLayer is inherently broken in Kirigami, so let's push it as a page on mobile instead
             if (Kirigami.Settings.isMobile) {
-                page = root.pageStack.push(Qt.createComponent("org.kde.tokodon", "WelcomePage"), { application: root.application, showSettingsButton: false });
+                page = root.pageStack.push(Qt.createComponent("org.kde.tokodon", "WelcomePage"), { application: tokodonApplication, showSettingsButton: false });
             } else {
-                page = root.pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "WelcomePage"), { application: root.application, showSettingsButton: false });
+                page = root.pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "WelcomePage"), { application: tokodonApplication, showSettingsButton: false });
             }
             page.QQC2.ApplicationWindow.window.pageStack.columnView.columnResizeMode = Kirigami.ColumnView.SingleColumn;
         }
@@ -450,7 +452,7 @@ StatefulApp.StatefulWindow {
 
         function onOpenAccountSwitcher(): void {
             let dialog = Qt.createComponent("org.kde.tokodon", "AccountSwitchDialog").createObject(root.QQC2.Overlay.overlay, {
-                application: root.application,
+                application: tokodonApplication,
                 userInfo: root,
             });
             dialog.open();
@@ -647,7 +649,7 @@ StatefulApp.StatefulWindow {
         id: drawer
 
         enabled: AccountManager.hasAccounts && AccountManager.isReady
-        application: root.application
+        application: tokodonApplication
         shouldCollapse: !root.wideMode
         actions: !root.wideMode ?
             [root.searchAction, root.followRequestAction, root.followingAction, root.localTimelineAction, root.globalTimelineAction, root.conversationAction, root.bookmarksAction, root.collectionsAction, root.favouritesAction, root.listsAction] :
@@ -657,62 +659,62 @@ StatefulApp.StatefulWindow {
 
     readonly property Kirigami.Action homeAction: Kirigami.Action {
         text: KI18n.i18nc("@action:button Home Timeline", "Home")
-        fromQAction: root.application.action('home_timeline')
+        fromQAction: tokodonApplication.action('home_timeline')
     }
     readonly property Kirigami.Action notificationAction: Kirigami.Action {
         readonly property int alertCount: AccountManager.selectedAccount ? AccountManager.selectedAccount.unreadNotificationsCount : 0
         text: KI18n.i18nc("@action:button Account Notifications", "Notifications")
-        fromQAction: root.application.action('notifications')
+        fromQAction: tokodonApplication.action('notifications')
     }
     readonly property Kirigami.Action followRequestAction: Kirigami.Action {
         readonly property int alertCount: AccountManager.selectedAccount ? AccountManager.selectedAccount.followRequestCount : 0
         text: KI18n.i18nc("@action:button Follows that require explicit allow/deny", "Follow Requests")
-        fromQAction: root.application.action('follow_requests')
+        fromQAction: tokodonApplication.action('follow_requests')
         visible: AccountManager.hasAccounts && AccountManager.selectedAccount && alertCount > 0
     }
     readonly property Kirigami.Action localTimelineAction: Kirigami.Action {
         text: KI18n.i18nc("@action:button Local timeline of posts from the account's own server", "Local")
-        fromQAction: root.application.action('local_timeline')
+        fromQAction: tokodonApplication.action('local_timeline')
     }
     readonly property Kirigami.Action globalTimelineAction: Kirigami.Action {
         text: KI18n.i18nc("@action:button Global timeline of posts from the entire Fediverse network", "Global")
-        fromQAction: root.application.action('global_timeline')
+        fromQAction: tokodonApplication.action('global_timeline')
     }
     readonly property Kirigami.Action conversationAction: Kirigami.Action {
         text: KI18n.i18nc("@action:button Direct one-on-one messages between users", "Conversations")
-        fromQAction: root.application.action('conversations')
+        fromQAction: tokodonApplication.action('conversations')
     }
     readonly property Kirigami.Action favouritesAction: Kirigami.Action {
         text: KI18n.i18nc("@action:button This account's favorited posts", "Favorites")
-        fromQAction: root.application.action('favorites')
+        fromQAction: tokodonApplication.action('favorites')
     }
     readonly property Kirigami.Action bookmarksAction: Kirigami.Action {
         text: KI18n.i18nc("@action:button This account's bookmarked posts", "Bookmarks")
-        fromQAction: root.application.action('bookmarks')
+        fromQAction: tokodonApplication.action('bookmarks')
     }
     readonly property Kirigami.Action exploreAction: Kirigami.Action {
         text: KI18n.i18nc("@action:button Explore this server's trending posts, news, and more", "Explore")
-        fromQAction: root.application.action('explore')
+        fromQAction: tokodonApplication.action('explore')
     }
     readonly property Kirigami.Action followingAction: Kirigami.Action {
         text: KI18n.i18nc("@action:button A list of this account's followed accounts", "Following")
-        fromQAction: root.application.action('following')
+        fromQAction: tokodonApplication.action('following')
     }
     readonly property Kirigami.Action searchAction: Kirigami.Action {
         text: KI18n.i18nc("@action:button Search for users, posts and tags", "Search")
-        fromQAction: root.application.action('search')
+        fromQAction: tokodonApplication.action('search')
     }
     readonly property Kirigami.Action serverInformationAction: Kirigami.Action {
         text: AccountManager.selectedAccount ? AccountManager.selectedAccount.instanceName : ""
-        fromQAction: root.application.action('server_information')
+        fromQAction: tokodonApplication.action('server_information')
     }
     readonly property Kirigami.Action listsAction: Kirigami.Action {
         text: KI18n.i18nc("@action:button This account's lists, or timelines consisting of a groups of accounts", "Lists")
-        fromQAction: root.application.action('lists')
+        fromQAction: tokodonApplication.action('lists')
     }
     readonly property Kirigami.Action profileAction: Kirigami.Action {
         text: KI18n.i18nc("@action:button This account's profile", "Profile")
-        fromQAction: root.application.action('profile')
+        fromQAction: tokodonApplication.action('profile')
     }
     readonly property Kirigami.Action debugAction: Kirigami.Action {
         icon.name: "debug-run"
@@ -721,11 +723,11 @@ StatefulApp.StatefulWindow {
         text: KI18n.i18nc("@action:button Open debug page", "Debug")
     }
     readonly property Kirigami.Action accountSwitcherAction: Kirigami.Action {
-        fromQAction: root.application.action('account_switcher')
+        fromQAction: tokodonApplication.action('account_switcher')
     }
     readonly property Kirigami.Action collectionsAction: Kirigami.Action {
         text: KI18n.i18nc("@action:button This account's collections (a group of accounts)", "Collections")
-        fromQAction: root.application.action('collections')
+        fromQAction: tokodonApplication.action('collections')
     }
 
     property ModerationToolsView moderationToolsView: ModerationToolsView {
@@ -743,7 +745,7 @@ StatefulApp.StatefulWindow {
 
     property Kirigami.Action configureAction: Kirigami.Action {
         text: KI18n.i18nc("@action:button Open settings dialog", "Settings")
-        fromQAction: root.application.action('options_configure')
+        fromQAction: tokodonApplication.action('options_configure')
     }
 
     property Component serverInformationPage: Qt.createComponent("org.kde.tokodon", "ServerInformationPage", Qt.Asynchronous)

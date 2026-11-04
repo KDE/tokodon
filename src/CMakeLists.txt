@@ -7,7 +7,7 @@ ecm_add_qml_module(tokodon_static GENERATE_PLUGIN_SOURCE
         OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/src/org/kde/tokodon # Shuts up an annoying upstream Qt warning
         URI org.kde.tokodon
         DEPENDENCIES
-            org.kde.kirigamiaddons.statefulapp
+            org.kde.kirigamiaddons.actions
 )
 
 ecm_qt_declare_logging_category(tokodon_static
@@ -437,7 +437,7 @@ target_link_libraries(tokodon_static
         KF6::ConfigGui
         KF6::CoreAddons
         KF6::ColorScheme
-        KirigamiAddonsStatefulApp
+        KirigamiAddonsActions
         ${QTKEYCHAIN_LIBRARIES}
         QCoro::Core
         QCoro::Network

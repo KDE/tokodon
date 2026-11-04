@@ -6,7 +6,7 @@ import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import org.kde.ki18n
 import org.kde.kirigami as Kirigami
-import org.kde.kirigamiaddons.statefulapp as StatefulApp
+import org.kde.kirigamiaddons.actions as Actions
 import org.kde.tokodon
 
 import "../PostDelegate"
@@ -108,7 +108,7 @@ QQC2.ItemDelegate {
             icon.name: "list-add-user"
             visible: root.isFollowRequest
 
-            onClicked: (root.QQC2.ApplicationWindow.window as StatefulApp.StatefulWindow)?.application.action("follow_requests").trigger()
+            onClicked: (root.QQC2.ApplicationWindow.window as Actions.StatefulWindow)?.application.action("follow_requests").trigger()
 
             Layout.fillWidth: true
         }
