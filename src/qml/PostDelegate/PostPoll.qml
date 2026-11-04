@@ -17,6 +17,8 @@ ColumnLayout {
     required property var poll
     readonly property bool showResults: poll.voted || poll.expired || showVotesSwitch.checked
 
+    spacing: Kirigami.Units.smallSpacing
+
     QQC2.ButtonGroup {
         id: pollGroup
         exclusive: !root.poll.multiple
@@ -30,6 +32,8 @@ ColumnLayout {
 
             required property int index
             required property var modelData
+
+            spacing: Kirigami.Units.smallSpacing
 
             RowLayout {
                 spacing: root.poll.votesCount !== 0 ? Kirigami.Units.smallSpacing : 0

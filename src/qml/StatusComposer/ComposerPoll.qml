@@ -18,6 +18,8 @@ ColumnLayout {
     required property int maxPollOptions
     required property int maxCharactersPerOption
 
+    spacing: Kirigami.Units.smallSpacing
+
     Repeater {
         model: root.poll.options
 

@@ -85,6 +85,7 @@ Kirigami.ScrollablePage {
             Layout.topMargin: Kirigami.Units.largeSpacing
             Layout.bottomMargin: Kirigami.Units.largeSpacing
             ColumnLayout {
+                spacing: Kirigami.Units.smallSpacing
                 Kirigami.Heading {
                     level: 4
                     text: KI18n.i18nc("@info:Location combobox to choose location filters", "Location")
@@ -120,6 +121,7 @@ Kirigami.ScrollablePage {
             }
 
             ColumnLayout {
+                spacing: Kirigami.Units.smallSpacing
                 Kirigami.Heading {
                     level: 4
                     text: KI18n.i18nc("@info:Moderation Status combobox to choose between different moderation status filters", "Moderation Status")
@@ -164,6 +166,7 @@ Kirigami.ScrollablePage {
                 }
             }
             ColumnLayout {
+                spacing: Kirigami.Units.smallSpacing
                 Kirigami.Heading {
                     level: 4
                     text: KI18n.i18nc("@info:Role combobox to choose between different role filters", "Role")

@@ -24,6 +24,8 @@ ColumnLayout {
 
     readonly property bool canEditProfile: !AccountManager.accountHasIssue(account)
 
+    spacing: Kirigami.Units.smallSpacing
+
     data: [
         Component {
             id: openFileDialog

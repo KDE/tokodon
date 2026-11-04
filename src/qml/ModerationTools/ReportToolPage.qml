@@ -29,6 +29,7 @@ Kirigami.ScrollablePage {
             Layout.fillWidth: true
 
             ColumnLayout {
+                spacing: Kirigami.Units.smallSpacing
                 Kirigami.Heading {
                     level: 4
                     text: KI18n.i18nc("@info:Combobox to choose Report Status", "Report Status")
@@ -59,6 +60,7 @@ Kirigami.ScrollablePage {
             }
 
             ColumnLayout {
+                spacing: Kirigami.Units.smallSpacing
                 Kirigami.Heading {
                     level: 4
                     text: KI18n.i18nc("@info:Combobox to choose the origin of report", "Report Origin")

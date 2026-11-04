@@ -91,6 +91,7 @@ QQC2.Dialog {
         }
 
         ColumnLayout {
+            spacing: Kirigami.Units.smallSpacing
             Layout.preferredWidth: Kirigami.Units.gridUnit * 15
             Layout.fillHeight: true
 
@@ -109,6 +110,7 @@ QQC2.Dialog {
         }
 
         ColumnLayout {
+            spacing: Kirigami.Units.smallSpacing
             Layout.preferredWidth: Kirigami.Units.gridUnit * 25
             Layout.fillHeight: true
 
