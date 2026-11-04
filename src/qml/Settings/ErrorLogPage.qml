@@ -12,41 +12,31 @@ import org.kde.kquickcontrolsaddons as KQuickControlsAddons
 
 import org.kde.tokodon
 
-Kirigami.Page {
+Kirigami.ScrollablePage {
     id: root
 
     title: KI18n.i18nc("@title:window", "Error Log")
 
-    actions: [
-        Kirigami.Action {
-            icon.name: "edit-clear-all"
-            text: KI18n.i18nc("@action:intoolbar", "Clear All")
-            onTriggered: Controller.clearErrorMessages()
-        }
-    ]
+    actions: QQC2.Action {
+        icon.name: "edit-clear-all-symbol"
+        text: KI18n.i18nc("@action:intoolbar", "Clear All")
+        onTriggered: Controller.clearErrorMessages()
+    }
 
-    topPadding: 0
-    leftPadding: 0
-    rightPadding: 0
+    ListView {
+        id: view
 
-    FormCard.FormCard {
-        anchors {
-            left: parent.left
-            top: parent.top
-            right: parent.right
-            topMargin: Kirigami.Units.largeSpacing * 4
-        }
+        model: Controller.errorMessages
+        delegate: ColumnLayout {
+            id: delegate
 
-        visible: Controller.errorMessages.length !== 0
+            required property int index
+            required property var modelData
 
-        Repeater {
-            model: Controller.errorMessages
+            spacing: 0
+            width: ListView.view.width
 
             FormCard.AbstractFormDelegate {
-                id: delegate
-
-                required property var modelData
-
                 contentItem: RowLayout {
                     spacing: Kirigami.Units.smallSpacing
 
@@ -78,17 +68,22 @@ Kirigami.Page {
                     }
                 }
             }
+
+            FormCard.FormDelegateSeparator {
+                Layout.fillWidth: true
+                visible: delegate.index !== view.count - 1
+            }
         }
-    }
 
-    Kirigami.PlaceholderMessage {
-        anchors.centerIn: parent
+        Kirigami.PlaceholderMessage {
+            anchors.centerIn: parent
 
-        icon.name: "error"
-        text: KI18n.i18nc("@label", "No Errors")
-        visible: Controller.errorMessages.length === 0
+            icon.name: "error"
+            text: KI18n.i18nc("@label", "No Errors")
+            visible: Controller.errorMessages.length === 0
 
-        width: parent.width - Kirigami.Units.gridUnit * 4
+            width: parent.width - Kirigami.Units.gridUnit * 4
+        }
     }
 
     KQuickControlsAddons.Clipboard { id: clipboard }
