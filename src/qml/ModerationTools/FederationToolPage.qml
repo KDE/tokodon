@@ -30,159 +30,151 @@ Kirigami.ScrollablePage {
         }
     ]
 
-    Kirigami.PromptDialog {
+    FormCard.FormCardDialog {
         id: allowedDomainInfo
+        parent: root.QQC2.Overlay.overlay
 
         property int index
         property string domainName
         property date createdAt
+
         title: KI18n.i18n("Allowed Domain Info")
+        autoSeparators: true
 
-        implicitWidth: Kirigami.Units.gridUnit * 20
+        standardButtons: FormCard.FormCardDialog.Ok | FormCard.FormCardDialog.Cancel
 
-        contentItem: ColumnLayout {
-            FormCard.FormTextDelegate {
-                text: KI18n.i18nc("@info:The domain that is allowed to federate", "Domain")
-                description: allowedDomainInfo.domainName
-                Layout.fillWidth: true
-            }
-            FormCard.FormDelegateSeparator {}
-            FormCard.FormTextDelegate {
-                text: KI18n.i18nc("@info:Time when the domain was allowed to federate.", "Created at")
-                description: allowedDomainInfo.createdAt.toDateString()
-                Layout.fillWidth: true
-            }
+        Component.onCompleted: {
+            const disallowButton = standardButton(FormCard.FormCardDialog.Ok);
+            disallowButton.text = KI18n.i18n("Disallow Federation with Domain");
+            disallowButton.icon.name = "edit-delete-remove";
         }
 
-        standardButtons: Kirigami.Dialog.NoButton
-        customFooterActions: [
-            Kirigami.Action {
-                text: KI18n.i18n("Disallow Federation with Domain")
-                icon.name: "edit-delete-remove"
-                onTriggered: {
-                    federationView.model.removeAllowedDomain(root.index)
-                    showPassiveNotification(KI18n.i18n("Disallowed federation with the domain"))
-                    allowedDomainInfo.close()
-                }
-            }
-        ]
+        onAccepted: {
+            federationView.model.removeAllowedDomain(allowedDomainInfo.index)
+            root.QQC2.ApplicationWindow.window.showPassiveNotification(KI18n.i18n("Disallowed federation with the domain"))
+            allowedDomainInfo.close();
+        }
+
+        onRejected: allowedDomainInfo.close();
+
+        FormCard.FormTextDelegate {
+            text: KI18n.i18nc("@info:The domain that is allowed to federate", "Domain")
+            description: allowedDomainInfo.domainName
+        }
+
+        FormCard.FormTextDelegate {
+            text: KI18n.i18nc("@info:Time when the domain was allowed to federate.", "Created at")
+            description: allowedDomainInfo.createdAt.toDateString()
+        }
     }
 
-    Kirigami.PromptDialog {
+    FormCard.FormCardDialog {
         id: newDomainBlockDialog
+        parent: root.QQC2.Overlay.overlay
 
         title: KI18n.i18n("Add Domain Block")
+        autoSeparators: true
 
-        contentPadding: 0
-        implicitWidth: Kirigami.Units.gridUnit * 20
+        standardButtons: FormCard.FormCardDialog.Ok | FormCard.FormCardDialog.Cancel
 
-        mainItem: ColumnLayout {
-            spacing: 0
-
-            FormCard.FormTextFieldDelegate {
-                id: domain
-                label: KI18n.i18nc("@info:Enter the domain address of the domain block", "Domain*")
-            }
-            FormCard.FormDelegateSeparator {}
-            FormCard.FormTextFieldDelegate {
-                id: publicComment
-                label: KI18n.i18n("Public comment")
-            }
-            FormCard.FormDelegateSeparator {}
-            FormCard.FormTextFieldDelegate {
-                id: privateComment
-                label: KI18n.i18n("Private Comment")
-            }
-            FormCard.FormDelegateSeparator {}
-            FormCard.FormComboBoxDelegate {
-                id: severityCombobox
-                text: KI18n.i18n("Moderation")
-                textRole: "display"
-                valueRole: "value"
-                model: [
-                    {
-                        display: KI18n.i18nc("@info:Filter out all the allowed domains", "Silence"),
-                        value: "silence"
-                    },
-                    {
-                        display: KI18n.i18nc("@info:Filter out all the blocked domains", "Suspend"),
-                        value: "suspend"
-                    },
-                    {
-                        display: KI18n.i18nc("@info:Filter out all the blocked domains", "None"),
-                        value: "noop"
-                    },
-                ]
-                Component.onCompleted: severityCombobox.currentIndex = severityCombobox.indexOfValue("silence");
-            }
-            FormCard.FormDelegateSeparator { above: rejectMedia }
-            FormCard.FormCheckDelegate {
-                id: rejectMedia
-                text: KI18n.i18n("Reject media files")
-                description: KI18n.i18n("Removes locally stored media files and refuses to download any in the future. Irrelevant for suspensions")
-            }
-            FormCard.FormDelegateSeparator { below: rejectMedia; above: rejectReports }
-            FormCard.FormCheckDelegate {
-                id: rejectReports
-                text: KI18n.i18n("Reject reports")
-                description: KI18n.i18n("Ignore all reports coming from this domain. Irrelevant for suspensions")
-            }
-            FormCard.FormDelegateSeparator { below: rejectReports; above: obfuscateReport }
-            FormCard.FormCheckDelegate {
-                id: obfuscateReport
-                text: KI18n.i18n("Obfuscate domain name")
-                description: KI18n.i18n("Partially obfuscate the domain name in the list if advertising the list of domain limitations is enabled")
-            }
+        Component.onCompleted: {
+            const createButton = standardButton(FormCard.FormCardDialog.Ok);
+            createButton.text = KI18n.i18nc("@info:Button to create a domain block", "Create Block");
+            createButton.icon.name = "checkbox";
+            createButton.enabled = Qt.binding(() => domain.text.length > 0);
         }
 
-        standardButtons: Kirigami.Dialog.NoButton
-        customFooterActions: [
-            Kirigami.Action {
-                text: KI18n.i18nc("@info:Cancel button to close the dailog", "Cancel")
-                icon.name: "dialog-cancel"
-                onTriggered: newDomainBlockDialog.close();
-            },
-            Kirigami.Action {
-                text: KI18n.i18nc("@info:Button to create a domain block", "Create Block")
-                icon.name: "checkbox"
-                enabled: domain.text.length > 0
-                onTriggered: {
-                    federationView.model.newDomainBlock(domain.text, severityCombobox.currentValue, publicComment.text, privateComment.text, rejectMedia.checked, rejectReports.checked, obfuscateReports.checked)
-                    showPassiveNotification(KI18n.i18n("New domain block added"))
-                    newDomainBlockDialog.close();
-                }
-            }
-        ]
+        onAccepted: {
+            federationView.model.newDomainBlock(domain.text, severityCombobox.currentValue, publicComment.text, privateComment.text, rejectMedia.checked, rejectReports.checked, obfuscateReport.checked)
+            root.QQC2.ApplicationWindow.window.showPassiveNotification(KI18n.i18n("New domain block added"))
+            newDomainBlockDialog.close();
+        }
+
+        onRejected: newDomainBlockDialog.close();
+
+        FormCard.FormTextFieldDelegate {
+            id: domain
+            label: KI18n.i18nc("@info:Enter the domain address of the domain block", "Domain*")
+        }
+
+        FormCard.FormTextFieldDelegate {
+            id: publicComment
+            label: KI18n.i18n("Public comment")
+        }
+
+        FormCard.FormTextFieldDelegate {
+            id: privateComment
+            label: KI18n.i18n("Private Comment")
+        }
+
+        FormCard.FormComboBoxDelegate {
+            id: severityCombobox
+            text: KI18n.i18n("Moderation")
+            textRole: "display"
+            valueRole: "value"
+            model: [
+                {
+                    display: KI18n.i18nc("@info:Filter out all the allowed domains", "Silence"),
+                    value: "silence"
+                },
+                {
+                    display: KI18n.i18nc("@info:Filter out all the blocked domains", "Suspend"),
+                    value: "suspend"
+                },
+                {
+                    display: KI18n.i18nc("@info:Filter out all the blocked domains", "None"),
+                    value: "noop"
+                },
+            ]
+            Component.onCompleted: severityCombobox.currentIndex = severityCombobox.indexOfValue("silence");
+        }
+
+        FormCard.FormCheckDelegate {
+            id: rejectMedia
+            text: KI18n.i18n("Reject media files")
+            description: KI18n.i18n("Removes locally stored media files and refuses to download any in the future. Irrelevant for suspensions")
+        }
+
+        FormCard.FormCheckDelegate {
+            id: rejectReports
+            text: KI18n.i18n("Reject reports")
+            description: KI18n.i18n("Ignore all reports coming from this domain. Irrelevant for suspensions")
+        }
+
+        FormCard.FormCheckDelegate {
+            id: obfuscateReport
+            text: KI18n.i18n("Obfuscate domain name")
+            description: KI18n.i18n("Partially obfuscate the domain name in the list if advertising the list of domain limitations is enabled")
+        }
     }
 
-    Kirigami.PromptDialog {
+    FormCard.FormCardDialog {
         id: newDomainAllowDialog
+        parent: root.QQC2.Overlay.overlay
+
         title: KI18n.i18n("Allow Federation with Domain")
+        autoSeparators: true
 
-        contentPadding: 0
+        standardButtons: FormCard.FormCardDialog.Ok | FormCard.FormCardDialog.Cancel
 
-        mainItem: FormCard.FormTextFieldDelegate {
+        Component.onCompleted: {
+            const createButton = standardButton(FormCard.FormCardDialog.Ok);
+            createButton.text = KI18n.i18nc("@info:Button to create a domain block", "Create Block");
+            createButton.icon.name = "checkbox";
+        }
+
+        onAccepted: {
+            federationView.model.newDomainAllow(newAllowedDomain.text)
+            root.QQC2.ApplicationWindow.window.showPassiveNotification(KI18n.i18n("New Allowed Domain Added"))
+            newDomainAllowDialog.close();
+        }
+
+        onRejected: newDomainAllowDialog.close();
+
+        FormCard.FormTextFieldDelegate {
             id: newAllowedDomain
             label: KI18n.i18nc("@info:This domain will be able to fetch data from this server and incoming data from it will be processed and stored", "Domain*")
         }
-
-        standardButtons: Kirigami.Dialog.NoButton
-        customFooterActions: [
-            Kirigami.Action {
-                text: KI18n.i18nc("@info:Cancel button to close the dailog", "Cancel")
-                icon.name: "dialog-cancel"
-                onTriggered: newDomainAllowDialog.close();
-            },
-            Kirigami.Action {
-                text: KI18n.i18nc("@info:Button to create a domain block", "Create Block")
-                icon.name: "checkbox"
-                onTriggered: {
-                    federationView.model.newDomainAllow(newAllowedDomain.text)
-                    showPassiveNotification(KI18n.i18n("New Allowed Domain Added"))
-                    newDomainAllowDialog.close();
-                }
-            }
-        ]
     }
 
     header: ColumnLayout {

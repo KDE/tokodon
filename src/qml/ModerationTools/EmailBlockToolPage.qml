@@ -19,8 +19,9 @@ Kirigami.ScrollablePage {
         onTriggered: newEmailBlockDialog.open()
     }
 
-    Kirigami.PromptDialog {
+    FormCard.FormCardDialog {
         id: emailInfoDialog
+        parent: root.QQC2.Overlay.overlay
 
         property int index
         property string domain
@@ -29,100 +30,75 @@ Kirigami.ScrollablePage {
         property int ipCount
 
         title: KI18n.i18nc("@title", "E-Mail Domain Info")
+        autoSeparators: true
 
-        contentPadding: 0
-        implicitWidth: Kirigami.Units.gridUnit * 20
+        standardButtons: FormCard.FormCardDialog.Ok | FormCard.FormCardDialog.Cancel
 
-        mainItem: ColumnLayout {
-            spacing: 0
-
-            FormCard.FormTextDelegate {
-                text: KI18n.i18nc("@info The domain on which the block is imposed", "Email domain name")
-                description: emailInfoDialog.domain
-                Layout.fillWidth: true
-            }
-
-            FormCard.FormDelegateSeparator {}
-
-            FormCard.FormTextDelegate {
-                text: KI18n.i18nc("@info Time when the block was imposed.", "Block created at")
-                description: emailInfoDialog.createdAt.toDateString()
-                Layout.fillWidth: true
-            }
-
-            FormCard.FormDelegateSeparator {}
-
-            FormCard.FormTextDelegate {
-                text: KI18n.i18nc("@info The counted accounts signup attempts using that email domain within the last week.", "Account sign-up attempts in this week")
-                description: emailInfoDialog.accountCount
-                Layout.fillWidth: true
-            }
-
-            FormCard.FormDelegateSeparator {}
-
-            FormCard.FormTextDelegate {
-                text: KI18n.i18nc("@info The counted IP signup attempts of that email domain within that day.", "IP sign-up attempts in this week")
-                description: emailInfoDialog.ipCount
-                Layout.fillWidth: true
-            }
+        Component.onCompleted: {
+            const deleteButton = standardButton(FormCard.FormCardDialog.Ok);
+            deleteButton.text = KI18n.i18nc("@action:button", "Delete email block");
+            deleteButton.icon.name = "delete";
         }
 
-        standardButtons: Kirigami.Dialog.NoButton
-        customFooterActions: [
-            Kirigami.Action {
-                text: KI18n.i18nc("@action:button", "Cancel")
-                icon.name: "dialog-cancel"
-                onTriggered: emailInfoDialog.close();
-            },
-            Kirigami.Action {
-                text: KI18n.i18nc("@action:button", "Delete email block")
-                icon.name: "delete"
-                onTriggered: {
-                    emailBlockView.model.deleteEmailBlock(emailInfoDialog.index)
-                    showPassiveNotification(KI18n.i18n("Email block deleted"))
-                    emailInfoDialog.close();
-                }
-            }
-        ]
+        onAccepted: {
+            emailBlockView.model.deleteEmailBlock(emailInfoDialog.index)
+            root.QQC2.ApplicationWindow.window.showPassiveNotification(KI18n.i18n("Email block deleted"))
+            emailInfoDialog.close();
+        }
+
+        onRejected: emailInfoDialog.close();
+
+        FormCard.FormTextDelegate {
+            text: KI18n.i18nc("@info The domain on which the block is imposed", "Email domain name")
+            description: emailInfoDialog.domain
+        }
+
+        FormCard.FormTextDelegate {
+            text: KI18n.i18nc("@info Time when the block was imposed.", "Block created at")
+            description: emailInfoDialog.createdAt.toDateString()
+        }
+
+        FormCard.FormTextDelegate {
+            text: KI18n.i18nc("@info The counted accounts signup attempts using that email domain within the last week.", "Account sign-up attempts in this week")
+            description: emailInfoDialog.accountCount
+        }
+
+        FormCard.FormTextDelegate {
+            text: KI18n.i18nc("@info The counted IP signup attempts of that email domain within that day.", "IP sign-up attempts in this week")
+            description: emailInfoDialog.ipCount
+        }
     }
 
-    Kirigami.PromptDialog {
+    FormCard.FormCardDialog {
         id: newEmailBlockDialog
+        parent: root.QQC2.Overlay.overlay
 
         title: KI18n.i18nc("@title", "New E-Mail Domain Block")
+        autoSeparators: true
 
-        contentPadding: 0
-        implicitWidth: Kirigami.Units.gridUnit * 20
+        standardButtons: FormCard.FormCardDialog.Ok | FormCard.FormCardDialog.Cancel
 
-        mainItem: ColumnLayout {
-            spacing: 0
-
-            FormCard.FormTextFieldDelegate {
-                id: email
-                label: KI18n.i18nc("@info The domain on which the block will be imposed", "Domain *")
-                statusMessage: KI18n.i18n("This can be the domain name that shows up in the e-mail address or the MX record it uses. They will be checked upon sign-up.")
-                status: Kirigami.MessageType.Information
-            }
+        Component.onCompleted: {
+            const createButton = standardButton(FormCard.FormCardDialog.Ok);
+            createButton.text = KI18n.i18nc("@action:button", "Resolve domain");
+            createButton.icon.name = "checkbox";
         }
 
-        standardButtons: Kirigami.Dialog.NoButton
-        customFooterActions: [
-            Kirigami.Action {
-                text: KI18n.i18nc("@action:button", "Cancel")
-                icon.name: "dialog-cancel"
-                onTriggered: newEmailBlockDialog.close();
-            },
-            Kirigami.Action {
-                text: KI18n.i18nc("@action:button", "Resolve domain")
-                icon.name: "checkbox"
-                onTriggered: {
-                    emailBlockView.model.newEmailBlock(email.text)
-                    showPassiveNotification(KI18n.i18n("New email block added"))
-                    email.clear()
-                    newEmailBlockDialog.close();
-                }
-            }
-        ]
+        onAccepted: {
+            emailBlockView.model.newEmailBlock(email.text)
+            root.QQC2.ApplicationWindow.window.showPassiveNotification(KI18n.i18n("New email block added"))
+            email.clear()
+            newEmailBlockDialog.close();
+        }
+
+        onRejected: newEmailBlockDialog.close();
+
+        FormCard.FormTextFieldDelegate {
+            id: email
+            label: KI18n.i18nc("@info The domain on which the block will be imposed", "Domain *")
+            statusMessage: KI18n.i18n("This can be the domain name that shows up in the e-mail address or the MX record it uses. They will be checked upon sign-up.")
+            status: Kirigami.MessageType.Information
+        }
     }
 
     ListView {

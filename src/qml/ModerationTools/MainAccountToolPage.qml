@@ -37,6 +37,7 @@ FormCard.FormCardPage {
         id: actionDialog
 
         title: KI18n.i18n("Perform moderation action on %1", root.identity.userLevelIdentity.account)
+        autoSeparators: true
         parent: root.QQC2.Overlay.overlay
 
         FormCard.FormRadioDelegate {
@@ -99,8 +100,9 @@ FormCard.FormCardPage {
                 action = "suspend"
             }
             root.model.actionAgainstAccount(root.index, action, emailWarning.checked, message.text)
-            showPassiveNotification(KI18n.i18n("Action taken successfully"))
-            pageStack.layers.pop()
+            root.QQC2.ApplicationWindow.window.showPassiveNotification(KI18n.i18n("Action taken successfully"))
+            actionDialog.close();
+            root.QQC2.ApplicationWindow.window.pageStack.layers.pop()
         }
 
         onRejected: actionDialog.close();
@@ -108,6 +110,7 @@ FormCard.FormCardPage {
 
     KirigamiComponents.MessageDialog {
         id: promptDialog
+        parent: root.QQC2.Overlay.overlay
 
         property var actionName
 
@@ -150,8 +153,8 @@ FormCard.FormCardPage {
                 default:
                     break
             }
-            showPassiveNotification(successMessage)
-            pageStack.layers.pop()
+            root.QQC2.ApplicationWindow.window.showPassiveNotification(successMessage)
+            root.QQC2.ApplicationWindow.window.pageStack.layers.pop()
         }
     }
 

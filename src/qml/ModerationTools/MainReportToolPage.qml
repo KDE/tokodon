@@ -53,10 +53,10 @@ FormCard.FormCardPage {
         onTriggered: {
             if (root.reportInfo.actionTaken) {
                 root.model.unresolveReport(root.index)
-                showPassiveNotification(KI18n.i18nc("@info", "Report Unresolved"))
+                root.QQC2.ApplicationWindow.window.showPassiveNotification(KI18n.i18nc("@info", "Report Unresolved"))
             } else {
                 root.model.resolveReport(root.index)
-                showPassiveNotification(KI18n.i18nc("@info", "Report Resolved"))
+                root.QQC2.ApplicationWindow.window.showPassiveNotification(KI18n.i18nc("@info", "Report Resolved"))
             }
         }
     }
@@ -182,7 +182,7 @@ FormCard.FormCardPage {
             onCheckedChanged: if (checked && !isInitial) {
                 arr = []
                 root.model.updateReport(index, "other", arr)
-                showPassiveNotification(KI18n.i18n("Category changed to other"))
+                root.QQC2.ApplicationWindow.window.showPassiveNotification(KI18n.i18n("Category changed to other"))
             } else {
                 isInitial = false
             }
@@ -195,7 +195,7 @@ FormCard.FormCardPage {
             onCheckedChanged: if (checked && !isInitial) {
                 arr = []
                 root.model.updateReport(index, "spam", arr)
-                showPassiveNotification(KI18n.i18n("Category changed to spam"))
+                root.QQC2.ApplicationWindow.window.showPassiveNotification(KI18n.i18n("Category changed to spam"))
             } else {
                 isInitial = false
             }
@@ -208,7 +208,7 @@ FormCard.FormCardPage {
             onCheckedChanged: if (checked && !isInitial) {
                 arr = []
                 root.model.updateReport(index, "violation", arr)
-                showPassiveNotification(KI18n.i18n("Category changed to rule violation"))
+                root.QQC2.ApplicationWindow.window.showPassiveNotification(KI18n.i18n("Category changed to rule violation"))
             } else {
                 isInitial = false
             }

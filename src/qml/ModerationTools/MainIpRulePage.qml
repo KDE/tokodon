@@ -40,132 +40,111 @@ FormCard.FormCardPage {
         text: KI18n.i18nc("@action:inmenu", "Remove IP Rule")
         onTriggered: {
             root.model.deleteIpBlock(root.index)
-            showPassiveNotification(KI18n.i18n("IP Rule Removed"))
-            pageStack.layers.pop()
+            root.QQC2.ApplicationWindow.window.showPassiveNotification(KI18n.i18n("IP Rule Removed"))
+            root.QQC2.ApplicationWindow.window.pageStack.layers.pop()
         }
     }
 
-    data: Kirigami.PromptDialog {
+    data: FormCard.FormCardDialog {
         id: updateIpRuleDialog
-
-        title: KI18n.i18nc("@title:window", "Update IP Rule")
+        parent: root.QQC2.Overlay.overlay
 
         property string calculatedseverity: signupLimit.checked ? "sign_up_requires_approval" : signupBlock.checked ? "sign_up_block" : "no_access"
 
-        contentPadding: 0
-        implicitWidth: Kirigami.Units.gridUnit * 20
+        title: KI18n.i18nc("@title:window", "Update IP Rule")
+        autoSeparators: true
 
-        mainItem: ColumnLayout {
-            spacing: 0
+        standardButtons: FormCard.FormCardDialog.Ok | FormCard.FormCardDialog.Cancel
 
-            FormCard.FormTextDelegate {
-                id: ip
-                text: KI18n.i18nc("@info IP address of the ip block", "IP")
-                description: root.ip
-            }
-
-            FormCard.FormDelegateSeparator {below: ip; above: expireAfter}
-
-            FormCard.FormComboBoxDelegate {
-                id: expireAfter
-                property var currentDate: new Date()
-                text: KI18n.i18nc("@info Time after which the rule will be lifted", "Expire After")
-                textRole: "display"
-                valueRole: "value"
-                model: [
-                    {
-                        display: KI18n.i18nc("@info Option to block out the IP for 1 day", "1 day"),
-                        value: IpRulesToolModel.Oneday
-                    },
-                    {
-                        display: KI18n.i18nc("@info Option to block out the IP for 2 weeks", "2 weeks"),
-                        value: IpRulesToolModel.Twoweeks
-                    },
-                    {
-                        display: KI18n.i18nc("@info Option to block out the IP for 1 month", "1 month"),
-                        value: IpRulesToolModel.Onemonth
-                    },
-                    {
-                        display: KI18n.i18nc("@info Option to block out the IP for 6 months", "6 month"),
-                        value: IpRulesToolModel.Sixmonths
-                    },
-                    {
-                        display: KI18n.i18nc("@info Option to block out the IP for 1 year", "1 year"),
-                        value: IpRulesToolModel.OneYear
-                    },
-                    {
-                        display: KI18n.i18nc("@info Option to block out the IP for 3 years", "3 year"),
-                        value: IpRulesToolModel.ThreeYears
-                    },
-                ]
-                onCurrentIndexChanged: root.expiredAt = new Date(currentDate.getTime() + (model[currentIndex].value * 1000));
-                Component.onCompleted: {expireAfter.currentIndex = expireAfter.indexOfValue(IpRulesToolModel.Oneday);
-                }
-            }
-            FormCard.FormDelegateSeparator {below: expireAfter; above: comment}
-            FormCard.FormTextFieldDelegate {
-                id: comment
-                label: KI18n.i18nc("@info The comment attached with the ip rule", "Comment")
-                text: root.comment
-                placeholderText: KI18n.i18n("Optional. Remember why you added this rule.")
-
-            }
-            FormCard.FormDelegateSeparator {below: comment; above: rule}
-
-            FormCard.FormHeader {
-                id: rule
-                title: KI18n.i18nc("@info The rule attached with the ip rule", "Rule *")
-            }
-
-            QQC2.Label {
-                text: KI18n.i18n("Choose what will happen with requests from this IP")
-                Layout.fillWidth: true
-                Layout.leftMargin: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
-                Layout.rightMargin: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
-            }
-
-            FormCard.FormRadioDelegate {
-                id: signupLimit
-                text: KI18n.i18n("Limit sign-ups")
-                description: KI18n.i18n("New sign-ups will require your approval")
-                onToggled: root.severity = IpInfo.LimitSignUps
-            }
-
-            FormCard.FormRadioDelegate {
-                id: signupBlock
-                text: KI18n.i18n("Block sign-ups")
-                description: KI18n.i18n("New sign-ups will not be possible")
-                onToggled: root.severity = IpInfo.BlockSignUps
-            }
-
-            FormCard.FormRadioDelegate {
-                id: accessBlock
-                text: KI18n.i18n("Block access")
-                description: KI18n.i18n("Block access to all resources")
-                onToggled: root.severity = IpInfo.BlockAccess
-            }
-
-            FormCard.FormDelegateSeparator {below: accessBlock}
+        Component.onCompleted: {
+            const updateButton = standardButton(FormCard.FormCardDialog.Ok);
+            updateButton.text = KI18n.i18nc("@info Button to update an IP rule", "Update IP rule");
+            updateButton.icon.name = "checkbox";
         }
 
-        standardButtons: Kirigami.Dialog.NoButton
-        customFooterActions: [
-            Kirigami.Action {
-                text: KI18n.i18nc("@info Cancel button to close the dailog", "Cancel")
-                icon.name: "dialog-cancel"
-                onTriggered: updateIpRuleDialog.close();
-            },
-            Kirigami.Action {
-                text: KI18n.i18nc("@info Button to update an IP rule", "Update IP rule")
-                icon.name: "checkbox"
-                onTriggered: {
-                    root.comment = comment.text
-                    root.model.updateIpBlock(root.index, root.ip, updateIpRuleDialog.calculatedseverity, comment.text, expireAfter.currentValue)
-                    showPassiveNotification(KI18n.i18n("IP rule updated"))
-                    updateIpRuleDialog.close();
-                }
-            }
-        ]
+        onAccepted: {
+            root.comment = comment.text
+            root.model.updateIpBlock(root.index, root.ip, updateIpRuleDialog.calculatedseverity, comment.text, expireAfter.currentValue)
+            root.QQC2.ApplicationWindow.window.showPassiveNotification(KI18n.i18n("IP rule updated"))
+            updateIpRuleDialog.close();
+        }
+
+        onRejected: updateIpRuleDialog.close();
+
+        FormCard.FormTextDelegate {
+            id: ip
+            text: KI18n.i18nc("@info IP address of the ip block", "IP")
+            description: root.ip
+        }
+
+        FormCard.FormComboBoxDelegate {
+            id: expireAfter
+            property var currentDate: new Date()
+            text: KI18n.i18nc("@info Time after which the rule will be lifted", "Expire After")
+            textRole: "display"
+            valueRole: "value"
+            model: [
+                {
+                    display: KI18n.i18nc("@info Option to block out the IP for 1 day", "1 day"),
+                    value: IpRulesToolModel.Oneday
+                },
+                {
+                    display: KI18n.i18nc("@info Option to block out the IP for 2 weeks", "2 weeks"),
+                    value: IpRulesToolModel.Twoweeks
+                },
+                {
+                    display: KI18n.i18nc("@info Option to block out the IP for 1 month", "1 month"),
+                    value: IpRulesToolModel.Onemonth
+                },
+                {
+                    display: KI18n.i18nc("@info Option to block out the IP for 6 months", "6 month"),
+                    value: IpRulesToolModel.Sixmonths
+                },
+                {
+                    display: KI18n.i18nc("@info Option to block out the IP for 1 year", "1 year"),
+                    value: IpRulesToolModel.OneYear
+                },
+                {
+                    display: KI18n.i18nc("@info Option to block out the IP for 3 years", "3 year"),
+                    value: IpRulesToolModel.ThreeYears
+                },
+            ]
+            onCurrentIndexChanged: root.expiredAt = new Date(currentDate.getTime() + (model[currentIndex].value * 1000));
+            Component.onCompleted: expireAfter.currentIndex = expireAfter.indexOfValue(IpRulesToolModel.Oneday);
+        }
+
+        FormCard.FormTextFieldDelegate {
+            id: comment
+            label: KI18n.i18nc("@info The comment attached with the ip rule", "Comment")
+            text: root.comment
+            placeholderText: KI18n.i18n("Optional. Remember why you added this rule.")
+        }
+
+        FormCard.FormTextDelegate {
+            text: KI18n.i18nc("@info The rule attached with the ip rule", "Rule *")
+            description: KI18n.i18n("Choose what will happen with requests from this IP")
+        }
+
+        FormCard.FormRadioDelegate {
+            id: signupLimit
+            text: KI18n.i18n("Limit sign-ups")
+            description: KI18n.i18n("New sign-ups will require your approval")
+            onToggled: root.severity = IpInfo.LimitSignUps
+        }
+
+        FormCard.FormRadioDelegate {
+            id: signupBlock
+            text: KI18n.i18n("Block sign-ups")
+            description: KI18n.i18n("New sign-ups will not be possible")
+            onToggled: root.severity = IpInfo.BlockSignUps
+        }
+
+        FormCard.FormRadioDelegate {
+            id: accessBlock
+            text: KI18n.i18n("Block access")
+            description: KI18n.i18n("Block access to all resources")
+            onToggled: root.severity = IpInfo.BlockAccess
+        }
     }
 
     FormCard.FormCard {

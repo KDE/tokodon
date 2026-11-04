@@ -26,63 +26,56 @@ Kirigami.ScrollablePage {
         accountView.model.ip = ""
     }
 
-    data: Kirigami.PromptDialog {
+    data: FormCard.FormCardDialog {
         id: textPromptDialog
+        parent: root.QQC2.Overlay.overlay
 
         title: KI18n.i18n("Advanced Search")
+        autoSeparators: true
 
-        leftPadding: 0
-        rightPadding: 0
+        standardButtons: FormCard.FormCardDialog.Ok | FormCard.FormCardDialog.Reset | FormCard.FormCardDialog.Cancel
 
-        implicitWidth: Kirigami.Units.gridUnit * 20
+        Component.onCompleted: {
+            const searchButton = standardButton(FormCard.FormCardDialog.Ok);
+            searchButton.text = KI18n.i18nc("@info:Search button to initiate searching accounts", "Search");
+            searchButton.icon.name = "search";
 
-        contentItem: ColumnLayout {
-            FormCard.FormTextFieldDelegate {
-                id: username
-                label: KI18n.i18nc("@info:placeholder Username for searching accounts", "Username:")
-            }
-            FormCard.FormDelegateSeparator {}
-            FormCard.FormTextFieldDelegate {
-                id: displayName
-                label: KI18n.i18nc("@info:placeholder display name for searching accounts", "Display Name:")
-            }
-            FormCard.FormDelegateSeparator {}
-            FormCard.FormTextFieldDelegate {
-                id: email
-                label: KI18n.i18nc("@info:placeholder email for searching accounts", "Email:")
-            }
-            FormCard.FormDelegateSeparator {}
-            FormCard.FormTextFieldDelegate {
-                id: ip
-                label: KI18n.i18nc("@info:placeholder ip for searching accounts", "IP:")
-            }
+            const resetButton = standardButton(FormCard.FormCardDialog.Reset);
+            resetButton.text = KI18n.i18nc("@info:Reset button to reset all the text fields", "Reset");
+            resetButton.icon.name = "edit-clear";
         }
 
-        standardButtons: Kirigami.Dialog.NoButton
-        customFooterActions: [
-            Kirigami.Action {
-                text: KI18n.i18nc("@info:Search button to initiate searching accounts", "Search")
-                icon.name: "search"
-                onTriggered: {
-                    accountView.model.username = username.text
-                    accountView.model.displayName = displayName.text
-                    accountView.model.email = email.text
-                    accountView.model.ip = ip.text
-                    textPromptDialog.close();
-                }
-            },
-            Kirigami.Action {
-                text: KI18n.i18nc("@info:Reset button to reset all the text fields", "Reset")
-                icon.name: "edit-clear"
-                onTriggered: reset()
-            },
-            Kirigami.Action {
-                text: KI18n.i18nc("@info:Cancel button to close the dailog", "Cancel")
-                icon.name: "dialog-cancel"
-                onTriggered: textPromptDialog.close();
+        onAccepted: {
+            accountView.model.username = username.text
+            accountView.model.displayName = displayName.text
+            accountView.model.email = email.text
+            accountView.model.ip = ip.text
+            textPromptDialog.close();
+        }
 
-            }
-        ]
+        onRejected: textPromptDialog.close();
+
+        onReset: root.reset()
+
+        FormCard.FormTextFieldDelegate {
+            id: username
+            label: KI18n.i18nc("@info:placeholder Username for searching accounts", "Username:")
+        }
+
+        FormCard.FormTextFieldDelegate {
+            id: displayName
+            label: KI18n.i18nc("@info:placeholder display name for searching accounts", "Display Name:")
+        }
+
+        FormCard.FormTextFieldDelegate {
+            id: email
+            label: KI18n.i18nc("@info:placeholder email for searching accounts", "Email:")
+        }
+
+        FormCard.FormTextFieldDelegate {
+            id: ip
+            label: KI18n.i18nc("@info:placeholder ip for searching accounts", "IP:")
+        }
     }
 
     header: ColumnLayout {

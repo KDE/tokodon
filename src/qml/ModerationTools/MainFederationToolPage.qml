@@ -30,100 +30,94 @@ FormCard.FormCardPage {
         text: KI18n.i18n("Remove Domain Block")
         onTriggered: {
             root.model.removeDomainBlock(root.index)
-            showPassiveNotification(KI18n.i18n("Domain Block Removed"))
-            pageStack.layers.pop()
+            root.QQC2.ApplicationWindow.window.showPassiveNotification(KI18n.i18n("Domain Block Removed"))
+            root.QQC2.ApplicationWindow.window.pageStack.layers.pop()
         }
     }
 
-    data: Kirigami.PromptDialog {
+    data: FormCard.FormCardDialog {
         id: textPromptDialog
+        parent: root.QQC2.Overlay.overlay
 
         title: KI18n.i18n("Edit domain block")
+        autoSeparators: true
 
-        contentPadding: 0
-        implicitWidth: Kirigami.Units.gridUnit * 20
+        standardButtons: FormCard.FormCardDialog.Ok | FormCard.FormCardDialog.Cancel
 
-        mainItem: ColumnLayout {
-            spacing: 0
-
-            FormCard.FormComboBoxDelegate {
-                id: severityCombobox
-                text: KI18n.i18n("Moderation")
-                textRole: "display"
-                valueRole: "value"
-                model: [
-                    {
-                        display: KI18n.i18nc("@info:Filter out all the allowed domains", "Silence"),
-                        value: "silence"
-                    },
-                    {
-                        display: KI18n.i18nc("@info:Filter out all the blocked domains", "Suspend"),
-                        value: "suspend"
-                    },
-                    {
-                        display: KI18n.i18nc("@info:Filter out all the blocked domains", "None"),
-                        value: "noop"
-                    },
-                ]
-                onCurrentIndexChanged: root.severity = model[currentIndex].value
-                Component.onCompleted: severityCombobox.currentIndex = severityCombobox.indexOfValue(root.severity);
-            }
-            FormCard.FormDelegateSeparator {}
-            FormCard.FormTextFieldDelegate {
-                id: publicComment
-                text: root.publicComment
-                label: KI18n.i18n("Public comment")
-            }
-            FormCard.FormDelegateSeparator {}
-            FormCard.FormTextFieldDelegate {
-                id: privateComment
-                text: root.privateComment
-                label: KI18n.i18n("Private comment")
-            }
-            FormCard.FormDelegateSeparator { above: rejectMedia }
-            FormCard.FormCheckDelegate {
-                id: rejectMedia
-                text: KI18n.i18n("Reject media files")
-                description: KI18n.i18n("Removes locally stored media files and refuses to download any in the future. Irrelevant for suspensions")
-                checked: root.rejectMedia
-                onToggled: root.rejectMedia = rejectMedia.checked
-            }
-            FormCard.FormDelegateSeparator { below: rejectMedia; above: rejectReports }
-            FormCard.FormCheckDelegate {
-                id: rejectReports
-                text: KI18n.i18n("Reject reports")
-                description: KI18n.i18n("Ignore all reports coming from this domain. Irrelevant for suspensions")
-                checked: root.rejectReports
-                onToggled: root.rejectReports = rejectReports.checked
-            }
-            FormCard.FormDelegateSeparator { below: rejectReports; above: obfuscateReport }
-            FormCard.FormCheckDelegate {
-                id: obfuscateReports
-                text: KI18n.i18n("Obfuscate domain name")
-                description: KI18n.i18n("Partially obfuscate the domain name in the list if advertising the list of domain limitations is enabled")
-                checked: root.obfuscate
-                onToggled: root.obfuscate = obfuscateReports.checked
-            }
+        Component.onCompleted: {
+            const updateButton = standardButton(FormCard.FormCardDialog.Ok);
+            updateButton.text = KI18n.i18nc("@info:Button to update the domain block with new values", "Update Block");
+            updateButton.icon.name = "view-refresh";
         }
-        standardButtons: Kirigami.Dialog.NoButton
-        customFooterActions: [
-            Kirigami.Action {
-                text: KI18n.i18nc("@info:Cancel button to close the dailog", "Cancel")
-                icon.name: "dialog-cancel"
-                onTriggered: textPromptDialog.close();
-            },
-            Kirigami.Action {
-                text: KI18n.i18nc("@info:Button to update the domain block with new values", "Update Block")
-                icon.name: "view-refresh"
-                onTriggered: {
-                    root.privateComment = privateComment.text
-                    root.publicComment = publicComment.text
-                    root.model.updateDomainBlock(root.index, severityCombobox.currentValue, publicComment.text, privateComment.text, rejectMedia.checked, rejectReports.checked, obfuscateReports.checked)
-                    textPromptDialog.close();
-                    showPassiveNotification(KI18n.i18n("Domain block updated"))
-                }
-            }
-        ]
+
+        onAccepted: {
+            root.privateComment = privateComment.text
+            root.publicComment = publicComment.text
+            root.model.updateDomainBlock(root.index, severityCombobox.currentValue, publicComment.text, privateComment.text, rejectMedia.checked, rejectReports.checked, obfuscateReports.checked)
+            root.QQC2.ApplicationWindow.window.showPassiveNotification(KI18n.i18n("Domain block updated"))
+            textPromptDialog.close();
+        }
+
+        onRejected: textPromptDialog.close();
+
+        FormCard.FormComboBoxDelegate {
+            id: severityCombobox
+            text: KI18n.i18n("Moderation")
+            textRole: "display"
+            valueRole: "value"
+            model: [
+                {
+                    display: KI18n.i18nc("@info:Filter out all the allowed domains", "Silence"),
+                    value: "silence"
+                },
+                {
+                    display: KI18n.i18nc("@info:Filter out all the blocked domains", "Suspend"),
+                    value: "suspend"
+                },
+                {
+                    display: KI18n.i18nc("@info:Filter out all the blocked domains", "None"),
+                    value: "noop"
+                },
+            ]
+            onCurrentIndexChanged: root.severity = model[currentIndex].value
+            Component.onCompleted: severityCombobox.currentIndex = severityCombobox.indexOfValue(root.severity);
+        }
+
+        FormCard.FormTextFieldDelegate {
+            id: publicComment
+            text: root.publicComment
+            label: KI18n.i18n("Public comment")
+        }
+
+        FormCard.FormTextFieldDelegate {
+            id: privateComment
+            text: root.privateComment
+            label: KI18n.i18n("Private comment")
+        }
+
+        FormCard.FormCheckDelegate {
+            id: rejectMedia
+            text: KI18n.i18n("Reject media files")
+            description: KI18n.i18n("Removes locally stored media files and refuses to download any in the future. Irrelevant for suspensions")
+            checked: root.rejectMedia
+            onToggled: root.rejectMedia = rejectMedia.checked
+        }
+
+        FormCard.FormCheckDelegate {
+            id: rejectReports
+            text: KI18n.i18n("Reject reports")
+            description: KI18n.i18n("Ignore all reports coming from this domain. Irrelevant for suspensions")
+            checked: root.rejectReports
+            onToggled: root.rejectReports = rejectReports.checked
+        }
+
+        FormCard.FormCheckDelegate {
+            id: obfuscateReports
+            text: KI18n.i18n("Obfuscate domain name")
+            description: KI18n.i18n("Partially obfuscate the domain name in the list if advertising the list of domain limitations is enabled")
+            checked: root.obfuscate
+            onToggled: root.obfuscate = obfuscateReports.checked
+        }
     }
 
     FormCard.FormCard {
