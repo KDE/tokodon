@@ -5,10 +5,13 @@
 
 #include <QJsonArray>
 #include <QJsonObject>
+#include <QQmlEngine>
 
 class PollEditorBackend : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_UNCREATABLE("Access via PostEditorBackend")
 
     Q_PROPERTY(QVariantList options MEMBER m_options NOTIFY optionsChanged)
     Q_PROPERTY(bool multipleChoice READ multipleChoice WRITE setMultipleChoice NOTIFY multipleChoiceChanged)

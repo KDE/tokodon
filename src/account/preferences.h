@@ -4,6 +4,7 @@
 #pragma once
 
 #include "datatypes/post.h"
+#include <QQmlEngine>
 
 /**
  * @brief Account-specific preferences which are stored server-side.
@@ -11,6 +12,8 @@
 class Preferences final : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_UNCREATABLE("Access via AbstractAccount")
 
     Q_PROPERTY(Post::Visibility defaultVisibility READ defaultVisibility WRITE setDefaultVisibility NOTIFY defaultVisibilityChanged)
     Q_PROPERTY(bool defaultSensitive READ defaultSensitive WRITE setDefaultSensitive NOTIFY defaultSensitiveChanged)

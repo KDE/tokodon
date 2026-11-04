@@ -4,6 +4,7 @@
 #pragma once
 
 #include <QObject>
+#include <QQmlEngine>
 
 class AbstractAccount;
 
@@ -13,6 +14,8 @@ class AbstractAccount;
 class NotificationFilteringPolicy final : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_UNCREATABLE("Access via AbstractAccount")
 
     Q_PROPERTY(QString forNotFollowing READ forNotFollowing WRITE setForNotFollowing NOTIFY forNotFollowingChanged)
     Q_PROPERTY(QString forNotFollowers READ forNotFollowers WRITE setForNotFollowers NOTIFY forNotFollowersChanged)
