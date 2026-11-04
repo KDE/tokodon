@@ -7,6 +7,7 @@
 #include <QAbstractListModel>
 #include <QJsonArray>
 #include <QNetworkReply>
+#include <QQmlEngine>
 #include <QTemporaryDir>
 
 #include "datatypes/post.h"
@@ -17,6 +18,8 @@ class AbstractAccount;
 class AttachmentEditorModel : public QAbstractListModel
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_UNCREATABLE("Access via PostEditorBackend")
     Q_PROPERTY(int count READ count NOTIFY countChanged)
 
 public:

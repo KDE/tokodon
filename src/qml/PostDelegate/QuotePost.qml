@@ -16,7 +16,7 @@ import org.kde.tokodon
 QQC2.AbstractButton {
     id: root
 
-    required property var post
+    required property Post post
 
     leftPadding: Kirigami.Units.largeSpacing
     topPadding: Kirigami.Units.largeSpacing

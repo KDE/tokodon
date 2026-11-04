@@ -14,7 +14,7 @@ import org.kde.tokodon
 MediaContainer {
     id: root
 
-    required property var audioUrl
+    required property string audioUrl
     readonly property bool loading: player.mediaStatus === MediaPlayer.LoadingMedia
 
     function pause() {

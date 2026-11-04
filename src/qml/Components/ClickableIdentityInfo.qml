@@ -16,7 +16,7 @@ import org.kde.tokodon
 RowLayout {
     id: root
 
-    required property var identity
+    required property Identity identity
     required property bool secondary
     property bool admin: false
     property string ip

@@ -22,7 +22,7 @@ Kirigami.ScrollablePage {
     title: forRegistration ? KI18n.i18nc("@title:window", "Pick a Server") : KI18n.i18nc("@title:window", "Choose your Existing Server")
 
     property alias filterString: searchField.text
-    property var account
+    property Account account
     property bool forRegistration
 
     data: Connections {

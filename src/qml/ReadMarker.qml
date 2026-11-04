@@ -9,7 +9,7 @@ import QtQuick.Controls as QQC2
 QQC2.Label {
     id: root
 
-    required property var date
+    required property date date
 
     text: KI18n.i18nc("Last read on this date", "Last read on %1", Qt.formatDate(root.date))
     color: Kirigami.Theme.disabledTextColor

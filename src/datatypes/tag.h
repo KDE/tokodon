@@ -8,6 +8,7 @@
 class History
 {
     Q_GADGET
+    QML_VALUE_TYPE(history)
 
     Q_PROPERTY(QString day MEMBER m_day)
     Q_PROPERTY(QString uses MEMBER m_uses)

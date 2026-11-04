@@ -94,7 +94,7 @@ Kirigami.Page {
                 delegate: Delegates.RoundedItemDelegate {
                     id: delegate
 
-                    required property var identity
+                    required property Identity identity
                     required property string relativeTime
 
                     text: identity.username

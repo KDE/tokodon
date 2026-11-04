@@ -54,6 +54,7 @@ target_sources(tokodon_static
     account/suggestionsmodel.cpp
     account/suggestionsmodel.h
     account/relationship.cpp
+    account/relationship.h
     account/rulesmodel.cpp
     account/rulesmodel.h
     account/profileeditor.cpp

@@ -16,7 +16,7 @@ import org.kde.tokodon
 FormCard.FormCardPage {
     id: root
 
-    property var account: AccountManager.selectedAccount
+    property AbstractAccount account: AccountManager.selectedAccount
     readonly property var config: account.config
 
     function saveConfig(): void {

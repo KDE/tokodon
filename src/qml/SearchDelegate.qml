@@ -20,7 +20,7 @@ DelegateChooser {
         Delegates.RoundedItemDelegate {
             id: accountDelegate
 
-            required property var authorIdentity
+            required property Identity authorIdentity
 
             width: ListView.view.width
             text: accountDelegate.authorIdentity.displayName

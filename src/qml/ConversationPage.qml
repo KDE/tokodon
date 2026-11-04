@@ -41,8 +41,8 @@ Kirigami.ScrollablePage {
                 delegate: Delegates.RoundedItemDelegate {
                     id: delegate
 
-                    required property var index
-                    required property var authorIdentity
+                    required property int index
+                    required property Identity authorIdentity
 
                     text: authorIdentity.displayName
 

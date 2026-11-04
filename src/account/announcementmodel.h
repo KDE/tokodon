@@ -9,6 +9,7 @@
 class EmojiReaction
 {
     Q_GADGET
+    QML_VALUE_TYPE(emojiReaction)
 
     Q_PROPERTY(QString name MEMBER name CONSTANT)
     Q_PROPERTY(int count MEMBER count CONSTANT)

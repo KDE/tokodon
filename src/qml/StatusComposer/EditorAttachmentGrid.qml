@@ -13,7 +13,7 @@ import "../Components"
 GridLayout {
     id: root
 
-    required property var attachmentEditorModel
+    required property AttachmentEditorModel attachmentEditorModel
 
     visible: attachmentsRepeater.count > 0
     columns: Math.min(attachmentsRepeater.count, 2)
@@ -33,12 +33,12 @@ GridLayout {
             required property real focalX
             required property real focalY
 
-            readonly property var mediaRatio: 9.0 / 16.0
+            readonly property real mediaRatio: 9.0 / 16.0
 
             // If there is three attachments, the first one is bigger than the other two.
             readonly property bool isSpecialAttachment: index === 0 && attachmentsRepeater.count === 3
 
-            readonly property var heightDivisor: (isSpecialAttachment || attachmentsRepeater.count < 3) ? 1 : 2
+            readonly property int heightDivisor: (isSpecialAttachment || attachmentsRepeater.count < 3) ? 1 : 2
 
             source: img.preview
             focusX: img.focalX

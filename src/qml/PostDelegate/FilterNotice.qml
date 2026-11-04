@@ -15,7 +15,7 @@ import ".."
 QQC2.Control {
     id: root
 
-    required property var filters
+    required property list<string> filters
     required property bool filtered
 
     readonly property string matchedFilters: root.filters.join(', ')

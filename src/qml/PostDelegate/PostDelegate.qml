@@ -25,13 +25,13 @@ QQC2.ItemDelegate {
     required property string id
     required property string originalId
     required property string url
-    required property var authorIdentity
+    required property Identity authorIdentity
 
     required property bool isBoosted
-    required property var boostAuthorIdentity
+    required property Identity boostAuthorIdentity
 
     required property bool isReply
-    required property var replyAuthorIdentity
+    required property Identity replyAuthorIdentity
 
     required property var notificationActorIdentity
 
@@ -53,24 +53,24 @@ QQC2.ItemDelegate {
     required property string relativeTime
     required property string absoluteTime
     required property string publishedAt
-    required property var attachments
-    required property var poll
-    required property var card
-    required property var application
+    required property list<Attachment> attachments
+    required property poll poll
+    required property card card
+    required property application application
     required property bool selected
-    required property var filters
+    required property list<string> filters
     required property bool sensitive
     required property int type
-    required property var mentions
+    required property list<string> mentions
     required property int visibility
     required property bool wasEdited
     required property string editedAt
     required property bool isThreadReply
     required property bool isLastThreadReply
     required property bool hasContent
-    required property var standaloneTags
+    required property list<string> standaloneTags
 
-    required property var post
+    required property Post post
 
     required property bool isGroup
     required property bool isInGroup
@@ -84,7 +84,7 @@ QQC2.ItemDelegate {
     property bool expandedPost: false
     property bool loading: false
     property bool inViewPort: true
-    property bool hasWebsite: root.application && root.application.website !== undefined && root.application.website.toString().trim().length > 0
+    property bool hasWebsite: root.application.isValid && root.application.website.toString().trim().length > 0
 
     // Whether pinned posts should be indicated as such.
     property bool indicatePins: false
@@ -338,7 +338,7 @@ QQC2.ItemDelegate {
                 poll: root.poll
             }
 
-            active: root.poll !== null && root.poll !== undefined
+            active: root.poll.isValid
             visible: active && postContent.visible
 
             Layout.fillWidth: true
@@ -375,7 +375,7 @@ QQC2.ItemDelegate {
         }
 
         Loader {
-            active: Config.showLinkPreview && card && !root.secondary && root.post.attachments.length === 0 && !root.filtered && !root.post.quotedPost
+            active: Config.showLinkPreview && root.card.isValid && !root.secondary && root.post.attachments.length === 0 && !root.filtered && !root.post.quotedPost
             visible: active && postContent.visible
 
             Layout.fillWidth: true

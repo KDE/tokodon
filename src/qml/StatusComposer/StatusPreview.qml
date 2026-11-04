@@ -13,7 +13,7 @@ import "../PostDelegate" as PostDelegate
 ColumnLayout {
     id: root
 
-    required property var post
+    required property Post post
 
     spacing: Kirigami.Units.largeSpacing
 
@@ -65,7 +65,7 @@ ColumnLayout {
     }
 
     Loader {
-        active: root.post.poll !== null
+        active: root.post.hasPoll
         sourceComponent: PostDelegate.PostPoll {
             poll: root.post.poll
         }

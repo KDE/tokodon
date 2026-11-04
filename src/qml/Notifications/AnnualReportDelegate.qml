@@ -17,7 +17,7 @@ QQC2.ItemDelegate {
     required property Tokodon.annualReportEvent annualReportEvent
     required property bool selected
 
-    required property var type
+    required property int type
 
     topPadding: Kirigami.Units.largeSpacing
     bottomPadding: Kirigami.Units.largeSpacing

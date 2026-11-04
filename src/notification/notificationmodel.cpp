@@ -276,7 +276,7 @@ QVariant NotificationModel::data(const QModelIndex &index, int role) const
                 return QVariant::fromValue<Identity *>(notification->identity().get());
             }
         }
-        return {};
+        return QVariant::fromValue<Identity *>(nullptr);
     }
     case NotificationActorIdentityRole:
         return QVariant::fromValue(notification->identity().get());
@@ -287,7 +287,8 @@ QVariant NotificationModel::data(const QModelIndex &index, int role) const
         if (post != nullptr) {
             return QVariant::fromValue<Identity *>(post->authorIdentity().get());
         }
-    } break;
+        return QVariant::fromValue<Identity *>(nullptr);
+    }
     case ReportRole:
         return QVariant::fromValue<ReportInfo *>(notification->report());
     case RelationshipSeveranceEventRole:

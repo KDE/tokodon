@@ -29,7 +29,7 @@ ColumnLayout {
             Layout.fillWidth: true
 
             required property var modelData
-            required property var index
+            required property int index
 
             contentItem: RowLayout {
                 spacing: Kirigami.Units.largeSpacing

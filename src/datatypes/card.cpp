@@ -14,6 +14,11 @@ Card::Card(AbstractAccount *account, QJsonObject card)
 {
 }
 
+bool Card::isValid() const
+{
+    return !m_card.isEmpty();
+}
+
 QString Card::authorName() const
 {
     if (const auto author = authorObject()) {

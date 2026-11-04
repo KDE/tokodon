@@ -20,7 +20,7 @@ ColumnLayout {
     required property int favouritesCount
     required property int reblogsCount
     required property int quotesCount
-    required property var application
+    required property application application
     required property string absoluteTime
     required property string postId
 
@@ -152,8 +152,8 @@ ColumnLayout {
 
         Kirigami.Chip {
             icon.name: "applications-other-symbolic"
-            visible: root.application && root.application.name
-            text: root.application && root.application.name ? root.application.name : ''
+            visible: root.application.isValid && root.application.name.length > 0
+            text: root.application.name
             closable: false
             checkable: false
 

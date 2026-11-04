@@ -91,7 +91,7 @@ ListView {
                 id: accountDelegate
                 clip: true
 
-                required property var authorIdentity
+                required property Identity authorIdentity
 
                 text: accountDelegate.authorIdentity.displayName
 
@@ -111,7 +111,7 @@ ListView {
             Delegates.RoundedItemDelegate {
                 id: accountDelegate
 
-                required property var post
+                required property Post post
 
                 width: ListView.view.width
 

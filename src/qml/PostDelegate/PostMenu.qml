@@ -24,7 +24,7 @@ Components.ConvergentContextMenu {
     required property bool isSelf
     required property bool expandedPost
     required property bool pinned
-    required property var authorIdentity
+    required property Identity authorIdentity
     required property bool isPrivate
     required property bool muted
     required property string content

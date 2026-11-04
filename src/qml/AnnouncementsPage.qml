@@ -31,11 +31,11 @@ Kirigami.ScrollablePage {
         delegate: Delegates.RoundedItemDelegate {
             id: delegate
 
-            required property var index
+            required property int index
             required property string id
             required property string content
             required property date publishedAt
-            required property var reactions
+            required property list<emojiReaction> reactions
 
             contentItem: ColumnLayout {
                 id: layout

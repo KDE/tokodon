@@ -5,6 +5,7 @@
 #pragma once
 
 #include <QJsonArray>
+#include <QQmlEngine>
 #include <QQmlListProperty>
 
 class AbstractAccount;
@@ -14,6 +15,8 @@ class Post;
 class ReportInfo : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_UNCREATABLE("Access via ReportToolModel")
     Q_PROPERTY(QString reportId READ reportId NOTIFY reportInfoUpdated)
     Q_PROPERTY(bool actionTaken READ actionTaken WRITE setActionTaken NOTIFY actionTakenUpdated)
     Q_PROPERTY(QDateTime actionTakenAt READ actionTakenAt NOTIFY reportInfoUpdated)

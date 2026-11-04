@@ -4,12 +4,15 @@
 #pragma once
 
 #include <QJsonObject>
+#include <QQmlEngine>
 
 class Identity;
 
 class Relationship : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_UNCREATABLE("Access via Identity")
 
     Q_PROPERTY(bool following READ following WRITE setFollowing NOTIFY followingChanged)
     Q_PROPERTY(bool requested READ requested WRITE setRequested NOTIFY requestedChanged)

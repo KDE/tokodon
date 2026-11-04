@@ -17,7 +17,7 @@ RowLayout {
 
     spacing: Kirigami.Units.smallSpacing
 
-    readonly property var identity: {
+    readonly property Identity identity: {
         if (boostAuthorIdentity) {
             return boostAuthorIdentity;
         } else if (replyAuthorIdentity) {
@@ -27,9 +27,9 @@ RowLayout {
 
     required property bool isBoosted
     required property bool isReply
-    required property var type
-    required property var boostAuthorIdentity
-    required property var replyAuthorIdentity
+    required property int type
+    required property Identity boostAuthorIdentity
+    required property Identity replyAuthorIdentity
 
     Layout.fillWidth: true
 

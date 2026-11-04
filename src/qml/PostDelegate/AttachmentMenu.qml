@@ -18,10 +18,10 @@ import ".."
 Components.ConvergentContextMenu {
     id: root
 
-    property var attachment: null
+    property Attachment attachment: null
 
     readonly property Component saveAsDialog: FileDialog {
-        required property var url
+        required property url url
         fileMode: FileDialog.SaveFile
         currentFolder: StandardPaths.writableLocation(StandardPaths.DownloadLocation)
         onAccepted: {

@@ -13,8 +13,8 @@ import QtQuick.Layouts
 ColumnLayout {
     id: root
 
-    required property var index
-    required property var poll
+    required property int index
+    required property poll poll
     readonly property bool showResults: poll.voted || poll.expired || showVotesSwitch.checked
 
     spacing: Kirigami.Units.smallSpacing

@@ -12,6 +12,11 @@ using namespace Qt::Literals::StringLiterals;
 
 Poll::Poll() = default;
 
+bool Poll::isValid() const
+{
+    return !m_id.isEmpty();
+}
+
 Poll::Poll(const QJsonObject &json)
 {
     m_id = json[QStringLiteral("id")].toString();

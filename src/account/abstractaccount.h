@@ -483,7 +483,7 @@ public:
     /**
      * @brief Update the push notification rules.
      */
-    virtual void updatePushNotifications() = 0;
+    Q_INVOKABLE virtual void updatePushNotifications() = 0;
 
     // The following are internal for the mock account
     Q_INVOKABLE virtual void updateNotification();

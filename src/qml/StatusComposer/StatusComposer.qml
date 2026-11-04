@@ -29,13 +29,13 @@ Kirigami.ScrollablePage {
         Edit
     }
 
-    property var purpose
+    property int purpose
     property string inReplyTo: ''
-    property var mentions: []
+    property list<string> mentions: []
     property int visibility: AccountManager.selectedAccount.preferences.defaultVisibility
     property int sensitive: AccountManager.selectedAccount.preferences.defaultSensitive
     readonly property NetworkRequestProgress progress: NetworkRequestProgress {}
-    property var previewPost: null
+    property Post previewPost: null
     property string initialText
     property bool closeApplicationWhenFinished: false
     property bool discardDraft: false

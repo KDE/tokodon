@@ -21,8 +21,8 @@ import "../Components"
 Item {
     id: root
 
-    required property var attachments
-    required property var identity
+    required property list<Attachment> attachments
+    required property Identity identity
     required property bool sensitive
     required property bool secondary
     required property bool expandedPost
@@ -34,7 +34,7 @@ Item {
 
     // Only uncrop timeline media if requested by the user, and there's only one attachment
     // Expanded posts (like in threads) are always uncropped.
-    readonly property var shouldKeepAspectRatio: (!Config.cropMedia || root.expandedPost) && root.attachments.length === 1 && !forceCrop
+    readonly property bool shouldKeepAspectRatio: (!Config.cropMedia || root.expandedPost) && root.attachments.length === 1 && !forceCrop
 
     property bool isSensitive: (AccountManager.selectedAccount.preferences.extendMedia === "hide_all" ? true : (AccountManager.selectedAccount.preferences.extendMedia === "show_all" ? false : root.sensitive))
     signal userSensitivityChanged(hide: bool)
@@ -127,7 +127,7 @@ Item {
                     MediaContainer {
                         id: imgContainer
 
-                        required property var modelData
+                        required property Attachment modelData
                         required property int index
 
                         caption: modelData.caption
@@ -213,7 +213,7 @@ Item {
                     VideoAttachment {
                         id: gif
 
-                        required property var modelData
+                        required property Attachment modelData
                         required property int index
 
                         videoUrl: modelData.source
@@ -275,7 +275,7 @@ Item {
                     VideoAttachment {
                         id: video
 
-                        required property var modelData
+                        required property Attachment modelData
                         required property int index
 
                         videoUrl: modelData.source
@@ -330,7 +330,7 @@ Item {
                     AudioAttachment {
                         id: audio
 
-                        required property var modelData
+                        required property Attachment modelData
                         required property int index
 
                         audioUrl: modelData.source

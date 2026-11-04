@@ -17,7 +17,7 @@ MastoPage {
 
     title: KI18n.i18nc("@title:window", "Rules")
 
-    required property var account
+    required property AbstractAccount account
 
     data: [
         Connections {

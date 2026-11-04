@@ -16,7 +16,7 @@ QQC2.ItemDelegate {
     required property int index
     required property bool selected
 
-    required property var type
+    required property int type
 
     topPadding: Kirigami.Units.smallSpacing
     bottomPadding: Kirigami.Units.largeSpacing

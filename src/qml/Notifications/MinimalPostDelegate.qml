@@ -25,23 +25,23 @@ QQC2.ItemDelegate {
     required property int index
 
     required property string id
-    required property var authorIdentity
+    required property Identity authorIdentity
 
     required property var notificationActorIdentity
 
     required property string content
     required property string spoilerText
     required property string relativeTime
-    required property var attachments
-    required property var poll
+    required property list<Attachment> attachments
+    required property poll poll
     required property bool selected
-    required property var filters
+    required property list<string> filters
     required property bool sensitive
     required property int type
     required property bool hasContent
-    required property var standaloneTags
+    required property list<string> standaloneTags
 
-    required property var post
+    required property Post post
 
     required property bool isGroup
     required property int numInGroup
@@ -211,7 +211,7 @@ QQC2.ItemDelegate {
                 poll: root.poll
             }
 
-            active: root.poll !== null && root.poll !== undefined
+            active: root.poll.isValid
             visible: active && postContent.visible
 
             Layout.fillWidth: true

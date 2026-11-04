@@ -19,7 +19,7 @@ Kirigami.Page {
     property var postsBar
     property string selectedTag
 
-    property var currentIndex: 0
+    property int currentIndex: 0
     readonly property bool onPostsTab: currentIndex === 0
     readonly property bool onRepliesTab: currentIndex === 1
     readonly property bool onMediaTab: currentIndex === 2
@@ -184,7 +184,7 @@ Kirigami.Page {
                         required property real focusX
                         required property real focusY
                         required property bool sensitive
-                        required property var attachment
+                        required property Attachment attachment
 
                         width: gridView.cellWidth
                         height: gridView.cellHeight

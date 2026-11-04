@@ -110,7 +110,7 @@ Kirigami.ScrollablePage {
             id: delegate
 
             required property int index
-            required property var reportInfo
+            required property ReportInfo reportInfo
             visible: delegate.reportInfo !== null
 
             //hide the report if we get a {} response

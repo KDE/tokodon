@@ -15,8 +15,8 @@ import QtQml
 MediaContainer {
     id: root
 
-    required property var videoUrl
-    required property var previewUrl
+    required property string videoUrl
+    required property string previewUrl
     required property bool autoPlay
     required property bool isSensitive
     property alias showControls: mediaControls.visible
@@ -192,7 +192,7 @@ MediaContainer {
             QQC2.ToolButton {
                 id: volumeButton
 
-                property var unmuteVolume: root.volume
+                property real unmuteVolume: root.volume
 
                 icon.name: root.volume <= 0 ? "player-volume-muted-symbolic" : "player-volume-symbolic"
 

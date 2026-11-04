@@ -6,6 +6,7 @@
 #pragma once
 
 #include <QJsonObject>
+#include <QQmlEngine>
 
 #include "account/identity.h"
 
@@ -14,7 +15,9 @@ class AbstractAccount;
 class Card
 {
     Q_GADGET
+    QML_VALUE_TYPE(card)
 
+    Q_PROPERTY(bool isValid READ isValid)
     Q_PROPERTY(QString authorName READ authorName)
     Q_PROPERTY(QString authorUrl READ authorUrl)
     Q_PROPERTY(Identity *authorIdentity READ authorIdentity)
@@ -34,6 +37,7 @@ public:
     Card() = default;
     explicit Card(AbstractAccount *account, QJsonObject card);
 
+    [[nodiscard]] bool isValid() const;
     [[nodiscard]] QString authorName() const;
     [[nodiscard]] QString authorUrl() const;
     [[nodiscard]] Identity *authorIdentity() const;

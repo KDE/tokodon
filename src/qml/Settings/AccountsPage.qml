@@ -31,7 +31,7 @@ FormCard.FormCardPage {
             delegate: FormCard.AbstractFormDelegate {
                 id: delegate
 
-                required property var account
+                required property AbstractAccount account
                 required property string description
                 required property string displayName
                 required property bool hasIssue

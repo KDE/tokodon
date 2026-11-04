@@ -17,11 +17,11 @@ QQC2.ItemDelegate {
     id: root
 
     required property int index
-    required property var notificationActorIdentity
+    required property Identity notificationActorIdentity
     required property bool selected
     required property string relativeTime
 
-    required property var type
+    required property int type
     readonly property bool isAdminSignUp: type === Notification.AdminSignUp
     readonly property bool isFollowRequest: type === Notification.FollowRequest
 

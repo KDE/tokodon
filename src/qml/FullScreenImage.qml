@@ -19,7 +19,7 @@ Components.AlbumMaximizeComponent {
     id: root
 
     property alias attachments: root.model
-    required property var identity
+    required property Identity identity
     property string postId
 
     actions: [
@@ -65,7 +65,7 @@ Components.AlbumMaximizeComponent {
     Component {
         id: saveAsDialog
         FileDialog {
-            property var url
+            property url url
             fileMode: FileDialog.SaveFile
             currentFolder: StandardPaths.writableLocation(StandardPaths.DownloadLocation)
             onAccepted: {

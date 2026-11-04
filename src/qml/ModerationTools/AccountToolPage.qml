@@ -226,7 +226,7 @@ Kirigami.ScrollablePage {
             id: delegate
 
             required property int index
-            required property var identity
+            required property AdminAccountInfo identity
 
             implicitWidth: ListView.view.width
             Layout.fillWidth: true

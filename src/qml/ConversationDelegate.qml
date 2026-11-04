@@ -14,7 +14,7 @@ Delegates.IndicatorItemDelegate {
 
     required property string id
     required property string content
-    required property var authorIdentity
+    required property Identity authorIdentity
     required property string relativeTime
     required property int conversationsCount
     required property string conversationId

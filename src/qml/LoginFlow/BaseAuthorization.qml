@@ -20,7 +20,7 @@ Kirigami.ScrollablePage {
 
     default property alias children: layout.data
 
-    required property var account
+    required property AbstractAccount account
     required property var loginPage
     property bool needsAuthLink: true
 

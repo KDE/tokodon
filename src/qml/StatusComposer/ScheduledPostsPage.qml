@@ -59,7 +59,7 @@ Kirigami.ScrollablePage {
 
             spoilerText: ""
             relativeTime: ""
-            poll: null
+            poll: ({})
             selected: false
             filters: []
             sensitive: false

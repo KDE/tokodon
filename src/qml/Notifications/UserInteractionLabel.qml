@@ -22,8 +22,8 @@ RowLayout {
     readonly property bool isStatus: type === Notification.Status
     readonly property bool isQuote: type === Notification.Quote
 
-    required property var type
-    required property var notificationActorIdentity
+    required property int type
+    required property Identity notificationActorIdentity
 
     spacing: Kirigami.Units.smallSpacing
 

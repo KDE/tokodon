@@ -17,7 +17,7 @@ import org.kde.tokodon
 Item {
     id: root
 
-    required property var card
+    required property card card
     required property bool selected
 
     readonly property bool hasAuthorship: card.authorName !== "" || card.authorIdentity != null
@@ -85,7 +85,7 @@ Item {
                 Image {
                     id: img
 
-                    visible: root.card && root.card.image
+                    visible: root.card.isValid && root.card.image.length > 0
 
                     Layout.minimumHeight: Kirigami.Units.gridUnit * 3
                     Layout.maximumHeight: Kirigami.Units.gridUnit * 3

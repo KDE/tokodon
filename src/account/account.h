@@ -14,6 +14,8 @@ class AccountConfig;
 class Account : public AbstractAccount
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_UNCREATABLE("Created by AccountManager")
 
 public:
     explicit Account(const QString &instanceUri, QNetworkAccessManager *nam, QObject *parent = nullptr);

@@ -15,7 +15,7 @@ import "../PostDelegate"
 FormCard.FormCardPage {
     id: root
 
-    property var reportInfo
+    property ReportInfo reportInfo
     property int index
     property var model
     property var arr: []

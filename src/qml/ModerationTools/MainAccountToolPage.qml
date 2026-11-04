@@ -13,7 +13,7 @@ import org.kde.kirigamiaddons.components as KirigamiComponents
 FormCard.FormCardPage {
     id: root
 
-    property var identity
+    property AdminAccountInfo identity
     property int index
     property var model
     //moderation tool only visible if the position value of the account is greater or the account is not local
@@ -112,7 +112,7 @@ FormCard.FormCardPage {
         id: promptDialog
         parent: root.QQC2.Overlay.overlay
 
-        property var actionName
+        property string actionName
 
         dialogType: KirigamiComponents.MessageDialog.Warning
         title: KI18n.i18n("Are you sure?")
@@ -203,7 +203,7 @@ FormCard.FormCardPage {
         infoCards: [
             FormCard.FormGridContainer.InfoCard {
                 title: KI18n.i18nc("@info Role of the account on this server.", "Role")
-                subtitle: root.identity.userLevelIdentity.role ? root.identity.userLevelIdentity.role : KI18n.i18n("No role")
+                subtitle: root.identity.role ? root.identity.role : KI18n.i18n("No role")
             },
             FormCard.FormGridContainer.InfoCard {
                 title: KI18n.i18nc("@info The last time the account was active.", "Last Active")

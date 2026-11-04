@@ -14,10 +14,10 @@ QQC2.ItemDelegate {
     id: root
 
     required property int index
-    required property var relationshipSeveranceEvent
+    required property relationshipSeveranceEvent relationshipSeveranceEvent
     required property bool selected
 
-    required property var type
+    required property int type
 
     topPadding: Kirigami.Units.smallSpacing
     bottomPadding: Kirigami.Units.largeSpacing

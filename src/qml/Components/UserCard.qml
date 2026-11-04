@@ -13,7 +13,7 @@ import '../PostDelegate'
 Kirigami.AbstractCard {
     id: root
 
-    required property var userIdentity
+    required property Identity userIdentity
 
     showClickFeedback: true
     onClicked: Navigation.openAccount(root.userIdentity.id)

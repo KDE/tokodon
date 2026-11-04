@@ -79,7 +79,7 @@ FormCard.FormCardPage {
 
         FormCard.FormComboBoxDelegate {
             id: expireAfter
-            property var currentDate: new Date()
+            property date currentDate: new Date()
             text: KI18n.i18nc("@info Time after which the rule will be lifted", "Expire After")
             textRole: "display"
             valueRole: "value"

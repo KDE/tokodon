@@ -6,11 +6,14 @@
 #pragma once
 
 #include <QJsonObject>
+#include <QQmlEngine>
 
 class Application
 {
     Q_GADGET
+    QML_VALUE_TYPE(application)
 
+    Q_PROPERTY(bool isValid READ isValid)
     Q_PROPERTY(QString name READ name)
     Q_PROPERTY(QUrl website READ website)
 
@@ -18,6 +21,7 @@ public:
     Application() = default;
     explicit Application(QJsonObject application);
 
+    [[nodiscard]] bool isValid() const;
     [[nodiscard]] QString name() const;
     [[nodiscard]] QUrl website() const;
 

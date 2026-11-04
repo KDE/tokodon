@@ -112,14 +112,14 @@ QVariant AbstractTimelineModel::postData(Post *post, int role) const
         if (post->boostIdentity()) {
             return QVariant::fromValue<Identity *>(post->boostIdentity().get());
         }
-        return false;
+        return QVariant::fromValue<Identity *>(nullptr);
     case IsReplyRole:
         return !post->inReplyTo().isEmpty();
     case ReplyAuthorIdentityRole:
         if (!post->inReplyTo().isEmpty()) {
             return QVariant::fromValue<Identity *>(post->replyIdentity().get());
         }
-        return false;
+        return QVariant::fromValue<Identity *>(nullptr);
     case PublishedAtRole:
         return post->publishedAt();
     case RebloggedRole:
@@ -157,12 +157,12 @@ QVariant AbstractTimelineModel::postData(Post *post, int role) const
         if (post->card().has_value()) {
             return QVariant::fromValue<Card>(*post->card());
         }
-        return false;
+        return QVariant::fromValue<Card>(Card{});
     case ApplicationRole:
         if (post->application().has_value()) {
             return QVariant::fromValue<Application>(*post->application());
         }
-        return false;
+        return QVariant::fromValue<Application>(Application{});
     case UrlRole:
         return QVariant::fromValue<QUrl>(post->url());
     case RelativeTimeRole: {
@@ -175,7 +175,7 @@ QVariant AbstractTimelineModel::postData(Post *post, int role) const
         if (post->poll()) {
             return QVariant::fromValue<Poll>(*post->poll());
         }
-        return {};
+        return QVariant::fromValue<Poll>(Poll{});
     case TypeRole:
     case NotificationActorIdentityRole:
         return {};

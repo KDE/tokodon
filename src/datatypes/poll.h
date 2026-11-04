@@ -8,7 +8,10 @@
 class Poll
 {
     Q_GADGET
+    QML_VALUE_TYPE(poll)
+    QML_STRUCTURED_VALUE
 
+    Q_PROPERTY(bool isValid READ isValid CONSTANT)
     Q_PROPERTY(QString id READ id CONSTANT)
     Q_PROPERTY(QDateTime expiresAt READ expiresAt CONSTANT)
     Q_PROPERTY(bool expired READ expired CONSTANT)
@@ -23,6 +26,7 @@ public:
     Poll();
     explicit Poll(const QJsonObject &json);
 
+    [[nodiscard]] bool isValid() const;
     [[nodiscard]] QString id() const;
     [[nodiscard]] QDateTime expiresAt() const;
     [[nodiscard]] bool expired() const;

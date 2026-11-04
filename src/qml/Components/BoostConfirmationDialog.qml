@@ -10,8 +10,8 @@ import org.kde.kirigami as Kirigami
 Kirigami.PromptDialog {
     id: root
 
-    required property var sourceIdentity
-    required property var targetIdentity
+    required property Identity sourceIdentity
+    required property Identity targetIdentity
 
     width: 400
 

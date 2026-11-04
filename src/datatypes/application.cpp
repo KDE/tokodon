@@ -9,6 +9,11 @@ Application::Application(QJsonObject application)
 {
 }
 
+bool Application::isValid() const
+{
+    return !m_application.isEmpty();
+}
+
 QString Application::name() const
 {
     return m_application[QLatin1String("name")].toString();

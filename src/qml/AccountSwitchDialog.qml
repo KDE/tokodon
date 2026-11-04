@@ -115,7 +115,7 @@ Kirigami.Dialog {
             required property int index
             required property string displayName
             required property string instance
-            required property var account
+            required property AbstractAccount account
             required property bool hasIssue
 
             width: parent.width

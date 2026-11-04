@@ -19,7 +19,7 @@ import org.kde.tokodon
 QQC2.Pane {
     id: root
 
-    required property var identity
+    required property Identity identity
     required property bool isSelf
     required property bool largeScreen
     required property bool canExcludeBoosts
@@ -818,7 +818,7 @@ QQC2.Pane {
                             }
 
                             delegate: Components.AvatarButton {
-                                required property var identity
+                                required property Identity identity
 
                                 source: identity.avatarUrl
                                 cache: true
@@ -875,7 +875,7 @@ QQC2.Pane {
                             }
 
                             delegate: Components.AvatarButton {
-                                required property var identity
+                                required property Identity identity
 
                                 source: identity.avatarUrl
                                 cache: true

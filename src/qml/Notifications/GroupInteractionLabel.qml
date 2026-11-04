@@ -17,9 +17,9 @@ RowLayout {
     readonly property bool isBoost: type === Notification.Repeat
     readonly property bool isFavorite: type === Notification.Favorite
 
-    required property var type
+    required property int type
     required property var notificationActorIdentity
-    required property var numInGroup
+    required property int numInGroup
 
     spacing: Kirigami.Units.smallSpacing
 
@@ -51,7 +51,7 @@ RowLayout {
                 model: root.notificationActorIdentity
 
                 KirigamiComponents.AvatarButton {
-                    required property var modelData
+                    required property Identity modelData
 
                     implicitHeight: Math.round(Kirigami.Units.gridUnit * 1.5)
                     implicitWidth: implicitHeight

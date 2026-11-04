@@ -138,7 +138,7 @@ Kirigami.Page {
 
                     required property string name
                     required property url url
-                    required property var history
+                    required property list<history> history
 
                     width: ListView.view.width
 
@@ -324,7 +324,7 @@ Kirigami.Page {
                 delegate: Delegates.RoundedItemDelegate {
                     id: delegate
 
-                    required property var identity
+                    required property Identity identity
 
                     width: ListView.view.width
 

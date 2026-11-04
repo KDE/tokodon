@@ -15,7 +15,7 @@ QQC2.ScrollView {
     required property int targetIconSize
     readonly property int emojisPerRow: emojis.width / targetIconSize
     required property bool withCustom
-    readonly property var searchCategory: EmojiModel.Search
+    readonly property int searchCategory: EmojiModel.Search
     required property QtObject header
 
     signal chosen(string unicode)

@@ -241,7 +241,7 @@ Kirigami.ScrollablePage {
             required property int id
             required property string domain
             required property date createdAt
-            required property var severity
+            required property int severity
             required property bool rejectMedia
             required property bool rejectReports
             required property string publicComment

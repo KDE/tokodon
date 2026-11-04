@@ -17,13 +17,13 @@ QQC2.ItemDelegate {
     id: root
 
     required property int index
-    required property var notificationActorIdentity
+    required property Identity notificationActorIdentity
     required property bool selected
     required property string relativeTime
     required property string collectionId
     required property string collectionName
 
-    required property var type
+    required property int type
     readonly property bool isAdd: type === Notification.AddedToCollection
     readonly property bool isUpdate: type === Notification.CollectionUpdate
 

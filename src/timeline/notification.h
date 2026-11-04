@@ -9,6 +9,7 @@
 class AccountWarning
 {
     Q_GADGET
+    QML_VALUE_TYPE(accountWarning)
 
     Q_PROPERTY(QString id READ id CONSTANT)
     Q_PROPERTY(Action action READ action CONSTANT)
@@ -26,7 +27,8 @@ public:
     };
     Q_ENUM(Action);
 
-    AccountWarning(const QJsonObject &source);
+    AccountWarning() = default;
+    explicit AccountWarning(const QJsonObject &source);
 
     QString id() const;
     Action action() const;
@@ -35,7 +37,7 @@ public:
 
 private:
     QString m_id;
-    Action m_action;
+    Action m_action = None;
     QString m_text;
     QDateTime m_createdAt;
 };
@@ -43,6 +45,7 @@ private:
 class RelationshipSeveranceEvent
 {
     Q_GADGET
+    QML_VALUE_TYPE(relationshipSeveranceEvent)
 
     Q_PROPERTY(QString id READ id CONSTANT)
     Q_PROPERTY(Type type READ type CONSTANT)
@@ -55,7 +58,8 @@ public:
     enum Type { DomainBlock, UserDomainBlock, AccountSuspension };
     Q_ENUM(Type);
 
-    RelationshipSeveranceEvent(const QJsonObject &source);
+    RelationshipSeveranceEvent() = default;
+    explicit RelationshipSeveranceEvent(const QJsonObject &source);
 
     QString id() const;
     Type type() const;
@@ -67,8 +71,8 @@ public:
 
 private:
     QString m_id;
-    Type m_type;
-    bool m_purged;
+    Type m_type = DomainBlock;
+    bool m_purged = false;
     QString m_targetName;
     int m_followersCount = 0;
     int m_followingCount = 0;
