@@ -4,16 +4,12 @@
 import QtCore
 import QtQuick
 import QtQuick.Controls as QQC2
-import QtQuick.Layouts
 import QtQuick.Dialogs
-import Qt.labs.qmlmodels
 
 import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.labs.components as Components
 import org.kde.tokodon
-
-import "./PostDelegate" as PostDelegate
 
 Components.AlbumMaximizeComponent {
     id: root

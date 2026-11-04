@@ -4,11 +4,9 @@
 import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
-import Qt.labs.qmlmodels
 import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.tokodon
-
 
 QQC2.ItemDelegate {
     id: root

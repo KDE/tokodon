@@ -11,7 +11,6 @@ import QtQuick.Controls as QQC2
 import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.delegates as Delegates
-import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kitemmodels as KItemModels
 
 import org.kde.tokodon

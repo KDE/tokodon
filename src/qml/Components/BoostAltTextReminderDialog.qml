@@ -11,8 +11,6 @@ import QtQuick.Layouts
 
 import org.kde.kirigamiaddons.components as Components
 
-import org.kde.tokodon
-
 Components.MessageDialog {
     id: root
 

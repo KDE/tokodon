@@ -7,9 +7,6 @@ import QtQuick.Effects
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.components as KirigamiComponents
-import org.kde.tokodon
-
-import '..'
 
 QQC2.Pane {
     id: pane

@@ -3,7 +3,6 @@
 
 import QtQml
 import QtQuick
-import QtQuick.Controls as QQC2
 import QtQuick.Dialogs
 import QtQuick.Layouts
 
@@ -12,7 +11,6 @@ import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kirigami as Kirigami
 
 import org.kde.tokodon
-
 
 FormCard.FormCardPage {
     FormCard.FormHeader {

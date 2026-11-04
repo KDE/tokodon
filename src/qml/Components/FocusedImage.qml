@@ -2,10 +2,6 @@
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
 import QtQuick
-import org.kde.kirigami as Kirigami
-import QtQuick.Controls as QQC2
-import QtQml.Models
-import QtQuick.Layouts
 
 Rectangle {
     id: root

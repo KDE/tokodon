@@ -5,7 +5,6 @@ import QtQuick
 import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import QtQuick.Controls as QQC2
-import QtQml.Models
 import QtQuick.Layouts
 
 import "../Components"

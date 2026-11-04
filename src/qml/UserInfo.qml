@@ -8,7 +8,6 @@ import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.delegates as Delegates
 import org.kde.kirigamiaddons.components as KirigamiComponents
-import org.kde.kirigamiaddons.statefulapp as StatefulApp
 
 import org.kde.tokodon
 
