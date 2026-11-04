@@ -127,6 +127,7 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
         Layout.topMargin: Kirigami.Units.largeSpacing
 
         FormCard.FormTextDelegate {
@@ -134,42 +135,30 @@ FormCard.FormCardPage {
             description: root.createdAt.toLocaleDateString()
         }
 
-        FormCard.FormDelegateSeparator {}
-
         FormCard.FormTextDelegate {
             text: KI18n.i18n("Public comment")
             description: root.publicComment.length !== 0 ? root.publicComment : KI18n.i18nc("@info: No public comment provided", "None")
         }
-
-        FormCard.FormDelegateSeparator {}
 
         FormCard.FormTextDelegate {
             text: KI18n.i18n("Private comment")
             description: root.privateComment.length !== 0 ? root.privateComment : KI18n.i18nc("@info: No private comment provided", "None")
         }
 
-        FormCard.FormDelegateSeparator {}
-
         FormCard.FormTextDelegate {
             text: KI18n.i18nc("@info:The policy to be applied by this domain block", "Policy")
             description: root.severity
         }
-
-        FormCard.FormDelegateSeparator {}
 
         FormCard.FormTextDelegate {
             text: KI18n.i18nc("@info:Whether to obfuscate public displays of this domain block", "Obfuscate")
             description: root.obfuscate
         }
 
-        FormCard.FormDelegateSeparator {}
-
         FormCard.FormTextDelegate {
             text: KI18n.i18nc("@info:Whether to reject incoming media from this domain", "Reject media")
             description: root.rejectMedia
         }
-
-        FormCard.FormDelegateSeparator {}
 
         FormCard.FormTextDelegate {
             text: KI18n.i18nc("@info:Whether to reject incoming reports from this domain", "Reject reports")

@@ -24,12 +24,11 @@ MastoPage {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
         FormCard.FormTextDelegate {
             textItem.wrapMode: Text.WordWrap
             text: KI18n.i18n("Tokodon can show notifications for activity such as users boosting or replying to your posts.\n\nThe types of notifications shown can be fine tuned when logged in.")
         }
-
-        FormCard.FormDelegateSeparator {}
 
         FormCard.FormButtonDelegate {
             id: learnMoreButton
@@ -41,8 +40,6 @@ MastoPage {
                 }
             })
         }
-
-        FormCard.FormDelegateSeparator {}
 
         FormCard.FormButtonDelegate {
             id: continueButton

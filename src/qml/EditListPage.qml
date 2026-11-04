@@ -58,6 +58,7 @@ FormCard.FormCardPage {
     Component.onCompleted: titleField.forceActiveFocus()
 
     FormCard.FormCard {
+        autoSeparators: true
         enabled: !backend.loading
 
         Layout.topMargin: Kirigami.Units.largeSpacing
@@ -67,8 +68,6 @@ FormCard.FormCardPage {
             label: KI18n.i18nc("@label:textbox List title", "Title")
             onAccepted: exclusiveField.forceActiveFocus()
         }
-
-        FormCard.FormDelegateSeparator {}
 
         FormCard.FormComboBoxDelegate {
             id: repliesPolicyField
@@ -80,16 +79,10 @@ FormCard.FormCardPage {
             Layout.fillWidth: true
         }
 
-        FormCard.FormDelegateSeparator {}
-
         FormCard.FormCheckDelegate {
             id: exclusiveField
             text: KI18n.i18nc("@label If the list is exclusive", "Exclusive")
             description: KI18n.i18n("Posts in an exclusive list are excluded from the Home timeline.")
-        }
-
-        FormCard.FormDelegateSeparator {
-            visible: purpose !== EditListPage.New
         }
 
         FormCard.FormCheckDelegate {
@@ -98,8 +91,6 @@ FormCard.FormCardPage {
             text: KI18n.i18nc("@label If the list is favorited", "Favorite")
             description: KI18n.i18n("This list will show up in the sidebar.")
         }
-
-        FormCard.FormDelegateSeparator {}
 
         FormCard.FormButtonDelegate {
             id: manageUsersButton
@@ -235,6 +226,7 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
         enabled: !backend.loading
 
         Layout.topMargin: Kirigami.Units.largeSpacing
@@ -257,10 +249,6 @@ FormCard.FormCardPage {
                 }
             }
             onClicked: backend.submit()
-        }
-
-        FormCard.FormDelegateSeparator {
-            visible: deleteButton.visible
         }
 
         FormCard.FormButtonDelegate {

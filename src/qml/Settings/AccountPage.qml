@@ -127,6 +127,7 @@ Kirigami.Page {
                 anchors.fill: parent
 
                 FormCard.FormCard {
+                    autoSeparators: true
                     Layout.topMargin: Kirigami.Units.largeSpacing * 4
                     Layout.bottomMargin: Kirigami.Units.largeSpacing * 4
                     Layout.fillWidth: true
@@ -140,17 +141,11 @@ Kirigami.Page {
                         onCheckedChanged: backend.locked = checked
                     }
 
-                    FormCard.FormDelegateSeparator {
-                    }
-
                     FormCard.FormCheckDelegate {
                         text: KI18n.i18n("Is automated")
                         description: KI18n.i18n("Whether to publicly mark this account as doing any kind of automated actions.")
                         checked: backend.bot
                         onCheckedChanged: backend.bot = checked
-                    }
-
-                    FormCard.FormDelegateSeparator {
                     }
 
                     FormCard.FormCheckDelegate {
@@ -160,17 +155,11 @@ Kirigami.Page {
                         onCheckedChanged: backend.discoverable = checked
                     }
 
-                    FormCard.FormDelegateSeparator {
-                    }
-
                     FormCard.FormSwitchDelegate {
                         text: KI18n.i18n("Publicly list follows and followers")
                         description: KI18n.i18n("By default everyone you follow and everyone who follows you is public.")
                         checked: !root.account.preferences.hideCollections
                         onToggled: root.account.preferences.hideCollections = !checked
-                    }
-
-                    FormCard.FormDelegateSeparator {
                     }
 
                     FormCard.FormSwitchDelegate {
@@ -179,16 +168,10 @@ Kirigami.Page {
                         onToggled: root.account.preferences.defaultSensitive = checked
                     }
 
-                    FormCard.FormDelegateSeparator {
-                    }
-
                     FormCard.FormSwitchDelegate {
                         text: KI18n.i18nc("@label Account preferences", "Include public posts in search results")
                         checked: root.account.preferences.indexable
                         onToggled: root.account.preferences.indexable = checked
-                    }
-
-                    FormCard.FormDelegateSeparator {
                     }
 
                     FormCard.FormButtonDelegate {
@@ -210,9 +193,6 @@ Kirigami.Page {
                                 onClosed: destroyed()
                             }
                         }
-                    }
-
-                    FormCard.FormDelegateSeparator {
                     }
 
                     FormCard.FormComboBoxDelegate {

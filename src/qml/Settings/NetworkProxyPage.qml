@@ -18,6 +18,7 @@ FormCard.FormCardPage {
     property bool proxyConfigChanged: false
 
     FormCard.FormCard {
+        autoSeparators: true
         Layout.topMargin: Kirigami.Units.largeSpacing * 4
 
         FormCard.FormRadioDelegate {
@@ -30,8 +31,6 @@ FormCard.FormCardPage {
             }
         }
 
-        FormCard.FormDelegateSeparator { below: systemDefault; above: noProxy }
-
         FormCard.FormRadioDelegate {
             id:noProxy
             text: KI18n.i18n("No Proxy")
@@ -42,8 +41,6 @@ FormCard.FormCardPage {
             }
         }
 
-        FormCard.FormDelegateSeparator { below: noProxy; above: http }
-
         FormCard.FormRadioDelegate {
             id: http
             text: KI18n.i18n("HTTP")
@@ -53,8 +50,6 @@ FormCard.FormCardPage {
                 currentType = 1
             }
         }
-
-        FormCard.FormDelegateSeparator { below: http; above: socks5 }
 
         FormCard.FormRadioDelegate {
             id: socks5
@@ -72,6 +67,7 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
         // It makes no sense to configure proxy settings for "System Default" and "No Proxy"
         enabled: currentType !== 0 && currentType !== 3
 
@@ -84,7 +80,6 @@ FormCard.FormCardPage {
                 proxyConfigChanged = true
             }
         }
-        FormCard.FormDelegateSeparator { below: hostField; above: portField }
         // we probably still need a FormSpinBoxDelegate
         FormCard.AbstractFormDelegate {
             Layout.fillWidth: true
@@ -108,7 +103,6 @@ FormCard.FormCardPage {
                 }
             }
         }
-        FormCard.FormDelegateSeparator { below: portField; above: userField }
         FormCard.FormTextFieldDelegate {
             id: userField
             label: KI18n.i18n("User")
@@ -118,7 +112,6 @@ FormCard.FormCardPage {
                 proxyConfigChanged = true
             }
         }
-        FormCard.FormDelegateSeparator { below: userField; above: passwordField }
         FormCard.FormTextFieldDelegate {
             id: passwordField
             label: KI18n.i18n("Password")

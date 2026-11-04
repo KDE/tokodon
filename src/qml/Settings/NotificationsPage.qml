@@ -74,34 +74,31 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
         PolicyCombo {
             text: KI18n.i18nc("@label Notification preferences", "People you don't follow")
             description: KI18n.i18nc("@label Notification preferences", "Until you manually approve them.")
             Component.onCompleted: currentIndex = indexOfValue(AccountManager.selectedAccount.notificationFilteringPolicy.forNotFollowing)
             onCurrentValueChanged: AccountManager.selectedAccount.notificationFilteringPolicy.forNotFollowing = currentValue
         }
-        FormCard.FormDelegateSeparator {}
         PolicyCombo {
             text: KI18n.i18nc("@label Notification preferences", "People not following you")
             description: KI18n.i18nc("@label Notification preferences", "Including people who have been following you fewer than 3 days.")
             Component.onCompleted: currentIndex = indexOfValue(AccountManager.selectedAccount.notificationFilteringPolicy.forNotFollowers)
             onCurrentValueChanged: AccountManager.selectedAccount.notificationFilteringPolicy.forNotFollowers = currentValue
         }
-        FormCard.FormDelegateSeparator {}
         PolicyCombo {
             text: KI18n.i18nc("@label Notification preferences", "New accounts")
             description: KI18n.i18nc("@label Notification preferences", "Created within the past 30 days.")
             Component.onCompleted: currentIndex = indexOfValue(AccountManager.selectedAccount.notificationFilteringPolicy.forNewAccounts)
             onCurrentValueChanged: AccountManager.selectedAccount.notificationFilteringPolicy.forNewAccounts = currentValue
         }
-        FormCard.FormDelegateSeparator {}
         PolicyCombo {
             text: KI18n.i18nc("@label Notification preferences", "Unsolicited conversations")
             description: KI18n.i18nc("@label Notification preferences", "Filtered unless it's in reply to your own mention or if you follow the sender.")
             Component.onCompleted: currentIndex = indexOfValue(AccountManager.selectedAccount.notificationFilteringPolicy.forPrivateMentions)
             onCurrentValueChanged: AccountManager.selectedAccount.notificationFilteringPolicy.forPrivateMentions = currentValue
         }
-        FormCard.FormDelegateSeparator {}
         PolicyCombo {
             text: KI18n.i18nc("@label Notification preferences", "Moderated accounts")
             description: KI18n.i18nc("@label Notification preferences", "Limited by server moderators.")
@@ -194,6 +191,7 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
         enabled: root.config.enableNotifications
 
         EventControl {
@@ -209,11 +207,6 @@ FormCard.FormCardPage {
             onToggledNotify: notify => root.config.notifyMention = notify
         }
 
-        FormCard.FormDelegateSeparator {
-            below: mentionsDelegate
-            above: quotesDelegate
-        }
-
         EventControl {
             id: quotesDelegate
 
@@ -225,11 +218,6 @@ FormCard.FormCardPage {
 
             notify: root.config.notifyQuote
             onToggledNotify: notify => root.config.notifyQuote = notify
-        }
-
-        FormCard.FormDelegateSeparator {
-            below: quotesDelegate
-            above: statusesDelegate
         }
 
         EventControl {
@@ -245,11 +233,6 @@ FormCard.FormCardPage {
             onToggledNotify: notify => root.config.notifyStatus = notify
         }
 
-        FormCard.FormDelegateSeparator {
-            below: statusesDelegate
-            above: boostsDelegate
-        }
-
         EventControl {
             id: boostsDelegate
 
@@ -261,11 +244,6 @@ FormCard.FormCardPage {
 
             notify: root.config.notifyBoost
             onToggledNotify: notify => root.config.notifyBoost = notify
-        }
-
-        FormCard.FormDelegateSeparator {
-            below: boostsDelegate
-            above: followersDelegate
         }
 
         EventControl {
@@ -281,11 +259,6 @@ FormCard.FormCardPage {
             onToggledNotify: notify => root.config.notifyFollow = notify
         }
 
-        FormCard.FormDelegateSeparator {
-            below: followersDelegate
-            above: requestsDelegate
-        }
-
         EventControl {
             id: requestsDelegate
 
@@ -297,11 +270,6 @@ FormCard.FormCardPage {
 
             notify: root.config.notifyFollowRequest
             onToggledNotify: notify => root.config.notifyFollowRequest = notify
-        }
-
-        FormCard.FormDelegateSeparator {
-            below: requestsDelegate
-            above: favoritesDelegate
         }
 
         EventControl {
@@ -317,11 +285,6 @@ FormCard.FormCardPage {
             onToggledNotify: notify => root.config.notifyFavorite = notify
         }
 
-        FormCard.FormDelegateSeparator {
-            below: favoritesDelegate
-            above: pollsDelegate
-        }
-
         EventControl {
             id: pollsDelegate
 
@@ -335,11 +298,6 @@ FormCard.FormCardPage {
             onToggledNotify: notify => root.config.notifyPoll = notify
         }
 
-        FormCard.FormDelegateSeparator {
-            below: quotesDelegate
-            above: editsDelegate
-        }
-
         EventControl {
             id: editsDelegate
 
@@ -351,11 +309,6 @@ FormCard.FormCardPage {
 
             notify: root.config.notifyUpdate
             onToggledNotify: notify => root.config.notifyUpdate = notify
-        }
-
-        FormCard.FormDelegateSeparator {
-            below: editsDelegate
-            above: adminSignUpDelegate.visible ? adminSignUpDelegate : relationshipsDelegate
         }
 
         EventControl {
@@ -372,12 +325,6 @@ FormCard.FormCardPage {
             onToggledNotify: notify => root.config.notifySignup = notify
         }
 
-        FormCard.FormDelegateSeparator {
-            below: adminSignUpDelegate
-            above: adminReportDelegate
-            visible: adminSignUpDelegate.visible
-        }
-
         EventControl {
             id: adminReportDelegate
 
@@ -390,12 +337,6 @@ FormCard.FormCardPage {
 
             notify: root.config.notifyReport
             onToggledNotify: notify => root.config.notifyReport = notify
-        }
-
-        FormCard.FormDelegateSeparator {
-            below: adminReportDelegate
-            above: relationshipsDelegate
-            visible: adminReportDelegate.visible
         }
 
         EventControl {
@@ -411,11 +352,6 @@ FormCard.FormCardPage {
             onToggledNotify: notify => root.config.notifyRelationships = notify
         }
 
-        FormCard.FormDelegateSeparator {
-            below: relationshipsDelegate 
-            above: annualReportDelegate
-        }
-
         EventControl {
             id: annualReportDelegate
 
@@ -427,11 +363,6 @@ FormCard.FormCardPage {
 
             notify: root.config.notifyAnnualReport
             onToggledNotify: notify => root.config.notifyAnnualReport = notify
-        }
-
-        FormCard.FormDelegateSeparator {
-            below: annualReportDelegate
-            above: collectionsDelegate
         }
 
         EventControl {

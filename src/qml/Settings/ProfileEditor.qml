@@ -37,6 +37,7 @@ ColumnLayout {
     ]
 
     FormCard.FormCard {
+        autoSeparators: true
         Layout.topMargin: Kirigami.Units.largeSpacing * 4
         Layout.bottomMargin: Kirigami.Units.largeSpacing * 4
 
@@ -65,8 +66,6 @@ ColumnLayout {
             onTextChanged: backend.displayName = text
         }
 
-        FormCard.FormDelegateSeparator {}
-
         FormCard.AbstractFormDelegate {
             background: null
             Layout.fillWidth: true
@@ -94,8 +93,6 @@ ColumnLayout {
                 }
             }
         }
-
-        FormCard.FormDelegateSeparator {}
 
         FormCard.AbstractFormDelegate {
             id: headerDelegate
@@ -160,8 +157,6 @@ ColumnLayout {
             }
         }
 
-        FormCard.FormDelegateSeparator { below: headerDelegate }
-
         FormCard.AbstractFormDelegate {
             background: null
             Layout.fillWidth: true
@@ -221,8 +216,6 @@ ColumnLayout {
                 }
             }
         }
-
-        FormCard.FormDelegateSeparator {}
 
         FormCard.AbstractFormDelegate {
             background: null

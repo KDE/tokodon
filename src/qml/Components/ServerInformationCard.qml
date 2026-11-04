@@ -15,6 +15,7 @@ import org.kde.kirigamiaddons.components as KirigamiComponents
 import org.kde.tokodon
 
 FormCard.FormCard {
+    autoSeparators: true
     id: root
 
     required property string kind
@@ -32,10 +33,6 @@ FormCard.FormCard {
 
     FormCard.FormTextDelegate {
         text: KI18n.i18nc("@info Last updated: relative date and time (e.g. 2 years ago)", "Last updated: %1", backend.updatedAt)
-        visible: backend.content.length > 0
-    }
-
-    FormCard.FormDelegateSeparator {
         visible: backend.content.length > 0
     }
 

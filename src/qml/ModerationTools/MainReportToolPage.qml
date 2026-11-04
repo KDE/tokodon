@@ -90,6 +90,7 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
         Layout.topMargin: Kirigami.Units.largeSpacing * 2
 
         FormCard.FormTextDelegate {
@@ -97,22 +98,14 @@ FormCard.FormCardPage {
             description: root.reportInfo.createdAt.toLocaleString()
         }
 
-        FormCard.FormDelegateSeparator {}
-
         FormCard.FormTextDelegate {
             text: KI18n.i18nc("@info The last time the reported account was active.", "Last Active")
             description: root.reportInfo.targetAccount.lastActive.toLocaleString()
         }
 
-        FormCard.FormDelegateSeparator {}
-
         FormCard.FormTextDelegate {
             text: KI18n.i18nc("@info Time at which the reported account joined.", "Joined")
             description: root.reportInfo.targetAccount.joined.toLocaleString()
-        }
-
-        FormCard.FormDelegateSeparator {
-            visible: root.reportInfo.filedAccount
         }
 
         FormCard.FormTextDelegate {
@@ -128,16 +121,10 @@ FormCard.FormCardPage {
             }
         }
 
-        FormCard.FormDelegateSeparator {}
-
         FormCard.FormTextDelegate {
             visible: true
             text: KI18n.i18nc("@label", "Report Status")
             description: root.reportInfo.actionTaken ? KI18n.i18nc("@info", "Resolved") : KI18n.i18nc("@info", "Unresolved")
-        }
-
-        FormCard.FormDelegateSeparator {
-            visible: root.reportInfo.actionTakenByAccount.userLevelIdentity.account
         }
 
         FormCard.FormTextDelegate {
@@ -151,8 +138,6 @@ FormCard.FormCardPage {
                 implicitWidth: Kirigami.Units.gridUnit * 2
             }
         }
-
-        FormCard.FormDelegateSeparator {}
 
         FormCard.FormTextDelegate {
             text: KI18n.i18nc("@label", "Assigned moderator")
@@ -170,10 +155,6 @@ FormCard.FormCardPage {
             }
         }
 
-        FormCard.FormDelegateSeparator {
-            visible: !root.reportInfo.targetAccount.isLocal
-        }
-
         FormCard.FormTextDelegate {
             visible: !root.reportInfo.targetAccount.isLocal
             text: KI18n.i18nc("@label", "Forwarded")
@@ -186,14 +167,13 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
         QQC2.Label {
             text: KI18n.i18n("The reason this account and/or content was reported will be cited in communication with the reported account")
             wrapMode: Text.WordWrap
             Layout.fillWidth: true
             Layout.margins: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
         }
-
-        FormCard.FormDelegateSeparator {}
 
         FormCard.FormRadioDelegate {
             id: other
@@ -208,8 +188,6 @@ FormCard.FormCardPage {
             }
         }
 
-        FormCard.FormDelegateSeparator { below: other ; above: spam }
-
         FormCard.FormRadioDelegate {
             id: spam
             checked: root.reportInfo.category === "spam"
@@ -222,8 +200,6 @@ FormCard.FormCardPage {
                 isInitial = false
             }
         }
-
-        FormCard.FormDelegateSeparator { below: spam }
 
         FormCard.FormRadioDelegate {
             id: serverRules
@@ -297,6 +273,7 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
         visible: root.displayAttachmentPanel
 
         QQC2.Label {
@@ -304,8 +281,6 @@ FormCard.FormCardPage {
             wrapMode: Text.WordWrap
             Layout.margins: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
         }
-
-        FormCard.FormDelegateSeparator {}
 
         Repeater {
             id: statusList

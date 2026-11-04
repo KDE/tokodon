@@ -32,6 +32,7 @@ MastoPage {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
         Layout.topMargin: Kirigami.Units.largeSpacing
 
         FormCard.FormTextDelegate {
@@ -42,16 +43,12 @@ MastoPage {
             }
         }
 
-        FormCard.FormDelegateSeparator {}
-
         FormCard.FormButtonDelegate {
             id: continueButton
             text: KI18n.i18n("View Website")
             icon.name: "internet-services-symbolic"
             onClicked: Qt.openUrlExternally(AccountManager.selectedAccount.instanceUri)
         }
-
-        FormCard.FormDelegateSeparator {}
 
         FormCard.FormButtonDelegate {
             id: attemptButton
@@ -62,8 +59,6 @@ MastoPage {
                 AccountManager.selectedAccount = AccountManager.selectedAccount; // reload the pages
             }
         }
-
-        FormCard.FormDelegateSeparator {}
 
         FormCard.FormButtonDelegate {
             id: logoutButton

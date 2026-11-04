@@ -169,6 +169,7 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
         Layout.topMargin: Kirigami.Units.largeSpacing
 
         FormCard.FormTextDelegate {
@@ -176,21 +177,15 @@ FormCard.FormCardPage {
             description: root.createdAt.toLocaleDateString()
         }
 
-        FormCard.FormDelegateSeparator {}
-
         FormCard.FormTextDelegate {
             text: KI18n.i18nc("@info Time after which the rule will be lifted", "Expires at")
             description: root.expiredAt.toLocaleDateString()
         }
 
-        FormCard.FormDelegateSeparator {}
-
         FormCard.FormTextDelegate {
             text: KI18n.i18nc("@info The comment attached with the ip rule", "Comment")
             description: root.comment.length !== 0 ? root.comment : KI18n.i18nc("@info No public comment provided", "None")
         }
-
-        FormCard.FormDelegateSeparator {}
 
         FormCard.FormTextDelegate {
             text: KI18n.i18nc("@info The severity to be applied by this IP rule", "Severity")

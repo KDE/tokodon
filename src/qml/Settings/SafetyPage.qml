@@ -20,6 +20,7 @@ FormCard.FormCardPage {
     readonly property var config: account.config
 
     FormCard.FormCard {
+        autoSeparators: true
         Layout.topMargin: Kirigami.Units.largeSpacing * 4
 
         FormCard.FormButtonDelegate {
@@ -28,23 +29,17 @@ FormCard.FormCardPage {
             onClicked: root.Window.window.pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "FiltersPage"))
         }
 
-        FormCard.FormDelegateSeparator {}
-
         FormCard.FormButtonDelegate {
             icon.name: "microphone-sensitivity-muted"
             text: KI18n.i18n("Muted Users")
             onClicked: root.Window.window.pageStack.layers.push(socialGraphComponent, { name: "mutes" })
         }
 
-        FormCard.FormDelegateSeparator {}
-
         FormCard.FormButtonDelegate {
             icon.name: "cards-block"
             text: KI18n.i18n("Blocked Users")
             onClicked: root.Window.window.pageStack.layers.push(socialGraphComponent, { name: "blocks" })
         }
-
-        FormCard.FormDelegateSeparator {}
 
         FormCard.FormButtonDelegate {
             icon.name: "internet-services-symbolic"

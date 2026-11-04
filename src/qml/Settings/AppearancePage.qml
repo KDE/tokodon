@@ -20,6 +20,7 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
         FormCard.FormComboBoxDelegate {
             Layout.fillWidth: true
             id: colorTheme
@@ -35,11 +36,6 @@ FormCard.FormCardPage {
             }
         }
 
-        FormCard.FormDelegateSeparator {
-            below: popoutComposer; above: colorTheme
-            visible: !Kirigami.Settings.isMobile
-        }
-
         FormCard.FormSwitchDelegate {
             id: popoutComposer
             text: KI18n.i18n("Pop out the post composer by default")
@@ -51,8 +47,6 @@ FormCard.FormCardPage {
                 Config.save()
             }
         }
-
-        FormCard.FormDelegateSeparator {}
 
         FormCard.FormSwitchDelegate {
             id: continueDelegate
@@ -66,8 +60,6 @@ FormCard.FormCardPage {
             }
         }
 
-        FormCard.FormDelegateSeparator {}
-
         FormCard.FormSwitchDelegate {
             id: autoUpdateDelegate
             text: KI18n.i18n("Auto-update timelines")
@@ -79,8 +71,6 @@ FormCard.FormCardPage {
                 Config.save()
             }
         }
-
-        FormCard.FormDelegateSeparator {}
 
         FormCard.FormSwitchDelegate {
             id: askBeforeBoostingDelegate
@@ -99,6 +89,7 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
         FormCard.FormSwitchDelegate {
             id: showStats
             text: KI18n.i18n("Show number of favorites and boosts")
@@ -110,10 +101,6 @@ FormCard.FormCardPage {
             }
         }
 
-        FormCard.FormDelegateSeparator {
-            below: showStats; above: showLinkPreview
-        }
-
         FormCard.FormSwitchDelegate {
             id: showLinkPreview
             text: KI18n.i18n("Show link previews")
@@ -123,10 +110,6 @@ FormCard.FormCardPage {
                 Config.showLinkPreview = checked
                 Config.save()
             }
-        }
-
-        FormCard.FormDelegateSeparator {
-            below: showLinkPreview; above: fontSelector
         }
 
         FormCard.FormButtonDelegate {
@@ -152,6 +135,7 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
         FormCard.FormSwitchDelegate {
             id: cropMedia
             text: KI18n.i18n("Crop images on the timeline")
@@ -161,10 +145,6 @@ FormCard.FormCardPage {
                 Config.cropMedia = checked
                 Config.save()
             }
-        }
-
-        FormCard.FormDelegateSeparator {
-            below: cropMedia; above: autoPlayGif
         }
 
         FormCard.FormSwitchDelegate {

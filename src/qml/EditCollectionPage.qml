@@ -59,6 +59,7 @@ FormCard.FormCardPage {
     Component.onCompleted: nameField.forceActiveFocus()
 
     FormCard.FormCard {
+        autoSeparators: true
         enabled: !backend.loading
 
         Layout.topMargin: Kirigami.Units.largeSpacing
@@ -68,19 +69,9 @@ FormCard.FormCardPage {
             label: KI18n.i18nc("@label:textbox Collection title", "Name")
         }
 
-        FormCard.FormDelegateSeparator {
-            above: nameField
-            below: descriptionField
-        }
-
         FormCard.FormTextFieldDelegate {
             id: descriptionField
             label: KI18n.i18nc("@label:textbox Collection description", "Description")
-        }
-
-        FormCard.FormDelegateSeparator {
-            above: descriptionField
-            below: sensitiveField
         }
 
         FormCard.FormCheckDelegate {
@@ -88,19 +79,9 @@ FormCard.FormCardPage {
             text: KI18n.i18nc("@label:textbox Whether this collection should be marked sensitive", "Sensitive")
         }
 
-        FormCard.FormDelegateSeparator {
-            above: sensitiveField
-            below: discoverableField
-        }
-
         FormCard.FormCheckDelegate {
             id: discoverableField
             text: KI18n.i18nc("@label:textbox Whether this collection should be discoverable by other users", "Discoverable")
-        }
-
-        FormCard.FormDelegateSeparator {
-            above: discoverableField
-            below: manageUsersButton
         }
 
         FormCard.FormButtonDelegate {
@@ -218,6 +199,7 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
         enabled: !backend.loading
 
         Layout.topMargin: Kirigami.Units.largeSpacing
@@ -240,10 +222,6 @@ FormCard.FormCardPage {
                 }
             }
             onClicked: backend.submit()
-        }
-
-        FormCard.FormDelegateSeparator {
-            visible: deleteButton.visible
         }
 
         FormCard.FormButtonDelegate {

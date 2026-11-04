@@ -72,6 +72,7 @@ Kirigami.Page {
             }
 
             FormCard.FormCard {
+                autoSeparators: true
                 Layout.topMargin: Kirigami.Units.largeSpacing
 
                 maximumWidth: Kirigami.Units.gridUnit * 20
@@ -83,8 +84,6 @@ Kirigami.Page {
                     onClicked: Window.window.pageStack.push(Qt.createComponent("org.kde.tokodon", "ServersPage"), { forRegistration: true })
                     focus: true
                 }
-
-                FormCard.FormDelegateSeparator {}
 
                 FormCard.FormButtonDelegate {
                     id: loginButton

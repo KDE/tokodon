@@ -18,6 +18,7 @@ BaseAuthorization {
     id: root
 
     FormCard.FormCard {
+        autoSeparators: true
         Layout.fillWidth: true
         Layout.alignment: Qt.AlignTop
 
@@ -26,8 +27,6 @@ BaseAuthorization {
             label: KI18n.i18n("Enter authorization token:")
             onAccepted: continueButton.clicked()
         }
-
-        FormCard.FormDelegateSeparator { above: tokenField }
 
         FormCard.FormButtonDelegate {
             text: KI18n.i18n("Continue")

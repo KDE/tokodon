@@ -22,11 +22,10 @@ MastoPage {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
         FormCard.FormTextDelegate {
             text: KI18n.i18n("Tokodon requires a password service to be running to save personally sensitive information.\n\nTokodon can use KWallet, GNOME Keyring or any libsecret-compatible service.\n\nAfter you installed the service, make sure it's running and restart Tokodon.")
         }
-
-        FormCard.FormDelegateSeparator {}
 
         FormCard.FormButtonDelegate {
             id: learnMoreButton

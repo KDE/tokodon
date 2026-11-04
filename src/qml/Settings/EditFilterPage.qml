@@ -209,6 +209,7 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
         enabled: !backend.loading
     
         Layout.topMargin: Kirigami.Units.largeSpacing
@@ -233,9 +234,6 @@ FormCard.FormCardPage {
             onClicked: backend.submit()
         }
     
-        FormCard.FormDelegateSeparator {
-            visible: deleteButton.visible
-        }
     
         FormCard.FormButtonDelegate {
             id: deleteButton

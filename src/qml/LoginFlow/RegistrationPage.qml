@@ -96,6 +96,7 @@ MastoPage {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
         FormCard.FormTextFieldDelegate {
             id: usernameField
             label: KI18n.i18n("Username")
@@ -103,16 +104,12 @@ MastoPage {
             onAccepted: emailField.forceActiveFocus()
         }
 
-        FormCard.FormDelegateSeparator {}
-
         FormCard.FormTextFieldDelegate {
             id: emailField
             label: KI18n.i18n("Email Address")
             inputMethodHints: Qt.ImhNoPredictiveText | Qt.ImhNoAutoUppercase
             onAccepted: passwordField.forceActiveFocus()
         }
-
-        FormCard.FormDelegateSeparator {}
 
         FormCard.FormTextFieldDelegate {
             id: passwordField
@@ -122,15 +119,11 @@ MastoPage {
             onAccepted: reasonField.forceActiveFocus()
         }
 
-        FormCard.FormDelegateSeparator {}
-
         FormCard.FormDateTimeDelegate {
             id: dateOfBirthField
             text: KI18n.i18n("Date of Birth")
             dateTimeDisplay: FormCard.FormDateTimeDelegate.Date
         }
-
-        FormCard.FormDelegateSeparator {}
 
         FormCard.FormTextFieldDelegate {
             id: reasonField

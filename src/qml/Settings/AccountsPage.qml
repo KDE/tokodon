@@ -21,6 +21,7 @@ FormCard.FormCardPage {
     required property TokodonApplication application
 
     FormCard.FormCard {
+        autoSeparators: true
         id: accountsCard
 
         Layout.topMargin: Kirigami.Units.largeSpacing * 4
@@ -90,10 +91,6 @@ FormCard.FormCardPage {
                     }
                 }
             }
-        }
-
-        FormCard.FormDelegateSeparator {
-            below: addAccountDelegate
         }
 
         FormCard.FormButtonDelegate {

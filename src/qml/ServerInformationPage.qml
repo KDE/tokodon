@@ -26,6 +26,7 @@ FormCard.FormCardPage {
             title: KI18n.i18nc("@title:window Server rules", "Rules")
 
             FormCard.FormCard {
+                autoSeparators: true
                 Layout.topMargin: Kirigami.Units.largeSpacing * 4
 
                 Repeater {
@@ -33,24 +34,14 @@ FormCard.FormCardPage {
                         account: AccountManager.selectedAccount
                     }
 
-                    delegate: ColumnLayout {
-                        id: ruleLayout
+                    delegate: FormCard.AbstractFormDelegate {
+                        id: ruleDelegate
 
-                        required property int index
-                        required property string text
+                        required text
 
-                        spacing: 0
-
-                        FormCard.FormDelegateSeparator {
-                            visible: ruleLayout.index !== 0
-                            opacity: 0.5
-                        }
-
-                        FormCard.AbstractFormDelegate {
-                            background: null
-                            contentItem: Kirigami.SelectableLabel {
-                                text: ruleLayout.text
-                            }
+                        background: null
+                        contentItem: Kirigami.SelectableLabel {
+                            text: ruleDelegate.text
                         }
                     }
                 }
@@ -59,6 +50,7 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
         Layout.topMargin: Kirigami.Units.largeSpacing * 4
 
         FormCard.FormButtonDelegate {
@@ -68,11 +60,6 @@ FormCard.FormCardPage {
             onClicked: root.Kirigami.PageStack.push(rulesPage);
         }
 
-        FormCard.FormDelegateSeparator {
-            above: rulesButton
-            below: announcementsButton
-        }
-
         FormCard.FormButtonDelegate {
             id: announcementsButton
 
@@ -80,21 +67,11 @@ FormCard.FormCardPage {
             onClicked: root.Kirigami.PageStack.push(Qt.createComponent("org.kde.tokodon", "AnnouncementsPage"));
         }
 
-        FormCard.FormDelegateSeparator {
-            above: announcementsButton
-            below: privacyPolicyButton
-        }
-
         FormCard.FormButtonDelegate {
             id: privacyPolicyButton
 
             text: KI18n.i18nc("@action:button", "Privacy Policy")
             onClicked: root.Kirigami.PageStack.push(Qt.createComponent("org.kde.tokodon", "GenericServerInformationPage"), { title: KI18n.i18nc("@title:window", "Privacy Policy"), kind: "privacy_policy" });
-        }
-
-        FormCard.FormDelegateSeparator {
-            above: privacyPolicyButton
-            below: termsOfServiceButton
         }
 
         FormCard.FormButtonDelegate {

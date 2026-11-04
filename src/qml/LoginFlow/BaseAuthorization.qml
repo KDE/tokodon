@@ -62,6 +62,7 @@ Kirigami.ScrollablePage {
         spacing: Kirigami.Units.largeSpacing
 
         FormCard.FormCard {
+            autoSeparators: true
             visible: root.needsAuthLink
 
             Layout.topMargin: Kirigami.Units.largeSpacing
@@ -75,20 +76,11 @@ Kirigami.ScrollablePage {
                 text: KI18n.i18n("To continue, you must authorize Tokodon to access your account.")
             }
 
-            FormCard.FormDelegateSeparator {
-                above: openLink
-            }
-
             FormCard.FormButtonDelegate {
                 id: openLink
                 text: KI18n.i18n("Open Authorization Page")
                 icon.name: "document-open"
                 onClicked: Qt.openUrlExternally(account.authorizeUrl)
-            }
-
-            FormCard.FormDelegateSeparator {
-                above: openLink
-                below: copyLink
             }
 
             FormCard.FormButtonDelegate {

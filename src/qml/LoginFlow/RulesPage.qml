@@ -49,6 +49,8 @@ MastoPage {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
+
         Repeater {
             id: rulesRepeater
 
@@ -65,34 +67,22 @@ MastoPage {
                 }
             }
 
-            delegate: ColumnLayout {
-                id: ruleLayout
+            delegate: FormCard.FormTextDelegate {
+                id: ruleTextDelegate
 
-                required property int index
-                required property string text
-
-                spacing: 0
+                required text
 
                 function forceFocus(): void {
                     ruleTextDelegate.forceActiveFocus();
                 }
 
-                FormCard.FormDelegateSeparator {
-                    visible: index !== 0
-                }
-
-                FormCard.FormTextDelegate {
-                    id: ruleTextDelegate
-
-                    text: ruleLayout.text
-
-                    activeFocusOnTab: true
-                }
+                activeFocusOnTab: true
             }
         }
     }
 
     FormCard.FormCard {
+        autoSeparators: true
         Layout.topMargin: Kirigami.Units.largeSpacing
 
         FormCard.FormButtonDelegate {
@@ -106,11 +96,6 @@ MastoPage {
                     account: account,
                 });
             }
-        }
-
-        FormCard.FormDelegateSeparator {
-            above: agreeButton
-            below: disagreeButton
         }
 
         FormCard.FormButtonDelegate {

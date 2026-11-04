@@ -32,11 +32,10 @@ MastoPage {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
         FormCard.FormTextDelegate {
             text: KI18n.i18n("Some initial setup is required before you can use Tokodon.")
         }
-
-        FormCard.FormDelegateSeparator {}
 
         FormCard.FormButtonDelegate {
             id: learnMoreButton
