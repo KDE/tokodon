@@ -5,7 +5,10 @@ add_library(tokodon_static STATIC)
 
 ecm_add_qml_module(tokodon_static GENERATE_PLUGIN_SOURCE
         OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/src/org/kde/tokodon # Shuts up an annoying upstream Qt warning
-        URI org.kde.tokodon)
+        URI org.kde.tokodon
+        DEPENDENCIES
+            org.kde.kirigamiaddons.statefulapp
+)
 
 ecm_qt_declare_logging_category(tokodon_static
     HEADER tokodon_debug.h
