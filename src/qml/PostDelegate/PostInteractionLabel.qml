@@ -22,6 +22,7 @@ RowLayout {
         } else if (replyAuthorIdentity) {
             return replyAuthorIdentity;
         }
+        return null;
     }
 
     required property bool isBoosted
