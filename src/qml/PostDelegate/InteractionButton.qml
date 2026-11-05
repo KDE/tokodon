@@ -9,7 +9,7 @@ import org.kde.kirigami as Kirigami
 import QtQuick.Controls as QQC2
 
 /**
- * @brief A specialized button used for the "Favorite", "Boost", etc buttons on a status
+ * @brief A specialized button used for the "Like", "Boost", etc. buttons on a status
  */
 QQC2.ToolButton {
     id: control

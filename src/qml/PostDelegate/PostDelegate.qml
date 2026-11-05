@@ -504,14 +504,14 @@ QQC2.ItemDelegate {
                 interacted: root.favourited
                 interactionColor: "#fa8865"
 
-                iconName: 'favorite'
-                interactedIconName: 'favorite-favorited'
+                iconName: 'like'
+                interactedIconName: 'like-liked'
 
                 text: Config.showPostStats && !root.selected ? root.favouritesCount : ''
-                tooltip: KI18n.i18nc("Favorite a post", "Favorite")
+                tooltip: KI18n.i18nc("Like a post", "Like")
 
                 onClicked: root.timelineModel.actionFavorite(root.timelineModel.index(root.index, 0))
-                Accessible.description: root.favourited ? KI18n.i18n("Favorited") : KI18n.i18n("Favorite")
+                Accessible.description: root.favourited ? KI18n.i18n("Liked") : KI18n.i18n("Like")
             }
 
             Item {

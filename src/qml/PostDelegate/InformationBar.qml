@@ -86,7 +86,7 @@ ColumnLayout {
         }
 
         Kirigami.Chip {
-            icon.name: "favorite-favorited"
+            icon.name: "like-liked"
             icon.color: Kirigami.Theme.textColor
             iconMask: true
             visible: root.favouritesCount > 0

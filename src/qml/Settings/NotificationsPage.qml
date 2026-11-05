@@ -274,8 +274,8 @@ FormCard.FormCardPage {
         EventControl {
             id: favoritesDelegate
 
-            text: KI18n.i18n("Favorites")
-            description: KI18n.i18n("When a post you made was favorited by another user.")
+            text: KI18n.i18n("Likes")
+            description: KI18n.i18n("When a post you made was liked by another user.")
 
             shouldDisplay: root.config.displayFavorite
             onToggledDisplay: display => root.config.displayFavorite = display

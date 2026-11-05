@@ -39,7 +39,7 @@ MastoPage {
         }
 
         FormCard.FormButtonDelegate {
-            text: "Favorite"
+            text: "Like"
             onClicked: AccountManager.selectedAccount.favoriteNotification()
         }
 

@@ -506,15 +506,15 @@ QQC2.Pane {
                             fromQAction: (toolbar.QQC2.ApplicationWindow.window as Actions.StatefulWindow)?.application.action('options_configure') ?? null
                         },
                         Kirigami.Action {
-                            icon.name: "favorite-symbolic"
+                            icon.name: "like-symbolic"
                             visible: root.isSelf
-                            text: KI18n.i18nc("@action:inmenu View this account's favorited posts", "Favorites")
+                            text: KI18n.i18nc("@action:inmenu View this account's liked posts", "Likes")
                             onTriggered: pageStack.push(mainTimeline.createObject(root), {
                                 pageId: "favorites",
                                 name: "favourites",
-                                iconName: "favorite",
-                                placeholderText: KI18n.i18n("No Favorites"),
-                                placeholderExplanation: KI18n.i18n("Posts that you favorite will show up here. If you appreciate someone's post, favorite it!")
+                                iconName: "like",
+                                placeholderText: KI18n.i18n("No Likes"),
+                                placeholderExplanation: KI18n.i18n("Posts that you like will show up here. If you appreciate someone's post, favorite it!")
                             })
                         },
                         Kirigami.Action {

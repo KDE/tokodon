@@ -32,7 +32,7 @@ RowLayout {
             if (root.isBoost) {
                 return "boost"
             } else if (root.isFavorite) {
-                return "favorite"
+                return "like"
             }
 
             return ''

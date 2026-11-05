@@ -118,8 +118,8 @@ Kirigami.ScrollablePage {
         }
 
         Kirigami.Action {
-            icon.name: "favorite"
-            text: KI18n.i18nc("Show only favorites", "Favorites")
+            icon.name: "like"
+            text: KI18n.i18nc("Show only likes", "Likes")
             onTriggered: {
                 notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow', 'follow_request', 'poll', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning', 'quote', 'added_to_collection', 'collection_update'];
                 visibilityMenu.tookAction = true;

@@ -103,8 +103,8 @@ Components.ConvergentContextMenu {
     Kirigami.Action {
         visible: root.hasMultipleAccounts
         enabled: visible
-        icon.name: "favorite"
-        text: KI18n.i18nc("@action:inmenu", "Favorite as…")
+        icon.name: "like"
+        text: KI18n.i18nc("@action:inmenu", "Like as…")
         onTriggered: MainWindow.instance.requestCrossAction('favourite', root.url)
     }
 

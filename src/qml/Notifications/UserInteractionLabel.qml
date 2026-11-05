@@ -38,7 +38,7 @@ RowLayout {
             } else if (root.isReply || root.isStatus) {
                 return "view-conversation-balloon-symbolic"
             } else if (root.isFavorite) {
-                return "favorite"
+                return "like"
             } else if (root.isUpdate) {
                 return "cell_edit"
             } else if (root.isPoll) {

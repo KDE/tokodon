@@ -157,7 +157,7 @@ Actions.StatefulWindow {
                 } else if (action === 'reply') {
                     return KI18n.i18nc("@title", "Reply As…")
                 } else if (action === 'favourite') {
-                    return KI18n.i18nc("@title", "Favorite As…")
+                    return KI18n.i18nc("@title", "Like As…")
                 } else if (action === 'reblog') {
                     return KI18n.i18nc("@title", "Boost As…")
                 } else if (action === 'bookmark') {
