@@ -29,6 +29,8 @@ BaseAuthorization {
         }
 
         FormCard.FormButtonDelegate {
+            id: continueButton
+
             text: KI18n.i18n("Continue")
             enabled: tokenField.text !== ""
             onClicked: {
