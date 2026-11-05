@@ -74,7 +74,7 @@ ColumnLayout {
             background: null
             Layout.fillWidth: true
 
-            onClicked: bioField.clicked()
+            onClicked: bioField.forceActiveFocus()
             onActiveFocusChanged: if (activeFocus) {
                 bioField.forceActiveFocus();
             }

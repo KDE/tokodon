@@ -70,7 +70,7 @@ Kirigami.Page {
                 AccountManager.removeAccount(root.account);
                 (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.pop();
                 if (!AccountManager.hasAccounts) {
-                    root.Window.window.close();
+                    root.QQC2.ApplicationWindow.window.close();
                 }
             }
         }

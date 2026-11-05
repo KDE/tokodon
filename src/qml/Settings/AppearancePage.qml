@@ -40,7 +40,7 @@ FormCard.FormCardPage {
             id: popoutComposer
             text: KI18n.i18n("Pop out the post composer by default")
             checked: Config.popOutByDefault
-            enabled: !Config.popOutByDefaultImmutable
+            enabled: !Config.isPopOutByDefaultImmutable
             visible: !Kirigami.Settings.isMobile
             onToggled: {
                 Config.popOutByDefault = checked
@@ -53,7 +53,7 @@ FormCard.FormCardPage {
             text: KI18n.i18n("Continue reading where you last left off")
             description: KI18n.i18n("If checked, the Home timeline will begin where you last read. The position in the timeline is shared with other clients.")
             checked: Config.continueReading
-            enabled: !Config.continueReadingImmutable
+            enabled: !Config.isContinueReadingImmutable
             onToggled: {
                 Config.continueReading = checked
                 Config.save()
@@ -65,7 +65,7 @@ FormCard.FormCardPage {
             text: KI18n.i18n("Auto-update timelines")
             description: KI18n.i18n("If checked, Tokodon will automatically update certain timelines as new posts come in.")
             checked: Config.autoUpdate
-            enabled: !Config.autoUpdateImmutable
+            enabled: !Config.isAutoUpdateImmutable
             onToggled: {
                 Config.autoUpdate = checked
                 Config.save()
@@ -76,7 +76,7 @@ FormCard.FormCardPage {
             id: askBeforeBoostingDelegate
             text: KI18n.i18nc("@option:check Boosting means to repost, or retweet", "Ask before boosting")
             checked: Config.askBeforeBoosting
-            enabled: !Config.askBeforeBoostingImmutable
+            enabled: !Config.isAskBeforeBoostingImmutable
             onToggled: {
                 Config.askBeforeBoosting = checked
                 Config.save()
