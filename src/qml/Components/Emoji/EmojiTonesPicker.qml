@@ -27,7 +27,7 @@ QQC2.Popup {
     modal: true
     dim: true
     clip: false
-    onOpened: x = Math.min(parent.mapFromGlobal(QQC2.Overlay.overlay.width - tones.width, 0).x, -(width - parent.width) / 2)
+    onOpened: x = Math.min(parent.mapFromGlobal(tones.QQC2.Overlay.overlay.width - tones.width, 0).x, -(width - parent.width) / 2)
     background: PopupShadow {}
 
     ListView {

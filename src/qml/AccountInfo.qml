@@ -241,7 +241,7 @@ Kirigami.Page {
 
                         TapHandler {
                             onTapped: {
-                                const dialog = fullScreenImage.createObject(QQC2.Overlay.overlay, {
+                                const dialog = fullScreenImage.createObject(accountInfo.QQC2.Overlay.overlay, {
                                     attachments: [imageDelegate.attachment],
                                     identity: accountModel.identity,
                                     initialIndex: 0,

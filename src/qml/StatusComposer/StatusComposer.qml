@@ -577,7 +577,7 @@ Kirigami.ScrollablePage {
                                         return "kstars_xplanet";
                                 }
                             }
-                            onClicked: visibilityMenu.popup(QQC2.Overlay.overlay)
+                            onClicked: visibilityMenu.popup(root.QQC2.Overlay.overlay)
                             enabled: root.purpose !== StatusComposer.Edit
                             text: KI18n.i18nc("@action:button", "Visibility")
                             display: QQC2.AbstractButton.IconOnly

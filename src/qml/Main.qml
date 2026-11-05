@@ -540,7 +540,7 @@ Actions.StatefulWindow {
         target: Navigation
 
         function onOpenFullScreenImage(attachments: var, identity: Identity, currentIndex: int): void {
-            const dialog = fullScreenImage.createObject(QQC2.Overlay.overlay, {
+            const dialog = fullScreenImage.createObject(root.QQC2.Overlay.overlay, {
                 attachments: attachments,
                 identity: identity,
                 initialIndex: currentIndex,

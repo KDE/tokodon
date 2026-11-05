@@ -452,7 +452,7 @@ QQC2.ItemDelegate {
                 // TODO: We may want to fold the boost alt text reminder into this confirmation dialog, so the flow is a little bit cleaner
                 function continueBoostChecks(): void {
                     if (Config.askBeforeBoosting && !root.reblogged) {
-                        const dialog = Qt.createComponent("org.kde.tokodon", "BoostConfirmationDialog").createObject(QQC2.Overlay.overlay, {
+                        const dialog = Qt.createComponent("org.kde.tokodon", "BoostConfirmationDialog").createObject(root.QQC2.Overlay.overlay, {
                             sourceIdentity: AccountManager.selectedAccount.identity,
                             targetIdentity: root.authorIdentity
                         });
@@ -474,7 +474,7 @@ QQC2.ItemDelegate {
                         }
                     }
                     if (missingAltText && !root.reblogged) {
-                        const dialog = Qt.createComponent("org.kde.tokodon", "BoostAltTextReminderDialog").createObject(QQC2.Overlay.overlay, {});
+                        const dialog = Qt.createComponent("org.kde.tokodon", "BoostAltTextReminderDialog").createObject(root.QQC2.Overlay.overlay, {});
                         dialog.accepted.connect(function() {
                             dialog.close();
                             continueBoostChecks();
