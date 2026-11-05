@@ -26,7 +26,11 @@ FormCard.FormCardPage {
 
     readonly property bool isValid: nameField.text.length > 0
 
-    title: purpose === EditListPage.New ? KI18n.i18nc("@title:window", "Create Collection") : KI18n.i18nc("@title:window", "Edit Collection")
+    title: root.purpose === EditCollectionPage.New ? KI18n.i18nc("@title:window", "Create Collection") : KI18n.i18nc("@title:window", "Edit Collection")
+
+    readonly property SocialGraphModel socialGraphModel: SocialGraphModel {
+        collectionId: root.collectionId
+    }
 
     property CollectionEditorBackend backend: CollectionEditorBackend {
         collectionId: root.collectionId
@@ -87,7 +91,7 @@ FormCard.FormCardPage {
             visible: root.purpose === EditCollectionPage.Edit
             text: KI18n.i18nc("@action:intoolbar Add users to collection", "Add Users")
             icon.name: "list-add-user"
-            onClicked: pageStack.layers.push(addUserComponent, { socialGraphModel })
+            onClicked: root.Kirigami.PageStack.push(addUserComponent, { socialGraphModel: root.socialGraphModel })
         }
     }
 
