@@ -618,8 +618,8 @@ Actions.StatefulWindow {
         application: tokodonApplication
         shouldCollapse: !root.wideMode
         actions: !root.wideMode ?
-            [root.searchAction, root.followRequestAction, root.followingAction, root.publicFeedsAction, root.conversationAction, root.bookmarksAction, root.collectionsAction, root.listsAction] :
-            [root.homeAction, root.notificationAction, root.followRequestAction, root.followingAction, root.exploreAction, root.publicFeedsAction, root.conversationAction, root.bookmarksAction, root.collectionsAction, root.listsAction]
+            [root.searchAction, root.followRequestAction, root.publicFeedsAction, root.followingAction, root.listsAction, root.bookmarksAction, root.collectionsAction, root.conversationAction] :
+            [root.homeAction, root.exploreAction, root.publicFeedsAction, root.followingAction, root.notificationAction, root.followRequestAction, root.listsAction, root.bookmarksAction, root.collectionsAction, root.conversationAction]
         bottomActions: [root.serverInformationAction, root.debugAction, root.moderationToolsAction, root.configureAction]
     }
 
@@ -721,7 +721,7 @@ Actions.StatefulWindow {
         visible: root.pageStack.layers.depth <= 1 && AccountManager.hasAccounts && !root.wideMode && AccountManager.isReady
         enabled: !AccountManager.selectedAccountHasIssue
 
-        actions: [root.homeAction, root.notificationAction, root.exploreAction, root.profileAction]
+        actions: [root.homeAction, root.exploreAction, root.notificationAction, root.profileAction]
 
         delegate: Kirigami.NavigationTabButton {
             id: delegateButton

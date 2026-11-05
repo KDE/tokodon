@@ -114,7 +114,7 @@ void TokodonApplication::setupActions()
     publicFeedsAction->setCheckable(true);
     publicFeedsAction->setActionGroup(pagesGroup);
     publicFeedsAction->setText(i18nc("@action:button Feed of public posts from the account's own server or others", "Open Public Feeds"));
-    publicFeedsAction->setIcon(QIcon::fromTheme(QStringLiteral("system-users")));
+    publicFeedsAction->setIcon(QIcon::fromTheme(QStringLiteral("globe-symbolic")));
 
     auto conversationsAction = mainCollection()->addAction(u"conversations"_s, this, &TokodonApplication::openConversations);
     conversationsAction->setCheckable(true);
