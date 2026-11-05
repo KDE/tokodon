@@ -48,7 +48,7 @@ MastoPage {
                 Config.save();
 
                 // TODO: this should continue onto the next step, but can be expanded later when we have more than two steps.
-                applicationWindow().decideDefaultPage();
+                MainWindow.instance.decideDefaultPage();
             }
         }
     }

@@ -39,7 +39,7 @@ FormCard.FormCard {
         contentItem: Kirigami.SelectableLabel {
             text: root.backend.content
 
-            onLinkActivated: link => applicationWindow().navigateLink(link, true)
+            onLinkActivated: link => MainWindow.instance.navigateLink(link, true)
         }
     }
 }

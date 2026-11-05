@@ -59,7 +59,7 @@ Kirigami.ScrollablePage {
                     wrapMode: Text.Wrap
                     textFormat: Text.StyledText
 
-                    onLinkActivated: link => applicationWindow().navigateLink(link, true)
+                    onLinkActivated: link => MainWindow.instance.navigateLink(link, true)
                 }
 
                 RowLayout {

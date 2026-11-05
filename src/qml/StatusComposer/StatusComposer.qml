@@ -102,7 +102,7 @@ Kirigami.ScrollablePage {
                 } else {
                     (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow)?.pageStack.layers.pop();
                 }
-                applicationWindow().newPost();
+                MainWindow.instance.newPost();
             } else {
                 banner.type = Kirigami.MessageType.Error;
                 banner.text = error;

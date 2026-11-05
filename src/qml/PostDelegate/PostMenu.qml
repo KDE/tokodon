@@ -89,7 +89,7 @@ Components.ConvergentContextMenu {
         enabled: visible
         icon.name: "expand"
         text: KI18n.i18nc("@action:inmenu", "Open as…")
-        onTriggered: applicationWindow().requestCrossAction('open', root.url)
+        onTriggered: MainWindow.instance.requestCrossAction('open', root.url)
     }
 
     Kirigami.Action {
@@ -97,7 +97,7 @@ Components.ConvergentContextMenu {
         enabled: visible
         icon.name: "view-conversation-balloon-symbolic"
         text: KI18n.i18nc("@action:inmenu", "Reply as…")
-        onTriggered: applicationWindow().requestCrossAction('reply', root.url)
+        onTriggered: MainWindow.instance.requestCrossAction('reply', root.url)
     }
 
     Kirigami.Action {
@@ -105,7 +105,7 @@ Components.ConvergentContextMenu {
         enabled: visible
         icon.name: "favorite"
         text: KI18n.i18nc("@action:inmenu", "Favorite as…")
-        onTriggered: applicationWindow().requestCrossAction('favourite', root.url)
+        onTriggered: MainWindow.instance.requestCrossAction('favourite', root.url)
     }
 
     Kirigami.Action {
@@ -113,7 +113,7 @@ Components.ConvergentContextMenu {
         enabled: visible
         icon.name: "boost"
         text: KI18n.i18nc("@action:inmenu", "Boost as…")
-        onTriggered: applicationWindow().requestCrossAction('reblog', root.url)
+        onTriggered: MainWindow.instance.requestCrossAction('reblog', root.url)
     }
 
     Kirigami.Action {
@@ -121,7 +121,7 @@ Components.ConvergentContextMenu {
         enabled: visible
         icon.name: "bookmark-new"
         text: KI18n.i18nc("@action:inmenu", "Bookmark as…")
-        onTriggered: applicationWindow().requestCrossAction('bookmark', root.url)
+        onTriggered: MainWindow.instance.requestCrossAction('bookmark', root.url)
     }
 
     Kirigami.Action {

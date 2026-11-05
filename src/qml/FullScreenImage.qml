@@ -49,7 +49,7 @@ Components.AlbumMaximizeComponent {
     }
 
     onSaveItem: {
-        const dialog = saveAsDialog.createObject(applicationWindow().overlay, {
+        const dialog = saveAsDialog.createObject(MainWindow.instance.overlay, {
             url: root.currentItem.source,
         }) as FileDialog
         dialog.selectedFile = dialog.currentFolder + "/" + FileHelper.fileName(root.currentItem.source);
@@ -77,11 +77,11 @@ Components.AlbumMaximizeComponent {
     }
 
     onClosed: {
-        applicationWindow().isShowingFullScreenImage = false;
+        MainWindow.instance.isShowingFullScreenImage = false;
     }
 
     onOpened: {
-        applicationWindow().isShowingFullScreenImage = true;
+        MainWindow.instance.isShowingFullScreenImage = true;
         forceActiveFocus();
     }
 

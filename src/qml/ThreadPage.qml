@@ -30,7 +30,7 @@ TimelinePage {
     }
 
     Connections {
-        target: applicationWindow()
+        target: MainWindow.instance
 
         // Refresh the model when we reply to it ourselves
         function onNewPost() {

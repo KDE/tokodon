@@ -26,7 +26,7 @@ Kirigami.Dialog {
     topPadding: 0
     bottomPadding: 0
     standardButtons: Kirigami.Dialog.NoButton
-    width: Math.min(applicationWindow().width, Kirigami.Units.gridUnit * 24)
+    width: Math.min(MainWindow.instance.width, Kirigami.Units.gridUnit * 24)
     title: KI18n.i18nc("@title: dialog to switch between logged in accounts", "Switch Account")
 
     onVisibleChanged: if (visible) {

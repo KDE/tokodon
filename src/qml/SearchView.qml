@@ -20,7 +20,7 @@ ListView {
     clip: true
 
     required property string text
-    property bool isPopup: !applicationWindow().checkIfCurrentPage("search")
+    property bool isPopup: !(MainWindow.instance?.checkIfCurrentPage("search") ?? false)
 
     signal itemSelected
 

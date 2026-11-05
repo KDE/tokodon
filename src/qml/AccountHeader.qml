@@ -594,11 +594,11 @@ QQC2.Pane {
                     topPadding: 0
                     background: null
                     wrapMode: TextEdit.Wrap
-                    onLinkActivated: (link) => applicationWindow().navigateLink(link, true)
+                    onLinkActivated: (link) => MainWindow.instance.navigateLink(link, true)
                     onHoveredLinkChanged: if (hoveredLink.length > 0) {
-                        applicationWindow().hoverLinkIndicator.text = hoveredLink;
+                        MainWindow.instance.hoverLinkIndicator.text = hoveredLink;
                     } else {
-                        applicationWindow().hoverLinkIndicator.text = "";
+                        MainWindow.instance.hoverLinkIndicator.text = "";
                     }
 
                     MouseArea {
@@ -712,7 +712,7 @@ QQC2.Pane {
                                 wrapMode: TextEdit.Wrap
                                 textFormat: TextEdit.RichText
                                 text: delegate.modelData.value
-                                onLinkActivated: link => applicationWindow().navigateLink(link, true)
+                                onLinkActivated: link => MainWindow.instance.navigateLink(link, true)
                                 MouseArea {
                                     anchors.fill: parent
                                     acceptedButtons: Qt.NoButton // don't eat clicks on the Text

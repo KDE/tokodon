@@ -85,7 +85,7 @@ Kirigami.ScrollablePage {
                     collectionsPage.reload()
                 } else {
                     // If we are here because someone has favorited, then we need to go back home.
-                    applicationWindow().homeAction.trigger();
+                    MainWindow.instance.homeAction.trigger();
                 }
             });
         }

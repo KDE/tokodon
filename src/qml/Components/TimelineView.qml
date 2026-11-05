@@ -267,10 +267,10 @@ ListView {
         }
 
         Connections {
-            target: applicationWindow()
+            target: MainWindow.instance
 
             function onIsShowingFullScreenImageChanged(): void {
-                if (applicationWindow().isShowingFullScreenImage) {
+                if (MainWindow.instance.isShowingFullScreenImage) {
                     status.inViewPort = false;
                 } else {
                     status.ListView.view.contentYChanged();

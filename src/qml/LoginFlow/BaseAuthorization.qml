@@ -45,7 +45,7 @@ Kirigami.ScrollablePage {
         AccountManager.addAccount(root.account);
         account.authenticated.connect(() => {
             AccountManager.selectedAccount = root.account;
-            if (root.Window.window !== applicationWindow()) {
+            if (root.Window.window !== MainWindow.instance) {
                 root.Window.window.close();
             }
         });

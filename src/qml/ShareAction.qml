@@ -6,6 +6,7 @@ pragma ComponentBehavior: Bound
 import QtQuick
 import org.kde.ki18n
 import org.kde.kirigami as Kirigami
+import org.kde.tokodon
 
 /**
  * Action that allows an user to share data with other apps and service
@@ -64,7 +65,7 @@ Purpose.PurposeAlternativesModel {
             text: actionDisplay
             icon.name: iconName
             onTriggered: {
-                applicationWindow().pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "ShareDialog"), {
+                MainWindow.instance.pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "ShareDialog"), {
                     title: root.tooltip,
                     index: index,
                     model: root._instantiator.model

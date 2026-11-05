@@ -9,6 +9,7 @@ import org.kde.kirigami as Kirigami
 
 import "../Components/Emoji"
 import "../Components"
+import org.kde.tokodon
 
 QQC2.Popup {
     id: emojiPopup
@@ -36,7 +37,7 @@ QQC2.Popup {
     padding: 2
 
     implicitHeight: Kirigami.Units.gridUnit * 20 + 2 * padding
-    width: Math.min(contentItem.categoryIconSize * 11 + 2 * padding, applicationWindow().width)
+    width: Math.min(contentItem.categoryIconSize * 11 + 2 * padding, MainWindow.instance.width)
     contentItem: EmojiPicker {
         id: emojiPicker
         height: 400

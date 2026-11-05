@@ -54,9 +54,9 @@ Item {
             }
 
             onHoveredChanged: if (hovered) {
-                applicationWindow().hoverLinkIndicator.text = root.card.url;
+                MainWindow.instance.hoverLinkIndicator.text = root.card.url;
             } else {
-                applicationWindow().hoverLinkIndicator.text = "";
+                MainWindow.instance.hoverLinkIndicator.text = "";
             }
 
             Layout.fillWidth: true
@@ -162,9 +162,9 @@ Item {
             }
 
             onHoveredChanged: if (hovered && !hasMastodonAccount) {
-                applicationWindow().hoverLinkIndicator.text = root.card.authorUrl;
+                MainWindow.instance.hoverLinkIndicator.text = root.card.authorUrl;
             } else {
-                applicationWindow().hoverLinkIndicator.text = "";
+                MainWindow.instance.hoverLinkIndicator.text = "";
             }
 
             Accessible.onPressAction: openLink()

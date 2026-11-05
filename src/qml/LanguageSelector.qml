@@ -22,7 +22,7 @@ Components.MessageDialog {
 
     signal codeSelected(code: string)
 
-    parent: applicationWindow().overlay
+    parent: MainWindow.instance.overlay
 
     title: KI18n.i18nc("@title", "Select Language")
 

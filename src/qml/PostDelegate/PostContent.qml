@@ -39,9 +39,9 @@ QQC2.Label {
     wrapMode: TextEdit.Wrap
     color: root.secondary ? Kirigami.Theme.disabledTextColor : Kirigami.Theme.textColor
     onHoveredLinkChanged: if (hoveredLink.length > 0) {
-        applicationWindow().hoverLinkIndicator.text = hoveredLink;
+        MainWindow.instance.hoverLinkIndicator.text = hoveredLink;
     } else {
-        applicationWindow().hoverLinkIndicator.text = "";
+        MainWindow.instance.hoverLinkIndicator.text = "";
     }
 
     TapHandler {
@@ -60,7 +60,7 @@ QQC2.Label {
 
             if (button === Qt.LeftButton) {
                 if (root.shouldOpenAnyLinks) {
-                    applicationWindow().navigateLink(foundLink, root.shouldOpenInternalLinks)
+                    MainWindow.instance.navigateLink(foundLink, root.shouldOpenInternalLinks)
                 }
                 return;
             }

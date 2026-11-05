@@ -221,6 +221,8 @@ Actions.StatefulWindow {
     }
 
     Component.onCompleted: {
+        MainWindow.instance = root;
+
         if (AccountManager.isReady) {
             startupAccountCheck();
         }

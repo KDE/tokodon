@@ -192,7 +192,7 @@ FormCard.FormCardPage {
 
             description: root.identity.inviteRequest
             descriptionItem.textFormat: TextEdit.RichText
-            onLinkActivated: link => applicationWindow().navigateLink(link, true)
+            onLinkActivated: link => MainWindow.instance.navigateLink(link, true)
         }
     }
 
