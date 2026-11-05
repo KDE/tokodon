@@ -86,6 +86,7 @@ ListView {
     readonly property Kirigami.Action postAction: Kirigami.Action {
         icon.name: "document-edit-symbolic"
         text: KI18n.i18nc("@action:button", "Create Post")
+        tooltip: text
         visible: root.showPostAction
 
         onTriggered: Navigation.openComposer("")
@@ -94,6 +95,7 @@ ListView {
     readonly property Kirigami.Action goToTopAction: Kirigami.Action {
         icon.name: "arrow-up-symbolic"
         text: KI18n.i18nc("@info:tooltip", "Return to Top")
+        tooltip: text
         visible: !root.atYBeginning
 
         onTriggered: root.positionViewAtBeginning()
