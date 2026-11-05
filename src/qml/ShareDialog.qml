@@ -47,15 +47,15 @@ Kirigami.Page {
 
     contentItem: Purpose.JobView {
         id: jobView
-        onStateChanged: {
-            if (state === Purpose.PurposeJobController.Finished) {
+        onJobStateChanged: {
+            if (jobView.jobState === Purpose.PurposeJobController.Finished) {
                 window.Kirigami.PageStack.closeDialog()
-            } else if (state === Purpose.PurposeJobController.Error) {
+            } else if (jobView.jobState === Purpose.PurposeJobController.Error) {
                 // Show failure notification
                 sharingFailed.sendEvent();
 
                 window.Kirigami.PageStack.closeDialog()
-            } else if (state === Purpose.PurposeJobController.Cancelled) {
+            } else if (jobView.jobState === Purpose.PurposeJobController.Cancelled) {
                 // Do nothing
                 window.Kirigami.PageStack.closeDialog()
             }
