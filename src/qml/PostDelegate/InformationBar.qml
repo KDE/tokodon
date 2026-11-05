@@ -99,7 +99,7 @@ ColumnLayout {
             checkable: false
             enabled: visible
             onClicked: {
-                pageStack.push(socialGraphComponent, {
+                root.Kirigami.PageStack.push(socialGraphComponent, {
                     name: "favourited_by",
                     statusId: root.postId,
                     count: root.favouritesCount
@@ -123,7 +123,7 @@ ColumnLayout {
             visible: root.reblogsCount > 0
             enabled: visible
             onClicked: {
-                pageStack.push(socialGraphComponent, {
+                root.Kirigami.PageStack.push(socialGraphComponent, {
                     name: "reblogged_by",
                     statusId: root.postId,
                     count: root.reblogsCount

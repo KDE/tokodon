@@ -32,7 +32,7 @@ Kirigami.ScrollablePage {
         target: backend
 
         function onScheduledPostLoaded(): void {
-            pageStack.layers.pop();
+            root.Kirigami.PageStack.pop();
         }
     }
 

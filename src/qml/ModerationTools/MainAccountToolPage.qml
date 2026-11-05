@@ -102,7 +102,7 @@ FormCard.FormCardPage {
             root.model.actionAgainstAccount(root.index, action, emailWarning.checked, message.text)
             root.QQC2.ApplicationWindow.window.showPassiveNotification(KI18n.i18n("Action taken successfully"))
             actionDialog.close();
-            root.QQC2.ApplicationWindow.window.pageStack.layers.pop()
+            root.Kirigami.PageStack.pop()
         }
 
         onRejected: actionDialog.close();
@@ -154,7 +154,7 @@ FormCard.FormCardPage {
                     break
             }
             root.QQC2.ApplicationWindow.window.showPassiveNotification(successMessage)
-            root.QQC2.ApplicationWindow.window.pageStack.layers.pop()
+            root.Kirigami.PageStack.pop()
         }
     }
 

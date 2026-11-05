@@ -94,7 +94,7 @@ FormCard.FormCardPage {
             id: manageUsersButton
             visible: root.purpose === EditListPage.Edit
             text: KI18n.i18nc("@action:button Delete the list", "Manage Users")
-            onClicked: pageStack.layers.push(socialGraphComponent, { name: "list", listId: root.listId })
+            onClicked: root.Kirigami.PageStack.push(socialGraphComponent, { name: "list", listId: root.listId })
         }
     }
 
@@ -112,7 +112,7 @@ FormCard.FormCardPage {
                 Kirigami.Action {
                     text: KI18n.i18nc("@action:intoolbar Add users to list", "Add Users")
                     icon.name: "list-add-user"
-                    onTriggered: pageStack.layers.push(addUserComponent, { socialGraphModel })
+                    onTriggered: socialGraphPage.Kirigami.PageStack.push(addUserComponent, { socialGraphModel })
                 }
             ]
 

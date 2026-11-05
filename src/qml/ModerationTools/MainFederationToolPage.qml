@@ -31,7 +31,7 @@ FormCard.FormCardPage {
         onTriggered: {
             root.model.removeDomainBlock(root.index)
             root.QQC2.ApplicationWindow.window.showPassiveNotification(KI18n.i18n("Domain Block Removed"))
-            root.QQC2.ApplicationWindow.window.pageStack.layers.pop()
+            root.Kirigami.PageStack.pop()
         }
     }
 
