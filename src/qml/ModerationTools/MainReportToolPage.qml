@@ -151,9 +151,9 @@ FormCard.FormCardPage {
                 implicitWidth: Kirigami.Units.gridUnit * 2
             }
             trailing: QQC2.Button {
-                text: assignedModerator ? (isAssignedModeratorSelectedAccount ? KI18n.i18nc("@action:button", "Unassign") : KI18n.i18nc("@action:button", "Assign to me")) : KI18n.i18nc("@action:button", "Assign to me")
+                text: root.assignedModerator ? (root.isAssignedModeratorSelectedAccount ? KI18n.i18nc("@action:button", "Unassign") : KI18n.i18nc("@action:button", "Assign to me")) : KI18n.i18nc("@action:button", "Assign to me")
                 icon.name: "im-user"
-                onClicked: assignedModerator ? (isAssignedModeratorSelectedAccount ? root.model.unassignReport(root.index) : root.model.assignReport(root.index)) : root.model.assignReport(root.index)
+                onClicked: root.assignedModerator ? (root.isAssignedModeratorSelectedAccount ? root.model.unassignReport(root.index) : root.model.assignReport(root.index)) : root.model.assignReport(root.index)
             }
         }
 
@@ -181,12 +181,12 @@ FormCard.FormCardPage {
             id: other
             text: KI18n.i18n("Other")
             checked: root.reportInfo.category === "other"
-            onCheckedChanged: if (checked && !isInitial) {
-                arr = []
-                root.model.updateReport(index, "other", arr)
+            onCheckedChanged: if (checked && !root.isInitial) {
+                root.arr = []
+                root.model.updateReport(root.index, "other", root.arr)
                 (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).showPassiveNotification(KI18n.i18n("Category changed to other"))
             } else {
-                isInitial = false
+                root.isInitial = false
             }
         }
 
@@ -194,12 +194,12 @@ FormCard.FormCardPage {
             id: spam
             checked: root.reportInfo.category === "spam"
             text: KI18n.i18n("Spam")
-            onCheckedChanged: if (checked && !isInitial) {
-                arr = []
-                root.model.updateReport(index, "spam", arr)
+            onCheckedChanged: if (checked && !root.isInitial) {
+                root.arr = []
+                root.model.updateReport(root.index, "spam", root.arr)
                 (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).showPassiveNotification(KI18n.i18n("Category changed to spam"))
             } else {
-                isInitial = false
+                root.isInitial = false
             }
         }
 
@@ -207,12 +207,12 @@ FormCard.FormCardPage {
             id: serverRules
             checked: root.reportInfo.category === "violation"
             text: KI18n.i18n("Content violates one or more server rules")
-            onCheckedChanged: if (checked && !isInitial) {
-                arr = []
-                root.model.updateReport(index, "violation", arr)
+            onCheckedChanged: if (checked && !root.isInitial) {
+                root.arr = []
+                root.model.updateReport(root.index, "violation", root.arr)
                 (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).showPassiveNotification(KI18n.i18n("Category changed to rule violation"))
             } else {
-                isInitial = false
+                root.isInitial = false
             }
         }
 
@@ -235,13 +235,13 @@ FormCard.FormCardPage {
                     hoverEnabled: false
                     Layout.leftMargin: Kirigami.Units.largeSpacing * 4
                     text: ruleLayout.text
-                    checked: isChecked(ruleLayout.id)
+                    checked: root.isChecked(ruleLayout.id)
                     Component.onCompleted: if (ruleLayout.index === rulesList.model.length -1) {
                         root.trigger = true
                     }
                     onCheckedChanged: if (root.trigger) {
-                        ammendOrDelete(ruleLayout.id)
-                        root.model.updateReport(ruleLayout.index, "violation", arr)
+                        root.ammendOrDelete(ruleLayout.id)
+                        root.model.updateReport(ruleLayout.index, "violation", root.arr)
                     }
                 }
             }

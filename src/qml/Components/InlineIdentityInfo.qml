@@ -27,7 +27,7 @@ RowLayout {
     KirigamiComponents.Avatar {
         id: avatar
 
-        Layout.alignment: admin ? Qt.AlignCenter : Qt.AlignTop
+        Layout.alignment: root.admin ? Qt.AlignCenter : Qt.AlignTop
         Layout.preferredHeight: Kirigami.Units.iconSizes.medium
         Layout.preferredWidth: Kirigami.Units.iconSizes.medium
 
@@ -76,7 +76,7 @@ RowLayout {
                 font.pixelSize: Config.defaultFont.pixelSize
                 text: root.ip ? " • " + root.ip : ""
                 color: Kirigami.Theme.disabledTextColor
-                visible: admin && root.ip
+                visible: root.admin && root.ip
                 verticalAlignment: Text.AlignTop
                 elide: Text.ElideRight
                 maximumLineCount: 1

@@ -39,7 +39,7 @@ Kirigami.ScrollablePage {
         text: KI18n.i18nc("@action:button Create new list", "Create New…")
         icon.name: "gtk-add"
         onTriggered: {
-            const page = (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.layers.push(editListPage.createObject(root), {
+            const page = (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.layers.push(root.editListPage.createObject(root), {
                 purpose: EditListPage.New
             });
             page.done.connect(function(deleted) {

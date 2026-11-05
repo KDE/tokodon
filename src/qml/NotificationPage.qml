@@ -176,7 +176,7 @@ Kirigami.ScrollablePage {
 
         anchors.left: parent.left
         anchors.right: parent.right
-        actions: [showAllAction, mentionOnlyAction, moreAction]
+        actions: [showAllAction, root.mentionOnlyAction, root.moreAction]
         enabled: !root.loading
 
         Kirigami.Theme.colorSet: Kirigami.Theme.Window

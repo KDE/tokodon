@@ -45,14 +45,14 @@ FormCard.FormCardPage {
     signal done(bool deleted)
 
     data: Connections {
-        target: backend
+        target: root.backend
 
         function onLoadingChanged(): void {
             // If we loaded data, then overwrite the fields
-            nameField.text = backend.name;
-            descriptionField.text = backend.description;
-            sensitiveField.checked = backend.sensitive;
-            discoverableField.checked = backend.discoverable;
+            nameField.text = root.backend.name;
+            descriptionField.text = root.backend.description;
+            sensitiveField.checked = root.backend.sensitive;
+            discoverableField.checked = root.backend.discoverable;
         }
 
         function onDone(): void {
@@ -64,7 +64,7 @@ FormCard.FormCardPage {
 
     FormCard.FormCard {
         autoSeparators: true
-        enabled: !backend.loading
+        enabled: !root.backend.loading
 
         Layout.topMargin: Kirigami.Units.largeSpacing
 
@@ -142,7 +142,7 @@ FormCard.FormCardPage {
                             QQC2.Button {
                                 text: KI18n.i18nc("@action:button Add user to this collection", "Add")
                                 icon.name: "checkmark"
-                                onClicked: socialGraphModel.actionAddToCollection(delegate.authorIdentity.id)
+                                onClicked: root.socialGraphModel.actionAddToCollection(delegate.authorIdentity.id)
                             }
                         }
 
@@ -204,7 +204,7 @@ FormCard.FormCardPage {
 
     FormCard.FormCard {
         autoSeparators: true
-        enabled: !backend.loading
+        enabled: !root.backend.loading
 
         Layout.topMargin: Kirigami.Units.largeSpacing
 
@@ -225,7 +225,7 @@ FormCard.FormCardPage {
                     return KI18n.i18nc("@action:button Save the edited collection", "Save");
                 }
             }
-            onClicked: backend.submit()
+            onClicked: root.backend.submit()
         }
 
         FormCard.FormButtonDelegate {
@@ -245,7 +245,7 @@ FormCard.FormCardPage {
 
                 onAccepted: {
                     root.deleted = true;
-                    backend.deleteCollection();
+                    root.backend.deleteCollection();
                 }
             }
         }

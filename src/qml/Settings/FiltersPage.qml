@@ -28,7 +28,7 @@ Kirigami.ScrollablePage {
         text: KI18n.i18nc("@action:intoolbar", "Create Filter")
         icon.name: "list-add-symbolic"
         onTriggered: {
-            const page = (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.layers.push(editFilterPage.createObject(root), {
+            const page = (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.layers.push(root.editFilterPage.createObject(root), {
                 purpose: EditFilterPage.New
             });
             page.done.connect(function(deleted) {
@@ -56,7 +56,7 @@ Kirigami.ScrollablePage {
             text: title
 
             onClicked: {
-                const page = (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.layers.push(editFilterPage.createObject(root), {
+                const page = (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.layers.push(root.editFilterPage.createObject(root), {
                     purpose: EditFilterPage.Edit,
                     filterId: delegate.id
                 });

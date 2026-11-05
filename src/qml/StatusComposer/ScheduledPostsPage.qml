@@ -29,7 +29,7 @@ Kirigami.ScrollablePage {
     signal opened(id: string)
 
     Connections {
-        target: backend
+        target: root.backend
 
         function onScheduledPostLoaded(): void {
             root.Kirigami.PageStack.pop();

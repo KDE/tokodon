@@ -42,27 +42,27 @@ FormCard.FormCardPage {
     signal done(bool deleted)
 
     data: Connections {
-        target: backend
+        target: root.backend
 
         function onLoadingChanged(): void {
             // If we loaded data, then overwrite the fields
-            titleField.text = backend.title;
-            homeAndListsDelegate.checked = backend.homeAndListsContext;
-            notificationsDelegate.checked = backend.notificationsContext;
-            publicTimelinesDelegate.checked = backend.publicTimelinesContext;
-            conversationsDelegate.checked = backend.conversationsContext;
-            profilesDelegate.checked = backend.profilesContext;
+            titleField.text = root.backend.title;
+            homeAndListsDelegate.checked = root.backend.homeAndListsContext;
+            notificationsDelegate.checked = root.backend.notificationsContext;
+            publicTimelinesDelegate.checked = root.backend.publicTimelinesContext;
+            conversationsDelegate.checked = root.backend.conversationsContext;
+            profilesDelegate.checked = root.backend.profilesContext;
 
 
             hideWithNoticeDelegate.checked = false;
             hideMediaOnlyDelegate.checked = false;
             hideCompletelyDelegate.checked = false;
 
-            if (backend.filterAction === "warn") {
+            if (root.backend.filterAction === "warn") {
                 hideWithNoticeDelegate.checked = true;
-            } else if (backend.filterAction === "blur") {
+            } else if (root.backend.filterAction === "blur") {
                 hideMediaOnlyDelegate.checked = true;
-            } else if (backend.filterAction === "hide") {
+            } else if (root.backend.filterAction === "hide") {
                 hideCompletelyDelegate.checked = true;
             }
         }
@@ -75,7 +75,7 @@ FormCard.FormCardPage {
     Component.onCompleted: titleField.forceActiveFocus()
 
     FormCard.FormCard {
-        enabled: !backend.loading
+        enabled: !root.backend.loading
 
         Layout.topMargin: Kirigami.Units.largeSpacing
 
@@ -90,7 +90,7 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormCard {
-        enabled: !backend.loading
+        enabled: !root.backend.loading
 
         FormCard.FormTextDelegate {
             text: KI18n.i18nc("@info", "Select one or more contexts where this filter should apply:")
@@ -127,25 +127,25 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormCard {
-        enabled: !backend.loading
+        enabled: !root.backend.loading
 
         FormCard.FormRadioDelegate {
             id: hideWithNoticeDelegate
             text: KI18n.i18nc("@label:radiobutton", "Hide with Content Notice")
-            onToggled: backend.filterAction = "warn"
+            onToggled: root.backend.filterAction = "warn"
         }
 
         FormCard.FormRadioDelegate {
             id: hideMediaOnlyDelegate
             text: KI18n.i18nc("@label:radiobutton", "Hide Media with Content Notice")
             visible: AccountManager.selectedAccount.supportsApiVersion("mastodon", 5)
-            onToggled: backend.filterAction = "blur"
+            onToggled: root.backend.filterAction = "blur"
         }
 
         FormCard.FormRadioDelegate {
             id: hideCompletelyDelegate
             text: KI18n.i18nc("@label:radiobutton", "Hide Completely")
-            onToggled: backend.filterAction = "hide"
+            onToggled: root.backend.filterAction = "hide"
         }
     }
 
@@ -155,12 +155,12 @@ FormCard.FormCardPage {
         actions: QQC2.Action {
             text: KI18n.i18nc("@action:button Add keyword", "Add")
             icon.name: "list-add-symbolic"
-            onTriggered: backend.addKeyword()
+            onTriggered: root.backend.addKeyword()
         }
     }
 
     FormCard.FormCard {
-        enabled: !backend.loading
+        enabled: !root.backend.loading
 
         FormCard.FormPlaceholderMessageDelegate {
             text: KI18n.i18nc("@info:placeholder", "No keywords")
@@ -170,7 +170,7 @@ FormCard.FormCardPage {
         Repeater {
             id: keywordsRepeater
 
-            model: backend.keywords
+            model: root.backend.keywords
 
             FormCard.AbstractFormDelegate {
                 id: delegate
@@ -185,7 +185,7 @@ FormCard.FormCardPage {
 
                     QQC2.TextField {
                         text: delegate.keyword
-                        onEditingFinished: backend.editKeyword(delegate.index, text)
+                        onEditingFinished: root.backend.editKeyword(delegate.index, text)
 
                         Layout.fillWidth: true
                     }
@@ -193,14 +193,14 @@ FormCard.FormCardPage {
                     QQC2.CheckBox {
                         text: KI18n.i18nc("@label:checkbox", "Whole word")
                         checked: delegate.whole_word
-                        onToggled: backend.editWholeWord(delegate.index, checked)
+                        onToggled: root.backend.editWholeWord(delegate.index, checked)
                     }
 
                     QQC2.Button {
                         text: KI18n.i18nc("@action:button Remove keyword", "Remove")
                         icon.name: "list-remove-symbolic"
                         display: QQC2.AbstractButton.IconOnly
-                        onClicked: backend.removeKeyword(delegate.index)
+                        onClicked: root.backend.removeKeyword(delegate.index)
                     }
                 }
             }
@@ -209,7 +209,7 @@ FormCard.FormCardPage {
 
     FormCard.FormCard {
         autoSeparators: true
-        enabled: !backend.loading
+        enabled: !root.backend.loading
     
         Layout.topMargin: Kirigami.Units.largeSpacing
     
@@ -230,7 +230,7 @@ FormCard.FormCardPage {
                     return KI18n.i18nc("@action:button Save the edited filter", "Save");
                 }
             }
-            onClicked: backend.submit()
+            onClicked: root.backend.submit()
         }
     
     
@@ -251,7 +251,7 @@ FormCard.FormCardPage {
 
                 onAccepted: {
                     root.deleted = true;
-                    backend.deleteFilter();
+                    root.backend.deleteFilter();
                 }
             }
         }

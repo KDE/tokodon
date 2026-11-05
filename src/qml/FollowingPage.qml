@@ -112,12 +112,12 @@ Kirigami.Page {
                         root.currentAccountId = identity.id;
                         if (columnView.isOneColumn) {
                             const page = (delegate.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.push(accountTimeline, {});
-                            accountModel.excludeBoosts = Qt.binding(() => !page.showBoosts);
-                            accountModel.excludeReplies = Qt.binding(() => !page.showReplies);
+                            root.accountModel.excludeBoosts = Qt.binding(() => !page.showBoosts);
+                            root.accountModel.excludeReplies = Qt.binding(() => !page.showReplies);
                         } else {
                             loader.item?.forceActiveFocus(Qt.MouseFocusReason);
-                            accountModel.excludeBoosts = Qt.binding(() => !showBoostsAction.checked);
-                            accountModel.excludeReplies = Qt.binding(() => !showRepliesAction.checked);
+                            root.accountModel.excludeBoosts = Qt.binding(() => !showBoostsAction.checked);
+                            root.accountModel.excludeReplies = Qt.binding(() => !showRepliesAction.checked);
                         }
                     }
                 }
@@ -163,7 +163,7 @@ Kirigami.Page {
                         anchors.centerIn: parent
                         text: KI18n.i18nc("@label", "No Posts")
                         explanation: KI18n.i18n("This user hasn't posted anything yet.")
-                        visible: timelineListView.count === 0 && !timelineListView.model.loading && !root.currentAccountId === ""
+                        visible: timelineListView.count === 0 && !timelineListView.model.loading && root.currentAccountId !== ""
                         width: parent.width - Kirigami.Units.gridUnit * 4
                     }
                 }

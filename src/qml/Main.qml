@@ -231,7 +231,7 @@ Actions.StatefulWindow {
 
         function onAccountSelected(): void {
             if (AccountManager.isReady) {
-                decideDefaultPage();
+                root.decideDefaultPage();
             }
         }
 
@@ -360,7 +360,7 @@ Actions.StatefulWindow {
             }
 
             root.pageStack.clear();
-            root.pageStack.push(searchPage.createObject(root, { pageId: "search" }));
+            root.pageStack.push(root.searchPage.createObject(root, { pageId: "search" }));
         }
 
         function onOpenServerInformation(): void {
@@ -369,7 +369,7 @@ Actions.StatefulWindow {
             }
 
             root.pageStack.clear();
-            root.pageStack.push(serverInformationPage.createObject(root, { pageId: "serverInformation" }));
+            root.pageStack.push(root.serverInformationPage.createObject(root, { pageId: "serverInformation" }));
         }
 
         function onOpenLists(): void {
@@ -378,7 +378,7 @@ Actions.StatefulWindow {
             }
 
             root.pageStack.clear();
-            root.pageStack.push(listsPage.createObject(root, { pageId: "lists" }));
+            root.pageStack.push(root.listsPage.createObject(root, { pageId: "lists" }));
         }
 
         function onOpenProfile(): void {
@@ -430,7 +430,7 @@ Actions.StatefulWindow {
             }
 
             root.pageStack.clear();
-            root.pageStack.push(searchPage.createObject(root, {
+            root.pageStack.push(root.searchPage.createObject(root, {
                 pageId: "search",
                 initialSearchTerms: query
 
@@ -443,7 +443,7 @@ Actions.StatefulWindow {
             }
 
             root.pageStack.clear();
-            root.pageStack.push(collectionsPage.createObject(root, { pageId: "collections" }));
+            root.pageStack.push(root.collectionsPage.createObject(root, { pageId: "collections" }));
         }
     }
 
@@ -590,21 +590,21 @@ Actions.StatefulWindow {
         }
 
         function onOpenList(listId: string, name: string): void {
-            root.pageStack.push(listTimelinePage.createObject(root, {
+            root.pageStack.push(root.listTimelinePage.createObject(root, {
                 name,
                 listId
             }));
         }
 
         function onSearchFor(query: string): void {
-            root.pageStack.push(searchPage.createObject(root, {
+            root.pageStack.push(root.searchPage.createObject(root, {
                 pageId: "search",
                 initialSearchTerms: query
             }));
         }
 
         function onOpenCollection(collectionId: string, name: string): void {
-            root.pageStack.push(collectionPage.createObject(root, {
+            root.pageStack.push(root.collectionPage.createObject(root, {
                 name,
                 collectionId
             }));

@@ -28,7 +28,7 @@ Kirigami.ScrollablePage {
         text: KI18n.i18nc("@action:button Create new collection", "Create New…")
         icon.name: "gtk-add"
         onTriggered: {
-            const page = (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.layers.push(editCollectionPage.createObject(root), {
+            const page = (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.layers.push(root.editCollectionPage.createObject(root), {
                 purpose: EditCollectionPage.New
             });
             page.done.connect(function(deleted) {

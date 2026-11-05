@@ -9,9 +9,6 @@
 class IpInfo
 {
     Q_GADGET
-    QML_ELEMENT
-    QML_NAMED_ELEMENT(ipInfo)
-    QML_UNCREATABLE("Only for enums")
 
 public:
     enum SeverityValues { LimitSignUps, BlockSignUps, BlockAccess };
@@ -40,3 +37,10 @@ private:
     QDateTime m_createdAt;
     QDateTime m_expiresAt;
 };
+
+namespace IpInfoForeign
+{
+Q_NAMESPACE
+QML_NAMED_ELEMENT(IpInfo)
+QML_FOREIGN_NAMESPACE(IpInfo)
+}

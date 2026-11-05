@@ -94,7 +94,7 @@ MastoPage {
 
             onClicked: {
                 (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "RegistrationPage"), {
-                    account: account,
+                    account: root.account,
                 });
             }
         }

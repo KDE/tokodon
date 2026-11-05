@@ -40,14 +40,14 @@ FormCard.FormCardPage {
     signal done(bool deleted)
 
     data: Connections {
-        target: backend
+        target: root.backend
 
         function onLoadingChanged() {
             // If we loaded data, then overwrite the fields
-            titleField.text = backend.title;
-            exclusiveField.checked = backend.exclusive;
-            favoriteField.checked = backend.favorite;
-            repliesPolicyField.currentIndex = backend.replyPolicyIndex();
+            titleField.text = root.backend.title;
+            exclusiveField.checked = root.backend.exclusive;
+            favoriteField.checked = root.backend.favorite;
+            repliesPolicyField.currentIndex = root.backend.replyPolicyIndex();
         }
 
         function onDone() {
@@ -59,7 +59,7 @@ FormCard.FormCardPage {
 
     FormCard.FormCard {
         autoSeparators: true
-        enabled: !backend.loading
+        enabled: !root.backend.loading
 
         Layout.topMargin: Kirigami.Units.largeSpacing
 
@@ -72,9 +72,9 @@ FormCard.FormCardPage {
         FormCard.FormComboBoxDelegate {
             id: repliesPolicyField
             text: KI18n.i18nc("@label", "Show replies for")
-            model: backend.replyPolicies()
+            model: root.backend.replyPolicies()
             currentIndex: 0
-            onCurrentIndexChanged: backend.setReplyPolicyIndex(currentIndex)
+            onCurrentIndexChanged: root.backend.setReplyPolicyIndex(currentIndex)
 
             Layout.fillWidth: true
         }
@@ -87,7 +87,7 @@ FormCard.FormCardPage {
 
         FormCard.FormCheckDelegate {
             id: favoriteField
-            visible: purpose !== EditListPage.New
+            visible: root.purpose !== EditListPage.New
             text: KI18n.i18nc("@label If the list is favorited", "Favorite")
             description: KI18n.i18n("This list will show up in the sidebar.")
         }
@@ -227,7 +227,7 @@ FormCard.FormCardPage {
 
     FormCard.FormCard {
         autoSeparators: true
-        enabled: !backend.loading
+        enabled: !root.backend.loading
 
         Layout.topMargin: Kirigami.Units.largeSpacing
 
@@ -248,7 +248,7 @@ FormCard.FormCardPage {
                     return KI18n.i18nc("@action:button Save the edited list", "Save");
                 }
             }
-            onClicked: backend.submit()
+            onClicked: root.backend.submit()
         }
 
         FormCard.FormButtonDelegate {
@@ -268,7 +268,7 @@ FormCard.FormCardPage {
 
                 onAccepted: {
                     root.deleted = true;
-                    backend.deleteList();
+                    root.backend.deleteList();
                 }
             }
         }

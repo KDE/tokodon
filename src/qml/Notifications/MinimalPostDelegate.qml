@@ -229,7 +229,7 @@ QQC2.ItemDelegate {
                 forceCrop: true
             }
 
-            active: root.attachments.length > 0 && !filtered
+            active: root.attachments.length > 0 && !root.filtered
             visible: active
 
             Layout.fillWidth: true

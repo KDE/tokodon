@@ -116,7 +116,7 @@ Kirigami.Page {
                     id: settingsButton
                     text: KI18n.i18nc("@action:button Application settings", "Settings")
                     icon.name: "settings-configure"
-                    onClicked: settingsWindow.open()
+                    onClicked: root.settingsWindow.open()
                 }
             }
 

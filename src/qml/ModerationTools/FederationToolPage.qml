@@ -21,13 +21,13 @@ Kirigami.ScrollablePage {
         Kirigami.Action {
             icon.name: 'list-add'
             text: KI18n.i18n("Add New Domain Block")
-            visible: isDomainBlock
+            visible: root.isDomainBlock
             onTriggered: newDomainBlockDialog.open()
         },
         Kirigami.Action {
             icon.name: 'list-add'
             text: KI18n.i18n("Allow Federation with Domain")
-            visible: !isDomainBlock
+            visible: !root.isDomainBlock
             onTriggered: newDomainAllowDialog.open()
         }
     ]
@@ -221,7 +221,7 @@ Kirigami.ScrollablePage {
             Component.onCompleted: moderationCombobox.currentIndex = moderationCombobox.indexOfValue(federationView.model.federationAction);
             onCurrentIndexChanged: {
                 federationView.model.federationAction = model[currentIndex].value;
-                isDomainBlock = (model[currentIndex].value === FederationToolModel.BlockedDomains);
+                root.isDomainBlock = (model[currentIndex].value === FederationToolModel.BlockedDomains);
             }
         }
         Kirigami.Separator {

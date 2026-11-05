@@ -36,11 +36,11 @@ ColumnLayout {
                 spacing: Kirigami.Units.largeSpacing
 
                 QQC2.RadioButton {
-                    visible: !poll.multipleChoice
+                    visible: !root.poll.multipleChoice
                     enabled: false
                 }
                 QQC2.CheckBox {
-                    visible: poll.multipleChoice
+                    visible: root.poll.multipleChoice
                     enabled: false
                 }
                 QQC2.TextField {
@@ -73,8 +73,8 @@ ColumnLayout {
                 text: KI18n.i18nc("@action:intoolbar Poll toolbar", "Add Choice")
                 tooltip: KI18n.i18nc("@info:tooltip Poll toolbar", "Add a new poll choice")
                 icon.name: "list-add"
-                onTriggered: poll.addOption()
-                enabled: poll.options.length < root.maxPollOptions
+                onTriggered: root.poll.addOption()
+                enabled: root.poll.options.length < root.maxPollOptions
             },
             Kirigami.Action {
                 displayHint: Kirigami.DisplayHint.KeepVisible
@@ -87,8 +87,8 @@ ColumnLayout {
                         id: timeModel
                     }
 
-                    Component.onCompleted: currentIndex = indexOfValue(poll.expiresIn)
-                    onActivated: poll.expiresIn = timeModel.getTime(currentIndex)
+                    Component.onCompleted: currentIndex = indexOfValue(root.poll.expiresIn)
+                    onActivated: root.poll.expiresIn = timeModel.getTime(currentIndex)
 
                     QQC2.ToolTip.text: KI18n.i18nc("@info:tooltip Poll toolbar", "When the poll will expire")
                     QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
@@ -101,9 +101,9 @@ ColumnLayout {
                 displayComponent: QQC2.CheckBox {
                     text: KI18n.i18nc("@option:check Poll toolbar", "Multiple choice")
 
-                    onClicked: poll.multipleChoice = checked
+                    onClicked: root.poll.multipleChoice = checked
 
-                    Component.onCompleted: checked = poll.multipleChoice
+                    Component.onCompleted: checked = root.poll.multipleChoice
 
                     QQC2.ToolTip.text: KI18n.i18nc("@info:tooltip Poll toolbar", "Allow multiple choices")
                     QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
@@ -118,7 +118,7 @@ ColumnLayout {
 
                     onClicked: poll.hideTotals = checked
 
-                    Component.onCompleted: checked = poll.hideTotals
+                    Component.onCompleted: checked = root.poll.hideTotals
 
                     QQC2.ToolTip.text: KI18n.i18nc("@info:tooltip Poll toolbar", "Hide vote count until the poll ends")
                     QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay

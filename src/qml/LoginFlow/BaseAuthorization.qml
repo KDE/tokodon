@@ -82,7 +82,7 @@ Kirigami.ScrollablePage {
                 id: openLink
                 text: KI18n.i18n("Open Authorization Page")
                 icon.name: "document-open"
-                onClicked: Qt.openUrlExternally(account.authorizeUrl)
+                onClicked: Qt.openUrlExternally(root.account.authorizeUrl)
             }
 
             FormCard.FormButtonDelegate {
@@ -90,7 +90,7 @@ Kirigami.ScrollablePage {
                 text: KI18n.i18n("Copy Link to Authorization Page")
                 icon.name: "edit-copy"
                 onClicked: {
-                    clipboard.content = account.authorizeUrl;
+                    clipboard.content = root.account.authorizeUrl;
                     (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).showPassiveNotification(KI18n.i18n("Link copied."));
                 }
             }

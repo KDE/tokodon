@@ -265,7 +265,7 @@ FormCard.FormCardPage {
     }
 
     footer: QQC2.ToolBar {
-        visible: displayModerationTool
+        visible: root.displayModerationTool
         height: visible ? implicitHeight : 0
         contentItem: RowLayout {
             Item {

@@ -246,7 +246,7 @@ QQC2.ItemDelegate {
                     standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
                     showCloseButton: false
 
-                    onAccepted: root.timelineModel.actionDelete(timelineModel.index(root.index, 0))
+                    onAccepted: root.timelineModel.actionDelete(root.timelineModel.index(root.index, 0))
                 }
             }
 
@@ -262,7 +262,7 @@ QQC2.ItemDelegate {
                     standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
                     showCloseButton: false
 
-                    onAccepted: root.timelineModel.actionRedraft(timelineModel.index(root.index, 0), false)
+                    onAccepted: root.timelineModel.actionRedraft(root.timelineModel.index(root.index, 0), false)
                 }
             }
         }
@@ -366,7 +366,7 @@ QQC2.ItemDelegate {
                 viewportWidth: flexColumn.innerWidth
             }
 
-            active: !root.secondary && root.attachments.length > 0 && !filtered
+            active: !root.secondary && root.attachments.length > 0 && !root.filtered
             visible: active
 
             Layout.fillWidth: true
@@ -456,11 +456,11 @@ QQC2.ItemDelegate {
                             targetIdentity: root.authorIdentity
                         });
                         dialog.accepted.connect(function() {
-                            root.timelineModel.actionRepeat(timelineModel.index(root.index, 0))
+                            root.timelineModel.actionRepeat(root.timelineModel.index(root.index, 0))
                         });
                         dialog.open();
                     } else {
-                        root.timelineModel.actionRepeat(timelineModel.index(root.index, 0))
+                        root.timelineModel.actionRepeat(root.timelineModel.index(root.index, 0))
                     }
                 }
 
@@ -508,7 +508,7 @@ QQC2.ItemDelegate {
                 text: Config.showPostStats && !root.selected ? root.favouritesCount : ''
                 tooltip: KI18n.i18nc("Favorite a post", "Favorite")
 
-                onClicked: root.timelineModel.actionFavorite(timelineModel.index(root.index, 0))
+                onClicked: root.timelineModel.actionFavorite(root.timelineModel.index(root.index, 0))
                 Accessible.description: root.favourited ? KI18n.i18n("Favorited") : KI18n.i18n("Favorite")
             }
 
@@ -530,7 +530,7 @@ QQC2.ItemDelegate {
 
                 tooltip: root.bookmarked ? KI18n.i18n("Remove bookmark") : KI18n.i18nc("Bookmark a post", "Bookmark")
 
-                onClicked: root.timelineModel.actionBookmark(timelineModel.index(root.index, 0))
+                onClicked: root.timelineModel.actionBookmark(root.timelineModel.index(root.index, 0))
                 Accessible.description: root.bookmarked ? KI18n.i18n("Bookmarked") : KI18n.i18n("Bookmark")
             }
         }

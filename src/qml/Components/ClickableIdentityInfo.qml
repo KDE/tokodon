@@ -33,12 +33,12 @@ RowLayout {
     KirigamiComponents.AvatarButton {
         id: avatar
 
-        Layout.alignment: admin ? Qt.AlignCenter : Qt.AlignTop
+        Layout.alignment: root.admin ? Qt.AlignCenter : Qt.AlignTop
         Layout.rowSpan: 5
 
         source: root.identity.avatarUrl
         cache: true
-        onClicked: if (!admin) {
+        onClicked: if (!root.admin) {
             root.clicked();
         }
         name: root.identity.displayName
@@ -100,7 +100,7 @@ RowLayout {
             id: emailHeading
             level: 4
             text: root.ip ? root.ip : ""
-            visible: admin && root.ip
+            visible: root.admin && root.ip
             type: Kirigami.Heading.Type.Secondary
             verticalAlignment: Text.AlignTop
             elide: Text.ElideRight

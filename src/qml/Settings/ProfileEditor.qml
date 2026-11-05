@@ -3,6 +3,7 @@
 
 pragma ComponentBehavior: Bound
 
+import QtCore
 import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
@@ -44,7 +45,7 @@ ColumnLayout {
         Layout.topMargin: Kirigami.Units.largeSpacing * 4
         Layout.bottomMargin: Kirigami.Units.largeSpacing * 4
 
-        enabled: canEditProfile
+        enabled: root.canEditProfile
 
         Rectangle {
             Layout.preferredHeight: Kirigami.Units.gridUnit * 9
@@ -54,19 +55,19 @@ ColumnLayout {
             Kirigami.Theme.colorSet: Kirigami.Theme.View
 
             ProfileHeader {
-                backgroundUrl: backend.backgroundUrl
-                avatarUrl: backend.avatarUrl
-                displayName: backend.displayNameHtml
-                account: backend.account.identity.account
+                backgroundUrl: root.backend.backgroundUrl
+                avatarUrl: root.backend.avatarUrl
+                displayName: root.backend.displayNameHtml
+                account: root.backend.account.identity.account
             }
         }
 
         FormCard.FormTextFieldDelegate {
             label: KI18n.i18n("Display Name")
-            text: backend.displayName
+            text: root.backend.displayName
             maximumLength: root.account.maxDisplayNameLength
 
-            onTextChanged: backend.displayName = text
+            onTextChanged: root.backend.displayName = text
         }
 
         FormCard.AbstractFormDelegate {
@@ -87,8 +88,8 @@ ColumnLayout {
                     id: bioField
                     Layout.fillWidth: true
                     wrapMode: TextEdit.Wrap
-                    text: backend.note
-                    onTextChanged: backend.note = text
+                    text: root.backend.note
+                    onTextChanged: root.backend.note = text
                     activeFocusOnTab: false
 
                     KeyNavigation.tab: nextItemInFocusChain(true)

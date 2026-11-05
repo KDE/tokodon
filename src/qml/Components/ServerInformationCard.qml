@@ -25,19 +25,19 @@ FormCard.FormCard {
     FormCard.FormPlaceholderMessageDelegate {
         icon.name: "question-symbolic"
         text: KI18n.i18nc("@info:placeholder", "No Information")
-        visible: backend.content.length === 0
+        visible: root.backend.content.length === 0
     }
 
     FormCard.FormTextDelegate {
-        text: KI18n.i18nc("@info Last updated: relative date and time (e.g. 2 years ago)", "Last updated: %1", backend.updatedAt)
-        visible: backend.content.length > 0
+        text: KI18n.i18nc("@info Last updated: relative date and time (e.g. 2 years ago)", "Last updated: %1", root.backend.updatedAt)
+        visible: root.backend.content.length > 0
     }
 
     FormCard.AbstractFormDelegate {
-        visible: backend.content.length > 0
+        visible: root.backend.content.length > 0
         background: null
         contentItem: Kirigami.SelectableLabel {
-            text: backend.content
+            text: root.backend.content
 
             onLinkActivated: link => applicationWindow().navigateLink(link, true)
         }

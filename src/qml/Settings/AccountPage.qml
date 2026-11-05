@@ -3,6 +3,7 @@
 
 pragma ComponentBehavior: Bound
 
+import QtCore
 import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
@@ -60,7 +61,7 @@ Kirigami.Page {
             id: logoutPrompt
 
             title: KI18n.i18nc("@title", "Logout")
-            subtitle: KI18n.i18nc("@label", "Are you sure you want to log out of %1?", account.identity.displayName)
+            subtitle: KI18n.i18nc("@label", "Are you sure you want to log out of %1?", root.account.identity.displayName)
             standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
             showCloseButton: false
             parent: null // Don't open it in the main window on desktop
@@ -91,7 +92,7 @@ Kirigami.Page {
     header: Kirigami.NavigationTabBar {
         anchors.left: parent.left
         anchors.right: parent.right
-        actions: [profileAction, accountAction]
+        actions: [root.profileAction, root.accountAction]
 
         Kirigami.Theme.colorSet: Kirigami.Theme.Window
         Kirigami.Theme.inherit: false
@@ -100,7 +101,7 @@ Kirigami.Page {
     StackLayout {
         anchors.fill: parent
 
-        currentIndex : accountAction.checked ? 1 : 0
+        currentIndex : root.accountAction.checked ? 1 : 0
 
         QQC2.ScrollView {
             clip: true
@@ -133,27 +134,27 @@ Kirigami.Page {
                     Layout.bottomMargin: Kirigami.Units.largeSpacing * 4
                     Layout.fillWidth: true
 
-                    enabled: canEditProfile
+                    enabled: root.canEditProfile
 
                     FormCard.FormCheckDelegate {
                         text: KI18n.i18n("Require approval for new followers")
                         description: KI18n.i18n("By default new followers are automatically accepted. Uncheck if you want to manually approve or deny new ones. You always have the option to force someone to unfollow you.")
-                        checked: backend.locked
-                        onCheckedChanged: backend.locked = checked
+                        checked: root.backend.locked
+                        onCheckedChanged: root.backend.locked = checked
                     }
 
                     FormCard.FormCheckDelegate {
                         text: KI18n.i18n("Is automated")
                         description: KI18n.i18n("Whether to publicly mark this account as doing any kind of automated actions.")
-                        checked: backend.bot
-                        onCheckedChanged: backend.bot = checked
+                        checked: root.backend.bot
+                        onCheckedChanged: root.backend.bot = checked
                     }
 
                     FormCard.FormCheckDelegate {
                         text: KI18n.i18n("Feature profile and posts")
                         description: KI18n.i18n("Your public profile and posts may be featured to other users.")
-                        checked: backend.discoverable
-                        onCheckedChanged: backend.discoverable = checked
+                        checked: root.backend.discoverable
+                        onCheckedChanged: root.backend.discoverable = checked
                     }
 
                     FormCard.FormSwitchDelegate {

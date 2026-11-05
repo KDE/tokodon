@@ -36,7 +36,7 @@ Kirigami.Page {
     }
 
     Connections {
-        target: backend
+        target: root.backend
 
         function onReported() {
             root.closeDialog();
@@ -45,10 +45,10 @@ Kirigami.Page {
 
     QQC2.TextArea {
         id: reason
-        placeholderText: type === ReportDialog.Post ? KI18n.i18nc("@title", "Reason for reporting this post") : KI18n.i18nc("@title", "Reason for reporting this user")
+        placeholderText: root.type === ReportDialog.Post ? KI18n.i18nc("@title", "Reason for reporting this post") : KI18n.i18nc("@title", "Reason for reporting this user")
         anchors.fill: parent
         wrapMode: TextEdit.Wrap
-        enabled: !backend.loading
+        enabled: !root.backend.loading
         focus: true
 
         background: Rectangle {
@@ -57,7 +57,7 @@ Kirigami.Page {
     }
 
     footer: QQC2.ToolBar {
-        enabled: !backend.loading
+        enabled: !root.backend.loading
 
         QQC2.DialogButtonBox {
             anchors.fill: parent

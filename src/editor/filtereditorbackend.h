@@ -19,6 +19,7 @@ class FilterEditorBackend : public QObject
     Q_PROPERTY(bool profilesContext MEMBER m_profilesContext NOTIFY profilesContextChanged)
     Q_PROPERTY(QString filterAction MEMBER m_filterAction NOTIFY filterActionChanged)
     Q_PROPERTY(QVariantList keywords MEMBER m_keywords NOTIFY keywordsChanged)
+    Q_PROPERTY(bool loading READ loading NOTIFY loadingChanged)
 
 public:
     explicit FilterEditorBackend(QObject *parent = nullptr);

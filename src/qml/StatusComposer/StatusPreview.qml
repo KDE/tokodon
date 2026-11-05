@@ -32,13 +32,13 @@ ColumnLayout {
     }
 
     Loader {
-        active: post.content.length > 0
+        active: root.post.content.length > 0
         visible: active
 
         Layout.fillWidth: true
 
         sourceComponent: PostDelegate.PostContent {
-            content: post.content
+            content: root.post.content
             expandedPost: false
             secondary: true
             shouldOpenInternalLinks: false
@@ -46,7 +46,7 @@ ColumnLayout {
     }
 
     Loader {
-        active: post.attachments.length > 0
+        active: root.post.attachments.length > 0
         visible: active
 
         Layout.fillWidth: true
