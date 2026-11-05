@@ -3,6 +3,8 @@
 // SPDX-FileCopyrightText: 2022 Jeremy Winter <jeremy.winter@tutanota.com>
 // SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 
+pragma ComponentBehavior: Bound
+
 import QtCore
 import QtQuick
 import QtQuick.Controls as QQC2
@@ -34,7 +36,7 @@ Kirigami.ScrollablePage {
     property list<string> mentions: []
     property int visibility: AccountManager.selectedAccount.preferences.defaultVisibility
     property int sensitive: AccountManager.selectedAccount.preferences.defaultSensitive
-    readonly property NetworkRequestProgress progress: NetworkRequestProgress {}
+    readonly property NetworkRequestProgress uploadProgress: NetworkRequestProgress {}
     property Post previewPost: null
     property string initialText
     property bool closeApplicationWhenFinished: false
@@ -50,11 +52,11 @@ Kirigami.ScrollablePage {
 
     property PostEditorBackend backend: defaultBackend
 
-    readonly property bool isPollValid: backend.pollEnabled ? backend.poll.isValid : true
-    readonly property bool isStatusValid: textArea.text.length > 0 && backend.charactersLeft >= 0
+    readonly property bool isPollValid: root.backend.pollEnabled ? root.backend.poll.isValid : true
+    readonly property bool isStatusValid: textArea.text.length > 0 && root.backend.charactersLeft >= 0
 
     function openDraft(id: string): void {
-        backend.loadScheduledPost(id);
+        root.backend.loadScheduledPost(id);
     }
 
     title: {
@@ -91,14 +93,14 @@ Kirigami.ScrollablePage {
     ]
 
     data: Connections {
-        target: backend
+        target: root.backend
         function onPosted(error) {
             if (error.length === 0) {
                 root.discardDraft = true;
                 if (root.closeApplicationWhenFinished) {
-                    root.Window.window.close();
+                    root.QQC2.ApplicationWindow.window.close();
                 } else {
-                    root.Window.window.pageStack.layers.pop();
+                    (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow)?.pageStack.layers.pop();
                 }
                 applicationWindow().newPost();
             } else {
@@ -110,9 +112,9 @@ Kirigami.ScrollablePage {
 
         function onEditComplete(obj) {
             if (root.closeApplicationWhenFinished) {
-                root.Window.window.close();
+                root.QQC2.ApplicationWindow.window.close();
             } else {
-                root.Window.window.pageStack.layers.pop();
+                (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow)?.pageStack.layers.pop();
             }
         }
 
@@ -123,7 +125,7 @@ Kirigami.ScrollablePage {
 
     Component.onCompleted: {
         if (initialText.length > 0) {
-            backend.status = initialText
+            root.backend.status = initialText
         }
 
         textArea.forceActiveFocus()
@@ -203,7 +205,7 @@ Kirigami.ScrollablePage {
         onDiscarded: {
             root.discardDraft = true;
             if (root.closeApplicationWhenFinished) {
-                root.Window.window.close();
+                root.QQC2.ApplicationWindow.window.close();
             } else {
                 applicationWindow().pageStack.layers.pop();
             }
@@ -248,7 +250,7 @@ Kirigami.ScrollablePage {
 
     function shouldClose(): bool {
         if (textArea.text.length > 0 && !root.discardDraft) {
-            discardDraftPrompt.parent = root.Window.window.overlay; // workaround Kirigami.PromptDialog being broken
+            discardDraftPrompt.parent = root.QQC2.Overlay.overlay; // workaround Kirigami.PromptDialog being broken
             discardDraftPrompt.open();
 
             return true;
@@ -259,18 +261,18 @@ Kirigami.ScrollablePage {
 
     function submitPost() {
         if(root.purpose === StatusComposer.Edit) {
-            backend.edit()
+            root.backend.edit()
         } else {
-            backend.save()
+            root.backend.save()
         }
     }
 
     function uploadFile(url: string): void {
-        progress.reply = backend.attachmentEditorModel.append(url);
+        root.uploadProgress.reply = root.backend.attachmentEditorModel.append(url);
     }
 
     function uploadData(data: var): void {
-        progress.reply = backend.attachmentEditorModel.appendData(data);
+        root.uploadProgress.reply = root.backend.attachmentEditorModel.appendData(data);
     }
 
     function pasteImage(): bool {
@@ -286,7 +288,7 @@ Kirigami.ScrollablePage {
         if (localPath.length === 0) {
             return false;
         }
-        if (backend.attachmentEditorModel.isLocalFile(localPath)) {
+        if (root.backend.attachmentEditorModel.isLocalFile(localPath)) {
             uploadFile(localPath);
             return true;
         }
@@ -359,7 +361,7 @@ Kirigami.ScrollablePage {
             bottomInset: -1
             leftInset: -1
             rightInset: -1
-            onTextChanged: backend.status = text
+            onTextChanged: root.backend.status = text
 
             Keys.onEnterPressed: (event)=> {
                if (event.modifiers & Qt.ControlModifier) {
@@ -429,9 +431,9 @@ Kirigami.ScrollablePage {
                     Layout.fillWidth: true
                     from: 0
                     to: 100
-                    visible: progress.uploading
-                    value: progress.progress
-                    indeterminate: progress.progress === 100 && progress.uploading
+                    visible: root.uploadProgress.uploading
+                    value: root.uploadProgress.progress
+                    indeterminate: root.uploadProgress.progress === 100 && root.uploadProgress.uploading
                     Layout.leftMargin: Kirigami.Units.smallSpacing
                     Layout.rightMargin: Kirigami.Units.smallSpacing
                 }
@@ -445,7 +447,7 @@ Kirigami.ScrollablePage {
                     visible: addPool.checked && root.purpose !== StatusComposer.Edit
                     Layout.fillWidth: true
 
-                    poll: backend.poll
+                    poll: root.backend.poll
                     maxPollOptions: AccountManager.selectedAccount.maxPollOptions
                     maxCharactersPerOption: AccountManager.selectedAccount.maxCharactersPerOption
                 }
@@ -482,7 +484,7 @@ Kirigami.ScrollablePage {
                         spacing: Kirigami.Units.mediumSpacing
 
                         QQC2.ToolButton {
-                            enabled: backend.attachmentEditorModel.count < AccountManager.selectedAccount.maxMediaAttachments && !addPool.checked
+                            enabled: root.backend.attachmentEditorModel.count < AccountManager.selectedAccount.maxMediaAttachments && !addPool.checked
                             icon.name: "mail-attachment-symbolic"
                             onClicked: fileDialog.open()
                             FileDialog {
@@ -501,7 +503,7 @@ Kirigami.ScrollablePage {
                                     return KI18n.i18nc("@info:tooltip", "You can't have attachments and a poll in the same post.")
                                 }
 
-                                if (backend.attachmentEditorModel.count >= AccountManager.selectedAccount.maxMediaAttachments) {
+                                if (root.backend.attachmentEditorModel.count >= AccountManager.selectedAccount.maxMediaAttachments) {
                                     return KI18n.i18nc("@info:tooltip", "You have the maximum allowed number of attachments.")
                                 }
 
@@ -515,19 +517,19 @@ Kirigami.ScrollablePage {
                             id: addPool
                             icon.name: "amarok_playcount"
                             checkable: true
-                            checked: backend.pollEnabled
-                            enabled: backend.attachmentEditorModel.count === 0 && root.purpose !== StatusComposer.Edit
+                            checked: root.backend.pollEnabled
+                            enabled: root.backend.attachmentEditorModel.count === 0 && root.purpose !== StatusComposer.Edit
                             text: KI18n.i18nc("@action:button", "Attach Poll")
                             display: QQC2.AbstractButton.IconOnly
 
-                            onToggled: backend.pollEnabled = checked
+                            onToggled: root.backend.pollEnabled = checked
 
                             QQC2.ToolTip.text: {
                                 if (root.purpose === StatusComposer.Edit) {
                                     return KI18n.i18nc("@info:tooltip", "You can't modify or add a poll to an existing post.")
                                 }
 
-                                if (backend.attachmentEditorModel.count !== 0) {
+                                if (root.backend.attachmentEditorModel.count !== 0) {
                                     return KI18n.i18nc("@info:tooltip", "You can't have attachments and a poll in the same post.")
                                 }
 
@@ -562,7 +564,7 @@ Kirigami.ScrollablePage {
 
                         QQC2.ToolButton {
                             icon.name: {
-                                switch(backend.visibility) {
+                                switch(root.backend.visibility) {
                                     case Post.Public:
                                         return "kstars_xplanet";
                                     case Post.Unlisted:
@@ -592,28 +594,28 @@ Kirigami.ScrollablePage {
                                 Kirigami.Action {
                                     icon.name: "group"
                                     text: KI18n.i18nc("@item:inmenu Local to this server", "Local")
-                                    onTriggered: backend.visibility = Post.Local
+                                    onTriggered: root.backend.visibility = Post.Local
                                     visible: AccountManager.selectedAccount.supportsLocalVisibility
                                 }
                                 QQC2.Action {
                                     icon.name: "kstars_xplanet"
                                     text: KI18n.i18nc("@item:inmenu Public to the world", "Public")
-                                    onTriggered: backend.visibility = Post.Public
+                                    onTriggered: root.backend.visibility = Post.Public
                                 }
                                 QQC2.Action {
                                     icon.name: "unlock"
                                     text: KI18n.i18nc("@item:inmenu Public but less so", "Unlisted")
-                                    onTriggered: backend.visibility = Post.Unlisted
+                                    onTriggered: root.backend.visibility = Post.Unlisted
                                 }
                                 QQC2.Action {
                                     icon.name: "lock"
                                     text: KI18n.i18nc("@item:inmenu Only to followers", "Private")
-                                    onTriggered: backend.visibility = Post.Private
+                                    onTriggered: root.backend.visibility = Post.Private
                                 }
                                 QQC2.Action {
                                     icon.name: "mail-message"
                                     text: KI18n.i18nc("@item:inmenu Only to who is explicitly mentioned", "Direct Message")
-                                    onTriggered: backend.visibility = Post.Direct
+                                    onTriggered: root.backend.visibility = Post.Direct
                                 }
                             }
 
@@ -624,13 +626,13 @@ Kirigami.ScrollablePage {
 
                         QQC2.ToolButton {
                             id: languageButton
-                            text: backend.language
+                            text: root.backend.language
                             QQC2.ToolTip.text: KI18n.i18nc("@info:tooltip", "Post language")
                             QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                             QQC2.ToolTip.visible: hovered
                             checkable: true
 
-                            onClicked: languageSelect.createObject().open()
+                            onClicked: (languageSelect.createObject() as LanguageSelector).open()
 
                             Component {
                                 id: languageSelect
@@ -638,10 +640,10 @@ Kirigami.ScrollablePage {
                                 LanguageSelector {
                                     parent: root.QQC2.Overlay.overlay
                                     onAboutToShow: {
-                                        const sourceIndex = listView.model.sourceModel.indexOfValue(backend.language);
+                                        const sourceIndex = listView.model.sourceModel.indexOfValue(root.backend.language);
                                         listView.currentIndex = listView.model.mapFromSource(sourceIndex).row;
                                     }
-                                    onCodeSelected: code => backend.language = code
+                                    onCodeSelected: code => root.backend.language = code
                                     onClosed: {
                                         destroy();
                                         languageButton.checked = false;
@@ -714,11 +716,11 @@ Kirigami.ScrollablePage {
                 visible: root.purpose === StatusComposer.New
                 Layout.alignment: Qt.AlignRight
                 onClicked: {
-                    if (!backend.attachmentEditorModel.isAltTextComplete()) {
+                    if (!root.backend.attachmentEditorModel.isAltTextComplete()) {
                         altTextPrompt.scheduled = true;
                         altTextPrompt.openDialog();
                     } else {
-                        schedulePostPrompt.parent = root.Window.window.overlay; // workaround Kirigami.PromptDialog being broken
+                        schedulePostPrompt.parent = root.QQC2.Overlay.overlay; // workaround Kirigami.PromptDialog being broken
                         schedulePostPrompt.open();
                     }
                 }
@@ -729,10 +731,10 @@ Kirigami.ScrollablePage {
 
                 icon.name: root.purposeIconName()
                 text: root.purposeString()
-                enabled: root.isStatusValid && root.isPollValid && (!progress.uploading || backend.attachmentEditorModel.count > 0)
+                enabled: root.isStatusValid && root.isPollValid && (!root.uploadProgress.uploading || root.backend.attachmentEditorModel.count > 0)
                 Layout.alignment: Qt.AlignRight
                 onClicked: {
-                    if (!backend.attachmentEditorModel.isAltTextComplete()) {
+                    if (!root.backend.attachmentEditorModel.isAltTextComplete()) {
                         altTextPrompt.scheduled = false;
                         altTextPrompt.openDialog();
                     } else {
@@ -774,7 +776,7 @@ Kirigami.ScrollablePage {
         onAccepted: {
             altTextPrompt.close();
             if (altTextPrompt.scheduled) {
-                schedulePostPrompt.parent = root.Window.window.overlay; // workaround Kirigami.PromptDialog being broken
+                schedulePostPrompt.parent = root.QQC2.Overlay.overlay; // workaround Kirigami.PromptDialog being broken
                 schedulePostPrompt.open();
             } else {
                 root.submitPost();
