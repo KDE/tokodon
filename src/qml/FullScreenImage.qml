@@ -32,7 +32,7 @@ Components.AlbumMaximizeComponent {
             text: KI18n.i18nc("@action:intoolbar", "Open Post")
             visible: root.postId !== ""
             onTriggered: {
-                close();
+                root.close();
                 Navigation.openPost(root.postId);
             }
         }
@@ -43,7 +43,7 @@ Components.AlbumMaximizeComponent {
         secondary: false
         visible: root.identity
         onClicked: {
-            close();
+            root.close();
             Navigation.openAccount(root.identity.id);
         }
     }
