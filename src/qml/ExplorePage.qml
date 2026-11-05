@@ -143,6 +143,8 @@ Kirigami.Page {
                     onClicked: pageStack.push(tagModelComponent, {hashtag: delegate.name})
 
                     contentItem: ColumnLayout {
+                        spacing: 0
+
                         Kirigami.Heading {
                             level: 4
                             text: `#${delegate.name}`

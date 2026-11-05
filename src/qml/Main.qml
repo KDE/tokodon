@@ -170,6 +170,8 @@ Actions.StatefulWindow {
             onClosed: crossActionDialogLoader.active = false
 
             mainItem: ColumnLayout {
+                spacing: 0
+
                 Repeater {
                     id: accounts
 

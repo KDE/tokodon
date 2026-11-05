@@ -122,6 +122,8 @@ Kirigami.Dialog {
             text: displayName
 
             contentItem: RowLayout {
+                spacing: Kirigami.Units.smallSpacing
+
                 KirigamiComponents.Avatar {
                     implicitWidth: Kirigami.Units.gridUnit + Kirigami.Units.largeSpacing
                     implicitHeight: Kirigami.Units.gridUnit + Kirigami.Units.largeSpacing

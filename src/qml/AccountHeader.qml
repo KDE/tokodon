@@ -209,6 +209,8 @@ QQC2.Pane {
                 spacing: 0
 
                 RowLayout {
+                    spacing: 0
+
                     Layout.maximumWidth: Kirigami.Units.gridUnit * 30
                     Layout.fillWidth: true
                     Layout.alignment: Qt.AlignHCenter
@@ -991,16 +993,16 @@ QQC2.Pane {
             }
 
             QQC2.TabButton {
-                text: KI18n.i18nc("@item:inmenu Profile Post Filter", "Posts")
+                text: KI18n.i18nc("@item:inmenu Filter for posts only", "Posts")
                 implicitWidth: bar.parent.width / bar.tabCount
             }
             QQC2.TabButton {
-                text: KI18n.i18nc("@item:inmenu Profile Post Filter", "Posts && Replies")
+                text: KI18n.i18nc("@item:inmenu Filter for posts and replies", "Posts & Replies")
                 implicitWidth: bar.parent.width / bar.tabCount
             }
             QQC2.TabButton {
                 visible: root.identity.showMedia
-                text: KI18n.i18nc("@item:inmenu Profile Post Filter", "Media")
+                text: KI18n.i18nc("@item:inmenu Filter for media only", "Media")
                 implicitWidth: visible ? (bar.parent.width / bar.tabCount) : 0
             }
         }

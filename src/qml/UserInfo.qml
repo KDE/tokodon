@@ -11,7 +11,7 @@ import org.kde.kirigamiaddons.components as KirigamiComponents
 
 import org.kde.tokodon
 
-QQC2.Pane {
+QQC2.Control {
     id: root
 
     required property TokodonApplication application
@@ -19,7 +19,11 @@ QQC2.Pane {
     required property var sidebar
 
     visible: AccountManager.selectedAccount
-    padding: 0
+
+    leftPadding: 0
+    rightPadding: 0
+    topPadding: 0
+    bottomPadding: 0
 
     function openAccountPage() {
         // There's no way we can open the page if the account isn't working
