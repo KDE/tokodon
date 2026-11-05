@@ -17,6 +17,7 @@ Kirigami.Page {
     title: KI18n.i18n("Explore")
 
     property var dialog: null
+    property string pageId
 
     topPadding: 0
     bottomPadding: 0

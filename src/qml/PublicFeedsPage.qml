@@ -14,6 +14,9 @@ import "./StatusComposer"
 
 Kirigami.Page {
     id: root
+
+    property string pageId
+
     title: KI18n.i18nc("@title:window Public feeds of this or other servers", "Public Feeds")
 
     topPadding: 0

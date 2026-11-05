@@ -16,6 +16,8 @@ import "./PostDelegate"
 Kirigami.Page {
     id: root
 
+    property string pageId
+
     title: KI18n.i18nc("@title 'Following' as in the users you're following on Mastodon.", "Following")
 
     topPadding: 0

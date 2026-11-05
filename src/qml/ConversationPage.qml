@@ -13,6 +13,10 @@ import org.kde.kirigamiaddons.delegates as Delegates
 import org.kde.tokodon
 
 Kirigami.ScrollablePage {
+    id: root
+
+    property string pageId
+
     title: KI18n.i18n("Conversations")
 
     actions: [

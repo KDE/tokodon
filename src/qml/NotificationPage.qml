@@ -19,7 +19,7 @@ Kirigami.ScrollablePage {
     title: KI18n.i18n("Notifications")
 
     property var dialog: null
-
+    property string pageId
     property alias listViewHeader: listview.header
     readonly property bool typesAreGroupable: showAllAction.checked
     property bool shouldGroupNotifications: typesAreGroupable

@@ -277,7 +277,6 @@ Actions.StatefulWindow {
 
         function onOpenHomeTimeline(): void {
             if (root.checkIfCurrentPage("home")) {
-                console.info("early exit");
                 return;
             }
 
@@ -318,7 +317,9 @@ Actions.StatefulWindow {
             }
 
             root.pageStack.clear();
-            root.pageStack.push(publicFeedsPage.createObject(root), {});
+            root.pageStack.push(publicFeedsPage.createObject(root), {
+                pageId: "public_feeds",
+            });
         }
 
         function onOpenBookmarks(): void {
