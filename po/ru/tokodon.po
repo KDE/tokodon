@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-28 01:00+0000\n"
+"POT-Creation-Date: 2026-11-05 00:56+0000\n"
 "PO-Revision-Date: 2026-07-15 11:27+0300\n"
 "Last-Translator: Olesya Gerasimenko <goa@altlinux.org>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -184,12 +184,12 @@ msgstr "%1 создал(а) публикацию"
 msgid "%1 boosted your post"
 msgstr "%1 поделился(ась) вашей публикацией"
 
-#: account/notificationhandler.cpp:103 qml/Notifications/FollowDelegate.qml:83
+#: account/notificationhandler.cpp:103 qml/Notifications/FollowDelegate.qml:82
 #, kde-format
 msgid "%1 followed you"
 msgstr "%1 добавил(а) вас в свои подписки"
 
-#: account/notificationhandler.cpp:111 qml/Notifications/FollowDelegate.qml:81
+#: account/notificationhandler.cpp:111 qml/Notifications/FollowDelegate.qml:80
 #, kde-format
 msgid "%1 requested to follow you"
 msgstr "%1 отправил(а) вам запрос на подписку"
@@ -1068,13 +1068,13 @@ msgctxt "@title:window"
 msgid "Profile"
 msgstr "Профиль"
 
-#: qml/AccountInfo.qml:136 qml/FollowingPage.qml:162
+#: qml/AccountInfo.qml:136 qml/FollowingPage.qml:160
 #, kde-format
 msgctxt "@label"
 msgid "No Posts"
 msgstr "Нет ни одной публикации"
 
-#: qml/AccountInfo.qml:137 qml/FollowingPage.qml:163
+#: qml/AccountInfo.qml:137 qml/FollowingPage.qml:161
 #, kde-format
 msgid "This user hasn't posted anything yet."
 msgstr "Этот пользователь ещё ничего не опубликовал."
@@ -1107,7 +1107,7 @@ msgstr "Добавить учётную запись"
 msgid "Log in or create a new account"
 msgstr "Войти или создать новую учётную запись"
 
-#: qml/AccountSwitchDialog.qml:158 qml/Settings/AccountsPage.qml:82
+#: qml/AccountSwitchDialog.qml:158 qml/Settings/AccountsPage.qml:83
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -1167,24 +1167,24 @@ msgctxt "@info:placeholder No accounts in this collection"
 msgid "No Accounts"
 msgstr "Учётная запись отсутствует"
 
-#: qml/CollectionsPage.qml:24
+#: qml/CollectionsPage.qml:22
 #, kde-format
 msgctxt "@title"
 msgid "Collections"
 msgstr "Списки"
 
-#: qml/CollectionsPage.qml:27
+#: qml/CollectionsPage.qml:25
 #, kde-format
 msgctxt "@action:button Create new collection"
 msgid "Create New…"
 msgstr "Создать список…"
 
-#: qml/CollectionsPage.qml:68
+#: qml/CollectionsPage.qml:66
 #, kde-format
 msgid "No Collections"
 msgstr "Нет ни одного списка"
 
-#: qml/CollectionsPage.qml:69
+#: qml/CollectionsPage.qml:67
 #, kde-format
 msgid ""
 "Collections allow you to categorize accounts you want other people to follow."
@@ -1192,13 +1192,13 @@ msgstr ""
 "Списки позволяют упорядочить учётные записи, на которые вы хотите, чтобы "
 "подписались другие."
 
-#: qml/Components/BoostAltTextReminderDialog.qml:20
+#: qml/Components/BoostAltTextReminderDialog.qml:18
 #, kde-format
 msgctxt "@title"
 msgid "Boost Alt Text Reminder"
 msgstr "Напоминание об альтернативном тексте для републикации"
 
-#: qml/Components/BoostAltTextReminderDialog.qml:24
+#: qml/Components/BoostAltTextReminderDialog.qml:22
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -1208,19 +1208,19 @@ msgstr ""
 "Для некоторых медиафайлов в этой публикации не указан альтернативный текст; "
 "его отсутствие может вызвать затруднения у слабовидящих пользователей."
 
-#: qml/Components/BoostAltTextReminderDialog.qml:35
+#: qml/Components/BoostAltTextReminderDialog.qml:33
 #, kde-format
 msgctxt "@action:button Boost/Reblog this post anyway"
 msgid "Boost"
 msgstr "Поделиться"
 
-#: qml/Components/BoostConfirmationDialog.qml:20
+#: qml/Components/BoostConfirmationDialog.qml:19
 #, kde-format
 msgctxt "@title"
 msgid "Confirm Boost"
 msgstr "Подтверждение републикации"
 
-#: qml/Components/BoostConfirmationDialog.qml:24
+#: qml/Components/BoostConfirmationDialog.qml:23
 #, kde-format
 msgctxt "@action:button Boost this post"
 msgid "Boost"
@@ -1238,13 +1238,13 @@ msgstr "Показать профиль"
 msgid "No emojis"
 msgstr "Нет эмодзи"
 
-#: qml/Components/ServerInformationCard.qml:29
+#: qml/Components/ServerInformationCard.qml:27
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Information"
 msgstr "Информация отсутствует"
 
-#: qml/Components/ServerInformationCard.qml:34
+#: qml/Components/ServerInformationCard.qml:32
 #, kde-format
 msgctxt "@info Last updated: relative date and time (e.g. 2 years ago)"
 msgid "Last updated: %1"
@@ -1333,236 +1333,236 @@ msgctxt "@action:button"
 msgid "Decrease follow request count"
 msgstr "Уменьшить количество запросов на подписку"
 
-#: qml/EditCollectionPage.qml:31
+#: qml/EditCollectionPage.qml:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Collection"
 msgstr "Создание списка"
 
-#: qml/EditCollectionPage.qml:31
+#: qml/EditCollectionPage.qml:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Collection"
 msgstr "Изменение списка"
 
-#: qml/EditCollectionPage.qml:68
+#: qml/EditCollectionPage.qml:67
 #, kde-format
 msgctxt "@label:textbox Collection title"
 msgid "Name"
 msgstr "Название"
 
-#: qml/EditCollectionPage.qml:78
+#: qml/EditCollectionPage.qml:72
 #, kde-format
 msgctxt "@label:textbox Collection description"
 msgid "Description"
 msgstr "Описание"
 
-#: qml/EditCollectionPage.qml:88
+#: qml/EditCollectionPage.qml:77
 #, kde-format
 msgctxt "@label:textbox Whether this collection should be marked sensitive"
 msgid "Sensitive"
 msgstr "Конфиденциально"
 
-#: qml/EditCollectionPage.qml:98
+#: qml/EditCollectionPage.qml:82
 #, kde-format
 msgctxt ""
 "@label:textbox Whether this collection should be discoverable by other users"
 msgid "Discoverable"
 msgstr "Доступна для обнаружения"
 
-#: qml/EditCollectionPage.qml:109
+#: qml/EditCollectionPage.qml:88
 #, kde-format
 msgctxt "@action:intoolbar Add users to collection"
 msgid "Add Users"
 msgstr "Добавить пользователей"
 
-#: qml/EditCollectionPage.qml:120
+#: qml/EditCollectionPage.qml:99
 #, kde-format
 msgctxt "@title"
 msgid "Add Users to Collection…"
 msgstr "Добавление пользователей в список…"
 
-#: qml/EditCollectionPage.qml:158
+#: qml/EditCollectionPage.qml:137
 #, kde-format
 msgctxt "@action:button Add user to this collection"
 msgid "Add"
 msgstr "Добавить"
 
-#: qml/EditCollectionPage.qml:205 qml/EditListPage.qml:220
+#: qml/EditCollectionPage.qml:184 qml/EditListPage.qml:209
 #, kde-format
 msgid "Search among users you follow…"
 msgstr "Поиск среди пользователей, на которых вы подписаны…"
 
-#: qml/EditCollectionPage.qml:237
+#: qml/EditCollectionPage.qml:217
 #, kde-format
 msgctxt "@action:button Create the collection"
 msgid "Create"
 msgstr "Создать"
 
-#: qml/EditCollectionPage.qml:239
+#: qml/EditCollectionPage.qml:219
 #, kde-format
 msgctxt "@action:button Save the edited collection"
 msgid "Save"
 msgstr "Сохранить"
 
-#: qml/EditCollectionPage.qml:252
+#: qml/EditCollectionPage.qml:228
 #, kde-format
 msgctxt "@action:button Delete the collection"
 msgid "Delete"
 msgstr "Удалить"
 
-#: qml/EditCollectionPage.qml:259
+#: qml/EditCollectionPage.qml:235
 #, kde-format
 msgctxt "@title"
 msgid "Deleting Collection"
 msgstr "Удаление списка"
 
-#: qml/EditCollectionPage.qml:260
+#: qml/EditCollectionPage.qml:236
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to delete this collection?"
 msgstr "Действительно удалить этот список?"
 
-#: qml/EditListPage.qml:31
+#: qml/EditListPage.qml:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Create List"
 msgstr "Создание списка"
 
-#: qml/EditListPage.qml:31
+#: qml/EditListPage.qml:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit List"
 msgstr "Редактирование списка"
 
-#: qml/EditListPage.qml:67
+#: qml/EditListPage.qml:66
 #, kde-format
 msgctxt "@label:textbox List title"
 msgid "Title"
 msgstr "Название"
 
-#: qml/EditListPage.qml:75
+#: qml/EditListPage.qml:72
 #, kde-format
 msgctxt "@label"
 msgid "Show replies for"
 msgstr "Показ ответов"
 
-#: qml/EditListPage.qml:87
+#: qml/EditListPage.qml:82
 #, kde-format
 msgctxt "@label If the list is exclusive"
 msgid "Exclusive"
 msgstr "Исключение"
 
-#: qml/EditListPage.qml:88
+#: qml/EditListPage.qml:83
 #, kde-format
 msgid "Posts in an exclusive list are excluded from the Home timeline."
 msgstr ""
 "Публикации, находящиеся в списке исключения, исключаются из ленты новостей "
 "на главной странице."
 
-#: qml/EditListPage.qml:98
+#: qml/EditListPage.qml:89
 #, kde-format
 msgctxt "@label If the list is favorited"
 msgid "Favorite"
 msgstr "Избранное"
 
-#: qml/EditListPage.qml:99
+#: qml/EditListPage.qml:90
 #, kde-format
 msgid "This list will show up in the sidebar."
 msgstr "Этот список будет показан в боковой панели."
 
-#: qml/EditListPage.qml:107
+#: qml/EditListPage.qml:96
 #, kde-format
 msgctxt "@action:button Delete the list"
 msgid "Manage Users"
 msgstr "Управление пользователями"
 
-#: qml/EditListPage.qml:124
+#: qml/EditListPage.qml:113
 #, kde-format
 msgctxt "@action:intoolbar Add users to list"
 msgid "Add Users"
 msgstr "Добавить пользователей"
 
-#: qml/EditListPage.qml:135
+#: qml/EditListPage.qml:124
 #, kde-format
 msgctxt "@title"
 msgid "Add Users to List…"
 msgstr "Добавление пользователей в список…"
 
-#: qml/EditListPage.qml:173
+#: qml/EditListPage.qml:162
 #, kde-format
 msgctxt "@action:button Add user to this list"
 msgid "Add"
 msgstr "Добавить"
 
-#: qml/EditListPage.qml:254
+#: qml/EditListPage.qml:244
 #, kde-format
 msgctxt "@action:button Create the list"
 msgid "Create"
 msgstr "Создать"
 
-#: qml/EditListPage.qml:256
+#: qml/EditListPage.qml:246
 #, kde-format
 msgctxt "@action:button Save the edited list"
 msgid "Save"
 msgstr "Сохранить"
 
-#: qml/EditListPage.qml:269
+#: qml/EditListPage.qml:255
 #, kde-format
 msgctxt "@action:button Delete the list"
 msgid "Delete"
 msgstr "Удалить"
 
-#: qml/EditListPage.qml:276
+#: qml/EditListPage.qml:262
 #, kde-format
 msgctxt "@title"
 msgid "Deleting List"
 msgstr "Удаление списка"
 
-#: qml/EditListPage.qml:277
+#: qml/EditListPage.qml:263
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to delete this list?"
 msgstr "Действительно удалить этот список?"
 
-#: qml/ExplorePage.qml:19
+#: qml/ExplorePage.qml:17
 #, kde-format
 msgid "Explore"
 msgstr "Обзор"
 
-#: qml/ExplorePage.qml:35 search/searchmodel.cpp:155
+#: qml/ExplorePage.qml:33 search/searchmodel.cpp:155
 #, kde-format
 msgid "Posts"
 msgstr "Публикации"
 
-#: qml/ExplorePage.qml:41 search/searchmodel.cpp:153
+#: qml/ExplorePage.qml:39 search/searchmodel.cpp:153
 #, kde-format
 msgid "Hashtags"
 msgstr "Хэштеги"
 
-#: qml/ExplorePage.qml:47
+#: qml/ExplorePage.qml:45
 #, kde-format
 msgid "News"
 msgstr "Новости"
 
-#: qml/ExplorePage.qml:53 search/searchmodel.cpp:151
+#: qml/ExplorePage.qml:51 search/searchmodel.cpp:151
 #, kde-format
 msgid "Users"
 msgstr "Пользователи"
 
-#: qml/ExplorePage.qml:104
+#: qml/ExplorePage.qml:102
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Posts"
 msgstr "Нет публикаций"
 
-#: qml/ExplorePage.qml:131
+#: qml/ExplorePage.qml:129
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Tags"
 msgstr "Нет меток"
 
-#: qml/ExplorePage.qml:163
+#: qml/ExplorePage.qml:161
 #, kde-format
 msgid "%1 person is talking"
 msgid_plural "%1 people are talking"
@@ -1571,67 +1571,67 @@ msgstr[1] "Говорят %1 человека"
 msgstr[2] "Говорят %1 человек"
 msgstr[3] "Говорит %1 человек"
 
-#: qml/ExplorePage.qml:248
+#: qml/ExplorePage.qml:246
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Open in Browser"
 msgstr "Открыть в браузере"
 
-#: qml/ExplorePage.qml:306
+#: qml/ExplorePage.qml:304
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No News"
 msgstr "Нет новостей"
 
-#: qml/ExplorePage.qml:343
+#: qml/ExplorePage.qml:341
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Users"
 msgstr "Нет пользователей"
 
-#: qml/FollowingPage.qml:21
+#: qml/FollowingPage.qml:19
 #, kde-format
 msgctxt "@title 'Following' as in the users you're following on Mastodon."
 msgid "Following"
 msgstr "Подписки"
 
-#: qml/FollowingPage.qml:42 qml/Settings/SafetyPage.qml:27
+#: qml/FollowingPage.qml:40 qml/Settings/SafetyPage.qml:25
 #: qml/TimelinePage.qml:111
 #, kde-format
 msgctxt "@action:button"
 msgid "Filters"
 msgstr "Фильтры"
 
-#: qml/FollowingPage.qml:47
+#: qml/FollowingPage.qml:45
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Show Boosts"
 msgstr "Показать републикации"
 
-#: qml/FollowingPage.qml:55
+#: qml/FollowingPage.qml:53
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Show Replies"
 msgstr "Показать ответы"
 
-#: qml/FollowingPage.qml:66 qml/TimelinePage.qml:140
+#: qml/FollowingPage.qml:64 qml/TimelinePage.qml:140
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Configure Filters…"
 msgstr "Настроить фильтры…"
 
-#: qml/FollowingPage.qml:67 qml/TimelinePage.qml:141
+#: qml/FollowingPage.qml:65 qml/TimelinePage.qml:141
 #, kde-format
 msgctxt "@title:window"
 msgid "Filters"
 msgstr "Фильтры"
 
-#: qml/FollowingPage.qml:156
+#: qml/FollowingPage.qml:154
 #, kde-format
 msgid "No User Selected"
 msgstr "Не выбрано ни одного пользователя"
 
-#: qml/FollowingPage.qml:157
+#: qml/FollowingPage.qml:155
 #, kde-format
 msgid ""
 "With the Following view, easily check on each user you're following and only "
@@ -1640,7 +1640,7 @@ msgstr ""
 "В разделе «Подписки» можно легко увидеть данные каждого пользователя, на "
 "которого вы подписаны, и его публикации — в порядке последней активности."
 
-#: qml/FullScreenImage.qml:34
+#: qml/FullScreenImage.qml:30
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Open Post"
@@ -1652,19 +1652,19 @@ msgctxt "@title:window"
 msgid "About Server"
 msgstr "О сервере"
 
-#: qml/InitialSetup/SetupNotifications.qml:20
+#: qml/InitialSetup/SetupNotifications.qml:15
 #, kde-format
 msgctxt "@title:window"
 msgid "Notifications"
 msgstr "Уведомления"
 
-#: qml/InitialSetup/SetupNotifications.qml:23
-#: qml/InitialSetup/SetupPassword.qml:21
+#: qml/InitialSetup/SetupNotifications.qml:18
+#: qml/InitialSetup/SetupPassword.qml:17
 #, kde-format
 msgid "Setup Required"
 msgstr "Требуется настройка"
 
-#: qml/InitialSetup/SetupNotifications.qml:29
+#: qml/InitialSetup/SetupNotifications.qml:25
 #, kde-format
 msgid ""
 "Tokodon can show notifications for activity such as users boosting or "
@@ -1677,24 +1677,24 @@ msgstr ""
 "\n"
 "Для тонкой настройки отображаемых уведомлений необходимо выполнить вход."
 
-#: qml/InitialSetup/SetupNotifications.qml:36
+#: qml/InitialSetup/SetupNotifications.qml:30
 #, kde-format
 msgid "Allow Notifications"
 msgstr "Разрешить уведомления"
 
-#: qml/InitialSetup/SetupNotifications.qml:50
-#: qml/InitialSetup/SetupWelcome.qml:43 qml/LoginFlow/CodeAuthorization.qml:33
+#: qml/InitialSetup/SetupNotifications.qml:42
+#: qml/InitialSetup/SetupWelcome.qml:40 qml/LoginFlow/CodeAuthorization.qml:30
 #, kde-format
 msgid "Continue"
 msgstr "Продолжить"
 
-#: qml/InitialSetup/SetupPassword.qml:18
+#: qml/InitialSetup/SetupPassword.qml:14
 #, kde-format
 msgctxt "@title:window"
 msgid "Password Service"
 msgstr "Служба паролей"
 
-#: qml/InitialSetup/SetupPassword.qml:26
+#: qml/InitialSetup/SetupPassword.qml:23
 #, kde-format
 msgid ""
 "Tokodon requires a password service to be running to save personally "
@@ -1713,59 +1713,59 @@ msgstr ""
 "После установки службы убедитесь, что она запущена, и выполните перезапуск "
 "Tokodon."
 
-#: qml/InitialSetup/SetupPassword.qml:33
+#: qml/InitialSetup/SetupPassword.qml:28
 #, kde-format
 msgid "Quit Tokodon"
 msgstr "Выйти из Tokodon"
 
-#: qml/InitialSetup/SetupWelcome.qml:18 qml/LoginFlow/WelcomePage.qml:19
+#: qml/InitialSetup/SetupWelcome.qml:16 qml/LoginFlow/WelcomePage.qml:19
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome"
 msgstr "Добро пожаловать"
 
-#: qml/InitialSetup/SetupWelcome.qml:31
+#: qml/InitialSetup/SetupWelcome.qml:29
 #, kde-format
 msgid "Welcome to Tokodon"
 msgstr "Добро пожаловать в Tokodon"
 
-#: qml/InitialSetup/SetupWelcome.qml:36
+#: qml/InitialSetup/SetupWelcome.qml:35
 #, kde-format
 msgid "Some initial setup is required before you can use Tokodon."
 msgstr ""
 "Перед началом использования Tokodon необходимо выполнить предварительную "
 "настройку."
 
-#: qml/LanguageSelector.qml:26
+#: qml/LanguageSelector.qml:25
 #, kde-format
 msgctxt "@title"
 msgid "Select Language"
 msgstr "Выбор языка"
 
-#: qml/LanguageSelector.qml:51
+#: qml/LanguageSelector.qml:50
 #, kde-format
 msgctxt "@action:button"
 msgid "Close"
 msgstr "Закрыть"
 
-#: qml/ListsPage.qml:24
+#: qml/ListsPage.qml:23
 #, kde-format
 msgctxt "@title"
 msgid "Lists"
 msgstr "Списки"
 
-#: qml/ListsPage.qml:37
+#: qml/ListsPage.qml:36
 #, kde-format
 msgctxt "@action:button Create new list"
 msgid "Create New…"
 msgstr "Создать список…"
 
-#: qml/ListsPage.qml:78
+#: qml/ListsPage.qml:77
 #, kde-format
 msgid "No Lists"
 msgstr "Нет ни одного списка"
 
-#: qml/ListsPage.qml:79
+#: qml/ListsPage.qml:78
 #, kde-format
 msgid "Lists allow you to categorize who you're following."
 msgstr "Списки позволяют упорядочить свои подписки."
@@ -1791,7 +1791,7 @@ msgctxt "@action:button Edit current list"
 msgid "Edit…"
 msgstr "Изменить…"
 
-#: qml/LoginFlow/BaseAuthorization.qml:27
+#: qml/LoginFlow/BaseAuthorization.qml:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Authorization"
@@ -1804,48 +1804,48 @@ msgstr ""
 "Для продолжения необходимо предоставить приложению Tokodon доступ к вашей "
 "учётной записи."
 
-#: qml/LoginFlow/BaseAuthorization.qml:84
+#: qml/LoginFlow/BaseAuthorization.qml:80
 #, kde-format
 msgid "Open Authorization Page"
 msgstr "Открыть страницу авторизации"
 
-#: qml/LoginFlow/BaseAuthorization.qml:96
+#: qml/LoginFlow/BaseAuthorization.qml:87
 #, kde-format
 msgid "Copy Link to Authorization Page"
 msgstr "Скопировать ссылку на страницу авторизации"
 
-#: qml/LoginFlow/BaseAuthorization.qml:100
+#: qml/LoginFlow/BaseAuthorization.qml:91
 #, kde-format
 msgid "Link copied."
 msgstr "Ссылка скопирована."
 
-#: qml/LoginFlow/BrowserAuthorization.qml:26
+#: qml/LoginFlow/BrowserAuthorization.qml:24
 #, kde-format
 msgid "Use Authorization Code"
 msgstr "Использовать код авторизации"
 
-#: qml/LoginFlow/BrowserAuthorization.qml:27
+#: qml/LoginFlow/BrowserAuthorization.qml:25
 #, kde-format
 msgid "Use this login method if the above link does not work."
 msgstr "Использовать этот способ входа, если ссылка выше не работает."
 
-#: qml/LoginFlow/CodeAuthorization.qml:26
+#: qml/LoginFlow/CodeAuthorization.qml:25
 #, kde-format
 msgid "Enter authorization token:"
 msgstr "Маркер авторизации:"
 
-#: qml/LoginFlow/LoginIssuePage.qml:18
+#: qml/LoginFlow/LoginIssuePage.qml:16
 #, kde-format
 msgctxt "@title:window"
 msgid "Login Issue"
 msgstr "Ошибка входа"
 
-#: qml/LoginFlow/LoginIssuePage.qml:28
+#: qml/LoginFlow/LoginIssuePage.qml:26
 #, kde-format
 msgid "There was an issue logging into %1:<br><b>%2</b>"
 msgstr "При входе на сервер %1 произошла ошибка:<br><b>%2</b>"
 
-#: qml/LoginFlow/LoginIssuePage.qml:39
+#: qml/LoginFlow/LoginIssuePage.qml:38
 #, kde-format
 msgid ""
 "Please check if the password service is running. For other login issues, you "
@@ -1859,155 +1859,155 @@ msgstr ""
 "Можно повторить попытку входа с помощью расположенной ниже кнопки или "
 "перезапустить Tokodon."
 
-#: qml/LoginFlow/LoginIssuePage.qml:49
+#: qml/LoginFlow/LoginIssuePage.qml:46
 #, kde-format
 msgid "View Website"
 msgstr "Посетить веб-сайт"
 
-#: qml/LoginFlow/LoginIssuePage.qml:58
+#: qml/LoginFlow/LoginIssuePage.qml:53
 #, kde-format
 msgid "Re-Attempt Log In"
 msgstr "Повторить попытку входа"
 
-#: qml/LoginFlow/LoginIssuePage.qml:70 qml/Settings/AccountPage.qml:41
+#: qml/LoginFlow/LoginIssuePage.qml:63 qml/Settings/AccountPage.qml:40
 #, kde-format
 msgid "Logout…"
 msgstr "Выйти…"
 
-#: qml/LoginFlow/LoginIssuePage.qml:77 qml/Settings/AccountPage.qml:61
+#: qml/LoginFlow/LoginIssuePage.qml:70 qml/Settings/AccountPage.qml:60
 #, kde-format
 msgctxt "@title"
 msgid "Logout"
 msgstr "Выход"
 
-#: qml/LoginFlow/LoginIssuePage.qml:78
+#: qml/LoginFlow/LoginIssuePage.qml:71
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to log out?"
 msgstr "Действительно выйти?"
 
-#: qml/LoginFlow/RegistrationPage.qml:18
+#: qml/LoginFlow/RegistrationPage.qml:16
 #, kde-format
 msgctxt "@title:window"
 msgid "Registration"
 msgstr "Регистрация"
 
-#: qml/LoginFlow/RegistrationPage.qml:26 qml/LoginFlow/RegistrationPage.qml:37
-#: qml/LoginFlow/RulesPage.qml:26 qml/LoginFlow/ServersPage.qml:31
+#: qml/LoginFlow/RegistrationPage.qml:24 qml/LoginFlow/RegistrationPage.qml:35
+#: qml/LoginFlow/RulesPage.qml:24 qml/LoginFlow/ServersPage.qml:30
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
 msgstr "Не удалось подключиться к серверу: %1. Проверьте параметры прокси."
 
-#: qml/LoginFlow/RegistrationPage.qml:86 qml/LoginFlow/RulesPage.qml:41
-#: qml/LoginFlow/ServersPage.qml:171 qml/Settings/NetworkProxyPage.qml:71
+#: qml/LoginFlow/RegistrationPage.qml:84 qml/LoginFlow/RulesPage.qml:39
+#: qml/LoginFlow/ServersPage.qml:170 qml/Settings/NetworkProxyPage.qml:66
 #, kde-format
 msgid "Proxy Settings"
 msgstr "Параметры прокси-сервера"
 
-#: qml/LoginFlow/RegistrationPage.qml:95
+#: qml/LoginFlow/RegistrationPage.qml:93
 #, kde-format
 msgctxt "@title:group"
 msgid "Register"
 msgstr "Регистрация"
 
-#: qml/LoginFlow/RegistrationPage.qml:101
+#: qml/LoginFlow/RegistrationPage.qml:100
 #, kde-format
 msgid "Username"
 msgstr "Имя пользователя"
 
-#: qml/LoginFlow/RegistrationPage.qml:110
+#: qml/LoginFlow/RegistrationPage.qml:107
 #, kde-format
 msgid "Email Address"
 msgstr "Адрес электронной почты"
 
-#: qml/LoginFlow/RegistrationPage.qml:119 qml/Settings/NetworkProxyPage.qml:124
+#: qml/LoginFlow/RegistrationPage.qml:114 qml/Settings/NetworkProxyPage.qml:117
 #, kde-format
 msgid "Password"
 msgstr "Пароль"
 
-#: qml/LoginFlow/RegistrationPage.qml:129
+#: qml/LoginFlow/RegistrationPage.qml:122
 #, kde-format
 msgid "Date of Birth"
 msgstr "Дата рождения"
 
-#: qml/LoginFlow/RegistrationPage.qml:137
+#: qml/LoginFlow/RegistrationPage.qml:128
 #, kde-format
 msgid "Reason"
 msgstr "Основание"
 
-#: qml/LoginFlow/RegistrationPage.qml:146
+#: qml/LoginFlow/RegistrationPage.qml:137
 #, kde-format
 msgid "Register"
 msgstr "Регистрация"
 
-#: qml/LoginFlow/RulesPage.qml:18
+#: qml/LoginFlow/RulesPage.qml:16
 #, kde-format
 msgctxt "@title:window"
 msgid "Rules"
 msgstr "Правила"
 
-#: qml/LoginFlow/RulesPage.qml:48
+#: qml/LoginFlow/RulesPage.qml:46
 #, kde-format
 msgctxt "@title:group"
 msgid "Rules"
 msgstr "Правила"
 
-#: qml/LoginFlow/RulesPage.qml:101
+#: qml/LoginFlow/RulesPage.qml:89
 #, kde-format
 msgctxt "@action:button Agree to server rules"
 msgid "Agree"
 msgstr "Соглашаюсь"
 
-#: qml/LoginFlow/RulesPage.qml:119
+#: qml/LoginFlow/RulesPage.qml:102
 #, kde-format
 msgctxt "@action:button Disagree to server rules"
 msgid "Disagree"
 msgstr "Не соглашаюсь"
 
-#: qml/LoginFlow/ServersPage.qml:22
+#: qml/LoginFlow/ServersPage.qml:21
 #, kde-format
 msgctxt "@title:window"
 msgid "Pick a Server"
 msgstr "Выбор сервера"
 
-#: qml/LoginFlow/ServersPage.qml:22
+#: qml/LoginFlow/ServersPage.qml:21
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose your Existing Server"
 msgstr "Выбор сервера"
 
-#: qml/LoginFlow/ServersPage.qml:39
+#: qml/LoginFlow/ServersPage.qml:38
 #, kde-format
 msgid "This server is closed for registration: %1"
 msgstr "Этот сервер закрыт для регистрации: %1"
 
-#: qml/LoginFlow/ServersPage.qml:41
+#: qml/LoginFlow/ServersPage.qml:40
 #, kde-format
 msgid "This server is closed for registration, and did not provide a reason."
 msgstr "Этот сервер закрыт для регистрации без указания причины."
 
-#: qml/LoginFlow/ServersPage.qml:179
+#: qml/LoginFlow/ServersPage.qml:178
 #, kde-format
 msgid "Search or enter URL…"
 msgstr "Введите текст для поиска или URL-адрес…"
 
-#: qml/LoginFlow/ServersPage.qml:218
+#: qml/LoginFlow/ServersPage.qml:217
 #, kde-format
 msgid "Custom Server"
 msgstr "Пользовательский сервер"
 
-#: qml/LoginFlow/ServersPage.qml:227
+#: qml/LoginFlow/ServersPage.qml:226
 #, kde-format
 msgid "Public Servers"
 msgstr "Общедоступные серверы"
 
-#: qml/LoginFlow/ServersPage.qml:257
+#: qml/LoginFlow/ServersPage.qml:256
 #, kde-format
 msgid "No Public Servers"
 msgstr "Нет ни одного общедоступного сервера"
 
-#: qml/LoginFlow/ServersPage.qml:258
+#: qml/LoginFlow/ServersPage.qml:257
 #, kde-format
 msgid "Enter a server URL manually in the search field."
 msgstr "Введите URL-адрес сервера в поле поиска."
@@ -2033,37 +2033,37 @@ msgid ""
 msgstr ""
 "Просматривайте Fediverse и общайтесь в Mastodon или других совместимых сетях."
 
-#: qml/LoginFlow/WelcomePage.qml:81
+#: qml/LoginFlow/WelcomePage.qml:82
 #, kde-format
 msgctxt "@action:button Pick a Mastodon server"
 msgid "Register"
 msgstr "Зарегистрироваться"
 
-#: qml/LoginFlow/WelcomePage.qml:91
+#: qml/LoginFlow/WelcomePage.qml:90
 #, kde-format
 msgctxt "@action:button Use an existing Mastodon account"
 msgid "Login"
 msgstr "Войти"
 
-#: qml/LoginFlow/WelcomePage.qml:98
+#: qml/LoginFlow/WelcomePage.qml:97
 #, kde-format
 msgctxt "@action:button Use an existing Mastodon account"
 msgid "Use System Account"
 msgstr "Использовать системную учётную запись"
 
-#: qml/LoginFlow/WelcomePage.qml:116
+#: qml/LoginFlow/WelcomePage.qml:115
 #, kde-format
 msgctxt "@action:button Application settings"
 msgid "Settings"
 msgstr "Параметры"
 
-#: qml/LoginFlow/WelcomePage.qml:127
+#: qml/LoginFlow/WelcomePage.qml:126
 #, kde-format
 msgctxt "@action:button"
 msgid "Compatible with Mastodon"
 msgstr "Совместимо с"
 
-#: qml/LoginFlow/WelcomePage.qml:133
+#: qml/LoginFlow/WelcomePage.qml:132
 #, kde-format
 msgctxt "@info Compatible with Mastodon"
 msgid "Compatible with"
@@ -2271,83 +2271,73 @@ msgctxt "@action:intoolbar"
 msgid "Follow"
 msgstr "Подписаться"
 
-#: qml/ModerationTools/AccountToolPage.qml:32
-#: qml/ModerationTools/AccountToolPage.qml:216
+#: qml/ModerationTools/AccountToolPage.qml:33
+#: qml/ModerationTools/AccountToolPage.qml:212
 #, kde-format
 msgid "Advanced Search"
 msgstr "Расширенный поиск"
 
-#: qml/ModerationTools/AccountToolPage.qml:42
-#, kde-format
-msgctxt "@info:placeholder Username for searching accounts"
-msgid "Username:"
-msgstr "Имя пользователя:"
-
-#: qml/ModerationTools/AccountToolPage.qml:47
-#, kde-format
-msgctxt "@info:placeholder display name for searching accounts"
-msgid "Display Name:"
-msgstr "Отображаемое имя:"
-
-#: qml/ModerationTools/AccountToolPage.qml:52
-#, kde-format
-msgctxt "@info:placeholder email for searching accounts"
-msgid "Email:"
-msgstr "Адрес эл. почты:"
-
-#: qml/ModerationTools/AccountToolPage.qml:57
-#, kde-format
-msgctxt "@info:placeholder ip for searching accounts"
-msgid "IP:"
-msgstr "IP-адрес:"
-
-#: qml/ModerationTools/AccountToolPage.qml:64
+#: qml/ModerationTools/AccountToolPage.qml:40
 #, kde-format
 msgctxt "@info:Search button to initiate searching accounts"
 msgid "Search"
 msgstr "Поиск"
 
-#: qml/ModerationTools/AccountToolPage.qml:75
+#: qml/ModerationTools/AccountToolPage.qml:44
 #, kde-format
 msgctxt "@info:Reset button to reset all the text fields"
 msgid "Reset"
 msgstr "Сбросить"
 
-#: qml/ModerationTools/AccountToolPage.qml:80
-#: qml/ModerationTools/FederationToolPage.qml:141
-#: qml/ModerationTools/FederationToolPage.qml:172
-#: qml/ModerationTools/IpRulePage.qml:121
-#: qml/ModerationTools/MainFederationToolPage.qml:111
+#: qml/ModerationTools/AccountToolPage.qml:62
 #, kde-format
-msgctxt "@info:Cancel button to close the dailog"
-msgid "Cancel"
-msgstr "Отмена"
+msgctxt "@info:placeholder Username for searching accounts"
+msgid "Username:"
+msgstr "Имя пользователя:"
 
-#: qml/ModerationTools/AccountToolPage.qml:97
+#: qml/ModerationTools/AccountToolPage.qml:67
+#, kde-format
+msgctxt "@info:placeholder display name for searching accounts"
+msgid "Display Name:"
+msgstr "Отображаемое имя:"
+
+#: qml/ModerationTools/AccountToolPage.qml:72
+#, kde-format
+msgctxt "@info:placeholder email for searching accounts"
+msgid "Email:"
+msgstr "Адрес эл. почты:"
+
+#: qml/ModerationTools/AccountToolPage.qml:77
+#, kde-format
+msgctxt "@info:placeholder ip for searching accounts"
+msgid "IP:"
+msgstr "IP-адрес:"
+
+#: qml/ModerationTools/AccountToolPage.qml:91
 #, kde-format
 msgctxt "@info:Location combobox to choose location filters"
 msgid "Location"
 msgstr "Расположение"
 
-#: qml/ModerationTools/AccountToolPage.qml:110
+#: qml/ModerationTools/AccountToolPage.qml:104
 #, kde-format
 msgctxt "@info:Filter out accounts from any location"
 msgid "All"
 msgstr "Все"
 
-#: qml/ModerationTools/AccountToolPage.qml:114
+#: qml/ModerationTools/AccountToolPage.qml:108
 #, kde-format
 msgctxt "@info:Filter out local accounts"
 msgid "Local"
 msgstr "Локальные"
 
-#: qml/ModerationTools/AccountToolPage.qml:118
+#: qml/ModerationTools/AccountToolPage.qml:112
 #, kde-format
 msgctxt "@info:Filter out remote accounts"
 msgid "Remote"
 msgstr "Сетевые"
 
-#: qml/ModerationTools/AccountToolPage.qml:132
+#: qml/ModerationTools/AccountToolPage.qml:127
 #, kde-format
 msgctxt ""
 "@info:Moderation Status combobox to choose between different moderation "
@@ -2355,73 +2345,73 @@ msgctxt ""
 msgid "Moderation Status"
 msgstr "Состояние модерации"
 
-#: qml/ModerationTools/AccountToolPage.qml:143
+#: qml/ModerationTools/AccountToolPage.qml:138
 #, kde-format
 msgctxt "@info:Filter out accounts with any moderation status"
 msgid "All"
 msgstr "Все"
 
-#: qml/ModerationTools/AccountToolPage.qml:147
+#: qml/ModerationTools/AccountToolPage.qml:142
 #, kde-format
 msgctxt "@info:Filter out accounts with active moderation status"
 msgid "Active"
 msgstr "Активные"
 
-#: qml/ModerationTools/AccountToolPage.qml:151
+#: qml/ModerationTools/AccountToolPage.qml:146
 #, kde-format
 msgctxt "@info:Filter out accounts with pending moderation status"
 msgid "Pending"
 msgstr "В ожидании"
 
-#: qml/ModerationTools/AccountToolPage.qml:155
+#: qml/ModerationTools/AccountToolPage.qml:150
 #, kde-format
 msgctxt "@info:Filter out accounts with disabled moderation status"
 msgid "Disabled"
 msgstr "Отключённые"
 
-#: qml/ModerationTools/AccountToolPage.qml:159
+#: qml/ModerationTools/AccountToolPage.qml:154
 #, kde-format
 msgctxt "@info:Filter out accounts with silenced moderation status"
 msgid "Silenced"
 msgstr "Заглушённые"
 
-#: qml/ModerationTools/AccountToolPage.qml:163
+#: qml/ModerationTools/AccountToolPage.qml:158
 #, kde-format
 msgctxt "@info:Filter out accounts with suspended moderation status"
 msgid "Suspended"
 msgstr "Приостановленные"
 
-#: qml/ModerationTools/AccountToolPage.qml:176
+#: qml/ModerationTools/AccountToolPage.qml:172
 #, kde-format
 msgctxt "@info:Role combobox to choose between different role filters"
 msgid "Role"
 msgstr "Роль"
 
-#: qml/ModerationTools/AccountToolPage.qml:190
+#: qml/ModerationTools/AccountToolPage.qml:186
 #, kde-format
 msgctxt "@info:Filter out accounts with any role"
 msgid "All"
 msgstr "Все"
 
-#: qml/ModerationTools/AccountToolPage.qml:194
+#: qml/ModerationTools/AccountToolPage.qml:190
 #, kde-format
 msgctxt "@info:Filter out accounts with moderator role"
 msgid "Moderator"
 msgstr "Модератор"
 
-#: qml/ModerationTools/AccountToolPage.qml:198
+#: qml/ModerationTools/AccountToolPage.qml:194
 #, kde-format
 msgctxt "@info:Filter out accounts with admin role"
 msgid "Admin"
 msgstr "Администратор"
 
-#: qml/ModerationTools/AccountToolPage.qml:202
+#: qml/ModerationTools/AccountToolPage.qml:198
 #, kde-format
 msgctxt "@info:Filter out accounts with owner role"
 msgid "Owner"
 msgstr "Владелец"
 
-#: qml/ModerationTools/AccountToolPage.qml:300
+#: qml/ModerationTools/AccountToolPage.qml:296
 #, kde-format
 msgid "No accounts found"
 msgstr "Учётных записей не найдено"
@@ -2432,25 +2422,36 @@ msgctxt "@action:button"
 msgid "Create Email Block"
 msgstr "Создать блокировку адреса электронной почты"
 
-#: qml/ModerationTools/EmailBlockToolPage.qml:31
+#: qml/ModerationTools/EmailBlockToolPage.qml:32
 #, kde-format
 msgctxt "@title"
 msgid "E-Mail Domain Info"
 msgstr "Сведения о домене электронной почты"
 
-#: qml/ModerationTools/EmailBlockToolPage.qml:40
+#: qml/ModerationTools/EmailBlockToolPage.qml:39
+#, kde-format
+msgctxt "@action:button"
+msgid "Delete email block"
+msgstr "Удалить блокировку адреса электронной почты"
+
+#: qml/ModerationTools/EmailBlockToolPage.qml:45
+#, kde-format
+msgid "Email block deleted"
+msgstr "Блокировка адреса электронной почты удалена"
+
+#: qml/ModerationTools/EmailBlockToolPage.qml:52
 #, kde-format
 msgctxt "@info The domain on which the block is imposed"
 msgid "Email domain name"
 msgstr "Название домена электронной почты"
 
-#: qml/ModerationTools/EmailBlockToolPage.qml:48
+#: qml/ModerationTools/EmailBlockToolPage.qml:57
 #, kde-format
 msgctxt "@info Time when the block was imposed."
 msgid "Block created at"
 msgstr "Время создания блокировки"
 
-#: qml/ModerationTools/EmailBlockToolPage.qml:56
+#: qml/ModerationTools/EmailBlockToolPage.qml:62
 #, kde-format
 msgctxt ""
 "@info The counted accounts signup attempts using that email domain within "
@@ -2458,44 +2459,37 @@ msgctxt ""
 msgid "Account sign-up attempts in this week"
 msgstr "Количество попыток регистрации для учётной записи за эту неделю"
 
-#: qml/ModerationTools/EmailBlockToolPage.qml:64
+#: qml/ModerationTools/EmailBlockToolPage.qml:67
 #, kde-format
 msgctxt ""
 "@info The counted IP signup attempts of that email domain within that day."
 msgid "IP sign-up attempts in this week"
 msgstr "Количество попыток регистрации для IP-адреса за эту неделю"
 
-#: qml/ModerationTools/EmailBlockToolPage.qml:73
-#: qml/ModerationTools/EmailBlockToolPage.qml:111
-#, kde-format
-msgctxt "@action:button"
-msgid "Cancel"
-msgstr "Отмена"
-
-#: qml/ModerationTools/EmailBlockToolPage.qml:78
-#, kde-format
-msgctxt "@action:button"
-msgid "Delete email block"
-msgstr "Удалить блокировку адреса электронной почты"
-
-#: qml/ModerationTools/EmailBlockToolPage.qml:82
-#, kde-format
-msgid "Email block deleted"
-msgstr "Блокировка адреса электронной почты удалена"
-
-#: qml/ModerationTools/EmailBlockToolPage.qml:92
+#: qml/ModerationTools/EmailBlockToolPage.qml:76
 #, kde-format
 msgctxt "@title"
 msgid "New E-Mail Domain Block"
 msgstr "Новая блокировка домена электронной почты"
 
-#: qml/ModerationTools/EmailBlockToolPage.qml:102
+#: qml/ModerationTools/EmailBlockToolPage.qml:83
+#, kde-format
+msgctxt "@action:button"
+msgid "Resolve domain"
+msgstr "Определить домен"
+
+#: qml/ModerationTools/EmailBlockToolPage.qml:89
+#, kde-format
+msgid "New email block added"
+msgstr "Добавлена новая блокировка адреса электронной почты"
+
+#: qml/ModerationTools/EmailBlockToolPage.qml:98
 #, kde-format
 msgctxt "@info The domain on which the block will be imposed"
 msgid "Domain *"
 msgstr "Домен *"
 
-#: qml/ModerationTools/EmailBlockToolPage.qml:103
+#: qml/ModerationTools/EmailBlockToolPage.qml:99
 #, kde-format
 msgid ""
 "This can be the domain name that shows up in the e-mail address or the MX "
@@ -2504,24 +2498,13 @@ msgstr ""
 "Это может быть название домена, которое отображается в адресе электронной "
 "почты или записи MX. Они будут проверены во время регистрации."
 
-#: qml/ModerationTools/EmailBlockToolPage.qml:116
-#, kde-format
-msgctxt "@action:button"
-msgid "Resolve domain"
-msgstr "Определить домен"
-
-#: qml/ModerationTools/EmailBlockToolPage.qml:120
-#, kde-format
-msgid "New email block added"
-msgstr "Добавлена новая блокировка адреса электронной почты"
-
-#: qml/ModerationTools/EmailBlockToolPage.qml:163
+#: qml/ModerationTools/EmailBlockToolPage.qml:139
 #, kde-format
 msgctxt "@info"
 msgid "%1 sign-up attempts over the last week"
 msgstr "Попыток входа за прошлую неделю: %1"
 
-#: qml/ModerationTools/EmailBlockToolPage.qml:185
+#: qml/ModerationTools/EmailBlockToolPage.qml:161
 #, kde-format
 msgid "No email blocks found"
 msgstr "Блокировок адресов электронной почты не найдено"
@@ -2532,96 +2515,108 @@ msgid "Add New Domain Block"
 msgstr "Добавить новую блокировку домена"
 
 #: qml/ModerationTools/FederationToolPage.qml:27
-#: qml/ModerationTools/FederationToolPage.qml:160
+#: qml/ModerationTools/FederationToolPage.qml:155
 #, kde-format
 msgid "Allow Federation with Domain"
 msgstr "Разрешить федерацию с доменом"
 
-#: qml/ModerationTools/FederationToolPage.qml:39
+#: qml/ModerationTools/FederationToolPage.qml:41
 #, kde-format
 msgid "Allowed Domain Info"
 msgstr "Сведения о разрешённом домене"
 
-#: qml/ModerationTools/FederationToolPage.qml:45
+#: qml/ModerationTools/FederationToolPage.qml:48
+#, kde-format
+msgid "Disallow Federation with Domain"
+msgstr "Запретить федерацию с доменом"
+
+#: qml/ModerationTools/FederationToolPage.qml:54
+#, kde-format
+msgid "Disallowed federation with the domain"
+msgstr "Федерация с доменом запрещена"
+
+#: qml/ModerationTools/FederationToolPage.qml:61
 #, kde-format
 msgctxt "@info:The domain that is allowed to federate"
 msgid "Domain"
 msgstr "Домен"
 
-#: qml/ModerationTools/FederationToolPage.qml:51
+#: qml/ModerationTools/FederationToolPage.qml:66
 #, kde-format
 msgctxt "@info:Time when the domain was allowed to federate."
 msgid "Created at"
 msgstr "Время создания"
 
-#: qml/ModerationTools/FederationToolPage.qml:60
-#, kde-format
-msgid "Disallow Federation with Domain"
-msgstr "Запретить федерацию с доменом"
-
-#: qml/ModerationTools/FederationToolPage.qml:64
-#, kde-format
-msgid "Disallowed federation with the domain"
-msgstr "Федерация с доменом запрещена"
-
-#: qml/ModerationTools/FederationToolPage.qml:74
+#: qml/ModerationTools/FederationToolPage.qml:75
 #, kde-format
 msgid "Add Domain Block"
 msgstr "Добавление блокировки домена"
 
-#: qml/ModerationTools/FederationToolPage.qml:84
+#: qml/ModerationTools/FederationToolPage.qml:82
+#: qml/ModerationTools/FederationToolPage.qml:162
+#, kde-format
+msgctxt "@info:Button to create a domain block"
+msgid "Create Block"
+msgstr "Создать блокировку"
+
+#: qml/ModerationTools/FederationToolPage.qml:89
+#, kde-format
+msgid "New domain block added"
+msgstr "Добавлена новая блокировка домена"
+
+#: qml/ModerationTools/FederationToolPage.qml:97
 #, kde-format
 msgctxt "@info:Enter the domain address of the domain block"
 msgid "Domain*"
 msgstr "Домен*"
 
-#: qml/ModerationTools/FederationToolPage.qml:89
-#: qml/ModerationTools/MainFederationToolPage.qml:75
-#: qml/ModerationTools/MainFederationToolPage.qml:140
+#: qml/ModerationTools/FederationToolPage.qml:102
+#: qml/ModerationTools/MainFederationToolPage.qml:89
+#: qml/ModerationTools/MainFederationToolPage.qml:133
 #, kde-format
 msgid "Public comment"
 msgstr "Общедоступный комментарий"
 
-#: qml/ModerationTools/FederationToolPage.qml:94
+#: qml/ModerationTools/FederationToolPage.qml:107
 #, kde-format
 msgid "Private Comment"
 msgstr "Закрытый комментарий"
 
-#: qml/ModerationTools/FederationToolPage.qml:99
-#: qml/ModerationTools/MainFederationToolPage.qml:51
+#: qml/ModerationTools/FederationToolPage.qml:112
+#: qml/ModerationTools/MainFederationToolPage.qml:65
 #, kde-format
 msgid "Moderation"
 msgstr "Модерация"
 
-#: qml/ModerationTools/FederationToolPage.qml:104
-#: qml/ModerationTools/MainFederationToolPage.qml:56
+#: qml/ModerationTools/FederationToolPage.qml:117
+#: qml/ModerationTools/MainFederationToolPage.qml:70
 #, kde-format
 msgctxt "@info:Filter out all the allowed domains"
 msgid "Silence"
 msgstr "Заглушить"
 
-#: qml/ModerationTools/FederationToolPage.qml:108
-#: qml/ModerationTools/MainFederationToolPage.qml:60
+#: qml/ModerationTools/FederationToolPage.qml:121
+#: qml/ModerationTools/MainFederationToolPage.qml:74
 #, kde-format
 msgctxt "@info:Filter out all the blocked domains"
 msgid "Suspend"
 msgstr "Приостановить"
 
-#: qml/ModerationTools/FederationToolPage.qml:112
-#: qml/ModerationTools/MainFederationToolPage.qml:64
+#: qml/ModerationTools/FederationToolPage.qml:125
+#: qml/ModerationTools/MainFederationToolPage.qml:78
 #, kde-format
 msgctxt "@info:Filter out all the blocked domains"
 msgid "None"
 msgstr "Нет"
 
-#: qml/ModerationTools/FederationToolPage.qml:121
-#: qml/ModerationTools/MainFederationToolPage.qml:86
+#: qml/ModerationTools/FederationToolPage.qml:134
+#: qml/ModerationTools/MainFederationToolPage.qml:100
 #, kde-format
 msgid "Reject media files"
 msgstr "Отклонять медиафайлы"
 
-#: qml/ModerationTools/FederationToolPage.qml:122
-#: qml/ModerationTools/MainFederationToolPage.qml:87
+#: qml/ModerationTools/FederationToolPage.qml:135
+#: qml/ModerationTools/MainFederationToolPage.qml:101
 #, kde-format
 msgid ""
 "Removes locally stored media files and refuses to download any in the "
@@ -2630,28 +2625,28 @@ msgstr ""
 "Удаляет хранящиеся локально медиафайлы и предотвращает загрузку новых в "
 "будущем. Не играет роли для приостановок"
 
-#: qml/ModerationTools/FederationToolPage.qml:127
-#: qml/ModerationTools/MainFederationToolPage.qml:94
+#: qml/ModerationTools/FederationToolPage.qml:140
+#: qml/ModerationTools/MainFederationToolPage.qml:108
 #, kde-format
 msgid "Reject reports"
 msgstr "Отклонять жалобы"
 
-#: qml/ModerationTools/FederationToolPage.qml:128
-#: qml/ModerationTools/MainFederationToolPage.qml:95
+#: qml/ModerationTools/FederationToolPage.qml:141
+#: qml/ModerationTools/MainFederationToolPage.qml:109
 #, kde-format
 msgid "Ignore all reports coming from this domain. Irrelevant for suspensions"
 msgstr ""
 "Игнорировать все поступающие из этого домена жалобы. Не играет роли для "
 "приостановок"
 
-#: qml/ModerationTools/FederationToolPage.qml:133
-#: qml/ModerationTools/MainFederationToolPage.qml:102
+#: qml/ModerationTools/FederationToolPage.qml:146
+#: qml/ModerationTools/MainFederationToolPage.qml:116
 #, kde-format
 msgid "Obfuscate domain name"
 msgstr "Скрывать название домена"
 
-#: qml/ModerationTools/FederationToolPage.qml:134
-#: qml/ModerationTools/MainFederationToolPage.qml:103
+#: qml/ModerationTools/FederationToolPage.qml:147
+#: qml/ModerationTools/MainFederationToolPage.qml:117
 #, kde-format
 msgid ""
 "Partially obfuscate the domain name in the list if advertising the list of "
@@ -2660,19 +2655,12 @@ msgstr ""
 "Частично скрывать название домена в списке, если включена публикация списка "
 "доменных ограничений"
 
-#: qml/ModerationTools/FederationToolPage.qml:146
-#: qml/ModerationTools/FederationToolPage.qml:177
+#: qml/ModerationTools/FederationToolPage.qml:168
 #, kde-format
-msgctxt "@info:Button to create a domain block"
-msgid "Create Block"
-msgstr "Создать блокировку"
+msgid "New Allowed Domain Added"
+msgstr "Добавлен новый разрешённый домен"
 
-#: qml/ModerationTools/FederationToolPage.qml:151
-#, kde-format
-msgid "New domain block added"
-msgstr "Добавлена новая блокировка домена"
-
-#: qml/ModerationTools/FederationToolPage.qml:166
+#: qml/ModerationTools/FederationToolPage.qml:176
 #, kde-format
 msgctxt ""
 "@info:This domain will be able to fetch data from this server and incoming "
@@ -2680,12 +2668,7 @@ msgctxt ""
 msgid "Domain*"
 msgstr "Домен*"
 
-#: qml/ModerationTools/FederationToolPage.qml:181
-#, kde-format
-msgid "New Allowed Domain Added"
-msgstr "Добавлен новый разрешённый домен"
-
-#: qml/ModerationTools/FederationToolPage.qml:194
+#: qml/ModerationTools/FederationToolPage.qml:186
 #, kde-format
 msgid ""
 "Allowed domain option is available for instances with limited federation "
@@ -2694,30 +2677,30 @@ msgstr ""
 "Параметр разрешённого домена доступен для экземпляров с включённым режимом "
 "ограниченной федерации"
 
-#: qml/ModerationTools/FederationToolPage.qml:202
+#: qml/ModerationTools/FederationToolPage.qml:194
 #, kde-format
 msgctxt "@info:Choose between allowed and limited domains"
 msgid "Moderation"
 msgstr "Модерация"
 
-#: qml/ModerationTools/FederationToolPage.qml:217
+#: qml/ModerationTools/FederationToolPage.qml:209
 #, kde-format
 msgctxt "@info:Filter out all the blocked domains"
 msgid "Blocked domains"
 msgstr "Заблокированные домены"
 
-#: qml/ModerationTools/FederationToolPage.qml:221
+#: qml/ModerationTools/FederationToolPage.qml:213
 #, kde-format
 msgctxt "@info:Filter out all the allowed domains in limited federation mode"
 msgid "Allowed domains"
 msgstr "Разрешённые домены"
 
-#: qml/ModerationTools/FederationToolPage.qml:287
+#: qml/ModerationTools/FederationToolPage.qml:279
 #, kde-format
 msgid "Allowed for federation"
 msgstr "Разрешён для федерации"
 
-#: qml/ModerationTools/FederationToolPage.qml:310
+#: qml/ModerationTools/FederationToolPage.qml:302
 #, kde-format
 msgid "No federations found"
 msgstr "Федераций не найдено"
@@ -2728,152 +2711,152 @@ msgctxt "@action:button"
 msgid "Create Rule"
 msgstr "Создать правило"
 
-#: qml/ModerationTools/IpRulePage.qml:25
+#: qml/ModerationTools/IpRulePage.qml:28
 #, kde-format
 msgid "New IP Rule"
 msgstr "Новое IP-правило"
 
-#: qml/ModerationTools/IpRulePage.qml:37
-#, kde-format
-msgctxt "@info:Enter the domain address of the domain block"
-msgid "IP*"
-msgstr "IP*"
-
-#: qml/ModerationTools/IpRulePage.qml:43
-#, kde-format
-msgctxt "@info:Time after which the rule will be lifted"
-msgid "Expire After"
-msgstr "Срок действия"
-
-#: qml/ModerationTools/IpRulePage.qml:48
-#, kde-format
-msgctxt "@info:Option to block out the IP for 1 day"
-msgid "1 day"
-msgstr "1 день"
-
-#: qml/ModerationTools/IpRulePage.qml:52
-#, kde-format
-msgctxt "@info:Option to block out the IP for 2 weeks"
-msgid "2 weeks"
-msgstr "2 недели"
-
-#: qml/ModerationTools/IpRulePage.qml:56
-#, kde-format
-msgctxt "@info:Option to block out the IP for 1 month"
-msgid "1 month"
-msgstr "1 месяц"
-
-#: qml/ModerationTools/IpRulePage.qml:60
-#, kde-format
-msgctxt "@info:Option to block out the IP for 6 months"
-msgid "6 month"
-msgstr "6 месяцев"
-
-#: qml/ModerationTools/IpRulePage.qml:64
-#, kde-format
-msgctxt "@info:Option to block out the IP for 1 year"
-msgid "1 year"
-msgstr "1 год"
-
-#: qml/ModerationTools/IpRulePage.qml:68
-#, kde-format
-msgctxt "@info:Option to block out the IP for 3 years"
-msgid "3 year"
-msgstr "3 года"
-
-#: qml/ModerationTools/IpRulePage.qml:79
-#, kde-format
-msgctxt "@info: The comment attached with the ip rule"
-msgid "Comment"
-msgstr "Комментарий"
-
-#: qml/ModerationTools/IpRulePage.qml:80
-#: qml/ModerationTools/MainIpRulePage.qml:110
-#, kde-format
-msgid "Optional. Remember why you added this rule."
-msgstr "Необязательно. Для указания причины добавления этого правила."
-
-#: qml/ModerationTools/IpRulePage.qml:87
-#, kde-format
-msgctxt "@info:The rule attached with the ip rule"
-msgid "Rule *"
-msgstr "Правило *"
-
-#: qml/ModerationTools/IpRulePage.qml:91
-#: qml/ModerationTools/MainIpRulePage.qml:121
-#, kde-format
-msgid "Choose what will happen with requests from this IP"
-msgstr "Выберите, что будет происходить с запросами с этого IP-адреса"
-
-#: qml/ModerationTools/IpRulePage.qml:98
-#: qml/ModerationTools/MainIpRulePage.qml:129
-#, kde-format
-msgid "Limit sign-ups"
-msgstr "Ограничить регистрации"
-
-#: qml/ModerationTools/IpRulePage.qml:99
-#: qml/ModerationTools/MainIpRulePage.qml:130
-#, kde-format
-msgid "New sign-ups will require your approval"
-msgstr "Для новых регистраций потребуется ваше подтверждение"
-
-#: qml/ModerationTools/IpRulePage.qml:105
-#: qml/ModerationTools/MainIpRulePage.qml:136
-#, kde-format
-msgid "Block sign-ups"
-msgstr "Блокировать регистрации"
-
-#: qml/ModerationTools/IpRulePage.qml:106
-#: qml/ModerationTools/MainIpRulePage.qml:137
-#, kde-format
-msgid "New sign-ups will not be possible"
-msgstr "Новые регистрации будут невозможны"
-
-#: qml/ModerationTools/IpRulePage.qml:111
-#: qml/ModerationTools/MainIpRulePage.qml:143
-#, kde-format
-msgid "Block access"
-msgstr "Блокировать доступ"
-
-#: qml/ModerationTools/IpRulePage.qml:112
-#: qml/ModerationTools/MainIpRulePage.qml:144
-#, kde-format
-msgid "Block access to all resources"
-msgstr "Блокировать доступ ко всем ресурсам"
-
-#: qml/ModerationTools/IpRulePage.qml:126
+#: qml/ModerationTools/IpRulePage.qml:35
 #, kde-format
 msgctxt "@info:Button to create a IP rule"
 msgid "Create IP rule"
 msgstr "Создать IP-правило"
 
-#: qml/ModerationTools/IpRulePage.qml:130
+#: qml/ModerationTools/IpRulePage.qml:41
 #, kde-format
 msgid "New IP rule added"
 msgstr "Добавлено новое IP-правило"
 
-#: qml/ModerationTools/IpRulePage.qml:156
-#: qml/ModerationTools/MainIpRulePage.qml:29
+#: qml/ModerationTools/IpRulePage.qml:49
+#, kde-format
+msgctxt "@info:Enter the domain address of the domain block"
+msgid "IP*"
+msgstr "IP*"
+
+#: qml/ModerationTools/IpRulePage.qml:55
+#, kde-format
+msgctxt "@info:Time after which the rule will be lifted"
+msgid "Expire After"
+msgstr "Срок действия"
+
+#: qml/ModerationTools/IpRulePage.qml:60
+#, kde-format
+msgctxt "@info:Option to block out the IP for 1 day"
+msgid "1 day"
+msgstr "1 день"
+
+#: qml/ModerationTools/IpRulePage.qml:64
+#, kde-format
+msgctxt "@info:Option to block out the IP for 2 weeks"
+msgid "2 weeks"
+msgstr "2 недели"
+
+#: qml/ModerationTools/IpRulePage.qml:68
+#, kde-format
+msgctxt "@info:Option to block out the IP for 1 month"
+msgid "1 month"
+msgstr "1 месяц"
+
+#: qml/ModerationTools/IpRulePage.qml:72
+#, kde-format
+msgctxt "@info:Option to block out the IP for 6 months"
+msgid "6 month"
+msgstr "6 месяцев"
+
+#: qml/ModerationTools/IpRulePage.qml:76
+#, kde-format
+msgctxt "@info:Option to block out the IP for 1 year"
+msgid "1 year"
+msgstr "1 год"
+
+#: qml/ModerationTools/IpRulePage.qml:80
+#, kde-format
+msgctxt "@info:Option to block out the IP for 3 years"
+msgid "3 year"
+msgstr "3 года"
+
+#: qml/ModerationTools/IpRulePage.qml:90
+#, kde-format
+msgctxt "@info: The comment attached with the ip rule"
+msgid "Comment"
+msgstr "Комментарий"
+
+#: qml/ModerationTools/IpRulePage.qml:91
+#: qml/ModerationTools/MainIpRulePage.qml:119
+#, kde-format
+msgid "Optional. Remember why you added this rule."
+msgstr "Необязательно. Для указания причины добавления этого правила."
+
+#: qml/ModerationTools/IpRulePage.qml:95
+#, kde-format
+msgctxt "@info:The rule attached with the ip rule"
+msgid "Rule *"
+msgstr "Правило *"
+
+#: qml/ModerationTools/IpRulePage.qml:96
+#: qml/ModerationTools/MainIpRulePage.qml:124
+#, kde-format
+msgid "Choose what will happen with requests from this IP"
+msgstr "Выберите, что будет происходить с запросами с этого IP-адреса"
+
+#: qml/ModerationTools/IpRulePage.qml:101
+#: qml/ModerationTools/MainIpRulePage.qml:129
+#, kde-format
+msgid "Limit sign-ups"
+msgstr "Ограничить регистрации"
+
+#: qml/ModerationTools/IpRulePage.qml:102
+#: qml/ModerationTools/MainIpRulePage.qml:130
+#, kde-format
+msgid "New sign-ups will require your approval"
+msgstr "Для новых регистраций потребуется ваше подтверждение"
+
+#: qml/ModerationTools/IpRulePage.qml:108
+#: qml/ModerationTools/MainIpRulePage.qml:136
+#, kde-format
+msgid "Block sign-ups"
+msgstr "Блокировать регистрации"
+
+#: qml/ModerationTools/IpRulePage.qml:109
+#: qml/ModerationTools/MainIpRulePage.qml:137
+#, kde-format
+msgid "New sign-ups will not be possible"
+msgstr "Новые регистрации будут невозможны"
+
+#: qml/ModerationTools/IpRulePage.qml:114
+#: qml/ModerationTools/MainIpRulePage.qml:143
+#, kde-format
+msgid "Block access"
+msgstr "Блокировать доступ"
+
+#: qml/ModerationTools/IpRulePage.qml:115
+#: qml/ModerationTools/MainIpRulePage.qml:144
+#, kde-format
+msgid "Block access to all resources"
+msgstr "Блокировать доступ ко всем ресурсам"
+
+#: qml/ModerationTools/IpRulePage.qml:138
+#: qml/ModerationTools/MainIpRulePage.qml:28
 #, kde-format
 msgctxt "@label"
 msgid "Limit sign-ups"
 msgstr "Ограничение регистраций"
 
-#: qml/ModerationTools/IpRulePage.qml:158
-#: qml/ModerationTools/MainIpRulePage.qml:31
+#: qml/ModerationTools/IpRulePage.qml:140
+#: qml/ModerationTools/MainIpRulePage.qml:30
 #, kde-format
 msgctxt "@label"
 msgid "Block sign-ups"
 msgstr "Блокировка регистраций"
 
-#: qml/ModerationTools/IpRulePage.qml:160
-#: qml/ModerationTools/MainIpRulePage.qml:33
+#: qml/ModerationTools/IpRulePage.qml:142
+#: qml/ModerationTools/MainIpRulePage.qml:32
 #, kde-format
 msgctxt "@label"
 msgid "Block access"
 msgstr "Блокировка доступа"
 
-#: qml/ModerationTools/IpRulePage.qml:207
+#: qml/ModerationTools/IpRulePage.qml:189
 #, kde-format
 msgid "No IP rules found"
 msgstr "IP-правил не найдено"
@@ -2888,7 +2871,7 @@ msgstr "Недоступно"
 msgid "Perform moderation action on %1"
 msgstr "Применить меры модерации к %1"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:45
+#: qml/ModerationTools/MainAccountToolPage.qml:46
 #, kde-format
 msgctxt ""
 "@info: Use this to send a warning to the user, without triggering any other "
@@ -2896,7 +2879,7 @@ msgctxt ""
 msgid "Warn"
 msgstr "Отправить предупреждение"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:49
+#: qml/ModerationTools/MainAccountToolPage.qml:50
 #, kde-format
 msgctxt ""
 "@info: Prevent the user from using their account, but do not delete or hide "
@@ -2904,14 +2887,14 @@ msgctxt ""
 msgid "Freeze"
 msgstr "Заморозить"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:54
+#: qml/ModerationTools/MainAccountToolPage.qml:55
 #, kde-format
 msgctxt ""
 "@info: Force all this user's media attachments to be flagged as sensitive."
 msgid "Force-Sensitive"
 msgstr "Принудительно помечать медиафайлы как конфиденциальные"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:59
+#: qml/ModerationTools/MainAccountToolPage.qml:60
 #, kde-format
 msgctxt ""
 "@info: Prevent the user from being able to post with public visibility, hide "
@@ -2919,7 +2902,7 @@ msgctxt ""
 msgid "Limit"
 msgstr "Наложить ограничения"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:64
+#: qml/ModerationTools/MainAccountToolPage.qml:65
 #, kde-format
 msgctxt ""
 "@info: Prevent any interaction from or to this account and delete its "
@@ -2927,7 +2910,7 @@ msgctxt ""
 msgid "Suspend"
 msgstr "Приостановить"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:69
+#: qml/ModerationTools/MainAccountToolPage.qml:70
 #, kde-format
 msgctxt ""
 "@info: The user will receive an explanation of what happened with their "
@@ -2935,181 +2918,181 @@ msgctxt ""
 msgid "Notify the user per e-mail"
 msgstr "Уведомить пользователя по электронной почте"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:75
+#: qml/ModerationTools/MainAccountToolPage.qml:76
 #, kde-format
 msgctxt "@info: Send a warning note to the user."
 msgid "Custom warning"
 msgstr "Специальное предупреждение"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:84
+#: qml/ModerationTools/MainAccountToolPage.qml:85
 #, kde-format
 msgctxt "@info:Button to submit the action aginst the user."
 msgid "Submit"
 msgstr "Выполнить"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:102
+#: qml/ModerationTools/MainAccountToolPage.qml:103
 #, kde-format
 msgid "Action taken successfully"
 msgstr "Меры приняты успешно"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:115
+#: qml/ModerationTools/MainAccountToolPage.qml:118
 #, kde-format
 msgid "Are you sure?"
 msgstr "Вы уверены?"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:116
+#: qml/ModerationTools/MainAccountToolPage.qml:119
 #, kde-format
 msgid "Action will be taken against the account."
 msgstr "В отношении учётной записи будут приняты меры."
 
-#: qml/ModerationTools/MainAccountToolPage.qml:124
+#: qml/ModerationTools/MainAccountToolPage.qml:127
 #, kde-format
 msgid "Successfully approved %1's sign-up application"
 msgstr "Успешно одобрена заявка на регистрацию от %1"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:128
+#: qml/ModerationTools/MainAccountToolPage.qml:131
 #, kde-format
 msgid "Successfully rejected %1's sign-up application"
 msgstr "Успешно отклонена заявка на регистрацию от %1"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:132
+#: qml/ModerationTools/MainAccountToolPage.qml:135
 #, kde-format
 msgid "Successfully unfreezed %1's account"
 msgstr "Успешно отменена заморозка учётной записи %1"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:136
+#: qml/ModerationTools/MainAccountToolPage.qml:139
 #, kde-format
 msgid "Successfully unsilenced %1's account"
 msgstr "Успешно отменено заглушение учётной записи %1"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:140
+#: qml/ModerationTools/MainAccountToolPage.qml:143
 #, kde-format
 msgid "Successfully unsuspended %1's account"
 msgstr "Успешно отменена приостановка учётной записи %1"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:144
+#: qml/ModerationTools/MainAccountToolPage.qml:147
 #, kde-format
 msgid "Successfully undo force-sensitive %1's account"
 msgstr ""
 "Успешно отменена принудительная пометка медиафайлов от учётной записи %1 как "
 "конфиденциальных"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:148
+#: qml/ModerationTools/MainAccountToolPage.qml:151
 #, kde-format
 msgid "Successfully deleted %1's account data"
 msgstr "Успешно удалены данные учётной записи %1"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:186
+#: qml/ModerationTools/MainAccountToolPage.qml:189
 #, kde-format
 msgid "Reasons for joining"
 msgstr "Причины присоединения"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:202
+#: qml/ModerationTools/MainAccountToolPage.qml:205
 #, kde-format
 msgctxt "@info Role of the account on this server."
 msgid "Role"
 msgstr "Роль"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:203
+#: qml/ModerationTools/MainAccountToolPage.qml:206
 #, kde-format
 msgid "No role"
 msgstr "Нет роли"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:206
+#: qml/ModerationTools/MainAccountToolPage.qml:209
 #, kde-format
 msgctxt "@info The last time the account was active."
 msgid "Last Active"
 msgstr "Последняя активность"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:210
+#: qml/ModerationTools/MainAccountToolPage.qml:213
 #, kde-format
 msgctxt "@info The current login status of the account."
 msgid "Login Status"
 msgstr "Состояние входа"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:215
+#: qml/ModerationTools/MainAccountToolPage.qml:218
 #, kde-format
 msgctxt "@info: Locale of the user."
 msgid "Account Locale"
 msgstr "Локаль учётной записи"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:220
+#: qml/ModerationTools/MainAccountToolPage.qml:223
 #, kde-format
 msgctxt "@info: Email of the user."
 msgid "Email"
 msgstr "Адрес эл. почты"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:225
+#: qml/ModerationTools/MainAccountToolPage.qml:228
 #, kde-format
 msgctxt "@info: Email confirmation status of the user."
 msgid "Email Status"
 msgstr "Состояние подтверждения адреса электронной почты"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:226
+#: qml/ModerationTools/MainAccountToolPage.qml:229
 #, kde-format
 msgid "Confirmed"
 msgstr "Подтверждён"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:226
+#: qml/ModerationTools/MainAccountToolPage.qml:229
 #, kde-format
 msgid "Not Confirmed"
 msgstr "Не подтверждён"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:230
+#: qml/ModerationTools/MainAccountToolPage.qml:233
 #, kde-format
 msgctxt "@info: Joining date of the user"
 msgid "Joined"
 msgstr "Дата присоединения"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:235
+#: qml/ModerationTools/MainAccountToolPage.qml:238
 #, kde-format
 msgid "Invited By"
 msgstr "Пригласил(а)"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:243
+#: qml/ModerationTools/MainAccountToolPage.qml:246
 #, kde-format
 msgid "Most recent IP"
 msgstr "Последний IP-адрес"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:268
+#: qml/ModerationTools/MainAccountToolPage.qml:271
 #, kde-format
 msgctxt "@info: Approve the user's request"
 msgid "Approve"
 msgstr "Одобрить"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:280
+#: qml/ModerationTools/MainAccountToolPage.qml:283
 #, kde-format
 msgctxt "@info: Reject the user's request"
 msgid "Reject"
 msgstr "Отклонить"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:291
+#: qml/ModerationTools/MainAccountToolPage.qml:294
 #, kde-format
 msgid "Delete Account Data"
 msgstr "Удалить данные учётной записи"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:303
+#: qml/ModerationTools/MainAccountToolPage.qml:306
 #, kde-format
 msgctxt "@info: Unfreeze the user's account"
 msgid "Unfreeze"
 msgstr "Отменить заморозку"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:313
+#: qml/ModerationTools/MainAccountToolPage.qml:316
 #, kde-format
 msgid "Undo Limit"
 msgstr "Отменить наложение ограничений"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:323
+#: qml/ModerationTools/MainAccountToolPage.qml:326
 #, kde-format
 msgid "Undo Suspension"
 msgstr "Отменить приостановку"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:333
+#: qml/ModerationTools/MainAccountToolPage.qml:336
 #, kde-format
 msgid "Undo force-sensitive"
 msgstr "Отменить принудительную пометку медиафайлов как конфиденциальных"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:344
+#: qml/ModerationTools/MainAccountToolPage.qml:347
 #, kde-format
 msgid "Take action against this account"
 msgstr "Принять меры в отношении этой учётной записи"
@@ -3124,189 +3107,183 @@ msgstr "Удалить блокировку домена"
 msgid "Domain Block Removed"
 msgstr "Блокировка домена удалена"
 
-#: qml/ModerationTools/MainFederationToolPage.qml:41
+#: qml/ModerationTools/MainFederationToolPage.qml:42
 #, kde-format
 msgid "Edit domain block"
 msgstr "Изменение блокировки домена"
 
-#: qml/ModerationTools/MainFederationToolPage.qml:81
-#: qml/ModerationTools/MainFederationToolPage.qml:147
-#, kde-format
-msgid "Private comment"
-msgstr "Закрытый комментарий"
-
-#: qml/ModerationTools/MainFederationToolPage.qml:116
+#: qml/ModerationTools/MainFederationToolPage.qml:49
 #, kde-format
 msgctxt "@info:Button to update the domain block with new values"
 msgid "Update Block"
 msgstr "Обновить блокировку"
 
-#: qml/ModerationTools/MainFederationToolPage.qml:123
+#: qml/ModerationTools/MainFederationToolPage.qml:57
 #, kde-format
 msgid "Domain block updated"
 msgstr "Блокировка домена обновлена"
 
-#: qml/ModerationTools/MainFederationToolPage.qml:133
-#: qml/ModerationTools/MainIpRulePage.qml:175
+#: qml/ModerationTools/MainFederationToolPage.qml:95
+#: qml/ModerationTools/MainFederationToolPage.qml:138
+#, kde-format
+msgid "Private comment"
+msgstr "Закрытый комментарий"
+
+#: qml/ModerationTools/MainFederationToolPage.qml:128
+#: qml/ModerationTools/MainIpRulePage.qml:154
 #, kde-format
 msgid "Blocked at"
 msgstr "Блокировка"
 
-#: qml/ModerationTools/MainFederationToolPage.qml:141
+#: qml/ModerationTools/MainFederationToolPage.qml:134
 #, kde-format
 msgctxt "@info: No public comment provided"
 msgid "None"
 msgstr "Нет"
 
-#: qml/ModerationTools/MainFederationToolPage.qml:148
+#: qml/ModerationTools/MainFederationToolPage.qml:139
 #, kde-format
 msgctxt "@info: No private comment provided"
 msgid "None"
 msgstr "Нет"
 
-#: qml/ModerationTools/MainFederationToolPage.qml:154
+#: qml/ModerationTools/MainFederationToolPage.qml:143
 #, kde-format
 msgctxt "@info:The policy to be applied by this domain block"
 msgid "Policy"
 msgstr "Политика"
 
-#: qml/ModerationTools/MainFederationToolPage.qml:161
+#: qml/ModerationTools/MainFederationToolPage.qml:148
 #, kde-format
 msgctxt "@info:Whether to obfuscate public displays of this domain block"
 msgid "Obfuscate"
 msgstr "Скрывать"
 
-#: qml/ModerationTools/MainFederationToolPage.qml:168
+#: qml/ModerationTools/MainFederationToolPage.qml:153
 #, kde-format
 msgctxt "@info:Whether to reject incoming media from this domain"
 msgid "Reject media"
 msgstr "Отклонять медиафайлы"
 
-#: qml/ModerationTools/MainFederationToolPage.qml:175
+#: qml/ModerationTools/MainFederationToolPage.qml:158
 #, kde-format
 msgctxt "@info:Whether to reject incoming reports from this domain"
 msgid "Reject reports"
 msgstr "Отклонять жалобы"
 
-#: qml/ModerationTools/MainFederationToolPage.qml:186
+#: qml/ModerationTools/MainFederationToolPage.qml:169
 #, kde-format
 msgid "Edit Domain Block"
 msgstr "Изменение блокировки домена"
 
-#: qml/ModerationTools/MainIpRulePage.qml:40
+#: qml/ModerationTools/MainIpRulePage.qml:39
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove IP Rule"
 msgstr "Удалить IP-правило"
 
-#: qml/ModerationTools/MainIpRulePage.qml:43
+#: qml/ModerationTools/MainIpRulePage.qml:42
 #, kde-format
 msgid "IP Rule Removed"
 msgstr "IP-правило удалено"
 
-#: qml/ModerationTools/MainIpRulePage.qml:51
+#: qml/ModerationTools/MainIpRulePage.qml:53
 #, kde-format
 msgctxt "@title:window"
 msgid "Update IP Rule"
 msgstr "Обновление IP-правила"
 
-#: qml/ModerationTools/MainIpRulePage.qml:63
-#, kde-format
-msgctxt "@info IP address of the ip block"
-msgid "IP"
-msgstr "IP-адрес"
-
-#: qml/ModerationTools/MainIpRulePage.qml:72
-#, kde-format
-msgctxt "@info Time after which the rule will be lifted"
-msgid "Expire After"
-msgstr "Срок действия"
-
-#: qml/ModerationTools/MainIpRulePage.qml:77
-#, kde-format
-msgctxt "@info Option to block out the IP for 1 day"
-msgid "1 day"
-msgstr "1 день"
-
-#: qml/ModerationTools/MainIpRulePage.qml:81
-#, kde-format
-msgctxt "@info Option to block out the IP for 2 weeks"
-msgid "2 weeks"
-msgstr "2 недели"
-
-#: qml/ModerationTools/MainIpRulePage.qml:85
-#, kde-format
-msgctxt "@info Option to block out the IP for 1 month"
-msgid "1 month"
-msgstr "1 месяц"
-
-#: qml/ModerationTools/MainIpRulePage.qml:89
-#, kde-format
-msgctxt "@info Option to block out the IP for 6 months"
-msgid "6 month"
-msgstr "6 месяцев"
-
-#: qml/ModerationTools/MainIpRulePage.qml:93
-#, kde-format
-msgctxt "@info Option to block out the IP for 1 year"
-msgid "1 year"
-msgstr "1 год"
-
-#: qml/ModerationTools/MainIpRulePage.qml:97
-#, kde-format
-msgctxt "@info Option to block out the IP for 3 years"
-msgid "3 year"
-msgstr "3 года"
-
-#: qml/ModerationTools/MainIpRulePage.qml:108
-#: qml/ModerationTools/MainIpRulePage.qml:189
-#, kde-format
-msgctxt "@info The comment attached with the ip rule"
-msgid "Comment"
-msgstr "Комментарий"
-
-#: qml/ModerationTools/MainIpRulePage.qml:117
-#, kde-format
-msgctxt "@info The rule attached with the ip rule"
-msgid "Rule *"
-msgstr "Правило *"
-
-#: qml/ModerationTools/MainIpRulePage.qml:154
-#, kde-format
-msgctxt "@info Cancel button to close the dailog"
-msgid "Cancel"
-msgstr "Отменить"
-
-#: qml/ModerationTools/MainIpRulePage.qml:159
+#: qml/ModerationTools/MainIpRulePage.qml:60
 #, kde-format
 msgctxt "@info Button to update an IP rule"
 msgid "Update IP rule"
 msgstr "Обновить IP-правило"
 
-#: qml/ModerationTools/MainIpRulePage.qml:164
+#: qml/ModerationTools/MainIpRulePage.qml:67
 #, kde-format
 msgid "IP rule updated"
 msgstr "IP-правило обновлено"
 
-#: qml/ModerationTools/MainIpRulePage.qml:182
+#: qml/ModerationTools/MainIpRulePage.qml:75
+#, kde-format
+msgctxt "@info IP address of the ip block"
+msgid "IP"
+msgstr "IP-адрес"
+
+#: qml/ModerationTools/MainIpRulePage.qml:82
+#, kde-format
+msgctxt "@info Time after which the rule will be lifted"
+msgid "Expire After"
+msgstr "Срок действия"
+
+#: qml/ModerationTools/MainIpRulePage.qml:87
+#, kde-format
+msgctxt "@info Option to block out the IP for 1 day"
+msgid "1 day"
+msgstr "1 день"
+
+#: qml/ModerationTools/MainIpRulePage.qml:91
+#, kde-format
+msgctxt "@info Option to block out the IP for 2 weeks"
+msgid "2 weeks"
+msgstr "2 недели"
+
+#: qml/ModerationTools/MainIpRulePage.qml:95
+#, kde-format
+msgctxt "@info Option to block out the IP for 1 month"
+msgid "1 month"
+msgstr "1 месяц"
+
+#: qml/ModerationTools/MainIpRulePage.qml:99
+#, kde-format
+msgctxt "@info Option to block out the IP for 6 months"
+msgid "6 month"
+msgstr "6 месяцев"
+
+#: qml/ModerationTools/MainIpRulePage.qml:103
+#, kde-format
+msgctxt "@info Option to block out the IP for 1 year"
+msgid "1 year"
+msgstr "1 год"
+
+#: qml/ModerationTools/MainIpRulePage.qml:107
+#, kde-format
+msgctxt "@info Option to block out the IP for 3 years"
+msgid "3 year"
+msgstr "3 года"
+
+#: qml/ModerationTools/MainIpRulePage.qml:117
+#: qml/ModerationTools/MainIpRulePage.qml:164
+#, kde-format
+msgctxt "@info The comment attached with the ip rule"
+msgid "Comment"
+msgstr "Комментарий"
+
+#: qml/ModerationTools/MainIpRulePage.qml:123
+#, kde-format
+msgctxt "@info The rule attached with the ip rule"
+msgid "Rule *"
+msgstr "Правило *"
+
+#: qml/ModerationTools/MainIpRulePage.qml:159
 #, kde-format
 msgctxt "@info Time after which the rule will be lifted"
 msgid "Expires at"
 msgstr "Срок действия"
 
-#: qml/ModerationTools/MainIpRulePage.qml:190
+#: qml/ModerationTools/MainIpRulePage.qml:165
 #, kde-format
 msgctxt "@info No public comment provided"
 msgid "None"
 msgstr "Нет"
 
-#: qml/ModerationTools/MainIpRulePage.qml:196
+#: qml/ModerationTools/MainIpRulePage.qml:169
 #, kde-format
 msgctxt "@info The severity to be applied by this IP rule"
 msgid "Severity"
 msgstr "Серьёзность"
 
-#: qml/ModerationTools/MainIpRulePage.qml:207
+#: qml/ModerationTools/MainIpRulePage.qml:180
 #, kde-format
 msgctxt "@action:button"
 msgid "Update IP Rule"
@@ -3341,103 +3318,103 @@ msgctxt "@info"
 msgid "Report Resolved"
 msgstr "Жалоба решена"
 
-#: qml/ModerationTools/MainReportToolPage.qml:96
+#: qml/ModerationTools/MainReportToolPage.qml:97
 #, kde-format
 msgctxt "@info Time at which the report was made"
 msgid "Reported"
 msgstr "Время поступления жалобы"
 
-#: qml/ModerationTools/MainReportToolPage.qml:103
+#: qml/ModerationTools/MainReportToolPage.qml:102
 #, kde-format
 msgctxt "@info The last time the reported account was active."
 msgid "Last Active"
 msgstr "Последняя активность"
 
-#: qml/ModerationTools/MainReportToolPage.qml:110
+#: qml/ModerationTools/MainReportToolPage.qml:107
 #, kde-format
 msgctxt "@info Time at which the reported account joined."
 msgid "Joined"
 msgstr "Время присоединения"
 
-#: qml/ModerationTools/MainReportToolPage.qml:120
+#: qml/ModerationTools/MainReportToolPage.qml:113
 #, kde-format
 msgctxt "@label"
 msgid "Reported By"
 msgstr "Поступила жалоба от"
 
-#: qml/ModerationTools/MainReportToolPage.qml:135
+#: qml/ModerationTools/MainReportToolPage.qml:126
 #, kde-format
 msgctxt "@label"
 msgid "Report Status"
 msgstr "Состояние жалобы"
 
-#: qml/ModerationTools/MainReportToolPage.qml:136
+#: qml/ModerationTools/MainReportToolPage.qml:127
 #, kde-format
 msgctxt "@info"
 msgid "Resolved"
 msgstr "Решена"
 
-#: qml/ModerationTools/MainReportToolPage.qml:136
+#: qml/ModerationTools/MainReportToolPage.qml:127
 #, kde-format
 msgctxt "@info"
 msgid "Unresolved"
 msgstr "Не решена"
 
-#: qml/ModerationTools/MainReportToolPage.qml:145
+#: qml/ModerationTools/MainReportToolPage.qml:132
 #, kde-format
 msgctxt "@label"
 msgid "Action taken by"
 msgstr "Меры приняты:"
 
-#: qml/ModerationTools/MainReportToolPage.qml:158
+#: qml/ModerationTools/MainReportToolPage.qml:143
 #, kde-format
 msgctxt "@label"
 msgid "Assigned moderator"
 msgstr "Назначенный модератор"
 
-#: qml/ModerationTools/MainReportToolPage.qml:159
+#: qml/ModerationTools/MainReportToolPage.qml:144
 #, kde-format
 msgctxt "@info"
 msgid "No one"
 msgstr "Никто"
 
-#: qml/ModerationTools/MainReportToolPage.qml:167
+#: qml/ModerationTools/MainReportToolPage.qml:152
 #, kde-format
 msgctxt "@action:button"
 msgid "Unassign"
 msgstr "Отменить назначение"
 
-#: qml/ModerationTools/MainReportToolPage.qml:167
+#: qml/ModerationTools/MainReportToolPage.qml:152
 #, kde-format
 msgctxt "@action:button"
 msgid "Assign to me"
 msgstr "Назначить мне"
 
-#: qml/ModerationTools/MainReportToolPage.qml:179
+#: qml/ModerationTools/MainReportToolPage.qml:160
 #, kde-format
 msgctxt "@label"
 msgid "Forwarded"
 msgstr "Переслано"
 
-#: qml/ModerationTools/MainReportToolPage.qml:180
+#: qml/ModerationTools/MainReportToolPage.qml:161
 #, kde-format
 msgctxt "@info:The report is forwarded"
 msgid "Yes"
 msgstr "Да"
 
-#: qml/ModerationTools/MainReportToolPage.qml:180
+#: qml/ModerationTools/MainReportToolPage.qml:161
 #, kde-format
 msgctxt "@info:The report is not forwarded"
 msgid "No"
 msgstr "Нет"
 
-#: qml/ModerationTools/MainReportToolPage.qml:185
+#: qml/ModerationTools/MainReportToolPage.qml:166
 #, kde-format
 msgctxt "@title:group"
 msgid "Category"
 msgstr "Категория"
 
-#: qml/ModerationTools/MainReportToolPage.qml:190
+#: qml/ModerationTools/MainReportToolPage.qml:172
 #, kde-format
 msgid ""
 "The reason this account and/or content was reported will be cited in "
@@ -3446,55 +3423,55 @@ msgstr ""
 "Причина жалобы на эту учётную запись и/или содержимое будет приведена в "
 "переписке с этой учётной записью"
 
-#: qml/ModerationTools/MainReportToolPage.qml:200
+#: qml/ModerationTools/MainReportToolPage.qml:180
 #, kde-format
 msgid "Other"
 msgstr "Другое"
 
-#: qml/ModerationTools/MainReportToolPage.qml:205
+#: qml/ModerationTools/MainReportToolPage.qml:185
 #, kde-format
 msgid "Category changed to other"
 msgstr "Категория изменена на «Другое»"
 
-#: qml/ModerationTools/MainReportToolPage.qml:216
+#: qml/ModerationTools/MainReportToolPage.qml:194
 #, kde-format
 msgid "Spam"
 msgstr "Спам"
 
-#: qml/ModerationTools/MainReportToolPage.qml:220
+#: qml/ModerationTools/MainReportToolPage.qml:198
 #, kde-format
 msgid "Category changed to spam"
 msgstr "Категория изменена на «Спам»"
 
-#: qml/ModerationTools/MainReportToolPage.qml:231
+#: qml/ModerationTools/MainReportToolPage.qml:207
 #, kde-format
 msgid "Content violates one or more server rules"
 msgstr "Содержимое нарушает одно или несколько правил сервера"
 
-#: qml/ModerationTools/MainReportToolPage.qml:235
+#: qml/ModerationTools/MainReportToolPage.qml:211
 #, kde-format
 msgid "Category changed to rule violation"
 msgstr "Категория изменена на нарушение правил"
 
-#: qml/ModerationTools/MainReportToolPage.qml:274
+#: qml/ModerationTools/MainReportToolPage.qml:250
 #, kde-format
 msgctxt "@title:group"
 msgid "To provide more information, %1 wrote:"
 msgstr "Чтобы предоставить больше информации, %1 написал(а):"
 
-#: qml/ModerationTools/MainReportToolPage.qml:284
+#: qml/ModerationTools/MainReportToolPage.qml:260
 #, kde-format
 msgctxt "@info:Account didn't provide any comment on the report "
 msgid "N/A"
 msgstr "н/д"
 
-#: qml/ModerationTools/MainReportToolPage.qml:295
+#: qml/ModerationTools/MainReportToolPage.qml:271
 #, kde-format
 msgctxt "@title:group"
 msgid "Reported Content"
 msgstr "Содержимое, на которое поступила жалоба"
 
-#: qml/ModerationTools/MainReportToolPage.qml:303
+#: qml/ModerationTools/MainReportToolPage.qml:280
 #, kde-format
 msgid ""
 "Offending content will be cited in communication with the reported account"
@@ -3502,18 +3479,18 @@ msgstr ""
 "Содержимое, на которое поступила жалоба, будет приведено в переписке с "
 "учётной записью, на которую поступила жалоба"
 
-#: qml/ModerationTools/MainReportToolPage.qml:333
+#: qml/ModerationTools/MainReportToolPage.qml:308
 #, kde-format
 msgid "<b>Content Warning</b><br /> %1"
 msgstr "<b>Предупреждение о содержимом</b><br /> %1"
 
-#: qml/ModerationTools/MainReportToolPage.qml:339
+#: qml/ModerationTools/MainReportToolPage.qml:314
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Less"
 msgstr "Показать меньше"
 
-#: qml/ModerationTools/MainReportToolPage.qml:339
+#: qml/ModerationTools/MainReportToolPage.qml:314
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More"
@@ -3553,70 +3530,70 @@ msgstr "Блокировки адресов электронной почты"
 msgid "Accounts Tool Page"
 msgstr "Страница инструментов для работы с учётными записями"
 
-#: qml/ModerationTools/ReportToolPage.qml:34
+#: qml/ModerationTools/ReportToolPage.qml:35
 #, kde-format
 msgctxt "@info:Combobox to choose Report Status"
 msgid "Report Status"
 msgstr "Состояние жалобы"
 
-#: qml/ModerationTools/ReportToolPage.qml:46
+#: qml/ModerationTools/ReportToolPage.qml:47
 #, kde-format
 msgctxt "@info:Filter out unresolved reports"
 msgid "Unresolved"
 msgstr "Нерешённые"
 
-#: qml/ModerationTools/ReportToolPage.qml:50
+#: qml/ModerationTools/ReportToolPage.qml:51
 #, kde-format
 msgctxt "@info:Filter out resolved reports"
 msgid "Resolved"
 msgstr "Решённые"
 
-#: qml/ModerationTools/ReportToolPage.qml:64
+#: qml/ModerationTools/ReportToolPage.qml:66
 #, kde-format
 msgctxt "@info:Combobox to choose the origin of report"
 msgid "Report Origin"
 msgstr "Источник жалобы"
 
-#: qml/ModerationTools/ReportToolPage.qml:77
+#: qml/ModerationTools/ReportToolPage.qml:79
 #, kde-format
 msgctxt "@info:Filter out accounts with any origin"
 msgid "All"
 msgstr "Все"
 
-#: qml/ModerationTools/ReportToolPage.qml:81
+#: qml/ModerationTools/ReportToolPage.qml:83
 #, kde-format
 msgctxt "@info:Filter out accounts with local origin"
 msgid "Local"
 msgstr "Локальные"
 
-#: qml/ModerationTools/ReportToolPage.qml:85
+#: qml/ModerationTools/ReportToolPage.qml:87
 #, kde-format
 msgctxt "@info:Filter out accounts with remote origin"
 msgid "Remote"
 msgstr "Сетевые"
 
-#: qml/ModerationTools/ReportToolPage.qml:158
+#: qml/ModerationTools/ReportToolPage.qml:160
 #, kde-format
 msgid "Reported By:"
 msgstr "Жалоба поступила от:"
 
-#: qml/ModerationTools/ReportToolPage.qml:201
+#: qml/ModerationTools/ReportToolPage.qml:203
 #, kde-format
 msgid "Comment:"
 msgstr "Комментарий:"
 
-#: qml/ModerationTools/ReportToolPage.qml:224
+#: qml/ModerationTools/ReportToolPage.qml:226
 #, kde-format
 msgid "Assigned Account:"
 msgstr "Назначенная учётная запись:"
 
-#: qml/ModerationTools/ReportToolPage.qml:249
+#: qml/ModerationTools/ReportToolPage.qml:251
 #, kde-format
 msgctxt "@info: No account assigned to the report"
 msgid "N/A"
 msgstr "н/д"
 
-#: qml/ModerationTools/ReportToolPage.qml:287
+#: qml/ModerationTools/ReportToolPage.qml:289
 #, kde-format
 msgid "No reports found"
 msgstr "Жалоб не найдено"
@@ -3730,12 +3707,12 @@ msgstr ""
 "Уведомлений ещё нет. Когда люди отвечают на ваши публикации, добавляют их в "
 "избранное или делятся ими, здесь появляются соответствующие уведомления."
 
-#: qml/Notifications/AccountWarningDelegate.qml:68
+#: qml/Notifications/AccountWarningDelegate.qml:66
 #, kde-format
 msgid "%1 has issued a warning against your account"
 msgstr "%1 адресовал(а) предупреждение вашей учётной записи"
 
-#: qml/Notifications/AnnualReportDelegate.qml:65
+#: qml/Notifications/AnnualReportDelegate.qml:63
 #, kde-kuit-format
 msgctxt ""
 "@info:label this is used for notifications, when an annual report is "
@@ -3749,34 +3726,34 @@ msgstr ""
 "Подготовлен отчёт #FediWrapped за %1: ваши самые яркие события и "
 "незабываемые моменты в Mastodon."
 
-#: qml/Notifications/AnnualReportDelegate.qml:72
+#: qml/Notifications/AnnualReportDelegate.qml:70
 #, kde-format
 msgctxt "@action:button"
 msgid "View #FediWrapped"
 msgstr "Открыть #FediWrapped"
 
-#: qml/Notifications/CollectionDelegate.qml:81
+#: qml/Notifications/CollectionDelegate.qml:80
 #, kde-format
 msgid "%1 added you to a collection"
 msgstr "Вы добавлены в список пользователем %1"
 
-#: qml/Notifications/CollectionDelegate.qml:83
+#: qml/Notifications/CollectionDelegate.qml:82
 #, kde-format
 msgid "%1 updated a collection"
 msgstr "%1 обновил(а) свой список"
 
-#: qml/Notifications/CollectionDelegate.qml:103
+#: qml/Notifications/CollectionDelegate.qml:102
 #, kde-format
 msgctxt "@action:button"
 msgid "View Collection"
 msgstr "Показать список"
 
-#: qml/Notifications/FollowDelegate.qml:79
+#: qml/Notifications/FollowDelegate.qml:78
 #, kde-format
 msgid "%1 signed up"
 msgstr "%1 зарегистрировался(ась)"
 
-#: qml/Notifications/FollowDelegate.qml:108
+#: qml/Notifications/FollowDelegate.qml:107
 #, kde-format
 msgctxt "@action:button"
 msgid "Manage Follow Requests"
@@ -3809,7 +3786,7 @@ msgstr "Обычный статус"
 msgid "Spoiler Status"
 msgstr "Статус со спойлером"
 
-#: qml/Notifications/RelationshipSeveranceDelegate.qml:64
+#: qml/Notifications/RelationshipSeveranceDelegate.qml:62
 #, kde-kuit-format
 msgctxt "@info:label"
 msgid ""
@@ -3819,13 +3796,13 @@ msgstr ""
 "Модератор заблокировал <b>%1</b>, включая %2 ваших подписчиков и %3 учётные "
 "записи, на которые подписаны вы."
 
-#: qml/Notifications/ReportDelegate.qml:63
+#: qml/Notifications/ReportDelegate.qml:60
 #, kde-format
 msgctxt "@info:label"
 msgid "A report has been filed against a user in your server."
 msgstr "На пользователя на вашем сервере была подана жалоба."
 
-#: qml/Notifications/UnknownNotificationDelegate.qml:49
+#: qml/Notifications/UnknownNotificationDelegate.qml:46
 #, kde-format
 msgctxt "@info"
 msgid "Unknown notification"
@@ -3930,39 +3907,39 @@ msgctxt "@action:button Start media playback"
 msgid "Play"
 msgstr "Воспроизвести"
 
-#: qml/PostDelegate/ContentNotice.qml:28
+#: qml/PostDelegate/ContentNotice.qml:26
 #, kde-format
 msgctxt "@info"
 msgid "Content Notice"
 msgstr "Предупреждение о содержимом"
 
-#: qml/PostDelegate/ContentNotice.qml:46
+#: qml/PostDelegate/ContentNotice.qml:44
 #, kde-format
 msgid "<b>Content Notice</b><br /> %1"
 msgstr "<b>Предупреждение о содержимом</b><br /> %1"
 
-#: qml/PostDelegate/ContentNotice.qml:53
+#: qml/PostDelegate/ContentNotice.qml:51
 #, kde-format
 msgid "Show Less"
 msgstr "Показать меньше"
 
-#: qml/PostDelegate/ContentNotice.qml:53
+#: qml/PostDelegate/ContentNotice.qml:51
 #, kde-format
 msgid "Show More"
 msgstr "Показать больше"
 
-#: qml/PostDelegate/FilterNotice.qml:30
+#: qml/PostDelegate/FilterNotice.qml:28
 #, kde-format
 msgctxt "@info"
 msgid "Filter"
 msgstr "Фильтры"
 
-#: qml/PostDelegate/FilterNotice.qml:48
+#: qml/PostDelegate/FilterNotice.qml:46
 #, kde-format
 msgid "<b>Filtered</b><br /> %1"
 msgstr "<b>Выполнена фильтрация</b><br /> %1"
 
-#: qml/PostDelegate/FilterNotice.qml:55
+#: qml/PostDelegate/FilterNotice.qml:53
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Anyway"
@@ -4341,7 +4318,7 @@ msgid "Block @%1"
 msgstr "Заблокировать @%1"
 
 #: qml/PostDelegate/PostMenu.qml:205
-#: qml/StatusComposer/EditorAttachmentGrid.qml:60
+#: qml/StatusComposer/EditorAttachmentGrid.qml:59
 #, kde-format
 msgid "Edit"
 msgstr "Изменить"
@@ -4356,45 +4333,45 @@ msgstr "Удалить…"
 msgid "Delete & Re-draft…"
 msgstr "Удалить и создать заново…"
 
-#: qml/PostDelegate/PostPoll.qml:42
+#: qml/PostDelegate/PostPoll.qml:46
 #, kde-format
 msgctxt "Votes percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: qml/PostDelegate/PostPoll.qml:61
+#: qml/PostDelegate/PostPoll.qml:65
 #, kde-format
 msgid "You voted for this option"
 msgstr "Вы выбрали этот вариант"
 
-#: qml/PostDelegate/PostPoll.qml:84
+#: qml/PostDelegate/PostPoll.qml:88
 #, kde-format
 msgid "(No votes)"
 msgstr "(Ответов нет)"
 
-#: qml/PostDelegate/PostPoll.qml:129
+#: qml/PostDelegate/PostPoll.qml:133
 #, kde-format
 msgid "Vote"
 msgstr "Ответить"
 
-#: qml/PostDelegate/PostPoll.qml:151
+#: qml/PostDelegate/PostPoll.qml:155
 #, kde-format
 msgctxt "@option:check Show poll results"
 msgid "Show Results"
 msgstr "Показать результаты"
 
-#: qml/PostDelegate/PostPoll.qml:157
+#: qml/PostDelegate/PostPoll.qml:161
 #, kde-format
 msgid "Poll has closed"
 msgstr "Опрос закрыт"
 
-#: qml/PostDelegate/PostTags.qml:51
+#: qml/PostDelegate/PostTags.qml:50
 #, kde-format
 msgctxt "@info"
 msgid "Tag"
 msgstr "Метка"
 
-#: qml/PostDelegate/PostTags.qml:57
+#: qml/PostDelegate/PostTags.qml:56
 #, kde-format
 msgctxt "@action:button expand the number of shown tags"
 msgid "…and %1 more"
@@ -4508,70 +4485,70 @@ msgctxt "@title:window Server rules"
 msgid "Rules"
 msgstr "Правила"
 
-#: qml/ServerInformationPage.qml:67
+#: qml/ServerInformationPage.qml:59
 #, kde-format
 msgctxt "@action:button"
 msgid "Rules"
 msgstr "Правила"
 
-#: qml/ServerInformationPage.qml:79
+#: qml/ServerInformationPage.qml:66
 #, kde-format
 msgctxt "@action:button"
 msgid "Announcements"
 msgstr "Объявления"
 
-#: qml/ServerInformationPage.qml:91
+#: qml/ServerInformationPage.qml:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Privacy Policy"
 msgstr "Политика конфиденциальности"
 
-#: qml/ServerInformationPage.qml:92
+#: qml/ServerInformationPage.qml:74
 #, kde-format
 msgctxt "@title:window"
 msgid "Privacy Policy"
 msgstr "Политика конфиденциальности"
 
-#: qml/ServerInformationPage.qml:103
+#: qml/ServerInformationPage.qml:80
 #, kde-format
 msgctxt "@action:button"
 msgid "Terms of Service"
 msgstr "Условия использования"
 
-#: qml/ServerInformationPage.qml:104
+#: qml/ServerInformationPage.qml:81
 #, kde-format
 msgctxt "@title:window"
 msgid "Terms of Service"
 msgstr "Условия использования"
 
-#: qml/Settings/AccountPage.qml:27
+#: qml/Settings/AccountPage.qml:26
 #, kde-format
 msgid "Edit Account"
 msgstr "Редактирование учётной записи"
 
-#: qml/Settings/AccountPage.qml:36
+#: qml/Settings/AccountPage.qml:35
 #, kde-format
 msgctxt "@abel Account preferences"
 msgid "Open In Browser"
 msgstr "Открыть в браузере"
 
-#: qml/Settings/AccountPage.qml:53 qml/Settings/ProfileEditor.qml:32
+#: qml/Settings/AccountPage.qml:52 qml/Settings/ProfileEditor.qml:33
 #, kde-format
 msgid "Please choose a file"
 msgstr "Выберите файл"
 
-#: qml/Settings/AccountPage.qml:62
+#: qml/Settings/AccountPage.qml:61
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to log out of %1?"
 msgstr "Действительно выйти из %1?"
 
-#: qml/Settings/AccountPage.qml:78
+#: qml/Settings/AccountPage.qml:77
 #, kde-format
 msgid "Profile"
 msgstr "Профиль"
 
-#: qml/Settings/AccountPage.qml:85
+#: qml/Settings/AccountPage.qml:84
 #, kde-format
 msgid "Account"
 msgstr "Учётная запись"
@@ -4593,12 +4570,12 @@ msgstr ""
 "Всегда имеется возможность принудительно отменить подписку какого-либо "
 "пользователя на вас."
 
-#: qml/Settings/AccountPage.qml:147
+#: qml/Settings/AccountPage.qml:144
 #, kde-format
 msgid "Is automated"
 msgstr "Используется автоматизация"
 
-#: qml/Settings/AccountPage.qml:148
+#: qml/Settings/AccountPage.qml:145
 #, kde-format
 msgid ""
 "Whether to publicly mark this account as doing any kind of automated actions."
@@ -4606,94 +4583,94 @@ msgstr ""
 "Следует ли делать для этой учётной записи общедоступную отметку о выполнении "
 "каких-либо автоматизированных действий."
 
-#: qml/Settings/AccountPage.qml:157
+#: qml/Settings/AccountPage.qml:151
 #, kde-format
 msgid "Feature profile and posts"
 msgstr "Добавить профиль и публикации в подборку"
 
-#: qml/Settings/AccountPage.qml:158
+#: qml/Settings/AccountPage.qml:152
 #, kde-format
 msgid "Your public profile and posts may be featured to other users."
 msgstr ""
 "Ваш общедоступный профиль и публикации могут быть рекомендованы другим "
 "пользователям."
 
-#: qml/Settings/AccountPage.qml:167
+#: qml/Settings/AccountPage.qml:158
 #, kde-format
 msgid "Publicly list follows and followers"
 msgstr "Общедоступный перечень подписок и подписчиков"
 
-#: qml/Settings/AccountPage.qml:168
+#: qml/Settings/AccountPage.qml:159
 #, kde-format
 msgid "By default everyone you follow and everyone who follows you is public."
 msgstr ""
 "По умолчанию информация о том, на кого вы подписываетесь и кто подписывается "
 "на вас, является общедоступной."
 
-#: qml/Settings/AccountPage.qml:177
+#: qml/Settings/AccountPage.qml:165
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Mark uploaded media as sensitive by default"
 msgstr "По умолчанию помечать отправленные медиафайлы как конфиденциальные"
 
-#: qml/Settings/AccountPage.qml:186
+#: qml/Settings/AccountPage.qml:171
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Include public posts in search results"
 msgstr "Включать публичные записи в результаты поиска"
 
-#: qml/Settings/AccountPage.qml:195
+#: qml/Settings/AccountPage.qml:177
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post language"
 msgstr "Язык публикаций по умолчанию"
 
-#: qml/Settings/AccountPage.qml:221
+#: qml/Settings/AccountPage.qml:200
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post visibility"
 msgstr "Видимость публикаций по умолчанию"
 
-#: qml/Settings/AccountPage.qml:223
+#: qml/Settings/AccountPage.qml:202
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Public"
 msgstr "Общедоступная запись"
 
-#: qml/Settings/AccountPage.qml:224
+#: qml/Settings/AccountPage.qml:203
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Unlisted"
 msgstr "Запись не в ленте"
 
-#: qml/Settings/AccountPage.qml:225
+#: qml/Settings/AccountPage.qml:204
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Private"
 msgstr "Закрытая запись"
 
-#: qml/Settings/AppearancePage.qml:19
+#: qml/Settings/AppearancePage.qml:17
 #, kde-format
 msgctxt "@title:group"
 msgid "General"
 msgstr "Общие"
 
-#: qml/Settings/AppearancePage.qml:26
+#: qml/Settings/AppearancePage.qml:25
 #, kde-format
 msgid "Color theme"
 msgstr "Цветовая схема"
 
-#: qml/Settings/AppearancePage.qml:45
+#: qml/Settings/AppearancePage.qml:39
 #, kde-format
 msgid "Pop out the post composer by default"
 msgstr "Открывать редактор публикаций по умолчанию"
 
-#: qml/Settings/AppearancePage.qml:59
+#: qml/Settings/AppearancePage.qml:51
 #, kde-format
 msgid "Continue reading where you last left off"
 msgstr "Продолжить чтение с того же места"
 
-#: qml/Settings/AppearancePage.qml:60
+#: qml/Settings/AppearancePage.qml:52
 #, kde-format
 msgid ""
 "If checked, the Home timeline will begin where you last read. The position "
@@ -4703,12 +4680,12 @@ msgstr ""
 "места, где в прошлый раз было завершено чтение. Соответствующая позиция в "
 "ленте новостей будет использоваться и в других клиентах."
 
-#: qml/Settings/AppearancePage.qml:73
+#: qml/Settings/AppearancePage.qml:63
 #, kde-format
 msgid "Auto-update timelines"
 msgstr "Автоматически обновлять ленты новостей"
 
-#: qml/Settings/AppearancePage.qml:74
+#: qml/Settings/AppearancePage.qml:64
 #, kde-format
 msgid ""
 "If checked, Tokodon will automatically update certain timelines as new posts "
@@ -4717,50 +4694,50 @@ msgstr ""
 "Если флажок установлен, Tokodon будет автоматически обновлять определённые "
 "ленты новостей по мере появления новых публикаций."
 
-#: qml/Settings/AppearancePage.qml:87
+#: qml/Settings/AppearancePage.qml:75
 #, kde-format
 msgctxt "@option:check Boosting means to repost, or retweet"
 msgid "Ask before boosting"
 msgstr "Спрашивать перед републикацией"
 
-#: qml/Settings/AppearancePage.qml:98
+#: qml/Settings/AppearancePage.qml:86
 #, kde-format
 msgctxt "@title:group"
 msgid "Posts"
 msgstr "Публикации"
 
-#: qml/Settings/AppearancePage.qml:104
+#: qml/Settings/AppearancePage.qml:93
 #, kde-format
 msgid "Show number of favorites and boosts"
 msgstr "Показывать количество добавлений в избранное и републикаций"
 
-#: qml/Settings/AppearancePage.qml:119
+#: qml/Settings/AppearancePage.qml:104
 #, kde-format
 msgid "Show link previews"
 msgstr "Включить предварительный просмотр ссылок"
 
-#: qml/Settings/AppearancePage.qml:134
+#: qml/Settings/AppearancePage.qml:115
 #, kde-format
 msgid "Content font"
 msgstr "Шрифт"
 
-#: qml/Settings/AppearancePage.qml:140
+#: qml/Settings/AppearancePage.qml:121
 #, kde-format
 msgid "Please choose a font"
 msgstr "Выберите шрифт"
 
-#: qml/Settings/AppearancePage.qml:151
+#: qml/Settings/AppearancePage.qml:132
 #, kde-format
 msgctxt "@title:group"
 msgid "Media"
 msgstr "Мультимедиа"
 
-#: qml/Settings/AppearancePage.qml:157
+#: qml/Settings/AppearancePage.qml:139
 #, kde-format
 msgid "Crop images on the timeline"
 msgstr "Обрезать изображения в ленте новостей"
 
-#: qml/Settings/AppearancePage.qml:158
+#: qml/Settings/AppearancePage.qml:140
 #, kde-format
 msgid ""
 "If unchecked, posts with only one image attached will be uncropped and shown "
@@ -4769,7 +4746,7 @@ msgstr ""
 "Если флажок снят, публикации с одним прикреплённым изображением будут "
 "показаны полностью (не будут обрезаться)."
 
-#: qml/Settings/AppearancePage.qml:172
+#: qml/Settings/AppearancePage.qml:150
 #, kde-format
 msgid "Auto-play animated GIFs"
 msgstr "Автовоспроизведение анимационных GIF-файлов"
@@ -4792,151 +4769,151 @@ msgctxt "@info:placeholder"
 msgid "No Blocked Domains"
 msgstr "Нет заблокированных доменов"
 
-#: qml/Settings/EditFilterPage.qml:31
+#: qml/Settings/EditFilterPage.qml:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Filter"
 msgstr "Создание фильтра"
 
-#: qml/Settings/EditFilterPage.qml:31
+#: qml/Settings/EditFilterPage.qml:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Filter"
 msgstr "Редактирование фильтра"
 
-#: qml/Settings/EditFilterPage.qml:85
+#: qml/Settings/EditFilterPage.qml:82
 #, kde-format
 msgctxt "@label:textbox Filter title"
 msgid "Title"
 msgstr "Название"
 
-#: qml/Settings/EditFilterPage.qml:90
+#: qml/Settings/EditFilterPage.qml:87
 #, kde-format
 msgctxt "@info:header"
 msgid "Contexts"
 msgstr "Контексты"
 
-#: qml/Settings/EditFilterPage.qml:97
+#: qml/Settings/EditFilterPage.qml:94
 #, kde-format
 msgctxt "@info"
 msgid "Select one or more contexts where this filter should apply:"
 msgstr "Один или несколько контекстов для применения этого фильтра:"
 
-#: qml/Settings/EditFilterPage.qml:102
+#: qml/Settings/EditFilterPage.qml:99
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Home and Lists"
 msgstr "«Главная» и списки"
 
-#: qml/Settings/EditFilterPage.qml:107
+#: qml/Settings/EditFilterPage.qml:104
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Notifications"
 msgstr "Уведомления"
 
-#: qml/Settings/EditFilterPage.qml:112
+#: qml/Settings/EditFilterPage.qml:109
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Public Timelines"
 msgstr "Общедоступные ленты новостей"
 
-#: qml/Settings/EditFilterPage.qml:117
+#: qml/Settings/EditFilterPage.qml:114
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Conversations"
 msgstr "Чаты"
 
-#: qml/Settings/EditFilterPage.qml:122
+#: qml/Settings/EditFilterPage.qml:119
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Profiles"
 msgstr "Профили"
 
-#: qml/Settings/EditFilterPage.qml:127
+#: qml/Settings/EditFilterPage.qml:124
 #, kde-format
 msgctxt "@info:header"
 msgid "Action"
 msgstr "Действие"
 
-#: qml/Settings/EditFilterPage.qml:135
+#: qml/Settings/EditFilterPage.qml:132
 #, kde-format
 msgctxt "@label:radiobutton"
 msgid "Hide with Content Notice"
 msgstr "Скрывать с предупреждением о содержимом"
 
-#: qml/Settings/EditFilterPage.qml:141
+#: qml/Settings/EditFilterPage.qml:138
 #, kde-format
 msgctxt "@label:radiobutton"
 msgid "Hide Media with Content Notice"
 msgstr "Скрывать медиафайлы с предупреждением о содержимом"
 
-#: qml/Settings/EditFilterPage.qml:148
+#: qml/Settings/EditFilterPage.qml:145
 #, kde-format
 msgctxt "@label:radiobutton"
 msgid "Hide Completely"
 msgstr "Скрывать полностью"
 
-#: qml/Settings/EditFilterPage.qml:154
+#: qml/Settings/EditFilterPage.qml:151
 #, kde-format
 msgctxt "@info:header"
 msgid "Keywords"
 msgstr "Ключевые слова"
 
-#: qml/Settings/EditFilterPage.qml:157
+#: qml/Settings/EditFilterPage.qml:154
 #, kde-format
 msgctxt "@action:button Add keyword"
 msgid "Add"
 msgstr "Добавить"
 
-#: qml/Settings/EditFilterPage.qml:167
+#: qml/Settings/EditFilterPage.qml:164
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No keywords"
 msgstr "Нет ключевых слов"
 
-#: qml/Settings/EditFilterPage.qml:195
+#: qml/Settings/EditFilterPage.qml:192
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Whole word"
 msgstr "Слово целиком"
 
-#: qml/Settings/EditFilterPage.qml:201
+#: qml/Settings/EditFilterPage.qml:198
 #, kde-format
 msgctxt "@action:button Remove keyword"
 msgid "Remove"
 msgstr "Удалить"
 
-#: qml/Settings/EditFilterPage.qml:228
+#: qml/Settings/EditFilterPage.qml:226
 #, kde-format
 msgctxt "@action:button Create the filter"
 msgid "Create"
 msgstr "Создать"
 
-#: qml/Settings/EditFilterPage.qml:230
+#: qml/Settings/EditFilterPage.qml:228
 #, kde-format
 msgctxt "@action:button Save the edited filter"
 msgid "Save"
 msgstr "Сохранить"
 
-#: qml/Settings/EditFilterPage.qml:243
+#: qml/Settings/EditFilterPage.qml:238
 #, kde-format
 msgctxt "@action:button Delete the filter"
 msgid "Delete"
 msgstr "Удалить"
 
-#: qml/Settings/EditFilterPage.qml:250
+#: qml/Settings/EditFilterPage.qml:245
 #, kde-format
 msgctxt "@title"
 msgid "Deleting Filter"
 msgstr "Удаление фильтра"
 
-#: qml/Settings/EditFilterPage.qml:251
+#: qml/Settings/EditFilterPage.qml:246
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to delete this filter?"
 msgstr "Действительно удалить этот фильтр?"
 
-#: qml/Settings/EditProfilePage.qml:22
+#: qml/Settings/EditProfilePage.qml:17
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Profile"
@@ -4948,37 +4925,37 @@ msgctxt "@title:window"
 msgid "Error Log"
 msgstr "Журнал ошибок"
 
-#: qml/Settings/ErrorLogPage.qml:23
+#: qml/Settings/ErrorLogPage.qml:22
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Clear All"
 msgstr "Очистить всё"
 
-#: qml/Settings/ErrorLogPage.qml:73
+#: qml/Settings/ErrorLogPage.qml:63
 #, kde-format
 msgctxt "@action:button"
 msgid "Copy To Clipboard"
 msgstr "Скопировать в буфер обмена"
 
-#: qml/Settings/ErrorLogPage.qml:88
+#: qml/Settings/ErrorLogPage.qml:82
 #, kde-format
 msgctxt "@label"
 msgid "No Errors"
 msgstr "Ошибки не найдены"
 
-#: qml/Settings/FiltersPage.qml:22
+#: qml/Settings/FiltersPage.qml:20
 #, kde-format
 msgctxt "@title"
 msgid "Filters"
 msgstr "Фильтры"
 
-#: qml/Settings/FiltersPage.qml:29
+#: qml/Settings/FiltersPage.qml:27
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Create Filter"
 msgstr "Создать фильтр"
 
-#: qml/Settings/FiltersPage.qml:80
+#: qml/Settings/FiltersPage.qml:78
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Filters"
@@ -4990,58 +4967,58 @@ msgctxt "@title:window"
 msgid "Network Proxy"
 msgstr "Прокси-сервер"
 
-#: qml/Settings/NetworkProxyPage.qml:25
+#: qml/Settings/NetworkProxyPage.qml:26
 #, kde-format
 msgid "System Default"
 msgstr "Заданный в системе"
 
-#: qml/Settings/NetworkProxyPage.qml:37
+#: qml/Settings/NetworkProxyPage.qml:36
 #, kde-format
 msgid "No Proxy"
 msgstr "Без прокси"
 
-#: qml/Settings/NetworkProxyPage.qml:49
+#: qml/Settings/NetworkProxyPage.qml:46
 #, kde-format
 msgid "HTTP"
 msgstr "HTTP"
 
-#: qml/Settings/NetworkProxyPage.qml:61
+#: qml/Settings/NetworkProxyPage.qml:56
 #, kde-format
 msgid "Socks5"
 msgstr "Socks5"
 
-#: qml/Settings/NetworkProxyPage.qml:80
+#: qml/Settings/NetworkProxyPage.qml:76
 #, kde-format
 msgid "Host"
 msgstr "Хост"
 
-#: qml/Settings/NetworkProxyPage.qml:93
+#: qml/Settings/NetworkProxyPage.qml:88
 #, kde-format
 msgid "Port"
 msgstr "Порт"
 
-#: qml/Settings/NetworkProxyPage.qml:114
+#: qml/Settings/NetworkProxyPage.qml:108
 #, kde-format
 msgid "User"
 msgstr "Пользователь"
 
-#: qml/Settings/NetworkProxyPage.qml:142 qml/Settings/ProfileEditor.qml:313
+#: qml/Settings/NetworkProxyPage.qml:135 qml/Settings/ProfileEditor.qml:307
 #, kde-format
 msgid "Apply"
 msgstr "Применить"
 
-#: qml/Settings/NotificationsPage.qml:30
+#: qml/Settings/NotificationsPage.qml:29
 #, kde-format
 msgid "Enable notifications for this account"
 msgstr "Включить уведомления для этой учётной записи"
 
-#: qml/Settings/NotificationsPage.qml:34
+#: qml/Settings/NotificationsPage.qml:33
 #, kde-format
 msgid "Notifications can appear even when Tokodon isn't running."
 msgstr ""
 "Уведомления появляются даже тогда, когда программа Tokodon не запущена."
 
-#: qml/Settings/NotificationsPage.qml:36
+#: qml/Settings/NotificationsPage.qml:35
 #, kde-format
 msgid ""
 "Push notifications are available but could not be enabled. Please log out "
@@ -5050,30 +5027,30 @@ msgstr ""
 "Push-уведомления доступны, но их не удалось включить. Выполните выход и "
 "войдите снова."
 
-#: qml/Settings/NotificationsPage.qml:39
+#: qml/Settings/NotificationsPage.qml:38
 #, kde-format
 msgid "Notifications will only appear when Tokodon is running."
 msgstr "Уведомления появляются только во время работы программы Tokodon."
 
-#: qml/Settings/NotificationsPage.qml:52
+#: qml/Settings/NotificationsPage.qml:51
 #, kde-format
 msgctxt "@title:group"
 msgid "Filtering Policy"
 msgstr "Правила фильтрации"
 
-#: qml/Settings/NotificationsPage.qml:62
+#: qml/Settings/NotificationsPage.qml:61
 #, kde-format
 msgctxt "@info:Option Accept and show this in notifications"
 msgid "Accept"
 msgstr "Разрешить"
 
-#: qml/Settings/NotificationsPage.qml:66
+#: qml/Settings/NotificationsPage.qml:65
 #, kde-format
 msgctxt "@info:Option Filter and send to the filtered inbox"
 msgid "Filter"
 msgstr "Фильтровать"
 
-#: qml/Settings/NotificationsPage.qml:70
+#: qml/Settings/NotificationsPage.qml:69
 #, kde-format
 msgctxt "@info:Option Ignore completely, do not show notification"
 msgid "Ignore"
@@ -5091,37 +5068,37 @@ msgctxt "@label Notification preferences"
 msgid "Until you manually approve them."
 msgstr "До подтверждения вручную."
 
-#: qml/Settings/NotificationsPage.qml:85
+#: qml/Settings/NotificationsPage.qml:84
 #, kde-format
 msgctxt "@label Notification preferences"
 msgid "People not following you"
 msgstr "Люди, которые не подписаны на вас"
 
-#: qml/Settings/NotificationsPage.qml:86
+#: qml/Settings/NotificationsPage.qml:85
 #, kde-format
 msgctxt "@label Notification preferences"
 msgid "Including people who have been following you fewer than 3 days."
 msgstr "Включая людей, которые подписаны вас менее трёх дней"
 
-#: qml/Settings/NotificationsPage.qml:92
+#: qml/Settings/NotificationsPage.qml:90
 #, kde-format
 msgctxt "@label Notification preferences"
 msgid "New accounts"
 msgstr "Новые учётные записи"
 
-#: qml/Settings/NotificationsPage.qml:93
+#: qml/Settings/NotificationsPage.qml:91
 #, kde-format
 msgctxt "@label Notification preferences"
 msgid "Created within the past 30 days."
 msgstr "Созданные за последние 30 дней."
 
-#: qml/Settings/NotificationsPage.qml:99
+#: qml/Settings/NotificationsPage.qml:96
 #, kde-format
 msgctxt "@label Notification preferences"
 msgid "Unsolicited conversations"
 msgstr "Спонтанные чаты"
 
-#: qml/Settings/NotificationsPage.qml:100
+#: qml/Settings/NotificationsPage.qml:97
 #, kde-format
 msgctxt "@label Notification preferences"
 msgid ""
@@ -5131,54 +5108,54 @@ msgstr ""
 "Отфильтровываются (кроме тех случаев, когда это ответ на сделанное вами "
 "упоминание или когда вы подписаны на отправителя)."
 
-#: qml/Settings/NotificationsPage.qml:106
+#: qml/Settings/NotificationsPage.qml:102
 #, kde-format
 msgctxt "@label Notification preferences"
 msgid "Moderated accounts"
 msgstr "Модерируемые учётные записи"
 
-#: qml/Settings/NotificationsPage.qml:107
+#: qml/Settings/NotificationsPage.qml:103
 #, kde-format
 msgctxt "@label Notification preferences"
 msgid "Limited by server moderators."
 msgstr "Ограничено модераторами сервера."
 
-#: qml/Settings/NotificationsPage.qml:114
+#: qml/Settings/NotificationsPage.qml:110
 #, kde-format
 msgctxt "@title:group"
 msgid "Events"
 msgstr "События"
 
-#: qml/Settings/NotificationsPage.qml:155
+#: qml/Settings/NotificationsPage.qml:151
 #, kde-format
 msgctxt "@action:button"
 msgid "Hide in All"
 msgstr "Скрывать везде"
 
-#: qml/Settings/NotificationsPage.qml:155
+#: qml/Settings/NotificationsPage.qml:151
 #, kde-format
 msgctxt "@action:button"
 msgid "Show in All"
 msgstr "Показать везде"
 
-#: qml/Settings/NotificationsPage.qml:174
+#: qml/Settings/NotificationsPage.qml:170
 #, kde-format
 msgctxt "@action:button"
 msgid "Disable notifications"
 msgstr "Отключить уведомления"
 
-#: qml/Settings/NotificationsPage.qml:174
+#: qml/Settings/NotificationsPage.qml:170
 #, kde-format
 msgctxt "@action:button"
 msgid "Enable notifications"
 msgstr "Включить уведомления"
 
-#: qml/Settings/NotificationsPage.qml:202
+#: qml/Settings/NotificationsPage.qml:199
 #, kde-format
 msgid "Mentions"
 msgstr "Упоминания"
 
-#: qml/Settings/NotificationsPage.qml:203
+#: qml/Settings/NotificationsPage.qml:200
 #, kde-format
 msgid ""
 "When someone mentions you in a new post, or replies to one of your threads."
@@ -5186,119 +5163,119 @@ msgstr ""
 "Когда кто-то упомянул вас в новой публикации или ответил в одной из ваших "
 "веток."
 
-#: qml/Settings/NotificationsPage.qml:220
+#: qml/Settings/NotificationsPage.qml:212
 #, kde-format
 msgid "Quotes"
 msgstr "Цитирования"
 
-#: qml/Settings/NotificationsPage.qml:221
+#: qml/Settings/NotificationsPage.qml:213
 #, kde-format
 msgid "When someone quotes you in a new post"
 msgstr "Когда кто-то процитировал вас"
 
-#: qml/Settings/NotificationsPage.qml:238
+#: qml/Settings/NotificationsPage.qml:225
 #, kde-format
 msgid "Statuses"
 msgstr "Статусы"
 
-#: qml/Settings/NotificationsPage.qml:239
+#: qml/Settings/NotificationsPage.qml:226
 #, kde-format
 msgid "When a user you have notifications turned on for makes a new post."
 msgstr ""
 "Когда пользователь, для которого у вас включены уведомления, сделал новую "
 "публикацию."
 
-#: qml/Settings/NotificationsPage.qml:256
+#: qml/Settings/NotificationsPage.qml:238
 #, kde-format
 msgid "Boosts"
 msgstr "Републикации"
 
-#: qml/Settings/NotificationsPage.qml:257
+#: qml/Settings/NotificationsPage.qml:239
 #, kde-format
 msgid "When someone boosted one of your posts."
 msgstr "Когда кто-то поделился одной из ваших публикаций."
 
-#: qml/Settings/NotificationsPage.qml:274
+#: qml/Settings/NotificationsPage.qml:251
 #, kde-format
 msgid "New followers"
 msgstr "Новые подписчики"
 
-#: qml/Settings/NotificationsPage.qml:275
+#: qml/Settings/NotificationsPage.qml:252
 #, kde-format
 msgid "When someone follows you."
 msgstr "Когда кто-то подписался на вас."
 
-#: qml/Settings/NotificationsPage.qml:292
+#: qml/Settings/NotificationsPage.qml:264
 #, kde-format
 msgid "New follow requests"
 msgstr "Новые запросы на подписку"
 
-#: qml/Settings/NotificationsPage.qml:293
+#: qml/Settings/NotificationsPage.qml:265
 #, kde-format
 msgid "When an account who requires manual approval wants to follow you."
 msgstr ""
 "Когда владелец учётной записи, для которой требуется подтверждение вручную, "
 "пытается подписаться на вас."
 
-#: qml/Settings/NotificationsPage.qml:310
+#: qml/Settings/NotificationsPage.qml:277
 #, kde-format
 msgid "Favorites"
 msgstr "Избранное"
 
-#: qml/Settings/NotificationsPage.qml:311
+#: qml/Settings/NotificationsPage.qml:278
 #, kde-format
 msgid "When a post you made was favorited by another user."
 msgstr ""
 "Когда сделанная вами публикация была добавлена в избранное другим "
 "пользователем."
 
-#: qml/Settings/NotificationsPage.qml:328
+#: qml/Settings/NotificationsPage.qml:290
 #, kde-format
 msgid "Polls"
 msgstr "Опросы"
 
-#: qml/Settings/NotificationsPage.qml:329
+#: qml/Settings/NotificationsPage.qml:291
 #, kde-format
 msgid "When a poll you voted in has ended."
 msgstr "Когда завершился опрос, в котором вы участвовали."
 
-#: qml/Settings/NotificationsPage.qml:346
+#: qml/Settings/NotificationsPage.qml:303
 #, kde-format
 msgid "Edits"
 msgstr "Редактирование"
 
-#: qml/Settings/NotificationsPage.qml:347
+#: qml/Settings/NotificationsPage.qml:304
 #, kde-format
 msgid "When a post you interacted with was edited by the author."
 msgstr ""
 "Когда публикация, с которой вы взаимодействовали, была изменена автором."
 
-#: qml/Settings/NotificationsPage.qml:364
+#: qml/Settings/NotificationsPage.qml:316
 #, kde-format
 msgid "Server Sign-ups"
 msgstr "Регистрации на сервере"
 
-#: qml/Settings/NotificationsPage.qml:365
+#: qml/Settings/NotificationsPage.qml:317
 #, kde-format
 msgid "When someone signs up to your server."
 msgstr "Когда кто-то зарегистрировался на вашем сервере."
 
-#: qml/Settings/NotificationsPage.qml:384
+#: qml/Settings/NotificationsPage.qml:330
 #, kde-format
 msgid "Server Reports"
 msgstr "Жалобы на сервере"
 
-#: qml/Settings/NotificationsPage.qml:385
+#: qml/Settings/NotificationsPage.qml:331
 #, kde-format
 msgid "When someone files a report against a user on your server."
 msgstr "Когда кто-то подал жалобу на пользователя на вашем сервере."
 
-#: qml/Settings/NotificationsPage.qml:404
+#: qml/Settings/NotificationsPage.qml:344
 #, kde-format
 msgid "Severed Relationships"
 msgstr "Разорванные связи"
 
-#: qml/Settings/NotificationsPage.qml:405
+#: qml/Settings/NotificationsPage.qml:345
 #, kde-format
 msgid ""
 "When you or your server moderates another server, which you are following "
@@ -5307,29 +5284,29 @@ msgstr ""
 "Когда вы или ваш сервер выполнили модерацию другого сервера, на котором вы "
 "подписаны на пользователей или на котором у вас есть подписчики."
 
-#: qml/Settings/NotificationsPage.qml:422
+#: qml/Settings/NotificationsPage.qml:357
 #, kde-format
 msgctxt "@option:check"
 msgid "Annual Report"
 msgstr "Годовой отчёт"
 
-#: qml/Settings/NotificationsPage.qml:423
+#: qml/Settings/NotificationsPage.qml:358
 #, kde-format
 msgid "When you receive your #FediWrapped at the end of the year."
 msgstr "Когда вы получаете свой отчёт #FediWrapped в конце года."
 
-#: qml/Settings/NotificationsPage.qml:440
+#: qml/Settings/NotificationsPage.qml:370
 #, kde-format
 msgctxt "@option:check"
 msgid "Collections"
 msgstr "Списки"
 
-#: qml/Settings/NotificationsPage.qml:441
+#: qml/Settings/NotificationsPage.qml:371
 #, kde-format
 msgid "When you're added to collections or collections were updated."
 msgstr "При добавлении в списки или их обновлении"
 
-#: qml/Settings/ProfileEditor.qml:61
+#: qml/Settings/ProfileEditor.qml:63
 #, kde-format
 msgid "Display Name"
 msgstr "Отображаемое имя"
@@ -5339,65 +5316,65 @@ msgstr "Отображаемое имя"
 msgid "Bio"
 msgstr "О себе"
 
-#: qml/Settings/ProfileEditor.qml:107
+#: qml/Settings/ProfileEditor.qml:105
 #, kde-format
 msgid "Header"
 msgstr "Шапка"
 
-#: qml/Settings/ProfileEditor.qml:142
+#: qml/Settings/ProfileEditor.qml:140
 #, kde-format
 msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 1500x500px"
 msgstr "PNG, GIF или JPG. Не более 2 МБ. Будет уменьшено до 1500×500 пкс"
 
-#: qml/Settings/ProfileEditor.qml:155 qml/Settings/ProfileEditor.qml:217
+#: qml/Settings/ProfileEditor.qml:153 qml/Settings/ProfileEditor.qml:213
 #, kde-format
 msgid "Delete"
 msgstr "Удалить"
 
-#: qml/Settings/ProfileEditor.qml:170
+#: qml/Settings/ProfileEditor.qml:166
 #, kde-format
 msgid "Avatar"
 msgstr "Аватар"
 
-#: qml/Settings/ProfileEditor.qml:203
+#: qml/Settings/ProfileEditor.qml:199
 #, kde-format
 msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 400x400px"
 msgstr "PNG, GIF или JPG. Не более 2 МБ. Будет уменьшено до 400x400 пкс"
 
-#: qml/Settings/ProfileEditor.qml:234
+#: qml/Settings/ProfileEditor.qml:228
 #, kde-format
 msgctxt "Profile fields"
 msgid "Fields"
 msgstr "Поля"
 
-#: qml/Settings/ProfileEditor.qml:279
+#: qml/Settings/ProfileEditor.qml:273
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove"
 msgstr "Удалить"
 
-#: qml/Settings/ProfileEditor.qml:290
+#: qml/Settings/ProfileEditor.qml:284
 #, kde-format
 msgctxt "@action:button"
 msgid "Add"
 msgstr "Добавить"
 
-#: qml/Settings/ProfileEditor.qml:306
+#: qml/Settings/ProfileEditor.qml:300
 #, kde-format
 msgid "Reset"
 msgstr "Сбросить"
 
-#: qml/Settings/SafetyPage.qml:35
+#: qml/Settings/SafetyPage.qml:31
 #, kde-format
 msgid "Muted Users"
 msgstr "Игнорируемые пользователи"
 
-#: qml/Settings/SafetyPage.qml:43
+#: qml/Settings/SafetyPage.qml:37
 #, kde-format
 msgid "Blocked Users"
 msgstr "Заблокированные пользователи"
 
-#: qml/Settings/SafetyPage.qml:51
+#: qml/Settings/SafetyPage.qml:43
 #, kde-format
 msgid "Blocked Domains"
 msgstr "Заблокированные домены"
@@ -5444,7 +5421,7 @@ msgstr "Сведения"
 msgid "About KDE"
 msgstr "О KDE"
 
-#: qml/ShareDialog.qml:35
+#: qml/ShareDialog.qml:34
 #, kde-format
 msgid "Sharing failed"
 msgstr "Ошибка публикации"
@@ -5496,145 +5473,145 @@ msgstr "Перестать игнорировать"
 msgid "No accounts available"
 msgstr "Нет доступных учётных записей"
 
-#: qml/StatusComposer/AttachmentInfoDialog.qml:98
+#: qml/StatusComposer/AttachmentInfoDialog.qml:99
 #, kde-format
 msgctxt "@title:group Alternate text or description of the image"
 msgid "Description"
 msgstr "Описание"
 
-#: qml/StatusComposer/AttachmentInfoDialog.qml:116
+#: qml/StatusComposer/AttachmentInfoDialog.qml:118
 #, kde-format
 msgctxt "@title:group"
 msgid "Focal point"
 msgstr "Основная тема"
 
-#: qml/StatusComposer/ComposerPoll.qml:45
+#: qml/StatusComposer/ComposerPoll.qml:46
 #, kde-format
 msgctxt "@label:textbox Poll choice"
 msgid "Choice %1"
 msgstr "Вариант ответа %1"
 
-#: qml/StatusComposer/ComposerPoll.qml:70
+#: qml/StatusComposer/ComposerPoll.qml:71
 #, kde-format
 msgctxt "@action:intoolbar Poll toolbar"
 msgid "Add Choice"
 msgstr "Добавить вариант ответа"
 
-#: qml/StatusComposer/ComposerPoll.qml:71
+#: qml/StatusComposer/ComposerPoll.qml:72
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "Add a new poll choice"
 msgstr "Добавить новый вариант ответа в опрос"
 
-#: qml/StatusComposer/ComposerPoll.qml:90
+#: qml/StatusComposer/ComposerPoll.qml:91
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "When the poll will expire"
 msgstr "Срок окончания опроса"
 
-#: qml/StatusComposer/ComposerPoll.qml:99
+#: qml/StatusComposer/ComposerPoll.qml:100
 #, kde-format
 msgctxt "@option:check Poll toolbar"
 msgid "Multiple choice"
 msgstr "Несколько вариантов ответа"
 
-#: qml/StatusComposer/ComposerPoll.qml:105
+#: qml/StatusComposer/ComposerPoll.qml:106
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "Allow multiple choices"
 msgstr "Разрешить несколько вариантов ответа"
 
-#: qml/StatusComposer/ComposerPoll.qml:114
+#: qml/StatusComposer/ComposerPoll.qml:115
 #, kde-format
 msgctxt "@option:check Poll toolbar"
 msgid "Hide totals"
 msgstr "Скрывать результаты"
 
-#: qml/StatusComposer/ComposerPoll.qml:120
+#: qml/StatusComposer/ComposerPoll.qml:121
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "Hide vote count until the poll ends"
 msgstr "Скрывать количество голосов до окончания опроса"
 
-#: qml/StatusComposer/EditorAttachmentGrid.qml:97
+#: qml/StatusComposer/EditorAttachmentGrid.qml:96
 #, kde-format
 msgid "Remove"
 msgstr "Удалить"
 
-#: qml/StatusComposer/ScheduledPostsPage.qml:86
+#: qml/StatusComposer/ScheduledPostsPage.qml:83
 #, kde-format
 msgctxt "Draft, unfinished post"
 msgid "Created %1 ago"
 msgstr "Создан %1 назад"
 
-#: qml/StatusComposer/ScheduledPostsPage.qml:86
+#: qml/StatusComposer/ScheduledPostsPage.qml:83
 #, kde-format
 msgctxt "Scheduled for this date"
 msgid "Scheduled for %1"
 msgstr "Запланировано в %1"
 
-#: qml/StatusComposer/ScheduledPostsPage.qml:94
+#: qml/StatusComposer/ScheduledPostsPage.qml:91
 #, kde-format
 msgctxt "@action:button Re-schedule this post"
 msgid "Re-schedule…"
 msgstr "Перенести…"
 
-#: qml/StatusComposer/ScheduledPostsPage.qml:105
+#: qml/StatusComposer/ScheduledPostsPage.qml:102
 #, kde-format
 msgctxt "@action:button Discard this post"
 msgid "Discard…"
 msgstr "Отменить…"
 
-#: qml/StatusComposer/ScheduledPostsPage.qml:117
+#: qml/StatusComposer/ScheduledPostsPage.qml:114
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Drafts"
 msgstr "Нет черновиков"
 
-#: qml/StatusComposer/ScheduledPostsPage.qml:117
+#: qml/StatusComposer/ScheduledPostsPage.qml:114
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Scheduled Posts"
 msgstr "Нет запланированных публикаций"
 
-#: qml/StatusComposer/ScheduledPostsPage.qml:126
+#: qml/StatusComposer/ScheduledPostsPage.qml:123
 #: qml/StatusComposer/StatusComposer.qml:182
 #, kde-format
 msgctxt "@title"
 msgid "Discard Draft"
 msgstr "Удаление черновика"
 
-#: qml/StatusComposer/ScheduledPostsPage.qml:126
+#: qml/StatusComposer/ScheduledPostsPage.qml:123
 #, kde-format
 msgctxt "@title"
 msgid "Discard Scheduled Post"
 msgstr "Отмена запланированной публикации"
 
-#: qml/StatusComposer/ScheduledPostsPage.qml:127
+#: qml/StatusComposer/ScheduledPostsPage.qml:124
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to discard this draft?"
 msgstr "Удалить этот черновик?"
 
-#: qml/StatusComposer/ScheduledPostsPage.qml:127
+#: qml/StatusComposer/ScheduledPostsPage.qml:124
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to discard this scheduled post?"
 msgstr "Отменить запланированную публикацию?"
 
-#: qml/StatusComposer/ScheduledPostsPage.qml:133
+#: qml/StatusComposer/ScheduledPostsPage.qml:130
 #, kde-format
 msgctxt "@action:button Discard this draft"
 msgid "Discard"
 msgstr "Удалить"
 
-#: qml/StatusComposer/ScheduledPostsPage.qml:149
+#: qml/StatusComposer/ScheduledPostsPage.qml:146
 #, kde-format
 msgctxt "@title"
 msgid "Re-Schedule Post"
 msgstr "Перенести публикацию"
 
-#: qml/StatusComposer/ScheduledPostsPage.qml:156
+#: qml/StatusComposer/ScheduledPostsPage.qml:153
 #, kde-format
 msgctxt "@action:button Set this post's schedule to when it should be posted"
 msgid "Set New Schedule"
@@ -5946,12 +5923,12 @@ msgctxt "@action:button Load more posts above this"
 msgid "Load More"
 msgstr "Загрузить больше"
 
-#: qml/UserInfo.qml:105
+#: qml/UserInfo.qml:104
 #, kde-format
 msgid "Switch Account"
 msgstr "Сменить учётную запись"
 
-#: qml/UserInfo.qml:108
+#: qml/UserInfo.qml:107
 #, kde-format
 msgid "Switch account"
 msgstr "Сменить учётную запись"
@@ -6306,6 +6283,18 @@ msgstr[0] "%1 год назад"
 msgstr[1] "%1 года назад"
 msgstr[2] "%1 лет назад"
 msgstr[3] "1 год назад"
+
+#~ msgctxt "@info:Cancel button to close the dailog"
+#~ msgid "Cancel"
+#~ msgstr "Отмена"
+
+#~ msgctxt "@action:button"
+#~ msgid "Cancel"
+#~ msgstr "Отмена"
+
+#~ msgctxt "@info Cancel button to close the dailog"
+#~ msgid "Cancel"
+#~ msgstr "Отменить"
 
 #~ msgid "Tokodon"
 #~ msgstr "Tokodon"

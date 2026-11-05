@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-28 01:00+0000\n"
+"POT-Creation-Date: 2026-11-05 00:56+0000\n"
 "PO-Revision-Date: 2026-10-01 23:03+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -185,12 +185,12 @@ msgstr "%1 님이 새 게시물을 작성함"
 msgid "%1 boosted your post"
 msgstr "%1 님이 내 글을 부스트함"
 
-#: account/notificationhandler.cpp:103 qml/Notifications/FollowDelegate.qml:83
+#: account/notificationhandler.cpp:103 qml/Notifications/FollowDelegate.qml:82
 #, kde-format
 msgid "%1 followed you"
 msgstr "%1 님이 팔로우함"
 
-#: account/notificationhandler.cpp:111 qml/Notifications/FollowDelegate.qml:81
+#: account/notificationhandler.cpp:111 qml/Notifications/FollowDelegate.qml:80
 #, kde-format
 msgid "%1 requested to follow you"
 msgstr "%1 님이 팔로우 요청함"
@@ -1043,13 +1043,13 @@ msgctxt "@title:window"
 msgid "Profile"
 msgstr "프로필"
 
-#: qml/AccountInfo.qml:136 qml/FollowingPage.qml:162
+#: qml/AccountInfo.qml:136 qml/FollowingPage.qml:160
 #, kde-format
 msgctxt "@label"
 msgid "No Posts"
 msgstr "게시물 없음"
 
-#: qml/AccountInfo.qml:137 qml/FollowingPage.qml:163
+#: qml/AccountInfo.qml:137 qml/FollowingPage.qml:161
 #, kde-format
 msgid "This user hasn't posted anything yet."
 msgstr "이 사용자의 게시물이 없습니다."
@@ -1082,7 +1082,7 @@ msgstr "계정 추가"
 msgid "Log in or create a new account"
 msgstr "기존 계정에 로그인하거나 새 계정 만들기"
 
-#: qml/AccountSwitchDialog.qml:158 qml/Settings/AccountsPage.qml:82
+#: qml/AccountSwitchDialog.qml:158 qml/Settings/AccountsPage.qml:83
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -1142,24 +1142,24 @@ msgctxt "@info:placeholder No accounts in this collection"
 msgid "No Accounts"
 msgstr "계정 없음"
 
-#: qml/CollectionsPage.qml:24
+#: qml/CollectionsPage.qml:22
 #, kde-format
 msgctxt "@title"
 msgid "Collections"
 msgstr "컬렉션"
 
-#: qml/CollectionsPage.qml:27
+#: qml/CollectionsPage.qml:25
 #, kde-format
 msgctxt "@action:button Create new collection"
 msgid "Create New…"
 msgstr "새로 만들기…"
 
-#: qml/CollectionsPage.qml:68
+#: qml/CollectionsPage.qml:66
 #, kde-format
 msgid "No Collections"
 msgstr "컬렉션 없음"
 
-#: qml/CollectionsPage.qml:69
+#: qml/CollectionsPage.qml:67
 #, kde-format
 msgid ""
 "Collections allow you to categorize accounts you want other people to follow."
@@ -1167,13 +1167,13 @@ msgstr ""
 "컬렉션을 사용해서 다른 사용자가 팔로우하기를 추천하는 사용자를 분류할 수 있습"
 "니다."
 
-#: qml/Components/BoostAltTextReminderDialog.qml:20
+#: qml/Components/BoostAltTextReminderDialog.qml:18
 #, kde-format
 msgctxt "@title"
 msgid "Boost Alt Text Reminder"
 msgstr "부스트 대체 텍스트 알림"
 
-#: qml/Components/BoostAltTextReminderDialog.qml:24
+#: qml/Components/BoostAltTextReminderDialog.qml:22
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -1183,19 +1183,19 @@ msgstr ""
 "이 게시물의 일부 미디어에 대체 텍스트가 없습니다. 시각 장애가 있는 사용자가 "
 "이해하기 어려울 수도 있습니다."
 
-#: qml/Components/BoostAltTextReminderDialog.qml:35
+#: qml/Components/BoostAltTextReminderDialog.qml:33
 #, kde-format
 msgctxt "@action:button Boost/Reblog this post anyway"
 msgid "Boost"
 msgstr "부스트"
 
-#: qml/Components/BoostConfirmationDialog.qml:20
+#: qml/Components/BoostConfirmationDialog.qml:19
 #, kde-format
 msgctxt "@title"
 msgid "Confirm Boost"
 msgstr "부스트 확인"
 
-#: qml/Components/BoostConfirmationDialog.qml:24
+#: qml/Components/BoostConfirmationDialog.qml:23
 #, kde-format
 msgctxt "@action:button Boost this post"
 msgid "Boost"
@@ -1213,13 +1213,13 @@ msgstr "프로필 보기"
 msgid "No emojis"
 msgstr "이모지 없음"
 
-#: qml/Components/ServerInformationCard.qml:29
+#: qml/Components/ServerInformationCard.qml:27
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Information"
 msgstr "정보 없음"
 
-#: qml/Components/ServerInformationCard.qml:34
+#: qml/Components/ServerInformationCard.qml:32
 #, kde-format
 msgctxt "@info Last updated: relative date and time (e.g. 2 years ago)"
 msgid "Last updated: %1"
@@ -1308,300 +1308,300 @@ msgctxt "@action:button"
 msgid "Decrease follow request count"
 msgstr "팔로우 요청 개수 감소"
 
-#: qml/EditCollectionPage.qml:31
+#: qml/EditCollectionPage.qml:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Collection"
 msgstr "컬렉션 만들기"
 
-#: qml/EditCollectionPage.qml:31
+#: qml/EditCollectionPage.qml:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Collection"
 msgstr "컬렉션 편집"
 
-#: qml/EditCollectionPage.qml:68
+#: qml/EditCollectionPage.qml:67
 #, kde-format
 msgctxt "@label:textbox Collection title"
 msgid "Name"
 msgstr "이름"
 
-#: qml/EditCollectionPage.qml:78
+#: qml/EditCollectionPage.qml:72
 #, kde-format
 msgctxt "@label:textbox Collection description"
 msgid "Description"
 msgstr "설명"
 
-#: qml/EditCollectionPage.qml:88
+#: qml/EditCollectionPage.qml:77
 #, kde-format
 msgctxt "@label:textbox Whether this collection should be marked sensitive"
 msgid "Sensitive"
 msgstr "민감함으로 표시"
 
-#: qml/EditCollectionPage.qml:98
+#: qml/EditCollectionPage.qml:82
 #, kde-format
 msgctxt ""
 "@label:textbox Whether this collection should be discoverable by other users"
 msgid "Discoverable"
 msgstr "발견 가능"
 
-#: qml/EditCollectionPage.qml:109
+#: qml/EditCollectionPage.qml:88
 #, kde-format
 msgctxt "@action:intoolbar Add users to collection"
 msgid "Add Users"
 msgstr "사용자 추가"
 
-#: qml/EditCollectionPage.qml:120
+#: qml/EditCollectionPage.qml:99
 #, kde-format
 msgctxt "@title"
 msgid "Add Users to Collection…"
 msgstr "컬렉션에 사용자 추가…"
 
-#: qml/EditCollectionPage.qml:158
+#: qml/EditCollectionPage.qml:137
 #, kde-format
 msgctxt "@action:button Add user to this collection"
 msgid "Add"
 msgstr "추가"
 
-#: qml/EditCollectionPage.qml:205 qml/EditListPage.qml:220
+#: qml/EditCollectionPage.qml:184 qml/EditListPage.qml:209
 #, kde-format
 msgid "Search among users you follow…"
 msgstr "팔로우하는 사용자에서 검색…"
 
-#: qml/EditCollectionPage.qml:237
+#: qml/EditCollectionPage.qml:217
 #, kde-format
 msgctxt "@action:button Create the collection"
 msgid "Create"
 msgstr "만들기"
 
-#: qml/EditCollectionPage.qml:239
+#: qml/EditCollectionPage.qml:219
 #, kde-format
 msgctxt "@action:button Save the edited collection"
 msgid "Save"
 msgstr "저장"
 
-#: qml/EditCollectionPage.qml:252
+#: qml/EditCollectionPage.qml:228
 #, kde-format
 msgctxt "@action:button Delete the collection"
 msgid "Delete"
 msgstr "삭제"
 
-#: qml/EditCollectionPage.qml:259
+#: qml/EditCollectionPage.qml:235
 #, kde-format
 msgctxt "@title"
 msgid "Deleting Collection"
 msgstr "컬렉션 삭제"
 
-#: qml/EditCollectionPage.qml:260
+#: qml/EditCollectionPage.qml:236
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to delete this collection?"
 msgstr "이 컬렉션을 삭제하시겠습니까?"
 
-#: qml/EditListPage.qml:31
+#: qml/EditListPage.qml:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Create List"
 msgstr "리스트 만들기"
 
-#: qml/EditListPage.qml:31
+#: qml/EditListPage.qml:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit List"
 msgstr "리스트 편집"
 
-#: qml/EditListPage.qml:67
+#: qml/EditListPage.qml:66
 #, kde-format
 msgctxt "@label:textbox List title"
 msgid "Title"
 msgstr "제목"
 
-#: qml/EditListPage.qml:75
+#: qml/EditListPage.qml:72
 #, kde-format
 msgctxt "@label"
 msgid "Show replies for"
 msgstr "다음의 답장 표시"
 
-#: qml/EditListPage.qml:87
+#: qml/EditListPage.qml:82
 #, kde-format
 msgctxt "@label If the list is exclusive"
 msgid "Exclusive"
 msgstr "제외 리스트"
 
-#: qml/EditListPage.qml:88
+#: qml/EditListPage.qml:83
 #, kde-format
 msgid "Posts in an exclusive list are excluded from the Home timeline."
 msgstr "제외 목록에 포함된 게시물은 홈 타임라인에서 제외됩니다."
 
-#: qml/EditListPage.qml:98
+#: qml/EditListPage.qml:89
 #, kde-format
 msgctxt "@label If the list is favorited"
 msgid "Favorite"
 msgstr "좋아요"
 
-#: qml/EditListPage.qml:99
+#: qml/EditListPage.qml:90
 #, kde-format
 msgid "This list will show up in the sidebar."
 msgstr "이 목록은 사이드바에 표시됩니다."
 
-#: qml/EditListPage.qml:107
+#: qml/EditListPage.qml:96
 #, kde-format
 msgctxt "@action:button Delete the list"
 msgid "Manage Users"
 msgstr "사용자 관리"
 
-#: qml/EditListPage.qml:124
+#: qml/EditListPage.qml:113
 #, kde-format
 msgctxt "@action:intoolbar Add users to list"
 msgid "Add Users"
 msgstr "사용자 추가"
 
-#: qml/EditListPage.qml:135
+#: qml/EditListPage.qml:124
 #, kde-format
 msgctxt "@title"
 msgid "Add Users to List…"
 msgstr "리스트에 사용자 추가…"
 
-#: qml/EditListPage.qml:173
+#: qml/EditListPage.qml:162
 #, kde-format
 msgctxt "@action:button Add user to this list"
 msgid "Add"
 msgstr "추가"
 
-#: qml/EditListPage.qml:254
+#: qml/EditListPage.qml:244
 #, kde-format
 msgctxt "@action:button Create the list"
 msgid "Create"
 msgstr "만들기"
 
-#: qml/EditListPage.qml:256
+#: qml/EditListPage.qml:246
 #, kde-format
 msgctxt "@action:button Save the edited list"
 msgid "Save"
 msgstr "저장"
 
-#: qml/EditListPage.qml:269
+#: qml/EditListPage.qml:255
 #, kde-format
 msgctxt "@action:button Delete the list"
 msgid "Delete"
 msgstr "삭제"
 
-#: qml/EditListPage.qml:276
+#: qml/EditListPage.qml:262
 #, kde-format
 msgctxt "@title"
 msgid "Deleting List"
 msgstr "리스트 삭제"
 
-#: qml/EditListPage.qml:277
+#: qml/EditListPage.qml:263
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to delete this list?"
 msgstr "이 리스트를 삭제하시겠습니까?"
 
-#: qml/ExplorePage.qml:19
+#: qml/ExplorePage.qml:17
 #, kde-format
 msgid "Explore"
 msgstr "탐색"
 
-#: qml/ExplorePage.qml:35 search/searchmodel.cpp:155
+#: qml/ExplorePage.qml:33 search/searchmodel.cpp:155
 #, kde-format
 msgid "Posts"
 msgstr "게시물"
 
-#: qml/ExplorePage.qml:41 search/searchmodel.cpp:153
+#: qml/ExplorePage.qml:39 search/searchmodel.cpp:153
 #, kde-format
 msgid "Hashtags"
 msgstr "해시태그"
 
-#: qml/ExplorePage.qml:47
+#: qml/ExplorePage.qml:45
 #, kde-format
 msgid "News"
 msgstr "뉴스"
 
-#: qml/ExplorePage.qml:53 search/searchmodel.cpp:151
+#: qml/ExplorePage.qml:51 search/searchmodel.cpp:151
 #, kde-format
 msgid "Users"
 msgstr "사용자"
 
-#: qml/ExplorePage.qml:104
+#: qml/ExplorePage.qml:102
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Posts"
 msgstr "게시물 없음"
 
-#: qml/ExplorePage.qml:131
+#: qml/ExplorePage.qml:129
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Tags"
 msgstr "태그 없음"
 
-#: qml/ExplorePage.qml:163
+#: qml/ExplorePage.qml:161
 #, kde-format
 msgid "%1 person is talking"
 msgid_plural "%1 people are talking"
 msgstr[0] "%1명이 대화 중"
 
-#: qml/ExplorePage.qml:248
+#: qml/ExplorePage.qml:246
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Open in Browser"
 msgstr "브라우저로 열기"
 
-#: qml/ExplorePage.qml:306
+#: qml/ExplorePage.qml:304
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No News"
 msgstr "뉴스 없음"
 
-#: qml/ExplorePage.qml:343
+#: qml/ExplorePage.qml:341
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Users"
 msgstr "사용자 없음"
 
-#: qml/FollowingPage.qml:21
+#: qml/FollowingPage.qml:19
 #, kde-format
 msgctxt "@title 'Following' as in the users you're following on Mastodon."
 msgid "Following"
 msgstr "팔로잉"
 
-#: qml/FollowingPage.qml:42 qml/Settings/SafetyPage.qml:27
+#: qml/FollowingPage.qml:40 qml/Settings/SafetyPage.qml:25
 #: qml/TimelinePage.qml:111
 #, kde-format
 msgctxt "@action:button"
 msgid "Filters"
 msgstr "필터"
 
-#: qml/FollowingPage.qml:47
+#: qml/FollowingPage.qml:45
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Show Boosts"
 msgstr "부스트 표시"
 
-#: qml/FollowingPage.qml:55
+#: qml/FollowingPage.qml:53
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Show Replies"
 msgstr "답장 표시"
 
-#: qml/FollowingPage.qml:66 qml/TimelinePage.qml:140
+#: qml/FollowingPage.qml:64 qml/TimelinePage.qml:140
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Configure Filters…"
 msgstr "필터 설정…"
 
-#: qml/FollowingPage.qml:67 qml/TimelinePage.qml:141
+#: qml/FollowingPage.qml:65 qml/TimelinePage.qml:141
 #, kde-format
 msgctxt "@title:window"
 msgid "Filters"
 msgstr "필터"
 
-#: qml/FollowingPage.qml:156
+#: qml/FollowingPage.qml:154
 #, kde-format
 msgid "No User Selected"
 msgstr "선택한 사용자 없음"
 
-#: qml/FollowingPage.qml:157
+#: qml/FollowingPage.qml:155
 #, kde-format
 msgid ""
 "With the Following view, easily check on each user you're following and only "
@@ -1610,7 +1610,7 @@ msgstr ""
 "팔로잉 보기에서는 팔로우 중인 사용자를 쉽게 확인하고 해당 사용자의 게시물을 "
 "최근 활동순으로 정렬해서 표시합니다."
 
-#: qml/FullScreenImage.qml:34
+#: qml/FullScreenImage.qml:30
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Open Post"
@@ -1622,19 +1622,19 @@ msgctxt "@title:window"
 msgid "About Server"
 msgstr "서버 정보"
 
-#: qml/InitialSetup/SetupNotifications.qml:20
+#: qml/InitialSetup/SetupNotifications.qml:15
 #, kde-format
 msgctxt "@title:window"
 msgid "Notifications"
 msgstr "알림"
 
-#: qml/InitialSetup/SetupNotifications.qml:23
-#: qml/InitialSetup/SetupPassword.qml:21
+#: qml/InitialSetup/SetupNotifications.qml:18
+#: qml/InitialSetup/SetupPassword.qml:17
 #, kde-format
 msgid "Setup Required"
 msgstr "설정 필요함"
 
-#: qml/InitialSetup/SetupNotifications.qml:29
+#: qml/InitialSetup/SetupNotifications.qml:25
 #, kde-format
 msgid ""
 "Tokodon can show notifications for activity such as users boosting or "
@@ -1647,24 +1647,24 @@ msgstr ""
 "\n"
 "로그인했을 때 알림을 미세 조정할 수 있습니다."
 
-#: qml/InitialSetup/SetupNotifications.qml:36
+#: qml/InitialSetup/SetupNotifications.qml:30
 #, kde-format
 msgid "Allow Notifications"
 msgstr "알림 허용"
 
-#: qml/InitialSetup/SetupNotifications.qml:50
-#: qml/InitialSetup/SetupWelcome.qml:43 qml/LoginFlow/CodeAuthorization.qml:33
+#: qml/InitialSetup/SetupNotifications.qml:42
+#: qml/InitialSetup/SetupWelcome.qml:40 qml/LoginFlow/CodeAuthorization.qml:30
 #, kde-format
 msgid "Continue"
 msgstr "계속"
 
-#: qml/InitialSetup/SetupPassword.qml:18
+#: qml/InitialSetup/SetupPassword.qml:14
 #, kde-format
 msgctxt "@title:window"
 msgid "Password Service"
 msgstr "암호 서비스"
 
-#: qml/InitialSetup/SetupPassword.qml:26
+#: qml/InitialSetup/SetupPassword.qml:23
 #, kde-format
 msgid ""
 "Tokodon requires a password service to be running to save personally "
@@ -1682,57 +1682,57 @@ msgstr ""
 "\n"
 "해당 서비스를 설치한 후 실행 중인지 확인한 다음 Tokodon을 다시 시작하십시오."
 
-#: qml/InitialSetup/SetupPassword.qml:33
+#: qml/InitialSetup/SetupPassword.qml:28
 #, kde-format
 msgid "Quit Tokodon"
 msgstr "Tokodon 끝내기"
 
-#: qml/InitialSetup/SetupWelcome.qml:18 qml/LoginFlow/WelcomePage.qml:19
+#: qml/InitialSetup/SetupWelcome.qml:16 qml/LoginFlow/WelcomePage.qml:19
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome"
 msgstr "환영합니다"
 
-#: qml/InitialSetup/SetupWelcome.qml:31
+#: qml/InitialSetup/SetupWelcome.qml:29
 #, kde-format
 msgid "Welcome to Tokodon"
 msgstr "Tokodon에 오신 것을 환영합니다"
 
-#: qml/InitialSetup/SetupWelcome.qml:36
+#: qml/InitialSetup/SetupWelcome.qml:35
 #, kde-format
 msgid "Some initial setup is required before you can use Tokodon."
 msgstr "Tokodon을 사용하기 전에 몇 가지 초기 설정이 필요합니다."
 
-#: qml/LanguageSelector.qml:26
+#: qml/LanguageSelector.qml:25
 #, kde-format
 msgctxt "@title"
 msgid "Select Language"
 msgstr "언어 선택"
 
-#: qml/LanguageSelector.qml:51
+#: qml/LanguageSelector.qml:50
 #, kde-format
 msgctxt "@action:button"
 msgid "Close"
 msgstr "닫기"
 
-#: qml/ListsPage.qml:24
+#: qml/ListsPage.qml:23
 #, kde-format
 msgctxt "@title"
 msgid "Lists"
 msgstr "리스트"
 
-#: qml/ListsPage.qml:37
+#: qml/ListsPage.qml:36
 #, kde-format
 msgctxt "@action:button Create new list"
 msgid "Create New…"
 msgstr "새로 만들기…"
 
-#: qml/ListsPage.qml:78
+#: qml/ListsPage.qml:77
 #, kde-format
 msgid "No Lists"
 msgstr "리스트 없음"
 
-#: qml/ListsPage.qml:79
+#: qml/ListsPage.qml:78
 #, kde-format
 msgid "Lists allow you to categorize who you're following."
 msgstr "리스트를 사용해서 팔로우하는 사용자를 분류할 수 있습니다."
@@ -1757,7 +1757,7 @@ msgctxt "@action:button Edit current list"
 msgid "Edit…"
 msgstr "편집…"
 
-#: qml/LoginFlow/BaseAuthorization.qml:27
+#: qml/LoginFlow/BaseAuthorization.qml:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Authorization"
@@ -1768,48 +1768,48 @@ msgstr "인증"
 msgid "To continue, you must authorize Tokodon to access your account."
 msgstr "계속 진행하려면 Tokodon이 계정에 접근할 수 있도록 허용해야 합니다."
 
-#: qml/LoginFlow/BaseAuthorization.qml:84
+#: qml/LoginFlow/BaseAuthorization.qml:80
 #, kde-format
 msgid "Open Authorization Page"
 msgstr "인증 페이지 열기"
 
-#: qml/LoginFlow/BaseAuthorization.qml:96
+#: qml/LoginFlow/BaseAuthorization.qml:87
 #, kde-format
 msgid "Copy Link to Authorization Page"
 msgstr "인증 페이지 링크 복사"
 
-#: qml/LoginFlow/BaseAuthorization.qml:100
+#: qml/LoginFlow/BaseAuthorization.qml:91
 #, kde-format
 msgid "Link copied."
 msgstr "링크가 복사되었습니다."
 
-#: qml/LoginFlow/BrowserAuthorization.qml:26
+#: qml/LoginFlow/BrowserAuthorization.qml:24
 #, kde-format
 msgid "Use Authorization Code"
 msgstr "인증 코드 사용"
 
-#: qml/LoginFlow/BrowserAuthorization.qml:27
+#: qml/LoginFlow/BrowserAuthorization.qml:25
 #, kde-format
 msgid "Use this login method if the above link does not work."
 msgstr "위의 링크가 작동하지 않으면 이 로그인 방법을 사용하십시오."
 
-#: qml/LoginFlow/CodeAuthorization.qml:26
+#: qml/LoginFlow/CodeAuthorization.qml:25
 #, kde-format
 msgid "Enter authorization token:"
 msgstr "인증 토큰 입력:"
 
-#: qml/LoginFlow/LoginIssuePage.qml:18
+#: qml/LoginFlow/LoginIssuePage.qml:16
 #, kde-format
 msgctxt "@title:window"
 msgid "Login Issue"
 msgstr "로그인 문제"
 
-#: qml/LoginFlow/LoginIssuePage.qml:28
+#: qml/LoginFlow/LoginIssuePage.qml:26
 #, kde-format
 msgid "There was an issue logging into %1:<br><b>%2</b>"
 msgstr "%1에 로그인하는 중 오류 발생:<br><b>%2</b>"
 
-#: qml/LoginFlow/LoginIssuePage.qml:39
+#: qml/LoginFlow/LoginIssuePage.qml:38
 #, kde-format
 msgid ""
 "Please check if the password service is running. For other login issues, you "
@@ -1823,155 +1823,155 @@ msgstr ""
 "아래 단추를 사용해서 로그인을 다시 시도해 보거나 Tokodon을 다시 시작해 보십시"
 "오."
 
-#: qml/LoginFlow/LoginIssuePage.qml:49
+#: qml/LoginFlow/LoginIssuePage.qml:46
 #, kde-format
 msgid "View Website"
 msgstr "웹사이트 보기"
 
-#: qml/LoginFlow/LoginIssuePage.qml:58
+#: qml/LoginFlow/LoginIssuePage.qml:53
 #, kde-format
 msgid "Re-Attempt Log In"
 msgstr "로그인 다시 시도"
 
-#: qml/LoginFlow/LoginIssuePage.qml:70 qml/Settings/AccountPage.qml:41
+#: qml/LoginFlow/LoginIssuePage.qml:63 qml/Settings/AccountPage.qml:40
 #, kde-format
 msgid "Logout…"
 msgstr "로그아웃…"
 
-#: qml/LoginFlow/LoginIssuePage.qml:77 qml/Settings/AccountPage.qml:61
+#: qml/LoginFlow/LoginIssuePage.qml:70 qml/Settings/AccountPage.qml:60
 #, kde-format
 msgctxt "@title"
 msgid "Logout"
 msgstr "로그아웃"
 
-#: qml/LoginFlow/LoginIssuePage.qml:78
+#: qml/LoginFlow/LoginIssuePage.qml:71
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to log out?"
 msgstr "로그아웃하시겠습니까?"
 
-#: qml/LoginFlow/RegistrationPage.qml:18
+#: qml/LoginFlow/RegistrationPage.qml:16
 #, kde-format
 msgctxt "@title:window"
 msgid "Registration"
 msgstr "등록"
 
-#: qml/LoginFlow/RegistrationPage.qml:26 qml/LoginFlow/RegistrationPage.qml:37
-#: qml/LoginFlow/RulesPage.qml:26 qml/LoginFlow/ServersPage.qml:31
+#: qml/LoginFlow/RegistrationPage.qml:24 qml/LoginFlow/RegistrationPage.qml:35
+#: qml/LoginFlow/RulesPage.qml:24 qml/LoginFlow/ServersPage.qml:30
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
 msgstr "서버와 통신할 수 없음: %1. 프록시 설정을 확인하십시오."
 
-#: qml/LoginFlow/RegistrationPage.qml:86 qml/LoginFlow/RulesPage.qml:41
-#: qml/LoginFlow/ServersPage.qml:171 qml/Settings/NetworkProxyPage.qml:71
+#: qml/LoginFlow/RegistrationPage.qml:84 qml/LoginFlow/RulesPage.qml:39
+#: qml/LoginFlow/ServersPage.qml:170 qml/Settings/NetworkProxyPage.qml:66
 #, kde-format
 msgid "Proxy Settings"
 msgstr "프록시 설정"
 
-#: qml/LoginFlow/RegistrationPage.qml:95
+#: qml/LoginFlow/RegistrationPage.qml:93
 #, kde-format
 msgctxt "@title:group"
 msgid "Register"
 msgstr "등록"
 
-#: qml/LoginFlow/RegistrationPage.qml:101
+#: qml/LoginFlow/RegistrationPage.qml:100
 #, kde-format
 msgid "Username"
 msgstr "사용자 이름"
 
-#: qml/LoginFlow/RegistrationPage.qml:110
+#: qml/LoginFlow/RegistrationPage.qml:107
 #, kde-format
 msgid "Email Address"
 msgstr "이메일 주소"
 
-#: qml/LoginFlow/RegistrationPage.qml:119 qml/Settings/NetworkProxyPage.qml:124
+#: qml/LoginFlow/RegistrationPage.qml:114 qml/Settings/NetworkProxyPage.qml:117
 #, kde-format
 msgid "Password"
 msgstr "암호"
 
-#: qml/LoginFlow/RegistrationPage.qml:129
+#: qml/LoginFlow/RegistrationPage.qml:122
 #, kde-format
 msgid "Date of Birth"
 msgstr "생년월일"
 
-#: qml/LoginFlow/RegistrationPage.qml:137
+#: qml/LoginFlow/RegistrationPage.qml:128
 #, kde-format
 msgid "Reason"
 msgstr "이유"
 
-#: qml/LoginFlow/RegistrationPage.qml:146
+#: qml/LoginFlow/RegistrationPage.qml:137
 #, kde-format
 msgid "Register"
 msgstr "등록"
 
-#: qml/LoginFlow/RulesPage.qml:18
+#: qml/LoginFlow/RulesPage.qml:16
 #, kde-format
 msgctxt "@title:window"
 msgid "Rules"
 msgstr "규칙"
 
-#: qml/LoginFlow/RulesPage.qml:48
+#: qml/LoginFlow/RulesPage.qml:46
 #, kde-format
 msgctxt "@title:group"
 msgid "Rules"
 msgstr "규칙"
 
-#: qml/LoginFlow/RulesPage.qml:101
+#: qml/LoginFlow/RulesPage.qml:89
 #, kde-format
 msgctxt "@action:button Agree to server rules"
 msgid "Agree"
 msgstr "동의함"
 
-#: qml/LoginFlow/RulesPage.qml:119
+#: qml/LoginFlow/RulesPage.qml:102
 #, kde-format
 msgctxt "@action:button Disagree to server rules"
 msgid "Disagree"
 msgstr "동의하지 않음"
 
-#: qml/LoginFlow/ServersPage.qml:22
+#: qml/LoginFlow/ServersPage.qml:21
 #, kde-format
 msgctxt "@title:window"
 msgid "Pick a Server"
 msgstr "서버 선택"
 
-#: qml/LoginFlow/ServersPage.qml:22
+#: qml/LoginFlow/ServersPage.qml:21
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose your Existing Server"
 msgstr "기존 서버 선택"
 
-#: qml/LoginFlow/ServersPage.qml:39
+#: qml/LoginFlow/ServersPage.qml:38
 #, kde-format
 msgid "This server is closed for registration: %1"
 msgstr "이 서버의 등록이 비활성화되어 있습니다: %1"
 
-#: qml/LoginFlow/ServersPage.qml:41
+#: qml/LoginFlow/ServersPage.qml:40
 #, kde-format
 msgid "This server is closed for registration, and did not provide a reason."
 msgstr "이 서버의 등록이 비활성화되어 있습니다. 이유를 제공하지 않았습니다."
 
-#: qml/LoginFlow/ServersPage.qml:179
+#: qml/LoginFlow/ServersPage.qml:178
 #, kde-format
 msgid "Search or enter URL…"
 msgstr "검색 또는 URL 입력…"
 
-#: qml/LoginFlow/ServersPage.qml:218
+#: qml/LoginFlow/ServersPage.qml:217
 #, kde-format
 msgid "Custom Server"
 msgstr "사용자 정의 서버"
 
-#: qml/LoginFlow/ServersPage.qml:227
+#: qml/LoginFlow/ServersPage.qml:226
 #, kde-format
 msgid "Public Servers"
 msgstr "공개 서버"
 
-#: qml/LoginFlow/ServersPage.qml:257
+#: qml/LoginFlow/ServersPage.qml:256
 #, kde-format
 msgid "No Public Servers"
 msgstr "공개 서버 없음"
 
-#: qml/LoginFlow/ServersPage.qml:258
+#: qml/LoginFlow/ServersPage.qml:257
 #, kde-format
 msgid "Enter a server URL manually in the search field."
 msgstr "검색 필드에 서버 URL을 직접 입력하십시오."
@@ -1998,37 +1998,37 @@ msgstr ""
 "연합우주를 탐색하고 마스토돈(및 기타 호환 소프트웨어)에 있는 사람과 연결합니"
 "다."
 
-#: qml/LoginFlow/WelcomePage.qml:81
+#: qml/LoginFlow/WelcomePage.qml:82
 #, kde-format
 msgctxt "@action:button Pick a Mastodon server"
 msgid "Register"
 msgstr "등록"
 
-#: qml/LoginFlow/WelcomePage.qml:91
+#: qml/LoginFlow/WelcomePage.qml:90
 #, kde-format
 msgctxt "@action:button Use an existing Mastodon account"
 msgid "Login"
 msgstr "로그인"
 
-#: qml/LoginFlow/WelcomePage.qml:98
+#: qml/LoginFlow/WelcomePage.qml:97
 #, kde-format
 msgctxt "@action:button Use an existing Mastodon account"
 msgid "Use System Account"
 msgstr "시스템 계정 사용"
 
-#: qml/LoginFlow/WelcomePage.qml:116
+#: qml/LoginFlow/WelcomePage.qml:115
 #, kde-format
 msgctxt "@action:button Application settings"
 msgid "Settings"
 msgstr "설정"
 
-#: qml/LoginFlow/WelcomePage.qml:127
+#: qml/LoginFlow/WelcomePage.qml:126
 #, kde-format
 msgctxt "@action:button"
 msgid "Compatible with Mastodon"
 msgstr "마스토돈과 호환됨"
 
-#: qml/LoginFlow/WelcomePage.qml:133
+#: qml/LoginFlow/WelcomePage.qml:132
 #, kde-format
 msgctxt "@info Compatible with Mastodon"
 msgid "Compatible with"
@@ -2235,83 +2235,73 @@ msgctxt "@action:intoolbar"
 msgid "Follow"
 msgstr "팔로우"
 
-#: qml/ModerationTools/AccountToolPage.qml:32
-#: qml/ModerationTools/AccountToolPage.qml:216
+#: qml/ModerationTools/AccountToolPage.qml:33
+#: qml/ModerationTools/AccountToolPage.qml:212
 #, kde-format
 msgid "Advanced Search"
 msgstr "고급 검색"
 
-#: qml/ModerationTools/AccountToolPage.qml:42
-#, kde-format
-msgctxt "@info:placeholder Username for searching accounts"
-msgid "Username:"
-msgstr "사용자 이름:"
-
-#: qml/ModerationTools/AccountToolPage.qml:47
-#, kde-format
-msgctxt "@info:placeholder display name for searching accounts"
-msgid "Display Name:"
-msgstr "표시 이름:"
-
-#: qml/ModerationTools/AccountToolPage.qml:52
-#, kde-format
-msgctxt "@info:placeholder email for searching accounts"
-msgid "Email:"
-msgstr "이메일:"
-
-#: qml/ModerationTools/AccountToolPage.qml:57
-#, kde-format
-msgctxt "@info:placeholder ip for searching accounts"
-msgid "IP:"
-msgstr "IP:"
-
-#: qml/ModerationTools/AccountToolPage.qml:64
+#: qml/ModerationTools/AccountToolPage.qml:40
 #, kde-format
 msgctxt "@info:Search button to initiate searching accounts"
 msgid "Search"
 msgstr "검색"
 
-#: qml/ModerationTools/AccountToolPage.qml:75
+#: qml/ModerationTools/AccountToolPage.qml:44
 #, kde-format
 msgctxt "@info:Reset button to reset all the text fields"
 msgid "Reset"
 msgstr "초기화"
 
-#: qml/ModerationTools/AccountToolPage.qml:80
-#: qml/ModerationTools/FederationToolPage.qml:141
-#: qml/ModerationTools/FederationToolPage.qml:172
-#: qml/ModerationTools/IpRulePage.qml:121
-#: qml/ModerationTools/MainFederationToolPage.qml:111
+#: qml/ModerationTools/AccountToolPage.qml:62
 #, kde-format
-msgctxt "@info:Cancel button to close the dailog"
-msgid "Cancel"
-msgstr "취소"
+msgctxt "@info:placeholder Username for searching accounts"
+msgid "Username:"
+msgstr "사용자 이름:"
 
-#: qml/ModerationTools/AccountToolPage.qml:97
+#: qml/ModerationTools/AccountToolPage.qml:67
+#, kde-format
+msgctxt "@info:placeholder display name for searching accounts"
+msgid "Display Name:"
+msgstr "표시 이름:"
+
+#: qml/ModerationTools/AccountToolPage.qml:72
+#, kde-format
+msgctxt "@info:placeholder email for searching accounts"
+msgid "Email:"
+msgstr "이메일:"
+
+#: qml/ModerationTools/AccountToolPage.qml:77
+#, kde-format
+msgctxt "@info:placeholder ip for searching accounts"
+msgid "IP:"
+msgstr "IP:"
+
+#: qml/ModerationTools/AccountToolPage.qml:91
 #, kde-format
 msgctxt "@info:Location combobox to choose location filters"
 msgid "Location"
 msgstr "위치"
 
-#: qml/ModerationTools/AccountToolPage.qml:110
+#: qml/ModerationTools/AccountToolPage.qml:104
 #, kde-format
 msgctxt "@info:Filter out accounts from any location"
 msgid "All"
 msgstr "모두"
 
-#: qml/ModerationTools/AccountToolPage.qml:114
+#: qml/ModerationTools/AccountToolPage.qml:108
 #, kde-format
 msgctxt "@info:Filter out local accounts"
 msgid "Local"
 msgstr "로컬"
 
-#: qml/ModerationTools/AccountToolPage.qml:118
+#: qml/ModerationTools/AccountToolPage.qml:112
 #, kde-format
 msgctxt "@info:Filter out remote accounts"
 msgid "Remote"
 msgstr "원격"
 
-#: qml/ModerationTools/AccountToolPage.qml:132
+#: qml/ModerationTools/AccountToolPage.qml:127
 #, kde-format
 msgctxt ""
 "@info:Moderation Status combobox to choose between different moderation "
@@ -2319,73 +2309,73 @@ msgctxt ""
 msgid "Moderation Status"
 msgstr "중재 상태"
 
-#: qml/ModerationTools/AccountToolPage.qml:143
+#: qml/ModerationTools/AccountToolPage.qml:138
 #, kde-format
 msgctxt "@info:Filter out accounts with any moderation status"
 msgid "All"
 msgstr "모두"
 
-#: qml/ModerationTools/AccountToolPage.qml:147
+#: qml/ModerationTools/AccountToolPage.qml:142
 #, kde-format
 msgctxt "@info:Filter out accounts with active moderation status"
 msgid "Active"
 msgstr "활성"
 
-#: qml/ModerationTools/AccountToolPage.qml:151
+#: qml/ModerationTools/AccountToolPage.qml:146
 #, kde-format
 msgctxt "@info:Filter out accounts with pending moderation status"
 msgid "Pending"
 msgstr "대기 중"
 
-#: qml/ModerationTools/AccountToolPage.qml:155
+#: qml/ModerationTools/AccountToolPage.qml:150
 #, kde-format
 msgctxt "@info:Filter out accounts with disabled moderation status"
 msgid "Disabled"
 msgstr "비활성화됨"
 
-#: qml/ModerationTools/AccountToolPage.qml:159
+#: qml/ModerationTools/AccountToolPage.qml:154
 #, kde-format
 msgctxt "@info:Filter out accounts with silenced moderation status"
 msgid "Silenced"
 msgstr "제한됨"
 
-#: qml/ModerationTools/AccountToolPage.qml:163
+#: qml/ModerationTools/AccountToolPage.qml:158
 #, kde-format
 msgctxt "@info:Filter out accounts with suspended moderation status"
 msgid "Suspended"
 msgstr "일시 정지됨"
 
-#: qml/ModerationTools/AccountToolPage.qml:176
+#: qml/ModerationTools/AccountToolPage.qml:172
 #, kde-format
 msgctxt "@info:Role combobox to choose between different role filters"
 msgid "Role"
 msgstr "역할"
 
-#: qml/ModerationTools/AccountToolPage.qml:190
+#: qml/ModerationTools/AccountToolPage.qml:186
 #, kde-format
 msgctxt "@info:Filter out accounts with any role"
 msgid "All"
 msgstr "모두"
 
-#: qml/ModerationTools/AccountToolPage.qml:194
+#: qml/ModerationTools/AccountToolPage.qml:190
 #, kde-format
 msgctxt "@info:Filter out accounts with moderator role"
 msgid "Moderator"
 msgstr "중재자"
 
-#: qml/ModerationTools/AccountToolPage.qml:198
+#: qml/ModerationTools/AccountToolPage.qml:194
 #, kde-format
 msgctxt "@info:Filter out accounts with admin role"
 msgid "Admin"
 msgstr "관리자"
 
-#: qml/ModerationTools/AccountToolPage.qml:202
+#: qml/ModerationTools/AccountToolPage.qml:198
 #, kde-format
 msgctxt "@info:Filter out accounts with owner role"
 msgid "Owner"
 msgstr "소유자"
 
-#: qml/ModerationTools/AccountToolPage.qml:300
+#: qml/ModerationTools/AccountToolPage.qml:296
 #, kde-format
 msgid "No accounts found"
 msgstr "계정을 찾을 수 없음"
@@ -2396,25 +2386,36 @@ msgctxt "@action:button"
 msgid "Create Email Block"
 msgstr "이메일 차단 만들기"
 
-#: qml/ModerationTools/EmailBlockToolPage.qml:31
+#: qml/ModerationTools/EmailBlockToolPage.qml:32
 #, kde-format
 msgctxt "@title"
 msgid "E-Mail Domain Info"
 msgstr "이메일 도메인 정보"
 
-#: qml/ModerationTools/EmailBlockToolPage.qml:40
+#: qml/ModerationTools/EmailBlockToolPage.qml:39
+#, kde-format
+msgctxt "@action:button"
+msgid "Delete email block"
+msgstr "이메일 차단 삭제"
+
+#: qml/ModerationTools/EmailBlockToolPage.qml:45
+#, kde-format
+msgid "Email block deleted"
+msgstr "이메일 차단 삭제됨"
+
+#: qml/ModerationTools/EmailBlockToolPage.qml:52
 #, kde-format
 msgctxt "@info The domain on which the block is imposed"
 msgid "Email domain name"
 msgstr "이메일 도메인 이름"
 
-#: qml/ModerationTools/EmailBlockToolPage.qml:48
+#: qml/ModerationTools/EmailBlockToolPage.qml:57
 #, kde-format
 msgctxt "@info Time when the block was imposed."
 msgid "Block created at"
 msgstr "차단 생성 시간"
 
-#: qml/ModerationTools/EmailBlockToolPage.qml:56
+#: qml/ModerationTools/EmailBlockToolPage.qml:62
 #, kde-format
 msgctxt ""
 "@info The counted accounts signup attempts using that email domain within "
@@ -2422,44 +2423,37 @@ msgctxt ""
 msgid "Account sign-up attempts in this week"
 msgstr "이번 주의 계정 등록 시도 횟수"
 
-#: qml/ModerationTools/EmailBlockToolPage.qml:64
+#: qml/ModerationTools/EmailBlockToolPage.qml:67
 #, kde-format
 msgctxt ""
 "@info The counted IP signup attempts of that email domain within that day."
 msgid "IP sign-up attempts in this week"
 msgstr "이번 주의 IP 등록 시도 횟수"
 
-#: qml/ModerationTools/EmailBlockToolPage.qml:73
-#: qml/ModerationTools/EmailBlockToolPage.qml:111
-#, kde-format
-msgctxt "@action:button"
-msgid "Cancel"
-msgstr "취소"
-
-#: qml/ModerationTools/EmailBlockToolPage.qml:78
-#, kde-format
-msgctxt "@action:button"
-msgid "Delete email block"
-msgstr "이메일 차단 삭제"
-
-#: qml/ModerationTools/EmailBlockToolPage.qml:82
-#, kde-format
-msgid "Email block deleted"
-msgstr "이메일 차단 삭제됨"
-
-#: qml/ModerationTools/EmailBlockToolPage.qml:92
+#: qml/ModerationTools/EmailBlockToolPage.qml:76
 #, kde-format
 msgctxt "@title"
 msgid "New E-Mail Domain Block"
 msgstr "새 이메일 도메인 차단"
 
-#: qml/ModerationTools/EmailBlockToolPage.qml:102
+#: qml/ModerationTools/EmailBlockToolPage.qml:83
+#, kde-format
+msgctxt "@action:button"
+msgid "Resolve domain"
+msgstr "도메인 해결"
+
+#: qml/ModerationTools/EmailBlockToolPage.qml:89
+#, kde-format
+msgid "New email block added"
+msgstr "새 이메일 차단 추가됨"
+
+#: qml/ModerationTools/EmailBlockToolPage.qml:98
 #, kde-format
 msgctxt "@info The domain on which the block will be imposed"
 msgid "Domain *"
 msgstr "도메인 *"
 
-#: qml/ModerationTools/EmailBlockToolPage.qml:103
+#: qml/ModerationTools/EmailBlockToolPage.qml:99
 #, kde-format
 msgid ""
 "This can be the domain name that shows up in the e-mail address or the MX "
@@ -2467,24 +2461,13 @@ msgid ""
 msgstr ""
 "이메일 주소나 MX 레코드에 사용되는 도메인입니다. 계정을 등록할 때 대조합니다."
 
-#: qml/ModerationTools/EmailBlockToolPage.qml:116
-#, kde-format
-msgctxt "@action:button"
-msgid "Resolve domain"
-msgstr "도메인 해결"
-
-#: qml/ModerationTools/EmailBlockToolPage.qml:120
-#, kde-format
-msgid "New email block added"
-msgstr "새 이메일 차단 추가됨"
-
-#: qml/ModerationTools/EmailBlockToolPage.qml:163
+#: qml/ModerationTools/EmailBlockToolPage.qml:139
 #, kde-format
 msgctxt "@info"
 msgid "%1 sign-up attempts over the last week"
 msgstr "지난 주에 계정 등록이 %1회 시도됨"
 
-#: qml/ModerationTools/EmailBlockToolPage.qml:185
+#: qml/ModerationTools/EmailBlockToolPage.qml:161
 #, kde-format
 msgid "No email blocks found"
 msgstr "이메일 차단을 찾을 수 없음"
@@ -2495,96 +2478,108 @@ msgid "Add New Domain Block"
 msgstr "새 도메인 차단 추가"
 
 #: qml/ModerationTools/FederationToolPage.qml:27
-#: qml/ModerationTools/FederationToolPage.qml:160
+#: qml/ModerationTools/FederationToolPage.qml:155
 #, kde-format
 msgid "Allow Federation with Domain"
 msgstr "도메인과의 연합 허용"
 
-#: qml/ModerationTools/FederationToolPage.qml:39
+#: qml/ModerationTools/FederationToolPage.qml:41
 #, kde-format
 msgid "Allowed Domain Info"
 msgstr "허용된 도메인 정보"
 
-#: qml/ModerationTools/FederationToolPage.qml:45
+#: qml/ModerationTools/FederationToolPage.qml:48
+#, kde-format
+msgid "Disallow Federation with Domain"
+msgstr "도메인과의 연합 금지"
+
+#: qml/ModerationTools/FederationToolPage.qml:54
+#, kde-format
+msgid "Disallowed federation with the domain"
+msgstr "도메인과의 금지된 연합"
+
+#: qml/ModerationTools/FederationToolPage.qml:61
 #, kde-format
 msgctxt "@info:The domain that is allowed to federate"
 msgid "Domain"
 msgstr "도메인"
 
-#: qml/ModerationTools/FederationToolPage.qml:51
+#: qml/ModerationTools/FederationToolPage.qml:66
 #, kde-format
 msgctxt "@info:Time when the domain was allowed to federate."
 msgid "Created at"
 msgstr "생성 시간"
 
-#: qml/ModerationTools/FederationToolPage.qml:60
-#, kde-format
-msgid "Disallow Federation with Domain"
-msgstr "도메인과의 연합 금지"
-
-#: qml/ModerationTools/FederationToolPage.qml:64
-#, kde-format
-msgid "Disallowed federation with the domain"
-msgstr "도메인과의 금지된 연합"
-
-#: qml/ModerationTools/FederationToolPage.qml:74
+#: qml/ModerationTools/FederationToolPage.qml:75
 #, kde-format
 msgid "Add Domain Block"
 msgstr "도메인 차단 추가"
 
-#: qml/ModerationTools/FederationToolPage.qml:84
+#: qml/ModerationTools/FederationToolPage.qml:82
+#: qml/ModerationTools/FederationToolPage.qml:162
+#, kde-format
+msgctxt "@info:Button to create a domain block"
+msgid "Create Block"
+msgstr "차단 만들기"
+
+#: qml/ModerationTools/FederationToolPage.qml:89
+#, kde-format
+msgid "New domain block added"
+msgstr "새 도메인 차단 추가됨"
+
+#: qml/ModerationTools/FederationToolPage.qml:97
 #, kde-format
 msgctxt "@info:Enter the domain address of the domain block"
 msgid "Domain*"
 msgstr "도메인*"
 
-#: qml/ModerationTools/FederationToolPage.qml:89
-#: qml/ModerationTools/MainFederationToolPage.qml:75
-#: qml/ModerationTools/MainFederationToolPage.qml:140
+#: qml/ModerationTools/FederationToolPage.qml:102
+#: qml/ModerationTools/MainFederationToolPage.qml:89
+#: qml/ModerationTools/MainFederationToolPage.qml:133
 #, kde-format
 msgid "Public comment"
 msgstr "공개 설명"
 
-#: qml/ModerationTools/FederationToolPage.qml:94
+#: qml/ModerationTools/FederationToolPage.qml:107
 #, kde-format
 msgid "Private Comment"
 msgstr "비밀 설명"
 
-#: qml/ModerationTools/FederationToolPage.qml:99
-#: qml/ModerationTools/MainFederationToolPage.qml:51
+#: qml/ModerationTools/FederationToolPage.qml:112
+#: qml/ModerationTools/MainFederationToolPage.qml:65
 #, kde-format
 msgid "Moderation"
 msgstr "중재"
 
-#: qml/ModerationTools/FederationToolPage.qml:104
-#: qml/ModerationTools/MainFederationToolPage.qml:56
+#: qml/ModerationTools/FederationToolPage.qml:117
+#: qml/ModerationTools/MainFederationToolPage.qml:70
 #, kde-format
 msgctxt "@info:Filter out all the allowed domains"
 msgid "Silence"
 msgstr "제한"
 
-#: qml/ModerationTools/FederationToolPage.qml:108
-#: qml/ModerationTools/MainFederationToolPage.qml:60
+#: qml/ModerationTools/FederationToolPage.qml:121
+#: qml/ModerationTools/MainFederationToolPage.qml:74
 #, kde-format
 msgctxt "@info:Filter out all the blocked domains"
 msgid "Suspend"
 msgstr "정지"
 
-#: qml/ModerationTools/FederationToolPage.qml:112
-#: qml/ModerationTools/MainFederationToolPage.qml:64
+#: qml/ModerationTools/FederationToolPage.qml:125
+#: qml/ModerationTools/MainFederationToolPage.qml:78
 #, kde-format
 msgctxt "@info:Filter out all the blocked domains"
 msgid "None"
 msgstr "없음"
 
-#: qml/ModerationTools/FederationToolPage.qml:121
-#: qml/ModerationTools/MainFederationToolPage.qml:86
+#: qml/ModerationTools/FederationToolPage.qml:134
+#: qml/ModerationTools/MainFederationToolPage.qml:100
 #, kde-format
 msgid "Reject media files"
 msgstr "미디어 파일 거부"
 
-#: qml/ModerationTools/FederationToolPage.qml:122
-#: qml/ModerationTools/MainFederationToolPage.qml:87
+#: qml/ModerationTools/FederationToolPage.qml:135
+#: qml/ModerationTools/MainFederationToolPage.qml:101
 #, kde-format
 msgid ""
 "Removes locally stored media files and refuses to download any in the "
@@ -2593,45 +2588,38 @@ msgstr ""
 "로컬에 저장된 미디어 파일을 삭제하고 향후에 어떠한 파일도 다운로드하지 않습니"
 "다. 정지와는 무관합니다"
 
-#: qml/ModerationTools/FederationToolPage.qml:127
-#: qml/ModerationTools/MainFederationToolPage.qml:94
+#: qml/ModerationTools/FederationToolPage.qml:140
+#: qml/ModerationTools/MainFederationToolPage.qml:108
 #, kde-format
 msgid "Reject reports"
 msgstr "신고 거절"
 
-#: qml/ModerationTools/FederationToolPage.qml:128
-#: qml/ModerationTools/MainFederationToolPage.qml:95
+#: qml/ModerationTools/FederationToolPage.qml:141
+#: qml/ModerationTools/MainFederationToolPage.qml:109
 #, kde-format
 msgid "Ignore all reports coming from this domain. Irrelevant for suspensions"
 msgstr "이 도메인에서 오는 모든 신고를 무시합니다. 정지와는 무관합니다"
 
-#: qml/ModerationTools/FederationToolPage.qml:133
-#: qml/ModerationTools/MainFederationToolPage.qml:102
+#: qml/ModerationTools/FederationToolPage.qml:146
+#: qml/ModerationTools/MainFederationToolPage.qml:116
 #, kde-format
 msgid "Obfuscate domain name"
 msgstr "도메인 이름 난독화"
 
-#: qml/ModerationTools/FederationToolPage.qml:134
-#: qml/ModerationTools/MainFederationToolPage.qml:103
+#: qml/ModerationTools/FederationToolPage.qml:147
+#: qml/ModerationTools/MainFederationToolPage.qml:117
 #, kde-format
 msgid ""
 "Partially obfuscate the domain name in the list if advertising the list of "
 "domain limitations is enabled"
 msgstr "도메인 제한 목록을 공개하는 경우 도메인 이름의 일부를 난독화합니다."
 
-#: qml/ModerationTools/FederationToolPage.qml:146
-#: qml/ModerationTools/FederationToolPage.qml:177
+#: qml/ModerationTools/FederationToolPage.qml:168
 #, kde-format
-msgctxt "@info:Button to create a domain block"
-msgid "Create Block"
-msgstr "차단 만들기"
+msgid "New Allowed Domain Added"
+msgstr "새 허용된 도메인 추가됨"
 
-#: qml/ModerationTools/FederationToolPage.qml:151
-#, kde-format
-msgid "New domain block added"
-msgstr "새 도메인 차단 추가됨"
-
-#: qml/ModerationTools/FederationToolPage.qml:166
+#: qml/ModerationTools/FederationToolPage.qml:176
 #, kde-format
 msgctxt ""
 "@info:This domain will be able to fetch data from this server and incoming "
@@ -2639,12 +2627,7 @@ msgctxt ""
 msgid "Domain*"
 msgstr "도메인*"
 
-#: qml/ModerationTools/FederationToolPage.qml:181
-#, kde-format
-msgid "New Allowed Domain Added"
-msgstr "새 허용된 도메인 추가됨"
-
-#: qml/ModerationTools/FederationToolPage.qml:194
+#: qml/ModerationTools/FederationToolPage.qml:186
 #, kde-format
 msgid ""
 "Allowed domain option is available for instances with limited federation "
@@ -2653,30 +2636,30 @@ msgstr ""
 "제한된 연합 모드가 활성화된 인스턴스에서만 허용된 도메인 옵션을 사용할 수 있"
 "습니다"
 
-#: qml/ModerationTools/FederationToolPage.qml:202
+#: qml/ModerationTools/FederationToolPage.qml:194
 #, kde-format
 msgctxt "@info:Choose between allowed and limited domains"
 msgid "Moderation"
 msgstr "중재"
 
-#: qml/ModerationTools/FederationToolPage.qml:217
+#: qml/ModerationTools/FederationToolPage.qml:209
 #, kde-format
 msgctxt "@info:Filter out all the blocked domains"
 msgid "Blocked domains"
 msgstr "차단된 도메인"
 
-#: qml/ModerationTools/FederationToolPage.qml:221
+#: qml/ModerationTools/FederationToolPage.qml:213
 #, kde-format
 msgctxt "@info:Filter out all the allowed domains in limited federation mode"
 msgid "Allowed domains"
 msgstr "허용된 도메인"
 
-#: qml/ModerationTools/FederationToolPage.qml:287
+#: qml/ModerationTools/FederationToolPage.qml:279
 #, kde-format
 msgid "Allowed for federation"
 msgstr "연합 허용됨"
 
-#: qml/ModerationTools/FederationToolPage.qml:310
+#: qml/ModerationTools/FederationToolPage.qml:302
 #, kde-format
 msgid "No federations found"
 msgstr "연합을 찾을 수 없음"
@@ -2687,152 +2670,152 @@ msgctxt "@action:button"
 msgid "Create Rule"
 msgstr "규칙 만들기"
 
-#: qml/ModerationTools/IpRulePage.qml:25
+#: qml/ModerationTools/IpRulePage.qml:28
 #, kde-format
 msgid "New IP Rule"
 msgstr "새 IP 규칙"
 
-#: qml/ModerationTools/IpRulePage.qml:37
-#, kde-format
-msgctxt "@info:Enter the domain address of the domain block"
-msgid "IP*"
-msgstr "IP*"
-
-#: qml/ModerationTools/IpRulePage.qml:43
-#, kde-format
-msgctxt "@info:Time after which the rule will be lifted"
-msgid "Expire After"
-msgstr "만료 기간"
-
-#: qml/ModerationTools/IpRulePage.qml:48
-#, kde-format
-msgctxt "@info:Option to block out the IP for 1 day"
-msgid "1 day"
-msgstr "1일"
-
-#: qml/ModerationTools/IpRulePage.qml:52
-#, kde-format
-msgctxt "@info:Option to block out the IP for 2 weeks"
-msgid "2 weeks"
-msgstr "2주"
-
-#: qml/ModerationTools/IpRulePage.qml:56
-#, kde-format
-msgctxt "@info:Option to block out the IP for 1 month"
-msgid "1 month"
-msgstr "1개월"
-
-#: qml/ModerationTools/IpRulePage.qml:60
-#, kde-format
-msgctxt "@info:Option to block out the IP for 6 months"
-msgid "6 month"
-msgstr "6개월"
-
-#: qml/ModerationTools/IpRulePage.qml:64
-#, kde-format
-msgctxt "@info:Option to block out the IP for 1 year"
-msgid "1 year"
-msgstr "1년"
-
-#: qml/ModerationTools/IpRulePage.qml:68
-#, kde-format
-msgctxt "@info:Option to block out the IP for 3 years"
-msgid "3 year"
-msgstr "3년"
-
-#: qml/ModerationTools/IpRulePage.qml:79
-#, kde-format
-msgctxt "@info: The comment attached with the ip rule"
-msgid "Comment"
-msgstr "설명"
-
-#: qml/ModerationTools/IpRulePage.qml:80
-#: qml/ModerationTools/MainIpRulePage.qml:110
-#, kde-format
-msgid "Optional. Remember why you added this rule."
-msgstr "선택 사항입니다. 왜 이 규칙을 추가했는지에 대한 정보입니다."
-
-#: qml/ModerationTools/IpRulePage.qml:87
-#, kde-format
-msgctxt "@info:The rule attached with the ip rule"
-msgid "Rule *"
-msgstr "규칙 *"
-
-#: qml/ModerationTools/IpRulePage.qml:91
-#: qml/ModerationTools/MainIpRulePage.qml:121
-#, kde-format
-msgid "Choose what will happen with requests from this IP"
-msgstr "이 IP에서 들어온 요청을 어떻게 할 지 선택"
-
-#: qml/ModerationTools/IpRulePage.qml:98
-#: qml/ModerationTools/MainIpRulePage.qml:129
-#, kde-format
-msgid "Limit sign-ups"
-msgstr "계정 등록 제한"
-
-#: qml/ModerationTools/IpRulePage.qml:99
-#: qml/ModerationTools/MainIpRulePage.qml:130
-#, kde-format
-msgid "New sign-ups will require your approval"
-msgstr "새 계정 등록은 승인을 받아야 함"
-
-#: qml/ModerationTools/IpRulePage.qml:105
-#: qml/ModerationTools/MainIpRulePage.qml:136
-#, kde-format
-msgid "Block sign-ups"
-msgstr "계정 등록 차단"
-
-#: qml/ModerationTools/IpRulePage.qml:106
-#: qml/ModerationTools/MainIpRulePage.qml:137
-#, kde-format
-msgid "New sign-ups will not be possible"
-msgstr "새 계정 등록을 차단함"
-
-#: qml/ModerationTools/IpRulePage.qml:111
-#: qml/ModerationTools/MainIpRulePage.qml:143
-#, kde-format
-msgid "Block access"
-msgstr "접근 거부"
-
-#: qml/ModerationTools/IpRulePage.qml:112
-#: qml/ModerationTools/MainIpRulePage.qml:144
-#, kde-format
-msgid "Block access to all resources"
-msgstr "모든 자원에 대한 접근 거부"
-
-#: qml/ModerationTools/IpRulePage.qml:126
+#: qml/ModerationTools/IpRulePage.qml:35
 #, kde-format
 msgctxt "@info:Button to create a IP rule"
 msgid "Create IP rule"
 msgstr "IP 규칙 만들기"
 
-#: qml/ModerationTools/IpRulePage.qml:130
+#: qml/ModerationTools/IpRulePage.qml:41
 #, kde-format
 msgid "New IP rule added"
 msgstr "새 IP 규칙이 추가됨"
 
-#: qml/ModerationTools/IpRulePage.qml:156
-#: qml/ModerationTools/MainIpRulePage.qml:29
+#: qml/ModerationTools/IpRulePage.qml:49
+#, kde-format
+msgctxt "@info:Enter the domain address of the domain block"
+msgid "IP*"
+msgstr "IP*"
+
+#: qml/ModerationTools/IpRulePage.qml:55
+#, kde-format
+msgctxt "@info:Time after which the rule will be lifted"
+msgid "Expire After"
+msgstr "만료 기간"
+
+#: qml/ModerationTools/IpRulePage.qml:60
+#, kde-format
+msgctxt "@info:Option to block out the IP for 1 day"
+msgid "1 day"
+msgstr "1일"
+
+#: qml/ModerationTools/IpRulePage.qml:64
+#, kde-format
+msgctxt "@info:Option to block out the IP for 2 weeks"
+msgid "2 weeks"
+msgstr "2주"
+
+#: qml/ModerationTools/IpRulePage.qml:68
+#, kde-format
+msgctxt "@info:Option to block out the IP for 1 month"
+msgid "1 month"
+msgstr "1개월"
+
+#: qml/ModerationTools/IpRulePage.qml:72
+#, kde-format
+msgctxt "@info:Option to block out the IP for 6 months"
+msgid "6 month"
+msgstr "6개월"
+
+#: qml/ModerationTools/IpRulePage.qml:76
+#, kde-format
+msgctxt "@info:Option to block out the IP for 1 year"
+msgid "1 year"
+msgstr "1년"
+
+#: qml/ModerationTools/IpRulePage.qml:80
+#, kde-format
+msgctxt "@info:Option to block out the IP for 3 years"
+msgid "3 year"
+msgstr "3년"
+
+#: qml/ModerationTools/IpRulePage.qml:90
+#, kde-format
+msgctxt "@info: The comment attached with the ip rule"
+msgid "Comment"
+msgstr "설명"
+
+#: qml/ModerationTools/IpRulePage.qml:91
+#: qml/ModerationTools/MainIpRulePage.qml:119
+#, kde-format
+msgid "Optional. Remember why you added this rule."
+msgstr "선택 사항입니다. 왜 이 규칙을 추가했는지에 대한 정보입니다."
+
+#: qml/ModerationTools/IpRulePage.qml:95
+#, kde-format
+msgctxt "@info:The rule attached with the ip rule"
+msgid "Rule *"
+msgstr "규칙 *"
+
+#: qml/ModerationTools/IpRulePage.qml:96
+#: qml/ModerationTools/MainIpRulePage.qml:124
+#, kde-format
+msgid "Choose what will happen with requests from this IP"
+msgstr "이 IP에서 들어온 요청을 어떻게 할 지 선택"
+
+#: qml/ModerationTools/IpRulePage.qml:101
+#: qml/ModerationTools/MainIpRulePage.qml:129
+#, kde-format
+msgid "Limit sign-ups"
+msgstr "계정 등록 제한"
+
+#: qml/ModerationTools/IpRulePage.qml:102
+#: qml/ModerationTools/MainIpRulePage.qml:130
+#, kde-format
+msgid "New sign-ups will require your approval"
+msgstr "새 계정 등록은 승인을 받아야 함"
+
+#: qml/ModerationTools/IpRulePage.qml:108
+#: qml/ModerationTools/MainIpRulePage.qml:136
+#, kde-format
+msgid "Block sign-ups"
+msgstr "계정 등록 차단"
+
+#: qml/ModerationTools/IpRulePage.qml:109
+#: qml/ModerationTools/MainIpRulePage.qml:137
+#, kde-format
+msgid "New sign-ups will not be possible"
+msgstr "새 계정 등록을 차단함"
+
+#: qml/ModerationTools/IpRulePage.qml:114
+#: qml/ModerationTools/MainIpRulePage.qml:143
+#, kde-format
+msgid "Block access"
+msgstr "접근 거부"
+
+#: qml/ModerationTools/IpRulePage.qml:115
+#: qml/ModerationTools/MainIpRulePage.qml:144
+#, kde-format
+msgid "Block access to all resources"
+msgstr "모든 자원에 대한 접근 거부"
+
+#: qml/ModerationTools/IpRulePage.qml:138
+#: qml/ModerationTools/MainIpRulePage.qml:28
 #, kde-format
 msgctxt "@label"
 msgid "Limit sign-ups"
 msgstr "계정 등록 제한"
 
-#: qml/ModerationTools/IpRulePage.qml:158
-#: qml/ModerationTools/MainIpRulePage.qml:31
+#: qml/ModerationTools/IpRulePage.qml:140
+#: qml/ModerationTools/MainIpRulePage.qml:30
 #, kde-format
 msgctxt "@label"
 msgid "Block sign-ups"
 msgstr "계정 등록 차단"
 
-#: qml/ModerationTools/IpRulePage.qml:160
-#: qml/ModerationTools/MainIpRulePage.qml:33
+#: qml/ModerationTools/IpRulePage.qml:142
+#: qml/ModerationTools/MainIpRulePage.qml:32
 #, kde-format
 msgctxt "@label"
 msgid "Block access"
 msgstr "접근 거부"
 
-#: qml/ModerationTools/IpRulePage.qml:207
+#: qml/ModerationTools/IpRulePage.qml:189
 #, kde-format
 msgid "No IP rules found"
 msgstr "IP 규칙이 없습니다"
@@ -2847,7 +2830,7 @@ msgstr "사용할 수 없음"
 msgid "Perform moderation action on %1"
 msgstr "%1에 중재 작업 수행"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:45
+#: qml/ModerationTools/MainAccountToolPage.qml:46
 #, kde-format
 msgctxt ""
 "@info: Use this to send a warning to the user, without triggering any other "
@@ -2855,7 +2838,7 @@ msgctxt ""
 msgid "Warn"
 msgstr "경고"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:49
+#: qml/ModerationTools/MainAccountToolPage.qml:50
 #, kde-format
 msgctxt ""
 "@info: Prevent the user from using their account, but do not delete or hide "
@@ -2863,14 +2846,14 @@ msgctxt ""
 msgid "Freeze"
 msgstr "동결"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:54
+#: qml/ModerationTools/MainAccountToolPage.qml:55
 #, kde-format
 msgctxt ""
 "@info: Force all this user's media attachments to be flagged as sensitive."
 msgid "Force-Sensitive"
 msgstr "강제로 민감함으로 표시"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:59
+#: qml/ModerationTools/MainAccountToolPage.qml:60
 #, kde-format
 msgctxt ""
 "@info: Prevent the user from being able to post with public visibility, hide "
@@ -2878,7 +2861,7 @@ msgctxt ""
 msgid "Limit"
 msgstr "제한"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:64
+#: qml/ModerationTools/MainAccountToolPage.qml:65
 #, kde-format
 msgctxt ""
 "@info: Prevent any interaction from or to this account and delete its "
@@ -2886,7 +2869,7 @@ msgctxt ""
 msgid "Suspend"
 msgstr "계정 정지"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:69
+#: qml/ModerationTools/MainAccountToolPage.qml:70
 #, kde-format
 msgctxt ""
 "@info: The user will receive an explanation of what happened with their "
@@ -2894,179 +2877,179 @@ msgctxt ""
 msgid "Notify the user per e-mail"
 msgstr "이메일로 사용자에게 알림"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:75
+#: qml/ModerationTools/MainAccountToolPage.qml:76
 #, kde-format
 msgctxt "@info: Send a warning note to the user."
 msgid "Custom warning"
 msgstr "사용자 정의 경고"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:84
+#: qml/ModerationTools/MainAccountToolPage.qml:85
 #, kde-format
 msgctxt "@info:Button to submit the action aginst the user."
 msgid "Submit"
 msgstr "제출"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:102
+#: qml/ModerationTools/MainAccountToolPage.qml:103
 #, kde-format
 msgid "Action taken successfully"
 msgstr "작업이 성공했습니다"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:115
+#: qml/ModerationTools/MainAccountToolPage.qml:118
 #, kde-format
 msgid "Are you sure?"
 msgstr "계속 진행하시겠습니까?"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:116
+#: qml/ModerationTools/MainAccountToolPage.qml:119
 #, kde-format
 msgid "Action will be taken against the account."
 msgstr "해당 계정에 조치가 취해집니다."
 
-#: qml/ModerationTools/MainAccountToolPage.qml:124
+#: qml/ModerationTools/MainAccountToolPage.qml:127
 #, kde-format
 msgid "Successfully approved %1's sign-up application"
 msgstr "%1 님의 계정 등록 신청을 승인함"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:128
+#: qml/ModerationTools/MainAccountToolPage.qml:131
 #, kde-format
 msgid "Successfully rejected %1's sign-up application"
 msgstr "%1 님의 계정 등록 신청을 거절함"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:132
+#: qml/ModerationTools/MainAccountToolPage.qml:135
 #, kde-format
 msgid "Successfully unfreezed %1's account"
 msgstr "%1 님의 계정 동결을 해제함"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:136
+#: qml/ModerationTools/MainAccountToolPage.qml:139
 #, kde-format
 msgid "Successfully unsilenced %1's account"
 msgstr "%1 님의 계정 제한을 해제함"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:140
+#: qml/ModerationTools/MainAccountToolPage.qml:143
 #, kde-format
 msgid "Successfully unsuspended %1's account"
 msgstr "%1 님의 계정 정지를 해제함"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:144
+#: qml/ModerationTools/MainAccountToolPage.qml:147
 #, kde-format
 msgid "Successfully undo force-sensitive %1's account"
 msgstr "%1 님의 계정 강제 민감함 표시를 해제함"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:148
+#: qml/ModerationTools/MainAccountToolPage.qml:151
 #, kde-format
 msgid "Successfully deleted %1's account data"
 msgstr "%1 님의 계정 데이터를 삭제함"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:186
+#: qml/ModerationTools/MainAccountToolPage.qml:189
 #, kde-format
 msgid "Reasons for joining"
 msgstr "가입하는 이유"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:202
+#: qml/ModerationTools/MainAccountToolPage.qml:205
 #, kde-format
 msgctxt "@info Role of the account on this server."
 msgid "Role"
 msgstr "역할"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:203
+#: qml/ModerationTools/MainAccountToolPage.qml:206
 #, kde-format
 msgid "No role"
 msgstr "역할 없음"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:206
+#: qml/ModerationTools/MainAccountToolPage.qml:209
 #, kde-format
 msgctxt "@info The last time the account was active."
 msgid "Last Active"
 msgstr "마지막 활성"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:210
+#: qml/ModerationTools/MainAccountToolPage.qml:213
 #, kde-format
 msgctxt "@info The current login status of the account."
 msgid "Login Status"
 msgstr "로그인 상태"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:215
+#: qml/ModerationTools/MainAccountToolPage.qml:218
 #, kde-format
 msgctxt "@info: Locale of the user."
 msgid "Account Locale"
 msgstr "계정 로캘"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:220
+#: qml/ModerationTools/MainAccountToolPage.qml:223
 #, kde-format
 msgctxt "@info: Email of the user."
 msgid "Email"
 msgstr "이메일"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:225
+#: qml/ModerationTools/MainAccountToolPage.qml:228
 #, kde-format
 msgctxt "@info: Email confirmation status of the user."
 msgid "Email Status"
 msgstr "이메일 상태"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:226
+#: qml/ModerationTools/MainAccountToolPage.qml:229
 #, kde-format
 msgid "Confirmed"
 msgstr "확인됨"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:226
+#: qml/ModerationTools/MainAccountToolPage.qml:229
 #, kde-format
 msgid "Not Confirmed"
 msgstr "확인되지 않음"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:230
+#: qml/ModerationTools/MainAccountToolPage.qml:233
 #, kde-format
 msgctxt "@info: Joining date of the user"
 msgid "Joined"
 msgstr "가입 시간"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:235
+#: qml/ModerationTools/MainAccountToolPage.qml:238
 #, kde-format
 msgid "Invited By"
 msgstr "초대한 사람"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:243
+#: qml/ModerationTools/MainAccountToolPage.qml:246
 #, kde-format
 msgid "Most recent IP"
 msgstr "최근 IP"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:268
+#: qml/ModerationTools/MainAccountToolPage.qml:271
 #, kde-format
 msgctxt "@info: Approve the user's request"
 msgid "Approve"
 msgstr "승인"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:280
+#: qml/ModerationTools/MainAccountToolPage.qml:283
 #, kde-format
 msgctxt "@info: Reject the user's request"
 msgid "Reject"
 msgstr "거부"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:291
+#: qml/ModerationTools/MainAccountToolPage.qml:294
 #, kde-format
 msgid "Delete Account Data"
 msgstr "계정 데이터 삭제"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:303
+#: qml/ModerationTools/MainAccountToolPage.qml:306
 #, kde-format
 msgctxt "@info: Unfreeze the user's account"
 msgid "Unfreeze"
 msgstr "동결 해제"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:313
+#: qml/ModerationTools/MainAccountToolPage.qml:316
 #, kde-format
 msgid "Undo Limit"
 msgstr "제한 실행 취소"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:323
+#: qml/ModerationTools/MainAccountToolPage.qml:326
 #, kde-format
 msgid "Undo Suspension"
 msgstr "정지 실행 취소"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:333
+#: qml/ModerationTools/MainAccountToolPage.qml:336
 #, kde-format
 msgid "Undo force-sensitive"
 msgstr "강제 민감함 실행 취소"
 
-#: qml/ModerationTools/MainAccountToolPage.qml:344
+#: qml/ModerationTools/MainAccountToolPage.qml:347
 #, kde-format
 msgid "Take action against this account"
 msgstr "계정에 조치 취하기"
@@ -3081,189 +3064,183 @@ msgstr "도메인 차단 삭제"
 msgid "Domain Block Removed"
 msgstr "도메인 차단 삭제됨"
 
-#: qml/ModerationTools/MainFederationToolPage.qml:41
+#: qml/ModerationTools/MainFederationToolPage.qml:42
 #, kde-format
 msgid "Edit domain block"
 msgstr "도메인 차단 편집"
 
-#: qml/ModerationTools/MainFederationToolPage.qml:81
-#: qml/ModerationTools/MainFederationToolPage.qml:147
-#, kde-format
-msgid "Private comment"
-msgstr "비밀 설명"
-
-#: qml/ModerationTools/MainFederationToolPage.qml:116
+#: qml/ModerationTools/MainFederationToolPage.qml:49
 #, kde-format
 msgctxt "@info:Button to update the domain block with new values"
 msgid "Update Block"
 msgstr "차단 업데이트"
 
-#: qml/ModerationTools/MainFederationToolPage.qml:123
+#: qml/ModerationTools/MainFederationToolPage.qml:57
 #, kde-format
 msgid "Domain block updated"
 msgstr "도메인 차단 업데이트됨"
 
-#: qml/ModerationTools/MainFederationToolPage.qml:133
-#: qml/ModerationTools/MainIpRulePage.qml:175
+#: qml/ModerationTools/MainFederationToolPage.qml:95
+#: qml/ModerationTools/MainFederationToolPage.qml:138
+#, kde-format
+msgid "Private comment"
+msgstr "비밀 설명"
+
+#: qml/ModerationTools/MainFederationToolPage.qml:128
+#: qml/ModerationTools/MainIpRulePage.qml:154
 #, kde-format
 msgid "Blocked at"
 msgstr "차단 시기"
 
-#: qml/ModerationTools/MainFederationToolPage.qml:141
+#: qml/ModerationTools/MainFederationToolPage.qml:134
 #, kde-format
 msgctxt "@info: No public comment provided"
 msgid "None"
 msgstr "없음"
 
-#: qml/ModerationTools/MainFederationToolPage.qml:148
+#: qml/ModerationTools/MainFederationToolPage.qml:139
 #, kde-format
 msgctxt "@info: No private comment provided"
 msgid "None"
 msgstr "없음"
 
-#: qml/ModerationTools/MainFederationToolPage.qml:154
+#: qml/ModerationTools/MainFederationToolPage.qml:143
 #, kde-format
 msgctxt "@info:The policy to be applied by this domain block"
 msgid "Policy"
 msgstr "정책"
 
-#: qml/ModerationTools/MainFederationToolPage.qml:161
+#: qml/ModerationTools/MainFederationToolPage.qml:148
 #, kde-format
 msgctxt "@info:Whether to obfuscate public displays of this domain block"
 msgid "Obfuscate"
 msgstr "난독화"
 
-#: qml/ModerationTools/MainFederationToolPage.qml:168
+#: qml/ModerationTools/MainFederationToolPage.qml:153
 #, kde-format
 msgctxt "@info:Whether to reject incoming media from this domain"
 msgid "Reject media"
 msgstr "미디어 거부"
 
-#: qml/ModerationTools/MainFederationToolPage.qml:175
+#: qml/ModerationTools/MainFederationToolPage.qml:158
 #, kde-format
 msgctxt "@info:Whether to reject incoming reports from this domain"
 msgid "Reject reports"
 msgstr "신고 거절"
 
-#: qml/ModerationTools/MainFederationToolPage.qml:186
+#: qml/ModerationTools/MainFederationToolPage.qml:169
 #, kde-format
 msgid "Edit Domain Block"
 msgstr "도메인 차단 편집"
 
-#: qml/ModerationTools/MainIpRulePage.qml:40
+#: qml/ModerationTools/MainIpRulePage.qml:39
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove IP Rule"
 msgstr "IP 규칙 삭제"
 
-#: qml/ModerationTools/MainIpRulePage.qml:43
+#: qml/ModerationTools/MainIpRulePage.qml:42
 #, kde-format
 msgid "IP Rule Removed"
 msgstr "IP 규칙 삭제됨"
 
-#: qml/ModerationTools/MainIpRulePage.qml:51
+#: qml/ModerationTools/MainIpRulePage.qml:53
 #, kde-format
 msgctxt "@title:window"
 msgid "Update IP Rule"
 msgstr "IP 규칙 업데이트"
 
-#: qml/ModerationTools/MainIpRulePage.qml:63
-#, kde-format
-msgctxt "@info IP address of the ip block"
-msgid "IP"
-msgstr "IP"
-
-#: qml/ModerationTools/MainIpRulePage.qml:72
-#, kde-format
-msgctxt "@info Time after which the rule will be lifted"
-msgid "Expire After"
-msgstr "만료 기간"
-
-#: qml/ModerationTools/MainIpRulePage.qml:77
-#, kde-format
-msgctxt "@info Option to block out the IP for 1 day"
-msgid "1 day"
-msgstr "1일"
-
-#: qml/ModerationTools/MainIpRulePage.qml:81
-#, kde-format
-msgctxt "@info Option to block out the IP for 2 weeks"
-msgid "2 weeks"
-msgstr "2주"
-
-#: qml/ModerationTools/MainIpRulePage.qml:85
-#, kde-format
-msgctxt "@info Option to block out the IP for 1 month"
-msgid "1 month"
-msgstr "1개월"
-
-#: qml/ModerationTools/MainIpRulePage.qml:89
-#, kde-format
-msgctxt "@info Option to block out the IP for 6 months"
-msgid "6 month"
-msgstr "6개월"
-
-#: qml/ModerationTools/MainIpRulePage.qml:93
-#, kde-format
-msgctxt "@info Option to block out the IP for 1 year"
-msgid "1 year"
-msgstr "1년"
-
-#: qml/ModerationTools/MainIpRulePage.qml:97
-#, kde-format
-msgctxt "@info Option to block out the IP for 3 years"
-msgid "3 year"
-msgstr "3년"
-
-#: qml/ModerationTools/MainIpRulePage.qml:108
-#: qml/ModerationTools/MainIpRulePage.qml:189
-#, kde-format
-msgctxt "@info The comment attached with the ip rule"
-msgid "Comment"
-msgstr "설명"
-
-#: qml/ModerationTools/MainIpRulePage.qml:117
-#, kde-format
-msgctxt "@info The rule attached with the ip rule"
-msgid "Rule *"
-msgstr "규칙 *"
-
-#: qml/ModerationTools/MainIpRulePage.qml:154
-#, kde-format
-msgctxt "@info Cancel button to close the dailog"
-msgid "Cancel"
-msgstr "취소"
-
-#: qml/ModerationTools/MainIpRulePage.qml:159
+#: qml/ModerationTools/MainIpRulePage.qml:60
 #, kde-format
 msgctxt "@info Button to update an IP rule"
 msgid "Update IP rule"
 msgstr "IP 규칙 업데이트"
 
-#: qml/ModerationTools/MainIpRulePage.qml:164
+#: qml/ModerationTools/MainIpRulePage.qml:67
 #, kde-format
 msgid "IP rule updated"
 msgstr "IP 규칙 업데이트됨"
 
-#: qml/ModerationTools/MainIpRulePage.qml:182
+#: qml/ModerationTools/MainIpRulePage.qml:75
+#, kde-format
+msgctxt "@info IP address of the ip block"
+msgid "IP"
+msgstr "IP"
+
+#: qml/ModerationTools/MainIpRulePage.qml:82
+#, kde-format
+msgctxt "@info Time after which the rule will be lifted"
+msgid "Expire After"
+msgstr "만료 기간"
+
+#: qml/ModerationTools/MainIpRulePage.qml:87
+#, kde-format
+msgctxt "@info Option to block out the IP for 1 day"
+msgid "1 day"
+msgstr "1일"
+
+#: qml/ModerationTools/MainIpRulePage.qml:91
+#, kde-format
+msgctxt "@info Option to block out the IP for 2 weeks"
+msgid "2 weeks"
+msgstr "2주"
+
+#: qml/ModerationTools/MainIpRulePage.qml:95
+#, kde-format
+msgctxt "@info Option to block out the IP for 1 month"
+msgid "1 month"
+msgstr "1개월"
+
+#: qml/ModerationTools/MainIpRulePage.qml:99
+#, kde-format
+msgctxt "@info Option to block out the IP for 6 months"
+msgid "6 month"
+msgstr "6개월"
+
+#: qml/ModerationTools/MainIpRulePage.qml:103
+#, kde-format
+msgctxt "@info Option to block out the IP for 1 year"
+msgid "1 year"
+msgstr "1년"
+
+#: qml/ModerationTools/MainIpRulePage.qml:107
+#, kde-format
+msgctxt "@info Option to block out the IP for 3 years"
+msgid "3 year"
+msgstr "3년"
+
+#: qml/ModerationTools/MainIpRulePage.qml:117
+#: qml/ModerationTools/MainIpRulePage.qml:164
+#, kde-format
+msgctxt "@info The comment attached with the ip rule"
+msgid "Comment"
+msgstr "설명"
+
+#: qml/ModerationTools/MainIpRulePage.qml:123
+#, kde-format
+msgctxt "@info The rule attached with the ip rule"
+msgid "Rule *"
+msgstr "규칙 *"
+
+#: qml/ModerationTools/MainIpRulePage.qml:159
 #, kde-format
 msgctxt "@info Time after which the rule will be lifted"
 msgid "Expires at"
 msgstr "만료 시간"
 
-#: qml/ModerationTools/MainIpRulePage.qml:190
+#: qml/ModerationTools/MainIpRulePage.qml:165
 #, kde-format
 msgctxt "@info No public comment provided"
 msgid "None"
 msgstr "없음"
 
-#: qml/ModerationTools/MainIpRulePage.qml:196
+#: qml/ModerationTools/MainIpRulePage.qml:169
 #, kde-format
 msgctxt "@info The severity to be applied by this IP rule"
 msgid "Severity"
 msgstr "심각도"
 
-#: qml/ModerationTools/MainIpRulePage.qml:207
+#: qml/ModerationTools/MainIpRulePage.qml:180
 #, kde-format
 msgctxt "@action:button"
 msgid "Update IP Rule"
@@ -3298,175 +3275,175 @@ msgctxt "@info"
 msgid "Report Resolved"
 msgstr "신고 해결됨"
 
-#: qml/ModerationTools/MainReportToolPage.qml:96
+#: qml/ModerationTools/MainReportToolPage.qml:97
 #, kde-format
 msgctxt "@info Time at which the report was made"
 msgid "Reported"
 msgstr "신고 시간"
 
-#: qml/ModerationTools/MainReportToolPage.qml:103
+#: qml/ModerationTools/MainReportToolPage.qml:102
 #, kde-format
 msgctxt "@info The last time the reported account was active."
 msgid "Last Active"
 msgstr "마지막 활성"
 
-#: qml/ModerationTools/MainReportToolPage.qml:110
+#: qml/ModerationTools/MainReportToolPage.qml:107
 #, kde-format
 msgctxt "@info Time at which the reported account joined."
 msgid "Joined"
 msgstr "가입 시간"
 
-#: qml/ModerationTools/MainReportToolPage.qml:120
+#: qml/ModerationTools/MainReportToolPage.qml:113
 #, kde-format
 msgctxt "@label"
 msgid "Reported By"
 msgstr "신고자"
 
-#: qml/ModerationTools/MainReportToolPage.qml:135
+#: qml/ModerationTools/MainReportToolPage.qml:126
 #, kde-format
 msgctxt "@label"
 msgid "Report Status"
 msgstr "신고 상태"
 
-#: qml/ModerationTools/MainReportToolPage.qml:136
+#: qml/ModerationTools/MainReportToolPage.qml:127
 #, kde-format
 msgctxt "@info"
 msgid "Resolved"
 msgstr "해결됨"
 
-#: qml/ModerationTools/MainReportToolPage.qml:136
+#: qml/ModerationTools/MainReportToolPage.qml:127
 #, kde-format
 msgctxt "@info"
 msgid "Unresolved"
 msgstr "해결되지 않음"
 
-#: qml/ModerationTools/MainReportToolPage.qml:145
+#: qml/ModerationTools/MainReportToolPage.qml:132
 #, kde-format
 msgctxt "@label"
 msgid "Action taken by"
 msgstr "작업 수행자"
 
-#: qml/ModerationTools/MainReportToolPage.qml:158
+#: qml/ModerationTools/MainReportToolPage.qml:143
 #, kde-format
 msgctxt "@label"
 msgid "Assigned moderator"
 msgstr "배당된 중재자"
 
-#: qml/ModerationTools/MainReportToolPage.qml:159
+#: qml/ModerationTools/MainReportToolPage.qml:144
 #, kde-format
 msgctxt "@info"
 msgid "No one"
 msgstr "없음"
 
-#: qml/ModerationTools/MainReportToolPage.qml:167
+#: qml/ModerationTools/MainReportToolPage.qml:152
 #, kde-format
 msgctxt "@action:button"
 msgid "Unassign"
 msgstr "배당 해제"
 
-#: qml/ModerationTools/MainReportToolPage.qml:167
+#: qml/ModerationTools/MainReportToolPage.qml:152
 #, kde-format
 msgctxt "@action:button"
 msgid "Assign to me"
 msgstr "나에게 배당"
 
-#: qml/ModerationTools/MainReportToolPage.qml:179
+#: qml/ModerationTools/MainReportToolPage.qml:160
 #, kde-format
 msgctxt "@label"
 msgid "Forwarded"
 msgstr "전달됨"
 
-#: qml/ModerationTools/MainReportToolPage.qml:180
+#: qml/ModerationTools/MainReportToolPage.qml:161
 #, kde-format
 msgctxt "@info:The report is forwarded"
 msgid "Yes"
 msgstr "예"
 
-#: qml/ModerationTools/MainReportToolPage.qml:180
+#: qml/ModerationTools/MainReportToolPage.qml:161
 #, kde-format
 msgctxt "@info:The report is not forwarded"
 msgid "No"
 msgstr "아니요"
 
-#: qml/ModerationTools/MainReportToolPage.qml:185
+#: qml/ModerationTools/MainReportToolPage.qml:166
 #, kde-format
 msgctxt "@title:group"
 msgid "Category"
 msgstr "분류"
 
-#: qml/ModerationTools/MainReportToolPage.qml:190
+#: qml/ModerationTools/MainReportToolPage.qml:172
 #, kde-format
 msgid ""
 "The reason this account and/or content was reported will be cited in "
 "communication with the reported account"
 msgstr "신고된 계정과 연락할 때 이 계정이나 내용이 보고된 이유가 포함됩니다"
 
-#: qml/ModerationTools/MainReportToolPage.qml:200
+#: qml/ModerationTools/MainReportToolPage.qml:180
 #, kde-format
 msgid "Other"
 msgstr "기타"
 
-#: qml/ModerationTools/MainReportToolPage.qml:205
+#: qml/ModerationTools/MainReportToolPage.qml:185
 #, kde-format
 msgid "Category changed to other"
 msgstr "분류가 기타로 변경됨"
 
-#: qml/ModerationTools/MainReportToolPage.qml:216
+#: qml/ModerationTools/MainReportToolPage.qml:194
 #, kde-format
 msgid "Spam"
 msgstr "스팸"
 
-#: qml/ModerationTools/MainReportToolPage.qml:220
+#: qml/ModerationTools/MainReportToolPage.qml:198
 #, kde-format
 msgid "Category changed to spam"
 msgstr "분류가 스팸으로 변경됨"
 
-#: qml/ModerationTools/MainReportToolPage.qml:231
+#: qml/ModerationTools/MainReportToolPage.qml:207
 #, kde-format
 msgid "Content violates one or more server rules"
 msgstr "내용이 서버 규칙을 위반함"
 
-#: qml/ModerationTools/MainReportToolPage.qml:235
+#: qml/ModerationTools/MainReportToolPage.qml:211
 #, kde-format
 msgid "Category changed to rule violation"
 msgstr "분류가 규칙 위반으로 변경됨"
 
-#: qml/ModerationTools/MainReportToolPage.qml:274
+#: qml/ModerationTools/MainReportToolPage.qml:250
 #, kde-format
 msgctxt "@title:group"
 msgid "To provide more information, %1 wrote:"
 msgstr "%1 님이 제공한 추가 정보:"
 
-#: qml/ModerationTools/MainReportToolPage.qml:284
+#: qml/ModerationTools/MainReportToolPage.qml:260
 #, kde-format
 msgctxt "@info:Account didn't provide any comment on the report "
 msgid "N/A"
 msgstr "없음"
 
-#: qml/ModerationTools/MainReportToolPage.qml:295
+#: qml/ModerationTools/MainReportToolPage.qml:271
 #, kde-format
 msgctxt "@title:group"
 msgid "Reported Content"
 msgstr "신고된 내용"
 
-#: qml/ModerationTools/MainReportToolPage.qml:303
+#: qml/ModerationTools/MainReportToolPage.qml:280
 #, kde-format
 msgid ""
 "Offending content will be cited in communication with the reported account"
 msgstr "신고된 계정과 연락할 때 신고된 내용이 포함됩니다"
 
-#: qml/ModerationTools/MainReportToolPage.qml:333
+#: qml/ModerationTools/MainReportToolPage.qml:308
 #, kde-format
 msgid "<b>Content Warning</b><br /> %1"
 msgstr "<b>열람 주의</b><br /> %1"
 
-#: qml/ModerationTools/MainReportToolPage.qml:339
+#: qml/ModerationTools/MainReportToolPage.qml:314
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Less"
 msgstr "덜 보기"
 
-#: qml/ModerationTools/MainReportToolPage.qml:339
+#: qml/ModerationTools/MainReportToolPage.qml:314
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More"
@@ -3506,70 +3483,70 @@ msgstr "이메일 차단"
 msgid "Accounts Tool Page"
 msgstr "계정 도구 페이지"
 
-#: qml/ModerationTools/ReportToolPage.qml:34
+#: qml/ModerationTools/ReportToolPage.qml:35
 #, kde-format
 msgctxt "@info:Combobox to choose Report Status"
 msgid "Report Status"
 msgstr "신고 상태"
 
-#: qml/ModerationTools/ReportToolPage.qml:46
+#: qml/ModerationTools/ReportToolPage.qml:47
 #, kde-format
 msgctxt "@info:Filter out unresolved reports"
 msgid "Unresolved"
 msgstr "해결되지 않음"
 
-#: qml/ModerationTools/ReportToolPage.qml:50
+#: qml/ModerationTools/ReportToolPage.qml:51
 #, kde-format
 msgctxt "@info:Filter out resolved reports"
 msgid "Resolved"
 msgstr "해결됨"
 
-#: qml/ModerationTools/ReportToolPage.qml:64
+#: qml/ModerationTools/ReportToolPage.qml:66
 #, kde-format
 msgctxt "@info:Combobox to choose the origin of report"
 msgid "Report Origin"
 msgstr "신고 접수처"
 
-#: qml/ModerationTools/ReportToolPage.qml:77
+#: qml/ModerationTools/ReportToolPage.qml:79
 #, kde-format
 msgctxt "@info:Filter out accounts with any origin"
 msgid "All"
 msgstr "모두"
 
-#: qml/ModerationTools/ReportToolPage.qml:81
+#: qml/ModerationTools/ReportToolPage.qml:83
 #, kde-format
 msgctxt "@info:Filter out accounts with local origin"
 msgid "Local"
 msgstr "로컬"
 
-#: qml/ModerationTools/ReportToolPage.qml:85
+#: qml/ModerationTools/ReportToolPage.qml:87
 #, kde-format
 msgctxt "@info:Filter out accounts with remote origin"
 msgid "Remote"
 msgstr "원격"
 
-#: qml/ModerationTools/ReportToolPage.qml:158
+#: qml/ModerationTools/ReportToolPage.qml:160
 #, kde-format
 msgid "Reported By:"
 msgstr "신고자:"
 
-#: qml/ModerationTools/ReportToolPage.qml:201
+#: qml/ModerationTools/ReportToolPage.qml:203
 #, kde-format
 msgid "Comment:"
 msgstr "설명:"
 
-#: qml/ModerationTools/ReportToolPage.qml:224
+#: qml/ModerationTools/ReportToolPage.qml:226
 #, kde-format
 msgid "Assigned Account:"
 msgstr "배당된 계정:"
 
-#: qml/ModerationTools/ReportToolPage.qml:249
+#: qml/ModerationTools/ReportToolPage.qml:251
 #, kde-format
 msgctxt "@info: No account assigned to the report"
 msgid "N/A"
 msgstr "없음"
 
-#: qml/ModerationTools/ReportToolPage.qml:287
+#: qml/ModerationTools/ReportToolPage.qml:289
 #, kde-format
 msgid "No reports found"
 msgstr "신고를 찾을 수 없음"
@@ -3683,12 +3660,12 @@ msgstr ""
 "알림이 없습니다. 내 게시물에 답장을 쓰거나, 좋아요 표시하거나, 부스트하면 여"
 "기에 표시됩니다!"
 
-#: qml/Notifications/AccountWarningDelegate.qml:68
+#: qml/Notifications/AccountWarningDelegate.qml:66
 #, kde-format
 msgid "%1 has issued a warning against your account"
 msgstr "%1 님이 내 계정에 경고 조치를 취했습니다"
 
-#: qml/Notifications/AnnualReportDelegate.qml:65
+#: qml/Notifications/AnnualReportDelegate.qml:63
 #, kde-kuit-format
 msgctxt ""
 "@info:label this is used for notifications, when an annual report is "
@@ -3702,34 +3679,34 @@ msgstr ""
 "내 %1 #FediWrapped 결산이 기다리고 있습니다! 마스토돈에서의 올해의 하이라이트"
 "와 기억에 남는 순간을 발견하세요!"
 
-#: qml/Notifications/AnnualReportDelegate.qml:72
+#: qml/Notifications/AnnualReportDelegate.qml:70
 #, kde-format
 msgctxt "@action:button"
 msgid "View #FediWrapped"
 msgstr "#FediWrapped 보기"
 
-#: qml/Notifications/CollectionDelegate.qml:81
+#: qml/Notifications/CollectionDelegate.qml:80
 #, kde-format
 msgid "%1 added you to a collection"
 msgstr "%1 님이 나를 컬렉션에 추가함"
 
-#: qml/Notifications/CollectionDelegate.qml:83
+#: qml/Notifications/CollectionDelegate.qml:82
 #, kde-format
 msgid "%1 updated a collection"
 msgstr "%1 님이 컬렉션을 업데이트함"
 
-#: qml/Notifications/CollectionDelegate.qml:103
+#: qml/Notifications/CollectionDelegate.qml:102
 #, kde-format
 msgctxt "@action:button"
 msgid "View Collection"
 msgstr "컬렉션 보기"
 
-#: qml/Notifications/FollowDelegate.qml:79
+#: qml/Notifications/FollowDelegate.qml:78
 #, kde-format
 msgid "%1 signed up"
 msgstr "%1 님이 등록함"
 
-#: qml/Notifications/FollowDelegate.qml:108
+#: qml/Notifications/FollowDelegate.qml:107
 #, kde-format
 msgctxt "@action:button"
 msgid "Manage Follow Requests"
@@ -3762,7 +3739,7 @@ msgstr "일반 글"
 msgid "Spoiler Status"
 msgstr "스포일러 글"
 
-#: qml/Notifications/RelationshipSeveranceDelegate.qml:64
+#: qml/Notifications/RelationshipSeveranceDelegate.qml:62
 #, kde-kuit-format
 msgctxt "@info:label"
 msgid ""
@@ -3772,13 +3749,13 @@ msgstr ""
 "중재 결정으로 <b>%1</b> 님을 차단했으며, 팔로워 %2명 및 팔로우하는 계정 %3개"
 "를 포함합니다."
 
-#: qml/Notifications/ReportDelegate.qml:63
+#: qml/Notifications/ReportDelegate.qml:60
 #, kde-format
 msgctxt "@info:label"
 msgid "A report has been filed against a user in your server."
 msgstr "내 서버의 특정 사용자에게 신고가 접수되었습니다."
 
-#: qml/Notifications/UnknownNotificationDelegate.qml:49
+#: qml/Notifications/UnknownNotificationDelegate.qml:46
 #, kde-format
 msgctxt "@info"
 msgid "Unknown notification"
@@ -3883,39 +3860,39 @@ msgctxt "@action:button Start media playback"
 msgid "Play"
 msgstr "재생"
 
-#: qml/PostDelegate/ContentNotice.qml:28
+#: qml/PostDelegate/ContentNotice.qml:26
 #, kde-format
 msgctxt "@info"
 msgid "Content Notice"
 msgstr "내용 경고"
 
-#: qml/PostDelegate/ContentNotice.qml:46
+#: qml/PostDelegate/ContentNotice.qml:44
 #, kde-format
 msgid "<b>Content Notice</b><br /> %1"
 msgstr "<b>내용 경고</b><br /> %1"
 
-#: qml/PostDelegate/ContentNotice.qml:53
+#: qml/PostDelegate/ContentNotice.qml:51
 #, kde-format
 msgid "Show Less"
 msgstr "덜 보기"
 
-#: qml/PostDelegate/ContentNotice.qml:53
+#: qml/PostDelegate/ContentNotice.qml:51
 #, kde-format
 msgid "Show More"
 msgstr "더 보기"
 
-#: qml/PostDelegate/FilterNotice.qml:30
+#: qml/PostDelegate/FilterNotice.qml:28
 #, kde-format
 msgctxt "@info"
 msgid "Filter"
 msgstr "필터"
 
-#: qml/PostDelegate/FilterNotice.qml:48
+#: qml/PostDelegate/FilterNotice.qml:46
 #, kde-format
 msgid "<b>Filtered</b><br /> %1"
 msgstr "<b>필터됨</b><br /> %1"
 
-#: qml/PostDelegate/FilterNotice.qml:55
+#: qml/PostDelegate/FilterNotice.qml:53
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Anyway"
@@ -4284,7 +4261,7 @@ msgid "Block @%1"
 msgstr "@%1 님 차단"
 
 #: qml/PostDelegate/PostMenu.qml:205
-#: qml/StatusComposer/EditorAttachmentGrid.qml:60
+#: qml/StatusComposer/EditorAttachmentGrid.qml:59
 #, kde-format
 msgid "Edit"
 msgstr "편집"
@@ -4299,45 +4276,45 @@ msgstr "삭제…"
 msgid "Delete & Re-draft…"
 msgstr "삭제하고 다시 초안 쓰기…"
 
-#: qml/PostDelegate/PostPoll.qml:42
+#: qml/PostDelegate/PostPoll.qml:46
 #, kde-format
 msgctxt "Votes percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: qml/PostDelegate/PostPoll.qml:61
+#: qml/PostDelegate/PostPoll.qml:65
 #, kde-format
 msgid "You voted for this option"
 msgstr "이 옵션에 투표함"
 
-#: qml/PostDelegate/PostPoll.qml:84
+#: qml/PostDelegate/PostPoll.qml:88
 #, kde-format
 msgid "(No votes)"
 msgstr "(투표 없음)"
 
-#: qml/PostDelegate/PostPoll.qml:129
+#: qml/PostDelegate/PostPoll.qml:133
 #, kde-format
 msgid "Vote"
 msgstr "투표"
 
-#: qml/PostDelegate/PostPoll.qml:151
+#: qml/PostDelegate/PostPoll.qml:155
 #, kde-format
 msgctxt "@option:check Show poll results"
 msgid "Show Results"
 msgstr "결과 표시"
 
-#: qml/PostDelegate/PostPoll.qml:157
+#: qml/PostDelegate/PostPoll.qml:161
 #, kde-format
 msgid "Poll has closed"
 msgstr "투표가 종료됨"
 
-#: qml/PostDelegate/PostTags.qml:51
+#: qml/PostDelegate/PostTags.qml:50
 #, kde-format
 msgctxt "@info"
 msgid "Tag"
 msgstr "태그"
 
-#: qml/PostDelegate/PostTags.qml:57
+#: qml/PostDelegate/PostTags.qml:56
 #, kde-format
 msgctxt "@action:button expand the number of shown tags"
 msgid "…and %1 more"
@@ -4451,70 +4428,70 @@ msgctxt "@title:window Server rules"
 msgid "Rules"
 msgstr "규칙"
 
-#: qml/ServerInformationPage.qml:67
+#: qml/ServerInformationPage.qml:59
 #, kde-format
 msgctxt "@action:button"
 msgid "Rules"
 msgstr "규칙"
 
-#: qml/ServerInformationPage.qml:79
+#: qml/ServerInformationPage.qml:66
 #, kde-format
 msgctxt "@action:button"
 msgid "Announcements"
 msgstr "공지"
 
-#: qml/ServerInformationPage.qml:91
+#: qml/ServerInformationPage.qml:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Privacy Policy"
 msgstr "개인 정보 처리 방침"
 
-#: qml/ServerInformationPage.qml:92
+#: qml/ServerInformationPage.qml:74
 #, kde-format
 msgctxt "@title:window"
 msgid "Privacy Policy"
 msgstr "개인 정보 처리 방침"
 
-#: qml/ServerInformationPage.qml:103
+#: qml/ServerInformationPage.qml:80
 #, kde-format
 msgctxt "@action:button"
 msgid "Terms of Service"
 msgstr "이용 약관"
 
-#: qml/ServerInformationPage.qml:104
+#: qml/ServerInformationPage.qml:81
 #, kde-format
 msgctxt "@title:window"
 msgid "Terms of Service"
 msgstr "이용 약관"
 
-#: qml/Settings/AccountPage.qml:27
+#: qml/Settings/AccountPage.qml:26
 #, kde-format
 msgid "Edit Account"
 msgstr "계정 편집"
 
-#: qml/Settings/AccountPage.qml:36
+#: qml/Settings/AccountPage.qml:35
 #, kde-format
 msgctxt "@abel Account preferences"
 msgid "Open In Browser"
 msgstr "브라우저로 열기"
 
-#: qml/Settings/AccountPage.qml:53 qml/Settings/ProfileEditor.qml:32
+#: qml/Settings/AccountPage.qml:52 qml/Settings/ProfileEditor.qml:33
 #, kde-format
 msgid "Please choose a file"
 msgstr "파일 선택"
 
-#: qml/Settings/AccountPage.qml:62
+#: qml/Settings/AccountPage.qml:61
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to log out of %1?"
 msgstr "%1에서 로그아웃하시겠습니까?"
 
-#: qml/Settings/AccountPage.qml:78
+#: qml/Settings/AccountPage.qml:77
 #, kde-format
 msgid "Profile"
 msgstr "프로필"
 
-#: qml/Settings/AccountPage.qml:85
+#: qml/Settings/AccountPage.qml:84
 #, kde-format
 msgid "Account"
 msgstr "계정"
@@ -4535,104 +4512,104 @@ msgstr ""
 "나 거절하려면 이 옵션의 선택을 해제하십시오. 누군가의 팔로우를 강제적으로 해"
 "제할 수 있습니다."
 
-#: qml/Settings/AccountPage.qml:147
+#: qml/Settings/AccountPage.qml:144
 #, kde-format
 msgid "Is automated"
 msgstr "자동화됨"
 
-#: qml/Settings/AccountPage.qml:148
+#: qml/Settings/AccountPage.qml:145
 #, kde-format
 msgid ""
 "Whether to publicly mark this account as doing any kind of automated actions."
 msgstr ""
 "이 계정이 자동화된 동작을 취하고 있음을 공개적으로 표시할지 여부입니다."
 
-#: qml/Settings/AccountPage.qml:157
+#: qml/Settings/AccountPage.qml:151
 #, kde-format
 msgid "Feature profile and posts"
 msgstr "추천하는 프로필과 게시물"
 
-#: qml/Settings/AccountPage.qml:158
+#: qml/Settings/AccountPage.qml:152
 #, kde-format
 msgid "Your public profile and posts may be featured to other users."
 msgstr ""
 "내 공개 프로필과 게시물이 다른 사용자의 추천 목록에 표시될 수 있습니다."
 
-#: qml/Settings/AccountPage.qml:167
+#: qml/Settings/AccountPage.qml:158
 #, kde-format
 msgid "Publicly list follows and followers"
 msgstr "팔로우와 팔로워 목록 공개"
 
-#: qml/Settings/AccountPage.qml:168
+#: qml/Settings/AccountPage.qml:159
 #, kde-format
 msgid "By default everyone you follow and everyone who follows you is public."
 msgstr ""
 "기본값으로 내가 팔로우하는 사람과 나를 팔로우하는 사람의 목록은 공개됩니다."
 
-#: qml/Settings/AccountPage.qml:177
+#: qml/Settings/AccountPage.qml:165
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Mark uploaded media as sensitive by default"
 msgstr "업로드된 파일을 기본값으로 민감함으로 표시"
 
-#: qml/Settings/AccountPage.qml:186
+#: qml/Settings/AccountPage.qml:171
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Include public posts in search results"
 msgstr "검색 결과에 공개 게시물 포함"
 
-#: qml/Settings/AccountPage.qml:195
+#: qml/Settings/AccountPage.qml:177
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post language"
 msgstr "기본 게시물 언어"
 
-#: qml/Settings/AccountPage.qml:221
+#: qml/Settings/AccountPage.qml:200
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post visibility"
 msgstr "기본 게시물 공개 설정"
 
-#: qml/Settings/AccountPage.qml:223
+#: qml/Settings/AccountPage.qml:202
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Public"
 msgstr "공개"
 
-#: qml/Settings/AccountPage.qml:224
+#: qml/Settings/AccountPage.qml:203
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Unlisted"
 msgstr "미등재"
 
-#: qml/Settings/AccountPage.qml:225
+#: qml/Settings/AccountPage.qml:204
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Private"
 msgstr "비공개"
 
-#: qml/Settings/AppearancePage.qml:19
+#: qml/Settings/AppearancePage.qml:17
 #, kde-format
 msgctxt "@title:group"
 msgid "General"
 msgstr "일반"
 
-#: qml/Settings/AppearancePage.qml:26
+#: qml/Settings/AppearancePage.qml:25
 #, kde-format
 msgid "Color theme"
 msgstr "색 테마"
 
-#: qml/Settings/AppearancePage.qml:45
+#: qml/Settings/AppearancePage.qml:39
 #, kde-format
 msgid "Pop out the post composer by default"
 msgstr "기본값으로 게시물 작성기를 떼내기"
 
-#: qml/Settings/AppearancePage.qml:59
+#: qml/Settings/AppearancePage.qml:51
 #, kde-format
 msgid "Continue reading where you last left off"
 msgstr "마지막에 읽었던 곳부터 다시 시작"
 
-#: qml/Settings/AppearancePage.qml:60
+#: qml/Settings/AppearancePage.qml:52
 #, kde-format
 msgid ""
 "If checked, the Home timeline will begin where you last read. The position "
@@ -4641,12 +4618,12 @@ msgstr ""
 "이 옵션을 사용하면 홈 타임라인의 마지막으로 읽었던 곳에서 시작합니다. 타임라"
 "인의 위치는 다른 클라이언트와 공유됩니다."
 
-#: qml/Settings/AppearancePage.qml:73
+#: qml/Settings/AppearancePage.qml:63
 #, kde-format
 msgid "Auto-update timelines"
 msgstr "타임라인 자동 업데이트"
 
-#: qml/Settings/AppearancePage.qml:74
+#: qml/Settings/AppearancePage.qml:64
 #, kde-format
 msgid ""
 "If checked, Tokodon will automatically update certain timelines as new posts "
@@ -4655,50 +4632,50 @@ msgstr ""
 "이 옵션을 사용하면 Tokodon은 타임라인에 새 글이 올라왔을 때 자동으로 업데이트"
 "합니다."
 
-#: qml/Settings/AppearancePage.qml:87
+#: qml/Settings/AppearancePage.qml:75
 #, kde-format
 msgctxt "@option:check Boosting means to repost, or retweet"
 msgid "Ask before boosting"
 msgstr "부스트하기 전에 묻기"
 
-#: qml/Settings/AppearancePage.qml:98
+#: qml/Settings/AppearancePage.qml:86
 #, kde-format
 msgctxt "@title:group"
 msgid "Posts"
 msgstr "게시물"
 
-#: qml/Settings/AppearancePage.qml:104
+#: qml/Settings/AppearancePage.qml:93
 #, kde-format
 msgid "Show number of favorites and boosts"
 msgstr "좋아요, 부스트 수 표시"
 
-#: qml/Settings/AppearancePage.qml:119
+#: qml/Settings/AppearancePage.qml:104
 #, kde-format
 msgid "Show link previews"
 msgstr "링크 미리 보기 표시"
 
-#: qml/Settings/AppearancePage.qml:134
+#: qml/Settings/AppearancePage.qml:115
 #, kde-format
 msgid "Content font"
 msgstr "내용 글꼴"
 
-#: qml/Settings/AppearancePage.qml:140
+#: qml/Settings/AppearancePage.qml:121
 #, kde-format
 msgid "Please choose a font"
 msgstr "글꼴을 선택하십시오"
 
-#: qml/Settings/AppearancePage.qml:151
+#: qml/Settings/AppearancePage.qml:132
 #, kde-format
 msgctxt "@title:group"
 msgid "Media"
 msgstr "미디어"
 
-#: qml/Settings/AppearancePage.qml:157
+#: qml/Settings/AppearancePage.qml:139
 #, kde-format
 msgid "Crop images on the timeline"
 msgstr "타임라인의 그림 잘라내기"
 
-#: qml/Settings/AppearancePage.qml:158
+#: qml/Settings/AppearancePage.qml:140
 #, kde-format
 msgid ""
 "If unchecked, posts with only one image attached will be uncropped and shown "
@@ -4707,7 +4684,7 @@ msgstr ""
 "이 옵션을 사용하지 않으면 그림이 한 개만 첨부된 게시물은 잘린 부분을 포함하"
 "여 전체를 표시합니다."
 
-#: qml/Settings/AppearancePage.qml:172
+#: qml/Settings/AppearancePage.qml:150
 #, kde-format
 msgid "Auto-play animated GIFs"
 msgstr "애니메이션 GIF 자동 재생"
@@ -4730,151 +4707,151 @@ msgctxt "@info:placeholder"
 msgid "No Blocked Domains"
 msgstr "차단된 도메인 없음"
 
-#: qml/Settings/EditFilterPage.qml:31
+#: qml/Settings/EditFilterPage.qml:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Filter"
 msgstr "필터 만들기"
 
-#: qml/Settings/EditFilterPage.qml:31
+#: qml/Settings/EditFilterPage.qml:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Filter"
 msgstr "필터 편집"
 
-#: qml/Settings/EditFilterPage.qml:85
+#: qml/Settings/EditFilterPage.qml:82
 #, kde-format
 msgctxt "@label:textbox Filter title"
 msgid "Title"
 msgstr "제목"
 
-#: qml/Settings/EditFilterPage.qml:90
+#: qml/Settings/EditFilterPage.qml:87
 #, kde-format
 msgctxt "@info:header"
 msgid "Contexts"
 msgstr "콘텍스트"
 
-#: qml/Settings/EditFilterPage.qml:97
+#: qml/Settings/EditFilterPage.qml:94
 #, kde-format
 msgctxt "@info"
 msgid "Select one or more contexts where this filter should apply:"
 msgstr "이 필터를 적용할 문맥을 하나 이상 선택:"
 
-#: qml/Settings/EditFilterPage.qml:102
+#: qml/Settings/EditFilterPage.qml:99
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Home and Lists"
 msgstr "홈과 리스트"
 
-#: qml/Settings/EditFilterPage.qml:107
+#: qml/Settings/EditFilterPage.qml:104
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Notifications"
 msgstr "알림"
 
-#: qml/Settings/EditFilterPage.qml:112
+#: qml/Settings/EditFilterPage.qml:109
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Public Timelines"
 msgstr "공개 타임라인"
 
-#: qml/Settings/EditFilterPage.qml:117
+#: qml/Settings/EditFilterPage.qml:114
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Conversations"
 msgstr "대화"
 
-#: qml/Settings/EditFilterPage.qml:122
+#: qml/Settings/EditFilterPage.qml:119
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Profiles"
 msgstr "프로필"
 
-#: qml/Settings/EditFilterPage.qml:127
+#: qml/Settings/EditFilterPage.qml:124
 #, kde-format
 msgctxt "@info:header"
 msgid "Action"
 msgstr "동작"
 
-#: qml/Settings/EditFilterPage.qml:135
+#: qml/Settings/EditFilterPage.qml:132
 #, kde-format
 msgctxt "@label:radiobutton"
 msgid "Hide with Content Notice"
 msgstr "내용 경고를 남기고 숨기기"
 
-#: qml/Settings/EditFilterPage.qml:141
+#: qml/Settings/EditFilterPage.qml:138
 #, kde-format
 msgctxt "@label:radiobutton"
 msgid "Hide Media with Content Notice"
 msgstr "내용 경고가 있는 미디어 숨기기"
 
-#: qml/Settings/EditFilterPage.qml:148
+#: qml/Settings/EditFilterPage.qml:145
 #, kde-format
 msgctxt "@label:radiobutton"
 msgid "Hide Completely"
 msgstr "완전히 숨기기"
 
-#: qml/Settings/EditFilterPage.qml:154
+#: qml/Settings/EditFilterPage.qml:151
 #, kde-format
 msgctxt "@info:header"
 msgid "Keywords"
 msgstr "키워드"
 
-#: qml/Settings/EditFilterPage.qml:157
+#: qml/Settings/EditFilterPage.qml:154
 #, kde-format
 msgctxt "@action:button Add keyword"
 msgid "Add"
 msgstr "추가"
 
-#: qml/Settings/EditFilterPage.qml:167
+#: qml/Settings/EditFilterPage.qml:164
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No keywords"
 msgstr "키워드 없음"
 
-#: qml/Settings/EditFilterPage.qml:195
+#: qml/Settings/EditFilterPage.qml:192
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Whole word"
 msgstr "단어 단위로"
 
-#: qml/Settings/EditFilterPage.qml:201
+#: qml/Settings/EditFilterPage.qml:198
 #, kde-format
 msgctxt "@action:button Remove keyword"
 msgid "Remove"
 msgstr "삭제"
 
-#: qml/Settings/EditFilterPage.qml:228
+#: qml/Settings/EditFilterPage.qml:226
 #, kde-format
 msgctxt "@action:button Create the filter"
 msgid "Create"
 msgstr "만들기"
 
-#: qml/Settings/EditFilterPage.qml:230
+#: qml/Settings/EditFilterPage.qml:228
 #, kde-format
 msgctxt "@action:button Save the edited filter"
 msgid "Save"
 msgstr "저장"
 
-#: qml/Settings/EditFilterPage.qml:243
+#: qml/Settings/EditFilterPage.qml:238
 #, kde-format
 msgctxt "@action:button Delete the filter"
 msgid "Delete"
 msgstr "삭제"
 
-#: qml/Settings/EditFilterPage.qml:250
+#: qml/Settings/EditFilterPage.qml:245
 #, kde-format
 msgctxt "@title"
 msgid "Deleting Filter"
 msgstr "필터 삭제"
 
-#: qml/Settings/EditFilterPage.qml:251
+#: qml/Settings/EditFilterPage.qml:246
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to delete this filter?"
 msgstr "이 필터를 삭제하시겠습니까?"
 
-#: qml/Settings/EditProfilePage.qml:22
+#: qml/Settings/EditProfilePage.qml:17
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Profile"
@@ -4886,37 +4863,37 @@ msgctxt "@title:window"
 msgid "Error Log"
 msgstr "오류 로그"
 
-#: qml/Settings/ErrorLogPage.qml:23
+#: qml/Settings/ErrorLogPage.qml:22
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Clear All"
 msgstr "모두 지우기"
 
-#: qml/Settings/ErrorLogPage.qml:73
+#: qml/Settings/ErrorLogPage.qml:63
 #, kde-format
 msgctxt "@action:button"
 msgid "Copy To Clipboard"
 msgstr "클립보드에 복사"
 
-#: qml/Settings/ErrorLogPage.qml:88
+#: qml/Settings/ErrorLogPage.qml:82
 #, kde-format
 msgctxt "@label"
 msgid "No Errors"
 msgstr "오류 없음"
 
-#: qml/Settings/FiltersPage.qml:22
+#: qml/Settings/FiltersPage.qml:20
 #, kde-format
 msgctxt "@title"
 msgid "Filters"
 msgstr "필터"
 
-#: qml/Settings/FiltersPage.qml:29
+#: qml/Settings/FiltersPage.qml:27
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Create Filter"
 msgstr "필터 만들기"
 
-#: qml/Settings/FiltersPage.qml:80
+#: qml/Settings/FiltersPage.qml:78
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Filters"
@@ -4928,57 +4905,57 @@ msgctxt "@title:window"
 msgid "Network Proxy"
 msgstr "네트워크 프록시"
 
-#: qml/Settings/NetworkProxyPage.qml:25
+#: qml/Settings/NetworkProxyPage.qml:26
 #, kde-format
 msgid "System Default"
 msgstr "시스템 기본값"
 
-#: qml/Settings/NetworkProxyPage.qml:37
+#: qml/Settings/NetworkProxyPage.qml:36
 #, kde-format
 msgid "No Proxy"
 msgstr "프록시 없음"
 
-#: qml/Settings/NetworkProxyPage.qml:49
+#: qml/Settings/NetworkProxyPage.qml:46
 #, kde-format
 msgid "HTTP"
 msgstr "HTTP"
 
-#: qml/Settings/NetworkProxyPage.qml:61
+#: qml/Settings/NetworkProxyPage.qml:56
 #, kde-format
 msgid "Socks5"
 msgstr "SOCKS5"
 
-#: qml/Settings/NetworkProxyPage.qml:80
+#: qml/Settings/NetworkProxyPage.qml:76
 #, kde-format
 msgid "Host"
 msgstr "호스트"
 
-#: qml/Settings/NetworkProxyPage.qml:93
+#: qml/Settings/NetworkProxyPage.qml:88
 #, kde-format
 msgid "Port"
 msgstr "포트"
 
-#: qml/Settings/NetworkProxyPage.qml:114
+#: qml/Settings/NetworkProxyPage.qml:108
 #, kde-format
 msgid "User"
 msgstr "사용자"
 
-#: qml/Settings/NetworkProxyPage.qml:142 qml/Settings/ProfileEditor.qml:313
+#: qml/Settings/NetworkProxyPage.qml:135 qml/Settings/ProfileEditor.qml:307
 #, kde-format
 msgid "Apply"
 msgstr "적용"
 
-#: qml/Settings/NotificationsPage.qml:30
+#: qml/Settings/NotificationsPage.qml:29
 #, kde-format
 msgid "Enable notifications for this account"
 msgstr "이 계정의 알림 활성화"
 
-#: qml/Settings/NotificationsPage.qml:34
+#: qml/Settings/NotificationsPage.qml:33
 #, kde-format
 msgid "Notifications can appear even when Tokodon isn't running."
 msgstr "Tokodon이 실행 중이 아니어도 알림이 표시될 수 있습니다."
 
-#: qml/Settings/NotificationsPage.qml:36
+#: qml/Settings/NotificationsPage.qml:35
 #, kde-format
 msgid ""
 "Push notifications are available but could not be enabled. Please log out "
@@ -4987,30 +4964,30 @@ msgstr ""
 "푸시 알림을 사용할 수 있지만 활성화할 수 없습니다. 로그아웃한 후 다시 로그인"
 "하십시오."
 
-#: qml/Settings/NotificationsPage.qml:39
+#: qml/Settings/NotificationsPage.qml:38
 #, kde-format
 msgid "Notifications will only appear when Tokodon is running."
 msgstr "Tokodon이 실행 중일 때에만 알림이 표시됩니다."
 
-#: qml/Settings/NotificationsPage.qml:52
+#: qml/Settings/NotificationsPage.qml:51
 #, kde-format
 msgctxt "@title:group"
 msgid "Filtering Policy"
 msgstr "필터링 정책"
 
-#: qml/Settings/NotificationsPage.qml:62
+#: qml/Settings/NotificationsPage.qml:61
 #, kde-format
 msgctxt "@info:Option Accept and show this in notifications"
 msgid "Accept"
 msgstr "수락"
 
-#: qml/Settings/NotificationsPage.qml:66
+#: qml/Settings/NotificationsPage.qml:65
 #, kde-format
 msgctxt "@info:Option Filter and send to the filtered inbox"
 msgid "Filter"
 msgstr "필터"
 
-#: qml/Settings/NotificationsPage.qml:70
+#: qml/Settings/NotificationsPage.qml:69
 #, kde-format
 msgctxt "@info:Option Ignore completely, do not show notification"
 msgid "Ignore"
@@ -5028,37 +5005,37 @@ msgctxt "@label Notification preferences"
 msgid "Until you manually approve them."
 msgstr "수동으로 승인할 때까지."
 
-#: qml/Settings/NotificationsPage.qml:85
+#: qml/Settings/NotificationsPage.qml:84
 #, kde-format
 msgctxt "@label Notification preferences"
 msgid "People not following you"
 msgstr "나를 팔로우하지 않는 사람"
 
-#: qml/Settings/NotificationsPage.qml:86
+#: qml/Settings/NotificationsPage.qml:85
 #, kde-format
 msgctxt "@label Notification preferences"
 msgid "Including people who have been following you fewer than 3 days."
 msgstr "나를 팔로우한지 3일이 지나지 않은 사람을 포함합니다."
 
-#: qml/Settings/NotificationsPage.qml:92
+#: qml/Settings/NotificationsPage.qml:90
 #, kde-format
 msgctxt "@label Notification preferences"
 msgid "New accounts"
 msgstr "새로운 계정"
 
-#: qml/Settings/NotificationsPage.qml:93
+#: qml/Settings/NotificationsPage.qml:91
 #, kde-format
 msgctxt "@label Notification preferences"
 msgid "Created within the past 30 days."
 msgstr "지난 30일 내에 생성된 계정입니다."
 
-#: qml/Settings/NotificationsPage.qml:99
+#: qml/Settings/NotificationsPage.qml:96
 #, kde-format
 msgctxt "@label Notification preferences"
 msgid "Unsolicited conversations"
 msgstr "특정되지 않은 대화"
 
-#: qml/Settings/NotificationsPage.qml:100
+#: qml/Settings/NotificationsPage.qml:97
 #, kde-format
 msgctxt "@label Notification preferences"
 msgid ""
@@ -5068,165 +5045,165 @@ msgstr ""
 "내 멘션에 대한 답글이거나 내가 전송한 사람을 팔로우하는 경우를 제외한 나머지"
 "를 필터합니다."
 
-#: qml/Settings/NotificationsPage.qml:106
+#: qml/Settings/NotificationsPage.qml:102
 #, kde-format
 msgctxt "@label Notification preferences"
 msgid "Moderated accounts"
 msgstr "중재 중인 계정"
 
-#: qml/Settings/NotificationsPage.qml:107
+#: qml/Settings/NotificationsPage.qml:103
 #, kde-format
 msgctxt "@label Notification preferences"
 msgid "Limited by server moderators."
 msgstr "서버 중재자에 의해서 제한되었습니다."
 
-#: qml/Settings/NotificationsPage.qml:114
+#: qml/Settings/NotificationsPage.qml:110
 #, kde-format
 msgctxt "@title:group"
 msgid "Events"
 msgstr "이벤트"
 
-#: qml/Settings/NotificationsPage.qml:155
+#: qml/Settings/NotificationsPage.qml:151
 #, kde-format
 msgctxt "@action:button"
 msgid "Hide in All"
 msgstr "모두에서 숨기기"
 
-#: qml/Settings/NotificationsPage.qml:155
+#: qml/Settings/NotificationsPage.qml:151
 #, kde-format
 msgctxt "@action:button"
 msgid "Show in All"
 msgstr "모두에 표시"
 
-#: qml/Settings/NotificationsPage.qml:174
+#: qml/Settings/NotificationsPage.qml:170
 #, kde-format
 msgctxt "@action:button"
 msgid "Disable notifications"
 msgstr "알림 사용 안 함"
 
-#: qml/Settings/NotificationsPage.qml:174
+#: qml/Settings/NotificationsPage.qml:170
 #, kde-format
 msgctxt "@action:button"
 msgid "Enable notifications"
 msgstr "알림 사용"
 
-#: qml/Settings/NotificationsPage.qml:202
+#: qml/Settings/NotificationsPage.qml:199
 #, kde-format
 msgid "Mentions"
 msgstr "멘션"
 
-#: qml/Settings/NotificationsPage.qml:203
+#: qml/Settings/NotificationsPage.qml:200
 #, kde-format
 msgid ""
 "When someone mentions you in a new post, or replies to one of your threads."
 msgstr "누군가가 나를 새로운 게시물에서 멘션했거나 내 스레드에 답장했습니다."
 
-#: qml/Settings/NotificationsPage.qml:220
+#: qml/Settings/NotificationsPage.qml:212
 #, kde-format
 msgid "Quotes"
 msgstr "인용"
 
-#: qml/Settings/NotificationsPage.qml:221
+#: qml/Settings/NotificationsPage.qml:213
 #, kde-format
 msgid "When someone quotes you in a new post"
 msgstr "누군가가 내 글을 새 게시물에서 인용함"
 
-#: qml/Settings/NotificationsPage.qml:238
+#: qml/Settings/NotificationsPage.qml:225
 #, kde-format
 msgid "Statuses"
 msgstr "글"
 
-#: qml/Settings/NotificationsPage.qml:239
+#: qml/Settings/NotificationsPage.qml:226
 #, kde-format
 msgid "When a user you have notifications turned on for makes a new post."
 msgstr "알림을 활성화한 사용자가 새로운 게시물을 올렸습니다."
 
-#: qml/Settings/NotificationsPage.qml:256
+#: qml/Settings/NotificationsPage.qml:238
 #, kde-format
 msgid "Boosts"
 msgstr "부스트"
 
-#: qml/Settings/NotificationsPage.qml:257
+#: qml/Settings/NotificationsPage.qml:239
 #, kde-format
 msgid "When someone boosted one of your posts."
 msgstr "누군가가 내 글을 부스트했습니다."
 
-#: qml/Settings/NotificationsPage.qml:274
+#: qml/Settings/NotificationsPage.qml:251
 #, kde-format
 msgid "New followers"
 msgstr "새 팔로워"
 
-#: qml/Settings/NotificationsPage.qml:275
+#: qml/Settings/NotificationsPage.qml:252
 #, kde-format
 msgid "When someone follows you."
 msgstr "누군가가 나를 팔로우했습니다."
 
-#: qml/Settings/NotificationsPage.qml:292
+#: qml/Settings/NotificationsPage.qml:264
 #, kde-format
 msgid "New follow requests"
 msgstr "새 팔로우 요청"
 
-#: qml/Settings/NotificationsPage.qml:293
+#: qml/Settings/NotificationsPage.qml:265
 #, kde-format
 msgid "When an account who requires manual approval wants to follow you."
 msgstr "수동으로 승인해야 하는 계정에서 나를 팔로우했습니다."
 
-#: qml/Settings/NotificationsPage.qml:310
+#: qml/Settings/NotificationsPage.qml:277
 #, kde-format
 msgid "Favorites"
 msgstr "좋아요"
 
-#: qml/Settings/NotificationsPage.qml:311
+#: qml/Settings/NotificationsPage.qml:278
 #, kde-format
 msgid "When a post you made was favorited by another user."
 msgstr "내 게시물을 누군가가 좋아요 표시했습니다."
 
-#: qml/Settings/NotificationsPage.qml:328
+#: qml/Settings/NotificationsPage.qml:290
 #, kde-format
 msgid "Polls"
 msgstr "투표"
 
-#: qml/Settings/NotificationsPage.qml:329
+#: qml/Settings/NotificationsPage.qml:291
 #, kde-format
 msgid "When a poll you voted in has ended."
 msgstr "참여한 투표가 종료되었습니다."
 
-#: qml/Settings/NotificationsPage.qml:346
+#: qml/Settings/NotificationsPage.qml:303
 #, kde-format
 msgid "Edits"
 msgstr "편집"
 
-#: qml/Settings/NotificationsPage.qml:347
+#: qml/Settings/NotificationsPage.qml:304
 #, kde-format
 msgid "When a post you interacted with was edited by the author."
 msgstr "내가 참여한 게시물이 작성자에 의해 편집되었습니다."
 
-#: qml/Settings/NotificationsPage.qml:364
+#: qml/Settings/NotificationsPage.qml:316
 #, kde-format
 msgid "Server Sign-ups"
 msgstr "서버 계정 등록"
 
-#: qml/Settings/NotificationsPage.qml:365
+#: qml/Settings/NotificationsPage.qml:317
 #, kde-format
 msgid "When someone signs up to your server."
 msgstr "누군가가 내 서버에 계정을 등록했습니다."
 
-#: qml/Settings/NotificationsPage.qml:384
+#: qml/Settings/NotificationsPage.qml:330
 #, kde-format
 msgid "Server Reports"
 msgstr "서버 보고서"
 
-#: qml/Settings/NotificationsPage.qml:385
+#: qml/Settings/NotificationsPage.qml:331
 #, kde-format
 msgid "When someone files a report against a user on your server."
 msgstr "누군가가 내 서버의 특정 사용자에 대한 신고를 접수했습니다."
 
-#: qml/Settings/NotificationsPage.qml:404
+#: qml/Settings/NotificationsPage.qml:344
 #, kde-format
 msgid "Severed Relationships"
 msgstr "관계 끊어짐"
 
-#: qml/Settings/NotificationsPage.qml:405
+#: qml/Settings/NotificationsPage.qml:345
 #, kde-format
 msgid ""
 "When you or your server moderates another server, which you are following "
@@ -5235,29 +5212,29 @@ msgstr ""
 "해당 서버의 사용자를 팔로우하거나, 해당 서버의 사용자가 팔로우하는 서버를 나 "
 "또는 내 서버에서 중재 결정을 내렸습니다."
 
-#: qml/Settings/NotificationsPage.qml:422
+#: qml/Settings/NotificationsPage.qml:357
 #, kde-format
 msgctxt "@option:check"
 msgid "Annual Report"
 msgstr "연간 보고"
 
-#: qml/Settings/NotificationsPage.qml:423
+#: qml/Settings/NotificationsPage.qml:358
 #, kde-format
 msgid "When you receive your #FediWrapped at the end of the year."
 msgstr "연말에 #FediWrapped 보고서를 받을 때입니다."
 
-#: qml/Settings/NotificationsPage.qml:440
+#: qml/Settings/NotificationsPage.qml:370
 #, kde-format
 msgctxt "@option:check"
 msgid "Collections"
 msgstr "컬렉션"
 
-#: qml/Settings/NotificationsPage.qml:441
+#: qml/Settings/NotificationsPage.qml:371
 #, kde-format
 msgid "When you're added to collections or collections were updated."
 msgstr "내가 컬렉션에 추가되었거나 컬렉션이 업데이트되었을 때입니다."
 
-#: qml/Settings/ProfileEditor.qml:61
+#: qml/Settings/ProfileEditor.qml:63
 #, kde-format
 msgid "Display Name"
 msgstr "표시 이름"
@@ -5267,69 +5244,69 @@ msgstr "표시 이름"
 msgid "Bio"
 msgstr "자기 소개"
 
-#: qml/Settings/ProfileEditor.qml:107
+#: qml/Settings/ProfileEditor.qml:105
 #, kde-format
 msgid "Header"
 msgstr "헤더"
 
-#: qml/Settings/ProfileEditor.qml:142
+#: qml/Settings/ProfileEditor.qml:140
 #, kde-format
 msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 1500x500px"
 msgstr ""
 "PNG, GIF, JPG 형식이어야 합니다. 최대 크기는 2 MB이며 1500x500픽셀로 크기 조"
 "정됩니다"
 
-#: qml/Settings/ProfileEditor.qml:155 qml/Settings/ProfileEditor.qml:217
+#: qml/Settings/ProfileEditor.qml:153 qml/Settings/ProfileEditor.qml:213
 #, kde-format
 msgid "Delete"
 msgstr "삭제"
 
-#: qml/Settings/ProfileEditor.qml:170
+#: qml/Settings/ProfileEditor.qml:166
 #, kde-format
 msgid "Avatar"
 msgstr "아바타"
 
-#: qml/Settings/ProfileEditor.qml:203
+#: qml/Settings/ProfileEditor.qml:199
 #, kde-format
 msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 400x400px"
 msgstr ""
 "PNG, GIF, JPG 형식이어야 합니다. 최대 크기는 2 MB이며 400x400픽셀로 크기 조정"
 "됩니다"
 
-#: qml/Settings/ProfileEditor.qml:234
+#: qml/Settings/ProfileEditor.qml:228
 #, kde-format
 msgctxt "Profile fields"
 msgid "Fields"
 msgstr "필드"
 
-#: qml/Settings/ProfileEditor.qml:279
+#: qml/Settings/ProfileEditor.qml:273
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove"
 msgstr "삭제"
 
-#: qml/Settings/ProfileEditor.qml:290
+#: qml/Settings/ProfileEditor.qml:284
 #, kde-format
 msgctxt "@action:button"
 msgid "Add"
 msgstr "추가"
 
-#: qml/Settings/ProfileEditor.qml:306
+#: qml/Settings/ProfileEditor.qml:300
 #, kde-format
 msgid "Reset"
 msgstr "초기화"
 
-#: qml/Settings/SafetyPage.qml:35
+#: qml/Settings/SafetyPage.qml:31
 #, kde-format
 msgid "Muted Users"
 msgstr "뮤트된 사용자"
 
-#: qml/Settings/SafetyPage.qml:43
+#: qml/Settings/SafetyPage.qml:37
 #, kde-format
 msgid "Blocked Users"
 msgstr "차단된 사용자"
 
-#: qml/Settings/SafetyPage.qml:51
+#: qml/Settings/SafetyPage.qml:43
 #, kde-format
 msgid "Blocked Domains"
 msgstr "차단된 도메인"
@@ -5376,7 +5353,7 @@ msgstr "정보"
 msgid "About KDE"
 msgstr "KDE 정보"
 
-#: qml/ShareDialog.qml:35
+#: qml/ShareDialog.qml:34
 #, kde-format
 msgid "Sharing failed"
 msgstr "공유 실패"
@@ -5428,145 +5405,145 @@ msgstr "뮤트 해제"
 msgid "No accounts available"
 msgstr "사용할 수 있는 계정 없음"
 
-#: qml/StatusComposer/AttachmentInfoDialog.qml:98
+#: qml/StatusComposer/AttachmentInfoDialog.qml:99
 #, kde-format
 msgctxt "@title:group Alternate text or description of the image"
 msgid "Description"
 msgstr "설명"
 
-#: qml/StatusComposer/AttachmentInfoDialog.qml:116
+#: qml/StatusComposer/AttachmentInfoDialog.qml:118
 #, kde-format
 msgctxt "@title:group"
 msgid "Focal point"
 msgstr "내용 중심점"
 
-#: qml/StatusComposer/ComposerPoll.qml:45
+#: qml/StatusComposer/ComposerPoll.qml:46
 #, kde-format
 msgctxt "@label:textbox Poll choice"
 msgid "Choice %1"
 msgstr "항목 %1"
 
-#: qml/StatusComposer/ComposerPoll.qml:70
+#: qml/StatusComposer/ComposerPoll.qml:71
 #, kde-format
 msgctxt "@action:intoolbar Poll toolbar"
 msgid "Add Choice"
 msgstr "항목 추가"
 
-#: qml/StatusComposer/ComposerPoll.qml:71
+#: qml/StatusComposer/ComposerPoll.qml:72
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "Add a new poll choice"
 msgstr "새 투표 항목 추가"
 
-#: qml/StatusComposer/ComposerPoll.qml:90
+#: qml/StatusComposer/ComposerPoll.qml:91
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "When the poll will expire"
 msgstr "투표가 끝나는 시간 설정"
 
-#: qml/StatusComposer/ComposerPoll.qml:99
+#: qml/StatusComposer/ComposerPoll.qml:100
 #, kde-format
 msgctxt "@option:check Poll toolbar"
 msgid "Multiple choice"
 msgstr "객관식"
 
-#: qml/StatusComposer/ComposerPoll.qml:105
+#: qml/StatusComposer/ComposerPoll.qml:106
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "Allow multiple choices"
 msgstr "객관식 허용"
 
-#: qml/StatusComposer/ComposerPoll.qml:114
+#: qml/StatusComposer/ComposerPoll.qml:115
 #, kde-format
 msgctxt "@option:check Poll toolbar"
 msgid "Hide totals"
 msgstr "합계 숨기기"
 
-#: qml/StatusComposer/ComposerPoll.qml:120
+#: qml/StatusComposer/ComposerPoll.qml:121
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "Hide vote count until the poll ends"
 msgstr "투표가 끝날 때까지 총 투표 수 숨기기"
 
-#: qml/StatusComposer/EditorAttachmentGrid.qml:97
+#: qml/StatusComposer/EditorAttachmentGrid.qml:96
 #, kde-format
 msgid "Remove"
 msgstr "삭제"
 
-#: qml/StatusComposer/ScheduledPostsPage.qml:86
+#: qml/StatusComposer/ScheduledPostsPage.qml:83
 #, kde-format
 msgctxt "Draft, unfinished post"
 msgid "Created %1 ago"
 msgstr "%1 전에 생성됨"
 
-#: qml/StatusComposer/ScheduledPostsPage.qml:86
+#: qml/StatusComposer/ScheduledPostsPage.qml:83
 #, kde-format
 msgctxt "Scheduled for this date"
 msgid "Scheduled for %1"
 msgstr "%1에 예정됨"
 
-#: qml/StatusComposer/ScheduledPostsPage.qml:94
+#: qml/StatusComposer/ScheduledPostsPage.qml:91
 #, kde-format
 msgctxt "@action:button Re-schedule this post"
 msgid "Re-schedule…"
 msgstr "다시 예약…"
 
-#: qml/StatusComposer/ScheduledPostsPage.qml:105
+#: qml/StatusComposer/ScheduledPostsPage.qml:102
 #, kde-format
 msgctxt "@action:button Discard this post"
 msgid "Discard…"
 msgstr "삭제…"
 
-#: qml/StatusComposer/ScheduledPostsPage.qml:117
+#: qml/StatusComposer/ScheduledPostsPage.qml:114
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Drafts"
 msgstr "초안 없음"
 
-#: qml/StatusComposer/ScheduledPostsPage.qml:117
+#: qml/StatusComposer/ScheduledPostsPage.qml:114
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Scheduled Posts"
 msgstr "예약된 게시물 없음"
 
-#: qml/StatusComposer/ScheduledPostsPage.qml:126
+#: qml/StatusComposer/ScheduledPostsPage.qml:123
 #: qml/StatusComposer/StatusComposer.qml:182
 #, kde-format
 msgctxt "@title"
 msgid "Discard Draft"
 msgstr "임시 저장 삭제"
 
-#: qml/StatusComposer/ScheduledPostsPage.qml:126
+#: qml/StatusComposer/ScheduledPostsPage.qml:123
 #, kde-format
 msgctxt "@title"
 msgid "Discard Scheduled Post"
 msgstr "예약된 게시물 삭제"
 
-#: qml/StatusComposer/ScheduledPostsPage.qml:127
+#: qml/StatusComposer/ScheduledPostsPage.qml:124
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to discard this draft?"
 msgstr "임시 저장된 게시물을 삭제하시겠습니까?"
 
-#: qml/StatusComposer/ScheduledPostsPage.qml:127
+#: qml/StatusComposer/ScheduledPostsPage.qml:124
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to discard this scheduled post?"
 msgstr "예약된 게시물을 삭제하시겠습니까?"
 
-#: qml/StatusComposer/ScheduledPostsPage.qml:133
+#: qml/StatusComposer/ScheduledPostsPage.qml:130
 #, kde-format
 msgctxt "@action:button Discard this draft"
 msgid "Discard"
 msgstr "임시 저장 삭제"
 
-#: qml/StatusComposer/ScheduledPostsPage.qml:149
+#: qml/StatusComposer/ScheduledPostsPage.qml:146
 #, kde-format
 msgctxt "@title"
 msgid "Re-Schedule Post"
 msgstr "게시물 다시 예약"
 
-#: qml/StatusComposer/ScheduledPostsPage.qml:156
+#: qml/StatusComposer/ScheduledPostsPage.qml:153
 #, kde-format
 msgctxt "@action:button Set this post's schedule to when it should be posted"
 msgid "Set New Schedule"
@@ -5872,12 +5849,12 @@ msgctxt "@action:button Load more posts above this"
 msgid "Load More"
 msgstr "더 불러오기"
 
-#: qml/UserInfo.qml:105
+#: qml/UserInfo.qml:104
 #, kde-format
 msgid "Switch Account"
 msgstr "계정 전환"
 
-#: qml/UserInfo.qml:108
+#: qml/UserInfo.qml:107
 #, kde-format
 msgid "Switch account"
 msgstr "계정 전환"
@@ -6223,6 +6200,18 @@ msgstr[0] "%1개월 전"
 msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "%1년 전"
+
+#~ msgctxt "@info:Cancel button to close the dailog"
+#~ msgid "Cancel"
+#~ msgstr "취소"
+
+#~ msgctxt "@action:button"
+#~ msgid "Cancel"
+#~ msgstr "취소"
+
+#~ msgctxt "@info Cancel button to close the dailog"
+#~ msgid "Cancel"
+#~ msgstr "취소"
 
 #~ msgid "Tokodon"
 #~ msgstr "Tokodon"
