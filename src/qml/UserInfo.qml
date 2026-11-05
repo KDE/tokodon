@@ -104,7 +104,7 @@ QQC2.Control {
                         let dialog = Qt.createComponent("org.kde.tokodon", "AccountSwitchDialog").createObject(root.QQC2.Overlay.overlay, {
                             application: root.application,
                             userInfo: root,
-                        });
+                        }) as AccountSwitchDialog;
                         dialog.open();
                     }
                     text: KI18n.i18n("Switch Account")

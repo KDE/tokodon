@@ -51,7 +51,7 @@ Components.AlbumMaximizeComponent {
     onSaveItem: {
         const dialog = saveAsDialog.createObject(applicationWindow().overlay, {
             url: root.currentItem.source,
-        })
+        }) as FileDialog
         dialog.selectedFile = dialog.currentFolder + "/" + FileHelper.fileName(root.currentItem.source);
         dialog.open();
     }

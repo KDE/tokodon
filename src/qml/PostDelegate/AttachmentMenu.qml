@@ -58,7 +58,7 @@ Components.ConvergentContextMenu {
         onTriggered: {
             const dialog = root.saveAsDialog.createObject((root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).overlay, {
                 url: root.attachment.source,
-            });
+            }) as FileDialog;
             dialog.selectedFile = dialog.currentFolder + "/" + FileHelper.fileName(root.attachment.source);
             dialog.open();
         }

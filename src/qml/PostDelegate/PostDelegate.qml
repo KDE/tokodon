@@ -283,11 +283,11 @@ QQC2.ItemDelegate {
 
             onDeletePost: {
                 deleteDialog.active = true;
-                deleteDialog.item.open()
+                (deleteDialog.item as Kirigami.PromptDialog).open()
             }
             onRedraftPost: {
                 redraftDialog.active = true;
-                redraftDialog.item.open()
+                (redraftDialog.item as Kirigami.PromptDialog).open()
             }
         }
 
@@ -456,7 +456,7 @@ QQC2.ItemDelegate {
                         const dialog = Qt.createComponent("org.kde.tokodon", "BoostConfirmationDialog").createObject(root.QQC2.Overlay.overlay, {
                             sourceIdentity: AccountManager.selectedAccount.identity,
                             targetIdentity: root.authorIdentity
-                        });
+                        }) as BoostConfirmationDialog;
                         dialog.accepted.connect(function() {
                             root.timelineModel.actionRepeat(root.timelineModel.index(root.index, 0))
                         });

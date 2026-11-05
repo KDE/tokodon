@@ -109,7 +109,7 @@ Actions.StatefulWindow {
         crossActionDialogLoader.active = true;
         crossActionDialogLoader.item.action = action;
         crossActionDialogLoader.item.url = url;
-        crossActionDialogLoader.item.open();
+        (crossActionDialogLoader.item as Kirigami.PromptDialog).open();
     }
 
     // Checks if the current item matches the expected pageId
@@ -420,7 +420,7 @@ Actions.StatefulWindow {
             let dialog = Qt.createComponent("org.kde.tokodon", "AccountSwitchDialog").createObject(root.QQC2.Overlay.overlay, {
                 application: tokodonApplication,
                 userInfo: root,
-            });
+            }) as AccountSwitchDialog;
             dialog.open();
         }
 
@@ -510,7 +510,7 @@ Actions.StatefulWindow {
                 attachments: attachments,
                 identity: identity,
                 initialIndex: currentIndex,
-            });
+            }) as FullScreenImage;
             dialog.open();
         }
 

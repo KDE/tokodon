@@ -180,7 +180,7 @@ Kirigami.Page {
                         text: KI18n.i18nc("@label Account preferences", "Default post language")
                         description: Qt.locale(root.account.preferences.defaultLanguage).nativeLanguageName
 
-                        onClicked: languageSelect.createObject().open()
+                        onClicked: (languageSelect.createObject() as LanguageSelector).open()
 
                         Component {
                             id: languageSelect

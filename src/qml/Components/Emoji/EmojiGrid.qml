@@ -73,7 +73,7 @@ QQC2.ScrollView {
                 if (EmojiModel.tones(modelData.shortName).length === 0) {
                     return;
                 }
-                let tones = tonesPopupComponent.createObject(emojiDelegate, {shortName: modelData.shortName, unicode: modelData.unicode, categoryIconSize: emojiGrid.targetIconSize})
+                let tones = tonesPopupComponent.createObject(emojiDelegate, {shortName: modelData.shortName, unicode: modelData.unicode, categoryIconSize: emojiGrid.targetIconSize}) as EmojiTonesPicker
                 tones.open()
                 tones.forceActiveFocus()
             }

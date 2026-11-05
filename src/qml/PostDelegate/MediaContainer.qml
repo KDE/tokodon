@@ -77,7 +77,7 @@ Rectangle {
             onClicked: {
                 altPopupLoader.active = true;
                 altPopupLoader.item.subtitle = root.caption;
-                altPopupLoader.item.open();
+                (altPopupLoader.item as Kirigami.PromptDialog).open();
             }
 
             QQC2.ToolTip.text: KI18n.i18n("Text description available")
