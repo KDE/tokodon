@@ -24,7 +24,7 @@ Kirigami.OverlayDrawer {
     property alias actions: actionsRepeater.model
     property alias bottomActions: bottomActionsRepeater.model
 
-    edge: Qt.application.layoutDirection === Qt.RightToLeft ? Qt.RightEdge : Qt.LeftEdge
+    edge: Application.layoutDirection === Qt.RightToLeft ? Qt.RightEdge : Qt.LeftEdge
     modal: shouldCollapse || !enabled
     z: modal ? Math.round(position * 10000000) : 100
     preferredSize: {width: Kirigami.Units.gridUnit * 14}
