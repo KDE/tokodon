@@ -53,6 +53,9 @@ Purpose.PurposeAlternativesModel {
             root.visible = true;
         }
 
+        // For some reason is needed to prevent warning spam during creation...?
+        model: null
+
         delegate: Kirigami.Action {
             required property int index
             required property string actionDisplay
