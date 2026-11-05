@@ -1,6 +1,8 @@
 // SPDX-FileCopyrightText: 2022 Tobias Fella <tobias.fella@kde.org>
 // SPDX-License-Identifier: GPL-2.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Controls as QQC2
 import org.kde.tokodon
@@ -41,7 +43,11 @@ QQC2.Popup {
 
         delegate: EmojiDelegate {
             id: emojiDelegate
-            checked: tonesList.currentIndex === model.index
+
+            required property int index
+            required property var modelData
+
+            checked: tonesList.currentIndex === index
             emoji: modelData.unicode
             name: modelData.shortName
 

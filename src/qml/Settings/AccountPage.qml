@@ -1,6 +1,8 @@
 // SPDX-FileCopyrightText: 2021 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
@@ -18,7 +20,7 @@ Kirigami.Page {
 
     readonly property ProfileEditorBackend backend : ProfileEditorBackend {
         account: root.account
-        onSendNotification: (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).showPassiveNotification(message)
+        onSendNotification: message => (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).showPassiveNotification(message)
     }
 
     readonly property bool canEditProfile: !AccountManager.accountHasIssue(account)
@@ -189,7 +191,7 @@ Kirigami.Page {
                                     listView.currentIndex = listView.model.mapFromSource(sourceIndex).row;
                                 }
                                 onCodeSelected: code => root.account.preferences.defaultLanguage = code
-                                onClosed: destroyed()
+                                onClosed: destroy()
                             }
                         }
                     }

@@ -1,6 +1,8 @@
 // SPDX-FileCopyrightText: 2020 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
@@ -38,7 +40,7 @@ QQC2.Popup {
     contentItem: EmojiPicker {
         id: emojiPicker
         height: 400
-        onChosen: {
+        onChosen: emoji => {
             emojiPopup.chosen(emoji)
             if (emojiPopup.closeOnChosen) {
                 emojiPicker.clearSearchField()

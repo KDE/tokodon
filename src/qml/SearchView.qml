@@ -1,6 +1,8 @@
 // SPDX-FileCopyrightText: 2023 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: GPL-3.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
@@ -52,6 +54,8 @@ ListView {
     section {
         property: "type"
         delegate: Kirigami.ListSectionHeader {
+            required property string section
+
             icon.name: searchModel.iconForType(section)
             text: searchModel.labelForType(section)
             width: parent.width

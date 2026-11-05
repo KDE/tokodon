@@ -1,6 +1,8 @@
 // SPDX-FileCopyrightText: 2026 Joshua Goins <josh@redstrate.com>
 // SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import org.kde.ki18n
 import org.kde.kirigami as Kirigami
@@ -145,7 +147,7 @@ FormCard.FormCardPage {
                         }
 
                         QQC2.ProgressBar {
-                            visible: delegate.ListView.view.model.loading && (index == listview.count - 1)
+                            visible: delegate.ListView.view.model.loading && (delegate.index == delegate.ListView.view.count - 1)
                             indeterminate: true
                             padding: Kirigami.Units.largeSpacing * 2
 

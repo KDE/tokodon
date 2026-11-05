@@ -1,6 +1,8 @@
 // SPDX-FileCopyrightText: 2022 Tobias Fella <tobias.fella@kde.org>
 // SPDX-License-Identifier: GPL-2.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
@@ -80,7 +82,7 @@ ColumnLayout {
         Layout.fillWidth: true
         Layout.fillHeight: true
         withCustom: true
-        onChosen: root.chosen(unicode)
+        onChosen: unicode => root.chosen(unicode)
         header: categories
         Keys.forwardTo: searchField
     }
@@ -88,15 +90,20 @@ ColumnLayout {
     Component {
         id: emojiDelegate
         Kirigami.NavigationTabButton {
+            id: categoryDelegate
+
+            required property int index
+            required property var modelData
+
             width: root.categoryIconSize
             height: width
-            checked: categories.currentIndex === model.index
+            checked: categories.currentIndex === index
             text: modelData ? modelData.emoji : ""
             QQC2.ToolTip.text: modelData ? modelData.name : ""
             QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
             QQC2.ToolTip.visible: hovered && QQC2.ToolTip.text !== ""
             onClicked: {
-                categories.currentIndex = index;
+                categories.currentIndex = categoryDelegate.index;
                 categories.focus = true;
             }
         }

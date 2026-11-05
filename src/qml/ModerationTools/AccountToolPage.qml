@@ -1,6 +1,8 @@
 // SPDX-FileCopyrightText: 2023 Rishi Kumar <rsi.dev17@gmail.com>
 // SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import org.kde.ki18n
 import org.kde.kirigami as Kirigami
@@ -275,7 +277,7 @@ Kirigami.ScrollablePage {
                     }
                 }
                 QQC2.ProgressBar {
-                    visible: accountView.model.loading && (index == accountView.count - 1)
+                    visible: accountView.model.loading && (delegate.index == accountView.count - 1)
                     indeterminate: true
                     padding: Kirigami.Units.largeSpacing * 2
                     Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter

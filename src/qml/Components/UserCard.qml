@@ -1,6 +1,8 @@
 // SPDX-FileCopyrightText: 2023 Shubham Arora <shubhamarora@protonmail.com>
 // SPDX-License-Identifier: GPL-3.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2

@@ -3,6 +3,8 @@
 // SPDX-FileCopyrightText: 2024 Arran Ubels <kde@arran4.com>
 // SPDX-License-Identifier: GPL-3.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Controls as QQC2
 import org.kde.ki18n

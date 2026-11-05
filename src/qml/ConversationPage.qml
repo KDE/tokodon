@@ -65,7 +65,7 @@ Kirigami.ScrollablePage {
                         }
 
                         QQC2.ProgressBar {
-                            visible: delegate.ListView.view.model.loading && (index == listview.count - 1)
+                            visible: delegate.ListView.view.model.loading && (delegate.index == delegate.ListView.view.count - 1)
                             indeterminate: true
                             padding: Kirigami.Units.largeSpacing * 2
 
