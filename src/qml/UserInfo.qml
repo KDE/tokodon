@@ -17,7 +17,6 @@ QQC2.Pane {
     required property TokodonApplication application
     // NOTE: we can't specify Sidebar here explicitly or else it becomes a cyclic dependency
     required property var sidebar
-    readonly property Kirigami.PageRow pageStack: (QQC2.ApplicationWindow.window as Main).pageStack
 
     visible: AccountManager.selectedAccount
     padding: 0
@@ -28,8 +27,9 @@ QQC2.Pane {
             return;
         }
 
+        const pageStack = (root.QQC2.ApplicationWindow.window as Main).pageStack;
         const accountId = AccountManager.selectedAccountId;
-        if (!root.pageStack.currentItem.model || !root.pageStack.currentItem.model.accountId || accountId !== root.pageStack.currentItem.accountId) {
+        if (!pageStack.currentItem.model || !pageStack.currentItem.model.accountId || accountId !== pageStack.currentItem.accountId) {
             Navigation.openAccount(accountId);
         }
     }
