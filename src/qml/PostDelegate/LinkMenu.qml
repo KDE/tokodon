@@ -34,7 +34,7 @@ Components.ConvergentContextMenu {
         text: KI18n.i18nc("@action:inmenu", "Copy Link")
         onTriggered: {
             clipboard.content = root.url;
-            applicationWindow().showPassiveNotification(KI18n.i18n("Post link copied."));
+            (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).showPassiveNotification(KI18n.i18n("Post link copied."));
         }
 
         readonly property KQuickControlsAddons.Clipboard clipboard: KQuickControlsAddons.Clipboard {}

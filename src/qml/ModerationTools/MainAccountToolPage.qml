@@ -100,7 +100,7 @@ FormCard.FormCardPage {
                 action = "suspend"
             }
             root.model.actionAgainstAccount(root.index, action, emailWarning.checked, message.text)
-            root.QQC2.ApplicationWindow.window.showPassiveNotification(KI18n.i18n("Action taken successfully"))
+            (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).showPassiveNotification(KI18n.i18n("Action taken successfully"))
             actionDialog.close();
             root.Kirigami.PageStack.pop()
         }
@@ -153,7 +153,7 @@ FormCard.FormCardPage {
                 default:
                     break
             }
-            root.QQC2.ApplicationWindow.window.showPassiveNotification(successMessage)
+            (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).showPassiveNotification(successMessage)
             root.Kirigami.PageStack.pop()
         }
     }

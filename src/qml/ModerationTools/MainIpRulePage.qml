@@ -39,7 +39,7 @@ FormCard.FormCardPage {
         text: KI18n.i18nc("@action:inmenu", "Remove IP Rule")
         onTriggered: {
             root.model.deleteIpBlock(root.index)
-            root.QQC2.ApplicationWindow.window.showPassiveNotification(KI18n.i18n("IP Rule Removed"))
+            (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).showPassiveNotification(KI18n.i18n("IP Rule Removed"))
             root.Kirigami.PageStack.pop()
         }
     }
@@ -64,7 +64,7 @@ FormCard.FormCardPage {
         onAccepted: {
             root.comment = comment.text
             root.model.updateIpBlock(root.index, root.ip, updateIpRuleDialog.calculatedseverity, comment.text, expireAfter.currentValue)
-            root.QQC2.ApplicationWindow.window.showPassiveNotification(KI18n.i18n("IP rule updated"))
+            (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).showPassiveNotification(KI18n.i18n("IP rule updated"))
             updateIpRuleDialog.close();
         }
 

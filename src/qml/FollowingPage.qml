@@ -64,7 +64,7 @@ Kirigami.Page {
             Kirigami.Action {
                 icon.name: "configure-symbolic"
                 text: KI18n.i18nc("@action:intoolbar", "Configure Filters…")
-                onTriggered: pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "FiltersPage"), { title: KI18n.i18nc("@title:window", "Filters") }, { title: KI18n.i18nc("@title:window", "Filters") })
+                onTriggered: (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "FiltersPage"), { title: KI18n.i18nc("@title:window", "Filters") }, { title: KI18n.i18nc("@title:window", "Filters") })
             }
         }
     ]
@@ -109,7 +109,7 @@ Kirigami.Page {
                     onClicked: {
                         root.currentAccountId = identity.id;
                         if (columnView.isOneColumn) {
-                            const page = pageStack.push(accountTimeline, {});
+                            const page = (delegate.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.push(accountTimeline, {});
                             accountModel.excludeBoosts = Qt.binding(() => !page.showBoosts);
                             accountModel.excludeReplies = Qt.binding(() => !page.showReplies);
                         } else {

@@ -3,6 +3,7 @@
 
 import QtQml
 import QtQuick
+import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import QtQuick.Window
 import org.kde.ki18n
@@ -23,25 +24,25 @@ FormCard.FormCardPage {
         FormCard.FormButtonDelegate {
             icon.name: "filter-symbolic"
             text: KI18n.i18nc("@action:button", "Filters")
-            onClicked: root.Window.window.pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "FiltersPage"))
+            onClicked: (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "FiltersPage"))
         }
 
         FormCard.FormButtonDelegate {
             icon.name: "microphone-sensitivity-muted"
             text: KI18n.i18n("Muted Users")
-            onClicked: root.Window.window.pageStack.layers.push(socialGraphComponent, { name: "mutes" })
+            onClicked: (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.layers.push(socialGraphComponent, { name: "mutes" })
         }
 
         FormCard.FormButtonDelegate {
             icon.name: "cards-block"
             text: KI18n.i18n("Blocked Users")
-            onClicked: root.Window.window.pageStack.layers.push(socialGraphComponent, { name: "blocks" })
+            onClicked: (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.layers.push(socialGraphComponent, { name: "blocks" })
         }
 
         FormCard.FormButtonDelegate {
             icon.name: "internet-services-symbolic"
             text: KI18n.i18n("Blocked Domains")
-            onClicked: root.Window.window.pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "BlockedDomainsPage"))
+            onClicked: (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "BlockedDomainsPage"))
         }
     }
 

@@ -38,7 +38,7 @@ Kirigami.ScrollablePage {
 
         onAccepted: {
             ipRuleView.model.newIpBlock(ip.text, expireAfter.currentValue, comment.text, newIpRuleDialog.calculatedSeverity)
-            root.QQC2.ApplicationWindow.window.showPassiveNotification(KI18n.i18n("New IP rule added"))
+            (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).showPassiveNotification(KI18n.i18n("New IP rule added"))
             newIpRuleDialog.close();
         }
 

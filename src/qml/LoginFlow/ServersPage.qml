@@ -45,7 +45,7 @@ Kirigami.ScrollablePage {
 
         account.fetchedInstanceMetadata.disconnect(handleRegistration);
 
-        Window.window.pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "RulesPage"), {
+        (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "RulesPage"), {
             account: account,
         });
     }
@@ -59,20 +59,20 @@ Kirigami.ScrollablePage {
 
     function openPage(componentName: string): void {
         if (Kirigami.Settings.isMobile) {
-            if (Window.window.pageStack.layers.currentItem !== root) {
-                Window.window.pageStack.layers.pop();
+            if ((root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.layers.currentItem !== root) {
+                (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.layers.pop();
             }
 
-            Window.window.pageStack.layers.push(Qt.createComponent("org.kde.tokodon", componentName), {
+            (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.layers.push(Qt.createComponent("org.kde.tokodon", componentName), {
                 account: account,
                 loginPage: root
             });
         } else {
-            if (Window.window.pageStack.currentItem !== root) {
-                Window.window.pageStack.pop();
+            if ((root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.currentItem !== root) {
+                (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.pop();
             }
 
-            Window.window.pageStack.push(Qt.createComponent("org.kde.tokodon", componentName), {
+            (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.push(Qt.createComponent("org.kde.tokodon", componentName), {
                 account: account,
                 loginPage: root
             });
@@ -169,7 +169,7 @@ Kirigami.ScrollablePage {
                 actions: Kirigami.Action {
                     text: KI18n.i18n("Proxy Settings")
                     icon.name: "settings-configure"
-                    onTriggered: pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "NetworkProxySettings"))
+                    onTriggered: (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "NetworkProxySettings"))
                 }
             }
 

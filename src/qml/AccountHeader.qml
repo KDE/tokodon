@@ -316,7 +316,7 @@ QQC2.Pane {
 
                                     onClicked: {
                                         clipboard.content = accountHandleLabel.text;
-                                        applicationWindow().showPassiveNotification(KI18n.i18n("Profile handle copied."));
+                                        (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).showPassiveNotification(KI18n.i18n("Profile handle copied."));
                                     }
                                 }
                             }
@@ -555,7 +555,7 @@ QQC2.Pane {
                             text: KI18n.i18n("Copy Link")
                             onTriggered: {
                                 clipboard.content = root.identity.url;
-                                applicationWindow().showPassiveNotification(KI18n.i18n("Profile link copied."));
+                                (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).showPassiveNotification(KI18n.i18n("Profile link copied."));
                             }
                         },
                         ShareAction {

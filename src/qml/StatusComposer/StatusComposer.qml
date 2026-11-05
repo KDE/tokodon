@@ -77,7 +77,7 @@ Kirigami.ScrollablePage {
             text: KI18n.i18nc("@action:intoolbar Draft or unfinished posts", "Drafts")
             icon.name: "document-open-folder-symbolic"
             onTriggered: {
-                const page = pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "ScheduledPostsPage"), { drafts: true, backend: root.backend });
+                const page = (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "ScheduledPostsPage"), { drafts: true, backend: root.backend });
                 page.opened.connect(root.openDraft);
             }
         },
@@ -86,8 +86,8 @@ Kirigami.ScrollablePage {
             icon.name: "window-new-symbolic"
             visible: !Kirigami.Settings.isMobile && !root.closeApplicationWhenFinished
             onTriggered: {
-                pageStack.layers.pop();
-                applicationWindow().popoutStatusComposer(root);
+                (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.layers.pop();
+                (root.QQC2.ApplicationWindow.window as Main).popoutStatusComposer(root);
             }
         }
     ]
@@ -207,7 +207,7 @@ Kirigami.ScrollablePage {
             if (root.closeApplicationWhenFinished) {
                 root.QQC2.ApplicationWindow.window.close();
             } else {
-                applicationWindow().pageStack.layers.pop();
+                (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.layers.pop();
             }
         }
     }

@@ -23,7 +23,7 @@ Kirigami.ScrollablePage {
         Kirigami.Action {
             icon.name: "view-conversation-balloon-symbolic"
             text: KI18n.i18nc("@action:intoolbar", "New Conversation…")
-            onTriggered: pageStack.layers.push(addUserComponent)
+            onTriggered: (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.layers.push(addUserComponent)
         }
     ]
 
@@ -51,7 +51,7 @@ Kirigami.ScrollablePage {
                     text: authorIdentity.displayName
 
                     onClicked: {
-                        delegate.Window.window.pageStack.layers.pop();
+                        (delegate.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.layers.pop();
                         Navigation.openConversation(authorIdentity.account);
                     }
 

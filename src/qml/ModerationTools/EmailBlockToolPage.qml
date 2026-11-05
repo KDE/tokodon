@@ -42,7 +42,7 @@ Kirigami.ScrollablePage {
 
         onAccepted: {
             emailBlockView.model.deleteEmailBlock(emailInfoDialog.index)
-            root.QQC2.ApplicationWindow.window.showPassiveNotification(KI18n.i18n("Email block deleted"))
+            (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).showPassiveNotification(KI18n.i18n("Email block deleted"))
             emailInfoDialog.close();
         }
 
@@ -86,7 +86,7 @@ Kirigami.ScrollablePage {
 
         onAccepted: {
             emailBlockView.model.newEmailBlock(email.text)
-            root.QQC2.ApplicationWindow.window.showPassiveNotification(KI18n.i18n("New email block added"))
+            (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).showPassiveNotification(KI18n.i18n("New email block added"))
             email.clear()
             newEmailBlockDialog.close();
         }

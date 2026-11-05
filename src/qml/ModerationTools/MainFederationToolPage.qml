@@ -30,7 +30,7 @@ FormCard.FormCardPage {
         text: KI18n.i18n("Remove Domain Block")
         onTriggered: {
             root.model.removeDomainBlock(root.index)
-            root.QQC2.ApplicationWindow.window.showPassiveNotification(KI18n.i18n("Domain Block Removed"))
+            (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).showPassiveNotification(KI18n.i18n("Domain Block Removed"))
             root.Kirigami.PageStack.pop()
         }
     }
@@ -54,7 +54,7 @@ FormCard.FormCardPage {
             root.privateComment = privateComment.text
             root.publicComment = publicComment.text
             root.model.updateDomainBlock(root.index, severityCombobox.currentValue, publicComment.text, privateComment.text, rejectMedia.checked, rejectReports.checked, obfuscateReports.checked)
-            root.QQC2.ApplicationWindow.window.showPassiveNotification(KI18n.i18n("Domain block updated"))
+            (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).showPassiveNotification(KI18n.i18n("Domain block updated"))
             textPromptDialog.close();
         }
 

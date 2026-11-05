@@ -62,7 +62,7 @@ Components.ConvergentContextMenu {
         text: KI18n.i18nc("@action:inmenu", "Copy Link")
         onTriggered: {
             clipboard.content = root.url;
-            applicationWindow().showPassiveNotification(KI18n.i18n("Post link copied."));
+            (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).showPassiveNotification(KI18n.i18n("Post link copied."));
         }
     }
 
@@ -72,7 +72,7 @@ Components.ConvergentContextMenu {
         visible: root.hasContent
         onTriggered: {
             clipboard.content = TextHandler.stripHtml(root.content);
-            applicationWindow().showPassiveNotification(KI18n.i18n("Post text copied."));
+            (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).showPassiveNotification(KI18n.i18n("Post text copied."));
         }
     }
 

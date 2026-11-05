@@ -63,7 +63,7 @@ GridLayout {
                 icon.name: 'document-edit'
 
                 onClicked: {
-                    const dialog = attachmentInfoDialog.createObject(applicationWindow(), {
+                    const dialog = attachmentInfoDialog.createObject(editButton.QQC2.ApplicationWindow.window, {
                         text: img.description,
                         preview: img.preview,
                         focusX: img.focalX,

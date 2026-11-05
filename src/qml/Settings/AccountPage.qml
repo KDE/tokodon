@@ -18,7 +18,7 @@ Kirigami.Page {
 
     readonly property ProfileEditorBackend backend : ProfileEditorBackend {
         account: root.account
-        onSendNotification: applicationWindow().showPassiveNotification(message)
+        onSendNotification: (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).showPassiveNotification(message)
     }
 
     readonly property bool canEditProfile: !AccountManager.accountHasIssue(account)
@@ -65,7 +65,7 @@ Kirigami.Page {
 
             onAccepted: {
                 AccountManager.removeAccount(root.account);
-                QQC2.ApplicationWindow.window.pageStack.pop();
+                (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.pop();
                 if (!AccountManager.hasAccounts) {
                     root.Window.window.close();
                 }

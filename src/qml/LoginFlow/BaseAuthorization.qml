@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 
 import QtQuick
+import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 
 import org.kde.ki18n
@@ -88,7 +89,7 @@ Kirigami.ScrollablePage {
                 icon.name: "edit-copy"
                 onClicked: {
                     clipboard.content = account.authorizeUrl;
-                    applicationWindow().showPassiveNotification(KI18n.i18n("Link copied."));
+                    (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).showPassiveNotification(KI18n.i18n("Link copied."));
                 }
             }
         }

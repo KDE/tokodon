@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 
 import QtQuick
+import QtQuick.Controls as QQC2
 import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import QtQuick.Layouts
@@ -36,13 +37,13 @@ Kirigami.ScrollablePage {
         text: KI18n.i18nc("@action:button Create new list", "Create New…")
         icon.name: "gtk-add"
         onTriggered: {
-            const page = pageStack.layers.push(editListPage.createObject(root), {
+            const page = (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.layers.push(editListPage.createObject(root), {
                 purpose: EditListPage.New
             });
             page.done.connect(function(deleted) {
                 // Reload the lists since we just added one
                 model.fillTimeline();
-                pageStack.layers.pop();
+                (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.layers.pop();
             });
         }
     }

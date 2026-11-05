@@ -36,7 +36,7 @@ Kirigami.ScrollablePage {
 
     title: {
         // Show the account name if the drawer is not open, so there's no way to tell which account you're on.
-        if (model.name === "home" && !applicationWindow().globalDrawer.drawerOpen) {
+        if (model.name === "home" && !(root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).globalDrawer.drawerOpen) {
             if (AccountManager.rowCount() > 1) {
                 if (AccountManager.selectedAccount === null) {
                     return KI18n.i18n("Loading");
@@ -138,7 +138,7 @@ Kirigami.ScrollablePage {
             Kirigami.Action {
                 icon.name: "configure-symbolic"
                 text: KI18n.i18nc("@action:intoolbar", "Configure Filters…")
-                onTriggered: pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "FiltersPage"), { title: KI18n.i18nc("@title:window", "Filters") }, { title: KI18n.i18nc("@title:window", "Filters") })
+                onTriggered: (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "FiltersPage"), { title: KI18n.i18nc("@title:window", "Filters") }, { title: KI18n.i18nc("@title:window", "Filters") })
             }
         }
     ]

@@ -51,7 +51,7 @@ Kirigami.ScrollablePage {
 
         onAccepted: {
             federationView.model.removeAllowedDomain(allowedDomainInfo.index)
-            root.QQC2.ApplicationWindow.window.showPassiveNotification(KI18n.i18n("Disallowed federation with the domain"))
+            (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).showPassiveNotification(KI18n.i18n("Disallowed federation with the domain"))
             allowedDomainInfo.close();
         }
 
@@ -86,7 +86,7 @@ Kirigami.ScrollablePage {
 
         onAccepted: {
             federationView.model.newDomainBlock(domain.text, severityCombobox.currentValue, publicComment.text, privateComment.text, rejectMedia.checked, rejectReports.checked, obfuscateReport.checked)
-            root.QQC2.ApplicationWindow.window.showPassiveNotification(KI18n.i18n("New domain block added"))
+            (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).showPassiveNotification(KI18n.i18n("New domain block added"))
             newDomainBlockDialog.close();
         }
 
@@ -165,7 +165,7 @@ Kirigami.ScrollablePage {
 
         onAccepted: {
             federationView.model.newDomainAllow(newAllowedDomain.text)
-            root.QQC2.ApplicationWindow.window.showPassiveNotification(KI18n.i18n("New Allowed Domain Added"))
+            (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).showPassiveNotification(KI18n.i18n("New Allowed Domain Added"))
             newDomainAllowDialog.close();
         }
 

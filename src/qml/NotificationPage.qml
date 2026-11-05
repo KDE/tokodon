@@ -48,7 +48,7 @@ Kirigami.ScrollablePage {
         Kirigami.Action {
             icon.name: "configure-symbolic"
             text: KI18n.i18nc("@action:intoolbar Configure Notifications", "Configure…")
-            onTriggered: pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "NotificationsPage"), { title: KI18n.i18nc("@title:window", "Notification Settings"), globalToolBarStyle: Kirigami.ApplicationHeaderStyle.None }, { title: KI18n.i18nc("@title:window", "Notification Settings") })
+            onTriggered: (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "NotificationsPage"), { title: KI18n.i18nc("@title:window", "Notification Settings"), globalToolBarStyle: Kirigami.ApplicationHeaderStyle.None }, { title: KI18n.i18nc("@title:window", "Notification Settings") })
         }
     ]
 
@@ -225,7 +225,7 @@ Kirigami.ScrollablePage {
         Connections {
             target: notificationModel
             function onPostSourceReady(backend, isEdit) {
-                const item = pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "StatusComposer"), {
+                const item = (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "StatusComposer"), {
                     purpose: isEdit ? StatusComposer.Edit : StatusComposer.Redraft,
                     backend: backend
                 });

@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 
 import QtQuick
+import QtQuick.Controls as QQC2
 import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import QtQuick.Layouts
@@ -38,7 +39,7 @@ MastoPage {
         actions: Kirigami.Action {
             text: KI18n.i18n("Proxy Settings")
             icon.name: "settings-configure"
-            onTriggered: pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "NetworkProxyPage"))
+            onTriggered: (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "NetworkProxyPage"))
         }
     }
 
@@ -90,7 +91,7 @@ MastoPage {
             icon.name: "dialog-ok"
 
             onClicked: {
-                root.Window.window.pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "RegistrationPage"), {
+                (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "RegistrationPage"), {
                     account: account,
                 });
             }
@@ -102,7 +103,7 @@ MastoPage {
             text: KI18n.i18nc("@action:button Disagree to server rules", "Disagree")
             icon.name: "dialog-cancel"
 
-            onClicked: root.Window.window.pageStack.layers.pop()
+            onClicked: (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.layers.pop()
         }
     }
 }

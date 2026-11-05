@@ -64,7 +64,7 @@ ListView {
     Connections {
         target: root.model
         function onPostSourceReady(backend, isEdit): void {
-            const item = pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "StatusComposer"), {
+            const item = (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "StatusComposer"), {
                 purpose: isEdit ? StatusComposer.Edit : StatusComposer.Redraft,
                 backend: backend
             });

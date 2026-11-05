@@ -37,7 +37,7 @@ FormCard.FormCardPage {
                 required property bool hasIssue
 
                 Layout.fillWidth: true
-                onClicked: Window.window.pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "AccountPage"), {
+                onClicked: (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "AccountPage"), {
                     account: delegate.account
                 })
 

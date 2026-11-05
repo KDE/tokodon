@@ -4,6 +4,7 @@
 pragma ComponentBehavior: Bound
 
 import QtQuick
+import QtQuick.Controls as QQC2
 import QtQuick.Window
 
 import org.kde.ki18n
@@ -27,13 +28,13 @@ Kirigami.ScrollablePage {
         text: KI18n.i18nc("@action:intoolbar", "Create Filter")
         icon.name: "list-add-symbolic"
         onTriggered: {
-            const page = root.Window.window.pageStack.layers.push(editFilterPage.createObject(root), {
+            const page = (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.layers.push(editFilterPage.createObject(root), {
                 purpose: EditFilterPage.New
             });
             page.done.connect(function(deleted) {
                 // Reload the filters since we just added one
                 model.fillTimeline();
-                root.Window.window.pageStack.layers.pop();
+                (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.layers.pop();
             });
         }
     }
@@ -55,14 +56,14 @@ Kirigami.ScrollablePage {
             text: title
 
             onClicked: {
-                const page = root.Window.window.pageStack.layers.push(editFilterPage.createObject(root), {
+                const page = (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.layers.push(editFilterPage.createObject(root), {
                     purpose: EditFilterPage.Edit,
                     filterId: delegate.id
                 });
                 page.done.connect(function(deleted) {
                     // Reload the filters since we just edited it
                     model.fillTimeline();
-                    root.Window.window.pageStack.layers.pop();
+                    (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.layers.pop();
                 });
             }
         }
