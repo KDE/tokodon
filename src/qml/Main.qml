@@ -239,7 +239,7 @@ Actions.StatefulWindow {
             if (!AccountManager.hasAccounts) {
                 root.pageStack.clear();
                 root.pageStack.push(Qt.createComponent("org.kde.tokodon", "WelcomePage"), { application: tokodonApplication });
-                globalDrawer.drawerOpen = false;
+                root.globalDrawer.drawerOpen = false;
             }
         }
 
@@ -271,7 +271,7 @@ Actions.StatefulWindow {
             } else {
                 page = root.pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "WelcomePage"), { application: tokodonApplication, showSettingsButton: false });
             }
-            page.QQC2.ApplicationWindow.window.pageStack.columnView.columnResizeMode = Kirigami.ColumnView.SingleColumn;
+            (page.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.columnView.columnResizeMode = Kirigami.ColumnView.SingleColumn;
         }
 
         function onOpenHomeTimeline(): void {
@@ -617,6 +617,8 @@ Actions.StatefulWindow {
         enabled: AccountManager.hasAccounts && AccountManager.isReady
         application: tokodonApplication
         shouldCollapse: !root.wideMode
+        isShowingFullScreenImage: root.isShowingFullScreenImage
+        pageStack: root.pageStack
         actions: !root.wideMode ?
             [root.searchAction, root.followRequestAction, root.publicFeedsAction, root.followingAction, root.listsAction, root.bookmarksAction, root.collectionsAction, root.conversationAction] :
             [root.homeAction, root.exploreAction, root.publicFeedsAction, root.followingAction, root.notificationAction, root.followRequestAction, root.listsAction, root.bookmarksAction, root.collectionsAction, root.conversationAction]
@@ -808,7 +810,7 @@ Actions.StatefulWindow {
     property Item hoverLinkIndicator: QQC2.Control {
         property string text
 
-        parent: overlay
+        parent: root.overlay
         opacity: text.length > 0 ? 1 : 0
         visible: !Kirigami.Settings.isMobile && !text.startsWith("hashtag:") && !text.startsWith("account:")
 

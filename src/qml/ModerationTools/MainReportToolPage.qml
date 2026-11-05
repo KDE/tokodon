@@ -73,7 +73,7 @@ FormCard.FormCardPage {
 
         identity: root.reportInfo.targetAccount.userLevelIdentity
         isSelf: false
-        largeScreen: accountInfo.largeScreen
+        largeScreen: root.width > Kirigami.Units.gridUnit * 25
         canExcludeBoosts: false
         excludeBoosts: false
         showTabs: false
@@ -289,6 +289,8 @@ FormCard.FormCardPage {
             model: root.reportInfo.reportStatus
 
             delegate: ColumnLayout {
+                id: statusDelegate
+
                 required property var modelData
                 spacing: 0
                 Layout.fillWidth: true
@@ -299,7 +301,7 @@ FormCard.FormCardPage {
 
                 RowLayout {
                     Layout.preferredHeight: spoilerTextLabel.contentHeight + Kirigami.Units.gridUnit * 2
-                    visible: modelData.spoilerText.length !== 0
+                    visible: statusDelegate.modelData.spoilerText.length !== 0
                     Kirigami.Icon {
                         Layout.alignment: Qt.AlignVCenter
                         source: "data-warning"
@@ -307,7 +309,7 @@ FormCard.FormCardPage {
                     QQC2.Label {
                         id: spoilerTextLabel
                         Layout.fillWidth: true
-                        text: KI18n.i18n("<b>Content Warning</b><br /> %1", modelData.spoilerText)
+                        text: KI18n.i18n("<b>Content Warning</b><br /> %1", statusDelegate.modelData.spoilerText)
                         wrapMode: Text.Wrap
                         font: Config.defaultFont
 
@@ -320,32 +322,32 @@ FormCard.FormCardPage {
 
                 PostContent {
                     id: postContent
-                    content: modelData.content
+                    content: statusDelegate.modelData.content
                     expandedPost: false
                     secondary: false
-                    visible: modelData.spoilerText.length === 0 || AccountManager.selectedAccount.preferences.extendSpoiler
+                    visible: statusDelegate.modelData.spoilerText.length === 0 || AccountManager.selectedAccount.preferences.extendSpoiler
                     shouldOpenInternalLinks: false
                 }
 
                 AttachmentGrid {
                     expandedPost: false
-                    attachments: modelData.attachments
-                    identity: modelData.authorIdentity
+                    attachments: statusDelegate.modelData.attachments
+                    identity: statusDelegate.modelData.authorIdentity
                     sensitive: true
                     secondary: false
                     inViewPort: true
                     viewportWidth: parent.width
-                    visible: postContent.visible && modelData.attachments.length > 0
+                    visible: postContent.visible && statusDelegate.modelData.attachments.length > 0
                 }
 
                 Item {
-                    height: modelData.selected || Kirigami.Settings.tabletMode ? Kirigami.Units.mediumSpacing : Kirigami.Units.smallSpacing
+                    height: statusDelegate.modelData.selected || Kirigami.Settings.tabletMode ? Kirigami.Units.mediumSpacing : Kirigami.Units.smallSpacing
                 }
 
                 RowLayout {
                     visible: true
                     QQC2.Label {
-                        text: modelData.absoluteTime
+                        text: statusDelegate.modelData.absoluteTime
                         elide: Text.ElideRight
                         color: Kirigami.Theme.disabledTextColor
                     }

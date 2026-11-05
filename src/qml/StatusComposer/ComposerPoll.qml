@@ -25,8 +25,9 @@ ColumnLayout {
         model: root.poll.options
 
         QQC2.ItemDelegate {
+            id: optionDelegate
+
             background: null
-            visible: addPool.checked
             Layout.fillWidth: true
 
             required property var modelData
@@ -45,17 +46,17 @@ ColumnLayout {
                 }
                 QQC2.TextField {
                     Layout.fillWidth: true
-                    placeholderText: KI18n.i18nc("@label:textbox Poll choice", "Choice %1", index + 1)
+                    placeholderText: KI18n.i18nc("@label:textbox Poll choice", "Choice %1", optionDelegate.index + 1)
                     maximumLength: root.maxCharactersPerOption
 
-                    onEditingFinished: root.poll.setOption(index, text)
+                    onEditingFinished: root.poll.setOption(optionDelegate.index, text)
 
-                    Component.onCompleted: text = modelData
+                    Component.onCompleted: text = optionDelegate.modelData
                 }
                 QQC2.ToolButton {
                     icon.name: "edit-delete-remove"
-                    enabled: poll.options.length > 2
-                    onClicked: root.poll.removeOption(index)
+                    enabled: root.poll.options.length > 2
+                    onClicked: root.poll.removeOption(optionDelegate.index)
                 }
             }
         }
@@ -116,7 +117,7 @@ ColumnLayout {
                 displayComponent: QQC2.CheckBox {
                     text: KI18n.i18nc("@option:check Poll toolbar", "Hide totals")
 
-                    onClicked: poll.hideTotals = checked
+                    onClicked: root.poll.hideTotals = checked
 
                     Component.onCompleted: checked = root.poll.hideTotals
 

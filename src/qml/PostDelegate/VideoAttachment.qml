@@ -19,6 +19,7 @@ MediaContainer {
 
     required property string videoUrl
     required property string previewUrl
+    property url tempSource
     required property bool autoPlay
     required property bool isSensitive
     property alias showControls: mediaControls.visible
@@ -66,7 +67,7 @@ MediaContainer {
 
     Image {
         anchors.fill: parent
-        source: visible ? modelData.tempSource : ''
+        source: visible ? root.tempSource : ''
         visible: previewImage.status !== Image.Ready || root.isSensitive
     }
 

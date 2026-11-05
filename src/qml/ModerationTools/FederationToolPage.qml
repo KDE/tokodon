@@ -253,7 +253,7 @@ Kirigami.ScrollablePage {
             width: ListView.view.width
 
             onClicked: if (root.isDomainBlock) {
-               root.QQC2.ApplicationWindow.window.pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "MainFederationToolPage"), {
+               (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "MainFederationToolPage"), {
                     index: delegate.index,
                     model: federationView.model,
                     id: delegate.id,

@@ -18,6 +18,8 @@ Kirigami.OverlayDrawer {
 
     required property TokodonApplication application
     required property bool shouldCollapse
+    required property bool isShowingFullScreenImage
+    required property Kirigami.PageRow pageStack
 
     property alias actions: actionsRepeater.model
     property alias bottomActions: bottomActionsRepeater.model
@@ -37,7 +39,7 @@ Kirigami.OverlayDrawer {
 
     handleClosedIcon.name: "open-menu-symbolic"
     handleOpenIcon.name: "sidebar-collapse"
-    handleVisible: !isShowingFullScreenImage && enabled
+    handleVisible: !drawer.isShowingFullScreenImage && enabled
 
     onModalChanged: drawerOpen = !modal
 
@@ -94,7 +96,7 @@ Kirigami.OverlayDrawer {
 
         QQC2.ToolBar {
             Layout.fillWidth: true
-            Layout.preferredHeight: pageStack.globalToolBar.preferredHeight
+            Layout.preferredHeight: drawer.pageStack.globalToolBar.preferredHeight
             Layout.bottomMargin: Kirigami.Units.smallSpacing / 2
 
             visible: !drawer.shouldCollapse
@@ -168,7 +170,7 @@ Kirigami.OverlayDrawer {
                             checkable: true
 
                             onTriggered: {
-                                pageStack.clear();
+                                drawer.pageStack.clear();
                                 Navigation.openList(delegate.id, delegate.name);
                                 checked = true;
                                 drawer.application.uncheckMainActions();

@@ -81,7 +81,7 @@ FormCard.FormCardPage {
                         Layout.preferredWidth: Kirigami.Units.iconSizes.smallMedium
 
                         QQC2.ToolTip.text: KI18n.i18nc("@info:tooltip", "This account has an issue and can't login, switch to it for more details.")
-                        QQC2.ToolTip.visible: hovered
+                        QQC2.ToolTip.visible: delegate.hovered
                         QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                     }
 

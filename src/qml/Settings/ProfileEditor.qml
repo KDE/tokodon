@@ -21,7 +21,7 @@ ColumnLayout {
 
     readonly property ProfileEditorBackend backend : ProfileEditorBackend {
         account: root.account
-        onSendNotification: message => applicationWindow().showPassiveNotification(message)
+        onSendNotification: message => (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).showPassiveNotification(message)
     }
 
     readonly property bool canEditProfile: !AccountManager.accountHasIssue(account)

@@ -101,7 +101,7 @@ ColumnLayout {
             checkable: false
             enabled: visible
             onClicked: {
-                root.Kirigami.PageStack.push(socialGraphComponent, {
+                root.Kirigami.PageStack.push(socialGraphPageComponent, {
                     name: "favourited_by",
                     statusId: root.postId,
                     count: root.favouritesCount
@@ -125,7 +125,7 @@ ColumnLayout {
             visible: root.reblogsCount > 0
             enabled: visible
             onClicked: {
-                root.Kirigami.PageStack.push(socialGraphComponent, {
+                root.Kirigami.PageStack.push(socialGraphPageComponent, {
                     name: "reblogged_by",
                     statusId: root.postId,
                     count: root.reblogsCount
@@ -160,6 +160,22 @@ ColumnLayout {
             checkable: false
 
             onClicked: Qt.openUrlExternally(root.application.website)
+        }
+    }
+
+    Component {
+        id: socialGraphPageComponent
+
+        SocialGraphPage {
+            id: socialGraphPage
+
+            property alias name: socialGraphModel.name
+            property alias statusId: socialGraphModel.statusId
+            property alias count: socialGraphModel.count
+
+            model: SocialGraphModel {
+                id: socialGraphModel
+            }
         }
     }
 }

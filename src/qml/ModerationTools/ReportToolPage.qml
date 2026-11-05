@@ -120,7 +120,7 @@ Kirigami.ScrollablePage {
                 delegate.implicitHeight = 0;
             }
 
-            onClicked: root.QQC2.ApplicationWindow.window.pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "MainReportToolPage"), {
+            onClicked: (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "MainReportToolPage"), {
                 reportInfo: delegate.reportInfo,
                 index: delegate.index,
                 model: reportView.model

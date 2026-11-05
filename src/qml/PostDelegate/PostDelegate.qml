@@ -279,6 +279,7 @@ QQC2.ItemDelegate {
             muted: root.muted
             content: root.content
             hasContent: root.hasContent
+            timelineModel: root.timelineModel
 
             onDeletePost: {
                 deleteDialog.active = true;
@@ -335,6 +336,7 @@ QQC2.ItemDelegate {
             sourceComponent: PostPoll {
                 index: root.index
                 poll: root.poll
+                timelineModel: root.timelineModel
             }
 
             active: root.poll.isValid

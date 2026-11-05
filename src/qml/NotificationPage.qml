@@ -52,10 +52,12 @@ Kirigami.ScrollablePage {
         }
     ]
 
-    onBackRequested: if (dialog) {
-        dialog.close();
-        dialog = null;
-        event.accepted = true;
+    onBackRequested: event => {
+        if (root.dialog) {
+            root.dialog.close();
+            root.dialog = null;
+            event.accepted = true;
+        }
     }
 
     property Kirigami.Action showAllAction: Kirigami.Action {

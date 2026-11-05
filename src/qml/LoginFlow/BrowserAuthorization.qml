@@ -26,7 +26,7 @@ BaseAuthorization {
             text: KI18n.i18n("Use Authorization Code")
             description: KI18n.i18n("Use this login method if the above link does not work.")
             icon.name: "lock-symbolic"
-            onClicked: loginPage.openCodeAuthPage()
+            onClicked: root.loginPage.openCodeAuthPage()
         }
     }
 }

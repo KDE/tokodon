@@ -218,6 +218,7 @@ Item {
 
                         videoUrl: modelData.source
                         previewUrl: modelData.previewUrl
+                        tempSource: modelData.tempSource
                         autoPlay: Config.autoPlayGif && !root.isSensitive
                         isSensitive: root.isSensitive
                         showControls: false
@@ -280,6 +281,7 @@ Item {
 
                         videoUrl: modelData.source
                         previewUrl: modelData.previewUrl
+                        tempSource: modelData.tempSource
                         autoPlay: false
                         isSensitive: root.isSensitive
                         looping: false

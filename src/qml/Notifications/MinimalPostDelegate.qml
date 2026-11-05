@@ -209,6 +209,7 @@ QQC2.ItemDelegate {
             sourceComponent: PostPoll {
                 index: root.index
                 poll: root.poll
+                timelineModel: root.timelineModel
             }
 
             active: root.poll.isValid

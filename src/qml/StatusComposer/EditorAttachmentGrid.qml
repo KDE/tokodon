@@ -100,7 +100,7 @@ GridLayout {
                 QQC2.ToolTip.visible: hovered
 
                 icon.name: 'edit-delete-remove'
-                onClicked: backend.attachmentEditorModel.removeAttachment(img.index)
+                onClicked: root.attachmentEditorModel.removeAttachment(img.index)
 
                 anchors {
                     right: parent.right

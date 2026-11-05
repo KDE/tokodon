@@ -15,6 +15,7 @@ ColumnLayout {
 
     required property int index
     required property poll poll
+    property var timelineModel
     readonly property bool showResults: poll.voted || poll.expired || showVotesSwitch.checked
 
     spacing: Kirigami.Units.smallSpacing
@@ -145,7 +146,7 @@ ColumnLayout {
                         choices.push(button.choiceIndex);
                     }
                 }
-                timelineModel.actionVote(timelineModel.index(root.index, 0), choices)
+                root.timelineModel.actionVote(root.timelineModel.index(root.index, 0), choices)
             }
         }
 

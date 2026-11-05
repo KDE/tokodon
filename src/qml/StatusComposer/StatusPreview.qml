@@ -67,6 +67,7 @@ ColumnLayout {
     Loader {
         active: root.post.hasPoll
         sourceComponent: PostDelegate.PostPoll {
+            index: -1
             poll: root.post.poll
         }
     }

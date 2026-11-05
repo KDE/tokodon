@@ -165,7 +165,7 @@ FormCard.FormCardPage {
 
         identity: root.identity.userLevelIdentity
         isSelf: false
-        largeScreen: accountInfo.largeScreen
+        largeScreen: root.width > Kirigami.Units.gridUnit * 25
         canExcludeBoosts: false
         excludeBoosts: false
         showTabs: false

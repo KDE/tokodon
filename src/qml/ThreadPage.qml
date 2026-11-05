@@ -34,7 +34,7 @@ TimelinePage {
 
         // Refresh the model when we reply to it ourselves
         function onNewPost() {
-            model.refresh();
+            root.model.refresh();
         }
     }
 
