@@ -41,6 +41,22 @@ QQC2.Pane {
        return bar;
     }
 
+    Component {
+        id: mainTimeline
+        TimelinePage {
+            id: timelinePage
+
+            property alias name: timelineModel.name
+
+            model: MainTimelineModel {
+                id: timelineModel
+                showReplies: timelinePage.showReplies
+                showBoosts: timelinePage.showBoosts
+                showQuotes: timelinePage.showQuotes
+            }
+        }
+    }
+
     contentItem: ColumnLayout {
         id: layout
 
@@ -488,6 +504,18 @@ QQC2.Pane {
                             // Only show on your own profile when in mobile mode, otherwise it's one tap away
                             visible: root.isSelf && !(root.QQC2.ApplicationWindow.window as Main)?.wideMode
                             fromQAction: (toolbar.QQC2.ApplicationWindow.window as Actions.StatefulWindow)?.application.action('options_configure') ?? null
+                        },
+                        Kirigami.Action {
+                            icon.name: "favorite-symbolic"
+                            visible: root.isSelf
+                            text: KI18n.i18nc("@action:inmenu View this account's favorited posts", "Favorites")
+                            onTriggered: pageStack.push(mainTimeline.createObject(root), {
+                                pageId: "favorites",
+                                name: "favourites",
+                                iconName: "favorite",
+                                placeholderText: KI18n.i18n("No Favorites"),
+                                placeholderExplanation: KI18n.i18n("Posts that you favorite will show up here. If you appreciate someone's post, favorite it!")
+                            })
                         },
                         Kirigami.Action {
                             icon.name: "resource-calendar-insert"

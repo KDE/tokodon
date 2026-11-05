@@ -122,12 +122,6 @@ void TokodonApplication::setupActions()
     conversationsAction->setText(i18nc("@action:button Direct one-on-one messages between users", "Open Conversations"));
     conversationsAction->setIcon(QIcon::fromTheme(QStringLiteral("view-conversation-balloon-symbolic")));
 
-    auto favoritesAction = mainCollection()->addAction(u"favorites"_s, this, &TokodonApplication::openFavorites);
-    favoritesAction->setCheckable(true);
-    favoritesAction->setActionGroup(pagesGroup);
-    favoritesAction->setText(i18nc("@action:button This account's favorited posts", "Open Favorites"));
-    favoritesAction->setIcon(QIcon::fromTheme(QStringLiteral("favorite")));
-
     auto bookmarksAction = mainCollection()->addAction(u"bookmarks"_s, this, &TokodonApplication::openBookmarks);
     bookmarksAction->setCheckable(true);
     bookmarksAction->setActionGroup(pagesGroup);
@@ -138,7 +132,7 @@ void TokodonApplication::setupActions()
     exploreAction->setCheckable(true);
     exploreAction->setActionGroup(pagesGroup);
     exploreAction->setText(i18nc("@action:button Explore this server's trending posts, news, and more", "Open Explore"));
-    exploreAction->setIcon(QIcon::fromTheme(QStringLiteral("kstars_planets")));
+    exploreAction->setIcon(QIcon::fromTheme(QStringLiteral("search-symbolic")));
 
     auto followingAction = mainCollection()->addAction(u"following"_s, this, &TokodonApplication::openFollowing);
     followingAction->setCheckable(true);
@@ -252,7 +246,6 @@ void TokodonApplication::updateAccountActions()
     mainCollection()->action(u"search"_s)->setEnabled(accountAvailable);
     mainCollection()->action(u"explore"_s)->setEnabled(accountAvailable);
     mainCollection()->action(u"bookmarks"_s)->setEnabled(accountAvailable);
-    mainCollection()->action(u"favorites"_s)->setEnabled(accountAvailable);
     mainCollection()->action(u"conversations"_s)->setEnabled(accountAvailable);
     mainCollection()->action(u"collections"_s)->setEnabled(accountAvailable);
 

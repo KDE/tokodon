@@ -321,21 +321,6 @@ Actions.StatefulWindow {
             root.pageStack.push(publicFeedsPage.createObject(root), {});
         }
 
-        function onOpenFavorites(): void {
-            if (root.checkIfCurrentPage("favorites")) {
-                return;
-            }
-
-            root.pageStack.clear();
-            root.pageStack.push(mainTimeline.createObject(root), {
-                pageId: "favorites",
-                name: "favourites",
-                iconName: "favorite",
-                placeholderText: KI18n.i18n("No Favorites"),
-                placeholderExplanation: KI18n.i18n("Posts that you favorite will show up here. If you appreciate someone's post, favorite it!")
-            });
-        }
-
         function onOpenBookmarks(): void {
             if (root.checkIfCurrentPage("bookmarks")) {
                 return;
@@ -633,8 +618,8 @@ Actions.StatefulWindow {
         application: tokodonApplication
         shouldCollapse: !root.wideMode
         actions: !root.wideMode ?
-            [root.searchAction, root.followRequestAction, root.followingAction, root.publicFeedsAction, root.conversationAction, root.bookmarksAction, root.collectionsAction, root.favouritesAction, root.listsAction] :
-            [root.homeAction, root.notificationAction, root.followRequestAction, root.followingAction, root.exploreAction, root.publicFeedsAction, root.conversationAction, root.bookmarksAction, root.collectionsAction, root.favouritesAction, root.listsAction]
+            [root.searchAction, root.followRequestAction, root.followingAction, root.publicFeedsAction, root.conversationAction, root.bookmarksAction, root.collectionsAction, root.listsAction] :
+            [root.homeAction, root.notificationAction, root.followRequestAction, root.followingAction, root.exploreAction, root.publicFeedsAction, root.conversationAction, root.bookmarksAction, root.collectionsAction, root.listsAction]
         bottomActions: [root.serverInformationAction, root.debugAction, root.moderationToolsAction, root.configureAction]
     }
 
@@ -660,10 +645,6 @@ Actions.StatefulWindow {
     readonly property Kirigami.Action conversationAction: Kirigami.Action {
         text: KI18n.i18nc("@action:button Direct one-on-one messages between users", "Conversations")
         fromQAction: tokodonApplication.action('conversations')
-    }
-    readonly property Kirigami.Action favouritesAction: Kirigami.Action {
-        text: KI18n.i18nc("@action:button This account's favorited posts", "Favorites")
-        fromQAction: tokodonApplication.action('favorites')
     }
     readonly property Kirigami.Action bookmarksAction: Kirigami.Action {
         text: KI18n.i18nc("@action:button This account's bookmarked posts", "Bookmarks")
