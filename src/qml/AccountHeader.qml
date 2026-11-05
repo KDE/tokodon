@@ -862,7 +862,7 @@ QQC2.Pane {
                         QQC2.Button {
                             text: featuredLimiterModel.extraCount > 0 ? KI18n.i18nc("@action:button See all featured users", "View %1 More", featuredLimiterModel.extraCount) : KI18n.i18nc("@action:button See all featured users", "View All")
                             onClicked: {
-                                pageStack.push(socialGraphComponent, {
+                                pageStack.push(Qt.createComponent("org.kde.tokodon", "SocialGraphPage"), {
                                     name: "featured",
                                     accountId: root.identity.id
                                 });
@@ -919,7 +919,7 @@ QQC2.Pane {
                         QQC2.Button {
                             text: limiterModel.extraCount > 0 ? KI18n.i18nc("@action:button See all familiar followers", "View %1 More", limiterModel.extraCount) : KI18n.i18nc("@action:button See all familiar followers", "View All")
                             onClicked: {
-                                pageStack.push(socialGraphComponent, {
+                                pageStack.push(Qt.createComponent("org.kde.tokodon", "SocialGraphPage"), {
                                     name: "familiar_followers",
                                     accountId: root.identity.id
                                 });
@@ -967,7 +967,7 @@ QQC2.Pane {
                     enabled: !root.identity.hideCollections
 
                     onClicked: {
-                        pageStack.push(socialGraphComponent, {
+                        pageStack.push(Qt.createComponent("org.kde.tokodon", "SocialGraphPage"), {
                             name: "following",
                             accountId: root.identity.id,
                         });
@@ -982,7 +982,7 @@ QQC2.Pane {
                     enabled: !root.identity.hideCollections
 
                     onClicked: {
-                        pageStack.push(socialGraphComponent, {
+                        pageStack.push(Qt.createComponent("org.kde.tokodon", "SocialGraphPage"), {
                             name: "followers",
                             accountId: root.identity.id,
                         });

@@ -304,7 +304,7 @@ Actions.StatefulWindow {
             }
 
             root.pageStack.clear();
-            root.pageStack.push(socialGraphComponent.createObject(root), {
+            root.pageStack.push(Qt.createComponent("org.kde.tokodon", "SocialGraphPage"), {
                 pageId: "followRequests",
                 name: "request",
             });
@@ -765,24 +765,6 @@ Actions.StatefulWindow {
                 showReplies: timelinePage.showReplies
                 showBoosts: timelinePage.showBoosts
                 showQuotes: timelinePage.showQuotes
-            }
-        }
-    }
-
-    Component {
-        id: socialGraphComponent
-        SocialGraphPage {
-            id: socialGraphPage
-            property alias name: socialGraphModel.name
-            property alias accountId: socialGraphModel.accountId
-            property alias statusId: socialGraphModel.statusId
-            property alias count: socialGraphModel.count
-            model: SocialGraphModel {
-                id: socialGraphModel
-                name: socialGraphPage.name
-                accountId: socialGraphPage.accountId
-                statusId: socialGraphPage.statusId
-                count: socialGraphPage.count
             }
         }
     }

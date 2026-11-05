@@ -17,9 +17,20 @@ import "./PostDelegate"
 Kirigami.ScrollablePage {
     id: root
 
-    property alias model: listview.model
+    /// Identifier used by Main.checkIfCurrentPage()
+    property string pageId
 
-    title: model.displayName
+    property alias name: socialGraphModel.name
+    property alias accountId: socialGraphModel.accountId
+    property alias statusId: socialGraphModel.statusId
+    property alias listId: socialGraphModel.listId
+    property alias count: socialGraphModel.count
+
+    readonly property SocialGraphModel model: SocialGraphModel {
+        id: socialGraphModel
+    }
+
+    title: root.model.displayName
     titleDelegate: Kirigami.Heading {
         // identical to normal Kirigami headers
         Layout.fillWidth: true
@@ -34,6 +45,7 @@ Kirigami.ScrollablePage {
     ListView {
         id: listview
 
+        model: root.model
         currentIndex: -1
 
         delegate: Delegates.RoundedItemDelegate {

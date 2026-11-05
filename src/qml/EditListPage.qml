@@ -104,17 +104,12 @@ FormCard.FormCardPage {
         id: socialGraphComponent
         SocialGraphPage {
             id: socialGraphPage
-            property alias name: socialGraphModel.name
-            property alias listId: socialGraphModel.listId
-            model: SocialGraphModel {
-                id: socialGraphModel
-            }
 
             actions: [
                 Kirigami.Action {
                     text: KI18n.i18nc("@action:intoolbar Add users to list", "Add Users")
                     icon.name: "list-add-user"
-                    onTriggered: socialGraphPage.Kirigami.PageStack.push(addUserComponent, { socialGraphModel })
+                    onTriggered: socialGraphPage.Kirigami.PageStack.push(addUserComponent, { socialGraphModel: socialGraphPage.model })
                 }
             ]
 
@@ -163,7 +158,7 @@ FormCard.FormCardPage {
                                     QQC2.Button {
                                         text: KI18n.i18nc("@action:button Add user to this list", "Add")
                                         icon.name: "checkmark"
-                                        onClicked: socialGraphModel.actionAddToList(delegate.authorIdentity.id)
+                                        onClicked: addUserPage.socialGraphModel.actionAddToList(delegate.authorIdentity.id)
                                     }
                                 }
 

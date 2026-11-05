@@ -32,37 +32,19 @@ FormCard.FormCardPage {
         FormCard.FormButtonDelegate {
             icon.name: "microphone-sensitivity-muted"
             text: KI18n.i18n("Muted Users")
-            onClicked: (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.layers.push(socialGraphComponent, { name: "mutes" })
+            onClicked: (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "SocialGraphPage"), { name: "mutes" })
         }
 
         FormCard.FormButtonDelegate {
             icon.name: "cards-block"
             text: KI18n.i18n("Blocked Users")
-            onClicked: (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.layers.push(socialGraphComponent, { name: "blocks" })
+            onClicked: (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "SocialGraphPage"), { name: "blocks" })
         }
 
         FormCard.FormButtonDelegate {
             icon.name: "internet-services-symbolic"
             text: KI18n.i18n("Blocked Domains")
             onClicked: (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "BlockedDomainsPage"))
-        }
-    }
-
-    Component {
-        id: socialGraphComponent
-        SocialGraphPage {
-            id: socialGraphPage
-            property alias name: socialGraphModel.name
-            property alias accountId: socialGraphModel.accountId
-            property alias statusId: socialGraphModel.statusId
-            property alias count: socialGraphModel.count
-            model: SocialGraphModel {
-                id: socialGraphModel
-                name: socialGraphPage.name
-                accountId: socialGraphPage.accountId
-                statusId: socialGraphPage.statusId
-                count: socialGraphPage.count
-            }
         }
     }
 }
