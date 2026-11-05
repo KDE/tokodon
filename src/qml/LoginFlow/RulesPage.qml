@@ -63,7 +63,7 @@ MastoPage {
                 onLoadingChanged: {
                     if (!rulesModel.loading) {
                         // Announce the first rule to the screen reader
-                        rulesRepeater.itemAt(0).forceFocus();
+                        rulesRepeater.itemAt(0)?.forceActiveFocus();
                     }
                 }
             }
@@ -72,10 +72,6 @@ MastoPage {
                 id: ruleTextDelegate
 
                 required text
-
-                function forceFocus(): void {
-                    ruleTextDelegate.forceActiveFocus();
-                }
 
                 activeFocusOnTab: true
             }

@@ -77,8 +77,9 @@ Item {
 
     function openAttachmentMenu(attachment: Attachment): void {
         imageMenu.active = true;
-        imageMenu.item.attachment = attachment;
-        imageMenu.item.popup(QQC2.ApplicationWindow.window);
+        const menu = imageMenu.item as AttachmentMenu;
+        menu.attachment = attachment;
+        menu.popup(QQC2.ApplicationWindow.window);
     }
 
     function isSpecialAttachment(count: int, index: int): bool {

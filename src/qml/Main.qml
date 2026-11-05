@@ -33,7 +33,7 @@ Actions.StatefulWindow {
         }
     }
 
-    title: pageStack.currentItem?.title ?? ""
+    title: (root.pageStack.currentItem as Kirigami.Page)?.title ?? ""
     windowName: "Main"
 
     property bool isShowingFullScreenImage: false
@@ -556,7 +556,7 @@ Actions.StatefulWindow {
         }
 
         function onOpenPost(postId: string): void {
-            if (!root.pageStack.currentItem.postId || root.pageStack.currentItem.postId !== postId) {
+            if ((root.pageStack.currentItem as ThreadPage)?.postId !== postId) {
                 root.pageStack.push(Qt.createComponent("org.kde.tokodon", "ThreadPage").createObject(root, {
                     postId: postId,
                 }));
@@ -564,7 +564,7 @@ Actions.StatefulWindow {
         }
 
         function onOpenAccount(accountId: string): void {
-            if (!root.pageStack.currentItem.accountId || root.pageStack.currentItem.accountId !== accountId) {
+            if ((root.pageStack.currentItem as AccountInfo)?.accountId !== accountId) {
                 root.pageStack.push(Qt.createComponent("org.kde.tokodon", "AccountInfo").createObject(root, {
                     accountId: accountId,
                 }));

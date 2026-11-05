@@ -33,11 +33,8 @@ QQC2.Control {
             return;
         }
 
-        const pageStack = (root.QQC2.ApplicationWindow.window as Main).pageStack;
-        const accountId = AccountManager.selectedAccountId;
-        if (!pageStack.currentItem.model || !pageStack.currentItem.model.accountId || accountId !== pageStack.currentItem.accountId) {
-            Navigation.openAccount(accountId);
-        }
+        // Main.onOpenAccount skips pushing when this profile is already shown
+        Navigation.openAccount(AccountManager.selectedAccountId);
     }
 
     contentItem: ColumnLayout {

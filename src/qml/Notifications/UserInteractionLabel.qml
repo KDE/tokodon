@@ -17,7 +17,7 @@ RowLayout {
     id: root
 
     readonly property bool isBoost: type === Notification.Repeat
-    readonly property bool isReply: type === Notification.Reply || type === Notification.Mention
+    readonly property bool isReply: type === Notification.Mention
     readonly property bool isFavorite: type === Notification.Favorite
     readonly property bool isPoll: type === Notification.Poll
     readonly property bool isUpdate: type === Notification.Update

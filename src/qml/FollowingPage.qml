@@ -115,7 +115,7 @@ Kirigami.Page {
                             root.accountModel.excludeBoosts = Qt.binding(() => !page.showBoosts);
                             root.accountModel.excludeReplies = Qt.binding(() => !page.showReplies);
                         } else {
-                            loader.item?.forceActiveFocus(Qt.MouseFocusReason);
+                            (loader.item as Item)?.forceActiveFocus(Qt.MouseFocusReason);
                             root.accountModel.excludeBoosts = Qt.binding(() => !showBoostsAction.checked);
                             root.accountModel.excludeReplies = Qt.binding(() => !showRepliesAction.checked);
                         }
