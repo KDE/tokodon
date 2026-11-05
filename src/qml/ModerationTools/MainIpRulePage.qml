@@ -36,15 +36,17 @@ FormCard.FormCardPage {
     }
 
 
-    actions.contextualActions: Kirigami.Action {
-        icon.name: "edit-delete-remove"
-        text: KI18n.i18nc("@action:inmenu", "Remove IP Rule")
-        onTriggered: {
-            root.model.deleteIpBlock(root.index)
-            (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).showPassiveNotification(KI18n.i18n("IP Rule Removed"))
-            root.Kirigami.PageStack.pop()
+    actions: [
+        Kirigami.Action {
+            icon.name: "edit-delete-remove"
+            text: KI18n.i18nc("@action:inmenu", "Remove IP Rule")
+            onTriggered: {
+                root.model.deleteIpBlock(root.index)
+                (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).showPassiveNotification(KI18n.i18n("IP Rule Removed"))
+                root.Kirigami.PageStack.pop()
+            }
         }
-    }
+    ]
 
     data: FormCard.FormCardDialog {
         id: updateIpRuleDialog

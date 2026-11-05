@@ -27,15 +27,17 @@ FormCard.FormCardPage {
 
     title: root.domain
 
-    actions.contextualActions: Kirigami.Action {
-        icon.name: "edit-delete-remove"
-        text: KI18n.i18n("Remove Domain Block")
-        onTriggered: {
-            root.model.removeDomainBlock(root.index)
-            (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).showPassiveNotification(KI18n.i18n("Domain Block Removed"))
-            root.Kirigami.PageStack.pop()
+    actions: [
+        Kirigami.Action {
+            icon.name: "edit-delete-remove"
+            text: KI18n.i18n("Remove Domain Block")
+            onTriggered: {
+                root.model.removeDomainBlock(root.index)
+                (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).showPassiveNotification(KI18n.i18n("Domain Block Removed"))
+                root.Kirigami.PageStack.pop()
+            }
         }
-    }
+    ]
 
     data: FormCard.FormCardDialog {
         id: textPromptDialog
