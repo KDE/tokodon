@@ -39,7 +39,7 @@ Kirigami.Page {
         target: root.backend
 
         function onReported() {
-            root.closeDialog();
+            root.Kirigami.PageStack.closeDialog();
         }
     }
 
@@ -70,14 +70,14 @@ Kirigami.Page {
                 QQC2.DialogButtonBox.buttonRole: QQC2.DialogButtonBox.AcceptRole
                 onClicked: {
                     root.backend.submit();
-                    root.closeDialog();
+                    root.Kirigami.PageStack.closeDialog();
                 }
             }
             QQC2.Button {
                 icon.name: "dialog-cancel-symbolic"
                 text: KI18n.i18nc("@action", "Cancel")
                 QQC2.DialogButtonBox.buttonRole: QQC2.DialogButtonBox.RejectRole
-                onClicked: root.closeDialog()
+                onClicked: root.Kirigami.PageStack.closeDialog()
             }
         }
     }

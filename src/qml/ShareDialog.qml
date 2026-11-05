@@ -27,7 +27,7 @@ Kirigami.Page {
 
     QQC2.Action {
         shortcut: 'Escape'
-        onTriggered: window.closeDialog()
+        onTriggered: window.Kirigami.PageStack.closeDialog()
     }
 
     Notification {
@@ -49,15 +49,15 @@ Kirigami.Page {
         id: jobView
         onStateChanged: {
             if (state === Purpose.PurposeJobController.Finished) {
-                window.closeDialog()
+                window.Kirigami.PageStack.closeDialog()
             } else if (state === Purpose.PurposeJobController.Error) {
                 // Show failure notification
                 sharingFailed.sendEvent();
 
-                window.closeDialog()
+                window.Kirigami.PageStack.closeDialog()
             } else if (state === Purpose.PurposeJobController.Cancelled) {
                 // Do nothing
-                window.closeDialog()
+                window.Kirigami.PageStack.closeDialog()
             }
         }
     }
