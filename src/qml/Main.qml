@@ -62,7 +62,6 @@ Actions.StatefulWindow {
 
     header: Kirigami.Separator {
         width: root.width
-        height: visible ? 1 : 0 // HACK The height is used for the position of the sidebar. Remove when we depends on Kirigami 6.10
         visible: !AccountManager.isReady
     }
 
