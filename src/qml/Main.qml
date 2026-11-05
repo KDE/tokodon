@@ -763,36 +763,30 @@ Actions.StatefulWindow {
         visible: root.pageStack.layers.depth <= 1 && AccountManager.hasAccounts && !root.wideMode && AccountManager.isReady
         enabled: !AccountManager.selectedAccountHasIssue
 
-        contentItem: RowLayout {
-            spacing: 0
+        actions: [root.homeAction, root.notificationAction, root.exploreAction, root.profileAction]
 
-            Repeater {
-                model: [root.homeAction, root.notificationAction, root.exploreAction, root.profileAction]
+        delegate: Kirigami.NavigationTabButton {
+            id: delegateButton
 
-                delegate: Kirigami.NavigationTabButton {
-                    id: delegateButton
+            required property Kirigami.Action modelData
 
-                    required property Kirigami.Action modelData
+            action: modelData
 
-                    action: modelData
+            Layout.minimumWidth: tabbar.buttonWidth
+            Layout.maximumWidth: tabbar.buttonWidth
+            Layout.fillHeight: true
 
-                    Layout.minimumWidth: tabbar.buttonWidth
-                    Layout.maximumWidth: tabbar.buttonWidth
-                    Layout.fillHeight: true
-
-                    // Notification indicator
-                    Kirigami.Badge {
-                        anchors {
-                            top: parent.top
-                            topMargin: Kirigami.Units.mediumSpacing
-                            right: parent.right
-                            rightMargin: Kirigami.Units.mediumSpacing
-                        }
-                        type: Kirigami.Badge.Information
-                        visible: delegateButton.modelData.alertCount > 0
-                        text: delegateButton.modelData.alertCount ?? ""
-                    }
+            // Notification indicator
+            Kirigami.Badge {
+                anchors {
+                    top: parent.top
+                    topMargin: Kirigami.Units.mediumSpacing
+                    right: parent.right
+                    rightMargin: Kirigami.Units.mediumSpacing
                 }
+                type: Kirigami.Badge.Information
+                visible: delegateButton.modelData.alertCount > 0
+                text: delegateButton.modelData.alertCount ?? ""
             }
         }
     }
