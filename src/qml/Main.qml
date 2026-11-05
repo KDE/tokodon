@@ -37,6 +37,9 @@ Actions.StatefulWindow {
     windowName: "Main"
 
     property bool isShowingFullScreenImage: false
+
+    /// The home timeline page, used to reset the main window after login or registration
+    readonly property Component mainTimelineComponent: mainTimeline
     readonly property bool wideMode: root.width >= Kirigami.Units.gridUnit * 50
 
     // A new post was created by us. Currently used by ThreadPages to update themselves when we reply.

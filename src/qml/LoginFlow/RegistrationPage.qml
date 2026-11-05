@@ -142,8 +142,8 @@ MastoPage {
                 root.account.registerAccount(usernameField.text, emailField.text, passwordField.text, true, "en", dateOfBirthField.value, reasonField.text);
 
                 root.account.authenticated.connect(() => {
-                    pageStack.layers.clear();
-                    pageStack.replace(mainTimeline, {
+                    MainWindow.instance.pageStack.layers.clear();
+                    MainWindow.instance.pageStack.replace(MainWindow.instance.mainTimelineComponent, {
                         name: "home"
                     });
                     Window.window.close();
