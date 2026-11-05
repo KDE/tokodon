@@ -312,34 +312,13 @@ Actions.StatefulWindow {
             });
         }
 
-        function onOpenLocalTimeline(): void {
-            if (root.checkIfCurrentPage("local")) {
+        function onOpenPublicFeeds(): void {
+            if (root.checkIfCurrentPage("public_feeds")) {
                 return;
             }
 
             root.pageStack.clear();
-            root.pageStack.push(mainTimeline.createObject(root), {
-                pageId: "local",
-                name: "public",
-                iconName: "system-users",
-                placeholderText: KI18n.i18n("No Posts"),
-                placeholderExplanation: KI18n.i18n("It seems pretty quiet right now, try posting something!")
-            });
-        }
-
-        function onOpenGlobalTimeline(): void {
-            if (root.checkIfCurrentPage("global")) {
-                return;
-            }
-
-            root.pageStack.clear();
-            root.pageStack.push(mainTimeline.createObject(root), {
-                pageId: "global",
-                name: "federated",
-                iconName: "kstars_xplanet",
-                placeholderText: KI18n.i18n("No Posts"),
-                placeholderExplanation: KI18n.i18n("It seems pretty quiet right now, try posting something!")
-            });
+            root.pageStack.push(publicFeedsPage.createObject(root), {});
         }
 
         function onOpenFavorites(): void {
@@ -654,8 +633,8 @@ Actions.StatefulWindow {
         application: tokodonApplication
         shouldCollapse: !root.wideMode
         actions: !root.wideMode ?
-            [root.searchAction, root.followRequestAction, root.followingAction, root.localTimelineAction, root.globalTimelineAction, root.conversationAction, root.bookmarksAction, root.collectionsAction, root.favouritesAction, root.listsAction] :
-            [root.homeAction, root.notificationAction, root.followRequestAction, root.followingAction, root.exploreAction, root.localTimelineAction, root.globalTimelineAction, root.conversationAction, root.bookmarksAction, root.collectionsAction, root.favouritesAction, root.listsAction]
+            [root.searchAction, root.followRequestAction, root.followingAction, root.publicFeedsAction, root.conversationAction, root.bookmarksAction, root.collectionsAction, root.favouritesAction, root.listsAction] :
+            [root.homeAction, root.notificationAction, root.followRequestAction, root.followingAction, root.exploreAction, root.publicFeedsAction, root.conversationAction, root.bookmarksAction, root.collectionsAction, root.favouritesAction, root.listsAction]
         bottomActions: [root.serverInformationAction, root.debugAction, root.moderationToolsAction, root.configureAction]
     }
 
@@ -674,13 +653,9 @@ Actions.StatefulWindow {
         fromQAction: tokodonApplication.action('follow_requests')
         visible: AccountManager.hasAccounts && AccountManager.selectedAccount && alertCount > 0
     }
-    readonly property Kirigami.Action localTimelineAction: Kirigami.Action {
-        text: KI18n.i18nc("@action:button Local timeline of posts from the account's own server", "Local")
-        fromQAction: tokodonApplication.action('local_timeline')
-    }
-    readonly property Kirigami.Action globalTimelineAction: Kirigami.Action {
-        text: KI18n.i18nc("@action:button Global timeline of posts from the entire Fediverse network", "Global")
-        fromQAction: tokodonApplication.action('global_timeline')
+    readonly property Kirigami.Action publicFeedsAction: Kirigami.Action {
+        text: KI18n.i18nc("@action:button Feed of public posts from the account's own server or others", "Public Feeds")
+        fromQAction: tokodonApplication.action('public_feeds')
     }
     readonly property Kirigami.Action conversationAction: Kirigami.Action {
         text: KI18n.i18nc("@action:button Direct one-on-one messages between users", "Conversations")
@@ -842,6 +817,11 @@ Actions.StatefulWindow {
     Component {
         id: followingTimeline
         FollowingPage {}
+    }
+
+    Component {
+        id: publicFeedsPage
+        PublicFeedsPage {}
     }
 
     property Item hoverLinkIndicator: QQC2.Control {

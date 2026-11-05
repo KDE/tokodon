@@ -36,8 +36,7 @@ Q_SIGNALS:
     void openHomeTimeline();
     void openNotifications();
     void openFollowRequests();
-    void openLocalTimeline();
-    void openGlobalTimeline();
+    void openPublicFeeds();
     void openConversations();
     void openFavorites();
     void openBookmarks();

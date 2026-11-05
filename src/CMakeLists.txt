@@ -355,6 +355,7 @@ qt_target_qml_sources(tokodon_static
         qml/CollectionsPage.qml
         qml/EditCollectionPage.qml
         qml/CollectionPage.qml
+        qml/PublicFeedsPage.qml
 )
 
 

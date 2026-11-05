@@ -110,17 +110,11 @@ void TokodonApplication::setupActions()
     followRequestsAction->setText(i18nc("@action:button Follows that require explicit allow/deny", "Open Follow Requests"));
     followRequestsAction->setIcon(QIcon::fromTheme(QStringLiteral("list-add-user")));
 
-    auto localTimelineAction = mainCollection()->addAction(u"local_timeline"_s, this, &TokodonApplication::openLocalTimeline);
-    localTimelineAction->setCheckable(true);
-    localTimelineAction->setActionGroup(pagesGroup);
-    localTimelineAction->setText(i18nc("@action:button Local timeline of posts from the account's own server", "Open Local Timeline"));
-    localTimelineAction->setIcon(QIcon::fromTheme(QStringLiteral("system-users")));
-
-    auto globalTimelineAction = mainCollection()->addAction(u"global_timeline"_s, this, &TokodonApplication::openGlobalTimeline);
-    globalTimelineAction->setCheckable(true);
-    globalTimelineAction->setActionGroup(pagesGroup);
-    globalTimelineAction->setText(i18nc("@action:button Global timeline of posts from the entire Fediverse network", "Open Global Timeline"));
-    globalTimelineAction->setIcon(QIcon::fromTheme(QStringLiteral("kstars_xplanet")));
+    auto publicFeedsAction = mainCollection()->addAction(u"public_feeds"_s, this, &TokodonApplication::openPublicFeeds);
+    publicFeedsAction->setCheckable(true);
+    publicFeedsAction->setActionGroup(pagesGroup);
+    publicFeedsAction->setText(i18nc("@action:button Feed of public posts from the account's own server or others", "Open Public Feeds"));
+    publicFeedsAction->setIcon(QIcon::fromTheme(QStringLiteral("system-users")));
 
     auto conversationsAction = mainCollection()->addAction(u"conversations"_s, this, &TokodonApplication::openConversations);
     conversationsAction->setCheckable(true);
@@ -251,8 +245,7 @@ void TokodonApplication::updateAccountActions()
     mainCollection()->action(u"home_timeline"_s)->setEnabled(accountAvailable);
     mainCollection()->action(u"notifications"_s)->setEnabled(accountAvailable);
     mainCollection()->action(u"follow_requests"_s)->setEnabled(accountAvailable);
-    mainCollection()->action(u"local_timeline"_s)->setEnabled(accountAvailable);
-    mainCollection()->action(u"global_timeline"_s)->setEnabled(accountAvailable);
+    mainCollection()->action(u"public_feeds"_s)->setEnabled(accountAvailable);
     mainCollection()->action(u"following"_s)->setEnabled(accountAvailable);
     mainCollection()->action(u"profile"_s)->setEnabled(accountAvailable);
     mainCollection()->action(u"lists"_s)->setEnabled(accountAvailable);
