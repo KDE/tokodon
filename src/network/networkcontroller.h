@@ -85,20 +85,14 @@ public:
     Q_INVOKABLE void clearErrorMessages();
 
     /**
-     * @brief Register with the KUnifiedPush distributor, if available.
-     *
-     * @param sendNotifications Whether to send notifications (for daemon mode.)
+     * @brief Listen for messages from the KUnifiedPush distributor, if available.
      */
-    void setupPushNotifications(bool sendNotifications);
+    void listenForNotifications();
 
-#ifdef HAVE_KUNIFIEDPUSH
     /**
-     * @return The KUnifiedPush connector.
+     * @brief Can be used to check whether it's sensible to show links to KCMs and such.
      */
-    KUnifiedPush::Connector *connector() const;
-#endif
-
-    QString endpoint;
+    [[nodiscard]] Q_INVOKABLE bool inKDESession() const;
 
 Q_SIGNALS:
     /**

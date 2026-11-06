@@ -161,14 +161,6 @@ void AbstractAccount::registerApplication(const QString &appName, const QString 
     // clear any previous bearer token credentials
     m_token.clear();
 
-    QString ourAdditionalScopes;
-#ifdef HAVE_KUNIFIEDPUSH
-    ourAdditionalScopes = QStringLiteral("push ");
-#endif
-
-    // Store for future usage (e.g. authorizeUrl)
-    m_additionalScopes = ourAdditionalScopes + additionalScopes;
-
     m_redirectUri = useAuthCode ? QStringLiteral("urn:ietf:wg:oauth:2.0:oob") : QStringLiteral("tokodon://oauth");
 
     // register
@@ -176,27 +168,12 @@ void AbstractAccount::registerApplication(const QString &appName, const QString 
     const QJsonObject obj{
         {QStringLiteral("client_name"), appName},
         {QStringLiteral("redirect_uris"), m_redirectUri},
-        {QStringLiteral("scopes"), QStringLiteral("read write follow %1").arg(m_additionalScopes).trimmed()},
+        {QStringLiteral("scopes"), QStringLiteral("read write follow push ").arg(additionalScopes).trimmed()},
         {QStringLiteral("website"), website},
     };
     const QJsonDocument doc(obj);
 
     fetchInstanceMetadata();
-
-#ifdef HAVE_KUNIFIEDPUSH
-    connect(
-        this,
-        &AbstractAccount::authenticated,
-        this,
-        [this] {
-            if (successfullyAuthenticated()) {
-                // We asked for the push scope, so we can safely start subscribing to notifications
-                config()->setEnablePushNotifications(true);
-                config()->save();
-            }
-        },
-        Qt::SingleShotConnection);
-#endif
 
     post(regUrl, doc, false, this, [this](QNetworkReply *reply) {
         const auto data = reply->readAll();

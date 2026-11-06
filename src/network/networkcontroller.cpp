@@ -261,7 +261,11 @@ void NetworkController::startComposing(const QString &text)
 
 bool NetworkController::pushNotificationsAvailable() const
 {
-    return !endpoint.isEmpty();
+#ifdef HAVE_KUNIFIEDPUSH
+    return true;
+#else
+    return false;
+#endif
 }
 
 void NetworkController::openLink(const QString &input)
@@ -288,31 +292,22 @@ void NetworkController::openLink(const QString &input)
     }
 }
 
-void NetworkController::setupPushNotifications(const bool sendNotifications)
+void NetworkController::listenForNotifications()
 {
 #ifdef HAVE_KUNIFIEDPUSH
     m_connector = new KUnifiedPush::Connector(QGuiApplication::desktopFileName());
-    connect(m_connector, &KUnifiedPush::Connector::endpointChanged, [this](const auto &newEndpoint) {
-        endpoint = newEndpoint;
+    connect(m_connector, &KUnifiedPush::Connector::messageReceived, this, [](const auto msg) {
+        NotificationHandler::handlePush(msg);
     });
-    if (sendNotifications) {
-        connect(m_connector, &KUnifiedPush::Connector::messageReceived, this, [](const auto msg) {
-            NotificationHandler::handlePush(msg);
-        });
-    }
-
-    endpoint = m_connector->endpoint();
 
     m_connector->setVapidPublicKeyRequired(true);
     m_connector->registerClient(i18n("Receiving push notifications"));
 #endif
 }
 
-#ifdef HAVE_KUNIFIEDPUSH
-KUnifiedPush::Connector *NetworkController::connector() const
+bool NetworkController::inKDESession() const
 {
-    return m_connector;
+    return qgetenv("XDG_SESSION_DESKTOP") == "KDE";
 }
-#endif
 
 #include "moc_networkcontroller.cpp"

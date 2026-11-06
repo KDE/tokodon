@@ -394,9 +394,9 @@ void Account::validateToken()
                         return;
                     }
 
-                    if (!NetworkController::instance().endpoint.isEmpty() && doc["endpoint"_L1] != NetworkController::instance().endpoint) {
-                        qWarning(TOKODON_LOG) << "KUnifiedPush endpoint is now" << NetworkController::instance().endpoint << "and the old one was"
-                                              << doc["endpoint"_L1] << "resubscribing!";
+                    if (!m_connector->endpoint().isEmpty() && doc["endpoint"_L1] != m_connector->endpoint()) {
+                        qWarning(TOKODON_LOG) << "KUnifiedPush endpoint is now" << m_connector->endpoint() << "and the old one was" << doc["endpoint"_L1]
+                                              << "resubscribing!";
 
                         deleteResource(apiUrl(QStringLiteral("/api/v1/push/subscription")), true, this, [this](QNetworkReply *reply) {
                             Q_UNUSED(reply)
@@ -407,8 +407,7 @@ void Account::validateToken()
                         updatePushNotifications();
                     }
                 },
-                [this](QNetworkReply *reply) {
-                    Q_UNUSED(reply);
+                [this](QNetworkReply *) {
                     // Otherwise, no subscription.
                     m_hasPushSubscription = false;
                 },
@@ -429,6 +428,7 @@ void Account::validateToken()
         &Account::fetchedInstanceMetadata,
         this,
         [this] {
+            createPushConnector();
             // set up streaming for notifications once we have the streaming URI
             streamingSocket(QStringLiteral("user"));
         },
@@ -530,16 +530,17 @@ void Account::checkForUnreadNotifications()
 void Account::updatePushNotifications()
 {
 #ifdef HAVE_KUNIFIEDPUSH
-    auto cfg = config();
+    const auto cfg = config();
 
-    // If push notifications are explicitly disabled (like if we have an account that does not have the scope) skip
     if (!cfg->enablePushNotifications()) {
+        unsubscribePushNotifications();
+        m_connector->unregisterClient();
         return;
     }
 
-    if (m_hasPushSubscription && !cfg->enableNotifications()) {
-        unsubscribePushNotifications();
-    } else if (!m_hasPushSubscription && cfg->enableNotifications()) {
+    m_connector->registerClient(i18n("Receiving push notifications"));
+
+    if (!m_hasPushSubscription) {
         subscribePushNotifications();
     } else {
         QUrlQuery formdata = buildNotificationFormData();
@@ -555,8 +556,11 @@ void Account::updatePushNotifications()
 
 void Account::unsubscribePushNotifications()
 {
-#ifdef HAVE_KUNIFIEDPUSH
-    Q_ASSERT(m_hasPushSubscription);
+#ifdef HAVE_KUNIFIEDPUS
+    if (!m_hasPushSubscription) {
+        return;
+    }
+
     deleteResource(apiUrl(QStringLiteral("/api/v1/push/subscription")), true, this, [this](QNetworkReply *reply) {
         m_hasPushSubscription = false;
         qCDebug(TOKODON_HTTP) << "Unsubscribed from push notifications:" << reply->readAll();
@@ -567,18 +571,15 @@ void Account::unsubscribePushNotifications()
 void Account::subscribePushNotifications()
 {
 #ifdef HAVE_KUNIFIEDPUSH
-    Q_ASSERT(!m_hasPushSubscription);
-
-    auto connector = NetworkController::instance().connector();
-
-    Q_ASSERT(!m_instanceVapidPublicKey.isEmpty());
-    connector->setVapidPublicKey(m_instanceVapidPublicKey);
+    if (m_hasPushSubscription) {
+        return;
+    }
 
     QUrlQuery formdata = buildNotificationFormData();
-    formdata.addQueryItem(QStringLiteral("subscription[endpoint]"), QUrl(NetworkController::instance().endpoint).toString());
+    formdata.addQueryItem(QStringLiteral("subscription[endpoint]"), QUrl(m_connector->endpoint()).toString());
 
-    const auto publicKey = connector->contentEncryptionPublicKey();
-    const auto authSecret = connector->contentEncryptionAuthSecret();
+    const auto publicKey = m_connector->contentEncryptionPublicKey();
+    const auto authSecret = m_connector->contentEncryptionAuthSecret();
 
     formdata.addQueryItem(QStringLiteral("subscription[keys][p256dh]"),
                           QString::fromLatin1(publicKey.toBase64(QByteArray::Base64UrlEncoding | QByteArray::OmitTrailingEquals)));
@@ -624,6 +625,23 @@ QUrlQuery Account::buildNotificationFormData()
     addQuery(QStringLiteral("admin.report"), cfg->notifyReport());
 
     return formdata;
+}
+
+void Account::createPushConnector()
+{
+#ifdef HAVE_KUNIFIEDPUSH
+    Q_ASSERT(m_config);
+
+    m_connector = new KUnifiedPush::Connector(QGuiApplication::desktopFileName());
+    connect(m_connector, &KUnifiedPush::Connector::endpointChanged, this, [this] {
+        subscribePushNotifications();
+    });
+
+    m_connector->setVapidPublicKeyRequired(true);
+    m_connector->setVapidPublicKey(m_instanceVapidPublicKey);
+
+    connect(m_config, &AccountConfig::EnablePushNotificationsChanged, this, &Account::updatePushNotifications);
+#endif
 }
 
 void Account::registerTokodon(const bool useAuthCode, const bool addAdminScope)

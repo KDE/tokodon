@@ -11,6 +11,13 @@
 
 class AccountConfig;
 
+#ifdef HAVE_KUNIFIEDPUSH
+namespace KUnifiedPush
+{
+class Connector;
+}
+#endif
+
 class Account : public AbstractAccount
 {
     Q_OBJECT
@@ -90,6 +97,7 @@ private:
     void unsubscribePushNotifications();
     void subscribePushNotifications();
     QUrlQuery buildNotificationFormData();
+    void createPushConnector();
 
     QNetworkAccessManager *m_qnam;
     QMap<QString, QWebSocket *> m_websockets;
@@ -101,4 +109,8 @@ private:
     // common parts for all HTTP request
     [[nodiscard]] QNetworkRequest makeRequest(const QUrl &url, bool authenticated) const;
     void handleReply(QNetworkReply *reply, std::function<void(QNetworkReply *)> reply_cb, std::function<void(QNetworkReply *)> errorCallback = nullptr) const;
+
+#ifdef HAVE_KUNIFIEDPUSH
+    KUnifiedPush::Connector *m_connector = nullptr;
+#endif
 };

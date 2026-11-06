@@ -18,32 +18,51 @@ FormCard.FormCardPage {
     property AbstractAccount account: AccountManager.selectedAccount
     readonly property var config: account.config
 
+    actions: [
+        Kirigami.Action {
+            displayComponent: QQC2.Switch {
+                text: KI18n.i18n("Enabled for this account")
+                checkable: true
+                checked: root.config.enableNotifications
+                onToggled: {
+                    root.config.enableNotifications = checked;
+                    root.saveConfig();
+                }
+            }
+        }
+    ]
+
     function saveConfig(): void {
         config.save();
     }
 
+    FormCard.FormHeader {
+        title: i18nc("@title:group Background/push notifications", "Background Notifications")
+        visible: root.config.enableNotifications && Controller.pushNotificationsAvailable
+    }
     FormCard.FormCard {
-        Layout.topMargin: Kirigami.Units.largeSpacing * 4
+        autoSeparators: true
+        visible: root.config.enableNotifications && Controller.pushNotificationsAvailable
 
         FormCard.FormSwitchDelegate {
-            text: KI18n.i18n("Enable notifications for this account")
-            description: {
-                if (Controller.pushNotificationsAvailable) {
-                    if (root.config.enablePushNotifications) {
-                        return KI18n.i18n("Notifications can appear even when Tokodon isn't running.");
-                    } else {
-                        return KI18n.i18n("Push notifications are available but could not be enabled. Please log out and log back in.");
-                    }
-                } else {
-                    return KI18n.i18n("Notifications will only appear when Tokodon is running.");
-                }
-            }
-            checked: root.config.enableNotifications
+            id: enableBackgroundNotificationsDelegate
+
+            text: i18nc("@option:check", "Enable background notifications for this account")
+            checked: root.config.enablePushNotifications
             onToggled: {
-                root.config.enableNotifications = checked;
+                root.config.enablePushNotifications = checked;
                 root.saveConfig();
-                root.account.updatePushNotifications();
             }
+        }
+
+        FormCard.FormButtonDelegate {
+            id: backgroundNotificationsDelegate
+
+            icon.name: "configure-symbolic"
+            text: i18nc("@action:button", "Configure Background Notifications…")
+            visible: Controller.inKDESession()
+
+            onClicked: Qt.openUrlExternally("systemsettings:/kcm_push_notifications")
         }
     }
 
@@ -191,7 +210,7 @@ FormCard.FormCardPage {
 
     FormCard.FormCard {
         autoSeparators: true
-        enabled: root.config.enableNotifications
+        visible: root.config.enableNotifications
 
         EventControl {
             id: mentionsDelegate

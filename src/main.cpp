@@ -130,7 +130,7 @@ int main(int argc, char *argv[])
         }
 #endif
 
-        NetworkController::instance().setupPushNotifications(true);
+        NetworkController::instance().listenForNotifications();
 
         // Process events before quitting.
         QTimer::singleShot(std::chrono::seconds(5), &app, &QCoreApplication::quit);
@@ -150,8 +150,6 @@ int main(int argc, char *argv[])
 #ifdef HAVE_KDBUSADDONS
     KDBusService service(KDBusService::Unique);
 #endif
-
-    NetworkController::instance().setupPushNotifications(false);
 
 #ifdef HAVE_KDBUSADDONS
     QObject::connect(&service, &KDBusService::activateRequested, &engine, [&engine](const QStringList &arguments, const QString & /*workingDirectory*/) {
