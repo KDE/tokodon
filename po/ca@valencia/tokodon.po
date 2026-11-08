@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-06 00:51+0000\n"
-"PO-Revision-Date: 2026-07-10 08:49+0200\n"
+"PO-Revision-Date: 2026-11-06 10:37+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -901,8 +901,7 @@ msgid "Account editor"
 msgstr "Editor de comptes"
 
 #: qml/AccountHeader.qml:511
-#, fuzzy, kde-format
-#| msgid "Favorites"
+#, kde-format
 msgctxt "@action:inmenu View this account's favorited posts"
 msgid "Favorites"
 msgstr "Preferits"
@@ -1040,24 +1039,19 @@ msgstr[0] "<b>%1</b> seguidor"
 msgstr[1] "<b>%1</b> seguidors"
 
 #: qml/AccountHeader.qml:1024
-#, fuzzy, kde-format
-#| msgid "Posts"
+#, kde-format
 msgctxt "@item:inmenu Filter for posts only"
 msgid "Posts"
 msgstr "Publicacions"
 
 #: qml/AccountHeader.qml:1028
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Posts && Replies"
+#, kde-format
 msgctxt "@item:inmenu Filter for posts and replies"
 msgid "Posts & Replies"
 msgstr "Publicacions i respostes"
 
 #: qml/AccountHeader.qml:1033
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Media"
+#, kde-format
 msgctxt "@item:inmenu Filter for media only"
 msgid "Media"
 msgstr "Multimèdia"
@@ -2173,12 +2167,11 @@ msgid "Follow Requests"
 msgstr "Sol·licituds de seguiment"
 
 #: qml/Main.qml:649
-#, fuzzy, kde-format
-#| msgid "Public Servers"
+#, kde-format
 msgctxt ""
 "@action:button Feed of public posts from the account's own server or others"
 msgid "Public Feeds"
-msgstr "Servidors públics"
+msgstr "Canals públics"
 
 #: qml/Main.qml:653
 #, kde-format
@@ -4319,7 +4312,7 @@ msgstr "Suprimix i torna a esborrany…"
 #, kde-format
 msgctxt "Votes percentage"
 msgid "%1%"
-msgstr "%1%"
+msgstr "%1 %"
 
 #: qml/PostDelegate/PostPoll.qml:66
 #, kde-format
@@ -4382,28 +4375,24 @@ msgid "Volume"
 msgstr "Volum"
 
 #: qml/PublicFeedsPage.qml:22
-#, fuzzy, kde-format
-#| msgid "Public Servers"
+#, kde-format
 msgctxt "@title:window Public feeds of this or other servers"
 msgid "Public Feeds"
-msgstr "Servidors públics"
+msgstr "Canals públics"
 
 #: qml/PublicFeedsPage.qml:31
-#, fuzzy, kde-format
-#| msgid "Custom Server"
+#, kde-format
 msgctxt "@action:button Filter for public posts from the user's current server"
 msgid "This Server"
-msgstr "Servidor personalitzat"
+msgstr "Este servidor"
 
 #: qml/PublicFeedsPage.qml:37
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "About Server"
+#, kde-format
 msgctxt ""
 "@action:button Filter for public posts from other servers other than the "
 "current user's"
 msgid "Other Servers"
-msgstr "Quant a servidor"
+msgstr "Altres servidors"
 
 #: qml/ReadMarker.qml:16
 #, kde-format
@@ -4995,7 +4984,7 @@ msgstr "Socks5"
 #: qml/Settings/NetworkProxyPage.qml:80
 #, kde-format
 msgid "Host"
-msgstr "Amfitrió"
+msgstr "Servidor"
 
 #: qml/Settings/NetworkProxyPage.qml:92
 #, kde-format
@@ -6037,12 +6026,11 @@ msgid "Open Follow Requests"
 msgstr "Obri les sol·licituds de seguiment"
 
 #: tokodonapplication.cpp:116
-#, fuzzy, kde-format
-#| msgid "No Public Servers"
+#, kde-format
 msgctxt ""
 "@action:button Feed of public posts from the account's own server or others"
 msgid "Open Public Feeds"
-msgstr "Sense servidors públics"
+msgstr "Obri els canals públics"
 
 #: tokodonapplication.cpp:122
 #, kde-format
@@ -6262,53 +6250,3 @@ msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "Fa 1 any"
 msgstr[1] "Fa %1 anys"
-
-#~ msgctxt "@item:inmenu Profile Post Filter"
-#~ msgid "Posts"
-#~ msgstr "Publicacions"
-
-#~ msgctxt ""
-#~ "@action:button Local timeline of posts from the account's own server"
-#~ msgid "Local"
-#~ msgstr "Local"
-
-#~ msgctxt ""
-#~ "@action:button Global timeline of posts from the entire Fediverse network"
-#~ msgid "Global"
-#~ msgstr "Global"
-
-#~ msgctxt "@action:button This account's favorited posts"
-#~ msgid "Favorites"
-#~ msgstr "Preferits"
-
-#~ msgctxt ""
-#~ "@action:button Local timeline of posts from the account's own server"
-#~ msgid "Open Local Timeline"
-#~ msgstr "Obri la línia de temps d'Inici"
-
-#~ msgctxt ""
-#~ "@action:button Global timeline of posts from the entire Fediverse network"
-#~ msgid "Open Global Timeline"
-#~ msgstr "Obri la línia de temps global"
-
-#~ msgctxt "@action:button This account's favorited posts"
-#~ msgid "Open Favorites"
-#~ msgstr "Obri els preferits"
-
-#~ msgctxt "@info:Cancel button to close the dailog"
-#~ msgid "Cancel"
-#~ msgstr "Cancel·la"
-
-#~ msgctxt "@action:button"
-#~ msgid "Cancel"
-#~ msgstr "Cancel·la"
-
-#~ msgctxt "@info Cancel button to close the dailog"
-#~ msgid "Cancel"
-#~ msgstr "Cancel·la"
-
-#~ msgid "Tokodon"
-#~ msgstr "Tokodon"
-
-#~ msgid "© 2021-2025 KDE Community"
-#~ msgstr "© 2021-2025 La comunitat KDE"
