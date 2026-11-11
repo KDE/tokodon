@@ -7,6 +7,7 @@
 #include "account/accountmanager.h"
 #include "network/networkcontroller.h"
 #include "tokodon_debug.h"
+#include "utils/texthandler.h"
 
 #include <QPainter>
 
@@ -188,7 +189,7 @@ void NotificationHandler::handle(std::shared_ptr<Notification> notification, Abs
         if (!notification->post()->spoilerText().isEmpty()) {
             knotification->setText(xi18n("<b>Content Notice</b>: %1", notification->post()->spoilerText()));
         } else if (!notification->post()->content().isEmpty()) {
-            knotification->setText(notification->post()->content());
+            knotification->setText(TextHandler::notificationText(notification->post()->content()));
         } else {
             knotification->setText(i18n("This post has no text."));
         }
@@ -199,7 +200,7 @@ void NotificationHandler::handle(std::shared_ptr<Notification> notification, Abs
         if (notification->identity()->limited()) {
             knotification->setText(i18n("The moderators of your server has limited this user, view this in Tokodon to see their profile."));
         } else if (!notification->identity()->bio().isEmpty()) {
-            knotification->setText(notification->identity()->bio());
+            knotification->setText(TextHandler::notificationText(notification->identity()->bio()));
         } else {
             knotification->setText(i18n("This user doesn't have a description."));
         }
