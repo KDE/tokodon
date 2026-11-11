@@ -8,6 +8,8 @@
 
 #include <QtTest/QtTest>
 
+#include <limits>
+
 class AccountTest : public QObject
 {
     Q_OBJECT
@@ -65,6 +67,19 @@ private Q_SLOTS:
         QCOMPARE(account->registrationsOpen(), true);
         QCOMPARE(account->registrationMessage(), QString());
         QCOMPARE(account->supportsLocalVisibility(), false);
+    }
+
+    // Instances can be configured with absurd character limits that don't fit in an int, make sure we don't treat them as zero
+    void testHugeCharacterLimit()
+    {
+        const QSignalSpy spy(account, &AbstractAccount::fetchedInstanceMetadata);
+
+        account->registerGet(account->apiUrl(QStringLiteral("/api/v2/instance")),
+                             new TestReply(QStringLiteral("api_v2_instance_huge_character_limit.json"), this));
+        account->fetchInstanceMetadata();
+
+        QCOMPARE(spy.count(), 1);
+        QCOMPARE(account->maxPostLength(), static_cast<size_t>(std::numeric_limits<int>::max()));
     }
 
 private:
