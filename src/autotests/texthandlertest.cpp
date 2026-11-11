@@ -58,6 +58,28 @@ private Q_SLOTS:
 
         QCOMPARE(TextHandler::isPostUrl(url), valid);
     }
+
+    void notificationText_data()
+    {
+        QTest::addColumn<QString>("html");
+        QTest::addColumn<QString>("text");
+
+        QTest::addRow("plain") << QStringLiteral("Hello, world!") << QStringLiteral("Hello, world!");
+        QTest::addRow("paragraph") << QStringLiteral("<p>Hello, world!</p>") << QStringLiteral("Hello, world!");
+        QTest::addRow("mention")
+            << QStringLiteral("<p>Hi <span class=\"h-card\"><a href=\"https://kde.social/@kde\" class=\"u-url mention\">@<span>kde</span></a></span>!</p>")
+            << QStringLiteral("Hi @kde!");
+        QTest::addRow("entities") << QStringLiteral("<p>1 &lt; 2 &amp;&amp; 3 &gt; 2</p>") << QStringLiteral("1 &lt; 2 &amp;&amp; 3 &gt; 2");
+        QTest::addRow("empty") << QString() << QString();
+    }
+
+    void notificationText()
+    {
+        QFETCH(QString, html);
+        QFETCH(QString, text);
+
+        QCOMPARE(TextHandler::notificationText(html), text);
+    }
 };
 
 QTEST_MAIN(TextHandlerTest)

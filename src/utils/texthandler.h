@@ -83,6 +83,17 @@ public:
      * @return The processed HTML.
      */
     static Q_INVOKABLE QString stripHtml(const QString &html);
+
+    /**
+     * @brief Converts the HTML of a post or profile into text suitable for a desktop notification.
+     *
+     * Notification servers interpret the body as a limited markup language, so the post's HTML can't be passed along as-is. This strips all of the
+     * markup and then escapes the remaining text, so characters like '<' and '&' are shown literally.
+     *
+     * @param html The HTML text to process.
+     * @return The processed text, which is safe to use as a notification body.
+     */
+    static QString notificationText(const QString &html);
 };
 
 namespace TextRegex

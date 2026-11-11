@@ -230,4 +230,9 @@ QString TextHandler::stripHtml(const QString &html)
     return doc.toPlainText();
 }
 
+QString TextHandler::notificationText(const QString &html)
+{
+    return stripHtml(html).trimmed().toHtmlEscaped();
+}
+
 #include "moc_texthandler.cpp"
