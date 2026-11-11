@@ -16,7 +16,24 @@
 #include <QNetworkReply>
 #include <QUrlQuery>
 
+#include <limits>
+
 using namespace Qt::Literals::StringLiterals;
+
+namespace
+{
+/// Reads an integer limit reported by the server.
+/// QJsonValue::toInt() returns 0 for values that don't fit into an int, which would make the limit unusable (e.g. an instance reporting a 2^64 character
+/// limit). Clamp to the largest representable value instead.
+int limitFromJson(const QJsonValue &value)
+{
+    const double number = value.toDouble();
+    if (number >= std::numeric_limits<int>::max()) {
+        return std::numeric_limits<int>::max();
+    }
+    return value.toInt();
+}
+}
 
 AbstractAccount::AbstractAccount(const QString &instanceUri, QObject *parent)
     : QObject(parent)
@@ -513,7 +530,7 @@ void AbstractAccount::fetchInstanceMetadata()
 
                 if (configObj.contains("statuses"_L1)) {
                     const auto statusConfigObj = configObj["statuses"_L1].toObject();
-                    m_maxPostLength = statusConfigObj["max_characters"_L1].toInt();
+                    m_maxPostLength = limitFromJson(statusConfigObj["max_characters"_L1]);
                     m_charactersReservedPerUrl = statusConfigObj["characters_reserved_per_url"_L1].toInt();
                     m_maxMediaAttachments = statusConfigObj["max_media_attachments"_L1].toInt();
                 }
@@ -592,14 +609,14 @@ void AbstractAccount::fetchInstanceMetadata()
 
                     if (configObj.contains("statuses"_L1)) {
                         const auto statusConfigObj = configObj["statuses"_L1].toObject();
-                        m_maxPostLength = statusConfigObj["max_characters"_L1].toInt();
+                        m_maxPostLength = limitFromJson(statusConfigObj["max_characters"_L1]);
                         m_charactersReservedPerUrl = statusConfigObj["characters_reserved_per_url"_L1].toInt();
                     }
                 }
 
                 // Pleroma/Akkoma may report maximum post characters here, instead
                 if (obj.contains("max_toot_chars"_L1)) {
-                    m_maxPostLength = obj["max_toot_chars"_L1].toInt();
+                    m_maxPostLength = limitFromJson(obj["max_toot_chars"_L1]);
                 }
 
                 // Pleroma/Akkoma can report higher poll limits
