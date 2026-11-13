@@ -54,6 +54,11 @@ set_package_properties(KF6KirigamiAddons PROPERTIES
     PURPOSE "Required application components and runtime dependency"
 )
 
+set_package_properties(KF6KirigamiAppComponents PROPERTIES
+    TYPE REQUIRED
+    PURPOSE "Required application components and runtime dependency"
+)
+
 find_package(Qt6Keychain)
 set_package_properties(Qt6Keychain PROPERTIES
     TYPE REQUIRED
