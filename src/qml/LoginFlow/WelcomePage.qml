@@ -27,6 +27,7 @@ Kirigami.Page {
 
     header: Kirigami.Separator {
         width: root.width
+        visible: !Kirigami.Settings.isMobile
     }
 
     property TokodonConfigurationView settingsWindow: TokodonConfigurationView {
