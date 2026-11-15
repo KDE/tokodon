@@ -116,9 +116,9 @@ ListView {
         Components.FloatingButton {
             anchors {
                 right: parent.right
-                rightMargin: Kirigami.Units.largeSpacing
+                rightMargin: Kirigami.Units.largeSpacing + root.SafeArea.margins.left
                 bottom: parent.bottom
-                bottomMargin: Kirigami.Units.largeSpacing
+                bottomMargin: Kirigami.Units.largeSpacing + root.SafeArea.margins.bottom
             }
 
             visible: !root.needsToShowBothActions
@@ -128,9 +128,9 @@ ListView {
         Components.DoubleFloatingButton {
             anchors {
                 right: parent.right
-                rightMargin: Kirigami.Units.largeSpacing
+                rightMargin: Kirigami.Units.largeSpacing + root.SafeArea.margins.left
                 bottom: parent.bottom
-                bottomMargin: Kirigami.Units.largeSpacing
+                bottomMargin: Kirigami.Units.largeSpacing + root.SafeArea.margins.bottom
             }
 
             visible: root.needsToShowBothActions
