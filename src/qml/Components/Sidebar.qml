@@ -45,8 +45,8 @@ Kirigami.OverlayDrawer {
 
     interactiveResizeEnabled: enabled
 
-    leftPadding: parent.SafeArea.margins.left
-    rightPadding: parent.SafeArea.margins.right
+    leftPadding: edge === Qt.LeftEdge ? parent.SafeArea.margins.left : 0
+    rightPadding: edge === Qt.LeftEdge ? 0 : parent.SafeArea.margins.right
     topPadding: parent.SafeArea.margins.top
     bottomPadding: parent.SafeArea.margins.bottom
 
