@@ -750,6 +750,7 @@ Kirigami.ScrollablePage {
         Kirigami.Theme.colorSet: Kirigami.Theme.Window
         Image {
             anchors.left: parent.left
+            anchors.leftMargin: root.SafeArea.margins.left
             anchors.bottom: parent.bottom
             anchors.bottomMargin: root.SafeArea.margins.bottom
             source: "qrc:/content/elephant.svg"
