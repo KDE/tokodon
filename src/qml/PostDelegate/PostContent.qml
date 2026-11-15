@@ -44,11 +44,10 @@ QQC2.Label {
         MainWindow.instance.hoverLinkIndicator.text = "";
     }
 
+    // For desktop
     TapHandler {
         acceptedButtons: Qt.RightButton | Qt.LeftButton
         exclusiveSignals: TapHandler.SingleTap | TapHandler.DoubleTap
-        // Exclude touchscreen users from this menu until we can figure out a better UX.
-        // Currently it's way too easy to trigger this when tapping URLs.
         acceptedDevices: PointerDevice.Mouse | PointerDevice.TouchPad | PointerDevice.Stylus
 
         onSingleTapped: (eventPoint, button) => {
@@ -77,6 +76,26 @@ QQC2.Label {
             });
 
             (linkMenu as LinkMenu)?.popup(root.QQC2.ApplicationWindow.window);
+        }
+    }
+
+    // For mobile
+    TapHandler {
+        acceptedButtons: Qt.LeftButton
+        exclusiveSignals: TapHandler.SingleTap
+        acceptedDevices: PointerDevice.TouchScreen
+        gesturePolicy: TapHandler.WithinBounds
+
+        onSingleTapped: (eventPoint, button) => {
+            const point = root.mapFromGlobal(eventPoint.globalPosition.x, eventPoint.globalPosition.y);
+            const foundLink = root.linkAt(point.x, point.y);
+            if (!foundLink) {
+                return;
+            }
+
+            if (button === Qt.LeftButton && root.shouldOpenAnyLinks) {
+                MainWindow.instance.navigateLink(foundLink, root.shouldOpenInternalLinks)
+            }
         }
     }
 
