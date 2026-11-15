@@ -81,19 +81,16 @@ QQC2.Label {
 
     // For mobile
     TapHandler {
-        acceptedButtons: Qt.LeftButton
-        exclusiveSignals: TapHandler.SingleTap
         acceptedDevices: PointerDevice.TouchScreen
-        gesturePolicy: TapHandler.WithinBounds
 
-        onSingleTapped: (eventPoint, button) => {
+        onSingleTapped: eventPoint => {
             const point = root.mapFromGlobal(eventPoint.globalPosition.x, eventPoint.globalPosition.y);
             const foundLink = root.linkAt(point.x, point.y);
             if (!foundLink) {
                 return;
             }
 
-            if (button === Qt.LeftButton && root.shouldOpenAnyLinks) {
+            if (root.shouldOpenAnyLinks) {
                 MainWindow.instance.navigateLink(foundLink, root.shouldOpenInternalLinks)
             }
         }
