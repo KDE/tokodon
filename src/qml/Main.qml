@@ -65,7 +65,7 @@ Actions.StatefulWindow {
 
     header: Kirigami.Separator {
         width: root.width
-        visible: !AccountManager.isReady
+        visible: !AccountManager.isReady && !Kirigami.Settings.isMobile
     }
 
     function decideDefaultPage(): void {
