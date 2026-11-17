@@ -436,8 +436,8 @@ QQC2.ItemDelegate {
 
                 enabled: root.visibility !== Post.Direct && (root.visibility !== Post.Private || root.isSelf)
 
-                iconName: 'boost'
-                interactedIconName: 'boost-boosted'
+                iconName: "boost"
+                interactedIconName: "boost-boosted"
 
                 text: Config.showPostStats && !root.selected ? root.reblogsCount : ''
                 tooltip: {
@@ -504,8 +504,8 @@ QQC2.ItemDelegate {
                 interacted: root.favourited
                 interactionColor: "#fa8865"
 
-                iconName: 'favorite'
-                interactedIconName: 'favorite-favorited'
+                iconName: "favorite"
+                interactedIconName: "favorite-favorited"
 
                 text: Config.showPostStats && !root.selected ? root.favouritesCount : ''
                 tooltip: KI18n.i18nc("Favorite a post", "Favorite")
@@ -527,8 +527,8 @@ QQC2.ItemDelegate {
                 interacted: root.bookmarked
                 interactionColor: "#1b89f3"
 
-                iconName: 'bookmarks'
-                interactedIconName: 'bookmarks-bookmarked'
+                iconName: "bookmarks"
+                interactedIconName: "bookmarks-bookmarked"
 
                 tooltip: root.bookmarked ? KI18n.i18n("Remove bookmark") : KI18n.i18nc("Bookmark a post", "Bookmark")
 
