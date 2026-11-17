@@ -17,29 +17,29 @@ KirigamiSettings.SettingsViewController {
     modules: [
         KirigamiSettings.SettingsModule {
             moduleId: "appearance"
-            text: KI18n.i18n("Appearance")
+            name: KI18n.i18n("Appearance")
             icon.name: "preferences-desktop-theme-global"
-            page: () => Qt.createComponent("org.kde.tokodon", "AppearancePage")
+            page: AppearancePage {}
         },
         KirigamiSettings.SettingsModule {
             moduleId: "notifications"
-            text: KI18n.i18n("Notifications")
+            name: KI18n.i18n("Notifications")
             icon.name: "preferences-desktop-notification"
-            page: () => Qt.createComponent("org.kde.tokodon", "NotificationsPage")
+            page: NotificationsPage {}
             visible: AccountManager.hasAccounts
         },
         KirigamiSettings.SettingsModule {
             moduleId: "safety"
-            text: KI18n.i18n("Safety")
+            name: KI18n.i18n("Safety")
             icon.name: "preferences-security"
-            page: () => Qt.createComponent("org.kde.tokodon", "SafetyPage")
+            page: SafetyPage {}
             visible: AccountManager.hasAccounts
         },
         KirigamiSettings.SettingsModule {
             moduleId: "accounts"
-            text: KI18n.i18n("Accounts")
+            name: KI18n.i18n("Accounts")
             icon.name: "preferences-system-users"
-            page: () => Qt.createComponent("org.kde.tokodon", "AccountsPage")
+            page: AccountsPage {}
             initialProperties: () => {
                 return {
                     application: root.application
@@ -50,27 +50,27 @@ KirigamiSettings.SettingsViewController {
         KirigamiSettings.SpellcheckingSettingsModule {},
         KirigamiSettings.SettingsModule {
             moduleId: "proxy"
-            text: KI18n.i18n("Network Proxy")
+            name: KI18n.i18n("Network Proxy")
             icon.name: "network-connect"
-            page: () => Qt.createComponent("org.kde.tokodon", "NetworkProxyPage")
+            page: NetworkProxyPage {}
         },
         KirigamiSettings.ShortcutsSettingsModule {},
         KirigamiSettings.SettingsModule {
             moduleId: "errorlog"
-            text: KI18n.i18n("Error Log")
+            name: KI18n.i18n("Error Log")
             icon.name: "error-symbolic"
-            page: () => Qt.createComponent("org.kde.tokodon", "ErrorLogPage")
+            page: ErrorLogPage {}
         },
         KirigamiSettings.SettingsModule {
             moduleId: "about"
-            text: KI18n.i18n("About Tokodon")
+            name: KI18n.i18n("About Tokodon")
             icon.name: "org.kde.tokodon"
             page: () => Qt.createComponent("org.kde.kirigamiaddons.formcard", "AboutPage")
             category: KI18n.i18nc("@title:group", "About")
         },
         KirigamiSettings.SettingsModule {
             moduleId: "aboutkde"
-            text: KI18n.i18n("About KDE")
+            name: KI18n.i18n("About KDE")
             icon.name: "kde"
             page: () => Qt.createComponent("org.kde.kirigamiaddons.formcard", "AboutKDEPage")
             category: KI18n.i18nc("@title:group", "About")
